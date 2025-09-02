@@ -2,9 +2,11 @@
 
 Sometimes it becomes crucial to test some network test cases without touching the default network. If your machine doesn't have more than one physical NIC, this solution is for you.
 
+I suggest you read this [document](./readme.md) first before proceeding with the installation.
+
 ## Create a virtual NIC (host-only)
 
-You can create it using the following commands manually, but there is also an [auto-script](./vbox-config-auto.sh) to handle that. Manual commands are the following:
+You can create it using the following commands manually, but there is also an [auto-script](./vbox-config-auto.sh) to handle that. Manual commands are the following(execute from the host machine):
 
 ```shell
 echo "* 0.0.0.0/0 ::/0" | sudo tee /etc/vbox/networks.conf

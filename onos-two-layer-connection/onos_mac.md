@@ -62,6 +62,8 @@ And another major issue for MAC Air Users is the extreme heating of your machine
 
 ## Final try is to dockerize ONOS and Mininet
 
+`No longer valid. A new study can be found here:` [sdn-with-docker](https://github.com/bhuiyan-chafi/sdn-docker)
+
 Let's we just want to emulate the network, we will are not focusing on ONOS app development(which is the main purpose btw!).
 
 Since docker has onos and mininet images, we can create container and connect them thought the same network to see the emulation. But!

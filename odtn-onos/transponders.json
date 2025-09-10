@@ -1,0 +1,34 @@
+{
+  "devices": {
+    "netconf:10.100.101.2:2022": {
+      "netconf": {
+        "ip": "10.100.101.2",
+        "port": "2022",
+        "username": "admin",
+        "password": "admin"
+      },
+      "basic": {
+	"locType" : "grid",
+        "gridX" : 0,
+        "gridY" : 400,
+        "name": "TP-1",
+        "driver": "client-line-terminal-device"
+      }
+    },
+    "netconf:10.100.101.3:2022": {
+      "netconf": {
+        "ip": "10.100.101.3",
+        "port": "2022",
+        "username": "admin",
+        "password": "admin"
+      },
+      "basic": {
+	"locType" : "grid",
+        "gridX" : 0,
+        "gridY" : 400,
+        "name": "TP-2",
+        "driver": "client-line-terminal-device"
+      }
+    }
+  }
+}

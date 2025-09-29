@@ -42,11 +42,17 @@ Now the configuration will be persistent and will survive reboots.
 As per official documentation `Microk8` doesn't work very well with `swap`. So, we are going to turn it off permanently. Swap is by default turned off for `server` installation, but we have installed `gui` extension that's why we have to turn in off. 
 
 ```bash
-sudo swapoff -a #turns it off
+sudo swapoff -a #turns it off temporarily
 swapon --show    # should show nothing
 free -h          # Swap: 0B
 
 #but this change doesn't survive reboots, so if you want you can permanent solutions. We don't often reboot our production servers so I am skipping the permanent solution. Also because our server is used by different users and they might need swap spaces. 
+
+#for permanent solution
+sudo swapoff -a
+sudo nano /etc/fstab
+#comment the swap.* file 
+sudo reboot
 ```
 
 ## Server credential

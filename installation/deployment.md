@@ -33,3 +33,8 @@ The WebUI is exposed at this URL `http://localhost/webui` which brings you to th
 ![teraflow-web-ui](./images/teraFlow_WebUI.png)
 
 The next steps involves configuring the Controller, and for that you can go through these discussions.
+
+## Grafana Dashboard
+
+Username: admin
+Password: tfs123

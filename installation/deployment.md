@@ -87,6 +87,32 @@ sudo reboot
 
 You can fix one by one but it keeps coming. So at last I stopped and pursued the easiest solution. This saves time.
 
+## If you have `reset` successfully but having problems enabling `ingress` and `registry`
+
+Check this for [for-ingress](#microk8senable-ingress-fails).
+
+### for removing registry
+
+```bash
+microk8s disable registry --force
+microk8s kubectl get ns container-registry -o jsonpath='{.status.phase}{"\n"}'
+#because we used `jq`
+microk8s kubectl get ns container-registry -o json \
+| jq '.spec.finalizers=[]' \
+| microk8s kubectl replace --raw /api/v1/namespaces/container-registry/finalize -f -
+#optional just to make sure everything is wiped out
+microk8s kubectl -n container-registry get all,pvc,events
+microk8s kubectl patch pvc registry-claim -n container-registry \
+  -p '{"metadata":{"finalizers":null}}' --type=merge || true
+PV=$(microk8s kubectl get pv | awk '/registry/{print $1}')
+[ -n "$PV" ] && microk8s kubectl patch pv "$PV" \
+  -p '{"metadata":{"finalizers":null}}' --type=merge || true
+microk8s kubectl delete ns container-registry --force --grace-period=0 || true
+microk8s kubectl get ns | grep container-registry || echo "namespace removed"
+```
+
+Then enable `registry` again.
+
 ## ***(don't try this) But this day came for me :) 25-09-2025 and I am having fun :(
 
 `It is very normal to change the HOSTNAME of your node(vm, physical-machine)` but remember this! If you were running `pods` before and you have changed the hostname, most likely everything will fail because K8 will consider the hostname with new name as a second node. So, if you are not actually on a second node remove the previous node and reset.

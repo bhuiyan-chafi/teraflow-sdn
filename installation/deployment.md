@@ -53,9 +53,15 @@ microk8s.start # start MicroK8s cluster
 microk8s.reset # reset infrastructure to a clean state, will fail for mode than 1 node
 ```
 
+### Make sure you restart your machine now
+
+```bash
+sudo reboot
+```
+
 If you are executing the commands above(you are done bro). I hope this day never come for me, god is merciful.
 
-microk8s.reset # reset infrastructure to a clean state, will fail for mode than 1 node
+microk8s.reset # resets infrastructure to a clean state but will fail if you have more than 1 node.
 
 ### If you are stuck in `microk8s.reset`
 
@@ -112,6 +118,29 @@ microk8s kubectl get ns | grep container-registry || echo "namespace removed"
 ```
 
 Then enable `registry` again.
+
+## If `CockroachDB` is stuck while re-deploying
+
+Remove finalizers from any leftover objects (only if the sweep printed any):
+
+```bash
+# show objects that still have finalizers
+for r in $(microk8s kubectl api-resources --verbs=list --namespaced -o name); do
+  microk8s kubectl -n crdb get "$r" -o json 2>/dev/null \
+  | jq -r '.items[] | select(.metadata.finalizers) | "\(.kind)/\(.metadata.name)"'
+done
+
+# strip finalizers on those (example for EndpointSlice kind)
+microk8s kubectl -n crdb get endpointslices.discovery.k8s.io -o name \
+| xargs -r -n1 microk8s kubectl -n crdb patch --type=merge -p '{"metadata":{"finalizers":[]}}'
+```
+
+```bash
+microk8s kubectl get ns crdb -o json \
+| jq '.spec.finalizers=[]' \
+| microk8s kubectl replace --raw /api/v1/namespaces/crdb/finalize -f -
+microk8s kubectl get ns | grep -E '^crdb\s' || echo "crdb namespace removed"
+```
 
 ## ***(don't try this) But this day came for me :) 25-09-2025 and I am having fun :(
 

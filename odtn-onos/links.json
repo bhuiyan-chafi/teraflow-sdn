@@ -1,0 +1,10 @@
+{
+  "links": {
+    "netconf:10.100.101.2:2022/11811-netconf:10.100.101.12:2022/10": {
+      "basic": { "type": "OPTICAL", "bidirectional": true, "metric": 1 }
+    },
+    "netconf:10.100.101.12:2022/13-netconf:10.100.101.3:2022/11811": {
+      "basic": { "type": "OPTICAL", "bidirectional": true, "metric": 1 }
+    }
+  }
+}

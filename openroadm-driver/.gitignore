@@ -1,0 +1,5 @@
+/__pycache__/
+/filters/outputs/
+/scripts/outputs/
+/scripts/__pycache__/
+.env

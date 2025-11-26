@@ -1,0 +1,33 @@
+Act as a Senior Optical Network Engineer and TeraFlowSDN Developer. I am working on a Master's Thesis focusing on optimizing spectrum allocation in Disaggregated Optical Networks.
+
+We have already analyzed the network topology and hardware specifications. I need you to ingest the following context so we can modify the TeraFlowSDN source code (Python) to implement a "Super-Channel" (Big Pipe) allocation algorithm.
+
+### 1. The Hardware Context
+* **Transponders (Source):** We have two "Whitebox" 400G Transponders (IPs .101 and .102).
+    * *Hardware:* 4x QSFP-DD Line Ports per box (400ZR Coherent).
+    * *Status:* We are using 3 ports per box (Ports 1, 2, 3). Port 4 is idle.
+    * *Data Model:* OpenConfig (Device-native, hardware-centric).
+* **ROADMs (Destination):** We have two OpenROADM-style nodes.
+    * *Hardware:* Compact shelf with `twin-wss` (Degree) and `mux-demux` (SRG/Add-Drop).
+    * *Architecture:* Colorless, Directionless Add/Drop.
+    * *Port Mapping:* * Transponder Port 1 -> ROADM Port 4101 (Rx) / 5201 (Tx)
+        * Transponder Port 2 -> ROADM Port 4102 (Rx) / 5202 (Tx)
+        * Transponder Port 3 -> ROADM Port 4103 (Rx) / 5203 (Tx)
+
+### 2. The Problem (Thesis Objective)
+Currently, the controller provisions connections sequentially (Intent A, then B, then C). This causes spectrum fragmentation and high CPU usage.
+My goal is to implement a **"Big Pipe" / Super-Channel Algorithm**:
+1.  Group the 3 separate physical connections (Ports 1, 2, 3) into one Logical Intent.
+2.  Calculate the Total Contiguous Spectrum required (e.g., 3 x 75GHz = 225GHz).
+3.  Perform a single "BitSet" check on the Traffic Engineering Database (TED) to find **one contiguous block** of 225GHz.
+4.  Assign sub-slots (e.g., 191.30, 191.375, 191.45 THz) to the 3 transponders relative to that block.
+
+### 3. The Data Models
+* **Transponder Config (`transponders_x4.xml`):** Defines `component` (transceiver) and `terminal-device` (logical-channel PROT_OTN). Note: No client ports are defined; it is Line-side only.
+* **ROADM Config (`nodeTIM.xml`):** Defines `circuit-packs` (SRG, WSS).
+* **Topology JSONs:** We have mapped the links (`T1.1->R1`, etc.) using TeraFlowSDN JSON descriptors.
+
+### 4. Immediate Task
+I need to locate the specific Python service/component in the TeraFlowSDN source code responsible for **Path Computation** and **Spectrum Assignment**. We need to modify the logic to support this "Grouped Allocation" instead of the standard "First-Fit per Interface" approach.
+
+Where should we start looking in the source code to define this new allocation logic?

@@ -1,0 +1,66 @@
+{
+  "topologies": [
+    {
+      "topology_id": {
+        "context_id": { "context_uuid": { "uuid": "admin" } },
+        "topology_uuid": { "uuid": "admin" }
+      },
+      "device_ids": [],
+      "link_ids": []
+    }
+  ],
+  "devices": [
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "TP.A.101.2"
+        }
+      },
+      "device_type": "optical-transponder",
+      "device_drivers": [11],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.101.2"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-transponder",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

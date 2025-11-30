@@ -1,0 +1,43 @@
+let's design a critical skeleton for rsa computation. I want you to read my instructions very carefully and ask questions if you have any! Before starting coding. Here is the current situation:
+
+- I have a path from TPA1:1101 to TPA3:1101
+-- in between RDM1 and RDM2
+
+- I have a path from TPA2:1101 to TPA4:1101
+-- in between RDM1 and RDM2
+
+- I have a path from TPA5:1101 to TPA6:1101
+-- in between RDM1 and RDM2
+
+- the ports of the three transponders TPA1,2,5 are connected to different ports of the RDM1
+- also TPA3,4,6 are connected to 3 ports of RDM2
+
+- so we have 3 links
+
+Computation plan: for the = CONSTANT, create constant variables so that later I can put my test values
+
+- requested source device and port id = CONSTANT
+- requested destination device and port id = CONSTANT
+- take requested slot = CONSTANT 
+- take source port id: has c_slot = 34359738368
+-- convert it into bitmaps(35 of 1s)
+-- log it : use logger
+- take source device id and find out other ports
+-- N found
+--- take their c_slot values and convert into bitmap
+--- log them
+- perform a Union operation between the bitmaps to find a contiguous block > requested slots
+-- print the bitmap( for reserved use 0 and for free 1)
+- store it in a variable as usable_slots
+- now load the path links from requested source to requested destination
+- load all the ports in a variable [[device: , port: , c_slot:]] as path_link_ports(array of arrays)
+- log them
+- now take usable_slots variable and compare with every values inside path_link_ports  
+- if any of the port fails to provide the requested slots, then return False
+- else return True
+
+How to implement this?
+- create an endpoint /rsa-computation
+- create a function rsa_computation in a file rsa.py
+- perform the calculation there
+- add the function in app.py /rsa-computation endpoint

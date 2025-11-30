@@ -1,0 +1,43 @@
+{
+  "services": [
+    {
+      "service_id": {
+        "context_id": { "context_uuid": { "uuid": "admin" } },
+        "service_uuid": { "uuid": "optical-connection1" }
+      },
+      "service_type": 6,
+      "service_status": { "service_status": 1 },
+      "service_endpoint_ids": [
+        {
+          "device_id": { "device_uuid": { "uuid": "TPA1" } },
+          "endpoint_uuid": { "uuid": "1" }
+        },
+        {
+          "device_id": { "device_uuid": { "uuid": "TPA2" } },
+          "endpoint_uuid": { "uuid": "1" }
+        }
+      ],
+      "service_constraints": [
+        {
+          "custom": {
+            "constraint_type": "type",
+            "constraint_value": "flexi_grid"
+          }
+        },
+        {
+          "custom": {
+            "constraint_type": "bandwidth[gbps]",
+            "constraint_value": "800.0"
+          }
+        },
+        {
+          "custom": {
+            "constraint_type": "bidirectionality",
+            "constraint_value": "0"
+          }
+        }
+      ],
+      "service_config": { "config_rules": [] }
+    }
+  ]
+}

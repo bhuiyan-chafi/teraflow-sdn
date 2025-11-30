@@ -1,0 +1,302 @@
+{
+  "device-ports": [
+    {
+      "device_id": "RDM1",
+      "ports": [
+        {
+          "port_id": "1001",
+          "in_use": false,
+          "port_type": "input",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "2001",
+          "in_use": false,
+          "port_type": "output",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "1002",
+          "in_use": false,
+          "port_type": "input",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "2002",
+          "in_use": false,
+          "port_type": "output",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "1003",
+          "in_use": false,
+          "port_type": "input",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "2003",
+          "in_use": false,
+          "port_type": "output",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "3001",
+          "in_use": false,
+          "port_type": "output",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "4001",
+          "in_use": false,
+          "port_type": "input",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "3002",
+          "in_use": false,
+          "port_type": "output",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "4002",
+          "in_use": false,
+          "port_type": "input",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "3003",
+          "in_use": false,
+          "port_type": "output",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "4003",
+          "in_use": false,
+          "port_type": "input",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        }
+      ]
+    },
+    {
+      "device_id": "RDM2",
+      "ports": [
+        {
+          "port_id": "1001",
+          "in_use": false,
+          "port_type": "input",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "2001",
+          "in_use": false,
+          "port_type": "output",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "1002",
+          "in_use": false,
+          "port_type": "input",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "2002",
+          "in_use": false,
+          "port_type": "output",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "1003",
+          "in_use": false,
+          "port_type": "input",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "2003",
+          "in_use": false,
+          "port_type": "output",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "3001",
+          "in_use": false,
+          "port_type": "output",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "4001",
+          "in_use": false,
+          "port_type": "input",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "3002",
+          "in_use": false,
+          "port_type": "output",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "4002",
+          "in_use": false,
+          "port_type": "input",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "3003",
+          "in_use": false,
+          "port_type": "output",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "4003",
+          "in_use": false,
+          "port_type": "input",
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        }
+      ]
+    }
+  ]
+}

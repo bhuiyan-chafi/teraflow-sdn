@@ -1,0 +1,184 @@
+{
+  "frequency_slots": [
+    {
+      "device_id": "TPA1",
+      "port_id": "1101",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "TPA1",
+      "port_id": "1102",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "TPA1",
+      "port_id": "1103",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "TPA2",
+      "port_id": "1101",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "TPA2",
+      "port_id": "1102",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "TPA2",
+      "port_id": "1103",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM1",
+      "port_id": "1001",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM1",
+      "port_id": "1002",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM1",
+      "port_id": "1003",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM1",
+      "port_id": "2001",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM1",
+      "port_id": "2002",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM1",
+      "port_id": "2003",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM1",
+      "port_id": "3001",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM1",
+      "port_id": "3002",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM1",
+      "port_id": "3003",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM1",
+      "port_id": "4001",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM1",
+      "port_id": "4002",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM1",
+      "port_id": "4003",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM2",
+      "port_id": "1001",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM2",
+      "port_id": "1002",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM2",
+      "port_id": "1003",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM2",
+      "port_id": "2001",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM2",
+      "port_id": "2002",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM2",
+      "port_id": "2003",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM2",
+      "port_id": "3001",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM2",
+      "port_id": "3002",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM2",
+      "port_id": "3003",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM2",
+      "port_id": "4001",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM2",
+      "port_id": "4002",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    },
+    {
+      "device_id": "RDM2",
+      "port_id": "4003",
+      "c_slot": 34359738368,
+      "l_slot": 1073741824
+    }
+  ]
+}

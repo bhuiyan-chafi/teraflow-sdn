@@ -1,0 +1,80 @@
+{
+  "devices": [
+    {
+      "device_id": "TPA1",
+      "ports": [
+        {
+          "port_id": "1101",
+          "in_use": false,
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "1102",
+          "in_use": false,
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "1103",
+          "in_use": false,
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        }
+      ]
+    },
+    {
+      "device_id": "TPA2",
+      "ports": [
+        {
+          "port_id": "1101",
+          "in_use": false,
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "1102",
+          "in_use": false,
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        },
+        {
+          "port_id": "1103",
+          "in_use": false,
+          "supported_bands": ["C", "L"],
+          "C_band": {
+            "center_frequency": "193.6"
+          },
+          "L_band": {
+            "center_frequency": "188.1"
+          }
+        }
+      ]
+    }
+  ]
+}

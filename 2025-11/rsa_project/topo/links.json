@@ -1,0 +1,11 @@
+{
+  "links": [
+    {
+      "link_id": "L1",
+      "src_device_id": "TPA1",
+      "src_port_id": "1101",
+      "dst_device_id": "RDM1",
+      "dst_port_id": "1001"
+    }
+  ]
+}

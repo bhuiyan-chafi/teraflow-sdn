@@ -68,5 +68,11 @@ def topology():
     create_topo()
     return render_template('index.html', message="Topology generated!", image="topology2_1_and_1_1.png")
 
+@app.route('/topology-parallel')
+def topology_parallel():
+    from topo import create_topo_parallel
+    create_topo_parallel()
+    return render_template('index.html', message="Topology generated!", image="topology_parallel.png")
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 import os
 from flask_sqlalchemy import SQLAlchemy
@@ -39,40 +39,48 @@ def device_details(device_id):
     device = Devices.query.get_or_404(device_id)
     # Access endpoints via relationship if defined, or query manually
     # Since we didn't define relationship in models yet, we query manually
-    from models import Endpoints
-    endpoints = Endpoints.query.filter_by(device_id=device_id).all()
+    from models import Endpoint
+    endpoints = Endpoint.query.filter_by(device_id=device_id).all()
     return render_template('device_details.html', device=device, endpoints=endpoints)
 
-@app.route('/optical-paths')
-def optical_paths():
-    from models import OpticalPath
-    optical_paths_list = OpticalPath.query.all()
-    return render_template('optical_paths.html', optical_paths=optical_paths_list)
-
-@app.route('/optical-path-details/<uuid:path_id>')
-def optical_path_details(path_id):
-    from models import OpticalPath, OpticalPathLinks
-    path = OpticalPath.query.get_or_404(path_id)
-    links = OpticalPathLinks.query.filter_by(optical_path_uuid=path_id).all()
-    return render_template('optical_path_links.html', path=path, links=links)
-
-@app.route('/rsa-computation')
-def rsa_computation_route():
-    from rsa import rsa_computation
-    result = rsa_computation()
-    return result
+@app.route('/optical-links')
+def optical_links():
+    from models import OpticalLink
+    links = OpticalLink.query.all()
+    return render_template('optical_links.html', links=links)
 
 @app.route('/topology')
 def topology():
-    from topo import create_topo
-    create_topo()
-    return render_template('index.html', message="Topology generated!", image="topology2_1_and_1_1.png")
+    from topology import generate_topology_graph
+    image_file = generate_topology_graph()
+    return render_template('topology.html', image=image_file)
 
-@app.route('/topology-parallel')
-def topology_parallel():
-    from topo import create_topo_parallel
-    create_topo_parallel()
-    return render_template('index.html', message="Topology generated!", image="topology_parallel.png")
+@app.route('/path-finder', methods=['GET', 'POST'])
+def path_finder():
+    from models import Devices
+    from topology import find_paths
+    
+    if request.method == 'POST':
+        src_device = request.form.get('src_device')
+        src_port = request.form.get('src_port')
+        dst_device = request.form.get('dst_device')
+        dst_port = request.form.get('dst_port')
+        bandwidth = request.form.get('bandwidth')
+        
+        paths = find_paths(src_device, src_port, dst_device, dst_port, bandwidth)
+        
+        return render_template('paths.html', 
+                             dijkstra_paths=paths['dijkstra'], 
+                             all_paths=paths['all_paths'],
+                             src_device=src_device,
+                             src_port=src_port,
+                             dst_device=dst_device,
+                             dst_port=dst_port,
+                             bandwidth=bandwidth)
+    
+    devices = Devices.query.all()
+    return render_template('path_finder.html', devices=devices)
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

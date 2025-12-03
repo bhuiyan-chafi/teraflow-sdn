@@ -28,8 +28,6 @@
             <th scope="col">Type</th>
             <th scope="col">OTN Type</th>
             <th scope="col">In Use</th>
-            <th scope="col">C Slot</th>
-            <th scope="col">L Slot</th>
           </tr>
         </thead>
         <tbody>
@@ -46,12 +44,10 @@
               <span class="badge bg-secondary">No</span>
               {% endif %}
             </td>
-            <td>{{ endpoint.c_slot }}</td>
-            <td>{{ endpoint.l_slot }}</td>
           </tr>
           {% else %}
           <tr>
-            <td colspan="7" class="text-center">No endpoints found for this device.</td>
+            <td colspan="5" class="text-center">No endpoints found for this device.</td>
           </tr>
           {% endfor %}
         </tbody>

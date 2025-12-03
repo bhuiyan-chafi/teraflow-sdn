@@ -41,3 +41,22 @@ How to implement this?
 - create a function rsa_computation in a file rsa.py
 - perform the calculation there
 - add the function in app.py /rsa-computation endpoint
+
+Topology Generation Prompt:
+
+Now we have the hardest part:
+- consider all these devices, endpoints and links part of the same topology
+- @test_topo.pdf has the pictorial representation
+- do you think it is possible to draw the topology using networkX package?
+- for example you can consider each devices as a node
+- each link as an edge
+- now we have multple connections from one node to another node. In the link we have different ports but in networkX we don't have the concept of ports
+- so we take different colors from node to node, as example you can check @topo.py 
+- keep all the information of a link using additional variables inside the add_edge function
+- because we will need the src_port, dst_port, c_slot, l_slot for further calculations
+- use different colors and angles to visualize the links, try bright colors so that it's visible
+- generate the topology and create a new file topology.py and remove @topo.py 
+- create a function there in topology.py and do everything there
+- save it as a picture using matplot 
+- then use the app.py file to create an url /topology and display the topology using a new template file topology.html
+- remove unused contents from everywhere while you go through 

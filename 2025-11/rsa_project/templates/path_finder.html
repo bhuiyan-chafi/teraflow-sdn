@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Path Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="mb-4">Optical Path Finder</h1>
+      <div class="card">
+        <div class="card-body">
+          <form action="{{ url_for('path_finder') }}" method="POST">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="src_device" class="form-label">Source Device</label>
+                <select class="form-select" id="src_device" name="src_device" required>
+                  <option value="" selected disabled>Select Source Device</option>
+                  {% for device in devices %}
+                  <option value="{{ device.name }}">{{ device.name }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="src_port" class="form-label">Source Port</label>
+                <select class="form-select" id="src_port" name="src_port" required disabled>
+                  <option value="" selected disabled>Select Source Device First</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="dst_device" class="form-label">Destination Device</label>
+                <select class="form-select" id="dst_device" name="dst_device" required>
+                  <option value="" selected disabled>Select Destination Device</option>
+                  {% for device in devices %}
+                  <option value="{{ device.name }}">{{ device.name }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="dst_port" class="form-label">Destination Port</label>
+                <select class="form-select" id="dst_port" name="dst_port" required disabled>
+                  <option value="" selected disabled>Select Destination Device First</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="bandwidth" class="form-label">Bandwidth (Gbps)</label>
+              <select class="form-select" id="bandwidth" name="bandwidth">
+                <option value="50">50 Gbps</option>
+                <option value="75">75 Gbps</option>
+                <option value="100">100 Gbps</option>
+              </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Find Paths</button>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Home</a>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      const deviceEndpoints = {
+        {% for device in devices %}
+        "{{ device.name }}": [
+          {% for endpoint in device.endpoints %}
+          "{{ endpoint.name }}",
+          {% endfor %}
+        ],
+        {% endfor %}
+      };
+
+      function updatePorts(deviceSelectId, portSelectId) {
+        const deviceSelect = document.getElementById(deviceSelectId);
+        const portSelect = document.getElementById(portSelectId);
+        const selectedDevice = deviceSelect.value;
+        
+        // Clear existing options
+        portSelect.innerHTML = '<option value="" selected disabled>Select Port</option>';
+        
+        if (selectedDevice && deviceEndpoints[selectedDevice]) {
+          portSelect.disabled = false;
+          deviceEndpoints[selectedDevice].forEach(port => {
+            const option = document.createElement('option');
+            option.value = port;
+            option.textContent = port;
+            portSelect.appendChild(option);
+          });
+        } else {
+          portSelect.disabled = true;
+          portSelect.innerHTML = '<option value="" selected disabled>Select Device First</option>';
+        }
+      }
+
+      document.getElementById('src_device').addEventListener('change', function() {
+        updatePorts('src_device', 'src_port');
+      });
+
+      document.getElementById('dst_device').addEventListener('change', function() {
+        updatePorts('dst_device', 'dst_port');
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

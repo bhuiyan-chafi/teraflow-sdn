@@ -13,10 +13,11 @@
         <p class="lead">Running with NetworkX and Bootstrap 5.</p>
       </div>
       <div class="row">
-        <div class="col-6">
-        {% if image %}
-          <img src="{{ url_for('static', filename=image) }}" class="img-fluid" alt="Topology Graph">
-        {% endif %}
+        <div class="col">
+          <a href="{{ url_for('devices') }}" class="btn btn-primary">View Devices</a>
+        <a href="{{ url_for('optical_links') }}" class="btn btn-primary">View Optical Links</a>
+        <a href="{{ url_for('topology') }}" class="btn btn-primary">Generate Topology</a>
+        <a href="{{ url_for('path_finder') }}" class="btn btn-primary">Path Finder</a>
         </div>
       </div>
     </div>

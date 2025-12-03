@@ -11,7 +11,8 @@ services:
       - FLASK_DEBUG=1
       - DATABASE_URL=postgresql://rsa_user:rsa_password@db:5432/rsa_db
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   db:
     image: postgres:15-alpine
@@ -20,10 +21,10 @@ services:
       POSTGRES_USER: rsa_user
       POSTGRES_PASSWORD: rsa_password
       POSTGRES_DB: rsa_db
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
-
-volumes:
-  postgres_data:
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rsa_user -d rsa_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5

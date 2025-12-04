@@ -3,6 +3,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from models import Devices, OpticalLink, Endpoint
+from helpers import TopologyHelper
 import os
 
 def build_graph(directed=False):
@@ -177,151 +178,6 @@ def find_paths(src_dev, src_port, dst_dev, dst_port, bandwidth=None):
         'all_paths': []
     }
     
-    # Helper to convert node path to detailed link path
-    def expand_path(node_path, graph_to_use):
-        valid_edge_paths = []
-        
-        def backtrack(index, current_edge_path):
-            if index == len(node_path) - 1:
-                # Check validity of the full path
-                is_valid = True
-                for link in current_edge_path:
-                    if link['status'] != 'FREE':
-                        is_valid = False
-                        break
-                
-                valid_edge_paths.append({
-                    'links': list(current_edge_path),
-                    'is_valid': is_valid
-                })
-                return
-
-            u = node_path[index]
-            v = node_path[index+1]
-            
-            # Find all edges between u and v in the specified graph
-            if not graph_to_use.has_edge(u, v):
-                return
-                
-            edges = graph_to_use[u][v] # dict of key -> attributes
-            
-            for key, attr in edges.items():
-                # Determine ports based on direction
-                if attr['original_src'] == u and attr['original_dst'] == v:
-                    out_port = attr['src_port']
-                    in_port = attr['dst_port']
-                elif attr['original_src'] == v and attr['original_dst'] == u:
-                    out_port = attr['dst_port']
-                    in_port = attr['src_port']
-                else:
-                    continue
-
-                # Check constraints
-                if index == 0 and src_port and out_port != src_port:
-                    continue
-                
-                if index == len(node_path) - 2 and dst_port and in_port != dst_port:
-                    continue
-                    
-                # Add to path
-                current_edge_path.append({
-                    'src': u,
-                    'dst': v,
-                    'src_port': out_port,
-                    'dst_port': in_port,
-                    'name': attr['name'],
-                    'status': attr['status'],
-                    'c_slot': attr['c_slot'] # Include c_slot for RSA
-                })
-                
-                backtrack(index + 1, current_edge_path)
-                current_edge_path.pop()
-
-        backtrack(0, [])
-        return valid_edge_paths
-
-    # --- RSA Computation Function ---
-    import math
-    
-    def perform_rsa(path_obj, bandwidth):
-        if not bandwidth:
-            return None
-            
-        FLEX_GRID = 12.5
-        num_slots = math.ceil(float(bandwidth) / FLEX_GRID)
-        logger.info(f"[RSA] Starting RSA for bandwidth {bandwidth}Gbps. Required slots: {num_slots} (Bitmap: {'1' * int(num_slots)})")
-        # Initialize bitmap with the first link's c_slot
-        if not path_obj['links']:
-            logger.warning("[RSA] Path has no links!")
-            return None
-            
-        first_link = path_obj['links'][0]
-        path_bitmap = int(first_link['c_slot'])
-        
-        # User requested to derive TOTAL_SLOTS from the bitmap length
-        TOTAL_SLOTS = path_bitmap.bit_length()
-        
-        logger.info(f"[RSA] Initial Path Bitmap (from {first_link['name']}): {path_bitmap:b} (Length: {TOTAL_SLOTS})")
-        
-        # 1. Calculate Intersection (start from second link)
-        for i, link in enumerate(path_obj['links'][1:], start=1):
-            c_slot_val = int(link['c_slot'])
-            path_bitmap &= c_slot_val
-            logger.info(f"[RSA] Link {i+1} ({link['name']}) Bitmap: {c_slot_val:b} -> Intersection: {path_bitmap:b}")
-            
-        # 2. Find Contiguous Slots (First Fit from LSB)
-        start_bit = -1
-        current_run = 0
-        
-        # Iterate from bit 0 (LSB) to 34 (MSB)
-        for i in range(TOTAL_SLOTS):
-            # Check if bit i is set (1)
-            is_free = (path_bitmap >> i) & 1
-            
-            if is_free:
-                current_run += 1
-                if current_run == num_slots:
-                    # Found a run ending at i
-                    # It started at i - num_slots + 1
-                    start_bit = i - num_slots + 1
-                    logger.info(f"[RSA] Found {num_slots} contiguous slots starting at bit {start_bit} (LSB)")
-                    break
-            else:
-                current_run = 0
-                
-        if start_bit != -1:
-            # Found slots!
-            
-            # Create "Required Slots" bitmap (N of 1s at the correct position)
-            # Shift 1s to the start_bit position
-            mask = ((1 << num_slots) - 1) << start_bit
-            
-            # Create Final Bitmap (Intersection with slots taken -> 0)
-            final_bitmap_val = path_bitmap & ~mask
-            
-            # Format as strings (dynamic length)
-            common_bitmap_str = f"{path_bitmap:0{TOTAL_SLOTS}b}"
-            required_slots_str = f"{mask:0{TOTAL_SLOTS}b}"
-            final_bitmap_str = f"{final_bitmap_val:0{TOTAL_SLOTS}b}"
-            
-            logger.info(f"[RSA] Success! Final Bitmap: {final_bitmap_str}")
-            
-            return {
-                'success': True,
-                'num_slots': num_slots,
-                'common_bitmap': common_bitmap_str,
-                'required_slots': required_slots_str,
-                'final_bitmap': final_bitmap_str
-            }
-        else:
-            logger.warning(f"[RSA] Failed. No contiguous slots found.")
-            return {
-                'success': False,
-                'num_slots': num_slots,
-                'common_bitmap': f"{path_bitmap:0{TOTAL_SLOTS}b}",
-                'error': "No contiguous slots found"
-            }
-
     # --- 1. Dijkstra Shortest Path (Strictly FREE) ---
     # Create G_free containing only FREE edges
     G_free = nx.MultiGraph()
@@ -330,8 +186,10 @@ def find_paths(src_dev, src_port, dst_dev, dst_port, bandwidth=None):
         if d.get('status') == 'FREE':
             G_free.add_edge(u, v, key=k, **d)
             
+    logger.info(f"[DEBUG] Filtered Graph (FREE links only): {G_free.number_of_nodes()} nodes, {G_free.number_of_edges()} edges")
+
     G_simple_free = nx.Graph(G_free)
-    logger.info(f"[DEBUG] Simple Graph (FREE only) created: {G_simple_free.number_of_nodes()} nodes, {G_simple_free.number_of_edges()} edges")
+    logger.info(f"[DEBUG] Simple Graph (UNIQUE connected pairs with FREE links): {G_simple_free.number_of_nodes()} nodes, {G_simple_free.number_of_edges()} edges")
 
     try:
         logger.info(f"[DEBUG] Searching for shortest path (Dijkstra) on FREE graph...")
@@ -339,7 +197,7 @@ def find_paths(src_dev, src_port, dst_dev, dst_port, bandwidth=None):
         logger.info(f"[DEBUG] Dijkstra node path found: {dijkstra_node_path}")
         
         # Expand using G_free to ensure we only pick FREE links
-        d_edge_paths = expand_path(dijkstra_node_path, G_free)
+        d_edge_paths = TopologyHelper.expand_path(dijkstra_node_path, G_free, src_port, dst_port)
         logger.info(f"[DEBUG] Expanded Dijkstra path to {len(d_edge_paths)} valid physical paths.")
         
         # User requested ONLY ONE path for Dijkstra, even if parallel links exist
@@ -347,7 +205,7 @@ def find_paths(src_dev, src_port, dst_dev, dst_port, bandwidth=None):
         
         # Perform RSA if bandwidth is provided
         if selected_path and bandwidth:
-            rsa_res = perform_rsa(selected_path[0], bandwidth)
+            rsa_res = TopologyHelper.perform_rsa(selected_path[0], bandwidth, G)
             if rsa_res:
                 selected_path[0]['rsa_result'] = rsa_res
                 
@@ -370,7 +228,7 @@ def find_paths(src_dev, src_port, dst_dev, dst_port, bandwidth=None):
         for i, node_path in enumerate(simple_node_paths):
             logger.info(f"[DEBUG] Expanding Route {i+1}: {node_path}")
             # Expand using full G to include USED links
-            edge_paths = expand_path(node_path, G)
+            edge_paths = TopologyHelper.expand_path(node_path, G, src_port, dst_port)
             count = len(edge_paths)
             logger.info(f"[DEBUG] Route {i+1} expanded to {count} physical paths.")
             paths_result['all_paths'].extend(edge_paths)

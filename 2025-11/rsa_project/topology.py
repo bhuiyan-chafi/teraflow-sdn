@@ -42,30 +42,28 @@ def build_graph(directed=False):
     return G
 
 def generate_topology_graph():
-    # 1. Build Directed Graph for Layout (Linearity)
-    # This ensures TP1 is treated as a source and TP3 as a destination
-    G_layout = build_graph(directed=True)
-    
-    # 2. Build Undirected Graph for Drawing (Parallel Links)
-    G = build_graph(directed=False)
+    # Build Directed Graph once for both Layout (Linearity) and Drawing
+    # Layout needs directed=True for in_degree (Left->Right flow)
+    # Drawing works fine with directed=True because we group edges manually
+    G = build_graph(directed=True)
 
     # Visualization
     plt.figure(figsize=(15, 8))
     
-    # --- Layout Calculation using G_layout (Directed) ---
+    # --- Layout Calculation using G (Directed) ---
     layers = {}
     # Find sources (in-degree 0) in the DIRECTED graph
-    sources = [n for n, d in G_layout.in_degree() if d == 0]
+    sources = [n for n, d in G.in_degree() if d == 0]
     if not sources:
-        sources = [n for n in G_layout.nodes() if 'TP' in n] # Fallback
+        sources = [n for n in G.nodes() if 'TP' in n] # Fallback
         
     # Longest path layering using DIRECTED graph
-    for node in G_layout.nodes():
+    for node in G.nodes():
         max_dist = 0
         for source in sources:
             try:
-                if nx.has_path(G_layout, source, node):
-                    dist = nx.shortest_path_length(G_layout, source, node)
+                if nx.has_path(G, source, node):
+                    dist = nx.shortest_path_length(G, source, node)
                     if dist > max_dist:
                         max_dist = dist
             except:
@@ -169,6 +167,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 def find_paths(src_dev, src_port, dst_dev, dst_port, bandwidth=None):
+    HIGHEST_HOP = 10
     logger.info(f"[DEBUG] find_paths called: {src_dev}:{src_port} -> {dst_dev}:{dst_port} (BW: {bandwidth})")
     G = build_graph()
     logger.info(f"[DEBUG] Graph built: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
@@ -179,25 +178,35 @@ def find_paths(src_dev, src_port, dst_dev, dst_port, bandwidth=None):
     }
     
     # Helper to convert node path to detailed link path
-    def expand_path(node_path):
+    def expand_path(node_path, graph_to_use):
         valid_edge_paths = []
         
         def backtrack(index, current_edge_path):
             if index == len(node_path) - 1:
-                valid_edge_paths.append(list(current_edge_path))
+                # Check validity of the full path
+                is_valid = True
+                for link in current_edge_path:
+                    if link['status'] != 'FREE':
+                        is_valid = False
+                        break
+                
+                valid_edge_paths.append({
+                    'links': list(current_edge_path),
+                    'is_valid': is_valid
+                })
                 return
 
             u = node_path[index]
             v = node_path[index+1]
             
-            # Find all edges between u and v
-            edges = G[u][v] # dict of key -> attributes
+            # Find all edges between u and v in the specified graph
+            if not graph_to_use.has_edge(u, v):
+                return
+                
+            edges = graph_to_use[u][v] # dict of key -> attributes
             
             for key, attr in edges.items():
                 # Determine ports based on direction
-                # If original link was u->v: out_port=src_port, in_port=dst_port
-                # If original link was v->u: out_port=dst_port, in_port=src_port
-                
                 if attr['original_src'] == u and attr['original_dst'] == v:
                     out_port = attr['src_port']
                     in_port = attr['dst_port']
@@ -205,15 +214,12 @@ def find_paths(src_dev, src_port, dst_dev, dst_port, bandwidth=None):
                     out_port = attr['dst_port']
                     in_port = attr['src_port']
                 else:
-                    # Should not happen if logic is correct
                     continue
 
                 # Check constraints
-                # 1. First hop: u is source. out_port must match src_port
                 if index == 0 and src_port and out_port != src_port:
                     continue
                 
-                # 2. Last hop: v is destination. in_port must match dst_port
                 if index == len(node_path) - 2 and dst_port and in_port != dst_port:
                     continue
                     
@@ -223,7 +229,9 @@ def find_paths(src_dev, src_port, dst_dev, dst_port, bandwidth=None):
                     'dst': v,
                     'src_port': out_port,
                     'dst_port': in_port,
-                    'name': attr['name']
+                    'name': attr['name'],
+                    'status': attr['status'],
+                    'c_slot': attr['c_slot'] # Include c_slot for RSA
                 })
                 
                 backtrack(index + 1, current_edge_path)
@@ -232,34 +240,137 @@ def find_paths(src_dev, src_port, dst_dev, dst_port, bandwidth=None):
         backtrack(0, [])
         return valid_edge_paths
 
-    # Create a simple Graph (Undirected) for finding unique node sequences
-    G_simple = nx.Graph(G)
-    logger.info(f"[DEBUG] Simple Graph created for routing: {G_simple.number_of_nodes()} nodes, {G_simple.number_of_edges()} edges")
+    # --- RSA Computation Function ---
+    import math
+    
+    def perform_rsa(path_obj, bandwidth):
+        if not bandwidth:
+            return None
+            
+        FLEX_GRID = 12.5
+        num_slots = math.ceil(float(bandwidth) / FLEX_GRID)
+        logger.info(f"[RSA] Starting RSA for bandwidth {bandwidth}Gbps. Required slots: {num_slots} (Bitmap: {'1' * int(num_slots)})")
+        # Initialize bitmap with the first link's c_slot
+        if not path_obj['links']:
+            logger.warning("[RSA] Path has no links!")
+            return None
+            
+        first_link = path_obj['links'][0]
+        path_bitmap = int(first_link['c_slot'])
+        
+        # User requested to derive TOTAL_SLOTS from the bitmap length
+        TOTAL_SLOTS = path_bitmap.bit_length()
+        
+        logger.info(f"[RSA] Initial Path Bitmap (from {first_link['name']}): {path_bitmap:b} (Length: {TOTAL_SLOTS})")
+        
+        # 1. Calculate Intersection (start from second link)
+        for i, link in enumerate(path_obj['links'][1:], start=1):
+            c_slot_val = int(link['c_slot'])
+            path_bitmap &= c_slot_val
+            logger.info(f"[RSA] Link {i+1} ({link['name']}) Bitmap: {c_slot_val:b} -> Intersection: {path_bitmap:b}")
+            
+        # 2. Find Contiguous Slots (First Fit from LSB)
+        start_bit = -1
+        current_run = 0
+        
+        # Iterate from bit 0 (LSB) to 34 (MSB)
+        for i in range(TOTAL_SLOTS):
+            # Check if bit i is set (1)
+            is_free = (path_bitmap >> i) & 1
+            
+            if is_free:
+                current_run += 1
+                if current_run == num_slots:
+                    # Found a run ending at i
+                    # It started at i - num_slots + 1
+                    start_bit = i - num_slots + 1
+                    logger.info(f"[RSA] Found {num_slots} contiguous slots starting at bit {start_bit} (LSB)")
+                    break
+            else:
+                current_run = 0
+                
+        if start_bit != -1:
+            # Found slots!
+            
+            # Create "Required Slots" bitmap (N of 1s at the correct position)
+            # Shift 1s to the start_bit position
+            mask = ((1 << num_slots) - 1) << start_bit
+            
+            # Create Final Bitmap (Intersection with slots taken -> 0)
+            final_bitmap_val = path_bitmap & ~mask
+            
+            # Format as strings (dynamic length)
+            common_bitmap_str = f"{path_bitmap:0{TOTAL_SLOTS}b}"
+            required_slots_str = f"{mask:0{TOTAL_SLOTS}b}"
+            final_bitmap_str = f"{final_bitmap_val:0{TOTAL_SLOTS}b}"
+            
+            logger.info(f"[RSA] Success! Final Bitmap: {final_bitmap_str}")
+            
+            return {
+                'success': True,
+                'num_slots': num_slots,
+                'common_bitmap': common_bitmap_str,
+                'required_slots': required_slots_str,
+                'final_bitmap': final_bitmap_str
+            }
+        else:
+            logger.warning(f"[RSA] Failed. No contiguous slots found.")
+            return {
+                'success': False,
+                'num_slots': num_slots,
+                'common_bitmap': f"{path_bitmap:0{TOTAL_SLOTS}b}",
+                'error': "No contiguous slots found"
+            }
 
-    # 1. Dijkstra Shortest Path
+    # --- 1. Dijkstra Shortest Path (Strictly FREE) ---
+    # Create G_free containing only FREE edges
+    G_free = nx.MultiGraph()
+    G_free.add_nodes_from(G.nodes(data=True))
+    for u, v, k, d in G.edges(keys=True, data=True):
+        if d.get('status') == 'FREE':
+            G_free.add_edge(u, v, key=k, **d)
+            
+    G_simple_free = nx.Graph(G_free)
+    logger.info(f"[DEBUG] Simple Graph (FREE only) created: {G_simple_free.number_of_nodes()} nodes, {G_simple_free.number_of_edges()} edges")
+
     try:
-        logger.info(f"[DEBUG] Searching for shortest path (Dijkstra) on simple graph...")
-        dijkstra_node_path = nx.shortest_path(G_simple, source=src_dev, target=dst_dev)
+        logger.info(f"[DEBUG] Searching for shortest path (Dijkstra) on FREE graph...")
+        dijkstra_node_path = nx.shortest_path(G_simple_free, source=src_dev, target=dst_dev)
         logger.info(f"[DEBUG] Dijkstra node path found: {dijkstra_node_path}")
         
-        # Expand using the original MultiGraph G
-        d_edge_paths = expand_path(dijkstra_node_path)
+        # Expand using G_free to ensure we only pick FREE links
+        d_edge_paths = expand_path(dijkstra_node_path, G_free)
         logger.info(f"[DEBUG] Expanded Dijkstra path to {len(d_edge_paths)} valid physical paths.")
-        paths_result['dijkstra'].extend(d_edge_paths)
+        
+        # User requested ONLY ONE path for Dijkstra, even if parallel links exist
+        selected_path = d_edge_paths[:1]
+        
+        # Perform RSA if bandwidth is provided
+        if selected_path and bandwidth:
+            rsa_res = perform_rsa(selected_path[0], bandwidth)
+            if rsa_res:
+                selected_path[0]['rsa_result'] = rsa_res
+                
+        paths_result['dijkstra'].extend(selected_path)
     except nx.NetworkXNoPath:
-        logger.info(f"[DEBUG] No Dijkstra path found.")
+        logger.info(f"[DEBUG] No Dijkstra path found on FREE graph.")
         pass
 
-    # 2. All Simple Paths
+    # --- 2. All Simple Paths (Include USED) ---
+    # Use original G and G_simple
+    G_simple = nx.Graph(G)
+    logger.info(f"[DEBUG] Simple Graph (All) created: {G_simple.number_of_nodes()} nodes, {G_simple.number_of_edges()} edges")
+    
     try:
-        logger.info(f"[DEBUG] Searching for all simple paths (cutoff=10) on simple graph...")
-        simple_node_paths = list(nx.all_simple_paths(G_simple, source=src_dev, target=dst_dev, cutoff=10))
+        logger.info(f"[DEBUG] Searching for all simple paths (HIGHEST_HOP={HIGHEST_HOP}) on full graph...")
+        simple_node_paths = list(nx.all_simple_paths(G_simple, source=src_dev, target=dst_dev, cutoff=HIGHEST_HOP))
         logger.info(f"[DEBUG] Found {len(simple_node_paths)} unique node sequences (routes).")
         
         total_edge_paths = 0
         for i, node_path in enumerate(simple_node_paths):
             logger.info(f"[DEBUG] Expanding Route {i+1}: {node_path}")
-            edge_paths = expand_path(node_path)
+            # Expand using full G to include USED links
+            edge_paths = expand_path(node_path, G)
             count = len(edge_paths)
             logger.info(f"[DEBUG] Route {i+1} expanded to {count} physical paths.")
             paths_result['all_paths'].extend(edge_paths)

@@ -237,3 +237,39 @@ If you have any question let me know.
 - specially endpoints table
 - we need to check before inserting if the entry already exists
 - the reason it is happening is because the 'name' field is not unique 
+
+==> we have solved this issue. Now we will do the next optimization:
+- I want you to have a look at the graph building process
+- we are removing the used links from the graph, for path computation
+- then we are applying dijkstra on the graph with no used links
+Study this and get back to me.
+- if you look at line number 29 in @topology.py, we are not tagging the edge type in the graph
+- which means in the graph we don't know if the edge is a OCH or OMS type link
+- as we know OCH links cannot be re-used but OMS for sure should be re-used untill they are full
+- that is the concept of WDM
+- but the links in database doesn't device if it's OCH or OMS
+- how we realize that is from the endpoint table where we have defined each port as OCH or OMS
+- this is the same logic we also used to define the status in the optical-link web presentation
+- now we have to perform a logic before adding an edge to the graph
+- we will check each endpoint in an edge and:
+-- if both src and dst endpoints are OCH we will add otn_type=OCH in the edge
+-- if both are OMS we will add otn_type=OMS in the edge
+-- it is 100% sure that two type will never be OCH and OMS unless the user or device has an Error
+-- if we find one OCH and one OMS we will tag it as otn_type=ERROR and log it using logger
+- thus we will open OMS edges for further use and tag OCH edges unused
+- next time when we will do another path computation we will consider OMS if they are not full
+
+Now the question is how we are going to know if they are FREE,USED or FULl?
+- well this is defined in the database status field 'status=link.status' in the graph where we have three values: FREE, USED, FULL
+- we will check the otn_type and then status
+- if the results are OMS and !FULL we will use that edge for path computation
+
+Let me know if you have any questions.
+
+==> we have achieved this. Now we will do the next optimization:
+- if you look at the picture
+- all available paths are showing RDM-RDM(OMS) as used and path is Invalid
+- which is not True
+- so, even for all available paths we have to consider the same scenario
+- unless it's otn type is OCH we will consider it valid and then check if its FULL
+- only for FULL OMS we will show it as FULL and the path asInvalid

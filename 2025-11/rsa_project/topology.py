@@ -20,17 +20,26 @@ def build_graph(directed=False):
 
     # Fetch all optical links (edges)
     links = OpticalLink.query.all()
-    
     for link in links:
         src_device = link.src_device.name
         dst_device = link.dst_device.name
+        # Determine OTN Type
+        src_otn = link.src_endpoint.otn_type
+        dst_otn = link.dst_endpoint.otn_type
         
+        if src_otn == dst_otn:
+            otn_type = src_otn
+        else:
+            otn_type = "ERROR"
+            logger.error(f"[Graph Build] OTN TYPE MISMATCH on link {link.name}: {src_otn} vs {dst_otn}")
+
         # Add edge with all attributes
         G.add_edge(
             src_device, 
             dst_device, 
             key=link.id,
             name=link.name,
+            otn_type=otn_type,
             original_src=src_device,
             original_dst=dst_device,
             src_port=link.src_endpoint.name,
@@ -182,9 +191,19 @@ def find_paths(src_dev, src_port, dst_dev, dst_port, bandwidth=None):
     # Create G_free containing only FREE edges
     G_free = nx.MultiGraph()
     G_free.add_nodes_from(G.nodes(data=True))
+    # Dijkstra logic: 
+    # - OCH links MUST be FREE (as they cannot be shared)
+    # - OMS links can be shared UNLESS they are FULL
     for u, v, k, d in G.edges(keys=True, data=True):
-        if d.get('status') == 'FREE':
+        otn = d.get('otn_type')
+        status = d.get('status')
+        
+        if otn == 'OCH' and status == 'FREE':
             G_free.add_edge(u, v, key=k, **d)
+        elif otn == 'OMS' and status != 'FULL':
+            G_free.add_edge(u, v, key=k, **d)
+        elif otn == 'ERROR':
+            logger.warning(f"[Pathfinder] Skipping malformed link {d.get('name')} (ERROR type)")
             
     logger.info(f"[DEBUG] Filtered Graph (FREE links only): {G_free.number_of_nodes()} nodes, {G_free.number_of_edges()} edges")
 

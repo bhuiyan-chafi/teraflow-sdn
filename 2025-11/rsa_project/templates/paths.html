@@ -1,23 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Path Finder Results</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container mt-5 mb-4">
       <h1 class="mb-4">Path Finder Results</h1>
-      
+
       <div class="alert alert-info">
-        <strong>Request:</strong> {{ src_device }}:{{ src_port }} &rarr; {{ dst_device }}:{{ dst_port }} ({{ bandwidth }} Gbps)
+        <strong>Request:</strong> {{ src_device }}:{{ src_port }} &rarr; {{
+        dst_device }}:{{ dst_port }} ({{ bandwidth }} Gbps)
       </div>
 
-    {# Dijkstra Path #}
-    {% if dijkstra_paths %}
-      {% set path_obj = dijkstra_paths[0] %}
-      {% set path = path_obj.links %}
+      {# Dijkstra Path #} {% if dijkstra_paths %} {% set path_obj =
+      dijkstra_paths[0] %} {% set path = path_obj.links %}
       <div class="card mb-4 border-primary">
         <div class="card-header bg-primary text-white">
           <h5 class="mb-0">Shortest Path (Dijkstra)</h5>
@@ -27,183 +29,268 @@
             <span class="badge bg-success me-2">Recommended</span>
             <div class="h5 mb-0">
               {% for link in path %}
-                <span class="badge bg-secondary">{{ link.src }}</span> &rarr;
-                {% if loop.last %}
-                  <span class="badge bg-secondary">{{ link.dst }}</span>
-                {% endif %}
-              {% endfor %}
+              <span class="badge bg-secondary">{{ link.src }}</span> &rarr; {%
+              if loop.last %}
+              <span class="badge bg-secondary">{{ link.dst }}</span>
+              {% endif %} {% endfor %}
             </div>
           </div>
           <div class="mt-2 text-muted">
             <small>
-              {% for link in path %}
-                {{ link.name }} ({{ link.src_port }}&rarr;{{ link.dst_port }}){% if not loop.last %} | {% endif %}
+              {% for link in path %} {{ link.name }} ({{ link.src_port
+              }}&rarr;{{ link.dst_port }}){% if not loop.last %} | {% endif %}
               {% endfor %}
             </small>
           </div>
           <div class="mt-3">
-             {% if path_obj.rsa_result %}
-                {% set rsa = path_obj.rsa_result %}
-                {% if rsa.success %}
-                    <div class="alert alert-success mb-0">
-                        <strong>RSA Computation Successful</strong><br>
-                        <small>Required Slots: {{ rsa.num_slots }}</small>
-                        <hr class="my-2">
-                        <div style="font-family: monospace; font-size: 0.9em;">
-                            <div class="mb-3">
-                                <button class="btn btn-sm btn-link p-0 text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target="#rsaTraceSuccess" aria-expanded="false" aria-controls="rsaTraceSuccess">
-                                    <strong>[+] Show Calculation Trace (Parallel Link Intersection)</strong>
-                                </button>
-                                <div class="collapse mt-2" id="rsaTraceSuccess">
-                                    <div class="border-start border-3 ps-2">
-                                        {% for step in rsa.trace_steps %}
-                                            <div class="text-primary mt-2">Hop {{ step.hop_index }}: {{ step.hop_label }}</div>
-                                            {% for link in step.parallel_links %}
-                                                <div class="text-muted ms-3">Link ({{ link.name }}): {{ link.bitmap }}</div>
-                                            {% endfor %}
-                                            <div class="ms-3">Hop Result: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ step.hop_bitmap }}</div>
-                                            <div class="ms-3 fw-bold border-bottom pb-1">Cumulative Path: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ step.cumulative_bitmap }}</div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            </div>
-                            <hr class="my-2">
-                            <div>Final Available: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ rsa.common_bitmap }}</div>
-                            <div>Required slots: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ rsa.required_slots }}</div>
-                            <div class="text-success">After Acquisition: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ rsa.final_bitmap }}</div>
-                            
-                            <div class="mt-3">
-                                <form action="{{ url_for('acquire_path') }}" method="POST">
-                                    {% for link in path %}
-                                        <input type="hidden" name="link_ids" value="{{ link.id }}">
-                                    {% endfor %}
-                                    <input type="hidden" name="mask" value="{{ rsa.mask }}">
-                                    <button type="submit" class="btn btn-success w-100">Acquire Slots</button>
-                                </form>
-                            </div>
-                        </div>
+            {% if path_obj.rsa_result %} {% set rsa = path_obj.rsa_result %} {%
+            if rsa.success %}
+            <div class="alert alert-success mb-0">
+              <strong>RSA Computation Successful</strong><br />
+              <small>Required Slots: {{ rsa.num_slots }}</small>
+              <hr class="my-2" />
+              <div style="font-family: monospace; font-size: 0.9em">
+                <div class="mb-3">
+                  <button
+                    class="btn btn-sm btn-link p-0 text-decoration-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#rsaTraceSuccess"
+                    aria-expanded="false"
+                    aria-controls="rsaTraceSuccess"
+                  >
+                    <strong
+                      >[+] Show Calculation Trace (Parallel Link
+                      Intersection)</strong
+                    >
+                  </button>
+                  <div class="collapse mt-2" id="rsaTraceSuccess">
+                    <div class="border-start border-3 ps-2">
+                      {% for step in rsa.trace_steps %}
+                      <div class="text-primary mt-2">
+                        Hop {{ step.hop_index }}: {{ step.hop_label }}
+                      </div>
+                      {% for link in step.parallel_links %}
+                      <div class="text-muted ms-3">
+                        Link ({{ link.name }}): {{ link.bitmap }}
+                      </div>
+                      {% endfor %}
+                      <div class="ms-3">
+                        Hop Result:
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{
+                        step.hop_bitmap }}
+                      </div>
+                      <div class="ms-3 fw-bold border-bottom pb-1">
+                        Cumulative Path: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{
+                        step.cumulative_bitmap }}
+                      </div>
+                      {% endfor %}
                     </div>
-                {% else %}
-                    <div class="alert alert-danger mb-0">
-                        <strong>RSA Failed:</strong> {{ rsa.error }}<br>
-                        <hr class="my-2">
-                        <div style="font-family: monospace; font-size: 0.9em;">
-                            <div class="mb-3">
-                                <button class="btn btn-sm btn-link p-0 text-decoration-none text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#rsaTraceFail" aria-expanded="false" aria-controls="rsaTraceFail">
-                                    <strong>[+] Show Calculation Trace</strong>
-                                </button>
-                                <div class="collapse mt-2" id="rsaTraceFail">
-                                    <div class="border-start border-3 ps-2 border-danger">
-                                        {% for step in rsa.trace_steps %}
-                                            <div class="text-primary mt-2">Hop {{ step.hop_index }}: {{ step.hop_label }}</div>
-                                            {% for link in step.parallel_links %}
-                                                <div class="text-muted ms-3">Link ({{ link.name }}): {{ link.bitmap }}</div>
-                                            {% endfor %}
-                                            <div class="ms-3">Hop Result: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ step.hop_bitmap }}</div>
-                                            <div class="ms-3 fw-bold border-bottom pb-1">Cumulative Path: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ step.cumulative_bitmap }}</div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fw-bold">Final Composite Bitmap: {{ rsa.common_bitmap }}</div>
-                        </div>
+                  </div>
+                </div>
+                <hr class="my-2" />
+                <div>
+                  Final Available:
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{
+                  rsa.common_bitmap }}
+                </div>
+                <div>
+                  Required slots:
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{
+                  rsa.required_slots }}
+                </div>
+                <div class="text-success">
+                  After Acquisition: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{
+                  rsa.final_bitmap }}
+                </div>
+
+                <div class="mt-3">
+                  <form action="{{ url_for('acquire_path') }}" method="POST">
+                    {% for link in path %}
+                    <input
+                      type="hidden"
+                      name="link_ids"
+                      value="{{ link.id }}"
+                    />
+                    {% endfor %}
+                    <input type="hidden" name="mask" value="{{ rsa.mask }}" />
+                    <button type="submit" class="btn btn-success w-100">
+                      Acquire Slots
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            {% else %}
+            <div class="alert alert-danger mb-0">
+              <strong>RSA Failed:</strong> {{ rsa.error }}<br />
+              <hr class="my-2" />
+              <div style="font-family: monospace; font-size: 0.9em">
+                <div class="mb-3">
+                  <button
+                    class="btn btn-sm btn-link p-0 text-decoration-none text-danger"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#rsaTraceFail"
+                    aria-expanded="false"
+                    aria-controls="rsaTraceFail"
+                  >
+                    <strong>[+] Show Calculation Trace</strong>
+                  </button>
+                  <div class="collapse mt-2" id="rsaTraceFail">
+                    <div class="border-start border-3 ps-2 border-danger">
+                      {% for step in rsa.trace_steps %}
+                      <div class="text-primary mt-2">
+                        Hop {{ step.hop_index }}: {{ step.hop_label }}
+                      </div>
+                      {% for link in step.parallel_links %}
+                      <div class="text-muted ms-3">
+                        Link ({{ link.name }}): {{ link.bitmap }}
+                      </div>
+                      {% endfor %}
+                      <div class="ms-3">
+                        Hop Result:
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{
+                        step.hop_bitmap }}
+                      </div>
+                      <div class="ms-3 fw-bold border-bottom pb-1">
+                        Cumulative Path: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{
+                        step.cumulative_bitmap }}
+                      </div>
+                      {% endfor %}
                     </div>
-                {% endif %}
-             {% else %}
-                <a href="#" class="btn btn-success">RSA Computation</a>
-             {% endif %}
+                  </div>
+                </div>
+                <div class="fw-bold">
+                  Final Composite Bitmap: {{ rsa.common_bitmap }}
+                </div>
+              </div>
+            </div>
+            {% endif %} {% else %}
+            <a href="#" class="btn btn-success">RSA Computation</a>
+            {% endif %}
           </div>
         </div>
       </div>
-    {% else %}
+      {% else %}
       <div class="alert alert-warning">
         No valid (FREE) shortest path found.
       </div>
-    {% endif %}
+      {% endif %}
 
       <div class="card">
         <div class="card-header">
           <h5 class="mb-0">All Available Paths</h5>
         </div>
         <div class="card-body">
-    {# All Available Paths #}
-    {% if all_paths %}
-      {% set total_count = all_paths|length %}
-      {% set usable_count = all_paths | selectattr('is_valid') | list | length %}
-      {% set used_count = total_count - usable_count %}
-      
-      <div class="mb-3">
-        <span class="badge bg-primary fs-6 me-2">Valid: {{ total_count }}</span>
-        <span class="badge bg-success fs-6 me-2">Usable: {{ usable_count }}</span>
-        <span class="badge bg-danger fs-6">Used: {{ used_count }}</span>
-      </div>
-      
-      <div class="alert alert-success">
-        Found <strong>{{ all_paths|length }}</strong> valid paths.
-      </div>
-      
-      <div class="table-responsive" style="max-height: 500px; overflow-y: auto;">
-        <table class="table table-striped table-hover table-sm">
-          <thead class="table-light">
-            <tr>
-              <th>#</th>
-              <th>Path Route</th>
-              <th>Hops</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for path_obj in all_paths %}
-            {% set path = path_obj.links %}
-            {% set is_valid = path_obj.is_valid %}
-            <tr class="{% if not is_valid %}table-danger{% endif %}">
-              <td>{{ loop.index }}</td>
-              <td>
-                {% for link in path %}
-                  <span class="badge bg-secondary">{{ link.src }}</span> &rarr;
-                  {% if loop.last %}
-                    <span class="badge bg-secondary">{{ link.dst }}</span>
-                  {% endif %}
-                {% endfor %}
-                <br>
-                <small class="text-muted">
-                  {% for link in path %}
-                    {{ link.name }} ({{ link.src_port }}&rarr;{{ link.dst_port }})
-                    {% if link.status != 'FREE' %}
-                      <span class="badge bg-danger">{{ link.status }}</span>
-                    {% endif %}
-                    {% if not loop.last %} | {% endif %}
-                  {% endfor %}
-                </small>
-              </td>
-              <td>{{ path|length }}</td>
-              <td>
-                {% if is_valid %}
-                  <form action="{{ url_for('rsa_path') }}" method="POST" target="_blank" class="d-inline">
+          {# All Available Paths #} {% if all_paths %} {% set total_count =
+          all_paths|length %} {% set usable_count = all_paths |
+          selectattr('is_valid') | list | length %} {% set used_count =
+          total_count - usable_count %}
+
+          <div class="mb-3">
+            <span class="badge bg-primary fs-6 me-2"
+              >Valid: {{ total_count }}</span
+            >
+            <span class="badge bg-success fs-6 me-2"
+              >Usable: {{ usable_count }}</span
+            >
+            <span class="badge bg-danger fs-6">Used: {{ used_count }}</span>
+          </div>
+
+          <div class="alert alert-success">
+            Found <strong>{{ all_paths|length }}</strong> valid paths.
+          </div>
+
+          <div
+            class="table-responsive"
+            style="max-height: 500px; overflow-y: auto"
+          >
+            <table class="table table-striped table-hover table-sm">
+              <thead class="table-light">
+                <tr>
+                  <th>#</th>
+                  <th>Path Route</th>
+                  <th>Hops</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for path_obj in all_paths %} {% set path = path_obj.links %}
+                {% set is_valid = path_obj.is_valid %}
+                <tr class="{% if not is_valid %}table-danger{% endif %}">
+                  <td>{{ loop.index }}</td>
+                  <td>
                     {% for link in path %}
-                      <input type="hidden" name="link_ids" value="{{ link.id }}">
-                    {% endfor %}
-                    <input type="hidden" name="bandwidth" value="{{ bandwidth }}">
-                    <button type="submit" class="btn btn-sm btn-outline-success">RSA</button>
-                  </form>
-                {% else %}
-                  <button class="btn btn-sm btn-outline-danger" disabled>Invalid</button>
-                {% endif %}
-              </td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-    {% else %}
-      <p class="text-muted">No other paths found.</p>
-    {% endif %}
+                    <span class="badge bg-secondary">{{ link.src }}</span>
+                    &rarr; {% if loop.last %}
+                    <span class="badge bg-secondary">{{ link.dst }}</span>
+                    {% endif %} {% endfor %}
+                    <br />
+                    <small class="text-muted">
+                      {% for link in path %} {{ link.name }} ({{ link.src_port
+                      }}&rarr;{{ link.dst_port }}) {% if link.status != 'FREE'
+                      %} {% if link.otn_type == 'OMS' and link.status == 'USED'
+                      %}
+                      <span class="badge bg-warning">{{ link.status }}</span>
+                      {% else %}
+                      <span class="badge bg-danger">{{ link.status }}</span>
+                      {% endif %} {% endif %} {% if not loop.last %} | {% endif
+                      %} {% endfor %}
+                    </small>
+                  </td>
+                  <td>{{ path|length }}</td>
+                  <td>
+                    {% if is_valid %}
+                    <form
+                      action="{{ url_for('rsa_path') }}"
+                      method="POST"
+                      target="_blank"
+                      class="d-inline"
+                    >
+                      {% for link in path %}
+                      <input
+                        type="hidden"
+                        name="link_ids"
+                        value="{{ link.id }}"
+                      />
+                      {% endfor %}
+                      <input
+                        type="hidden"
+                        name="bandwidth"
+                        value="{{ bandwidth }}"
+                      />
+                      <button
+                        type="submit"
+                        class="btn btn-sm btn-outline-success"
+                      >
+                        RSA
+                      </button>
+                    </form>
+                    {% else %}
+                    <button class="btn btn-sm btn-outline-danger" disabled>
+                      Invalid
+                    </button>
+                    {% endif %}
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          {% else %}
+          <p class="text-muted">No other paths found.</p>
+          {% endif %}
         </div>
       </div>
 
       <div class="mt-4">
-        <a href="{{ url_for('path_finder') }}" class="btn btn-primary">Find Another Path</a>
-        <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Home</a>
+        <a href="{{ url_for('path_finder') }}" class="btn btn-primary"
+          >Find Another Path</a
+        >
+        <a href="{{ url_for('index') }}" class="btn btn-secondary"
+          >Back to Home</a
+        >
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -82,13 +82,72 @@ class TopologyHelper:
                     'dst_port': in_port,
                     'name': attr['name'],
                     'status': attr['status'],
+                    'otn_type': attr.get('otn_type'), # NEW: Include OTN Type
                     'c_slot': attr['c_slot'] # Include c_slot for RSA
                 })
                 
                 backtrack(index + 1, current_edge_path)
                 current_edge_path.pop()
 
-        backtrack(0, [])
+        # In expand_path, we compute all combinations of physical links
+        # We need to correctly calculate is_valid for each based on OTN-aware logic
+        valid_edge_paths = []
+        
+        # Internal backtrack above populates this list, but we need to define it differently now
+        # Actually, let's redefine the validity check INSIDE the backtrack loop
+        
+        def backtrack_v2(index, current_edge_path):
+            if index == len(node_path) - 1:
+                # NEW Path Validity Logic
+                is_valid = True
+                for link in current_edge_path:
+                    otn = link['otn_type']
+                    status = link['status']
+                    
+                    if otn == 'OCH' and status != 'FREE':
+                        is_valid = False
+                        break
+                    elif otn == 'OMS' and status == 'FULL':
+                        is_valid = False
+                        break
+                
+                valid_edge_paths.append({
+                    'links': list(current_edge_path),
+                    'is_valid': is_valid
+                })
+                return
+
+            u = node_path[index]
+            v = node_path[index+1]
+            if not graph_to_use.has_edge(u, v): return
+            edges = graph_to_use[u][v]
+            
+            for key, attr in edges.items():
+                # Port matching logic...
+                if attr['original_src'] == u and attr['original_dst'] == v:
+                    out_port, in_port = attr['src_port'], attr['dst_port']
+                elif attr['original_src'] == v and attr['original_dst'] == u:
+                    out_port, in_port = attr['dst_port'], attr['src_port']
+                else: continue
+
+                if index == 0 and src_port and out_port != src_port: continue
+                if index == len(node_path) - 2 and dst_port and in_port != dst_port: continue
+                    
+                current_edge_path.append({
+                    'id': str(key),
+                    'src': u,
+                    'dst': v,
+                    'src_port': out_port,
+                    'dst_port': in_port,
+                    'name': attr['name'],
+                    'status': attr['status'],
+                    'otn_type': attr.get('otn_type'),
+                    'c_slot': attr['c_slot']
+                })
+                backtrack_v2(index + 1, current_edge_path)
+                current_edge_path.pop()
+
+        backtrack_v2(0, [])
         return valid_edge_paths
 
     @staticmethod
@@ -253,7 +312,24 @@ class TopologyHelper:
                 
                 logger.info(f"  Updating Link {link.name}: {current_val:b} -> {new_val:b}")
                 link.c_slot = new_val
-                link.status = 'USED' # Mark as used
+                
+                # Determine new status
+                # First, check the consolidated OTN type using the same logic as process_optical_links
+                src_otn = link.src_endpoint.otn_type
+                dst_otn = link.dst_endpoint.otn_type
+                consolidated_otn = src_otn if src_otn == dst_otn else "MISMATCH"
+                
+                if consolidated_otn == "OCH":
+                    link.status = 'USED' # OCH is binary (FREE/USED)
+                elif consolidated_otn == "OMS":
+                    # OMS is three-state (FREE/USED/FULL)
+                    # It's FULL only if both bands are 0
+                    if int(link.c_slot) == 0 and int(link.l_slot) == 0:
+                        link.status = 'FULL'
+                    else:
+                        link.status = 'USED'
+                else:
+                    link.status = 'USED' # Fallback
                 
                 # Update Endpoints (Endpoints only track in_use, not slots)
                 for ep in [link.src_endpoint, link.dst_endpoint]:

@@ -1,9 +1,11 @@
-from flask import Flask, render_template, request
-
+from flask import Flask, render_template, request, redirect, url_for
+import logging
 import os
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import text
 from models import db, Devices
+# Configure logging
+logger = logging.getLogger(__name__)
 
 # Constants
 _DISTANCE = 1000
@@ -46,8 +48,10 @@ def device_details(device_id):
 @app.route('/optical-links')
 def optical_links():
     from models import OpticalLink
+    from helpers import TopologyHelper
     links = OpticalLink.query.all()
-    return render_template('optical_links.html', links=links)
+    processed_links = TopologyHelper.process_optical_links(links)
+    return render_template('optical_links.html', links=processed_links)
 
 @app.route('/topology')
 def topology():
@@ -80,6 +84,48 @@ def path_finder():
     
     devices = Devices.query.all()
     return render_template('path_finder.html', devices=devices)
+
+@app.route('/rsa-path', methods=['GET', 'POST'])
+def rsa_path():
+    from topology import perform_rsa_for_path
+    
+    if request.method == 'POST':
+        link_ids = request.form.getlist('link_ids')
+        bandwidth = request.form.get('bandwidth')
+        
+        rsa_res = perform_rsa_for_path(link_ids, bandwidth)
+        
+        return render_template('rsa_path.html', 
+                             rsa=rsa_res,
+                             link_ids=link_ids,
+                             bandwidth=bandwidth)
+    
+    return redirect(url_for('path_finder'))
+
+@app.route('/acquire-path', methods=['POST'])
+def acquire_path():
+    from helpers import TopologyHelper
+    
+    link_ids = request.form.getlist('link_ids')
+    mask_str = request.form.get('mask')
+    
+    logger.info(f"[Acquire Path] Targeted request. links={link_ids}, mask={mask_str}")
+    
+    if not link_ids or not mask_str:
+        return "Missing link IDs or mask for acquisition.", 400
+        
+    try:
+        mask = int(mask_str)
+        # Directly commit using the pre-calculated mask as requested
+        success = TopologyHelper.commit_slots(link_ids, mask)
+        
+        if success:
+            logger.info("[Acquire Path] Slots acquired successfully. Redirecting...")
+            return redirect(url_for('optical_links'))
+        else:
+            return "Failed to commit slots to database.", 500
+    except ValueError:
+        return "Invalid mask value.", 400
 
 
 if __name__ == '__main__':

@@ -203,13 +203,14 @@ def find_paths(src_dev, src_port, dst_dev, dst_port, bandwidth=None):
         # User requested ONLY ONE path for Dijkstra, even if parallel links exist
         selected_path = d_edge_paths[:1]
         
-        # Perform RSA if bandwidth is provided
         if selected_path and bandwidth:
-            rsa_res = TopologyHelper.perform_rsa(selected_path[0], bandwidth, G)
-            if rsa_res:
-                selected_path[0]['rsa_result'] = rsa_res
-                
-        paths_result['dijkstra'].extend(selected_path)
+            expanded_dijkstra = selected_path[0]
+            dijkstra_rsa = TopologyHelper.perform_rsa(expanded_dijkstra, bandwidth, G)
+            if dijkstra_rsa:
+                expanded_dijkstra['rsa_result'] = dijkstra_rsa
+        
+        if selected_path:
+            paths_result['dijkstra'] = selected_path
     except nx.NetworkXNoPath:
         logger.info(f"[DEBUG] No Dijkstra path found on FREE graph.")
         pass
@@ -240,3 +241,45 @@ def find_paths(src_dev, src_port, dst_dev, dst_port, bandwidth=None):
         pass
         
     return paths_result
+
+def perform_rsa_for_path(link_ids, bandwidth):
+    """
+    Reconstructs a path object from a list of link IDs and performs RSA.
+    """
+    if not link_ids:
+        return None
+    
+    G = build_graph()
+    path_links = []
+    
+    # 1. Reconstruct path object using precise IDs
+    for link_id in link_ids:
+        found = False
+        for u, v, k, d in G.edges(keys=True, data=True):
+            if str(k) == str(link_id):
+                path_links.append({
+                    'id': str(k),
+                    'src': u,
+                    'dst': v,
+                    'src_port': d.get('src_port'),
+                    'dst_port': d.get('dst_port'),
+                    'name': d.get('name'),
+                    'status': d.get('status'),
+                    'c_slot': d.get('c_slot')
+                })
+                found = True
+                break
+        if not found:
+            logger.warning(f"[RSA Path] Link {link_id} not found in graph!")
+            
+    if not path_links:
+        return None
+        
+    path_obj = {'links': path_links}
+    
+    # 2. Perform RSA
+    from helpers import TopologyHelper
+    res = TopologyHelper.perform_rsa(path_obj, bandwidth, G)
+    if res:
+        res['links'] = path_links
+    return res

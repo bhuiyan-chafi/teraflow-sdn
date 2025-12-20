@@ -5,7 +5,24 @@ import networkx as nx
 # Configure logging
 logger = logging.getLogger(__name__)
 
+# OTN Types
+OTN_TYPE_OCH = "OCH"
+OTN_TYPE_OMS = "OMS"
+OTN_TYPE_MISMATCH = "OTN_TYPE_MISMATCH"
+
 class TopologyHelper:
+    @staticmethod
+    def int_to_bitmap(value, length=35):
+        """Converts an integer to a binary string bitmap."""
+        # Handle cases where value might be None or not an int
+        if value is None:
+            return "0" * length
+        try:
+            val_int = int(value)
+            return format(val_int, f'0{length}b')
+        except (ValueError, TypeError):
+            return "0" * length
+
     @staticmethod
     def expand_path(node_path, graph_to_use, src_port, dst_port):
         """
@@ -58,6 +75,7 @@ class TopologyHelper:
                     
                 # Add to path
                 current_edge_path.append({
+                    'id': str(key), # Unique ID for the link (UUID as string)
                     'src': u,
                     'dst': v,
                     'src_port': out_port,
@@ -77,41 +95,55 @@ class TopologyHelper:
     def rsa_bitmap_pre_compute(path_obj, graph):
         """
         Computes the available spectrum bitmap by intersecting with ALL parallel links
-        for each hop in the path.
+        for each hop in the path. Returns the final bitmap, total slots, and a trace of steps.
         """
         if not path_obj['links']:
-            return 0, 0
+            return 0, 0, []
             
-        # Initialize with the first link's c_slot
-        first_link = path_obj['links'][0]
-        current_bitmap = int(first_link['c_slot'])
-        total_slots = current_bitmap.bit_length()
+        # Initialize with the first link's c_slot (we'll start with all 1s instead for consistency)
+        total_slots = 35 
+        current_bitmap = (1 << total_slots) - 1
         
-        logger.info(f"[RSA Pre-Compute] Initial Bitmap from {first_link['name']}: {current_bitmap:b} (Length: {total_slots})")
+        trace_steps = []
+        
+        logger.info(f"[RSA Pre-Compute] Initial Bitmap (All Free): {current_bitmap:b} (Length: {total_slots})")
         
         # Iterate through each hop in the path
         for i, link in enumerate(path_obj['links']):
             u, v = link['src'], link['dst']
+            hop_label = f"{u} -> {v}"
+            hop_links = []
+            hop_intersection = (1 << total_slots) - 1
             
             # Find all parallel edges between u and v
-            # graph is a MultiGraph, so graph[u][v] returns a dict of edges
             if graph.has_edge(u, v):
                 parallel_edges = graph[u][v]
-                logger.info(f"[RSA Pre-Compute] Hop {i+1} ({u}->{v}): Found {len(parallel_edges)} parallel links.")
-                
                 for key, attr in parallel_edges.items():
                     p_name = attr.get('name', 'unknown')
                     p_c_slot = int(attr.get('c_slot', 0))
-                    
-                    # Intersect
-                    before = current_bitmap
-                    current_bitmap &= p_c_slot
-                    logger.info(f"[RSA Pre-Compute]   Intersecting with {p_name}: {p_c_slot:b} -> Result: {current_bitmap:b}")
+                    hop_links.append({
+                        'name': p_name,
+                        'bitmap': TopologyHelper.int_to_bitmap(p_c_slot)
+                    })
+                    hop_intersection &= p_c_slot
+                
+                # Update the path-wide bitmap
+                before_hop = current_bitmap
+                current_bitmap &= hop_intersection
+                
+                trace_steps.append({
+                    'hop_index': i + 1,
+                    'hop_label': hop_label,
+                    'parallel_links': hop_links,
+                    'hop_bitmap': TopologyHelper.int_to_bitmap(hop_intersection),
+                    'cumulative_bitmap': TopologyHelper.int_to_bitmap(current_bitmap)
+                })
+                
+                logger.info(f"[RSA Pre-Compute] Hop {i+1} Result: {hop_intersection:b} | Cumulative: {current_bitmap:b}")
             else:
                 logger.warning(f"[RSA Pre-Compute] Hop {i+1} ({u}->{v}): No edges found in graph!")
 
-        logger.info(f"[RSA Pre-Compute] Final Strict Bitmap: {current_bitmap:b}")
-        return current_bitmap, total_slots
+        return current_bitmap, total_slots, trace_steps
 
     @staticmethod
     def perform_rsa(path_obj, bandwidth, graph):
@@ -131,7 +163,7 @@ class TopologyHelper:
             return None
 
         # --- Step 1: Pre-compute strict availability (considering parallel links) ---
-        strict_bitmap, TOTAL_SLOTS = TopologyHelper.rsa_bitmap_pre_compute(path_obj, graph)
+        strict_bitmap, TOTAL_SLOTS, trace_steps = TopologyHelper.rsa_bitmap_pre_compute(path_obj, graph)
         
         # --- Step 2: Find Contiguous Slots (First Fit from LSB) using STRICT bitmap ---
         start_bit = -1
@@ -160,15 +192,8 @@ class TopologyHelper:
             # Shift 1s to the start_bit position
             mask = ((1 << num_slots) - 1) << start_bit
             
-            # --- Step 3: Calculate Display Bitmaps ---
-            # User requested: "bring the initial bitmap again(from the first hop)"
-            # and "reserve the required slots" from THAT bitmap.
-            
-            first_link = path_obj['links'][0]
-            initial_path_bitmap = int(first_link['c_slot'])
-            
-            # Create Final Bitmap (Initial Path Bitmap with slots taken -> 0)
-            final_bitmap_val = initial_path_bitmap & ~mask
+            # Create Final Bitmap (Final Available Bitmap with slots taken -> 0)
+            final_bitmap_val = strict_bitmap & ~mask
             
             # Format as strings (dynamic length)
             common_bitmap_str = f"{strict_bitmap:0{TOTAL_SLOTS}b}" # Show the strict intersection as "Result Bitmap"
@@ -183,7 +208,9 @@ class TopologyHelper:
                 'num_slots_ones': '1' * int(num_slots),
                 'common_bitmap': common_bitmap_str,
                 'required_slots': required_slots_str,
-                'final_bitmap': final_bitmap_str
+                'final_bitmap': final_bitmap_str,
+                'trace_steps': trace_steps,
+                'mask': mask
             }
         else:
             logger.warning(f"[RSA] Failed. No contiguous slots found.")
@@ -191,5 +218,119 @@ class TopologyHelper:
                 'success': False,
                 'num_slots': num_slots,
                 'common_bitmap': f"{strict_bitmap:0{TOTAL_SLOTS}b}",
-                'error': "No contiguous slots found"
+                'error': "No contiguous slots found",
+                'trace_steps': trace_steps,
+                'mask': 0
             }
+
+    @staticmethod
+    def commit_slots(link_ids, mask):
+        """
+        Updates c_slot values for specific links and their endpoints in the path.
+        """
+        from models import db, OpticalLink, Endpoint
+        
+        if not link_ids or mask is None:
+            logger.warning("[RSA Commit] Missing link_ids or mask, skipping update.")
+            return False
+            
+        try:
+            logger.info(f"[RSA Commit] Reserving mask {mask:b} for link_ids: {link_ids}")
+            
+            # 1. Fetch specific links by ID
+            links = OpticalLink.query.filter(OpticalLink.id.in_(link_ids)).all()
+            if not links:
+                logger.error("[RSA Commit] No links found in database!")
+                return False
+                
+            updated_endpoints = set()
+            
+            for link in links:
+                # Update Link
+                # Numeric fields (c_slot) come as Decimal, cast to int for bitwise ops and formatting
+                current_val = int(link.c_slot)
+                new_val = current_val & ~mask
+                
+                logger.info(f"  Updating Link {link.name}: {current_val:b} -> {new_val:b}")
+                link.c_slot = new_val
+                link.status = 'USED' # Mark as used
+                
+                # Update Endpoints (Endpoints only track in_use, not slots)
+                for ep in [link.src_endpoint, link.dst_endpoint]:
+                    if ep and ep.id not in updated_endpoints:
+                        logger.info(f"    Marking Endpoint {ep.name} as in_use")
+                        ep.in_use = True
+                        updated_endpoints.add(ep.id)
+            
+            db.session.commit()
+            logger.info("[RSA Commit] Database updated successfully.")
+            return True
+            
+        except Exception as e:
+            db.session.rollback()
+            logger.error(f"[RSA Commit] Failed to update database: {str(e)}")
+            return False
+
+    @staticmethod
+    def process_optical_links(links):
+        """
+        Processes optical links to determine the OTN type by comparing source and destination endpoints.
+        Returns a list of dictionaries with link data and consolidated otn_type.
+        """
+        processed_links = []
+        MAX_BIT_VALUE = 34359738367 # (2^35 - 1)
+
+        for link in links:
+            src_ep = link.src_endpoint
+            dst_ep = link.dst_endpoint
+            src_otn = src_ep.otn_type
+            dst_otn = dst_ep.otn_type
+            
+            # 1. Determine consolidated OTN Type
+            if src_otn == dst_otn:
+                consolidated_otn = src_otn
+            else:
+                consolidated_otn = OTN_TYPE_MISMATCH
+            
+            # 2. Advanced Status Logic
+            final_status = "UNKNOWN"
+            
+            if consolidated_otn == OTN_TYPE_MISMATCH:
+                final_status = OTN_TYPE_MISMATCH
+            
+            elif consolidated_otn == OTN_TYPE_OCH:
+                # OCH: Binary Logic (FREE/USED)
+                if not src_ep.in_use and not dst_ep.in_use:
+                    final_status = "FREE"
+                else:
+                    final_status = "USED"
+            
+            elif consolidated_otn == OTN_TYPE_OMS:
+                # OMS: Three-state Logic (FREE/USED/FULL)
+                any_in_use = src_ep.in_use or dst_ep.in_use
+                all_slots_free = (int(link.c_slot) == MAX_BIT_VALUE and int(link.l_slot) == MAX_BIT_VALUE)
+                all_slots_full = (int(link.c_slot) == 0 and int(link.l_slot) == 0)
+                
+                if not any_in_use and all_slots_free:
+                    final_status = "FREE"
+                elif any_in_use and all_slots_full:
+                    final_status = "FULL"
+                else:
+                    final_status = "USED"
+
+            # 3. Build Processed Dictionary
+            processed_links.append({
+                'id': link.id,
+                'name': link.name,
+                'src_device': link.src_device,
+                'src_endpoint': src_ep,
+                'dst_device': link.dst_device,
+                'dst_endpoint': dst_ep,
+                'status': final_status,
+                'c_slot': link.c_slot,
+                'l_slot': link.l_slot,
+                'c_slot_bitmap': TopologyHelper.int_to_bitmap(link.c_slot),
+                'l_slot_bitmap': TopologyHelper.int_to_bitmap(link.l_slot),
+                'otn_type': consolidated_otn
+            })
+        return processed_links

@@ -60,3 +60,180 @@ Now we have the hardest part:
 - save it as a picture using matplot 
 - then use the app.py file to create an url /topology and display the topology using a new template file topology.html
 - remove unused contents from everywhere while you go through 
+
+==> We have acheived all these things. Now we got some new requirements:
+- we will check the optical-links rest api and the view associated with it 
+- you can see the html here @templates/optical_links.html
+- i want you to have a look how the logic works and the view is generated
+- let me know once you have the whole picture and then tell me you are ready
+
+- right now if look at @app.py and @app.route('/optical-links')
+- we are loading all the optical links from the database
+- but we need to populate some additional information first
+- for that you can take two approaches: we can use decorators to put additional attributes to the OpticalLink model
+- or we can populate an array of all these information doing the pre-processing
+- I suggest you to go with the second approache
+- create a function in @helpers.py
+- take the links = OpticalLink.query.all(), to that function and make the following changes:
+-- for each link, consider the src_device_id, src_port_id, dst_device_id, dst_port_id and make query to the endpoint table to get the OTN type
+-- so for each link we are going to have two OTN types
+-- define some enums/constants as: OCH,OMS,OTN_TYPE_MISMATCH
+-- if both of them are same we will have a single OTN type (OCH/OMS)
+-- if both of them are different we will have an Error Message as "OTN_TYPE_MISMATCH"
+-- return the list of links with additional information
+- now go the @templates/optical_links.html and modify the view to show the additional information
+
+==> We acheived all these things. Now we got some new requirements:
+- can we modify the docker-compose file in such a way so that when we build or up the docker-compose file. When the application and database is ready it execute the following sql files in order. @devices.sql @device_endpoints.sql @optical_links.sql in exact same order. The order is very important. 
+=> the order was wrong because we are doing init db query in the docker-compose file but the tables are created by the flask application.
+- unless the flask application is ready, the sql files will not be executed
+- so the flow is: db ready > flask app ready > sql files executed
+
+==> We acheived all these things. Now we got some new requirements:
+
+- in the optical_links.html we are showing the c_slot and l_slot values in integer format
+- professor wants to see the bitmap version of it
+- since the bitmap will be large we cannot cover it withing the screen
+- we will take a different approach:
+-- after each row we will take another row and show the bitmap of the c_slot and l_slot values
+-- the bitmap will be a string of 1s and 0s
+-- the format will be c_slot: bitmaps, l_slot: bitmaps. So, 4 tds in one tr. 
+-- how to convert the integer to bitmap? You can see that in @helpers.py > int_to_bitmap
+
+==> We acheived all these things. Now we got some new requirements:
+- do you think the int_to_bitmap() function in @rsa.py file are being used? Because I don't see how it is marking the unused bits as 0! Which in @helpers.py int_to_bitmap() makes sense. 
+
+==> We have solved this. Let's go next:
+
+- as for the Status in @optical_links.html we are denoting "FREE" or else.
+- this changes based on real scenario.
+- you see for OTN type OMS it is almost impossible to use all the slots.
+- but for OTN type OCH even if we use one slot it is booked and cannot be used
+- so we are taking a approach following these:
+-- if the OTN type is OCH we see the src_endpoint_id and dst_endpoint_id and check if they are used using the database field "in_use"
+-- if both endpoint are in_use==FALSE we set the STATUS of the link as FREE(green)
+-- while if any of the endpoint is in_use==TRUE we set the STATUS of the link as USED(RED)
+- now the tricky part is the OMS part
+-- but for OTN type OMS we check the both endpoints in the same way
+-- if both endpoint are in_use==FALSE and the c_slot and l_slot values are all 1's it means the link is free and we set the STATUS of the link as FREE(green)
+-- while if any of the endpoint is in_use==TRUE or any of the c_slot or l_slot values are not all 0's we set the STATUS of the link as USED(yellow)
+-- if any of the endpoint is in_use==TRUE and the c_slot and l_slot values are all 0's it means the link is fully used and we set the STATUS of the link as FULL(RED)
+Focus on the logic and let me know if everything is clear to you. If it's clear we can start coding. 
+-One minor clarification:
+What should happen if there is an OTN_TYPE_MISMATCH?
+
+Should I default to the OCH logic (binary check of endpoints)?
+Or should I mark the status as "ERROR"?
+- basically if there is an OTN_TYPE_MISMATCH this means ports are not congfigured properly in the devie or in the database. This requires administrative action, which is not the software part. We can assume that this situation will never happen. But still if we encounter it, you can state the STATUS as OTN_TYPE_MISMATCH.
+
+==> We acheived all these things. Now we got some new requirements:
+- now I want you to focus on the path finder. 
+- in @find_paths.py > find_path function we are using the dijkstra algorithm to find the path between two nodes. 
+- we also consider all all_simple_paths() to find all possible paths between two nodes. 
+- the main intention to populate all_simple_path is to find the parallel links and perform the bitmap operation. 
+- finally when we find all the possible path we perform the RSA on the dijkstra path but the we consider the parallel links
+- the final result is shown in @path_finder.html
+- which first shows the dijkstra path and the RSA calculation(not in detail)
+- then it shows all possible paths
+
+I want you to have a look at what we have right now. Then let me know. 
+
+Question from agent: Does "consider parallel links" mean we should change the logic to OR (|=) instead of AND (&=)? If we use |=, the Dijkstra path would show a slot as available if it's free on at least one of the parallel links for that hop. Is this the direction you want to take?
+
+Good question, let me fill you in that:
+
+- in optical communiaction we cannot use same frequency from different ports of a transponder to a roadm. For example I have two links from TP1 to RDM1 and we are using port 1101 with 1111(from LSB) it means next time if we need another path, we cannot use 1111(from LSB). Why we cannot use? We are assuming that all the ports are going to the same SRG and WSS of a ROADM. So, frequencies will be duplicated. This is why we are performing AND operation, not OR operation. Are you clear now?
+
+==> We acheived all these things. Now we got some new requirements:
+
+- so, now in the first step what we want is to make the dijkstra path calculation more robust .Right now this is what we see: (see the first image)
+- we have the Result Bitmap after all the calculation
+- then the required slots
+- finally the Bitmap after acquiring the slots
+- what need to be more robus is the calculation
+- if check the logs, we have logged every step of the calculation
+- this is what we want to bring in the dijkstra path calculation
+- so the steps are:
+-- take initials bitmap
+-- perform AND operation in each hop with parallel links
+-- update the bitmap
+-- repeat the process until we reach the destination
+-- finally return the bitmap
+- then show the Required Slots and Bitmap after acquiring the slots
+
+==> We acheived all these things. Now we got some new requirements:
+- now we come to the All available paths
+- we have the paths with hops
+- and total hops in numbers
+- then we have a button that says RSA
+- now we want to enable RSA calculation for that path
+- you might need some parameters to perform the calculation
+- for that we can put necessary parameters in the href(port_id or whatever you need)
+- the goal is to re-use the perform_rsa function in @helpers.py
+- so look at that function first and then decide what you must pass through the link
+- so what we will do is:
+-- when that button is clicked
+-- it will take the source and destination of the path
+-- then it will perform the RSA calculation exactly we did in the dijkstra path calculation
+-- finally it will show the Result Bitmap
+-- for that view we will need another html file for the template
+-- you can create a file named rsa_path.html in the templates folder
+-- but there don't make the section expandable like we did for dijkstra path
+-- keep everything on the page 
+-- output should be similar to dijkstra path
+-- there will be one button on top saying Home (http://localhost:3000/)
+If you have confusion, ask me questions. 
+
+==> We acheived all these things. Now we got some new requirements:
+- now the final step is to acquire the slots through the path
+- so, from the final bitmap we want to acquire the slots
+- we see from which slot our acquisition will start
+- we will start from LSB and count number of slots
+- finally we will book those slots in the database
+- for an example:
+-- let's say we have a final bitmap 11111111111111111111111111100000000
+-- we will start from LSB and count number of slots, 8 slots let's say
+-- we acquire these 8 slots in exact position for all links 
+- we take each link c_slot(we are not considering l_slot now), convert the bitmap into integer
+- we update the c_slot value through out the entire path for each link
+
+Ask me questionf if you have any!
+
+==> The implementation is wrong. Let me explain:
+- the dijkstra path that was recommended was:
+-- Recommended TP1 → RDM1 → RDM2 → RDM3 → RDM4 → TP3
+-- TP1-RDM1 (1101→1001) | RDM1-RDM2 (2001→1001) | RDM2-RDM3 (2001→1001) | RDM3-RDM4 (2001→2001) | RDM4-TP3 (1001→1101)
+
+- you marked both ports of TP1 as used which is wrong
+- the updates should be through the path only
+- for example:
+-- RSA passed
+-- clicked Acuire Slots: take the recommended path
+-- first hop: TP1-RDM1 (1101→1001) mark them used in the database, then update the c_slot value for TP1-RDM1 
+- do the same for all the hops just in that path for each device and port
+- populate the data for acquiring slots before we press the button
+- look at the logic and find out what you need to perform this operation
+- make sure we don't do the whole path claulcation again while booking the slots
+- i think you can populate array of arrays for the whole path, like:
+- link_id, src_port_id, dst_port_id, c_slot 
+- and update by traversing the whole array for each link
+
+If you have any question let me know. 
+
+==> We acheived all these things. Now we got some new requirements:
+- let me point out one bug
+- in the dijkstra path RSA calculation, we have:
+-- Final Available:         11111111111111111111111111100000000
+-- Required slots:          00000000000000000000000111100000000
+-- After Acquisition:      11111111111111111111111000011111111
+- if you look at the After Acquisition, we have 11111111111111111111111000011111111 which is wrong
+- it is considering the initials as all 1's but it's not the case 
+- the after acquisition should be 11111111111111111111111000000000000 because we cannot use them even if they are free because other parallel links are using them
+- so we will calculate the acquisition based on the final available bitmap
+
+==> We have achieved these, but found an issue:
+- after closing the application if we do docker-compose up without building a new one
+- the queries are executed once again and produces duplicate entries
+- specially endpoints table
+- we need to check before inserting if the entry already exists
+- the reason it is happening is because the 'name' field is not unique 

@@ -18,6 +18,7 @@
             <th scope="col">Src Port</th>
             <th scope="col">Dst Device</th>
             <th scope="col">Dst Port</th>
+            <th scope="col">OTN Type</th>
             <th scope="col">Status</th>
             <th scope="col">C Slot</th>
             <th scope="col">L Slot</th>
@@ -33,14 +34,35 @@
             <td>{{ link.dst_device.name }}</td>
             <td>{{ link.dst_endpoint.name }}</td>
             <td>
+              {% if link.otn_type == 'OTN_TYPE_MISMATCH' %}
+              <span class="badge bg-danger">{{ link.otn_type }}</span>
+              {% elif link.otn_type == 'OCH' %}
+              <span class="badge bg-info text-dark">{{ link.otn_type }}</span>
+              {% elif link.otn_type == 'OMS' %}
+              <span class="badge bg-primary">{{ link.otn_type }}</span>
+              {% else %}
+              <span class="badge bg-secondary">{{ link.otn_type }}</span>
+              {% endif %}
+            </td>
+            <td>
               {% if link.status == 'FREE' %}
               <span class="badge bg-success">{{ link.status }}</span>
+              {% elif link.status == 'USED' and link.otn_type == 'OMS' %}
+              <span class="badge bg-warning text-dark">{{ link.status }}</span>
+              {% elif link.status == 'USED' or link.status == 'FULL' %}
+              <span class="badge bg-danger">{{ 'FULL' }}</span>
               {% else %}
               <span class="badge bg-secondary">{{ link.status }}</span>
               {% endif %}
             </td>
             <td>{{ link.c_slot }}</td>
             <td>{{ link.l_slot }}</td>
+          </tr>
+          <tr class="table-light">
+            <td class="text-end"><strong>C_SLOT:</strong></td>
+            <td colspan="4"><code class="text-break" style="letter-spacing: 2px;">{{ link.c_slot_bitmap }}</code></td>
+            <td class="text-end"><strong>L_SLOT:</strong></td>
+            <td colspan="4"><code class="text-break" style="letter-spacing: 2px;">{{ link.l_slot_bitmap }}</code></td>
           </tr>
           {% else %}
           <tr>

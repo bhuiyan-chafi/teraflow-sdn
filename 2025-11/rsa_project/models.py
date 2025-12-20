@@ -31,6 +31,10 @@ class Endpoint(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
+    __table_args__ = (
+        db.UniqueConstraint('device_id', 'name', name='uix_endpoint_device_name'),
+    )
+
     def __repr__(self):
         return f"<Endpoint {self.name} ({self.type})>"
 
@@ -48,6 +52,10 @@ class OpticalLink(db.Model):
     l_slot = db.Column(db.Numeric(scale=0), nullable=False, default=0)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    __table_args__ = (
+        db.UniqueConstraint('src_endpoint_id', 'dst_endpoint_id', name='uix_optical_link_endpoints'),
+    )
 
     src_device = db.relationship('Devices', foreign_keys=[src_device_id])
     dst_device = db.relationship('Devices', foreign_keys=[dst_device_id])

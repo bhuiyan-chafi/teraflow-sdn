@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RSA Calculation Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container mt-5 mb-4">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>RSA Calculation Details</h1>
+        <a href="http://localhost:3000/" class="btn btn-outline-primary">Home</a>
+      </div>
+
+      <div class="alert alert-info">
+        <strong>Path:</strong> 
+        {% for link in rsa.links %}
+           {{ link.name }}{% if not loop.last %} | {% endif %}
+        {% endfor %}<br>
+        <strong>Requested Bandwidth:</strong> {{ bandwidth }} Gbps
+      </div>
+
+      {% if rsa %}
+        {% if rsa.success %}
+          <div class="card border-success">
+            <div class="card-header bg-success text-white">
+              <h5 class="mb-0">RSA Computation Successful</h5>
+            </div>
+            <div class="card-body">
+              <div class="mb-3">
+                <strong>Required Slots:</strong> {{ rsa.num_slots }}
+              </div>
+              
+              <div style="font-family: monospace; font-size: 0.9em;">
+                <div class="mb-3">
+                  <strong>Calculation Trace (Parallel Link Intersection):</strong><br>
+                  <div class="border-start border-3 ps-2 mt-1">
+                    {% for step in rsa.trace_steps %}
+                      <div class="text-primary mt-2">Hop {{ step.hop_index }}: {{ step.hop_label }}</div>
+                      {% for link in step.parallel_links %}
+                        <div class="text-muted ms-3">Link ({{ link.name }}): {{ link.bitmap }}</div>
+                      {% endfor %}
+                      <div class="ms-3">Hop Result: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ step.hop_bitmap }}</div>
+                      <div class="ms-3 fw-bold border-bottom pb-1">Cumulative Path: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ step.cumulative_bitmap }}</div>
+                    {% endfor %}
+                  </div>
+                </div>
+                <hr class="my-2">
+                <div>Final Available: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ rsa.common_bitmap }}</div>
+                <div>Required slots: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ rsa.required_slots }}</div>
+                <div class="text-success fw-bold">After Acquisition: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ rsa.final_bitmap }}</div>
+
+                <div class="mt-4">
+                  <form action="{{ url_for('acquire_path') }}" method="POST">
+                    {% for link in rsa.links %}
+                      <input type="hidden" name="link_ids" value="{{ link.id }}">
+                    {% endfor %}
+                    <input type="hidden" name="mask" value="{{ rsa.mask }}">
+                    <button type="submit" class="btn btn-success w-100">Acquire Slots</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <div class="card border-danger">
+            <div class="card-header bg-danger text-white">
+              <h5 class="mb-0">RSA Computation Failed</h5>
+            </div>
+            <div class="card-body">
+              <div class="alert alert-danger">
+                <strong>Error:</strong> {{ rsa.error }}
+              </div>
+
+              <div style="font-family: monospace; font-size: 0.9em;">
+                <div class="mb-3">
+                  <strong>Calculation Trace:</strong><br>
+                  <div class="border-start border-3 ps-2 mt-1 border-danger">
+                    {% for step in rsa.trace_steps %}
+                      <div class="text-primary mt-2">Hop {{ step.hop_index }}: {{ step.hop_label }}</div>
+                      {% for link in step.parallel_links %}
+                        <div class="text-muted ms-3">Link ({{ link.name }}): {{ link.bitmap }}</div>
+                      {% endfor %}
+                      <div class="ms-3">Hop Result: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ step.hop_bitmap }}</div>
+                      <div class="ms-3 fw-bold border-bottom pb-1">Cumulative Path: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ step.cumulative_bitmap }}</div>
+                    {% endfor %}
+                  </div>
+                </div>
+                <div class="fw-bold">Final Composite Bitmap: {{ rsa.common_bitmap }}</div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% else %}
+        <div class="alert alert-warning">
+          RSA computation results are not available.
+        </div>
+      {% endif %}
+
+      <div class="mt-4">
+        <button onclick="history.back()" class="btn btn-secondary">Back to Paths</button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

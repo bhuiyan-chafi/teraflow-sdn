@@ -15,6 +15,8 @@
             <th scope="col">UUID</th>
             <th scope="col">Name</th>
             <th scope="col">Type</th>
+            <th scope="col">Vendor</th>
+            <th scope="col">Model</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -24,6 +26,8 @@
             <td><small>{{ device.id }}</small></td>
             <td>{{ device.name }}</td>
             <td>{{ device.type }}</td>
+            <td>{{ device.vendor if device.vendor else '-' }}</td>
+            <td>{{ device.model if device.model else '-' }}</td>
             <td>
               <a href="{{ url_for('device_details', device_id=device.id) }}" class="btn btn-primary btn-sm">View Details</a>
             </td>

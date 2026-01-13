@@ -273,3 +273,7 @@ Let me know if you have any questions.
 - so, even for all available paths we have to consider the same scenario
 - unless it's otn type is OCH we will consider it valid and then check if its FULL
 - only for FULL OMS we will show it as FULL and the path asInvalid
+
+==> we have achieved this. Next is to study what we have in OpticalController in TFS.
+
+=========== Prompts are shifted to Monthly Folders ===========

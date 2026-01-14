@@ -20,8 +20,6 @@
             <th scope="col">Dst Port</th>
             <th scope="col">OTN Type</th>
             <th scope="col">Status</th>
-            <th scope="col">C Slot</th>
-            <th scope="col">L Slot</th>
           </tr>
         </thead>
         <tbody>
@@ -55,14 +53,6 @@
               <span class="badge bg-secondary">{{ link.status }}</span>
               {% endif %}
             </td>
-            <td>{{ link.c_slot }}</td>
-            <td>{{ link.l_slot }}</td>
-          </tr>
-          <tr class="table-light">
-            <td class="text-end"><strong>C_SLOT:</strong></td>
-            <td colspan="4"><code class="text-break" style="letter-spacing: 2px;">{{ link.c_slot_bitmap }}</code></td>
-            <td class="text-end"><strong>L_SLOT:</strong></td>
-            <td colspan="4"><code class="text-break" style="letter-spacing: 2px;">{{ link.l_slot_bitmap }}</code></td>
           </tr>
           {% else %}
           <tr>

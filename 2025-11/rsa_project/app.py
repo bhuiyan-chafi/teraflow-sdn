@@ -110,6 +110,7 @@ def endpoint_details(endpoint_id):
                            slot_granularity=slot_granularity)
 
 
+@app.route('/optical-links')
 def optical_links():
     from models import OpticalLink
     from helpers import TopologyHelper
@@ -176,18 +177,25 @@ def acquire_path():
     from helpers import TopologyHelper
 
     link_ids = request.form.getlist('link_ids')
-    mask_str = request.form.get('mask')
+    final_bitmap_str = request.form.get('final_bitmap')
 
     logger.info(
-        f"[Acquire Path] Targeted request. links={link_ids}, mask={mask_str}")
+        f"[Acquire Path] Received: link_ids={link_ids}, final_bitmap_str='{final_bitmap_str}'")
 
-    if not link_ids or not mask_str:
-        return "Missing link IDs or mask for acquisition.", 400
+    # Check for missing or invalid data
+    if not link_ids:
+        logger.error("[Acquire Path] No link_ids received")
+        return "Missing link IDs for acquisition.", 400
+
+    if not final_bitmap_str or final_bitmap_str == 'None' or final_bitmap_str == '':
+        logger.error(
+            f"[Acquire Path] Invalid final_bitmap: '{final_bitmap_str}'")
+        return "Missing or invalid final_bitmap for acquisition.", 400
 
     try:
-        mask = int(mask_str)
-        # Directly commit using the pre-calculated mask as requested
-        success = TopologyHelper.commit_slots(link_ids, mask)
+        final_bitmap = int(final_bitmap_str)
+        # Task 12: Use final_bitmap instead of mask for proper shrinking
+        success = TopologyHelper.commit_slots(link_ids, final_bitmap)
 
         if success:
             logger.info(
@@ -196,7 +204,7 @@ def acquire_path():
         else:
             return "Failed to commit slots to database.", 500
     except ValueError:
-        return "Invalid mask value.", 400
+        return "Invalid final_bitmap value.", 400
 
 
 if __name__ == '__main__':

@@ -127,12 +127,100 @@ Remove the deprecated `c_slot` and `l_slot` fields from the `OpticalLink` model.
   - RDM5-RDM6 (3 links)
   - RDM6-TP4 (1 link)
 
-#### 3.3 Testing
+#### 3.3 Update Web Interface
+
+- [x] Remove `C Slot` column header from `optical_links.html`
+- [x] Remove `L Slot` column header from `optical_links.html`
+- [x] Remove `{{ link.c_slot }}` data cell from table row
+- [x] Remove `{{ link.l_slot }}` data cell from table row
+- [x] Remove bitmap visualization row (`table-light` class row showing C_SLOT and L_SLOT bitmaps)
+- [x] Update empty state colspan to match reduced column count
+
+**Note**: Optical links view no longer displays frequency/slot information. Frequency capabilities and spectrum allocation are managed and visualized at the endpoint level (see Task 6-7).
+
+#### 3.4 Update Business Logic
+
+**File**: `helpers.py` - `TopologyHelper.process_optical_links()`
+
+- [x] Remove `link.c_slot` and `link.l_slot` access from function
+- [x] Remove `MAX_BIT_VALUE` constant (no longer needed)
+- [x] Simplify OMS status logic to use only `src_ep.in_use` and `dst_ep.in_use`
+- [x] Remove `all_slots_free` and `all_slots_full` checks (link-level slots no longer exist)
+- [x] Remove `c_slot`, `l_slot`, `c_slot_bitmap`, `l_slot_bitmap` from returned dictionary
+- [x] Update docstring to clarify spectrum management is now at endpoint level
+
+**Simplified OMS Status Logic**:
+
+```python
+# Old (3-state: FREE/USED/FULL based on link slots)
+if not any_in_use and all_slots_free:
+    final_status = "FREE"
+elif any_in_use and all_slots_full:
+    final_status = "FULL"
+else:
+    final_status = "USED"
+
+# New (2-state: FREE/USED based on endpoint usage)
+if not any_in_use:
+    final_status = "FREE"
+else:
+    final_status = "USED"
+```
+
+**Rationale**: Without link-level c_slot/l_slot, we cannot determine if link is FULL. Status now reflects endpoint usage only. Detailed spectrum allocation visibility is available at endpoint level via frequency view.
+
+#### 3.5 Update Topology and RSA Functions
+
+**Files**: `topology.py`, `helpers.py`
+
+**topology.py Changes**:
+
+- [x] Remove `c_slot` and `l_slot` parameters from `G.add_edge()` in `build_graph()` function
+- [x] Remove `'c_slot': d.get('c_slot')` from `path_links` dictionary in `perform_rsa_for_path()` function
+
+**helpers.py Changes**:
+
+- [x] Remove `'c_slot': attr['c_slot']` from `expand_path()` backtrack function
+- [x] Rewrite `rsa_bitmap_pre_compute()` to use endpoint `bitmap_value` instead of link `c_slot`
+  - Query `OpticalLink` from database to access endpoints
+  - Intersect `src_endpoint.bitmap_value` & `dst_endpoint.bitmap_value` for each hop
+  - Update trace_steps to show endpoint bitmaps instead of parallel link bitmaps
+- [x] Rewrite `commit_slots()` to update endpoint `bitmap_value` instead of link `c_slot`
+  - Apply mask to both source and destination endpoint bitmaps
+  - Update `ep.bitmap_value = str(new_bitmap)` for each endpoint
+  - Status logic: Check if both endpoint bitmaps are 0 to determine FULL status
+
+**RSA Architecture Change**:
+
+```
+Old: Link-level slots
+├── Graph edges store c_slot/l_slot
+├── RSA intersects link c_slot values
+└── Commit updates link c_slot
+
+New: Endpoint-level slots
+├── Graph edges NO LONGER store slots
+├── RSA queries database for OpticalLink → endpoints
+├── RSA intersects endpoint.bitmap_value
+└── Commit updates endpoint.bitmap_value
+```
+
+**Rationale**: The architectural shift from link-level to endpoint-level spectrum management requires RSA functions to:
+
+1. Fetch actual OpticalLink objects from database (not just graph edge attributes)
+2. Access endpoint bitmap_value fields for slot availability
+3. Update endpoint bitmap_value during slot reservation
+
+#### 3.6 Testing
 
 - [ ] Rebuild Docker containers to apply schema changes
 - [ ] Verify optical_links table no longer has c_slot/l_slot columns
 - [ ] Ensure existing RSA logic references endpoint bitmap_value instead
 - [ ] Confirm link status field still functions correctly
+- [ ] Verify optical links web page displays correctly without slot columns
+- [ ] Test that `/optical-links` route loads without errors
+- [ ] Test that `/topology` route generates graph without errors
+- [ ] Verify RSA path finder and spectrum allocation still works
 
 ### Expected Outcome
 

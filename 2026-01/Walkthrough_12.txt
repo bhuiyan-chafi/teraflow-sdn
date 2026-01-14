@@ -1,0 +1,599 @@
+================================================================================
+WALKTHROUGH 12: Slot Acquisition with Reference Bitmap Shrinking
+================================================================================
+
+Author: Chafiullah Bhuiyan & GitHub Copilot
+Date: January 14, 2026
+Supervisor: Prof. Alessio Giorgetti, UniPi
+
+================================================================================
+PART 1: UNDERSTANDING THE PROBLEM
+================================================================================
+
+1.1 The Bitmap Width Problem
+----------------------------
+
+After RSA computation, we have a `final_bitmap` in REFERENCE width:
+
+    Reference (C-Band standard): 701 slots
+    final_bitmap: 0b1111...0000000000000000...1111 (701 bits)
+                         ↑                ↑
+                         Allocated slots (16 slots = 0)
+
+But our endpoint stores `bitmap_value` in ENDPOINT width:
+
+    Endpoint capability: 693 slots
+    bitmap_value: 0b1111...1111 (693 bits, currently all available)
+
+We CANNOT directly store the 701-bit value in a 693-bit field!
+
+
+1.2 The Frequency Alignment Problem
+-----------------------------------
+
+Even worse, the bits don't represent the same frequencies:
+
+    Reference bit 0 = 191.556 THz (standard C-Band min)
+    Endpoint  bit 0 = 191.581 THz (this device's min)
+
+If we just truncate or ignore this difference:
+
+    Reference: Allocate bits 4-19 (191.581 - 191.700 THz)
+    Endpoint:  Would update bits 4-19 (191.606 - 191.725 THz) ← WRONG!
+
+The frequencies would be shifted by 4 slots (25 GHz)!
+
+
+1.3 The Solution: Shrink with Offset
+------------------------------------
+
+We need to SHRINK the reference bitmap to match endpoint width,
+accounting for the frequency offset:
+
+    1. Calculate offset: (endpoint.min - standard.min) / 6.25 GHz = 4 slots
+    2. Shift RIGHT by offset: removes low-frequency bits
+    3. Mask to endpoint width: removes high-frequency bits
+    4. Now bit positions match frequencies!
+
+================================================================================
+PART 2: THE SHRINK ALGORITHM
+================================================================================
+
+2.1 Step-by-Step Shrinking
+--------------------------
+
+Given:
+    - final_bitmap = 701 bits (reference width)
+    - endpoint.min_frequency = 191581250000000 Hz
+    - standard_min = 191556250000000 Hz (C-Band)
+    - endpoint.flex_slots = 693
+    - SLOT_GRANULARITY = 6250000000 Hz
+
+Step 1: Calculate low-end offset
+    offset_hz = 191581250000000 - 191556250000000 = 25000000000 Hz
+    offset_slots = 25000000000 / 6250000000 = 4 slots
+
+Step 2: Shift right by offset
+    shrinked = final_bitmap >> 4
+    
+    Before: [...bit4][bit3][bit2][bit1][bit0]  (701 bits)
+    After:  [...bit4]                          (697 bits, bits 0-3 removed)
+
+Step 3: Mask to endpoint width
+    shrinked &= (1 << 693) - 1
+    
+    Keeps only the lowest 693 bits, removing high-end extras
+
+Step 4: Result verification
+    shrinked bit 0 NOW represents 191.581 THz (matches endpoint bit 0) ✓
+
+
+2.2 Visual Representation
+-------------------------
+
+Reference C-Band (701 slots):
+    ┌─────────────────────────────────────────────────────────────┐
+    │ 191.556 THz ─────────────────────────────────── 195.937 THz │
+    │   [0][1][2][3][4][5]...[695][696][697][698][699][700]       │
+    │    ↑           ↑                              ↑             │
+    │    │           └─ Endpoint starts here        └─ Endpoint ends here
+    │    └─ Reference starts here                                 │
+    └─────────────────────────────────────────────────────────────┘
+
+Endpoint (693 slots):
+    ┌─────────────────────────────────────────────────────────────┐
+    │         191.581 THz ──────────────────── 195.912 THz        │
+    │           [0][1][2]...[689][690][691][692]                  │
+    │            ↑                          ↑                     │
+    │            │                          └─ Max slot (692)     │
+    │            └─ Min slot (0) = Reference slot 4               │
+    └─────────────────────────────────────────────────────────────┘
+
+Mapping:
+    Reference slot 4  → Endpoint slot 0
+    Reference slot 5  → Endpoint slot 1
+    Reference slot 696 → Endpoint slot 692
+    Reference slots 0-3   → Not in endpoint (below min)
+    Reference slots 697-700 → Not in endpoint (above max)
+
+
+2.3 Allocation Example
+----------------------
+
+Allocation: 16 slots starting at reference slot 4
+
+final_bitmap (701 bits):
+    [1111][0000000000000000][1111...1111][1111]
+     ↑              ↑                      ↑
+     bits 0-3       bits 4-19 (allocated)  bits 697-700
+     (below endpoint)                      (above endpoint)
+
+After shrinking (693 bits):
+    [0000000000000000][1111...1111]
+           ↑
+           bits 0-15 (allocated in endpoint range)
+
+Final endpoint bitmap:
+    Slots 0-15: 0 (IN_USE - allocated)
+    Slots 16-692: 1 (AVAILABLE)
+
+Frequency check:
+    Endpoint slot 0 = 191.581 THz = Reference slot 4 ✓
+    Endpoint slot 15 = 191.675 THz = Reference slot 19 ✓
+
+================================================================================
+PART 3: CODE IMPLEMENTATION
+================================================================================
+
+3.1 New Helper Function: shrink_to_endpoint()
+---------------------------------------------
+
+Location: helpers.py, TopologyHelper class
+
+```python
+@staticmethod
+def shrink_to_endpoint(reference_bitmap, _selected_min_freq, endpoint, SLOT_GRANULARITY_HZ):
+    """
+    Shrinks a reference-width bitmap to endpoint's width.
+    
+    This is the INVERSE of align_endpoint_to_reference().
+    - align: Endpoint → Reference (shift LEFT, pad with zeros)
+    - shrink: Reference → Endpoint (shift RIGHT, trim to width)
+    
+    Args:
+        reference_bitmap: int - Bitmap in reference range (e.g., 701 bits for C-Band)
+        _selected_min_freq: Reference minimum frequency (Hz) from band_info
+        endpoint: Endpoint model instance with min_frequency, flex_slots
+        SLOT_GRANULARITY_HZ: ITU slot granularity (6.25 GHz in Hz)
+    
+    Returns:
+        int: Bitmap shrinked to endpoint's width
+    """
+    if not endpoint or not endpoint.min_frequency or not endpoint.flex_slots:
+        logger.warning(f"[RSA Shrink] Invalid endpoint data")
+        return 0
+    
+    # Calculate offset from reference start
+    offset_hz = endpoint.min_frequency - _selected_min_freq
+    offset_slots = int(offset_hz / SLOT_GRANULARITY_HZ)
+    
+    if offset_slots < 0:
+        # Endpoint starts before reference (shouldn't happen)
+        logger.warning(f"[RSA Shrink] Endpoint {endpoint.name} has negative offset")
+        shrinked = reference_bitmap << abs(offset_slots)
+    else:
+        # Normal case: shift right to align
+        shrinked = reference_bitmap >> offset_slots
+    
+    # Mask to endpoint width
+    endpoint_width_mask = (1 << endpoint.flex_slots) - 1
+    shrinked &= endpoint_width_mask
+    
+    logger.debug(
+        f"[RSA Shrink] {endpoint.name}: offset={offset_slots}, "
+        f"flex_slots={endpoint.flex_slots}"
+    )
+    
+    return shrinked
+```
+
+
+3.2 Updated commit_slots() Function
+-----------------------------------
+
+Location: helpers.py, TopologyHelper class
+
+```python
+@staticmethod
+def commit_slots(link_ids, final_bitmap):
+    """
+    Updates endpoint bitmaps by shrinking final_bitmap to each endpoint's width.
+    
+    Task 12: Reference Bitmap Shrinking
+    - final_bitmap is in reference range (e.g., C-band 701 slots)
+    - Each endpoint has its own range (may be narrower)
+    - Shrink final_bitmap to each endpoint's width
+    - Intersect with current bitmap to preserve existing allocations
+    - Update database with new bitmap value
+    
+    Args:
+        link_ids: List of link UUIDs in the path
+        final_bitmap: int - Final bitmap after allocation (in reference range)
+    
+    Returns:
+        bool: True if successful, False otherwise
+    """
+    from models import db, OpticalLink, Endpoint
+    
+    if not link_ids or final_bitmap is None:
+        logger.warning("[RSA Commit] Missing link_ids or final_bitmap")
+        return False
+    
+    try:
+        logger.info(f"[RSA Commit] Starting slot reservation for {len(link_ids)} links")
+        
+        # Step 1: Collect all endpoints from path
+        links = OpticalLink.query.filter(OpticalLink.id.in_(link_ids)).all()
+        if not links:
+            logger.error(f"[RSA Commit] No links found")
+            return False
+        
+        path_endpoints = []
+        for link in links:
+            if link.src_endpoint and link.src_endpoint not in path_endpoints:
+                path_endpoints.append(link.src_endpoint)
+            if link.dst_endpoint and link.dst_endpoint not in path_endpoints:
+                path_endpoints.append(link.dst_endpoint)
+        
+        if not path_endpoints:
+            logger.error("[RSA Commit] No endpoints found in path")
+            return False
+        
+        # Step 2: Calculate reference range (same as pre-compute)
+        valid_endpoints = [ep for ep in path_endpoints 
+                          if ep.min_frequency and ep.max_frequency]
+        
+        _reference_min_freq = min([ep.min_frequency for ep in valid_endpoints])
+        _reference_max_freq = max([ep.max_frequency for ep in valid_endpoints])
+        
+        band_info = OpticalBandHelper.detect_band(_reference_min_freq, _reference_max_freq)
+        if not band_info:
+            logger.error("[RSA Commit] Could not detect band")
+            return False
+        
+        _selected_min_freq, _selected_max_freq = band_info['frequency_range_hz']
+        SLOT_GRANULARITY_HZ = ITUStandards.SLOT_GRANULARITY.value
+        
+        logger.info(f"[RSA Commit] Band: {band_info['band_name']}, "
+                   f"updating {len(path_endpoints)} endpoints")
+        
+        # Step 3: Update each endpoint
+        updated_count = 0
+        for endpoint in path_endpoints:
+            if not endpoint.min_frequency or not endpoint.flex_slots:
+                logger.warning(f"[RSA Commit] Skipping {endpoint.name}: missing data")
+                continue
+            
+            # Shrink final_bitmap to endpoint width
+            shrinked = TopologyHelper.shrink_to_endpoint(
+                final_bitmap, 
+                _selected_min_freq, 
+                endpoint, 
+                SLOT_GRANULARITY_HZ
+            )
+            
+            # Get current bitmap
+            current_bitmap = int(endpoint.bitmap_value) if endpoint.bitmap_value else 0
+            
+            # Intersect: preserves existing allocations AND applies new allocation
+            new_bitmap = current_bitmap & shrinked
+            
+            # Update database
+            endpoint.bitmap_value = str(new_bitmap)
+            
+            # Update in_use flag
+            all_available = (1 << endpoint.flex_slots) - 1
+            endpoint.in_use = (new_bitmap != all_available)
+            
+            logger.info(f"[RSA Commit] {endpoint.name}: "
+                       f"min={endpoint.min_frequency/1e12:.3f} THz, "
+                       f"slots={endpoint.flex_slots}, updated")
+            updated_count += 1
+        
+        db.session.commit()
+        logger.info(f"[RSA Commit] Success: Updated {updated_count} endpoints")
+        return True
+    
+    except Exception as e:
+        db.session.rollback()
+        logger.error(f"[RSA Commit] Error: {e}", exc_info=True)
+        return False
+```
+
+
+3.3 Updated perform_rsa() Return
+--------------------------------
+
+Location: helpers.py, perform_rsa()
+
+Add to success return dict:
+```python
+return {
+    'success': True,
+    'num_slots': num_slots,
+    'start_slot': start_bit,
+    'common_bitmap': common_bitmap_str,
+    'required_slots': required_slots_str,
+    'final_bitmap': final_bitmap_str,
+    'final_bitmap_int': final_bitmap_val,  # ADD THIS
+    'trace_steps': trace_steps,
+    'band_info': band_info,
+    'mask': mask,
+    'links': path_obj['links']
+}
+```
+
+
+3.4 Updated app.py Route
+------------------------
+
+Location: app.py, /acquire-path route
+
+Option A: Pass final_bitmap from form
+```python
+@app.route('/acquire-path', methods=['POST'])
+def acquire_path():
+    from helpers import TopologyHelper
+    
+    link_ids = request.form.getlist('link_ids')
+    final_bitmap_str = request.form.get('final_bitmap')
+    
+    logger.info(f"[Acquire Path] links={link_ids}")
+    
+    if not link_ids or not final_bitmap_str:
+        return "Missing link IDs or final_bitmap.", 400
+    
+    try:
+        final_bitmap = int(final_bitmap_str)
+        success = TopologyHelper.commit_slots(link_ids, final_bitmap)
+        
+        if success:
+            return redirect(url_for('optical_links'))
+        else:
+            return "Failed to commit slots.", 500
+    except ValueError:
+        return "Invalid final_bitmap value.", 400
+```
+
+Option B: Re-compute in commit_slots (keeps existing route)
+- Keep receiving mask
+- In commit_slots, re-compute final_bitmap from path
+- More robust but slightly slower
+
+
+3.5 Updated rsa_path.html Template
+----------------------------------
+
+Location: templates/rsa_path.html
+
+Update hidden form field:
+```html
+<!-- Change from mask to final_bitmap -->
+<input type="hidden" name="final_bitmap" value="{{ rsa.final_bitmap_int }}">
+```
+
+================================================================================
+PART 4: LOGGING CLEANUP
+================================================================================
+
+4.1 Remove Verbose Bitmap Logs
+------------------------------
+
+Remove from helpers.py:
+- `logger.info(f"... {bin(device_bitmap)[:80]}...")`
+- `logger.debug(f"... aligned_bitmap: {bin(aligned_bitmap)}")`
+
+These logs are not useful for 700+ bit bitmaps.
+
+
+4.2 Add Concise Data Logs
+-------------------------
+
+Add to pre-compute and commit:
+```python
+# Log endpoint data, not bitmaps
+logger.info(f"[RSA] Endpoint {ep.name}: "
+           f"min={ep.min_frequency/1e12:.3f} THz, "
+           f"max={ep.max_frequency/1e12:.3f} THz, "
+           f"slots={ep.flex_slots}")
+```
+
+
+4.3 Summary Logs
+----------------
+
+Add summary at end of operations:
+```python
+logger.info(f"[RSA Pre-Compute] Complete: {len(endpoints)} endpoints, "
+           f"band={band_info['band_name']}, slots={reference_slots}")
+
+logger.info(f"[RSA Commit] Complete: {updated_count} endpoints updated")
+```
+
+================================================================================
+PART 5: TESTING PROCEDURE
+================================================================================
+
+5.1 Pre-Test Setup
+------------------
+
+1. Reset all endpoint bitmaps to all-available:
+   ```sql
+   UPDATE endpoints 
+   SET bitmap_value = CAST(POWER(2, flex_slots) - 1 AS TEXT),
+       in_use = false;
+   ```
+
+2. Verify via endpoint details page:
+   - All slots show AVAILABLE (green)
+   - No slots show IN_USE
+
+
+5.2 Test: Basic Allocation
+--------------------------
+
+1. Navigate to Path Finder
+2. Select: TP1 → TP2 (any path)
+3. Bandwidth: 100 Gbps
+4. Click "Find Paths"
+5. Click "RSA" on a valid path
+6. Note the allocated slots (e.g., slots 4-19 in reference)
+7. Click "Acquire Slots"
+
+Expected:
+- Redirect to /optical-links
+- Navigate to endpoint details
+- Slots 0-15 show IN_USE (yellow)
+- Slots 16+ show AVAILABLE (green)
+
+
+5.3 Test: Frequency Verification
+--------------------------------
+
+1. Before allocation: Note first AVAILABLE slot frequency
+2. Perform allocation
+3. After allocation: Check which slots are IN_USE
+
+Expected:
+- First IN_USE slot = endpoint's min_frequency (191.581 THz)
+- NOT reference min (191.556 THz)
+
+
+5.4 Test: Multiple Allocations
+------------------------------
+
+1. First allocation: 50 Gbps (8 slots)
+2. Check: Slots 0-7 IN_USE
+3. Second allocation: 50 Gbps (8 slots)
+4. Check: Slots 8-15 IN_USE (first-fit finds next available)
+
+Expected:
+- Both allocations correct
+- Existing allocation preserved
+- New allocation starts after existing
+
+
+5.5 Test: Check Database Values
+-------------------------------
+
+```sql
+SELECT name, flex_slots, bitmap_value, in_use 
+FROM endpoints 
+WHERE name LIKE 'TP%' OR name LIKE 'RDM%';
+```
+
+Expected:
+- bitmap_value is smaller than 2^flex_slots (some bits are 0)
+- in_use = true for updated endpoints
+
+================================================================================
+PART 6: COMPARISON: ALIGN vs SHRINK
+================================================================================
+
+6.1 Align (Endpoint → Reference)
+--------------------------------
+
+Used in: rsa_bitmap_pre_compute()
+Purpose: Expand endpoint bitmap to reference width for intersection
+
+    Endpoint (693):    [111...111]
+                           ↓ shift left by 4
+    Reference (701):   [0000][111...111][0000]
+                        ↑                  ↑
+                        Low zeros          High zeros (implicit)
+
+
+6.2 Shrink (Reference → Endpoint)
+---------------------------------
+
+Used in: commit_slots()
+Purpose: Contract reference bitmap to endpoint width for storage
+
+    Reference (701):   [0000][111...000...111][0000]
+                           ↓ shift right by 4
+                       [111...000...111][0000]
+                           ↓ mask to 693
+    Endpoint (693):    [111...000...111]
+
+
+6.3 Key Insight
+---------------
+
+These are INVERSE operations:
+- Align adds zeros at low end (shift left)
+- Shrink removes zeros at low end (shift right)
+
+Both use the SAME offset calculation:
+    offset = (endpoint.min - reference.min) / SLOT_GRANULARITY
+
+================================================================================
+PART 7: EDGE CASES
+================================================================================
+
+7.1 Endpoint Wider Than Reference
+---------------------------------
+
+Shouldn't happen if band detection works correctly.
+Handle gracefully: use shrinked = final_bitmap (no shift)
+
+
+7.2 Allocation at Boundary
+--------------------------
+
+If allocation is at reference slots 0-15:
+- Some slots may be below endpoint's min_frequency
+- Those bits get shifted out (correct behavior)
+- Only in-range slots update endpoint
+
+
+7.3 Empty Endpoint Bitmap
+-------------------------
+
+If current endpoint bitmap_value = 0 (all allocated):
+- Intersection with shrinked = 0
+- No new allocations possible
+- RSA should have failed before reaching commit
+
+
+7.4 Very Large Bitmaps
+----------------------
+
+For WHOLE_BAND: 7917 slots
+- Python handles arbitrary precision integers
+- No overflow issues
+- Just avoid logging full bitmap values
+
+================================================================================
+PART 8: SUMMARY
+================================================================================
+
+Task 12 implements:
+
+1. ✓ New shrink_to_endpoint() helper function
+2. ✓ Updated commit_slots() using final_bitmap
+3. ✓ Proper frequency alignment during shrink
+4. ✓ Intersection preserves existing allocations
+5. ✓ Cleaner logging (data values, not bitmaps)
+6. ✓ Updated route to pass final_bitmap
+
+Key Formula:
+    offset_slots = (endpoint.min_frequency - standard_min) / 6.25 GHz
+    shrinked = final_bitmap >> offset_slots
+    shrinked &= (1 << endpoint.flex_slots) - 1
+    new_bitmap = current_bitmap & shrinked
+
+This ensures EXACT frequency mapping between reference and endpoint ranges!
+
+================================================================================
+END OF WALKTHROUGH 12
+================================================================================

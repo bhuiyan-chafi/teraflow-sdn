@@ -150,7 +150,7 @@ Good question, let me fill you in that:
 - we have the Result Bitmap after all the calculation
 - then the required slots
 - finally the Bitmap after acquiring the slots
-- what need to be more robus is the calculation
+- what need to be more robust is the calculation
 - if check the logs, we have logged every step of the calculation
 - this is what we want to bring in the dijkstra path calculation
 - so the steps are:

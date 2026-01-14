@@ -1,0 +1,327 @@
+================================================================================
+TASK 12: Slot Acquisition with Reference Bitmap Shrinking
+================================================================================
+
+Author: Chafiullah Bhuiyan & GitHub Copilot
+Date: January 14, 2026
+Supervisor: Prof. Alessio Giorgetti, UniPi
+
+================================================================================
+1. OBJECTIVE
+================================================================================
+
+Implement correct slot acquisition logic that:
+1. Receives the final_bitmap (result after allocation) from perform_rsa()
+2. Shrinks the reference-width bitmap to each endpoint's width
+3. Preserves frequency alignment during shrinking
+4. Updates endpoint bitmap_value in database correctly
+
+Additionally:
+- Remove verbose bitmap logs (too large for 700+ slot bitmaps)
+- Add concise data logs (min, max, flex_slots values)
+
+================================================================================
+2. PROBLEM STATEMENT
+================================================================================
+
+2.1 Current Issue
+-----------------
+The current commit_slots() receives a `mask` and tries to convert it using
+convert_mask_to_endpoint(). However, this approach has issues:
+
+- The mask represents ONLY allocated slots (e.g., 16 bits set)
+- We need the FULL result bitmap to properly update endpoints
+- Shrinking logic must preserve frequency alignment
+
+2.2 Bitmap Width Mismatch
+-------------------------
+Reference bitmap (C-Band standard):  701 slots (191.556 - 195.937 THz)
+Endpoint bitmap (device capability): 693 slots (191.581 - 195.912 THz)
+
+The final_bitmap is 701 bits wide, but endpoint.bitmap_value is 693 bits.
+We cannot directly store or intersect without proper shrinking.
+
+2.3 Frequency Alignment Requirement
+-----------------------------------
+If we don't shrink correctly, slot positions shift and represent WRONG frequencies:
+
+    final_bitmap bit 0  = 191.556 THz (standard min)
+    endpoint     bit 0  = 191.581 THz (endpoint min)
+
+Direct intersection would cause slot 0 in final_bitmap (191.556 THz) to 
+incorrectly update slot 0 in endpoint (191.581 THz) - a 4-slot frequency error!
+
+================================================================================
+3. SOLUTION: SHRINK TO ENDPOINT WIDTH
+================================================================================
+
+3.1 Shrink Algorithm
+--------------------
+For each endpoint:
+
+Step 1: Calculate low-end offset
+    low_offset = (endpoint.min_frequency - standard_min) / SLOT_GRANULARITY
+    Example: (191581250000000 - 191556250000000) / 6250000000 = 4 slots
+
+Step 2: Shift final_bitmap RIGHT by low_offset
+    shrinked = final_bitmap >> low_offset
+    This removes bits 0-3 (frequencies below endpoint capability)
+
+Step 3: Mask to endpoint width
+    shrinked &= (1 << endpoint.flex_slots) - 1
+    This removes high-end bits (frequencies above endpoint capability)
+
+Step 4: Intersect with current endpoint bitmap
+    current_bitmap = int(endpoint.bitmap_value)
+    new_bitmap = current_bitmap & shrinked
+    This preserves existing allocations AND applies new allocation
+
+Step 5: Update database
+    endpoint.bitmap_value = str(new_bitmap)
+
+3.2 Visual Example
+------------------
+Standard C-Band: 191.556 - 195.937 THz (701 slots)
+Endpoint:        191.581 - 195.912 THz (693 slots)
+Allocation:      Slots 10-25 (16 slots) in reference range
+
+Before Allocation:
+    final_bitmap (701): 1111...11111111111...1111 (all available)
+    
+After Allocation (perform_rsa):
+    final_bitmap (701): 1111...00000000000...1111
+                              ↑           ↑
+                              bit 10      bit 25 (allocated = 0)
+
+Shrink to Endpoint:
+    Step 1: low_offset = 4
+    Step 2: shrinked = final_bitmap >> 4
+            Now bit 0 of shrinked = bit 4 of final_bitmap = 191.581 THz ✓
+    Step 3: shrinked &= (1 << 693) - 1
+            Now we have exactly 693 bits
+    
+    Result shrinked (693): 1111...00000000000...1111
+                                 ↑           ↑
+                                 bit 6       bit 21 (in endpoint range)
+
+Intersection:
+    current (693):  1111111111111111111...1111 (all available)
+    shrinked (693): 1111...00000000000...1111
+    new_bitmap:     1111...00000000000...1111 (slots 6-21 now allocated)
+
+Frequency Verification:
+    Endpoint slot 6 = endpoint.min + (6 × 6.25 GHz) = 191.618 THz
+    Reference slot 10 = standard.min + (10 × 6.25 GHz) = 191.618 THz ✓
+    SAME FREQUENCY - alignment preserved!
+
+================================================================================
+4. SUBTASKS
+================================================================================
+
+4.1 Update perform_rsa() Return Value
+--------------------------------------
+File: helpers.py
+
+Current return includes:
+    'mask': mask,  # Only allocated slots
+
+Add to return:
+    'final_bitmap_int': final_bitmap_val,  # Integer value for commit_slots
+
+4.2 Update app.py Route
+-----------------------
+File: app.py
+
+Change /acquire-path to pass final_bitmap instead of mask:
+
+Current:
+    mask = int(mask_str)
+    success = TopologyHelper.commit_slots(link_ids, mask)
+
+New:
+    final_bitmap = int(final_bitmap_str)
+    success = TopologyHelper.commit_slots(link_ids, final_bitmap)
+
+4.3 Rewrite commit_slots()
+--------------------------
+File: helpers.py
+
+New signature:
+    def commit_slots(link_ids, final_bitmap):
+
+New algorithm:
+1. Calculate reference range from path endpoints
+2. Detect band to get standard min/max frequencies
+3. For each endpoint in path:
+   a. Calculate low_offset from standard_min
+   b. Shrink: shrinked = final_bitmap >> low_offset
+   c. Mask to width: shrinked &= (1 << flex_slots) - 1
+   d. Intersect: new_bitmap = current_bitmap & shrinked
+   e. Update: endpoint.bitmap_value = str(new_bitmap)
+4. Commit to database
+
+4.4 Add shrink_to_endpoint() Helper (Optional)
+----------------------------------------------
+File: helpers.py
+
+New helper function for clarity:
+
+    @staticmethod
+    def shrink_to_endpoint(reference_bitmap, _selected_min_freq, endpoint, SLOT_GRANULARITY_HZ):
+        """
+        Shrinks a reference-width bitmap to endpoint's width.
+        
+        Inverse of align_endpoint_to_reference().
+        """
+        # Calculate offset
+        offset_hz = endpoint.min_frequency - _selected_min_freq
+        offset_slots = int(offset_hz / SLOT_GRANULARITY_HZ)
+        
+        # Shift right to remove low-end bits
+        shrinked = reference_bitmap >> offset_slots
+        
+        # Mask to endpoint width
+        if endpoint.flex_slots:
+            shrinked &= (1 << endpoint.flex_slots) - 1
+        
+        return shrinked
+
+4.5 Clean Up Logging
+--------------------
+File: helpers.py
+
+Remove:
+    - Bitmap value logs (too long for 700+ bits)
+    - bin(bitmap)[:80] truncated logs (not useful)
+
+Add:
+    - Endpoint data logs: name, min_freq, max_freq, flex_slots
+    - Offset calculations: low_offset value
+    - Summary logs: "Updated N endpoints" 
+
+4.6 Update rsa_path.html Template (Optional)
+--------------------------------------------
+File: templates/rsa_path.html
+
+If passing final_bitmap to acquire-path, update hidden form field:
+
+Current:
+    <input type="hidden" name="mask" value="{{ rsa.mask }}">
+
+New:
+    <input type="hidden" name="final_bitmap" value="{{ rsa.final_bitmap_int }}">
+
+================================================================================
+5. TESTING
+================================================================================
+
+5.1 Test Case: Basic Allocation
+-------------------------------
+Setup:
+    - Path: TP1 -> RDM1 -> TP2
+    - Bandwidth: 100 Gbps = 16 slots
+    - All endpoints: 693 slots, all available
+
+Steps:
+    1. Run path finder
+    2. Perform RSA (should find slots 4-19 in reference range)
+    3. Click "Acquire Slots"
+    4. Check endpoint bitmap_value in database
+
+Expected:
+    - Endpoint slots 0-15 should be 0 (allocated)
+    - Reference slots 4-19 → Endpoint slots 0-15 (offset = 4)
+    - Frequency: 191.581 THz (slot 0) = 191.581 THz ✓
+
+5.2 Test Case: Existing Allocation
+----------------------------------
+Setup:
+    - Pre-allocate slots 0-7 in one endpoint
+    - Request 8 more slots
+
+Steps:
+    1. First allocation: 50 Gbps (8 slots)
+    2. Second allocation: 50 Gbps (8 slots)
+
+Expected:
+    - First: slots 0-7 allocated
+    - Second: slots 8-15 allocated (first-fit finds next available)
+    - Final bitmap: slots 0-15 all 0 (16 slots used)
+
+5.3 Test Case: Verify Frequency Alignment
+-----------------------------------------
+Setup:
+    - Endpoint: 191.581 - 195.912 THz (693 slots)
+    - Allocate slots at specific position
+
+Steps:
+    1. Before: Check endpoint slot table (all AVAILABLE)
+    2. Allocate 8 slots
+    3. After: Check which frequencies show IN_USE
+
+Expected:
+    - If reference slots 4-11 allocated
+    - Endpoint slots 0-7 should show IN_USE
+    - Frequency 191.581 THz should be IN_USE (not 191.556 THz)
+
+================================================================================
+6. IMPLEMENTATION NOTES
+================================================================================
+
+6.1 Why final_bitmap, not mask?
+-------------------------------
+- mask only has allocated slots as 1s (e.g., 16 bits out of 701)
+- final_bitmap has ALL slot states (available = 1, allocated = 0)
+- Intersection with current bitmap preserves existing allocations
+- Using mask would require: new = current & ~shrinked_mask (inverted)
+- Using final_bitmap is simpler: new = current & shrinked_final
+
+6.2 Parallel Endpoint Constraint
+--------------------------------
+Should we update ALL device endpoints or just path endpoints?
+
+Option A: Only path endpoints
+    - Simpler, faster
+    - Risk: Other ports on same device don't see allocation
+
+Option B: All device endpoints (current Task 11 approach)
+    - Enforces WSS constraint
+    - More complex shrink logic needed per endpoint
+
+Recommendation: Start with Option A (path endpoints only) for Task 12.
+Device-level constraint was for pre-compute (to find available spectrum).
+For commit, updating path endpoints is sufficient since:
+- Path endpoints ARE the ones being used
+- Other endpoints on device don't need this specific allocation
+
+6.3 Error Handling
+------------------
+- Check endpoint.flex_slots > 0 before masking
+- Handle negative offset (shouldn't happen if band detection works)
+- Validate shrinked bitmap is not 0 (would indicate endpoint outside allocation)
+- Log warnings for edge cases
+
+================================================================================
+7. SUCCESS CRITERIA
+================================================================================
+
+✓ final_bitmap correctly passed from perform_rsa to commit_slots
+✓ Shrink algorithm preserves frequency alignment
+✓ Endpoint bitmap_value updated with correct integer value
+✓ Existing allocations preserved during intersection
+✓ Logs show data values, not full bitmaps
+✓ Spectrum table shows correct IN_USE slots after allocation
+✓ Multiple allocations work correctly (first-fit continues)
+
+================================================================================
+8. RELATED TASKS
+================================================================================
+
+- Task 8: Multi-band detection (provides band_info with standard range)
+- Task 8.1: Narrowest band selection (ensures correct standard range)
+- Task 11: Reference bitmap pre-compute (align_endpoint_to_reference)
+- Task 12: This task (shrink_to_endpoint - inverse operation)
+
+================================================================================
+END OF TASK 12
+================================================================================

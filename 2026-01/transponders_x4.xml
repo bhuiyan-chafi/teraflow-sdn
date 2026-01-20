@@ -15,6 +15,7 @@
 				<type xmlns:typex="http://openconfig.net/yang/platform-types">typex:OPERATING_SYSTEM</type>
 			</state>
 		</component>
+
 		<component>
 			<name>channel-1</name>
 			<config>
@@ -299,6 +300,7 @@
 				</state>
 			</optical-channel>
 		</component>
+
 		<component>
 			<name>transceiver-1</name>
 			<config>
@@ -434,7 +436,6 @@
 				</physical-channels>
 			</transceiver>
 		</component>
-
 		<component>
 			<name>transceiver-4</name>
 			<config>
@@ -480,6 +481,7 @@
 				</physical-channels>
 			</transceiver>
 		</component>
+
 		<component>
 			<name>port-1</name>
 			<config>
@@ -661,6 +663,7 @@
 			</properties>
 		</component>
 	</components>
+
 	<terminal-device xmlns="http://openconfig.net/yang/terminal-device">
 		<logical-channels>
 			<!--Description:

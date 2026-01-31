@@ -378,6 +378,36 @@ Now, I have added some additional files with helpers and constants to support th
     - ANCHOR (blue) - ITU anchor frequency (193.1 THz)
     - Summary statistics (total, available, unavailable, in-use counts)
 
+#### How Channel data has been extracted?
+
+---
+
+I would like to describe this part in detail, because the database configuration for transponder devices is different the ROADM. To review the code please visit [routes.py](src/webui/service/device/routes.py) and [route_helper.py](src/webui/service/device/route_helper.py). The current logic is the following:
+
+```python
+opticalconfig_uuid = opticalconfig_uuid_get_duuid(device_uuid)
+config = json.loads(opticalconfig.config) if isinstance(opticalconfig.config, str) else opticalconfig.config
+endpoints = config.get('endpoints', [])
+# Create lookup maps
+# Map: Endpoint Index (e.g. "TPA2_11") -> Channel Name (e.g. "channel-1")
+endpoint_map = {
+    ep.get('endpoint_uuid', {}).get('index'): ep.get('endpoint_uuid', {}).get('channel')
+    for ep in config.get('endpoints', [])
+    if isinstance(ep, dict)
+}
+# Map: Channel Name (e.g. "channel-1") -> Channel Data
+channel_map = {
+    ch.get('name', {}).get('index'): ch
+    for ch in config.get('channels', [])
+    if isinstance(ch.get('name'), dict)
+}
+# Direct Lookup
+target_channel_name = endpoint_map.get(endpoint_index)
+channel_data_raw = channel_map.get(target_channel_name)
+if channel_data_raw:
+    # ... extract frequencies ...
+```
+
 ### Enhancement of the Channels: ROADM
 
 ---

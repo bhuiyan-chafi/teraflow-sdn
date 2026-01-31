@@ -13,7 +13,7 @@
     {
       "device_id": {
         "device_uuid": {
-          "uuid": "RDM.A.201.2"
+          "uuid": "RDM2"
         }
       },
       "device_type": "optical-roadm",

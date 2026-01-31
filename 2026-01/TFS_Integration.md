@@ -37,15 +37,27 @@ We are going to integrate our ***RSA*** project in TeraFlowSDN. For that I have 
 
 6. Creating our emulated device *Optical Transponder* in [***UniPi Server: monster***] using this [script](../2025-11/TP.A.101.1.sh).
 
-## Enhancement of Device Configuration
+7. For the ROADM devices, we have used Professor Alessio's repository. We have also used ONOS to follow the discovery and filtering processes.
 
-We want to store some additional information from the device to perform device based filtration. Currently we don't have any information related to manufacturer. So, we will add some columns  in the database table [***DeviceModel.py : device***]. Device [***name, type, and driver***] is already present in the database.
+8. For the device configuration, we have used this [xml-file](../2025-11/nodeTIM.xml).
+
+9. The containers are located in ***UniPI:Monster*** with this [script](./1-ORDM.sh) and uploaded in ONOS using this [json](./1-ORDM_ONOS.json).
+
+10. For TFS integration use this [json](../2025-11/1_ORDM.json) instead.
+
+11. If you want to run ONOS using docker use this: [create-onos](./create-onos.sh)
+
+***[scripts are taken from NETM-Scripts by prof. alessio]***
+
+## Modifications on OCDriver: openconfig-devices
+
+We want to store some additional information from the device to perform device based filtration. Currently we don't have any information related to manufacturer. So, we will add some columns  in the database table [***DeviceModel.py : src/context/service/database/models/DeviceModel.py***]. Device [***name, type, and driver***] is already present in the database.
 
 1. Use the teraflow [descriptor](../2025-11/1_TP.json) to add the device to the controller.
 
 2. The discovery of ***Device Name***
 
-    >Filename: OCDriver.py [teraflow-develop/src/device/service/drivers/oc_driver/OCDriver.py]
+    >Filename: OCDriver.py[enum: 11] [teraflow-develop/src/device/service/drivers/oc_driver/OCDriver.py]
 
     Right now the ***Device Name*** is selected from the ***JSON*** descriptor. It doesn't read from the ***xml*** configuration file.
 
@@ -107,10 +119,10 @@ We want to store some additional information from the device to perform device b
         kubectl rollout restart deployment/webuiservice -n tfs
         ```
 
-## Enhancement of Device Endpoints aka PORTS
+### Enhancement of Device Endpoints aka PORTS : Muxponder
 
 Let's see an example of the current workflow:
-Right now TFS ***OCDriver*** is reading ***port-11*** from the ***xml*** components and splitting the integer as name. So finally the output becomes: name: 11, endpoint_type: port-11. Which is a bit confusing, so we will try put it according to the standard.
+Right now TFS ***OCDriver*** is reading ***port-11*** from the ***xml*** components and splitting the integer as name. Finally, the output becomes: name: 11, endpoint_type: port-11. Which is a bit confusing, so we will try put it according to the standard.
 
 ```xml
 <component>
@@ -140,7 +152,7 @@ for component in components:
         ports.append(port)
 ```
 
-Since we are going to add quite a few attributes, let's go one by one. First we are going to start with the index, name, endpoint_type. Name and endpoint_type is already there so, we will start with index.
+Since we are going to add quite a few attributes, let's go one by one. First we are going to start with the ***index, name and endpoint_type***. Name and endpoint_type is already there so, we will start with index.
 
 We want to extract and store additional endpoint information from devices to enable better endpoint identification and filtering. Currently, endpoints lack detailed indexing and transport type classification. We will add `index` and `transport_type` columns to the database table [***EndPointModel.py : endpoint***] and implement model-based filtering for vendor-specific XML parsing.
 
@@ -148,7 +160,7 @@ We want to extract and store additional endpoint information from devices to ena
 
 2. **Creating Model-Based Device Filters**
 
-    >Directory: device_filters [teraflow-develop/src/device/service/drivers/oc_driver/device_filters/]
+    >Filename: device_filters [teraflow-develop/src/device/service/drivers/oc_driver/device_filters/]
 
     Created a new package for device-specific filter classes:
     - **DefaultDevice.py**: Fallback filters for unknown devices with generic patterns
@@ -224,15 +236,21 @@ We want to extract and store additional endpoint information from devices to ena
 
     - rebuild the context, device and webui like before.
 
-## Enhancement of the channels
+### Enhancement of the Channels : Muxponder
 
 Right now when the configuration is extracted from the `xml` file, the channels and endpoints are separated and stored in different tables. The flow is the following:
 
 - ***optical_channel***: contains the channels associated to each physical endpoints. The channels are typically the transceivers. All the details like frequency, operational mode and input/output powers are defined there. But there is another table for storing the transceivers but currently the official code is commented to store them.
-- the database storage follows the current flow in the backend: ***optical_config*** -> ***transponder_type*** -> ***optical_channel***.
+
+- the database storage follows the current flow in the backend:\
+***optical_config*** -> ***transponder_type*** -> ***optical_channel***.
+
 - the ***channel_uuid*** is manually generated using a hash function(channel-name+device_uuid).
-- but I didn't find any direct connection to map the channels to the endpoints in the database. The reason is that, channels and endpoints can be same for different devices. The device ID is the distinguisher, for these names. Another issue was that the channels were stored in the database before the endpoints, in different functions. ***So, even if we wanted to use the `endpoint_id` in optical_channels we couldn't do it, unless performing hash-reverse using channel-name and device_id.***
-- the easiest solution for that was to use our ***index*** column from ***endpoint*** table in ***optical_config***. The index works like a unique identifier and we populated them before calling the database-manager. Later, we just passed them to each functions for database storing.
+
+- but I didn't find any direct connection to map the channels to the endpoints in the database. The reason is that, channels and endpoints can be same for different devices. The device ID is the distinguisher, for these names. ***Another issue was that the channels were stored in the database before the endpoints, in different functions. So, even if we wanted to use the `endpoint_id` in optical_channels we couldn't do it, unless performing hash-reverse using channel-name and device_id.***
+
+- the easiest solution for that was to use our ***index*** ([how indexes are generated](#how-indexes-are-generated))column from ***endpoint*** table in ***optical_config***. The index works like a unique identifier and we populated them before calling the database-manager. Later, we just passed them to each functions for database storing.
+
 - ***src/device/service/Tools.py*** has been modified with these changes. And a sample output is such:
 
 ```json
@@ -242,13 +260,28 @@ Right now when the configuration is extracted from the `xml` file, the channels 
 
 - the ***index*** is also beneficial for the user to identify the device+port from the webUI. The function that sanitizes this name is located here: ***src/device/service/Tools.py:44***
 
-### Phase 1: ITU Standards and RSA Tools
+#### How indexes are generated
 
-1. Creating ITU Standards Module
+The index is generated using the following algorithm:
 
-    > Filename: ITUStandards.py [teraflow-develop/src/common/ITUStandards.py]
+```python
+# src/device/service/Tools.py -> populate_endpoints()
 
-    Created a new module with ITU-T G.694.1 optical networking standards:
+device_name = fetch from the json descriptor
+sanitized_name = _sanitize_device_name(device_name) # removes any non-alphanumeric characters
+endpoint_index = resource_value.get('index') # return the numerical-part "port-11" -> "11"
+device_endpoint.index = f"{sanitized_name}_{endpoint_index}" # TP1_11
+```
+
+---
+
+Now, I have added some additional files with helpers and constants to support the development. The intention was to make the code as modular as possible, so that we can have singular point of execution for any change.
+
+#### To define the ITU Standards
+
+1. ***ITUStandards.py: [src/common/ITUStandards.py]***
+
+    A helper with ITU-T G.694.1 optical networking standards. The helper contains the following classes:
 
     - **FrequencyMeasurementUnit**: Enum for frequency unit conversions (GHz, THz)
     - **ITUStandards**: Core constants (ANCHOR_FREQUENCY=193.1 THz, SLOT_GRANULARITY=6.25 GHz)
@@ -258,11 +291,9 @@ Right now when the configuration is extracted from the `xml` file, the channels 
     - **Slots**: Number of 6.25 GHz slots per band (C_BAND=701, L_BAND=498, etc.)
     - **SlotStatus**: Availability flags (AVAILABLE, UNAVAILABLE, IN_USE)
 
-2. Creating RSA Helper Functions
+2. ***RSATools.py: [src/common/RSATools.py]***
 
-    > Filename: RSATools.py [teraflow-develop/src/common/RSATools.py]
-
-    Created helper functions for RSA operations:
+    This is helper is the brain of our whole research. It contains all the helper functions that have been used both in our new optical-controller, web-views and drivers.
 
     - **detect_band(frequency_hz, min_frequency_hz, max_frequency_hz)**: Detects the smallest optical band containing the given frequency
     - **compute_rsa_params(frequency_hz, min_frequency_hz, max_frequency_hz)**: Computes RSA parameters (min/max frequency, flex_slots, bitmap_value) for a channel
@@ -270,30 +301,19 @@ Right now when the configuration is extracted from the `xml` file, the channels 
     - **build_spectrum_slot_table(channel_data, band_info)**: Generates slot table with availability status for WebUI
     - **_determine_slot_availability(...)**: Determines slot status (AVAILABLE/UNAVAILABLE/IN_USE) based on bitmap
 
+    These are short descriptions, we have more in later sections.
+
 ---
 
-### Phase 2: Database Schema Updates
+#### Database Schema & Service Updates
 
-1. Adding RSA Fields to OpticalChannelModel
+1. ***TransponderModel.py: [src/context/service/database/models/OpticalConfig/TransponderModel.py]***
 
-    > Filename: TransponderModel.py [teraflow-develop/src/context/service/database/models/OpticalConfig/TransponderModel.py]
+    Added new columns to `OpticalChannelModel` (table: `optical_channel`): min_frequency, max_frequency, flex_slots, bitmap_value
 
-    Added new columns to `OpticalChannelModel` (table: `optical_channel`):
+    Necessary modifications were made to support the cause.
 
-    ```python
-    # [CHAFI-THESIS-START] - RSA spectrum allocation fields
-    min_frequency = Column(Integer, nullable=True)  # Band minimum frequency in Hz
-    max_frequency = Column(Integer, nullable=True)  # Band maximum frequency in Hz
-    flex_slots = Column(Integer, nullable=True)     # Number of 6.25 GHz slots in the band
-    bitmap_value = Column(String, nullable=True)    # Slot availability bitmap (large int as string)
-    # [CHAFI-THESIS-END]
-    ```
-
-    Updated `dump()` method to include new fields in JSON output.
-
-2. Updating OpticalConfig.py for Database Storage
-
-    > Filename: OpticalConfig.py [teraflow-develop/src/context/service/database/OpticalConfig.py]
+2. ***OpticalConfig.py: [src/context/service/database/OpticalConfig.py]***
 
     Modified `set_optical_transponder()` function:
 
@@ -303,11 +323,9 @@ Right now when the configuration is extracted from the `xml` file, the channels 
 
 ---
 
-### Phase 3: Device Service - Channel Extraction
+#### Device Service - Channel Extraction
 
-1. Modifying transponders.py for RSA Computation
-
-    > Filename: transponders.py [teraflow-develop/src/device/service/drivers/oc_driver/templates/discovery_tool/transponders.py]
+1. ***transponders.py: [src/device/service/drivers/oc_driver/templates/discovery_tool/transponders.py]***
 
     Modified channel extraction to compute RSA parameters:
 
@@ -318,59 +336,21 @@ Right now when the configuration is extracted from the `xml` file, the channels 
     - Populate `min_frequency`, `max_frequency`, `flex_slots`, `bitmap_value`
     - Added logging for RSA computation results
 
-2. Updating filters.py with RSA Imports
+2. ***filters.py: [src/device/service/drivers/oc_driver/templates/discovery_tool/filters.py]***
 
-    > Filename: filters.py [teraflow-develop/src/device/service/drivers/oc_driver/templates/discovery_tool/filters.py]
-
-    - Added import for RSATools module
-    - Updated Namespaces and Filters for channel property extraction
+    This is the helper that we used for ***OCDriver's*** device based information extraction. It inherits all the device based filtering functions and returns desired output.
 
 ---
 
-### Phase 4: WebUI Implementation
+#### WebUI Adjustment
 
-1. Adding Jinja Filters for Frequency Conversion
+1. ***init***.py: [teraflow-develop/src/webui/service/***init***.py]***
 
-    > Filename: **init**.py [teraflow-develop/src/webui/service/**init**.py]
+    Some, decorators are added in `create_app()` function for logical representation of some units and constants.
 
-    Added Jinja template filters in `create_app()`:
+2. ***routes.py: [teraflow-develop/src/webui/service/device/routes.py]***
 
-    ```python
-    # [CHAFI-THESIS-START] - Jinja filters for frequency conversion
-    @app.template_filter('hz_to_thz')
-    def hz_to_thz_filter(value_hz):
-        """Convert Hz to THz for display"""
-        return value_hz / FrequencyMeasurementUnit.THz.value
-
-    @app.template_filter('hz_to_ghz')
-    def hz_to_ghz_filter(value_hz):
-        """Convert Hz to GHz for display"""
-        return value_hz / FrequencyMeasurementUnit.GHz.value
-    # [CHAFI-THESIS-END]
-    ```
-
-2. Updating Endpoint Details Route
-
-    > Filename: routes.py [teraflow-develop/src/webui/service/device/routes.py]
-
-    Modified `endpoint_detail()` function with channel data fetching logic:
-
-    **Data Flow:**
-
-    1. Get `endpoint_index` from `target_endpoint.index` (e.g., "TPA2_11")
-    2. Use `opticalconfig_uuid_get_duuid(device_uuid)` to compute `opticalconfig_uuid`
-    3. Call `context_client.SelectOpticalConfig(opticalconfig_id)` to get optical config
-    4. Match `endpoint_index` with `config['endpoints'][].endpoint_uuid.index` to find channel name
-    5. Search `config['channels']` for matching channel and extract RSA data
-    6. Call `detect_band_for_display()` to get band info with wavelength range
-    7. Call `build_spectrum_slot_table()` to generate slot availability table
-    8. Pass `channel_data`, `band_info`, `slot_table`, `slot_granularity` to template
-
-    **Key Functions Used:**
-
-    - `opticalconfig_uuid_get_duuid()` from `common.tools.context_queries.OpticalConfig`
-    - `detect_band_for_display()` from `common.RSATools`
-    - `build_spectrum_slot_table()` from `common.RSATools`
+    Modified `endpoint_detail()` function with channel data fetching logic. Please go through the blocks with [CHAFI-THESIS-START] and [CHAFI-THESIS-END] to have a better understanding.
 
 3. Creating Endpoint Frequency View Template
 
@@ -397,3 +377,83 @@ Right now when the configuration is extracted from the `xml` file, the channels 
     - IN_USE (yellow) - Allocated slot
     - ANCHOR (blue) - ITU anchor frequency (193.1 THz)
     - Summary statistics (total, available, unavailable, in-use counts)
+
+### Enhancement of the Channels: ROADM
+
+---
+Before jumping into modifications, let me describe the situation before this development was conducted. I would like to start with the relational database. The database was designed properly and necessary relationship was there already. All I had to do is adding some columns and directing inputs to them. But there is one major change.
+
+For that we have to understand how the optical-links work in teraflow. Before this development and still now [incomplete, because I haven't finished modifying functionalities], then I added `frequencies` to `channel` table for ROADM devices. And right now whenever we add a ROADM device, it will look for frequency ranges in the configuration file. If not found then it will choose the default range, which is now set to S,C,L bands. So, you can assume each OPTICAL MULTIPLEX/LINE port of a ROADM acts like a big pipe through which we have 16,875.00 GHz bandwidth. To achieve this I had to modify some files, which are the following:
+
+- ***RoadmModel.py: [src/context/service/database/models/OpticalConfig/RoadmModel.py]***
+- ***OpticalConfigModel.py: [src/context/service/database/models/OpticalConfig/OpticalConfigModel.py]***
+
+I invite you to have a look at this files with the block [CHAFI-THESIS-START] and [CHAFI-THESIS-END]. The codes are properly commented. So, after this modifications we have channel details for each port of a ROADM device. And to get support from the driver and web, we made some modifications in the following files:
+
+- ***OCDriver.py: [src/device/service/drivers/oc_driver/OCDriver.py]***
+
+    In function `GetConfig()`, I have ***hard-coded*** the device model-name to apply the device based filter. Right now the emulator device I have from professor andrea doesn't support additional device info pushed through an `xml` file. I am trying to build 3 new emulators based on the emulators I have from professor alessio and professor andrea. The intention is to explore standard approaches of openconfig and openroadm, to define some standard naming conventions which might help writing filter functions for the drivers.***Update This Section In Future***
+
+- ***roadms.py: [src/device/service/drivers/oc_driver/templates/discovery_tool/roadms.py]***
+
+    Is where I did some modifications to extract values from the `xml` and send them to the database. For a better understanding please go through the code blocks. To connect it with the frequency details, I have used the same `ITU standard` files and `RSATools`. Here is the relational database schema(hover on the image for the caption):
+
+![relational-db-optical_config](../images/optical_config_relations.png "Relational Databases of OpticalConfigModel")
+
+This schema clearly demonstrates that whenever we add an ***optical-device***, we generate an ***optical_config*** object and a ***roadm_type*** object(because we added a ***roadm***, same goes for ***transponder*** too). Then the ***roadm_type*** object is linked to the ***channels***.
+
+![relational-db-channels](../images/channel_relations.png "Relational Databases of ChannelModel")
+
+For the ***transponders*** the channel information are not stored here because this database model implicitly belongs to ***RoadmModel***. Since we have a ***optical_config*** relation between all the `optical-devices`, this table could have been made common among all. This modification(if mage), will ease the functionalities of RSA(even though its just some extra line of codes, who cares!). So, the final view from a `device` point of view is this:
+
+![relational-db-device](../images/endpoint_relations.png "Relational Databases of EndPointModel")
+
+From the schema it is clear that the `endpoint` has many types, but we used the main one. There is a separate table for opticallink_endpoint but I didn't use that. The reason is, I kept the existing execution of teraflow and induced my own. Since, frequencies were managed by each link before, I didn't change that part. Also, teraflow is a big eco-system and I don't know very well about other functionalities that's why I tried to use common resources. Maybe in future I will change it according the comments from my professors. But right now, a working sample was the most important part.
+
+---
+
+#### The linkup between RSATools and WebUI
+
+For the web view, I have linked the `endpoint` details to the `optical_config` table. From that point the information retrieval continued as per the database relationships. Finally `RSATools` has bene used to generate the web-view. So, I think before jumping into the next point I must describe the current functionalities of the RSATools.
+
+### RSATools: [src/common/RSATools.py]
+
+Is the helper(or you can say primary knowledge container) of RSA computation for detecting bands, frequency ranges, wavelengths, slots and building spectrum table. Let us discuss each of them in detail.
+
+#### Detecting the Band
+
+---
+
+From the `endpoint` relational point of view, we reach to the `channel`(describing from a ROADM device point of view) and fetch the operating and min, max frequency. Based on the `min` and `max` frequency, we can detect the band from the ***ITUStandard.py*** helper. After that, based on the band we select number of slots within that range and the bitmap value. The bitmap value is calculated with this formula: $bitmap = 2^{slots}-1$. This produces a large `integer` which cannot be saved as number in `postgresSql`, that is why we saved that value as string of numbers and later processed as a number using `python`(python supports larger integer numbers).
+
+#### Bitmap Table and Slot Availability
+
+---
+
+By bitmap in our RSA computation we are indicating ITU G.694.1 flex slot granularity of 6.25GHz. And it doesn't matter whether we request a FIXED or FLEX, the computation is always based on 6.25GHz. And example from the standard is given below:
+
+![flex-grid-expansion](../images/flex_computation_itu.png "Flex Grid Expansion")
+
+So, it is pretty straight forward how the computation must be conducted. We followed the same procedure, to calculate the width and the granularity. Since 6.25GHz is the minimum unit, it is convenient to perform the computation considering this as the unit. After that we logically separate the concept of fixed and flexed. And this is exactly what we did in ***RSATools.py:*** `build_spectrum_slot_table()`. We detected the band, fetched the slots and expanded them into 6.25Ghz granularity. But there is one thing worth mentioning, ***what happens if a device only support a fixed range of frequencies within a band***?
+
+Well, this is a very common case. A transceiver may/not support the whole band but a fixed range. In that case our `build_spectrum_slot_table()` marks those slots within the band as `UNAVAILABLE`. This leads us to the next topic, the status constants used in the WEB and also in the CODE.
+
+![bitmap-unavailable](../images/bitmap_unavailable.png "UNAVAILABLE SLOTS")
+
+---
+
+#### Status ENUM
+
+Right now we have set a few of them in ***ITUStandards.py:*** `SlotStatus` class. The status depends on the endpoint type and slot availability. If the endpoint is of OCH type and it has been used we mark them as `FULL`, because it cannot be re-used(unless you turn it off, re-tune). But if the endpoint type is of OMS and we have an active connection, we mark it as `IN_USE` because it is a FAT channel and doesn't care about the spectrum. It is the engineers duty to be careful before transmission. So, we hope we are doing a good work, because we don't want donald trump's voice calls transmitted to china! Kaboom. This was a joke, whatever! Let's jump into our new section `openroadm` which is my favorite between the two data-models. Good definition leaves.
+
+## Modifications on OpenROADMDriver: openroadm-devices
+
+The workflow is 95% same like `OPENCONFIG-ROADM` devices, except a few extra things. Let me explain with the database schema, which pretty much explains the rest of 5%.
+
+![openroadm-interfaces](../images/openroadm_interfaces.png "OpenROADM Interfaces")
+
+This is the only additional entry we perform(existing structure of teraflow) in database for the `OPENROADM DEVICES`. All the `circuit-packs` with their port names, frequencies, etc. are stored here. I haven't used this table for my RSA computation because, if we combine optical_config, channel and roadm_type table together then this table becomes redundant. But it doesn't mean its not useful, its just not serving my cause. But we need it 100% for device configuration(if anyone wants to make changes in interfaces).
+
+Next, we filtered out the internal-ports from `endpoint_population()`. Because currently we are not doing anything in particular with the internal port mapping. But a good contribution can be: mapping cross connections between ports(like we do in ONOS). So, for openroadm devices we don't see the internal ports anymore in the device-details. The `client` ports are marked as TRANSPORT_TYPE: OCH and `line` ports are marked as TRANSPORT_TYPE: OMS.
+
+---

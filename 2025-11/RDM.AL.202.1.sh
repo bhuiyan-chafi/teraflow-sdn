@@ -19,3 +19,15 @@ sleep 2
 
 echo "Starting the Netconf agents"
 sudo screen -S r1 -X stuff './startNetconfAgent.sh\n'
+
+
+# or simply run this
+#!/bin/bash
+
+#Remove previous topology
+# echo "Removing running agents"
+# docker stop RDM.201.1
+# docker rm RDM.201.1
+
+# echo "Creating ROADM"
+# screen -dmS r1 -T xterm sh -c 'docker run --net=netbrTFS --ip=10.100.201.1 --name RDM.201.1 -it ornotifelement.img:latest  /bin/bash -c "python modifyMakefile.py nodeTIM.xml; ./startNetconfAgent.sh "'

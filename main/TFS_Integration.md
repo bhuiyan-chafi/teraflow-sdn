@@ -487,3 +487,27 @@ This is the only additional entry we perform(existing structure of teraflow) in 
 Next, we filtered out the internal-ports from `endpoint_population()`. Because currently we are not doing anything in particular with the internal port mapping. But a good contribution can be: mapping cross connections between ports(like we do in ONOS). So, for openroadm devices we don't see the internal ports anymore in the device-details. The `client` ports are marked as TRANSPORT_TYPE: OCH and `line` ports are marked as TRANSPORT_TYPE: OMS.
 
 ---
+
+## Adding Optical Links
+
+Right now the navigation bar doesn't have a tab where we can see the optical links. But the routes and views were present in the desired folders, I started with adding the Optical Links option in the navigation bar.
+
+### Add links with endpoint index
+
+---
+
+Right now the links are added with `endpoint_uuid`. The json descriptor I received from professor andrea, contained the endpoint names to setup the links. But after all these changes, when I tried to add links using that descriptor I faced an error that the `uuid` is not matched with any `endpoint_uuid` in the database. It was supposed to happen but it wasn't the same issue I was expecting. Before explaining that, let me state that the link works if I put actual `endpoint_uuid` from the endpoints. So, I started debugging how the descriptors are extracted from json and found this: [link-descriptor-error-with-endpoint-names](../2026-02/link_endpoint_mismatch_reason.md).
+
+If you have read the document you know now how the hashing works. I tried generating the topology and adding the devices in the same topology but I failed. So, I used the `endpoint_index` as an additional option to setup the links. I didn't break the existing workflow rather added an option which will be executed if the first one fails. The workflow is documented here: [link-descriptor-support-with-index](../2026-02/link_with_index_supportPlan.md). Now we can use a descriptor like [this](../2026-02/1-Link_with_INDEX_TEST.json), to add links. But remember one thing, ***the link name is unique and it overwrites existing ones***. So, use different names. I actually have some ideas about it, but it needs some studies and that is why I am skipping this for now. We have bigger fish to fry.
+
+### Add parallel links
+
+---
+
+Right now parallel links are accepted by the topology without any issues. The only problem is that, it is not displayed correctly. So, I came up with two possible solutions:
+
+- add parallel links with a minimum gap to each other. But this will create a UI issue if we have large of parallel links. Since the devices are icons, putting 10 links between each other will overflow their graphical dimension.
+
+- the efficient way is to mention the number of links between two devices with an integer number. I choose the format `xN` for that.
+
+The implementation is described [here](../2026-02/parallel_links_visualization_plan.md) in detail.

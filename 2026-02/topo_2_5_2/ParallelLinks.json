@@ -1,0 +1,494 @@
+{
+  "optical_links": [
+    {
+      "name": "TP1_11->RDM1_4101",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TP1_11->RDM1_4101"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TP1"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-11",
+            "index": "TP1_11"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDM1"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4101",
+            "index": "RDM1_4101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-11",
+        "dst_port": "4101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TP1_22->RDM1_4102",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TP1_22->RDM1_4102"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TP1"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-22",
+            "index": "TP1_22"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDM1"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4102",
+            "index": "RDM1_4102"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-11",
+        "dst_port": "4102",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDM1->RDM2",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDM1->RDM2"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDM1"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5101",
+            "index": "RDM1_5101"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDM2"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5101",
+            "index": "RDM2_5101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5101",
+        "dst_port": "5101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDM1->RDM3",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDM1->RDM3"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDM1"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDM1_5201"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDM3"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5101",
+            "index": "RDM3_5101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5201",
+        "dst_port": "5101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDM3->RDM5",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDM3->RDM5"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDM3"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDM3_5201"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDM5"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDM5_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5201",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDM2_5201->RDM4_5101",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDM2_5201->RDM4_5101"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDM2"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDM2_5201"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDM4"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5101",
+            "index": "RDM4_5101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5201",
+        "dst_port": "5101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDM2_5202->RDM4_5202",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDM2_5202->RDM4_5202"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDM2"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDM2_5202"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDM4"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDM4_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5202",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDM4->RDM5",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDM4->RDM5"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDM4"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDM4_5201"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDM5"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5101",
+            "index": "RDM5_5101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5201",
+        "dst_port": "5101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDM5_4101->TP2_11",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDM5_4101->TP2_11"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDM5"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4101",
+            "index": "RDM5_4101"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TP2"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-11",
+            "index": "TP2_11"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4101",
+        "dst_port": "port-11",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDM5_4102->TP2_22",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDM5_4102->TP2_22"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDM5"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4102",
+            "index": "RDM5_4102"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TP2"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-22",
+            "index": "TP2_22"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4102",
+        "dst_port": "port-22",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    }
+  ]
+}

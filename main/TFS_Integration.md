@@ -488,9 +488,15 @@ Next, we filtered out the internal-ports from `endpoint_population()`. Because c
 
 ---
 
-## Adding Optical Links
+## Adding Optical Links [Removed]
 
 Right now the navigation bar doesn't have a tab where we can see the optical links. But the routes and views were present in the desired folders, I started with adding the Optical Links option in the navigation bar.
+
+***Why removed?***[2nd February]
+
+---
+
+As usual, I was stupid and didn't notice there is a webUI already developed for OpticalController. I reused the optical_links but didn't find the full web view. When I deployed the opticalcontroller and rebuilt the webservice, I noticed that there is Optical View part already linked in the navigation. So, I removed the redundant link and started re-using the existing one. See, the later sections to find out more about ***Optical View***.
 
 ### Add links with endpoint index
 
@@ -510,4 +516,16 @@ Right now parallel links are accepted by the topology without any issues. The on
 
 - the efficient way is to mention the number of links between two devices with an integer number. I choose the format `xN` for that.
 
-The implementation is described [here](../2026-02/parallel_links_visualization_plan.md) in detail.
+The implementation is described here [(parallel-links)](../2026-02/parallel_links_visualization_plan.md) in detail.
+
+## Light Path aka Optical Intent
+
+Optical intents are posted in ***teraflow*** as a service. Right now ***OpticalController*** is the official service inside the eco-system. This is where our main work starts. But before jumping into our implementation let's have a look how services work in teraflow, and how optical-controller does it's job. Then we will focus on creating our own service with parallel link support.
+
+Since the section is pretty big and our document is also growing large, we will use external files to demonstrate our workflow. For the current workflow of service and optical-controller please read this document [services-and-optical-controller](../2026-02/services_optical_controller.md). Now, to deploy the official ***optical-controller*** please follow this steps [deploy-optical-controller](../2026-02/deploy_optical_controller.md).
+
+### Parallel Optical Controller
+
+---
+
+This is our main program. Following the optical-controller workflow in teraflow, we are developing our own service parallel-optical-controller to implement our RSA algorithm. Please follow this document for details [parallel-optical-controller](../2026-02/parallel_optical_controller.md).

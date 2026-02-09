@@ -9,12 +9,12 @@
       "service_status": { "service_status": 1 },
       "service_endpoint_ids": [
         {
-          "device_id": { "device_uuid": { "uuid": "TPA1" } },
-          "endpoint_uuid": { "uuid": "1" }
+          "device_id": { "device_uuid": { "uuid": "TP1" } },
+          "endpoint_uuid": { "uuid": "a1092710-ffa8-59c5-9886-d58326d1286e" }
         },
         {
-          "device_id": { "device_uuid": { "uuid": "TPA2" } },
-          "endpoint_uuid": { "uuid": "1" }
+          "device_id": { "device_uuid": { "uuid": "TP2" } },
+          "endpoint_uuid": { "uuid": "fc1767b5-e4bd-56cb-a5a1-973179b890cb" }
         }
       ],
       "service_constraints": [

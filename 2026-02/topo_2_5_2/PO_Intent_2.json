@@ -1,0 +1,49 @@
+{
+  "services": [
+    {
+      "service_id": {
+        "context_id": { "context_uuid": { "uuid": "admin" } },
+        "service_uuid": { "uuid": "optical-connection_TP3_TP4" }
+      },
+      "service_type": 14,
+      "service_status": { "service_status": 1 },
+      "service_endpoint_ids": [
+        {
+          "device_id": { "device_uuid": { "uuid": "TP3" } },
+          "endpoint_uuid": {
+            "uuid": "18eaf0b6-021e-5613-bc26-58a1dee30fa5",
+            "index": "TP3_11"
+          }
+        },
+        {
+          "device_id": { "device_uuid": { "uuid": "TP4" } },
+          "endpoint_uuid": {
+            "uuid": "86f411c1-e2e2-55bb-add8-cd8335cfe5c2",
+            "index": "TP4_11"
+          }
+        }
+      ],
+      "service_constraints": [
+        {
+          "custom": {
+            "constraint_type": "type",
+            "constraint_value": "flexi_grid"
+          }
+        },
+        {
+          "custom": {
+            "constraint_type": "bandwidth[gbps]",
+            "constraint_value": "100.0"
+          }
+        },
+        {
+          "custom": {
+            "constraint_type": "bidirectionality",
+            "constraint_value": "1"
+          }
+        }
+      ],
+      "service_config": { "config_rules": [] }
+    }
+  ]
+}

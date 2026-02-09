@@ -9,7 +9,7 @@ Parallel optical links between the same two devices are drawn as overlapping lin
 ## Design Decisions
 
 | Decision | Answer |
-|----------|--------|
+| -------- | ------ |
 | Label format | `×3` |
 | Click to show details? | No (keep simple) |
 | Apply to which links? | Optical links only |

@@ -528,4 +528,4 @@ Since the section is pretty big and our document is also growing large, we will 
 
 ---
 
-This is our main program. Following the optical-controller workflow in teraflow, we are developing our own service parallel-optical-controller to implement our RSA algorithm. Please follow this document for details [parallel-optical-controller](../2026-02/parallel_optical_controller.md).
+This is our main program. Following the optical-controller workflow in teraflow, we are developing our own service parallel-optical-controller to implement our RSA algorithm. Please follow this document for details [parallel-optical-controller](../2026-02/parallel_optical_controller.md), where I have described the technical specifications of the controller. Next we will learn about the algorithm of our RSA implementation, for that please follow this [document](./parallel_rsa.md).

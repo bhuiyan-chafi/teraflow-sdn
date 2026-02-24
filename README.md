@@ -1,6 +1,6 @@
-# RSA computation in Topologies with Parallel Links
+# Thesis overview
 
-This is a demo project developed outside of TeraFlowSDN. Now the integration is in progress. But the demo is still functional and can be tested in any device with docker & docker-compose. Please follow these instructions to run the demo:
+The repo contains various aspects of my thesis. Specially the demo project that I did before the main integration in TeraflowSDN can be tested by the following commands:
 
 ```bash
 git clone https://github.com/bhuiyan-chafi/teraflow-sdn.git
@@ -12,3 +12,11 @@ docker-compose up --build
 ```
 
 The web application is a flask app which can be accessed through: [localhost:3000/](localhost:3000/)
+
+## Main Integration
+
+Please read the [document here](./main/TFS_Integration.md).
+
+## Test the system with descriptors
+
+Please find the [descriptors here](./2026-02/topo_2_5_2/).

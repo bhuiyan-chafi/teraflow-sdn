@@ -7,24 +7,38 @@ We are going to integrate our ***RSA*** project in TeraFlowSDN. For that I have 
 1. Creating the Docker Network  ***UniPi Server: Monster***
 
     ```bash
+    # use your deisred subnet
     sudo docker network create --driver=bridge --ip-range=10.100.0.0/16 --subnet=10.100.0.0/16 -o "com.docker.network.bridge.name=brTFS" netbrTFS
     ```
 
 2. Add route in ***UniPi Server: Mascara***
 
     ```bash
+    # use your own server's IP address and used subnet for docker
     sudo ip route add 10.100.0.0/16 via 131.114.54.73
+    # check the route
     route -n
     ```
 
 3. Add route in ***UniPi Server: Monster***
 
+    This solution worked with debian bullseye, but after upgrading the OS to ubuntu 22.04 broke the persistency and I had to adapt new changes. But if you are using an old linux distro try this.
+
     ```bash
+    # make sure you execute this each time you reboot, or make it permanent
     sudo iptables -I DOCKER-USER -s 131.114.54.72 -d 10.100.0.0/16 -j ACCEPT
+    
+    # check if added successfully
     sudo iptables --list
     ```
 
-4. Try to ping the *Emulated Device* from ***UniPi Server: Mascara***
+    ***Important***
+
+    If not then follow [these steps](../2026-03/setup_network.sh) for new linux distributions. Then you have to use this [script](../2026-03/fixConnectivity.sh) for fixing the network issue each time you generate a topology.
+
+4. For muxponder and roadm device configuration I have used professor alessio and andrea's existing files with slight modifications to match the driver's information retrieval. For muxponders use this [file](./transponders_x4.xml) and for roadms use this [file](./roadm.xml). I suggest you to follow this [pattern](../2026-03/topo_3_10_3/testTopo_3_10_3.sh) to design your topology scripts.
+
+5. Try to ping the *Emulated Device* from ***UniPi Server: Mascara***
 
     ```bash
     # find the device in Monster
@@ -32,22 +46,6 @@ We are going to integrate our ***RSA*** project in TeraFlowSDN. For that I have 
     # ping from Mascara
     ping 10.100.101.1
     ```
-
-5. Use Professor Andrea's OpenConfig example XML [configuration-file](./transponders_x4.xml).
-
-6. Creating our emulated device *Optical Transponder* in [***UniPi Server: monster***] using this [script](../2025-11/TP.A.101.1.sh).
-
-7. For the ROADM devices, we have used Professor Alessio's repository. We have also used ONOS to follow the discovery and filtering processes.
-
-8. For the device configuration, we have used this [xml-file](../2025-11/nodeTIM.xml).
-
-9. The containers are located in ***UniPI:Monster*** with this [script](./1-ORDM.sh) and uploaded in ONOS using this [json](./1-ORDM_ONOS.json).
-
-10. For TFS integration use this [json](../2025-11/1_ORDM.json) instead.
-
-11. If you want to run ONOS using docker use this: [create-onos](./create-onos.sh)
-
-***[scripts are taken from NETM-Scripts by prof. alessio]***
 
 ## Modifications on OCDriver: openconfig-devices
 
@@ -84,8 +82,8 @@ We want to store some additional information from the device to perform device b
 
     - /src/webui/service/templates/device/detail.html contains new data fields
     - src/webui/service/device/routes.py, contains the controller
-
-7. Rebuilding the ***Services***
+7. [2026-03-01] I encountered a new issue related to netconf session handling. Teraflow keeps DeviceDriverCaches for better device management. This is an useful feature but for frequent topology changes it reacts. As in my thesis I was changing the topologies frequently, adding devices with these caches introduced malformed transport type errors which failed the connection to the emulators. The problem and solution has been detailed in this [document](../2026-03/netconf_errors.md).
+8. Rebuilding the ***Services***
 
     - rebuild ***CockRoachDB***
 
@@ -121,6 +119,7 @@ We want to store some additional information from the device to perform device b
 
 ### Enhancement of Device Endpoints aka PORTS : Muxponder
 
+---
 Let's see an example of the current workflow:
 Right now TFS ***OCDriver*** is reading ***port-11*** from the ***xml*** components and splitting the integer as name. Finally, the output becomes: name: 11, endpoint_type: port-11. Which is a bit confusing, so we will try put it according to the standard.
 
@@ -238,6 +237,7 @@ We want to extract and store additional endpoint information from devices to ena
 
 ### Enhancement of the Channels : Muxponder
 
+---
 Right now when the configuration is extracted from the `xml` file, the channels and endpoints are separated and stored in different tables. The flow is the following:
 
 - ***optical_channel***: contains the channels associated to each physical endpoints. The channels are typically the transceivers. All the details like frequency, operational mode and input/output powers are defined there. But there is another table for storing the transceivers but currently the official code is commented to store them.
@@ -262,6 +262,7 @@ Right now when the configuration is extracted from the `xml` file, the channels 
 
 #### How indexes are generated
 
+---
 The index is generated using the following algorithm:
 
 ```python
@@ -273,11 +274,11 @@ endpoint_index = resource_value.get('index') # return the numerical-part "port-1
 device_endpoint.index = f"{sanitized_name}_{endpoint_index}" # TP1_11
 ```
 
----
-
 Now, I have added some additional files with helpers and constants to support the development. The intention was to make the code as modular as possible, so that we can have singular point of execution for any change.
 
 #### To define the ITU Standards
+
+---
 
 1. ***ITUStandards.py: [src/common/ITUStandards.py]***
 
@@ -303,9 +304,9 @@ Now, I have added some additional files with helpers and constants to support th
 
     These are short descriptions, we have more in later sections.
 
----
-
 #### Database Schema & Service Updates
+
+---
 
 1. ***TransponderModel.py: [src/context/service/database/models/OpticalConfig/TransponderModel.py]***
 
@@ -321,9 +322,9 @@ Now, I have added some additional files with helpers and constants to support th
     - Updated `OpticalChannelModel` upsert statement with new fields
     - Updated `on_conflict_do_update` to persist RSA fields on updates
 
----
-
 #### Device Service - Channel Extraction
+
+---
 
 1. ***transponders.py: [src/device/service/drivers/oc_driver/templates/discovery_tool/transponders.py]***
 
@@ -340,9 +341,9 @@ Now, I have added some additional files with helpers and constants to support th
 
     This is the helper that we used for ***OCDriver's*** device based information extraction. It inherits all the device based filtering functions and returns desired output.
 
----
-
 #### WebUI Adjustment
+
+---
 
 1. ***init***.py: [teraflow-develop/src/webui/service/***init***.py]***
 
@@ -440,19 +441,17 @@ For the ***transponders*** the channel information are not stored here because t
 
 From the schema it is clear that the `endpoint` has many types, but we used the main one. There is a separate table for opticallink_endpoint but I didn't use that. The reason is, I kept the existing execution of teraflow and induced my own. Since, frequencies were managed by each link before, I didn't change that part. Also, teraflow is a big eco-system and I don't know very well about other functionalities that's why I tried to use common resources. Maybe in future I will change it according the comments from my professors. But right now, a working sample was the most important part.
 
----
-
 #### The linkup between RSATools and WebUI
 
+---
 For the web view, I have linked the `endpoint` details to the `optical_config` table. From that point the information retrieval continued as per the database relationships. Finally `RSATools` has bene used to generate the web-view. So, I think before jumping into the next point I must describe the current functionalities of the RSATools.
 
 ### RSATools: [src/common/RSATools.py]
 
+---
 Is the helper(or you can say primary knowledge container) of RSA computation for detecting bands, frequency ranges, wavelengths, slots and building spectrum table. Let us discuss each of them in detail.
 
 #### Detecting the Band
-
----
 
 From the `endpoint` relational point of view, we reach to the `channel`(describing from a ROADM device point of view) and fetch the operating and min, max frequency. Based on the `min` and `max` frequency, we can detect the band from the ***ITUStandard.py*** helper. After that, based on the band we select number of slots within that range and the bitmap value. The bitmap value is calculated with this formula: $bitmap = 2^{slots}-1$. This produces a large `integer` which cannot be saved as number in `postgresSql`, that is why we saved that value as string of numbers and later processed as a number using `python`(python supports larger integer numbers).
 
@@ -470,10 +469,9 @@ Well, this is a very common case. A transceiver may/not support the whole band b
 
 ![bitmap-unavailable](../images/bitmap_unavailable.png "UNAVAILABLE SLOTS")
 
----
-
 #### Status ENUM
 
+---
 Right now we have set a few of them in ***ITUStandards.py:*** `SlotStatus` class. The status depends on the endpoint type and slot availability. If the endpoint is of OCH type and it has been used we mark them as `FULL`, because it cannot be re-used(unless you turn it off, re-tune). But if the endpoint type is of OMS and we have an active connection, we mark it as `IN_USE` because it is a FAT channel and doesn't care about the spectrum. It is the engineers duty to be careful before transmission. So, we hope we are doing a good work, because we don't want donald trump's voice calls transmitted to china! Kaboom. This was a joke, whatever! Let's jump into our new section `openroadm` which is my favorite between the two data-models. Good definition leaves.
 
 ## Modifications on OpenROADMDriver: openroadm-devices
@@ -485,8 +483,6 @@ The workflow is 95% same like `OPENCONFIG-ROADM` devices, except a few extra thi
 This is the only additional entry we perform(existing structure of teraflow) in database for the `OPENROADM DEVICES`. All the `circuit-packs` with their port names, frequencies, etc. are stored here. I haven't used this table for my RSA computation because, if we combine optical_config, channel and roadm_type table together then this table becomes redundant. But it doesn't mean its not useful, its just not serving my cause. But we need it 100% for device configuration(if anyone wants to make changes in interfaces).
 
 Next, we filtered out the internal-ports from `endpoint_population()`. Because currently we are not doing anything in particular with the internal port mapping. But a good contribution can be: mapping cross connections between ports(like we do in ONOS). So, for openroadm devices we don't see the internal ports anymore in the device-details. The `client` ports are marked as TRANSPORT_TYPE: OCH and `line` ports are marked as TRANSPORT_TYPE: OMS.
-
----
 
 ## Adding Optical Links [Removed]
 

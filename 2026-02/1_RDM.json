@@ -3,7 +3,7 @@
     {
       "device_id": {
         "device_uuid": {
-          "uuid": "RDM2"
+          "uuid": "RDM1"
         }
       },
       "device_type": "optical-roadm",
@@ -16,7 +16,7 @@
             "action": 1,
             "custom": {
               "resource_key": "_connect/address",
-              "resource_value": "10.100.201.2"
+              "resource_value": "10.100.201.1"
             }
           },
           {

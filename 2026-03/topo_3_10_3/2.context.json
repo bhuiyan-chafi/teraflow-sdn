@@ -1,0 +1,19 @@
+{
+  "contexts": [
+    {
+      "context_id": { "context_uuid": { "uuid": "chafi" } },
+      "topology_ids": [],
+      "service_ids": []
+    }
+  ],
+  "topologies": [
+    {
+      "topology_id": {
+        "context_id": { "context_uuid": { "uuid": "chafi" } },
+        "topology_uuid": { "uuid": "chafi" }
+      },
+      "device_ids": [],
+      "link_ids": []
+    }
+  ]
+}

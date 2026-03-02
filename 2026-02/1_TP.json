@@ -1,9 +1,19 @@
 {
+  "topologies": [
+    {
+      "topology_id": {
+        "context_id": { "context_uuid": { "uuid": "admin" } },
+        "topology_uuid": { "uuid": "admin" }
+      },
+      "device_ids": [],
+      "link_ids": []
+    }
+  ],
   "devices": [
     {
       "device_id": {
         "device_uuid": {
-          "uuid": "TPA1"
+          "uuid": "TP4"
         }
       },
       "device_type": "optical-transponder",
@@ -16,7 +26,7 @@
             "action": 1,
             "custom": {
               "resource_key": "_connect/address",
-              "resource_value": "10.100.101.1"
+              "resource_value": "10.100.101.4"
             }
           },
           {

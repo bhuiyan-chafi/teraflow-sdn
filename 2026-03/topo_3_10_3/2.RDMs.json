@@ -1,0 +1,534 @@
+{
+  "topologies": [
+    {
+      "topology_id": {
+        "context_id": { "context_uuid": { "uuid": "chafi" } },
+        "topology_uuid": { "uuid": "chafi" }
+      },
+      "device_ids": [],
+      "link_ids": []
+    }
+  ],
+  "devices": [
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "RDM1"
+        }
+      },
+      "device_type": "optical-roadm",
+      "device_drivers": [11],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.201.1"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-roadm",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "RDM2"
+        }
+      },
+      "device_type": "optical-roadm",
+      "device_drivers": [11],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.201.2"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-roadm",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "RDM3"
+        }
+      },
+      "device_type": "optical-roadm",
+      "device_drivers": [11],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.201.3"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-roadm",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "RDM4"
+        }
+      },
+      "device_type": "optical-roadm",
+      "device_drivers": [11],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.201.4"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-roadm",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "RDM5"
+        }
+      },
+      "device_type": "optical-roadm",
+      "device_drivers": [11],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.201.5"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-roadm",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "RDM6"
+        }
+      },
+      "device_type": "optical-roadm",
+      "device_drivers": [11],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.201.6"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-roadm",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "RDM7"
+        }
+      },
+      "device_type": "optical-roadm",
+      "device_drivers": [11],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.201.7"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-roadm",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "RDM8"
+        }
+      },
+      "device_type": "optical-roadm",
+      "device_drivers": [11],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.201.8"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-roadm",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "RDM9"
+        }
+      },
+      "device_type": "optical-roadm",
+      "device_drivers": [11],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.201.9"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-roadm",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "RDM10"
+        }
+      },
+      "device_type": "optical-roadm",
+      "device_drivers": [11],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.201.10"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-roadm",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

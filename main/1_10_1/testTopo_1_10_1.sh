@@ -50,6 +50,9 @@ echo "Creating TP2"
 docker run --net=netbrTFS --ip=10.100.101.2 --name TP2 -v "/home/asm/tfs_emus/transponders_x4.xml:/confd/examples.confd/OC23/demoECOC21.xml" -dt asgamb1/oc23bgp.img ./startNetconfAgent.sh
 sleep 2
 
+echo "Fixing connectivity with Mascara"
+bash ../../fixConnectivity.sh
+
 echo ""
 echo "Waiting for NETCONF agents to be ready..."
 for ip in 10.100.101.{1..2} 10.100.201.{1..10}; do

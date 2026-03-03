@@ -1,19 +1,13 @@
 {
-  "contexts": [
-    {
-      "context_id": { "context_uuid": { "uuid": "test1_10_1" } },
-      "topology_ids": [],
-      "service_ids": []
-    }
-  ],
   "topologies": [
     {
       "topology_id": {
-        "context_id": { "context_uuid": { "uuid": "test1_10_1" } },
-        "topology_uuid": { "uuid": "test1_10_1" }
+        "context_id": { "context_uuid": { "uuid": "admin" } },
+        "topology_uuid": { "uuid": "69d7b9cb-c1b0-5fc9-bf44-08d265ed14ad" }
       },
-      "device_ids": [],
-      "link_ids": []
+      "device_ids": [
+        { "device_uuid": { "uuid": "bb1dd450-698b-5f7a-aa57-ae6a2f4c41f2" } }
+      ]
     }
   ]
 }

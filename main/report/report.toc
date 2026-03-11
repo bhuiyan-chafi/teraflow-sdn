@@ -1,0 +1,67 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{8}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Overview}{8}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Motivation}{9}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Research Objectives}{10}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Thesis Contributions}{11}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Organization of the Thesis}{12}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Background and Literature Review}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Software Defined Network}{13}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}SDN Architecture and Principles}{13}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}SDN in Optical Networks}{13}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}TeraflowSDN}{14}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Architecture and Ecosystem}{14}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Key services}{14}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Optical Transport Networks}{14}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}WDM technology}{14}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}ITU standards}{14}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Network elements (devices)}{15}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Data models (configuration)}{15}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Routing and Spectrum Allocation}{15}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Spectrum continuity and contiguity constraints}{15}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Existing RSA algorithms}{15}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Problems with Parallel Links in RSA}{15}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Problem statement}{15}{subsection.2.5.1}%
+\contentsline {section}{\numberline {2.6}Current approaches and limitation}{16}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Related work}{16}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Problem Definition and Proposed Algorithm}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Problem Overview}{17}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Formal Problem Statement}{17}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Graph Modelling with Parallel Links (topologies)}{17}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Proposed RSA Algorithm}{18}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Bandwidth \& Slot Computation}{18}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Path Discovery}{18}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Bitmap-Based Spectrum Allocation}{19}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Slot Acquisition \& Assignment}{19}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.5}Complexity Analysis}{19}{section.3.5}%
+\contentsline {chapter}{\numberline {4}System Design and Implementation}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Overall System Architecture}{21}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Modifications to TeraFlowSDN}{21}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Device Service Enhancements (OCDriver, OpenROADMDriver)}{21}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Context Service \& Database Schema Extensions}{22}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}RSA Computation Module (RSATools, ITUStandards)}{22}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Parallel Optical Controller Microservice}{23}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Service Architecture \& API Design}{23}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Graph Construction with NetworkX}{23}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Integration with Existing TFS Services}{23}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Topology \& Link Management (Parallel Link Support)}{23}{section.4.6}%
+\contentsline {section}{\numberline {4.7}WebUI Enhancements (Spectrum Visualization)}{24}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Testbed Setup and Deployment}{25}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Physical/Virtual Infrastructure}{25}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Emulated Devices (Transponders, ROADMS)}{26}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Network Topology Configuration (tfs descriptors)}{26}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Deployment Procedure (TeraFlowSDN \& ParallelOpticalController)}{27}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Results and Evaluation}{28}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Evaluation Methodology \& Test Scenarios}{28}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Functional Validation}{28}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Computational Performance}{29}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Spectrum Utilization Efficiency}{29}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Throughput Analysis}{29}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Comparison with Baseline/Existing Approaches}{30}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Statistical Analysis}{30}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Discussion of Results}{30}{section.6.8}%
+\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{31}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Summary of Contributions}{31}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Limitations}{32}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Future Work Directions}{32}{section.7.3}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

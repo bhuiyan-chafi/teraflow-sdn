@@ -1,0 +1,119 @@
+\documentclass[fontsize=14pt,a4paper,DIV=14,open=any]{scrreprt}
+
+%%%%%%%% CREATE DOCUMENT STRUCTURE %%%%%%%%
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{csquotes}  % required by biblatex when babel is loaded
+
+%% Page margins
+\usepackage[top=2cm,bottom=2cm,left=1.5cm,right=1.5cm]{geometry}
+\setlength{\footskip}{20pt}  % push footer up so page number isn't clipped
+
+%% Useful packages
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage{scrhack}  % must come before float/listings to patch KOMA incompatibilities
+\usepackage{float}
+\usepackage{listings}
+\definecolor{darkgreen}{rgb}{0.0, 0.4, 0.0}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstset{ 
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\usepackage[backend=biber, style=ieee]{biblatex}
+\addbibresource{references.bib}
+%% hyperref loaded last
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=blue]{hyperref}
+
+%% KOMA-Script font settings
+\setkomafont{chapter}{\huge\bfseries}
+\setkomafont{section}{\Large\bfseries}
+\setkomafont{subsection}{\large\bfseries}
+
+%% Abstract heading style
+\renewcommand{\abstractname}{Abstract}
+\renewenvironment{abstract}{%
+  \clearpage\null\vfill
+  \begin{center}
+    {\Huge\bfseries\abstractname}
+  \end{center}
+  \vspace{1em}
+  \par\noindent\ignorespaces
+}{\par\vfill\null\clearpage}
+
+%%%%%%%% DOCUMENT %%%%%%%%
+\begin{document}
+\pagenumbering{arabic}
+
+%%%% Title Page
+\begin{titlepage}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+    \centering
+    \vspace*{3cm}
+    % University
+    \textsc{\LARGE Universita di Pisa}\\[1cm]
+    \includegraphics[width=0.2\textwidth]{unipi_logo.png}\\[1cm]
+    % Document info
+    \textsc{\Large Master's Thesis}\\[0.2cm]
+    \textsc{\large Supervised by: Professor Alessio Giorgetti}\\
+    \HRule\\[0.3cm]
+    {\huge\bfseries Thesis Title}\\
+    \HRule\\[5cm]
+    \emph{By: ASM Chafiullah Bhuiyan}\\
+    Computer Science and Networking\\[0.2cm]
+    \emph{\textbf{Academic Year: 2025--2026}}
+    \vfill
+\end{titlepage}
+%%% Acknowledgement
+\section*{\begin{center}
+      Acknowledgement
+  \end{center}}
+First and foremost, I would like to express my deepest gratitude to my primary supervisor, Professor Alessio Giorgetti. I am incredibly thankful for his unwavering support, his willingness to share his resources, and for granting me welcoming access to his office. His generous investment of valuable time and expertise was instrumental in allowing me to complete this extensive and complex project within the given timeframe. Furthermore, I am deeply appreciative of his provision of dedicated hardware resources, which afforded me endless opportunities to conduct rigorous testing and successfully validate my work.
+
+\vspace{0.4cm}
+Finally, words cannot adequately express my profound gratitude to my family for their immense sacrifices during my time studying abroad. I owe a special and heartfelt thank you to my children, who have had to navigate a significant part of their childhood missing their father. Your love, patience, understanding, and resilience have been my greatest source of strength and motivation throughout this journey. This thesis is as much yours as it is mine.
+
+%%% Abstract
+\begin{abstract}
+    \begin{center}
+        \textsc{\large Thesis Title}\\[0.2cm]
+        \textsc{\large Master's in Computer Science and Networking}\\[1cm]
+    \end{center}
+    The provisioning of light-paths in flexible-grid optical networks has significantly enhanced spectrum utilization; however, the integration of topologies featuring multiple parallel links between optical devices introduces profound computational complexities in Routing and Spectrum Allocation (RSA). Specifically, when multiple transponders (muxponders) interface with the exact same degree of Reconfigurable Optical Add-Drop Multiplexer (ROADM) devices, the permutation of viable routing options increases exponentially. This geometric expansion renders standard path computation mechanisms excessively heavy and inefficient for traditional Software-Defined Networking (SDN) controllers. This routing challenge is further compounded by the stringent constraints of spectrum continuity and contiguity under the ITU-T G.694.1 standard, which dictates a 12.5 GHz minimum slot width and a high-resolution 6.25 GHz slot granularity. Because optical signals directed to the same ROADM degree cannot reuse identical frequencies without severe interference, the controller is burdened with the computationally intensive task of continuously verifying the availability of every individual 6.25 GHz slot across all potential parallel routes. To overcome these dual bottlenecks of path scalability and high-resolution spectrum mapping, this thesis introduces the ParallelOpticalController, a novel microservice engineered directly into the \texttt{TeraFlowSDN} ecosystem. Leveraging the \texttt{networkX} library for advanced topological graph modeling, the proposed architecture natively supports multi-directed graphs with parallel edges. This enables the highly efficient execution of Dijkstra's algorithm to compute the optimal shortest path, while concurrently discovering and suggesting exhaustive alternative path combinations to maximize network utilization. Furthermore, to resolve the heavy spectrum calculation overhead, the controller employs an innovative bitwise mapping algorithm that performs mathematical intersections of available flex-grid slots across sequential hops, drastically reducing the time required to identify contiguous spectrum blocks. Finally, these backend computational advancements are fully integrated with a dynamic graphical WebUI that visualizes the complex parallel-link topology, endpoint interfaces, and real-time spectrum allocations, thereby offering a highly scalable, end-to-end framework for next-generation optical network management.
+\end{abstract}
+%%% Contents
+\tableofcontents
+\listoffigures
+\listoftables
+\input{contents/chapterOne.tex}
+\input{contents/chapterTwo.tex}
+\input{contents/chapterThree.tex}
+\input{contents/chapterFour.tex}
+\input{contents/chapterFive.tex}
+\input{contents/chapterSix.tex}
+\input{contents/chapterSeven.tex}
+\end{document}

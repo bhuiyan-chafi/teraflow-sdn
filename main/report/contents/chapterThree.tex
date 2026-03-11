@@ -1,0 +1,43 @@
+\chapter{Problem Definition and Proposed Algorithm}
+This chapter formalizes the Routing and Spectrum Allocation (RSA) challenge within multi-graph optical topologies and presents the core algorithmic solutions developed for this thesis. It details the methodologies used to model physical networks with parallel links, compute required bandwidth and slots, discover optimal and alternative paths, and dynamically allocate spectrum using a novel bitmap intersection approach.
+\section{Problem Overview}
+In modern optical networks, computing lightpaths between transponders and ROADMs requires resolving the Routing and Spectrum Allocation (RSA) problem. While standard algorithms can find paths across simple topologies, significant computational bottlenecks arise when topologies feature multiple parallel links between devices. Because optical channels transmitted to the same degree of a ROADM cannot reuse identical frequencies without conflict, the controller must exhaustively calculate and track the exact spectrum slot availability across all parallel permutations. The proposed solution addresses this by introducing a parallel optical controller that utilizes advanced graph modeling and bitwise spectrum calculations to efficiently manage these parallel paths.
+\section{Formal Problem Statement}
+\textbf{TBD} (Note: I have to define the mathematical formulation to represent the problem here, such as defining the network as a graph G=(V,E), defining the sets of available frequencies, and writing the objective function to minimize spectrum fragmentation or blocking probability.)
+\section{Graph Modelling with Parallel Links (topologies)}
+To enable efficient path computation and expansion, the physical network topology retrieved from the TeraFlowSDN database is modeled locally into a multi-directed graph using the NetworkX Python library. Only active optical devices are considered for this graph-building phase. Because NetworkX does not feature a default device-port-link formation, a custom mapping system was developed to link devices and endpoints.
+The controller generates multiple graph variations to serve different computational needs:
+\begin{itemize}
+    \item \texttt{G\_FREE}: A multi-directed graph that strictly includes "free" links where the optical channel status is OCH==USED[false]. This graph allows multiple parallel links between the same nodes.
+    \item \texttt{G\_simple\_free}: A simplified version of the graph that filters out parallel links to find unique, distinct paths from the source to the destination.
+    \item \texttt{G\_simple:} The raw graph used to determine all possible topological paths without filtering for link utilization, which is later expanded to discover parallel combinations.
+\end{itemize}
+During the generation of these graphs, the controller fetches all links and creates a device-endpoint map based on TeraFlowSDN database records. For each endpoint, the channel information is retrieved to provide the algorithm with complete details regarding supported frequencies.
+\section{Proposed RSA Algorithm}
+\subsection{Bandwidth \& Slot Computation}
+Before pathing can occur, the controller must determine the exact amount of spectrum required for the requested optical intent. The bitrate for this operation is considered in GHz. The required bandwidth, $B_r$, is calculated using the following formula:
+\[
+    B_r = \frac{R_b}{n}(1 + \alpha)
+\]
+where $n=log_2(M)$, and M represents the specific modulation format utilized. While several factors influence the required bandwidth, this standard formula simplifies the process for the controller.
+Once the bandwidth is known, the algorithm determines the number of required slots. Adhering to the minimum measurement unit defined by the ITU-T G.694.1 standard, the slot granularity is fixed at 6.25 GHz. The number of required slots, N, is calculated as:
+\[
+    N = \frac{B_r}{6.25}
+\]
+\subsection{Path Discovery}
+The path discovery phase utilizes the constructed NetworkX graphs to find viable routes. First, Dijkstra's algorithm is executed on the \texttt{G\_FREE} graph to guarantee that the primary shortest path relies exclusively on unused optical links.
+
+To discover alternative path combinations, a dedicated \texttt{find\_paths()} function generates the \texttt{G\_simple\_free} graph, which includes all links, and executes the \texttt{all\_simple\_paths()} algorithm to find all possible distinct paths between the source and destination. Subsequently, an \texttt{expand\_path()} function takes these lists of nodes and systematically computes all possible parallel link combinations between every two nodes along the route.
+\subsection{Bitmap-Based Spectrum Allocation}
+To manage the high-resolution ITU-T flex-grid granularity efficiently, the spectrum status is represented mathematically using a bitmap approach. Based on the detected optical band (e.g., C-Band, L-Band) and the corresponding minimum and maximum frequencies of the channels, the maximum bitmap value is generated using the formula:
+\[
+    bitmap-value = 2^N - 1
+\]
+Because this produces an extremely large integer that cannot be natively stored as a numerical data type in standard relational databases like PostgreSQL, it is stored as a string and processed as an integer purely within the Python backend.
+
+The RSA computation is handled by the \texttt{rsa\_bitmap\_pre\_compute()} function. It processes the designated path and optical links, calculating the overall minimum and maximum frequency boundaries to generate a reference bitmap. The algorithm then performs a bitwise intersection across each consecutive hop in the path against the reference bitmap. This logical intersection rapidly identifies continuous blocks of available slots. Slots are categorized into status flags: AVAILABLE for free slots, \texttt{IN\_USE} for allocated but non-restrictive fat channels (like OMS), FULL for consumed OCH endpoints, and UNAVAILABLE for slots outside the device's hardware capabilities.
+\subsection{Slot Acquisition \& Assignment}
+Following the successful computation of an available spectrum block, the algorithm proceeds to the acquisition phase. It traverses each hop in the selected path and checks the current bitmap value stored in the \texttt{perform\_rsa} cache. The algorithm then removes the alignment, converts the binary data back into an integer, and initiates a database update. The assignment is finalized by securely writing the updated state to the database via the context-client.
+\section{Complexity Analysis}
+\texttt{TBD}
+(Note: I have to write the time and space complexity of your algorithm here. For example, the Big-O notation for the networkX shortest path calculation on your multi-graph, and the complexity of the bitwise intersection across H hops and S slots).

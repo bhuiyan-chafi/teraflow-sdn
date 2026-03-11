@@ -1,0 +1,50 @@
+\chapter{Testbed Setup and Deployment}
+This chapter outlines the practical environment established to validate the proposed Routing and Spectrum Allocation (RSA) algorithms and the ParallelOpticalController. It details the configuration of the physical servers, the initialization of the Docker networking layer, the setup of emulated optical devices via XML data models, and the final microservices deployment procedure utilizing Kubernetes (MicroK8s).
+\section{Physical/Virtual Infrastructure}
+The experimental testbed relies on a distributed server architecture hosted at the University of Pisa (UniPi). Two primary servers, designated as Monster and Mascara, are utilized to balance the computational load between the SDN control plane and the emulated data plane.
+
+To facilitate communication between the TeraFlowSDN controllers and the emulated devices, an isolated Docker bridge network is established. The creation of this network on the Monster server requires specifying a dedicated subnet and IP range:
+
+\begin{lstlisting}[language=bash, caption={Creating docker network}]
+    # On secondary server
+    sudo docker network create --driver=bridge \
+    --ip-range=10.100.0.0/16 \
+    --subnet=10.100.0.0/16 \
+    -o "com.docker.network.bridge.name=brTFS" netbrTFS
+\end{lstlisting}
+
+To ensure the Mascara server can route traffic to this newly created Docker subnet, static IP routing is configured. The following commands define the route through the respective gateway IP:
+
+\begin{lstlisting}[language=bash, caption={Creating route to the docker network}]
+    # Executed on Primary Server
+    sudo ip route add 10.100.0.0/16 via 131.114.54.73
+    route -n # Verification of the routing table
+\end{lstlisting}
+
+Furthermore, due to operating system constraints on Ubuntu 22.04 regarding network persistency, explicit iptables rules must be inserted on the Monster server to accept incoming traffic from the Mascara node:
+
+\begin{lstlisting}[language=bash, caption={Adding exceptions for teraflow packets}]
+    # Executed on UniPi Server: Monster
+    sudo iptables -I DOCKER-USER -s 131.114.54.72 -d 10.100.0.0/16 -j ACCEPT
+    sudo iptables --list # Verification of firewall rules
+\end{lstlisting}
+\textbf{[This section will be written properly, because I have to introduce two setup. One for debian system with older versions of docker and the new one with ubuntu 22.04 and latest version of docker.]}
+\section{Emulated Devices (Transponders, ROADMS)}
+Because deploying physical, large-scale flex-grid optical hardware is cost-prohibitive, the data plane is entirely simulated using advanced device emulators. These emulators accurately replicate the NETCONF/YANG interfaces of commercial optical equipment.
+
+The configuration of these devices relies heavily on meticulously crafted XML files that define their hardware capabilities, physical ports, and operational frequencies.
+
+\begin{itemize}
+    \item \textbf{Transponders (Muxponders):} The transponder configurations utilize the OpenConfig standard. For example, the \texttt{transponders\_x4.xml} file defines a MellanoxSwitch device with multiple \texttt{QSFP56\_DD\_TYPE1} transceivers operating under the \texttt{ETH\_400GBASE\_ZR} standard. It explicitly details the optical channels, defining parameters such as the default 193.1875 THz frequency, target output power, and associated line ports.
+    \item \textbf{ROADMs:} Reconfigurable Optical Add-Drop Multiplexers are configured to simulate specific optical degrees and frequency bands. The \texttt{roadm.xml} file dictates the input and output directional mapping of ports (e.g., ports 4101 and 5201 mapping to Degree D1). Crucially, it hardcodes the hardware bounds for the proposed RSA algorithm, explicitly defining the \texttt{MG\_ON\_PORT\_MIN\_FREQUENCY} as 193.0 THz and the \texttt{MG\_ON\_PORT\_MAX\_FREQUENCY} as 193.375 THz.
+\end{itemize}
+\section{Network Topology Configuration (tfs descriptors)}
+To push the network topology into the TeraFlowSDN Context database, standardized JSON descriptors are utilized. These descriptors dictate the node identities, endpoint indices, and the optical links connecting them. To support the testing of topologies with multiple parallel links, the topology descriptor parsing mechanism was updated. Instead of relying strictly on unstable UUID hashing, the testbed utilises descriptors that reference the deterministic \texttt{endpoint\_index} (e.g., \texttt{TP1\_11}), allowing stable, repeatable topology generations with parallel edge definitions (e.g., xN multiplier configurations).
+\section{Deployment Procedure (TeraFlowSDN \& ParallelOpticalController)}
+The entire TeraFlowSDN ecosystem, including the custom-built components, is deployed on a MicroK8s Kubernetes cluster. When deploying the novel ParallelOpticalController to a fresh TFS ecosystem, a strict five-step deployment pipeline is executed .
+
+First, the Docker image for the new controller is built and pushed to the local container registry:
+
+\begin{center}
+    \textbf{[Deployment of TeraFlowSDN]}
+\end{center}

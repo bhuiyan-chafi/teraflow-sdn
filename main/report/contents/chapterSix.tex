@@ -1,0 +1,35 @@
+\chapter{Results and Evaluation}
+This chapter presents the performance evaluation and functional validation of the proposed Routing and Spectrum Allocation (RSA) framework. It assesses the operational success of the newly integrated ParallelOpticalController within the TeraFlowSDN (TFS) ecosystem and analyzes the efficiency of the proposed bitwise spectrum allocation algorithm across topologies featuring parallel optical links.
+\section{Evaluation Methodology \& Test Scenarios}
+To rigorously evaluate the system, a series of test scenarios were executed within the established Docker-based emulated environment. The evaluation methodology focuses on injecting dynamic optical intents (lightpath requests) into the TeraFlowSDN controller and monitoring the system's response across multiple metrics.
+
+The test scenarios utilize various network topologies, specifically focusing on multi-directed graphs where nodes (e.g., transponders and ROADMs) are connected via multiple parallel links, denoted by the xN multiplier format. The primary objectives of these tests are to validate the functional correctness of the device telemetry extraction, measure the computational efficiency of the path discovery algorithm, and statistically analyze the spectrum utilization under varying traffic loads.
+
+\textbf{TBD: (Detail the specific parameters of my test scenarios here, such as the exact number of nodes, the maximum number of parallel links per edge, the distribution of traffic requests, and the requested bandwidth/modulation formats used during the simulation.)}
+\section{Functional Validation}
+Before analyzing quantitative performance, the functional correctness of the system was validated through backend logs and the enhanced Web User Interface (WebUI).
+
+First, network connectivity and device emulation stability were verified by successfully pinging the emulated optical devices directly from the routing server (e.g., pinging 10.100.101.1 from the Mascara server). Following successful device discovery, the modified OCDriver and OpenROADM drivers successfully extracted the vendor-agnostic hardware parameters, which were confirmed via the Context Service database logs.
+
+Furthermore, the functional validation is heavily supported by the newly developed visual representations in the TFS WebUI. When navigating to the device details page, the system successfully renders the "Endpoint Frequency View" template. This view dynamically displays the accurate Index and Transport Type of each port, alongside a comprehensive "Frequency Capabilities Card" outlining the specific optical band, wavelength range, and total flexible-grid slots.
+
+Crucially, the "Spectrum Allocation Table" provides a real-time, color-coded visual validation of the RSA algorithm's output. The table accurately reflects the status of individual 6.25 GHz slots:
+
+\begin{itemize}
+    \item Gray badges correctly identify UNAVAILABLE slots that fall outside the physical device's capabilities.
+    \item Green badges represent AVAILABLE slots ready for provisioning.
+    \item Yellow badges indicate \texttt{IN\_USE} slots successfully allocated by the ParallelOpticalController.
+    \item Blue badges accurately mark the ITU-T standard ANCHOR frequency (193.1 THz).
+\end{itemize}
+\section{Computational Performance}
+\textbf{TBD: (This section will present the execution time and computational overhead of the ParallelOpticalController. I must include graphs or tables showing the time taken to construct the NetworkX graph, the time taken to run Dijkstra's and the \texttt{all\_simple\_paths()} algorithms, and the speed of the bitwise spectrum intersection process as the number of parallel links increases.)}
+\section{Spectrum Utilization Efficiency}
+\textbf{TBD: (This section will evaluate how efficiently the flexible-grid spectrum is packed. I will discuss the fragmentation of the optical bands and provide metrics on how the proposed algorithm maximizes the use of 6.25 GHz slots across complex topologies compared to traditional fixed-grid or sequential parallel-link checking methods.)}
+\section{Throughput Analysis}
+\textbf{TBD: (This section will analyze the network's overall throughput based on the blocking probability. I must present data comparing the volume of successfully allocated optical intents versus rejected requests due to spectrum continuity constraints. Include an analysis of network-level efficiency by comparing the ratio of allocated slots to the total available slots across all active links.)}
+\section{Comparison with Baseline/Existing Approaches}
+\textbf{TBD: (Here, I will benchmark your ParallelOpticalController against the default, sequential RSA mechanisms found in standard SDN controllers (like ONOS, OpenDayLight or the baseline TeraFlowSDN OpticalController). Provide comparative charts highlighting improvements in path computation time, reduction in blocking probability, and overall algorithmic efficiency when handling the xN parallel link scenarios.)}
+\section{Statistical Analysis}
+\textbf{TBD: (This section requires a deeper mathematical and statistical evaluation of the results. I will provide an analysis of the blocking paths and theoretical channel capacity against the actual used capacity during peak simulation periods.)}
+\section{Discussion of Results}
+\textbf{TBD: (I will provide a comprehensive summary and interpretation of the findings from the previous sections. Discuss whether the research objectives were met, highlight the most significant improvements brought by our parallel RSA algorithm, and acknowledge any unexpected behaviors or minor anomalies observed during the testing phase.)}

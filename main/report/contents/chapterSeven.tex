@@ -1,0 +1,14 @@
+\chapter{Conclusion and Future Work}
+This concluding chapter summarizes the overarching achievements and technical contributions presented throughout this thesis. It critically reflects on the practical constraints and structural limitations encountered during the implementation phase and outlines potential avenues for future research to further refine the management of flexible-grid optical networks within TeraFlowSDN.
+\section{Summary of Contributions}
+As the demand for high-capacity telecommunications infrastructure continues to grow, optimizing the allocation of optical spectrum across complex topologies has become paramount. This thesis directly addressed the computational bottlenecks associated with Routing and Spectrum Allocation (RSA) over parallel optical links—a critical area often overlooked or inefficiently handled by traditional Software-Defined Networking (SDN) controllers.
+
+The primary contribution of this research was the successful design, development, and deployment of the ParallelOpticalController, a stateful microservice fully integrated into the TeraFlowSDN (TFS) ecosystem. By leveraging the NetworkX library to construct multi-directed graphs, the controller natively supports and efficiently routes optical intents across topologies featuring multiple parallel edges. To resolve the heavy computational burden of high-resolution spectrum mapping, the system introduced a novel bitmap-based intersection algorithm capable of rapidly computing the availability of contiguous 6.25 GHz slots across multiple hops.
+
+To ground this algorithmic advancement in practical hardware realities, this work significantly enhanced the TeraFlowSDN DeviceService and ContextService. The OCDriver (OpenConfig) and OpenROADM drivers were upgraded with custom model-based filters to extract vendor-agnostic telemetric data—such as operating frequencies, transport types (OCH, OMS), and hardware specifications—directly from XML configurations.
+
+Finally, these backend capabilities were made accessible through a comprehensive upgrade to the TeraFlowSDN WebUI. The introduction of the dynamic "Spectrum Allocation Table" provides network administrators with real-time, color-coded visual feedback regarding the status (e.g., AVAILABLE, \texttt{IN\_USE}, UNAVAILABLE) of individual ITU-T G.694.1 slots, drastically improving overall network transparency and operational user experience.
+\section{Limitations}
+\textbf{TBD: More sophisticated device-based filtration, stateful characteristics of the controller, comparatively slower DB operations with intense topological intents ,generating a reply with the results and update the device with a NETCONF request.}
+\section{Future Work Directions}
+\textbf{TBD}

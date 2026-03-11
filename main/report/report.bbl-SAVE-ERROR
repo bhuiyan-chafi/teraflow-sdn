@@ -1,0 +1,58 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{giorgetti2020}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=fb9a61a8233dedaa435277938f2f15a2}{%
+           family={Giorgetti},
+           familyi={G\bibinitperiod},
+           given={Alessio},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Optica Publishing Group}%
+      }
+      \strng{namehash}{470150bdc6d5ab6422e6029031f907d4}
+      \strng{fullhash}{470150bdc6d5ab6422e6029031f907d4}
+      \strng{fullhashraw}{470150bdc6d5ab6422e6029031f907d4}
+      \strng{bibnamehash}{470150bdc6d5ab6422e6029031f907d4}
+      \strng{authorbibnamehash}{470150bdc6d5ab6422e6029031f907d4}
+      \strng{authornamehash}{470150bdc6d5ab6422e6029031f907d4}
+      \strng{authorfullhash}{470150bdc6d5ab6422e6029031f907d4}
+      \strng{authorfullhashraw}{470150bdc6d5ab6422e6029031f907d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Optical Communications and Networking}
+      \field{number}{4}
+      \field{title}{Advanced RSA Algorithms for Flex-Grid Optical Networks}
+      \field{volume}{12}
+      \field{year}{2020}
+      \field{pages}{112\bibrangedash 125}
+      \range{pages}{14}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

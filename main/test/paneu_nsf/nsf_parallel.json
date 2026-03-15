@@ -1,0 +1,3388 @@
+{
+  "contexts": [
+    {
+      "context_id": {
+        "context_uuid": {
+          "uuid": "nsf"
+        }
+      },
+      "topology_ids": [],
+      "service_ids": []
+    }
+  ],
+  "topologies": [
+    {
+      "topology_id": {
+        "context_id": {
+          "context_uuid": {
+            "uuid": "nsf"
+          }
+        },
+        "topology_uuid": {
+          "uuid": "parallel"
+        }
+      },
+      "device_ids": [
+        {
+          "device_uuid": {
+            "uuid": "TPcalifornia"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "TPtexas"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "TPnewyork"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "TPmissouri"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "TPillinois"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMcalifornia"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMtexas"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMnewyork"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMflorida"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMillinois"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMpennsylvania"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMohio"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMgeorgia"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMmichigan"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMwashington"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMvirginia"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMarizona"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMmassachusetts"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMtennessee"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMindiana"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMmissouri"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMmaryland"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMcolorado"
+          }
+        }
+      ],
+      "optical_link_ids": [
+        {
+          "link_uuid": {
+            "uuid": "TPcalifornia->RDMcalifornia_1"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPcalifornia->RDMcalifornia_2"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPcalifornia->RDMcalifornia_3"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPtexas->RDMtexas_4"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPtexas->RDMtexas_5"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPtexas->RDMtexas_6"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPnewyork->RDMnewyork_7"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPnewyork->RDMnewyork_8"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPnewyork->RDMnewyork_9"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPmissouri->RDMmissouri_10"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPmissouri->RDMmissouri_11"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPmissouri->RDMmissouri_12"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPillinois->RDMillinois_13"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPillinois->RDMillinois_14"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPillinois->RDMillinois_15"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMcalifornia->RDMwashington_16"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMcalifornia->RDMgeorgia_17"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMwashington->RDMtexas_18"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMwashington->RDMnewyork_19"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMtexas->RDMgeorgia_20"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMnewyork->RDMvirginia_21"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMflorida->RDMgeorgia_22"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMflorida->RDMvirginia_23"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMgeorgia->RDMmichigan_24"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMgeorgia->RDMarizona_25"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMvirginia->RDMmichigan_26"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMvirginia->RDMohio_27"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMvirginia->RDMtennessee_28"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmichigan->RDMillinois_29"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMillinois->RDMpennsylvania_30"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMpennsylvania->RDMarizona_31"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMpennsylvania->RDMmassachusetts_32"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMohio->RDMmassachusetts_33"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMohio->RDMtennessee_34"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMarizona->RDMmaryland_35"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMarizona->RDMcolorado_36"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmassachusetts->RDMmaryland_37"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmassachusetts->RDMindiana_38"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMtennessee->RDMmissouri_39"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMtennessee->RDMindiana_40"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMtennessee->RDMcolorado_41"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmaryland->RDMmissouri_42"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmissouri->RDMindiana_43"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMcalifornia->RDMwashington_44"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMcalifornia->RDMgeorgia_45"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMwashington->RDMtexas_46"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMwashington->RDMnewyork_47"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMnewyork->RDMvirginia_48"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmichigan->RDMillinois_49"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMillinois->RDMpennsylvania_50"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMpennsylvania->RDMarizona_51"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMpennsylvania->RDMmassachusetts_52"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMohio->RDMmassachusetts_53"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMohio->RDMtennessee_54"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMarizona->RDMmaryland_55"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmaryland->RDMmissouri_56"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmissouri->RDMindiana_57"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmichigan->RDMillinois_58"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmaryland->RDMmissouri_59"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmichigan->RDMillinois_60"
+          }
+        }
+      ]
+    }
+  ],
+  "optical_links": [
+    {
+      "name": "TPcalifornia->RDMcalifornia_1",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPcalifornia->RDMcalifornia_1"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPcalifornia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-1",
+            "index": "TPcalifornia_1"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMcalifornia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4101",
+            "index": "RDMcalifornia_4101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-1",
+        "dst_port": "4101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPcalifornia->RDMcalifornia_2",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPcalifornia->RDMcalifornia_2"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPcalifornia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-2",
+            "index": "TPcalifornia_2"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMcalifornia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4102",
+            "index": "RDMcalifornia_4102"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-2",
+        "dst_port": "4102",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPcalifornia->RDMcalifornia_3",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPcalifornia->RDMcalifornia_3"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPcalifornia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-3",
+            "index": "TPcalifornia_3"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMcalifornia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4201",
+            "index": "RDMcalifornia_4201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-3",
+        "dst_port": "4201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPtexas->RDMtexas_4",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPtexas->RDMtexas_4"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPtexas"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-1",
+            "index": "TPtexas_1"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMtexas"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4101",
+            "index": "RDMtexas_4101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-1",
+        "dst_port": "4101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPtexas->RDMtexas_5",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPtexas->RDMtexas_5"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPtexas"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-2",
+            "index": "TPtexas_2"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMtexas"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4102",
+            "index": "RDMtexas_4102"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-2",
+        "dst_port": "4102",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPtexas->RDMtexas_6",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPtexas->RDMtexas_6"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPtexas"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-3",
+            "index": "TPtexas_3"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMtexas"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4201",
+            "index": "RDMtexas_4201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-3",
+        "dst_port": "4201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPnewyork->RDMnewyork_7",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPnewyork->RDMnewyork_7"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPnewyork"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-1",
+            "index": "TPnewyork_1"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMnewyork"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4101",
+            "index": "RDMnewyork_4101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-1",
+        "dst_port": "4101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPnewyork->RDMnewyork_8",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPnewyork->RDMnewyork_8"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPnewyork"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-2",
+            "index": "TPnewyork_2"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMnewyork"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4102",
+            "index": "RDMnewyork_4102"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-2",
+        "dst_port": "4102",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPnewyork->RDMnewyork_9",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPnewyork->RDMnewyork_9"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPnewyork"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-3",
+            "index": "TPnewyork_3"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMnewyork"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4201",
+            "index": "RDMnewyork_4201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-3",
+        "dst_port": "4201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPmissouri->RDMmissouri_10",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPmissouri->RDMmissouri_10"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPmissouri"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-1",
+            "index": "TPmissouri_1"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmissouri"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4101",
+            "index": "RDMmissouri_4101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-1",
+        "dst_port": "4101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPmissouri->RDMmissouri_11",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPmissouri->RDMmissouri_11"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPmissouri"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-2",
+            "index": "TPmissouri_2"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmissouri"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4102",
+            "index": "RDMmissouri_4102"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-2",
+        "dst_port": "4102",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPmissouri->RDMmissouri_12",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPmissouri->RDMmissouri_12"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPmissouri"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-3",
+            "index": "TPmissouri_3"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmissouri"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4201",
+            "index": "RDMmissouri_4201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-3",
+        "dst_port": "4201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPillinois->RDMillinois_13",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPillinois->RDMillinois_13"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPillinois"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-1",
+            "index": "TPillinois_1"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMillinois"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4101",
+            "index": "RDMillinois_4101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-1",
+        "dst_port": "4101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPillinois->RDMillinois_14",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPillinois->RDMillinois_14"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPillinois"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-2",
+            "index": "TPillinois_2"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMillinois"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4102",
+            "index": "RDMillinois_4102"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-2",
+        "dst_port": "4102",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPillinois->RDMillinois_15",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPillinois->RDMillinois_15"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPillinois"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-3",
+            "index": "TPillinois_3"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMillinois"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4201",
+            "index": "RDMillinois_4201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-3",
+        "dst_port": "4201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMcalifornia->RDMwashington_16",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMcalifornia->RDMwashington_16"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMcalifornia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMcalifornia_5201"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMwashington"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMwashington_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5201",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMcalifornia->RDMgeorgia_17",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMcalifornia->RDMgeorgia_17"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMcalifornia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMcalifornia_5202"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMgeorgia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMgeorgia_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5202",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMwashington->RDMtexas_18",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMwashington->RDMtexas_18"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMwashington"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMwashington_5202"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMtexas"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMtexas_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5202",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMwashington->RDMnewyork_19",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMwashington->RDMnewyork_19"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMwashington"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMwashington_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMnewyork"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMnewyork_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMtexas->RDMgeorgia_20",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMtexas->RDMgeorgia_20"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMtexas"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMtexas_5202"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMgeorgia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMgeorgia_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5202",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMnewyork->RDMvirginia_21",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMnewyork->RDMvirginia_21"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMnewyork"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMnewyork_5202"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMvirginia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMvirginia_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5202",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMflorida->RDMgeorgia_22",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMflorida->RDMgeorgia_22"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMflorida"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMflorida_5201"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMgeorgia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMgeorgia_5203"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5201",
+        "dst_port": "5203",
+        "local_peer_port": "1",
+        "remote_peer_port": "5203",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMflorida->RDMvirginia_23",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMflorida->RDMvirginia_23"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMflorida"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMflorida_5202"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMvirginia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMvirginia_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5202",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMgeorgia->RDMmichigan_24",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMgeorgia->RDMmichigan_24"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMgeorgia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMgeorgia_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmichigan"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMmichigan_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMgeorgia->RDMarizona_25",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMgeorgia->RDMarizona_25"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMgeorgia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMgeorgia_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMarizona"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMarizona_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMvirginia->RDMmichigan_26",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMvirginia->RDMmichigan_26"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMvirginia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMvirginia_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmichigan"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMmichigan_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMvirginia->RDMohio_27",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMvirginia->RDMohio_27"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMvirginia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMvirginia_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMohio"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMohio_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMvirginia->RDMtennessee_28",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMvirginia->RDMtennessee_28"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMvirginia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMvirginia_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMtennessee"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMtennessee_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmichigan->RDMillinois_29",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmichigan->RDMillinois_29"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmichigan"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMmichigan_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMillinois"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMillinois_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMillinois->RDMpennsylvania_30",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMillinois->RDMpennsylvania_30"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMillinois"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMillinois_5202"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMpennsylvania"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMpennsylvania_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5202",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMpennsylvania->RDMarizona_31",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMpennsylvania->RDMarizona_31"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMpennsylvania"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMpennsylvania_5202"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMarizona"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMarizona_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5202",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMpennsylvania->RDMmassachusetts_32",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMpennsylvania->RDMmassachusetts_32"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMpennsylvania"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMpennsylvania_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmassachusetts"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMmassachusetts_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMohio->RDMmassachusetts_33",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMohio->RDMmassachusetts_33"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMohio"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMohio_5202"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmassachusetts"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMmassachusetts_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5202",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMohio->RDMtennessee_34",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMohio->RDMtennessee_34"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMohio"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMohio_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMtennessee"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMtennessee_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMarizona->RDMmaryland_35",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMarizona->RDMmaryland_35"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMarizona"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMarizona_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmaryland"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMmaryland_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMarizona->RDMcolorado_36",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMarizona->RDMcolorado_36"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMarizona"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMarizona_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMcolorado"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMcolorado_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmassachusetts->RDMmaryland_37",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmassachusetts->RDMmaryland_37"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmassachusetts"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMmassachusetts_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmaryland"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMmaryland_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmassachusetts->RDMindiana_38",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmassachusetts->RDMindiana_38"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmassachusetts"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMmassachusetts_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMindiana"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMindiana_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMtennessee->RDMmissouri_39",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMtennessee->RDMmissouri_39"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMtennessee"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMtennessee_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmissouri"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMmissouri_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMtennessee->RDMindiana_40",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMtennessee->RDMindiana_40"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMtennessee"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMtennessee_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMindiana"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMindiana_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMtennessee->RDMcolorado_41",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMtennessee->RDMcolorado_41"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMtennessee"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMtennessee_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMcolorado"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMcolorado_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmaryland->RDMmissouri_42",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmaryland->RDMmissouri_42"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmaryland"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMmaryland_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmissouri"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMmissouri_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmissouri->RDMindiana_43",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmissouri->RDMindiana_43"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmissouri"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMmissouri_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMindiana"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMindiana_5203"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5203",
+        "local_peer_port": "1",
+        "remote_peer_port": "5203",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMcalifornia->RDMwashington_44",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMcalifornia->RDMwashington_44"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMcalifornia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMcalifornia_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMwashington"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMwashington_5204"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5204",
+        "local_peer_port": "1",
+        "remote_peer_port": "5204",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMcalifornia->RDMgeorgia_45",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMcalifornia->RDMgeorgia_45"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMcalifornia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMcalifornia_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMgeorgia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMgeorgia_4104"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "4104",
+        "local_peer_port": "1",
+        "remote_peer_port": "4104",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMwashington->RDMtexas_46",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMwashington->RDMtexas_46"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMwashington"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMwashington_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMtexas"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMtexas_5203"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "5203",
+        "local_peer_port": "1",
+        "remote_peer_port": "5203",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMwashington->RDMnewyork_47",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMwashington->RDMnewyork_47"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMwashington"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMwashington_4104"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMnewyork"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMnewyork_5203"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4104",
+        "dst_port": "5203",
+        "local_peer_port": "1",
+        "remote_peer_port": "5203",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMnewyork->RDMvirginia_48",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMnewyork->RDMvirginia_48"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMnewyork"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMnewyork_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMvirginia"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMvirginia_4104"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "4104",
+        "local_peer_port": "1",
+        "remote_peer_port": "4104",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmichigan->RDMillinois_49",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmichigan->RDMillinois_49"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmichigan"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMmichigan_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMillinois"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMillinois_5203"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5203",
+        "local_peer_port": "1",
+        "remote_peer_port": "5203",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMillinois->RDMpennsylvania_50",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMillinois->RDMpennsylvania_50"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMillinois"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMillinois_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMpennsylvania"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMpennsylvania_5204"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5204",
+        "local_peer_port": "1",
+        "remote_peer_port": "5204",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMpennsylvania->RDMarizona_51",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMpennsylvania->RDMarizona_51"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMpennsylvania"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMpennsylvania_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMarizona"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMarizona_4103"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "4103",
+        "local_peer_port": "1",
+        "remote_peer_port": "4103",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMpennsylvania->RDMmassachusetts_52",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMpennsylvania->RDMmassachusetts_52"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMpennsylvania"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMpennsylvania_4104"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmassachusetts"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMmassachusetts_4103"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4104",
+        "dst_port": "4103",
+        "local_peer_port": "1",
+        "remote_peer_port": "4103",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMohio->RDMmassachusetts_53",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMohio->RDMmassachusetts_53"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMohio"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMohio_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmassachusetts"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMmassachusetts_4104"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "4104",
+        "local_peer_port": "1",
+        "remote_peer_port": "4104",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMohio->RDMtennessee_54",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMohio->RDMtennessee_54"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMohio"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMohio_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMtennessee"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMtennessee_4104"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "4104",
+        "local_peer_port": "1",
+        "remote_peer_port": "4104",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMarizona->RDMmaryland_55",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMarizona->RDMmaryland_55"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMarizona"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMarizona_4104"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmaryland"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMmaryland_5204"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4104",
+        "dst_port": "5204",
+        "local_peer_port": "1",
+        "remote_peer_port": "5204",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmaryland->RDMmissouri_56",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmaryland->RDMmissouri_56"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmaryland"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMmaryland_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmissouri"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMmissouri_5204"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "5204",
+        "local_peer_port": "1",
+        "remote_peer_port": "5204",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmissouri->RDMindiana_57",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmissouri->RDMindiana_57"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmissouri"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMmissouri_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMindiana"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMindiana_5204"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "5204",
+        "local_peer_port": "1",
+        "remote_peer_port": "5204",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmichigan->RDMillinois_58",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmichigan->RDMillinois_58"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmichigan"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMmichigan_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMillinois"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMillinois_4103"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "4103",
+        "local_peer_port": "1",
+        "remote_peer_port": "4103",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmaryland->RDMmissouri_59",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmaryland->RDMmissouri_59"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmaryland"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMmaryland_4104"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmissouri"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMmissouri_4104"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4104",
+        "dst_port": "4104",
+        "local_peer_port": "1",
+        "remote_peer_port": "4104",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmichigan->RDMillinois_60",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmichigan->RDMillinois_60"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmichigan"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMmichigan_4104"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMillinois"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMillinois_4104"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4104",
+        "dst_port": "4104",
+        "local_peer_port": "1",
+        "remote_peer_port": "4104",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    }
+  ]
+}

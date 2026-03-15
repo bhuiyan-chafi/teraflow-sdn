@@ -27,7 +27,7 @@ In `[ParallelOpticalController.py:305]` I have called the core graph building fu
 
 ***Where all possible paths are discovered?***
 
-In `find_paths()` function I have generated a second graph (`G_simple_free`) with all links (even with used ones) and called `all_simple_paths()` to find all possible paths. `expand_path()` takes a list of nodes(devices) and find all possible combinations between two nodes.
+In `find_paths()` function I have generated a second graph (`G_simple_free`) with all links (even with used ones) and called `all_simple_paths()` to find all possible paths. `expand_path()` takes a list of nodes(devices) and find all possible combinations between two nodes. But due to NP hard issue for complex topologies like paneu and nsf, I have implemented first pick of paths from each node sequence. In a topology with parallel links we can exponential number of path combinations. So, instead of calculating all of them we are picking the first one available from each node sequence.
 
 ### Performing the RSA
 

@@ -1,0 +1,839 @@
+{
+  "contexts": [
+    {
+      "context_id": {
+        "context_uuid": {
+          "uuid": "admin"
+        }
+      },
+      "topology_ids": [],
+      "service_ids": []
+    }
+  ],
+  "topologies": [
+    {
+      "topology_id": {
+        "context_id": {
+          "context_uuid": {
+            "uuid": "admin"
+          }
+        },
+        "topology_uuid": {
+          "uuid": "admin"
+        }
+      }
+    }
+  ],
+  "devices": [
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "TPlondon"
+        }
+      },
+      "device_type": "optical-transponder",
+      "device_drivers": [
+        11
+      ],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.101.1"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-transponder",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "TPparis"
+        }
+      },
+      "device_type": "optical-transponder",
+      "device_drivers": [
+        11
+      ],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.101.2"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-transponder",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "TPfrankfurt"
+        }
+      },
+      "device_type": "optical-transponder",
+      "device_drivers": [
+        11
+      ],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.101.3"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-transponder",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "TPamsterdam"
+        }
+      },
+      "device_type": "optical-transponder",
+      "device_drivers": [
+        11
+      ],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.101.4"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-transponder",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "TPmadrid"
+        }
+      },
+      "device_type": "optical-transponder",
+      "device_drivers": [
+        11
+      ],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.101.5"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-transponder",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "TProme"
+        }
+      },
+      "device_type": "optical-transponder",
+      "device_drivers": [
+        11
+      ],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.101.6"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-transponder",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "TPberlin"
+        }
+      },
+      "device_type": "optical-transponder",
+      "device_drivers": [
+        11
+      ],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.101.7"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-transponder",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "TPwarsaw"
+        }
+      },
+      "device_type": "optical-transponder",
+      "device_drivers": [
+        11
+      ],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.101.8"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-transponder",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "TPstockholm"
+        }
+      },
+      "device_type": "optical-transponder",
+      "device_drivers": [
+        11
+      ],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.101.9"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-transponder",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "TPathens"
+        }
+      },
+      "device_type": "optical-transponder",
+      "device_drivers": [
+        11
+      ],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.101.10"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-transponder",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "TPcalifornia"
+        }
+      },
+      "device_type": "optical-transponder",
+      "device_drivers": [
+        11
+      ],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.101.11"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-transponder",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "TPtexas"
+        }
+      },
+      "device_type": "optical-transponder",
+      "device_drivers": [
+        11
+      ],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.101.12"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-transponder",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "TPnewyork"
+        }
+      },
+      "device_type": "optical-transponder",
+      "device_drivers": [
+        11
+      ],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.101.13"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-transponder",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "TPmissouri"
+        }
+      },
+      "device_type": "optical-transponder",
+      "device_drivers": [
+        11
+      ],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.101.14"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-transponder",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "device_id": {
+        "device_uuid": {
+          "uuid": "TPillinois"
+        }
+      },
+      "device_type": "optical-transponder",
+      "device_drivers": [
+        11
+      ],
+      "device_endpoints": [],
+      "device_operational_status": 1,
+      "device_config": {
+        "config_rules": [
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/address",
+              "resource_value": "10.100.101.15"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/port",
+              "resource_value": "2022"
+            }
+          },
+          {
+            "action": 1,
+            "custom": {
+              "resource_key": "_connect/settings",
+              "resource_value": {
+                "username": "admin",
+                "password": "admin",
+                "type": "optical-transponder",
+                "force_running": false,
+                "hostkey_verify": false,
+                "look_for_keys": false,
+                "allow_agent": false,
+                "commit_per_rule": false,
+                "device_params": {
+                  "name": "default"
+                },
+                "manager_params": {
+                  "timeout": 120
+                },
+                "endpoints": []
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

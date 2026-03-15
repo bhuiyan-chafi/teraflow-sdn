@@ -1,0 +1,5888 @@
+{
+  "contexts": [
+    {
+      "context_id": {
+        "context_uuid": {
+          "uuid": "paneu"
+        }
+      },
+      "topology_ids": [],
+      "service_ids": []
+    }
+  ],
+  "topologies": [
+    {
+      "topology_id": {
+        "context_id": {
+          "context_uuid": {
+            "uuid": "paneu"
+          }
+        },
+        "topology_uuid": {
+          "uuid": "parallel"
+        }
+      },
+      "device_ids": [
+        {
+          "device_uuid": {
+            "uuid": "TPlondon"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "TPparis"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "TPfrankfurt"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "TPamsterdam"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "TPmadrid"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "TProme"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "TPberlin"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "TPwarsaw"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "TPstockholm"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "TPathens"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMlondon"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMparis"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMfrankfurt"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMamsterdam"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMmadrid"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMrome"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMberlin"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMwarsaw"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMstockholm"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMathens"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMvienna"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMprague"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMbrussels"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMmilan"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMzurich"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMdublin"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMglasgow"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMcopenhagen"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMhamburg"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMmunich"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMbudapest"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMbelgrade"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMbarcelona"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMlyon"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMbordeaux"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMstrasbourg"
+          }
+        },
+        {
+          "device_uuid": {
+            "uuid": "RDMoslo"
+          }
+        }
+      ],
+      "optical_link_ids": [
+        {
+          "link_uuid": {
+            "uuid": "TPlondon->RDMlondon_1"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPlondon->RDMlondon_2"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPlondon->RDMlondon_3"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPparis->RDMparis_4"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPparis->RDMparis_5"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPparis->RDMparis_6"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPfrankfurt->RDMfrankfurt_7"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPfrankfurt->RDMfrankfurt_8"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPfrankfurt->RDMfrankfurt_9"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPamsterdam->RDMamsterdam_10"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPamsterdam->RDMamsterdam_11"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPamsterdam->RDMamsterdam_12"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPmadrid->RDMmadrid_13"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPmadrid->RDMmadrid_14"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPmadrid->RDMmadrid_15"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TProme->RDMrome_16"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TProme->RDMrome_17"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TProme->RDMrome_18"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPberlin->RDMberlin_19"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPberlin->RDMberlin_20"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPberlin->RDMberlin_21"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPwarsaw->RDMwarsaw_22"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPwarsaw->RDMwarsaw_23"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPwarsaw->RDMwarsaw_24"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPstockholm->RDMstockholm_25"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPstockholm->RDMstockholm_26"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPstockholm->RDMstockholm_27"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPathens->RDMathens_28"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPathens->RDMathens_29"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "TPathens->RDMathens_30"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMdublin->RDMglasgow_31"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMdublin->RDMlondon_32"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMglasgow->RDMlondon_33"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMglasgow->RDMamsterdam_34"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMglasgow->RDMcopenhagen_35"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMlondon->RDMamsterdam_36"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMlondon->RDMbrussels_37"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMlondon->RDMparis_38"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMamsterdam->RDMbrussels_39"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMamsterdam->RDMhamburg_40"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMbrussels->RDMfrankfurt_41"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMbrussels->RDMparis_42"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMparis->RDMstrasbourg_43"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMparis->RDMlyon_44"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMparis->RDMbordeaux_45"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMstrasbourg->RDMzurich_46"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMlyon->RDMbordeaux_47"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMlyon->RDMbarcelona_48"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMlyon->RDMmilan_49"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMlyon->RDMzurich_50"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMbordeaux->RDMmadrid_51"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMbordeaux->RDMbarcelona_52"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmadrid->RDMbarcelona_53"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmilan->RDMzurich_54"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmilan->RDMvienna_55"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmilan->RDMrome_56"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMrome->RDMbelgrade_57"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMrome->RDMathens_58"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMzurich->RDMmunich_59"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMfrankfurt->RDMhamburg_60"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMfrankfurt->RDMberlin_61"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMfrankfurt->RDMprague_62"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMfrankfurt->RDMmunich_63"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmunich->RDMprague_64"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmunich->RDMvienna_65"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMhamburg->RDMcopenhagen_66"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMhamburg->RDMberlin_67"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMberlin->RDMcopenhagen_68"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMberlin->RDMstockholm_69"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMberlin->RDMwarsaw_70"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMberlin->RDMprague_71"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMprague->RDMwarsaw_72"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMprague->RDMvienna_73"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMvienna->RDMbelgrade_74"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMvienna->RDMbudapest_75"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMcopenhagen->RDMoslo_76"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMcopenhagen->RDMstockholm_77"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMoslo->RDMstockholm_78"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMstockholm->RDMwarsaw_79"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMwarsaw->RDMbudapest_80"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMbudapest->RDMbelgrade_81"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMbelgrade->RDMathens_82"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMdublin->RDMglasgow_83"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMdublin->RDMlondon_84"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMglasgow->RDMamsterdam_85"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMamsterdam->RDMbrussels_86"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMbrussels->RDMfrankfurt_87"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMparis->RDMstrasbourg_88"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMstrasbourg->RDMzurich_89"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMlyon->RDMbordeaux_90"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMbordeaux->RDMmadrid_91"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmadrid->RDMbarcelona_92"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmilan->RDMzurich_93"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmilan->RDMvienna_94"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMrome->RDMbelgrade_95"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMrome->RDMathens_96"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmunich->RDMprague_97"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMhamburg->RDMcopenhagen_98"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMoslo->RDMstockholm_99"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMstockholm->RDMwarsaw_100"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMwarsaw->RDMbudapest_101"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMbudapest->RDMbelgrade_102"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmadrid->RDMbarcelona_103"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMrome->RDMathens_104"
+          }
+        },
+        {
+          "link_uuid": {
+            "uuid": "RDMmadrid->RDMbarcelona_105"
+          }
+        }
+      ]
+    }
+  ],
+  "optical_links": [
+    {
+      "name": "TPlondon->RDMlondon_1",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPlondon->RDMlondon_1"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPlondon"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-1",
+            "index": "TPlondon_1"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMlondon"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4101",
+            "index": "RDMlondon_4101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-1",
+        "dst_port": "4101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPlondon->RDMlondon_2",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPlondon->RDMlondon_2"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPlondon"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-2",
+            "index": "TPlondon_2"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMlondon"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4102",
+            "index": "RDMlondon_4102"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-2",
+        "dst_port": "4102",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPlondon->RDMlondon_3",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPlondon->RDMlondon_3"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPlondon"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-3",
+            "index": "TPlondon_3"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMlondon"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4201",
+            "index": "RDMlondon_4201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-3",
+        "dst_port": "4201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPparis->RDMparis_4",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPparis->RDMparis_4"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPparis"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-1",
+            "index": "TPparis_1"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMparis"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4101",
+            "index": "RDMparis_4101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-1",
+        "dst_port": "4101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPparis->RDMparis_5",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPparis->RDMparis_5"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPparis"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-2",
+            "index": "TPparis_2"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMparis"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4102",
+            "index": "RDMparis_4102"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-2",
+        "dst_port": "4102",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPparis->RDMparis_6",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPparis->RDMparis_6"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPparis"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-3",
+            "index": "TPparis_3"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMparis"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4201",
+            "index": "RDMparis_4201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-3",
+        "dst_port": "4201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPfrankfurt->RDMfrankfurt_7",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPfrankfurt->RDMfrankfurt_7"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPfrankfurt"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-1",
+            "index": "TPfrankfurt_1"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMfrankfurt"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4101",
+            "index": "RDMfrankfurt_4101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-1",
+        "dst_port": "4101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPfrankfurt->RDMfrankfurt_8",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPfrankfurt->RDMfrankfurt_8"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPfrankfurt"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-2",
+            "index": "TPfrankfurt_2"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMfrankfurt"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4102",
+            "index": "RDMfrankfurt_4102"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-2",
+        "dst_port": "4102",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPfrankfurt->RDMfrankfurt_9",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPfrankfurt->RDMfrankfurt_9"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPfrankfurt"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-3",
+            "index": "TPfrankfurt_3"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMfrankfurt"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4201",
+            "index": "RDMfrankfurt_4201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-3",
+        "dst_port": "4201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPamsterdam->RDMamsterdam_10",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPamsterdam->RDMamsterdam_10"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPamsterdam"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-1",
+            "index": "TPamsterdam_1"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMamsterdam"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4101",
+            "index": "RDMamsterdam_4101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-1",
+        "dst_port": "4101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPamsterdam->RDMamsterdam_11",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPamsterdam->RDMamsterdam_11"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPamsterdam"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-2",
+            "index": "TPamsterdam_2"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMamsterdam"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4102",
+            "index": "RDMamsterdam_4102"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-2",
+        "dst_port": "4102",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPamsterdam->RDMamsterdam_12",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPamsterdam->RDMamsterdam_12"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPamsterdam"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-3",
+            "index": "TPamsterdam_3"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMamsterdam"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4201",
+            "index": "RDMamsterdam_4201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-3",
+        "dst_port": "4201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPmadrid->RDMmadrid_13",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPmadrid->RDMmadrid_13"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPmadrid"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-1",
+            "index": "TPmadrid_1"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmadrid"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4101",
+            "index": "RDMmadrid_4101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-1",
+        "dst_port": "4101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPmadrid->RDMmadrid_14",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPmadrid->RDMmadrid_14"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPmadrid"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-2",
+            "index": "TPmadrid_2"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmadrid"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4102",
+            "index": "RDMmadrid_4102"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-2",
+        "dst_port": "4102",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPmadrid->RDMmadrid_15",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPmadrid->RDMmadrid_15"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPmadrid"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-3",
+            "index": "TPmadrid_3"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmadrid"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4201",
+            "index": "RDMmadrid_4201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-3",
+        "dst_port": "4201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TProme->RDMrome_16",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TProme->RDMrome_16"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TProme"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-1",
+            "index": "TProme_1"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMrome"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4101",
+            "index": "RDMrome_4101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-1",
+        "dst_port": "4101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TProme->RDMrome_17",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TProme->RDMrome_17"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TProme"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-2",
+            "index": "TProme_2"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMrome"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4102",
+            "index": "RDMrome_4102"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-2",
+        "dst_port": "4102",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TProme->RDMrome_18",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TProme->RDMrome_18"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TProme"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-3",
+            "index": "TProme_3"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMrome"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4201",
+            "index": "RDMrome_4201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-3",
+        "dst_port": "4201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPberlin->RDMberlin_19",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPberlin->RDMberlin_19"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPberlin"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-1",
+            "index": "TPberlin_1"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMberlin"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4101",
+            "index": "RDMberlin_4101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-1",
+        "dst_port": "4101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPberlin->RDMberlin_20",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPberlin->RDMberlin_20"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPberlin"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-2",
+            "index": "TPberlin_2"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMberlin"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4102",
+            "index": "RDMberlin_4102"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-2",
+        "dst_port": "4102",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPberlin->RDMberlin_21",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPberlin->RDMberlin_21"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPberlin"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-3",
+            "index": "TPberlin_3"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMberlin"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4201",
+            "index": "RDMberlin_4201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-3",
+        "dst_port": "4201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPwarsaw->RDMwarsaw_22",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPwarsaw->RDMwarsaw_22"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPwarsaw"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-1",
+            "index": "TPwarsaw_1"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMwarsaw"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4101",
+            "index": "RDMwarsaw_4101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-1",
+        "dst_port": "4101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPwarsaw->RDMwarsaw_23",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPwarsaw->RDMwarsaw_23"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPwarsaw"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-2",
+            "index": "TPwarsaw_2"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMwarsaw"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4102",
+            "index": "RDMwarsaw_4102"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-2",
+        "dst_port": "4102",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPwarsaw->RDMwarsaw_24",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPwarsaw->RDMwarsaw_24"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPwarsaw"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-3",
+            "index": "TPwarsaw_3"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMwarsaw"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4201",
+            "index": "RDMwarsaw_4201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-3",
+        "dst_port": "4201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPstockholm->RDMstockholm_25",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPstockholm->RDMstockholm_25"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPstockholm"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-1",
+            "index": "TPstockholm_1"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMstockholm"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4101",
+            "index": "RDMstockholm_4101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-1",
+        "dst_port": "4101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPstockholm->RDMstockholm_26",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPstockholm->RDMstockholm_26"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPstockholm"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-2",
+            "index": "TPstockholm_2"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMstockholm"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4102",
+            "index": "RDMstockholm_4102"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-2",
+        "dst_port": "4102",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPstockholm->RDMstockholm_27",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPstockholm->RDMstockholm_27"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPstockholm"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-3",
+            "index": "TPstockholm_3"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMstockholm"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4201",
+            "index": "RDMstockholm_4201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-3",
+        "dst_port": "4201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPathens->RDMathens_28",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPathens->RDMathens_28"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPathens"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-1",
+            "index": "TPathens_1"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMathens"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4101",
+            "index": "RDMathens_4101"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-1",
+        "dst_port": "4101",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPathens->RDMathens_29",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPathens->RDMathens_29"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPathens"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-2",
+            "index": "TPathens_2"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMathens"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4102",
+            "index": "RDMathens_4102"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-2",
+        "dst_port": "4102",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "TPathens->RDMathens_30",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "TPathens->RDMathens_30"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "TPathens"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "port-3",
+            "index": "TPathens_3"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMathens"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4201",
+            "index": "RDMathens_4201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "port-3",
+        "dst_port": "4201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMdublin->RDMglasgow_31",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMdublin->RDMglasgow_31"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMdublin"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMdublin_5201"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMglasgow"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMglasgow_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5201",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMdublin->RDMlondon_32",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMdublin->RDMlondon_32"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMdublin"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMdublin_5202"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMlondon"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMlondon_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5202",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMglasgow->RDMlondon_33",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMglasgow->RDMlondon_33"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMglasgow"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMglasgow_5202"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMlondon"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMlondon_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5202",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMglasgow->RDMamsterdam_34",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMglasgow->RDMamsterdam_34"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMglasgow"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMglasgow_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMamsterdam"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMamsterdam_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMglasgow->RDMcopenhagen_35",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMglasgow->RDMcopenhagen_35"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMglasgow"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMglasgow_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMcopenhagen"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMcopenhagen_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMlondon->RDMamsterdam_36",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMlondon->RDMamsterdam_36"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMlondon"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMlondon_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMamsterdam"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMamsterdam_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMlondon->RDMbrussels_37",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMlondon->RDMbrussels_37"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMlondon"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMlondon_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbrussels"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMbrussels_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMlondon->RDMparis_38",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMlondon->RDMparis_38"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMlondon"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMlondon_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMparis"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMparis_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMamsterdam->RDMbrussels_39",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMamsterdam->RDMbrussels_39"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMamsterdam"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMamsterdam_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbrussels"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMbrussels_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMamsterdam->RDMhamburg_40",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMamsterdam->RDMhamburg_40"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMamsterdam"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMamsterdam_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMhamburg"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMhamburg_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMbrussels->RDMfrankfurt_41",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMbrussels->RDMfrankfurt_41"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbrussels"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMbrussels_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMfrankfurt"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMfrankfurt_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMbrussels->RDMparis_42",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMbrussels->RDMparis_42"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbrussels"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMbrussels_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMparis"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMparis_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMparis->RDMstrasbourg_43",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMparis->RDMstrasbourg_43"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMparis"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMparis_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMstrasbourg"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMstrasbourg_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMparis->RDMlyon_44",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMparis->RDMlyon_44"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMparis"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMparis_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMlyon"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMlyon_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMparis->RDMbordeaux_45",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMparis->RDMbordeaux_45"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMparis"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMparis_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbordeaux"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMbordeaux_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMstrasbourg->RDMzurich_46",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMstrasbourg->RDMzurich_46"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMstrasbourg"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMstrasbourg_5202"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMzurich"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMzurich_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5202",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMlyon->RDMbordeaux_47",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMlyon->RDMbordeaux_47"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMlyon"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMlyon_5202"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbordeaux"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMbordeaux_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5202",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMlyon->RDMbarcelona_48",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMlyon->RDMbarcelona_48"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMlyon"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMlyon_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbarcelona"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMbarcelona_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMlyon->RDMmilan_49",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMlyon->RDMmilan_49"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMlyon"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMlyon_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmilan"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMmilan_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMlyon->RDMzurich_50",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMlyon->RDMzurich_50"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMlyon"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMlyon_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMzurich"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMzurich_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMbordeaux->RDMmadrid_51",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMbordeaux->RDMmadrid_51"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbordeaux"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMbordeaux_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmadrid"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMmadrid_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMbordeaux->RDMbarcelona_52",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMbordeaux->RDMbarcelona_52"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbordeaux"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMbordeaux_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbarcelona"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMbarcelona_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmadrid->RDMbarcelona_53",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmadrid->RDMbarcelona_53"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmadrid"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMmadrid_5202"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbarcelona"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMbarcelona_5203"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5202",
+        "dst_port": "5203",
+        "local_peer_port": "1",
+        "remote_peer_port": "5203",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmilan->RDMzurich_54",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmilan->RDMzurich_54"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmilan"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMmilan_5202"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMzurich"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMzurich_5203"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5202",
+        "dst_port": "5203",
+        "local_peer_port": "1",
+        "remote_peer_port": "5203",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmilan->RDMvienna_55",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmilan->RDMvienna_55"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmilan"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMmilan_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMvienna"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMvienna_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmilan->RDMrome_56",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmilan->RDMrome_56"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmilan"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMmilan_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMrome"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMrome_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMrome->RDMbelgrade_57",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMrome->RDMbelgrade_57"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMrome"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMrome_5202"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbelgrade"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMbelgrade_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5202",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMrome->RDMathens_58",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMrome->RDMathens_58"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMrome"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMrome_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMathens"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMathens_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMzurich->RDMmunich_59",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMzurich->RDMmunich_59"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMzurich"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMzurich_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmunich"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMmunich_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMfrankfurt->RDMhamburg_60",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMfrankfurt->RDMhamburg_60"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMfrankfurt"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMfrankfurt_5202"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMhamburg"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMhamburg_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5202",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMfrankfurt->RDMberlin_61",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMfrankfurt->RDMberlin_61"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMfrankfurt"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMfrankfurt_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMberlin"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMberlin_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMfrankfurt->RDMprague_62",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMfrankfurt->RDMprague_62"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMfrankfurt"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMfrankfurt_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMprague"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMprague_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMfrankfurt->RDMmunich_63",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMfrankfurt->RDMmunich_63"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMfrankfurt"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMfrankfurt_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmunich"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMmunich_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmunich->RDMprague_64",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmunich->RDMprague_64"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmunich"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMmunich_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMprague"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMprague_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmunich->RDMvienna_65",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmunich->RDMvienna_65"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmunich"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMmunich_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMvienna"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMvienna_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMhamburg->RDMcopenhagen_66",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMhamburg->RDMcopenhagen_66"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMhamburg"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMhamburg_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMcopenhagen"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMcopenhagen_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMhamburg->RDMberlin_67",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMhamburg->RDMberlin_67"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMhamburg"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMhamburg_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMberlin"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMberlin_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMberlin->RDMcopenhagen_68",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMberlin->RDMcopenhagen_68"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMberlin"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMberlin_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMcopenhagen"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMcopenhagen_5203"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5203",
+        "local_peer_port": "1",
+        "remote_peer_port": "5203",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMberlin->RDMstockholm_69",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMberlin->RDMstockholm_69"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMberlin"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMberlin_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMstockholm"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMstockholm_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMberlin->RDMwarsaw_70",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMberlin->RDMwarsaw_70"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMberlin"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMberlin_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMwarsaw"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMwarsaw_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMberlin->RDMprague_71",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMberlin->RDMprague_71"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMberlin"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMberlin_4104"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMprague"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMprague_5203"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4104",
+        "dst_port": "5203",
+        "local_peer_port": "1",
+        "remote_peer_port": "5203",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMprague->RDMwarsaw_72",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMprague->RDMwarsaw_72"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMprague"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMprague_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMwarsaw"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMwarsaw_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMprague->RDMvienna_73",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMprague->RDMvienna_73"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMprague"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMprague_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMvienna"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMvienna_5203"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "5203",
+        "local_peer_port": "1",
+        "remote_peer_port": "5203",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMvienna->RDMbelgrade_74",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMvienna->RDMbelgrade_74"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMvienna"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMvienna_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbelgrade"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMbelgrade_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMvienna->RDMbudapest_75",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMvienna->RDMbudapest_75"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMvienna"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMvienna_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbudapest"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMbudapest_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMcopenhagen->RDMoslo_76",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMcopenhagen->RDMoslo_76"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMcopenhagen"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMcopenhagen_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMoslo"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5201",
+            "index": "RDMoslo_5201"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5201",
+        "local_peer_port": "1",
+        "remote_peer_port": "5201",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMcopenhagen->RDMstockholm_77",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMcopenhagen->RDMstockholm_77"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMcopenhagen"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMcopenhagen_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMstockholm"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMstockholm_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMoslo->RDMstockholm_78",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMoslo->RDMstockholm_78"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMoslo"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMoslo_5202"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMstockholm"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMstockholm_5203"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5202",
+        "dst_port": "5203",
+        "local_peer_port": "1",
+        "remote_peer_port": "5203",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMstockholm->RDMwarsaw_79",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMstockholm->RDMwarsaw_79"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMstockholm"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMstockholm_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMwarsaw"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMwarsaw_5203"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5203",
+        "local_peer_port": "1",
+        "remote_peer_port": "5203",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMwarsaw->RDMbudapest_80",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMwarsaw->RDMbudapest_80"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMwarsaw"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMwarsaw_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbudapest"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMbudapest_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMbudapest->RDMbelgrade_81",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMbudapest->RDMbelgrade_81"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbudapest"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMbudapest_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbelgrade"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMbelgrade_5203"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "5203",
+        "local_peer_port": "1",
+        "remote_peer_port": "5203",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMbelgrade->RDMathens_82",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMbelgrade->RDMathens_82"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbelgrade"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMbelgrade_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMathens"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5202",
+            "index": "RDMathens_5202"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5202",
+        "local_peer_port": "1",
+        "remote_peer_port": "5202",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMdublin->RDMglasgow_83",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMdublin->RDMglasgow_83"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMdublin"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMdublin_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMglasgow"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMglasgow_4103"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "4103",
+        "local_peer_port": "1",
+        "remote_peer_port": "4103",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMdublin->RDMlondon_84",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMdublin->RDMlondon_84"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMdublin"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMdublin_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMlondon"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMlondon_4104"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "4104",
+        "local_peer_port": "1",
+        "remote_peer_port": "4104",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMglasgow->RDMamsterdam_85",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMglasgow->RDMamsterdam_85"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMglasgow"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMglasgow_4104"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMamsterdam"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMamsterdam_4103"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4104",
+        "dst_port": "4103",
+        "local_peer_port": "1",
+        "remote_peer_port": "4103",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMamsterdam->RDMbrussels_86",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMamsterdam->RDMbrussels_86"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMamsterdam"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMamsterdam_4104"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbrussels"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMbrussels_4103"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4104",
+        "dst_port": "4103",
+        "local_peer_port": "1",
+        "remote_peer_port": "4103",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMbrussels->RDMfrankfurt_87",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMbrussels->RDMfrankfurt_87"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbrussels"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMbrussels_4104"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMfrankfurt"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMfrankfurt_4104"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4104",
+        "dst_port": "4104",
+        "local_peer_port": "1",
+        "remote_peer_port": "4104",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMparis->RDMstrasbourg_88",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMparis->RDMstrasbourg_88"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMparis"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMparis_4104"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMstrasbourg"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMstrasbourg_5203"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4104",
+        "dst_port": "5203",
+        "local_peer_port": "1",
+        "remote_peer_port": "5203",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMstrasbourg->RDMzurich_89",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMstrasbourg->RDMzurich_89"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMstrasbourg"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMstrasbourg_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMzurich"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMzurich_4103"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "4103",
+        "local_peer_port": "1",
+        "remote_peer_port": "4103",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMlyon->RDMbordeaux_90",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMlyon->RDMbordeaux_90"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMlyon"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMlyon_4104"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbordeaux"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMbordeaux_4103"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4104",
+        "dst_port": "4103",
+        "local_peer_port": "1",
+        "remote_peer_port": "4103",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMbordeaux->RDMmadrid_91",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMbordeaux->RDMmadrid_91"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbordeaux"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMbordeaux_4104"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmadrid"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMmadrid_5203"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4104",
+        "dst_port": "5203",
+        "local_peer_port": "1",
+        "remote_peer_port": "5203",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmadrid->RDMbarcelona_92",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmadrid->RDMbarcelona_92"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmadrid"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMmadrid_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbarcelona"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMbarcelona_5204"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "5204",
+        "local_peer_port": "1",
+        "remote_peer_port": "5204",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmilan->RDMzurich_93",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmilan->RDMzurich_93"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmilan"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMmilan_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMzurich"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMzurich_4104"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "4104",
+        "local_peer_port": "1",
+        "remote_peer_port": "4104",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmilan->RDMvienna_94",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmilan->RDMvienna_94"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmilan"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMmilan_4104"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMvienna"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMvienna_4104"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4104",
+        "dst_port": "4104",
+        "local_peer_port": "1",
+        "remote_peer_port": "4104",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMrome->RDMbelgrade_95",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMrome->RDMbelgrade_95"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMrome"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMrome_5204"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbelgrade"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMbelgrade_4103"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5204",
+        "dst_port": "4103",
+        "local_peer_port": "1",
+        "remote_peer_port": "4103",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMrome->RDMathens_96",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMrome->RDMathens_96"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMrome"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMrome_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMathens"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMathens_5203"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "5203",
+        "local_peer_port": "1",
+        "remote_peer_port": "5203",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmunich->RDMprague_97",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmunich->RDMprague_97"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmunich"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMmunich_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMprague"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMprague_4104"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "4104",
+        "local_peer_port": "1",
+        "remote_peer_port": "4104",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMhamburg->RDMcopenhagen_98",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMhamburg->RDMcopenhagen_98"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMhamburg"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMhamburg_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMcopenhagen"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMcopenhagen_4104"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "4104",
+        "local_peer_port": "1",
+        "remote_peer_port": "4104",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMoslo->RDMstockholm_99",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMoslo->RDMstockholm_99"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMoslo"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5203",
+            "index": "RDMoslo_5203"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMstockholm"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMstockholm_4103"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "5203",
+        "dst_port": "4103",
+        "local_peer_port": "1",
+        "remote_peer_port": "4103",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMstockholm->RDMwarsaw_100",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMstockholm->RDMwarsaw_100"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMstockholm"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMstockholm_4104"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMwarsaw"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMwarsaw_4103"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4104",
+        "dst_port": "4103",
+        "local_peer_port": "1",
+        "remote_peer_port": "4103",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMwarsaw->RDMbudapest_101",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMwarsaw->RDMbudapest_101"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMwarsaw"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMwarsaw_4104"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbudapest"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMbudapest_5204"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4104",
+        "dst_port": "5204",
+        "local_peer_port": "1",
+        "remote_peer_port": "5204",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMbudapest->RDMbelgrade_102",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMbudapest->RDMbelgrade_102"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbudapest"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMbudapest_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbelgrade"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMbelgrade_4104"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "4104",
+        "local_peer_port": "1",
+        "remote_peer_port": "4104",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmadrid->RDMbarcelona_103",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmadrid->RDMbarcelona_103"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmadrid"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMmadrid_4103"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbarcelona"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4103",
+            "index": "RDMbarcelona_4103"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4103",
+        "dst_port": "4103",
+        "local_peer_port": "1",
+        "remote_peer_port": "4103",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMrome->RDMathens_104",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMrome->RDMathens_104"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMrome"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMrome_4104"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMathens"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "5204",
+            "index": "RDMathens_5204"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4104",
+        "dst_port": "5204",
+        "local_peer_port": "1",
+        "remote_peer_port": "5204",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    },
+    {
+      "name": "RDMmadrid->RDMbarcelona_105",
+      "link_id": {
+        "link_uuid": {
+          "uuid": "RDMmadrid->RDMbarcelona_105"
+        }
+      },
+      "link_endpoint_ids": [
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMmadrid"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMmadrid_4104"
+          }
+        },
+        {
+          "device_id": {
+            "device_uuid": {
+              "uuid": "RDMbarcelona"
+            }
+          },
+          "endpoint_uuid": {
+            "uuid": "4104",
+            "index": "RDMbarcelona_4104"
+          }
+        }
+      ],
+      "optical_details": {
+        "length": 0,
+        "src_port": "4104",
+        "dst_port": "4104",
+        "local_peer_port": "1",
+        "remote_peer_port": "4104",
+        "used": false,
+        "c_slots": {
+          "1": 1
+        },
+        "l_slots": {
+          "101": 1
+        },
+        "s_slots": {
+          "501": 1
+        }
+      }
+    }
+  ]
+}

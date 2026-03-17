@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.12.23)  15 MAR 2026 00:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.12.23)  16 MAR 2026 22:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1379,32 +1379,39 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ]
 chapter 1.
-<images/internet_user_report_oct_25_datareportal.png, id=178, 1927.2pt x 1084.05pt>
+<images/internet_user_report_oct_25_datareportal.png, id=180, 1927.2pt x 1084.05pt>
 File: images/internet_user_report_oct_25_datareportal.png Graphic file (type png)
 <use images/internet_user_report_oct_25_datareportal.png>
 Package pdftex.def Info: images/internet_user_report_oct_25_datareportal.png  used on input line 7.
-(pdftex.def)             Requested size: 409.72125pt x 230.45268pt.
+(pdftex.def)             Requested size: 307.2929pt x 172.83951pt.
+<images/example_of_flex_grid.png, id=182, 865.2325pt x 213.79875pt>
+File: images/example_of_flex_grid.png Graphic file (type png)
+<use images/example_of_flex_grid.png>
+Package pdftex.def Info: images/example_of_flex_grid.png  used on input line 16.
+(pdftex.def)             Requested size: 358.50317pt x 88.58453pt.
 
 
 [8
 
  <./images/internet_user_report_oct_25_datareportal.png (PNG copy)>]
 
-[9]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 27.
+[9 <./images/example_of_flex_grid.png>]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 32.
  (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 [10]
 
-[11]) (contents/chapterTwo.tex
+[11]
 
-[12]
+[12]) (contents/chapterTwo.tex
+
+[13]
 chapter 2.
 
 
-[13
+[14
 
 ]
 Overfull \hbox (13.3056pt too wide) in paragraph at lines 17--18
@@ -1413,11 +1420,11 @@ Overfull \hbox (13.3056pt too wide) in paragraph at lines 17--18
 
 
 
-[14]
+[15]
 
-[15]) (contents/chapterThree.tex
+[16]) (contents/chapterThree.tex
 
-[16]
+[17]
 chapter 3.
 
 Overfull \hbox (14.93733pt too wide) in paragraph at lines 4--5
@@ -1426,19 +1433,19 @@ Overfull \hbox (14.93733pt too wide) in paragraph at lines 4--5
 
 
 
-[17
+[18
 
 ]
 
-[18]) (contents/chapterFour.tex
-
-[19]
+[19]) (contents/chapterFour.tex
 
 [20]
+
+[21]
 chapter 4.
 
 
-[21
+[22
 
 ]
 Overfull \hbox (8.71738pt too wide) in paragraph at lines 16--17
@@ -1452,11 +1459,11 @@ Overfull \hbox (53.02927pt too wide) in paragraph at lines 18--19
 
 
 
-[22]
+[23]
 
-[23]) (contents/chapterFive.tex
+[24]) (contents/chapterFive.tex
 
-[24]
+[25]
 chapter 5.
 (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
@@ -1464,7 +1471,7 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
 
-[25
+[26
 
 ]
 Overfull \hbox (14.85258pt too wide) in paragraph at lines 39--40
@@ -1473,30 +1480,34 @@ Overfull \hbox (14.85258pt too wide) in paragraph at lines 39--40
 
 
 
-[26]) (contents/chapterSix.tex
+[27]) (contents/chapterSix.tex
 
-[27]
+[28]
 chapter 6.
 
 
-[28
+[29
 
 ]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 25.
 
 
-[29]) (contents/chapterSeven.tex
+[30]) (contents/chapterSeven.tex
 
-[30]
+[31]
 chapter 7.
 
 
-[31
+[32
 
 ])
 
-[32] (report.aux)
+[33]
+
+[34
+
+] (report.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1506,20 +1517,17 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26820 strings out of 467875
- 504487 string characters out of 5402536
- 1559015 words of memory out of 5000000
- 55226 multiletter control sequences out of 15000+600000
+ 26872 strings out of 467875
+ 506582 string characters out of 5402536
+ 1559591 words of memory out of 5000000
+ 55267 multiletter control sequences out of 15000+600000
  702817 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,7n,107p,11262b,2357s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{cite.0@giorgetti2020} has been referenced but does not exist, replaced by a fixed one
-
 {/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc}{/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc}{/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ts1.enc}</Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx12.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbxi10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmcsc10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi12.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr12.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr6.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri12.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmssbx10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtk10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt12.pfb>
-Output written on report.pdf (32 pages, 862079 bytes).
+Output written on report.pdf (34 pages, 963998 bytes).
 PDF statistics:
- 609 PDF objects out of 1000 (max. 8388607)
- 125 named destinations out of 1000 (max. 500000)
- 531 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 642 PDF objects out of 1000 (max. 8388607)
+ 136 named destinations out of 1000 (max. 500000)
+ 536 words of extra memory for PDF output out of 10000 (max. 10000000)
 

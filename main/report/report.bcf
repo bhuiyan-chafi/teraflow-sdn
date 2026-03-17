@@ -2374,7 +2374,15 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">giorgetti2020</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">itu694</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">algorithmsRSATaxonomy</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">efficientDynamicRSAEon</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">heuristicWSAMultihop</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">novelRoutingWSA</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">efficientDynamicRSAEon</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">aboutTFS</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">openconfigYang</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">openroadmYang</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
@@ -2386,4 +2394,14 @@
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="none/global//global/global/global"
+                type="entry"
+                sortingtemplatename="none"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global"
+                namehashtemplatename="global">
+  </bcf:datalist>
 </bcf:controlfile>

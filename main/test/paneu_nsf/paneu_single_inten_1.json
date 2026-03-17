@@ -1,0 +1,68 @@
+{
+  "contexts": [
+    {
+      "context_id": { "context_uuid": { "uuid": "paneu" } },
+      "topology_ids": [{ "topology_uuid": { "uuid": "single" } }],
+      "service_ids": [
+        {
+          "service_uuid": {
+            "uuid": "optical-intent-madrid_to_stockholm"
+          }
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "service_id": {
+        "context_id": { "context_uuid": { "uuid": "paneu" } },
+        "service_uuid": { "uuid": "optical-intent-madrid_to_stockholm" }
+      },
+      "service_type": 14,
+      "service_status": { "service_status": 1 },
+      "service_endpoint_ids": [
+        {
+          "device_id": { "device_uuid": { "uuid": "TPmadrid" } },
+          "endpoint_uuid": {
+            "uuid": "1",
+            "index": "TPmadrid_1"
+          }
+        },
+        {
+          "device_id": { "device_uuid": { "uuid": "TPstockholm" } },
+          "endpoint_uuid": {
+            "uuid": "1",
+            "index": "TPstockholm_1"
+          }
+        }
+      ],
+      "service_constraints": [
+        {
+          "custom": {
+            "constraint_type": "type",
+            "constraint_value": "flexi_grid"
+          }
+        },
+        {
+          "custom": {
+            "constraint_type": "bandwidth[gbps]",
+            "constraint_value": "100.0"
+          }
+        },
+        {
+          "custom": {
+            "constraint_type": "bidirectionality",
+            "constraint_value": "1"
+          }
+        },
+        {
+          "custom": {
+            "constraint_type": "highest_hop",
+            "constraint_value": "10"
+          }
+        }
+      ],
+      "service_config": { "config_rules": [] }
+    }
+  ]
+}

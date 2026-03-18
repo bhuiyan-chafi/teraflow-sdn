@@ -82,6 +82,14 @@ INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/inst
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.cfg
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/lmodern.sty
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/lmodern.sty
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/microtype/microtype.sty
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/microtype/microtype.sty
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/microtype/microtype-pdftex.def
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/microtype/microtype-pdftex.def
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/microtype/microtype-pdftex.def
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/microtype/microtype.cfg
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/microtype/microtype.cfg
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/microtype/microtype.cfg
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsmath.sty
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsmath.sty
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsopn.sty
@@ -244,6 +252,9 @@ INPUT ./report.aux
 INPUT ./report.aux
 INPUT report.aux
 OUTPUT report.aux
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/microtype/mt-cmr.cfg
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/microtype/mt-cmr.cfg
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/microtype/mt-cmr.cfg
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
@@ -348,6 +359,24 @@ INPUT ./contents/chapterTwo.tex
 INPUT ./contents/chapterTwo.tex
 INPUT contents/chapterTwo.tex
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmssbx10.tfm
+INPUT ./images/tfs_architecture.png
+INPUT ./images/tfs_architecture.png
+INPUT ./images/tfs_architecture.png
+INPUT ./images/tfs_architecture.png
+INPUT ./images/tfs_architecture.png
+INPUT ./images/tfs_architecture.png
+INPUT ./images/dwdm_flex_grid.jpg
+INPUT ./images/dwdm_flex_grid.jpg
+INPUT ./images/dwdm_flex_grid.jpg
+INPUT ./images/dwdm_flex_grid.jpg
+INPUT ./images/dwdm_flex_grid.jpg
+INPUT ./images/dwdm_flex_grid.jpg
+INPUT ./images/roadm_muxponder.png
+INPUT ./images/roadm_muxponder.png
+INPUT ./images/roadm_muxponder.png
+INPUT ./images/roadm_muxponder.png
+INPUT ./images/roadm_muxponder.png
+INPUT ./images/roadm_muxponder.png
 INPUT ./contents/chapterThree.tex
 INPUT ./contents/chapterThree.tex
 INPUT contents/chapterThree.tex
@@ -378,9 +407,9 @@ INPUT report.aux
 INPUT report.run.xml
 OUTPUT report.run.xml
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc
-INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx12.pfb
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx12.pfb

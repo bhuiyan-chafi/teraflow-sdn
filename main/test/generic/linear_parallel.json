@@ -3,7 +3,7 @@
     {
       "context_id": {
         "context_uuid": {
-          "uuid": "test"
+          "uuid": "linear"
         }
       },
       "topology_ids": [],
@@ -15,124 +15,109 @@
       "topology_id": {
         "context_id": {
           "context_uuid": {
-            "uuid": "test"
+            "uuid": "linear"
           }
         },
         "topology_uuid": {
-          "uuid": "test2"
+          "uuid": "parallel"
         }
       },
       "device_ids": [
         {
           "device_uuid": {
-            "uuid": "TP3"
+            "uuid": "TP1"
           }
         },
         {
           "device_uuid": {
-            "uuid": "RDM11"
+            "uuid": "RDM1"
           }
         },
         {
           "device_uuid": {
-            "uuid": "RDM12"
+            "uuid": "RDM2"
           }
         },
         {
           "device_uuid": {
-            "uuid": "RDM13"
+            "uuid": "RDM3"
           }
         },
         {
           "device_uuid": {
-            "uuid": "RDM14"
+            "uuid": "RDM4"
           }
         },
         {
           "device_uuid": {
-            "uuid": "RDM15"
-          }
-        },
-        {
-          "device_uuid": {
-            "uuid": "TP4"
+            "uuid": "TP2"
           }
         }
       ],
       "optical_link_ids": [
         {
           "link_uuid": {
-            "uuid": "TP3->RDM11_1_4101"
+            "uuid": "TP1->RDM1_1_4101"
           }
         },
         {
           "link_uuid": {
-            "uuid": "TP3->RDM11_2_4102"
+            "uuid": "TP1->RDM1_2_4102"
           }
         },
         {
           "link_uuid": {
-            "uuid": "RDM11->RDM12_5201_5201"
+            "uuid": "RDM1->RDM2_5201_5201"
           }
         },
         {
           "link_uuid": {
-            "uuid": "RDM11->RDM12_5202_5202"
+            "uuid": "RDM1->RDM2_5202_5202"
           }
         },
         {
           "link_uuid": {
-            "uuid": "RDM11->RDM12_5203_5203"
+            "uuid": "RDM1->RDM2_5203_5203"
           }
         },
         {
           "link_uuid": {
-            "uuid": "RDM12->RDM13_5204_5201"
+            "uuid": "RDM2->RDM3_5204_5201"
           }
         },
         {
           "link_uuid": {
-            "uuid": "RDM12->RDM13_4103_5202"
+            "uuid": "RDM2->RDM3_4103_5202"
           }
         },
         {
           "link_uuid": {
-            "uuid": "RDM12->RDM13_4104_5203"
+            "uuid": "RDM2->RDM3_4104_5203"
           }
         },
         {
           "link_uuid": {
-            "uuid": "RDM13->RDM14_5204_5201"
+            "uuid": "RDM3->RDM4_5204_5201"
           }
         },
         {
           "link_uuid": {
-            "uuid": "RDM14->RDM15_5202_5201"
+            "uuid": "RDM3->RDM4_4103_5202"
           }
         },
         {
           "link_uuid": {
-            "uuid": "RDM14->RDM15_5203_5202"
+            "uuid": "RDM3->RDM4_4104_5203"
           }
         },
         {
           "link_uuid": {
-            "uuid": "RDM14->RDM15_5204_5203"
+            "uuid": "RDM4->TP2_4101_1"
           }
         },
         {
           "link_uuid": {
-            "uuid": "RDM14->RDM15_4103_5204"
-          }
-        },
-        {
-          "link_uuid": {
-            "uuid": "RDM15->TP4_4101_1"
-          }
-        },
-        {
-          "link_uuid": {
-            "uuid": "RDM15->TP4_4102_2"
+            "uuid": "RDM4->TP2_4102_2"
           }
         }
       ]
@@ -140,33 +125,33 @@
   ],
   "optical_links": [
     {
-      "name": "TP3->RDM11_1_4101",
+      "name": "TP1->RDM1_1_4101",
       "link_id": {
         "link_uuid": {
-          "uuid": "TP3->RDM11_1_4101"
+          "uuid": "TP1->RDM1_1_4101"
         }
       },
       "link_endpoint_ids": [
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "TP3"
+              "uuid": "TP1"
             }
           },
           "endpoint_uuid": {
             "uuid": "port-1",
-            "index": "TP3_1"
+            "index": "TP1_1"
           }
         },
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM11"
+              "uuid": "RDM1"
             }
           },
           "endpoint_uuid": {
             "uuid": "4101",
-            "index": "RDM11_4101"
+            "index": "RDM1_4101"
           }
         }
       ],
@@ -189,33 +174,33 @@
       }
     },
     {
-      "name": "TP3->RDM11_2_4102",
+      "name": "TP1->RDM1_2_4102",
       "link_id": {
         "link_uuid": {
-          "uuid": "TP3->RDM11_2_4102"
+          "uuid": "TP1->RDM1_2_4102"
         }
       },
       "link_endpoint_ids": [
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "TP3"
+              "uuid": "TP1"
             }
           },
           "endpoint_uuid": {
             "uuid": "port-2",
-            "index": "TP3_2"
+            "index": "TP1_2"
           }
         },
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM11"
+              "uuid": "RDM1"
             }
           },
           "endpoint_uuid": {
             "uuid": "4102",
-            "index": "RDM11_4102"
+            "index": "RDM1_4102"
           }
         }
       ],
@@ -238,33 +223,33 @@
       }
     },
     {
-      "name": "RDM11->RDM12_5201_5201",
+      "name": "RDM1->RDM2_5201_5201",
       "link_id": {
         "link_uuid": {
-          "uuid": "RDM11->RDM12_5201_5201"
+          "uuid": "RDM1->RDM2_5201_5201"
         }
       },
       "link_endpoint_ids": [
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM11"
+              "uuid": "RDM1"
             }
           },
           "endpoint_uuid": {
             "uuid": "5201",
-            "index": "RDM11_5201"
+            "index": "RDM1_5201"
           }
         },
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM12"
+              "uuid": "RDM2"
             }
           },
           "endpoint_uuid": {
             "uuid": "5201",
-            "index": "RDM12_5201"
+            "index": "RDM2_5201"
           }
         }
       ],
@@ -287,33 +272,33 @@
       }
     },
     {
-      "name": "RDM11->RDM12_5202_5202",
+      "name": "RDM1->RDM2_5202_5202",
       "link_id": {
         "link_uuid": {
-          "uuid": "RDM11->RDM12_5202_5202"
+          "uuid": "RDM1->RDM2_5202_5202"
         }
       },
       "link_endpoint_ids": [
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM11"
+              "uuid": "RDM1"
             }
           },
           "endpoint_uuid": {
             "uuid": "5202",
-            "index": "RDM11_5202"
+            "index": "RDM1_5202"
           }
         },
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM12"
+              "uuid": "RDM2"
             }
           },
           "endpoint_uuid": {
             "uuid": "5202",
-            "index": "RDM12_5202"
+            "index": "RDM2_5202"
           }
         }
       ],
@@ -336,33 +321,33 @@
       }
     },
     {
-      "name": "RDM11->RDM12_5203_5203",
+      "name": "RDM1->RDM2_5203_5203",
       "link_id": {
         "link_uuid": {
-          "uuid": "RDM11->RDM12_5203_5203"
+          "uuid": "RDM1->RDM2_5203_5203"
         }
       },
       "link_endpoint_ids": [
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM11"
+              "uuid": "RDM1"
             }
           },
           "endpoint_uuid": {
             "uuid": "5203",
-            "index": "RDM11_5203"
+            "index": "RDM1_5203"
           }
         },
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM12"
+              "uuid": "RDM2"
             }
           },
           "endpoint_uuid": {
             "uuid": "5203",
-            "index": "RDM12_5203"
+            "index": "RDM2_5203"
           }
         }
       ],
@@ -385,33 +370,33 @@
       }
     },
     {
-      "name": "RDM12->RDM13_5204_5201",
+      "name": "RDM2->RDM3_5204_5201",
       "link_id": {
         "link_uuid": {
-          "uuid": "RDM12->RDM13_5204_5201"
+          "uuid": "RDM2->RDM3_5204_5201"
         }
       },
       "link_endpoint_ids": [
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM12"
+              "uuid": "RDM2"
             }
           },
           "endpoint_uuid": {
             "uuid": "5204",
-            "index": "RDM12_5204"
+            "index": "RDM2_5204"
           }
         },
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM13"
+              "uuid": "RDM3"
             }
           },
           "endpoint_uuid": {
             "uuid": "5201",
-            "index": "RDM13_5201"
+            "index": "RDM3_5201"
           }
         }
       ],
@@ -434,33 +419,33 @@
       }
     },
     {
-      "name": "RDM12->RDM13_4103_5202",
+      "name": "RDM2->RDM3_4103_5202",
       "link_id": {
         "link_uuid": {
-          "uuid": "RDM12->RDM13_4103_5202"
+          "uuid": "RDM2->RDM3_4103_5202"
         }
       },
       "link_endpoint_ids": [
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM12"
+              "uuid": "RDM2"
             }
           },
           "endpoint_uuid": {
             "uuid": "4103",
-            "index": "RDM12_4103"
+            "index": "RDM2_4103"
           }
         },
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM13"
+              "uuid": "RDM3"
             }
           },
           "endpoint_uuid": {
             "uuid": "5202",
-            "index": "RDM13_5202"
+            "index": "RDM3_5202"
           }
         }
       ],
@@ -483,33 +468,33 @@
       }
     },
     {
-      "name": "RDM12->RDM13_4104_5203",
+      "name": "RDM2->RDM3_4104_5203",
       "link_id": {
         "link_uuid": {
-          "uuid": "RDM12->RDM13_4104_5203"
+          "uuid": "RDM2->RDM3_4104_5203"
         }
       },
       "link_endpoint_ids": [
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM12"
+              "uuid": "RDM2"
             }
           },
           "endpoint_uuid": {
             "uuid": "4104",
-            "index": "RDM12_4104"
+            "index": "RDM2_4104"
           }
         },
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM13"
+              "uuid": "RDM3"
             }
           },
           "endpoint_uuid": {
             "uuid": "5203",
-            "index": "RDM13_5203"
+            "index": "RDM3_5203"
           }
         }
       ],
@@ -532,33 +517,33 @@
       }
     },
     {
-      "name": "RDM13->RDM14_5204_5201",
+      "name": "RDM3->RDM4_5204_5201",
       "link_id": {
         "link_uuid": {
-          "uuid": "RDM13->RDM14_5204_5201"
+          "uuid": "RDM3->RDM4_5204_5201"
         }
       },
       "link_endpoint_ids": [
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM13"
+              "uuid": "RDM3"
             }
           },
           "endpoint_uuid": {
             "uuid": "5204",
-            "index": "RDM13_5204"
+            "index": "RDM3_5204"
           }
         },
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM14"
+              "uuid": "RDM4"
             }
           },
           "endpoint_uuid": {
             "uuid": "5201",
-            "index": "RDM14_5201"
+            "index": "RDM4_5201"
           }
         }
       ],
@@ -581,88 +566,39 @@
       }
     },
     {
-      "name": "RDM14->RDM15_5202_5201",
+      "name": "RDM3->RDM4_4103_5202",
       "link_id": {
         "link_uuid": {
-          "uuid": "RDM14->RDM15_5202_5201"
+          "uuid": "RDM3->RDM4_4103_5202"
         }
       },
       "link_endpoint_ids": [
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM14"
+              "uuid": "RDM3"
             }
           },
           "endpoint_uuid": {
-            "uuid": "5202",
-            "index": "RDM14_5202"
+            "uuid": "4103",
+            "index": "RDM3_4103"
           }
         },
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM15"
+              "uuid": "RDM4"
             }
           },
           "endpoint_uuid": {
-            "uuid": "5201",
-            "index": "RDM15_5201"
+            "uuid": "5202",
+            "index": "RDM4_5202"
           }
         }
       ],
       "optical_details": {
         "length": 0,
-        "src_port": "5202",
-        "dst_port": "5201",
-        "local_peer_port": "1",
-        "remote_peer_port": "5201",
-        "used": false,
-        "c_slots": {
-          "1": 1
-        },
-        "l_slots": {
-          "101": 1
-        },
-        "s_slots": {
-          "501": 1
-        }
-      }
-    },
-    {
-      "name": "RDM14->RDM15_5203_5202",
-      "link_id": {
-        "link_uuid": {
-          "uuid": "RDM14->RDM15_5203_5202"
-        }
-      },
-      "link_endpoint_ids": [
-        {
-          "device_id": {
-            "device_uuid": {
-              "uuid": "RDM14"
-            }
-          },
-          "endpoint_uuid": {
-            "uuid": "5203",
-            "index": "RDM14_5203"
-          }
-        },
-        {
-          "device_id": {
-            "device_uuid": {
-              "uuid": "RDM15"
-            }
-          },
-          "endpoint_uuid": {
-            "uuid": "5202",
-            "index": "RDM15_5202"
-          }
-        }
-      ],
-      "optical_details": {
-        "length": 0,
-        "src_port": "5203",
+        "src_port": "4103",
         "dst_port": "5202",
         "local_peer_port": "1",
         "remote_peer_port": "5201",
@@ -679,39 +615,39 @@
       }
     },
     {
-      "name": "RDM14->RDM15_5204_5203",
+      "name": "RDM3->RDM4_4104_5203",
       "link_id": {
         "link_uuid": {
-          "uuid": "RDM14->RDM15_5204_5203"
+          "uuid": "RDM3->RDM4_4104_5203"
         }
       },
       "link_endpoint_ids": [
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM14"
+              "uuid": "RDM3"
             }
           },
           "endpoint_uuid": {
-            "uuid": "5204",
-            "index": "RDM14_5204"
+            "uuid": "4104",
+            "index": "RDM3_4104"
           }
         },
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM15"
+              "uuid": "RDM4"
             }
           },
           "endpoint_uuid": {
             "uuid": "5203",
-            "index": "RDM15_5203"
+            "index": "RDM4_5203"
           }
         }
       ],
       "optical_details": {
         "length": 0,
-        "src_port": "5204",
+        "src_port": "4104",
         "dst_port": "5203",
         "local_peer_port": "1",
         "remote_peer_port": "5201",
@@ -728,82 +664,33 @@
       }
     },
     {
-      "name": "RDM14->RDM15_4103_5204",
+      "name": "RDM4->TP2_4101_1",
       "link_id": {
         "link_uuid": {
-          "uuid": "RDM14->RDM15_4103_5204"
+          "uuid": "RDM4->TP2_4101_1"
         }
       },
       "link_endpoint_ids": [
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM14"
-            }
-          },
-          "endpoint_uuid": {
-            "uuid": "4103",
-            "index": "RDM14_4103"
-          }
-        },
-        {
-          "device_id": {
-            "device_uuid": {
-              "uuid": "RDM15"
-            }
-          },
-          "endpoint_uuid": {
-            "uuid": "5204",
-            "index": "RDM15_5204"
-          }
-        }
-      ],
-      "optical_details": {
-        "length": 0,
-        "src_port": "4103",
-        "dst_port": "5204",
-        "local_peer_port": "1",
-        "remote_peer_port": "5201",
-        "used": false,
-        "c_slots": {
-          "1": 1
-        },
-        "l_slots": {
-          "101": 1
-        },
-        "s_slots": {
-          "501": 1
-        }
-      }
-    },
-    {
-      "name": "RDM15->TP4_4101_1",
-      "link_id": {
-        "link_uuid": {
-          "uuid": "RDM15->TP4_4101_1"
-        }
-      },
-      "link_endpoint_ids": [
-        {
-          "device_id": {
-            "device_uuid": {
-              "uuid": "RDM15"
+              "uuid": "RDM4"
             }
           },
           "endpoint_uuid": {
             "uuid": "4101",
-            "index": "RDM15_4101"
+            "index": "RDM4_4101"
           }
         },
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "TP4"
+              "uuid": "TP2"
             }
           },
           "endpoint_uuid": {
             "uuid": "port-1",
-            "index": "TP4_1"
+            "index": "TP2_1"
           }
         }
       ],
@@ -826,33 +713,33 @@
       }
     },
     {
-      "name": "RDM15->TP4_4102_2",
+      "name": "RDM4->TP2_4102_2",
       "link_id": {
         "link_uuid": {
-          "uuid": "RDM15->TP4_4102_2"
+          "uuid": "RDM4->TP2_4102_2"
         }
       },
       "link_endpoint_ids": [
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "RDM15"
+              "uuid": "RDM4"
             }
           },
           "endpoint_uuid": {
             "uuid": "4102",
-            "index": "RDM15_4102"
+            "index": "RDM4_4102"
           }
         },
         {
           "device_id": {
             "device_uuid": {
-              "uuid": "TP4"
+              "uuid": "TP2"
             }
           },
           "endpoint_uuid": {
             "uuid": "port-2",
-            "index": "TP4_2"
+            "index": "TP2_2"
           }
         }
       ],

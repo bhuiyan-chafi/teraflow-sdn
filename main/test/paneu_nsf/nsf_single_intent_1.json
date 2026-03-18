@@ -53,8 +53,8 @@
         },
         {
           "custom": {
-            "constraint_type": "highest_hop",
-            "constraint_value": "6"
+            "constraint_type": "additional_hops",
+            "constraint_value": "1"
           }
         }
       ],

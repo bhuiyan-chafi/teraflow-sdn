@@ -20,48 +20,48 @@
 \contentsline {section}{\numberline {2.4}Routing and Spectrum Allocation}{20}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Spectrum continuity and contiguity constraints}{20}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}Existing RSA algorithms}{21}{subsection.2.4.2}%
-\contentsline {section}{\numberline {2.5}Problems with Parallel Links in RSA}{21}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Problem statement}{21}{subsection.2.5.1}%
-\contentsline {section}{\numberline {2.6}Current approaches and limitation}{21}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Related work}{22}{section.2.7}%
-\contentsline {chapter}{\numberline {3}Problem Definition and Proposed Algorithm}{23}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Problem Overview}{23}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Formal Problem Statement}{23}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Graph Modelling with Parallel Links (topologies)}{23}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Proposed RSA Algorithm}{24}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Bandwidth \& Slot Computation}{24}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Path Discovery}{24}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Bitmap-Based Spectrum Allocation}{25}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Slot Acquisition \& Assignment}{25}{subsection.3.4.4}%
-\contentsline {section}{\numberline {3.5}Complexity Analysis}{25}{section.3.5}%
-\contentsline {chapter}{\numberline {4}System Design and Implementation}{27}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Overall System Architecture}{27}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Modifications to TeraFlowSDN}{27}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Device Service Enhancements (OCDriver, OpenROADMDriver)}{27}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Context Service \& Database Schema Extensions}{28}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}RSA Computation Module (RSATools, ITUStandards)}{28}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Parallel Optical Controller Microservice}{29}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Service Architecture \& API Design}{29}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Graph Construction with NetworkX}{29}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}Integration with Existing TFS Services}{29}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Topology \& Link Management (Parallel Link Support)}{29}{section.4.6}%
-\contentsline {section}{\numberline {4.7}WebUI Enhancements (Spectrum Visualization)}{30}{section.4.7}%
-\contentsline {chapter}{\numberline {5}Testbed Setup and Deployment}{31}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Physical/Virtual Infrastructure}{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Emulated Devices (Transponders, ROADMS)}{32}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Network Topology Configuration (tfs descriptors)}{32}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Deployment Procedure (TeraFlowSDN \& ParallelOpticalController)}{33}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Results and Evaluation}{34}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Evaluation Methodology \& Test Scenarios}{34}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Functional Validation}{34}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Computational Performance}{35}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Spectrum Utilization Efficiency}{35}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Throughput Analysis}{35}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Comparison with Baseline/Existing Approaches}{36}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Statistical Analysis}{36}{section.6.7}%
-\contentsline {section}{\numberline {6.8}Discussion of Results}{36}{section.6.8}%
-\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{37}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Summary of Contributions}{37}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Limitations}{38}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Future Work Directions}{38}{section.7.3}%
+\contentsline {section}{\numberline {2.5}Problems with Parallel Links in RSA}{22}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Problem statement}{22}{subsection.2.5.1}%
+\contentsline {section}{\numberline {2.6}Current approaches and limitation}{23}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Related work}{24}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Problem Definition and Proposed Algorithm}{25}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Problem Overview}{25}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Formal Problem Statement}{25}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Graph Modelling with Parallel Links (topologies)}{25}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Proposed RSA Algorithm}{26}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Bandwidth \& Slot Computation}{26}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Path Discovery}{26}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Bitmap-Based Spectrum Allocation}{27}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Slot Acquisition \& Assignment}{27}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.5}Complexity Analysis}{27}{section.3.5}%
+\contentsline {chapter}{\numberline {4}System Design and Implementation}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Overall System Architecture}{29}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Modifications to TeraFlowSDN}{29}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Device Service Enhancements (OCDriver, OpenROADMDriver)}{29}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Context Service \& Database Schema Extensions}{30}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}RSA Computation Module (RSATools, ITUStandards)}{30}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Parallel Optical Controller Microservice}{31}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Service Architecture \& API Design}{31}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Graph Construction with NetworkX}{31}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Integration with Existing TFS Services}{31}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Topology \& Link Management (Parallel Link Support)}{31}{section.4.6}%
+\contentsline {section}{\numberline {4.7}WebUI Enhancements (Spectrum Visualization)}{32}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Testbed Setup and Deployment}{33}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Physical/Virtual Infrastructure}{33}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Emulated Devices (Transponders, ROADMS)}{34}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Network Topology Configuration (tfs descriptors)}{34}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Deployment Procedure (TeraFlowSDN \& ParallelOpticalController)}{35}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Results and Evaluation}{36}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Evaluation Methodology \& Test Scenarios}{36}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Functional Validation}{36}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Computational Performance}{37}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Spectrum Utilization Efficiency}{37}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Throughput Analysis}{37}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Comparison with Baseline/Existing Approaches}{38}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Statistical Analysis}{38}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Discussion of Results}{38}{section.6.8}%
+\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{39}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Summary of Contributions}{39}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Limitations}{40}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Future Work Directions}{40}{section.7.3}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

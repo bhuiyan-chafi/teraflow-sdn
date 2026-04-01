@@ -2414,6 +2414,8 @@
     <bcf:citekey order="37" intorder="2">adaptiveRSAFlex</bcf:citekey>
     <bcf:citekey order="38" intorder="1">odtnONOS</bcf:citekey>
     <bcf:citekey order="39" intorder="1">odlTPCE</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">ntiaBandwidth</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">networkX</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

@@ -1073,6 +1073,58 @@
       \verb https://docs.opendaylight.org/en/latest/release-notes/projects/transportpce.html
       \endverb
     \endentry
+    \entry{ntiaBandwidth}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=878ae867e6fee01cf91296a41f5f5370}{%
+           family={NTIA},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{878ae867e6fee01cf91296a41f5f5370}
+      \strng{fullhash}{878ae867e6fee01cf91296a41f5f5370}
+      \strng{fullhashraw}{878ae867e6fee01cf91296a41f5f5370}
+      \strng{bibnamehash}{878ae867e6fee01cf91296a41f5f5370}
+      \strng{authorbibnamehash}{878ae867e6fee01cf91296a41f5f5370}
+      \strng{authornamehash}{878ae867e6fee01cf91296a41f5f5370}
+      \strng{authorfullhash}{878ae867e6fee01cf91296a41f5f5370}
+      \strng{authorfullhashraw}{878ae867e6fee01cf91296a41f5f5370}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Guidance for Determination of Necessary Bandwidth}
+      \verb{urlraw}
+      \verb https://www.ntia.gov/sites/default/files/2023-11/j_2021_edition_rev_2023.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.ntia.gov/sites/default/files/2023-11/j_2021_edition_rev_2023.pdf
+      \endverb
+    \endentry
+    \entry{networkX}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=c2c87f4e7c2a7d1b6c66c8f0a89d3f47}{%
+           family={NetworkX},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{c2c87f4e7c2a7d1b6c66c8f0a89d3f47}
+      \strng{fullhash}{c2c87f4e7c2a7d1b6c66c8f0a89d3f47}
+      \strng{fullhashraw}{c2c87f4e7c2a7d1b6c66c8f0a89d3f47}
+      \strng{bibnamehash}{c2c87f4e7c2a7d1b6c66c8f0a89d3f47}
+      \strng{authorbibnamehash}{c2c87f4e7c2a7d1b6c66c8f0a89d3f47}
+      \strng{authornamehash}{c2c87f4e7c2a7d1b6c66c8f0a89d3f47}
+      \strng{authorfullhash}{c2c87f4e7c2a7d1b6c66c8f0a89d3f47}
+      \strng{authorfullhashraw}{c2c87f4e7c2a7d1b6c66c8f0a89d3f47}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Graphs Using NetworkX in Python}
+      \verb{urlraw}
+      \verb https://networkx.org/documentation/stable/reference/algorithms/shortest_paths.html
+      \endverb
+      \verb{url}
+      \verb https://networkx.org/documentation/stable/reference/algorithms/shortest_paths.html
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

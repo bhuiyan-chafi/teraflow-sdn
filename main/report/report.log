@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.12.23)  20 MAR 2026 16:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.12.23)  1 APR 2026 12:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1451,12 +1451,12 @@ Package tocbasic Info: character protrusion at lot deactivated on input line 112
 
 ]
 chapter 1.
-<images/internet_user_report_oct_25_datareportal.png, id=186, 1927.2pt x 1084.05pt>
+<images/internet_user_report_oct_25_datareportal.png, id=188, 1927.2pt x 1084.05pt>
 File: images/internet_user_report_oct_25_datareportal.png Graphic file (type png)
 <use images/internet_user_report_oct_25_datareportal.png>
 Package pdftex.def Info: images/internet_user_report_oct_25_datareportal.png  used on input line 7.
 (pdftex.def)             Requested size: 307.2929pt x 172.83951pt.
-<images/example_of_flex_grid.png, id=188, 865.2325pt x 213.79875pt>
+<images/example_of_flex_grid.png, id=190, 865.2325pt x 213.79875pt>
 File: images/example_of_flex_grid.png Graphic file (type png)
 <use images/example_of_flex_grid.png>
 Package pdftex.def Info: images/example_of_flex_grid.png  used on input line 16.
@@ -1486,7 +1486,7 @@ chapter 2.
 [14
 
 ]
-<images/tfs_architecture.png, id=239, 853.1875pt x 524.96124pt>
+<images/tfs_architecture.png, id=241, 853.1875pt x 524.96124pt>
 File: images/tfs_architecture.png Graphic file (type png)
 <use images/tfs_architecture.png>
 Package pdftex.def Info: images/tfs_architecture.png  used on input line 14.
@@ -1496,7 +1496,7 @@ Package pdftex.def Info: images/tfs_architecture.png  used on input line 14.
 [15]
 
 [16 <./images/tfs_architecture.png>]
-<images/dwdm_flex_grid.jpg, id=254, 248.78787pt x 130.46974pt>
+<images/dwdm_flex_grid.jpg, id=256, 248.78787pt x 130.46974pt>
 File: images/dwdm_flex_grid.jpg Graphic file (type jpg)
 <use images/dwdm_flex_grid.jpg>
 Package pdftex.def Info: images/dwdm_flex_grid.jpg  used on input line 25.
@@ -1504,7 +1504,7 @@ Package pdftex.def Info: images/dwdm_flex_grid.jpg  used on input line 25.
 
 
 [17 <./images/dwdm_flex_grid.jpg>]
-<images/roadm_muxponder.png, id=260, 514.3215pt x 462.7689pt>
+<images/roadm_muxponder.png, id=262, 514.3215pt x 462.7689pt>
 File: images/roadm_muxponder.png Graphic file (type png)
 <use images/roadm_muxponder.png>
 Package pdftex.def Info: images/roadm_muxponder.png  used on input line 40.
@@ -1526,25 +1526,34 @@ Package pdftex.def Info: images/roadm_muxponder.png  used on input line 40.
 [24]
 chapter 3.
 
-Overfull \hbox (4.93437pt too wide) in paragraph at lines 4--5
-\T1/lmr/m/n/14.4 (-20) In mod-ern op-ti-cal net-works, com-put-ing light-paths be-tween transpon-ders and ROADMs
- []
-
-
 
 [25
 
 ]
 
-[26]) (contents/chapterFour.tex
+[26]
+<images/full_algo_er.png, id=349, 2109.8825pt x 1164.35pt>
+File: images/full_algo_er.png Graphic file (type png)
+<use images/full_algo_er.png>
+Package pdftex.def Info: images/full_algo_er.png  used on input line 13.
+(pdftex.def)             Requested size: 512.14963pt x 282.62991pt.
 
-[27]
+
+[27 <./images/full_algo_er.png>]
 
 [28]
+
+[29]
+
+[30]) (contents/chapterFour.tex
+
+[31]
+
+[32]
 chapter 4.
 
 
-[29
+[33
 
 ]
 Overfull \hbox (42.50069pt too wide) in paragraph at lines 18--19
@@ -1553,11 +1562,11 @@ Overfull \hbox (42.50069pt too wide) in paragraph at lines 18--19
 
 
 
-[30]
+[34]
 
-[31]) (contents/chapterFive.tex
+[35]) (contents/chapterFive.tex
 
-[32]
+[36]
 chapter 5.
 (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
@@ -1565,7 +1574,7 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
 
-[33
+[37
 
 ]
 Overfull \hbox (8.65646pt too wide) in paragraph at lines 39--40
@@ -1574,32 +1583,32 @@ Overfull \hbox (8.65646pt too wide) in paragraph at lines 39--40
 
 
 
-[34]) (contents/chapterSix.tex
+[38]) (contents/chapterSix.tex
 
-[35]
+[39]
 chapter 6.
 
 
-[36
+[40
 
 ]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 25.
 
 
-[37]) (contents/chapterSeven.tex
+[41]) (contents/chapterSeven.tex
 
-[38]
+[42]
 chapter 7.
 
 
-[39
+[43
 
 ])
 
-[40]
+[44]
 
-[41
+[45
 
 ]
 Overfull \hbox (7.90434pt too wide) in paragraph at lines 121--121
@@ -1613,7 +1622,9 @@ Overfull \hbox (0.16068pt too wide) in paragraph at lines 121--121
 
 
 
-[42] (report.aux)
+[46]
+
+[47] (report.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1623,17 +1634,17 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29097 strings out of 467875
- 548766 string characters out of 5402536
- 1629913 words of memory out of 5000000
- 57229 multiletter control sequences out of 15000+600000
- 713754 words of font info for 191 fonts, out of 8000000 for 9000
+ 29141 strings out of 467875
+ 549756 string characters out of 5402536
+ 1630217 words of memory out of 5000000
+ 57253 multiletter control sequences out of 15000+600000
+ 714318 words of font info for 197 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,8n,107p,11262b,2383s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,9n,107p,11262b,2383s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc}{/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc}{/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ts1.enc}</Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx12.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbxi10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmcsc10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi12.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr12.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr6.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri12.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmssbx10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtk10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt12.pfb>
-Output written on report.pdf (42 pages, 1465802 bytes).
+Output written on report.pdf (47 pages, 1633753 bytes).
 PDF statistics:
- 755 PDF objects out of 1000 (max. 8388607)
- 161 named destinations out of 1000 (max. 500000)
- 51239 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 788 PDF objects out of 1000 (max. 8388607)
+ 169 named destinations out of 1000 (max. 500000)
+ 51236 words of extra memory for PDF output out of 51595 (max. 10000000)
 

@@ -380,11 +380,17 @@ INPUT ./images/roadm_muxponder.png
 INPUT ./contents/chapterThree.tex
 INPUT ./contents/chapterThree.tex
 INPUT contents/chapterThree.tex
+INPUT ./images/full_algo_er.png
+INPUT ./images/full_algo_er.png
+INPUT ./images/full_algo_er.png
+INPUT ./images/full_algo_er.png
+INPUT ./images/full_algo_er.png
+INPUT ./images/full_algo_er.png
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmr10.tfm
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmr7.tfm
 INPUT ./contents/chapterFour.tex
 INPUT ./contents/chapterFour.tex
 INPUT contents/chapterFour.tex
-INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmr10.tfm
-INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmr7.tfm
 INPUT ./contents/chapterFive.tex
 INPUT ./contents/chapterFive.tex
 INPUT contents/chapterFive.tex

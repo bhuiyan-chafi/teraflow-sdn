@@ -43,31 +43,4 @@ Concurrently, the controller executes a series of state updates across the topol
 \section{Complexity Analysis}
 The computational efficiency of the proposed \texttt{ParallelOpticalController} is fundamentally anchored in its ability to decouple topological routing from spatial spectrum allocation. The initialization phase, which constructs the abstracted multi-graph $(G_{free})$ and simplified routing graph $(G_{simple})$, traverses the network state in strictly linear time, $O(|N|+|L|)$—effectively $O(n)$ relative to the total topology size ($n$ represents a unit consisted of $N,L$)—ensuring predictable memory and processing scaling as physical devices and links are added. Subsequently, by executing topological path discovery exclusively on the collapsed graph $G_{simple}$, the controller avoids the state-space explosion typical of multi-graph environments, maintaining Dijkstra's standard log-linear time complexity of $O(|L_{simple}|+|L \times logL|)$ (where $L_{simple}$ represents the links involved in the shortest-path). The most significant computational breakthrough, however, emerges during the Routing and Spectrum Allocation (RSA) phase.
 
-\begin{table}[htbp]
-    \centering
-    \resizebox{\textwidth}{!}{\begin{tabular}{|c|c|c|c|c|c|}
-            \hline
-            \textbf{Topology}  & \textbf{Graph gen.} & \textbf{Shortest path com.} & \textbf{RSA comp.} & \textbf{Additional path comp.} & \textbf{Efficiency} \\
-            \hline
-            Linear Single      & 0.0018              & 0.0012                      & 0.0003             & 0.0009                         & -                   \\
-            \hline
-            Linear Parallel    & 0.0018              & 0.0016                      & 0.0005             & 0.0009                         & 87.50\%             \\
-            \hline
-            Butterfly Single   & 0.0014              & 0.0008                      & 0.0004             & 0.0007                         & -                   \\
-            \hline
-            Butterfly Parallel & 0.0017              & 0.0016                      & 0.0007             & 0.0007                         & 70.21\%             \\
-            \hline
-            NSF Single         & 0.0019              & 0.0016                      & 0.0007             & 0.0023                         & -                   \\
-            \hline
-            NSF Parallel       & 0.0022              & 0.0021                      & 0.0011             & 0.0024                         & 83.33\%             \\
-            \hline
-            PANEU Single       & 0.0024              & 0.0024                      & 0.0013             & 0.0134                         & -                   \\
-            \hline
-            PANEU Parallel     & 0.0026              & 0.0027                      & 0.0019             & 0.0141                         & 91.54\%             \\
-            \hline
-        \end{tabular}}
-    \caption{Efficiency evaluation of ParallelOpticalController}
-    \label{tab:complexity_analysis_table}
-\end{table}
-
 While traditional SDN implementations evaluate multi-fiber topologies sequentially—resulting in an exponential time complexity of $O(L_{parallel}^H)$, where $L_{parallel}$ represents the number of parallel links per hop and $H$ denotes the path length(measured in hops)—the proposed algorithm evaluates spatial bundles concurrently. Because the bitwise intersection mathematical logic resolves spectral contiguity across all parallel ports in constant O(1) time at the CPU hardware level, the overall time complexity of the RSA phase is strictly bounded by $O(L_{parallel}\times H)$. This additive, linear scaling with respect to path length and fiber density, coupled with a minimal spatial footprint of $O(N+L)$ for graph storage and negligible auxiliary memory for the binary string operations, mathematically guarantees that the controller can provision complex, multi-fiber lightpaths without succumbing to the exponential latency bottlenecks inherent in conventional routing algorithms. To empirically validate these theoretical claims, comprehensive performance tests were conducted across varying network topologies, including well-known reference networks such as the Pan-European (PANEU) and NSFNet models. As demonstrated in the results below, the controller successfully maintains the mathematically established time and space complexities, exhibiting highly efficient scaling even when multi-fiber parallel links are introduced. Ultimately, the convergence of theoretical analysis and empirical performance metrics confirms the robust computational efficiency of the \texttt{ParallelOpticalController}. By leveraging concurrent spatial evaluation to eliminate sequential processing bottlenecks, the architecture ensures highly scalable, real-time lightpath provisioning capable of meeting the rigorous demands of next-generation, multi-fiber elastic optical networks.

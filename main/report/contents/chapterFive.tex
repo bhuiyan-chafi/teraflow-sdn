@@ -1,50 +1,77 @@
 \chapter{Testbed Setup and Deployment}
-This chapter outlines the practical environment established to validate the proposed Routing and Spectrum Allocation (RSA) algorithms and the ParallelOpticalController. It details the configuration of the physical servers, the initialization of the Docker networking layer, the setup of emulated optical devices via XML data models, and the final microservices deployment procedure utilizing Kubernetes (MicroK8s).
-\section{Physical/Virtual Infrastructure}
-The experimental testbed relies on a distributed server architecture hosted at the University of Pisa (UniPi). Two primary servers, designated as Monster and Mascara, are utilized to balance the computational load between the SDN control plane and the emulated data plane.
+This chapter outlines the physical and logical infrastructure utilized to evaluate the proposed algorithms. It details the installation of the control plane, the configuration of the network emulation environment, and the specific architectural constraints observed to maintain a stable, high-performance testing environment\footnote{The testbed for this experiment is created with UniPi resource. Two servers: Mascara and Monster are used to deploy teraflowSDN and distributing the device load respectively.}.
+\section{Deployment of TeraFlowSDN}
+The deployment of the control plane begins by acquiring the TeraFlowSDN source code from the unofficial repository\cite{chafiTFSGit} and following the deployment procedure mentioned in the repository. The official repository can also be followed\cite{tfsRepo} but it excludes \texttt{ParallelOpticalController}. So, for a better deployment-installation of \texttt{Docker, MicroK8s} are recommended from there. However, to optimize server performance during the development and testing of the \texttt{ParallelOpticalController}, a lightweight deployment strategy is highly recommended. By intentionally disabling auxiliary, resource-intensive MicroK8s components—most notably the centralized monitoring subsystem—system overhead is significantly reduced. This targeted reduction ensures that the maximum available CPU and memory resources are strictly dedicated to the controller's core Routing and Spectrum Allocation (RSA) computations.
 
-To facilitate communication between the TeraFlowSDN controllers and the emulated devices, an isolated Docker bridge network is established. The creation of this network on the Monster server requires specifying a dedicated subnet and IP range:
-
-\begin{lstlisting}[language=bash, caption={Creating docker network}]
-    # On secondary server
-    sudo docker network create --driver=bridge \
-    --ip-range=10.100.0.0/16 \
-    --subnet=10.100.0.0/16 \
-    -o "com.docker.network.bridge.name=brTFS" netbrTFS
-\end{lstlisting}
-
-To ensure the Mascara server can route traffic to this newly created Docker subnet, static IP routing is configured. The following commands define the route through the respective gateway IP:
-
-\begin{lstlisting}[language=bash, caption={Creating route to the docker network}]
-    # Executed on Primary Server
-    sudo ip route add 10.100.0.0/16 via 131.114.54.73
-    route -n # Verification of the routing table
-\end{lstlisting}
-
-Furthermore, due to operating system constraints on Ubuntu 22.04 regarding network persistency, explicit iptables rules must be inserted on the Monster server to accept incoming traffic from the Mascara node:
-
-\begin{lstlisting}[language=bash, caption={Adding exceptions for teraflow packets}]
-    # Executed on UniPi Server: Monster
-    sudo iptables -I DOCKER-USER -s 131.114.54.72 -d 10.100.0.0/16 -j ACCEPT
-    sudo iptables --list # Verification of firewall rules
-\end{lstlisting}
-\textbf{[This section will be written properly, because I have to introduce two setup. One for debian system with older versions of docker and the new one with ubuntu 22.04 and latest version of docker.]}
-\section{Emulated Devices (Transponders, ROADMS)}
-Because deploying physical, large-scale flex-grid optical hardware is cost-prohibitive, the data plane is entirely simulated using advanced device emulators. These emulators accurately replicate the NETCONF/YANG interfaces of commercial optical equipment.
-
-The configuration of these devices relies heavily on meticulously crafted XML files that define their hardware capabilities, physical ports, and operational frequencies.
-
+Beyond resource allocation, establishing a stable testbed requires strict adherence to several critical architectural and operational constraints:
 \begin{itemize}
-    \item \textbf{Transponders (Muxponders):} The transponder configurations utilize the OpenConfig standard. For example, the \texttt{transponders\_x4.xml} file defines a MellanoxSwitch device with multiple \texttt{QSFP56\_DD\_TYPE1} transceivers operating under the \texttt{ETH\_400GBASE\_ZR} standard. It explicitly details the optical channels, defining parameters such as the default 193.1875 THz frequency, target output power, and associated line ports.
-    \item \textbf{ROADMs:} Reconfigurable Optical Add-Drop Multiplexers are configured to simulate specific optical degrees and frequency bands. The \texttt{roadm.xml} file dictates the input and output directional mapping of ports (e.g., ports 4101 and 5201 mapping to Degree D1). Crucially, it hardcodes the hardware bounds for the proposed RSA algorithm, explicitly defining the \texttt{MG\_ON\_PORT\_MIN\_FREQUENCY} as 193.0 THz and the \texttt{MG\_ON\_PORT\_MAX\_FREQUENCY} as 193.375 THz.
+    \item There are documented networking conflicts between MicroK8s and Docker Swarm environments when operated on the same host kernel. Therefore, a distributed, multi-server architecture was adopted. The primary server is dedicated exclusively to the MicroK8s-based TeraFlowSDN deployment, while a secondary, independent server is utilized strictly to host the emulated network devices.
+    \item To prevent traffic leakage and avoid interfering with the secondary server's default networking interfaces, a dedicated Docker bridge network must be explicitly provisioned for the device emulation environment.
+    \item Post-deployment configuration changes must be heavily restricted. Modifying the hostname of the primary server after initializing MicroK8s and TeraFlowSDN triggers severe state corruption within the Kubernetes cluster, inevitably resulting in data loss. Consequently, server renaming is strictly prohibited once the environment is active, and any unavoidable system reboots demand manual verification of the cluster's recovery state.
+    \item For testbeds operating across multiple physical or virtual machines using private IP addressing, explicit routing and unrestricted internal network reachability between the TeraFlowSDN controller node and the device emulation nodes must be validated prior to initializing the control plane.
 \end{itemize}
-\section{Network Topology Configuration (tfs descriptors)}
-To push the network topology into the TeraFlowSDN Context database, standardized JSON descriptors are utilized. These descriptors dictate the node identities, endpoint indices, and the optical links connecting them. To support the testing of topologies with multiple parallel links, the topology descriptor parsing mechanism was updated. Instead of relying strictly on unstable UUID hashing, the testbed utilises descriptors that reference the deterministic \texttt{endpoint\_index} (e.g., \texttt{TP1\_11}), allowing stable, repeatable topology generations with parallel edge definitions (e.g., xN multiplier configurations).
-\section{Deployment Procedure (TeraFlowSDN \& ParallelOpticalController)}
-The entire TeraFlowSDN ecosystem, including the custom-built components, is deployed on a MicroK8s Kubernetes cluster. When deploying the novel ParallelOpticalController to a fresh TFS ecosystem, a strict five-step deployment pipeline is executed .
+\section{Creating a Virtual Network}
+To distribute the computational load and isolate the emulation environment, a secondary server is utilized to host the virtual network infrastructure. This environment is provisioned using Docker, where a dedicated subnet is established and securely bridged to the physical host interface. Subsequently, static IP routing is configured to forward packets directly from the primary TeraFlowSDN server into the secondary server's virtual network. This architectural segregation significantly reduces processing overhead on the primary node and streamlines the NETCONF telemetry and provisioning communication between the SDN controller and the emulated optical devices.
 
-First, the Docker image for the new controller is built and pushed to the local container registry:
+The foundational steps required to initialize this virtual network and establish the inter-server routing are as follows:
+\begin{lstlisting}[language=bash, caption={Initialization of the Virtual Network}]
+    # Create the docker network in secondary server
+    $ sudo docker network create --driver=bridge --ip-range=10.100.0.0/16 \
+    --subnet=10.100.0.0/16 -o "com.docker.network.bridge.name=brTFS" netbrTFS
 
-\begin{center}
-    \textbf{[Deployment of TeraFlowSDN]}
-\end{center}
+    # Add route in the primary server
+    $ sudo ip route add 10.100.0.0/16 via 131.114.54.73
+
+    # Accept packets from the primary server in the secondary server
+    $ sudo iptables -I DOCKER-USER -s 131.114.54.72 -d 10.100.0.0/16 -j ACCEPT
+\end{lstlisting}
+The successful execution of this cross-server routing architecture is heavily dependent on the host operating systems utilized. The procedure outlined above has been validated for an environment utilizing Ubuntu 22.04 on the primary server and Debian Bullseye on the secondary server. However, if Ubuntu 22.04 is deployed on the secondary server, its default network management and strict firewall policies (such as nftables, ufw(is disabled in this scenario) or iptables forwarding rules) necessitate additional configuration steps to permit external traffic into the Docker subnet.
+
+\begin{lstlisting}[language=bash, caption={Ubuntu 22.04 in the secondary server}]
+    # Switch iptables to legacy mode
+    $ sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+
+    # Enable IP forwarding (persistent across reboots)
+    $ sudo sysctl -w net.ipv4.ip_forward=1
+    $ echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf
+    $ sudo sysctl -p
+
+    # Restart Docker (picks up the iptables-legacy switch)
+    $ sudo systemctl restart docker
+
+    # Flush Docker's raw PREROUTING DROP rules
+    $ sudo nft flush chain ip raw PREROUTING
+    $ sudo iptables -t raw -F PREROUTING
+
+    # Ensure the DOCKER-USER chain allows Mascara specifically
+    $ sudo iptables -I DOCKER-USER -s 131.114.54.72 -d 10.100.0.0/16 -j ACCEPT
+
+    # Force the kernel to allow forwarding to your specific bridge
+    $ sudo sysctl -w net.ipv4.ip_forward=1
+    $ sudo iptables -I FORWARD -o brTFS -j ACCEPT
+    $ sudo iptables -I FORWARD -i brTFS -j ACCEPT
+\end{lstlisting}
+Each time a container is up or restarted, the following commands must be executed again. Following the execution of these network configurations, manual verification is mandatory to confirm end-to-end reachability across the testbed. System administrators must ensure that the primary server can successfully route packets directly to the isolated Docker containers hosted on the secondary server. This validation is efficiently achieved via a standard ICMP echo request directed at a running container's designated IP address.
+\section{Emulated Devices}
+The physical optical layer of the testbed is simulated using Docker and Docker Swarm containerization, allowing for the deployment of a highly scalable, virtualized network topology. The emulation environment specifically provisions two fundamental classes of optical equipment: Muxponders (acting as the optical terminal endpoints) and Reconfigurable Optical Add-Drop Multiplexers (ROADMs). The underlying container images for these emulators leverage established academic repositories initially developed by professor Alessio and Andrea, which provide a robust and highly configurable baseline for optical device simulation. Upon initialization, the default operational states of these emulated devices are dynamically updated using configuration files injected directly from the SDN controller via the NETCONF protocol. These configurations are formatted as XML payloads and rigorously adhere to standardized OpenConfig and OpenROADM YANG data models. However, to accurately evaluate the multi-fiber spatial capabilities of the \texttt{ParallelOpticalController}, these standard XML payloads required meticulous customization prior to deployment. Critical modifications were implemented to explicitly define physical interface indices, standardize port nomenclature, assign specific flexible-grid frequency bands, and specify exact transport channel types and capacities. For the sake of scientific reproducibility, it is imperative that future deployments utilize these exact, pre-configured XML files, which are hosted within the project's supplementary repository\cite{chafiTFSGit}. Because the proposed RSA algorithm is fundamentally dependent on the initial spatial and spectral state extracted from the network, attempting to replicate the following performance tests utilizing unconfigured or default device models will inevitably result in divergent topological mappings and inconsistent computational outcomes.
+\section{An Example Topology Deployment}
+Building upon the previously established configuration, this section provides a comprehensive walkthrough for instantiating a functional linear optical topology within the TeraFlowSDN environment. The deployment process requires the execution of specific automation scripts to generate the emulated hardware, followed by the ingestion of structured JSON descriptor files into the SDN control plane. This procedure assumes that the secondary server's virtual network has been successfully provisioned and that cross-server packet routing is fully operational, as detailed in the preceding sections.
+
+The structured deployment protocol is executed as follows:
+\begin{enumerate}
+    \item \textbf{Device Emulation Initialization} \vspace{0.2cm} \\Access the secondary server and execute the \texttt{allGenerate.sh} script (located at \texttt{/test/generic/} within the project repository \cite{chafiTFSGit}) to deploy the containerized optical devices\footnote{- Administrator (sudo) privileges are required for this execution.}. Once the Docker containers are actively running, it is highly recommended to verify network reachability by executing a standard ping request from the primary server to the newly created emulated devices.
+    \item \textbf{Service Verification} \vspace{0.2cm} \\On the primary server, launch a terminal session and execute the following command to confirm that all required TeraFlowSDN microservices are in an active and healthy state: \texttt{"watch -n 1 kubectl get all --all-namespaces"}
+    \item \textbf{Base Context Initialization} \vspace{0.2cm} \\Navigate to the TeraFlowSDN WebUI (accessible via the \texttt{/webui} web endpoint) and upload the \texttt{adminContext.json} descriptor file. This crucial initialization file establishes the default administrative context and the foundational baseline topology\footnote{- The default behavior of teraflowSDN is to add every resource within admin context and topology. If additional contexts and topologies are to be created, they must be followed after the default one.}, which serve as mandatory structural prerequisites for all subsequent SDN operations.
+    \item \textbf{Base Context Initialization} \vspace{0.2cm} \\Following the base initialization, upload the specific device registration descriptor (\texttt{generic\_adminContext.json}, located at \texttt{/test/generic/}) via the WebUI. This process systematically parses the device telemetry and formally registers the emulated physical hardware with the central context database.
+    \item \textbf{Topology Formulation} \vspace{0.2cm} \\To construct the final logical network, upload the topology descriptor (\texttt{linea\_si\\-ngle.json}) within the same repository. This configuration file instructs the control plane to map the recently onboarded optical devices into a distinct operational context and systematically establishes the specific physical links connecting them.
+\end{enumerate}
+
+\subsection*{\small Visualization and Verification}
+Upon the successful sequential ingestion of these JSON descriptors, the network operator can select the newly established context from the WebUI dropdown menu. This action triggers the interface to query the database and render a comprehensive visual representation of the active linear topology, confirming the successful synchronization between the emulated hardware and the SDN control plane.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{linear_single_topo.png}
+    \caption{An example topology in TeraflowSDN}
+    \label{fig:linear_single_topo}
+\end{figure}

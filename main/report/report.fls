@@ -391,9 +391,16 @@ INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/inst
 INPUT ./contents/chapterFour.tex
 INPUT ./contents/chapterFour.tex
 INPUT contents/chapterFour.tex
-INPUT ./contents/chapterFive.tex
-INPUT ./contents/chapterFive.tex
-INPUT contents/chapterFive.tex
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmssbx10.tfm
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/rm-lmr5.tfm
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/lmmi5.tfm
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/lmsy5.tfm
+INPUT ./images/poc_service_orchestration.png
+INPUT ./images/poc_service_orchestration.png
+INPUT ./images/poc_service_orchestration.png
+INPUT ./images/poc_service_orchestration.png
+INPUT ./images/poc_service_orchestration.png
+INPUT ./images/poc_service_orchestration.png
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty
@@ -402,10 +409,87 @@ INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/inst
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmtt10.tfm
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmr6.tfm
+INPUT ./contents/chapterFive.tex
+INPUT ./contents/chapterFive.tex
+INPUT contents/chapterFive.tex
+INPUT ./images/linear_single_topo.png
+INPUT ./images/linear_single_topo.png
+INPUT ./images/linear_single_topo.png
+INPUT ./images/linear_single_topo.png
+INPUT ./images/linear_single_topo.png
+INPUT ./images/linear_single_topo.png
 INPUT ./contents/chapterSix.tex
 INPUT ./contents/chapterSix.tex
 INPUT contents/chapterSix.tex
-INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/lm/ec-lmtk10.tfm
+INPUT ./images/linear_single_topo.png
+INPUT ./images/linear_single_topo.png
+INPUT ./images/linear_single_topo.png
+INPUT ./images/butterfly_parallel.png
+INPUT ./images/butterfly_parallel.png
+INPUT ./images/butterfly_parallel.png
+INPUT ./images/butterfly_parallel.png
+INPUT ./images/butterfly_parallel.png
+INPUT ./images/butterfly_parallel.png
+INPUT ./images/nsf_parallel.png
+INPUT ./images/nsf_parallel.png
+INPUT ./images/nsf_parallel.png
+INPUT ./images/nsf_parallel.png
+INPUT ./images/nsf_parallel.png
+INPUT ./images/nsf_parallel.png
+INPUT ./images/paneu_parallel.png
+INPUT ./images/paneu_parallel.png
+INPUT ./images/paneu_parallel.png
+INPUT ./images/paneu_parallel.png
+INPUT ./images/paneu_parallel.png
+INPUT ./images/paneu_parallel.png
+INPUT ./images/web_view_device_info.png
+INPUT ./images/web_view_device_info.png
+INPUT ./images/web_view_device_info.png
+INPUT ./images/web_view_device_info.png
+INPUT ./images/web_view_device_info.png
+INPUT ./images/web_view_device_info.png
+INPUT ./images/device_info_extraction.png
+INPUT ./images/device_info_extraction.png
+INPUT ./images/device_info_extraction.png
+INPUT ./images/device_info_extraction.png
+INPUT ./images/device_info_extraction.png
+INPUT ./images/device_info_extraction.png
+INPUT ./images/frequency_mapping_roadm_ports.png
+INPUT ./images/frequency_mapping_roadm_ports.png
+INPUT ./images/frequency_mapping_roadm_ports.png
+INPUT ./images/frequency_mapping_roadm_ports.png
+INPUT ./images/frequency_mapping_roadm_ports.png
+INPUT ./images/frequency_mapping_roadm_ports.png
+INPUT ./images/port_rsa.png
+INPUT ./images/port_rsa.png
+INPUT ./images/port_rsa.png
+INPUT ./images/port_rsa.png
+INPUT ./images/port_rsa.png
+INPUT ./images/port_rsa.png
+INPUT ./images/link_rsa.png
+INPUT ./images/link_rsa.png
+INPUT ./images/link_rsa.png
+INPUT ./images/link_rsa.png
+INPUT ./images/link_rsa.png
+INPUT ./images/link_rsa.png
+INPUT ./images/shortest_path.png
+INPUT ./images/shortest_path.png
+INPUT ./images/shortest_path.png
+INPUT ./images/shortest_path.png
+INPUT ./images/shortest_path.png
+INPUT ./images/shortest_path.png
+INPUT ./images/hop_rsa.png
+INPUT ./images/hop_rsa.png
+INPUT ./images/hop_rsa.png
+INPUT ./images/hop_rsa.png
+INPUT ./images/hop_rsa.png
+INPUT ./images/hop_rsa.png
+INPUT ./images/additional_path.png
+INPUT ./images/additional_path.png
+INPUT ./images/additional_path.png
+INPUT ./images/additional_path.png
+INPUT ./images/additional_path.png
+INPUT ./images/additional_path.png
 INPUT ./contents/chapterSeven.tex
 INPUT ./contents/chapterSeven.tex
 INPUT contents/chapterSeven.tex
@@ -433,14 +517,14 @@ INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/inst
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr12.pfb
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr6.pfb
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr6.pfb
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr7.pfb
+INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr7.pfb
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri12.pfb
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri12.pfb
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmssbx10.pfb
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmssbx10.pfb
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy10.pfb
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy10.pfb
-INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtk10.pfb
-INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtk10.pfb
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt10.pfb
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt10.pfb
 INPUT /Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt12.pfb

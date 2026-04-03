@@ -236,6 +236,7 @@
       \strng{authornamehash}{d35591bdf12c3515b328845fbce3fac8}
       \strng{authorfullhash}{d35591bdf12c3515b328845fbce3fac8}
       \strng{authorfullhashraw}{d35591bdf12c3515b328845fbce3fac8}
+      \field{extraname}{1}
       \field{sortinit}{7}
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
@@ -1123,6 +1124,61 @@
       \endverb
       \verb{url}
       \verb https://networkx.org/documentation/stable/reference/algorithms/shortest_paths.html
+      \endverb
+    \endentry
+    \entry{chafiTFSGit}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=b623ce8904dddeee951405d6185990ff}{%
+           family={BHUIYAN},
+           familyi={B\bibinitperiod},
+           given={ASM\bibnamedelima CHAFIULLAH},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{b623ce8904dddeee951405d6185990ff}
+      \strng{fullhash}{b623ce8904dddeee951405d6185990ff}
+      \strng{fullhashraw}{b623ce8904dddeee951405d6185990ff}
+      \strng{bibnamehash}{b623ce8904dddeee951405d6185990ff}
+      \strng{authorbibnamehash}{b623ce8904dddeee951405d6185990ff}
+      \strng{authornamehash}{b623ce8904dddeee951405d6185990ff}
+      \strng{authorfullhash}{b623ce8904dddeee951405d6185990ff}
+      \strng{authorfullhashraw}{b623ce8904dddeee951405d6185990ff}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Thesis Resources}
+      \verb{urlraw}
+      \verb https://github.com/bhuiyan-chafi/teraflow-sdn/tree/main
+      \endverb
+      \verb{url}
+      \verb https://github.com/bhuiyan-chafi/teraflow-sdn/tree/main
+      \endverb
+    \endentry
+    \entry{tfsRepo}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=d35591bdf12c3515b328845fbce3fac8}{%
+           family={ETSI},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{d35591bdf12c3515b328845fbce3fac8}
+      \strng{fullhash}{d35591bdf12c3515b328845fbce3fac8}
+      \strng{fullhashraw}{d35591bdf12c3515b328845fbce3fac8}
+      \strng{bibnamehash}{d35591bdf12c3515b328845fbce3fac8}
+      \strng{authorbibnamehash}{d35591bdf12c3515b328845fbce3fac8}
+      \strng{authornamehash}{d35591bdf12c3515b328845fbce3fac8}
+      \strng{authorfullhash}{d35591bdf12c3515b328845fbce3fac8}
+      \strng{authorfullhashraw}{d35591bdf12c3515b328845fbce3fac8}
+      \field{extraname}{2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{TFS Repository}
+      \verb{urlraw}
+      \verb https://labs.etsi.org/rep/tfs/controller
+      \endverb
+      \verb{url}
+      \verb https://labs.etsi.org/rep/tfs/controller
       \endverb
     \endentry
   \enddatalist

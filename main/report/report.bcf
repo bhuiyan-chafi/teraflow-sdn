@@ -2416,6 +2416,11 @@
     <bcf:citekey order="39" intorder="1">odlTPCE</bcf:citekey>
     <bcf:citekey order="40" intorder="1">ntiaBandwidth</bcf:citekey>
     <bcf:citekey order="41" intorder="1">networkX</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">chafiTFSGit</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">chafiTFSGit</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">tfsRepo</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">chafiTFSGit</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">chafiTFSGit</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

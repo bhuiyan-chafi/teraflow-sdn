@@ -81,3 +81,17 @@ class OpticalLink(db.Model):
 
     def __repr__(self):
         return f"<OpticalLink {self.id} ({self.status})>"
+
+class Lightpath(db.Model):
+    __tablename__ = 'lightpaths'
+
+    id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    src_device = db.Column(db.String(100), nullable=False)
+    dst_device = db.Column(db.String(100), nullable=False)
+    bitrate = db.Column(db.Integer, nullable=False)
+    link_ids = db.Column(db.Text, nullable=False)  # JSON-stringify list of link UUIDs
+    allocated_mask = db.Column(db.String(255), nullable=False)  # The string map/int representing the mask
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    def __repr__(self):
+        return f"<Lightpath {self.id} ({self.src_device}->{self.dst_device})>"

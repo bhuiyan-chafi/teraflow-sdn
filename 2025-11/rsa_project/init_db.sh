@@ -9,9 +9,12 @@ done
 
 echo "Database is ready. Executing SQL files in order..."
 
-# Execute SQL files
-psql -h db -U rsa_user -d rsa_db -f /sql/devices.sql
-psql -h db -U rsa_user -d rsa_db -f /sql/device_endpoints.sql
-psql -h db -U rsa_user -d rsa_db -f /sql/optical_links.sql
-
+# Execute SQL files for normal topo
+# psql -h db -U rsa_user -d rsa_db -f /sql/devices.sql
+# psql -h db -U rsa_user -d rsa_db -f /sql/device_endpoints.sql
+# psql -h db -U rsa_user -d rsa_db -f /sql/optical_links.sql
+# Execute SQL files for nsf topo
+psql -h db -U rsa_user -d rsa_db -f /sql/nsf_topo/devices.sql
+psql -h db -U rsa_user -d rsa_db -f /sql/nsf_topo/device_endpoints.sql
+psql -h db -U rsa_user -d rsa_db -f /sql/nsf_topo/optical_links.sql
 echo "SQL files executed successfully!"

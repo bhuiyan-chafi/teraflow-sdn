@@ -18,7 +18,7 @@
         {% for link in rsa.links %}
            {{ link.name }}{% if not loop.last %} | {% endif %}
         {% endfor %}<br>
-        <strong>Requested Bandwidth:</strong> {{ bandwidth }} Gbps
+        <strong>Requested Bitrate:</strong> {{ bitrate }} Gbps
       </div>
 
       {% if rsa %}

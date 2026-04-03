@@ -136,10 +136,10 @@ def path_finder():
         src_port = request.form.get('src_port')
         dst_device = request.form.get('dst_device')
         dst_port = request.form.get('dst_port')
-        bandwidth = request.form.get('bandwidth')
+        bitrate = request.form.get('bitrate')
 
         paths = find_paths(src_device, src_port,
-                           dst_device, dst_port, bandwidth)
+                           dst_device, dst_port, bitrate)
 
         return render_template('paths.html',
                                dijkstra_paths=paths['dijkstra'],
@@ -148,7 +148,7 @@ def path_finder():
                                src_port=src_port,
                                dst_device=dst_device,
                                dst_port=dst_port,
-                               bandwidth=bandwidth)
+                               bitrate=bitrate)
 
     devices = Devices.query.all()
     return render_template('path_finder.html', devices=devices)
@@ -160,14 +160,14 @@ def rsa_path():
 
     if request.method == 'POST':
         link_ids = request.form.getlist('link_ids')
-        bandwidth = request.form.get('bandwidth')
+        bitrate = request.form.get('bitrate')
 
-        rsa_res = perform_rsa_for_path(link_ids, bandwidth)
+        rsa_res = perform_rsa_for_path(link_ids, bitrate)
 
         return render_template('rsa_path.html',
                                rsa=rsa_res,
                                link_ids=link_ids,
-                               bandwidth=bandwidth)
+                               bitrate=bitrate)
 
     return redirect(url_for('path_finder'))
 

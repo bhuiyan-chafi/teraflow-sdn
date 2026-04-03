@@ -581,6 +581,92 @@ class TopologyHelper:
         return valid_edge_paths
 
     @staticmethod
+    def expand_path_first_valid(node_path, graph_to_use):
+        """
+        Variant of expand_path that returns only the FIRST valid path found
+        for a given node sequence.
+
+        Used for all_paths exploration where parallel links exist.  Returning
+        all combinatorial permutations (expand_path) causes exponential
+        blow-up (3 parallel links × 5 hops = 3^5 = 243 paths per route),
+        which crashes the process with OOM when dozens of routes exist.
+
+        Since RSA (perform_rsa) already checks ALL endpoints on every device,
+        the specific parallel link chosen at each intermediate hop does NOT
+        change the RSA result — only the *node sequence* (route) matters for
+        spectrum diversity.  One representative path per route is sufficient.
+
+        Port constraints are intentionally omitted (no src_port/dst_port
+        filtering) so every parallel link at every hop is eligible.
+
+        Returns:
+            A single path dict { 'links': [...], 'is_valid': True, 'hops': N }
+            or None if no valid path exists on the given node sequence.
+        """
+        result = [None]  # mutable container so the closure can write to it
+
+        def backtrack(index, current_edge_path):
+            if result[0] is not None:
+                return  # already found a valid path — prune the rest
+
+            if index == len(node_path) - 1:
+                # Validity check mirrors backtrack_v2 in expand_path:
+                # OCH links must be FREE; OMS links must not be FULL.
+                is_valid = True
+                for link in current_edge_path:
+                    otn    = link['otn_type']
+                    status = link['status']
+                    if otn == 'OCH' and status != 'FREE':
+                        is_valid = False
+                        break
+                    elif otn == 'OMS' and status == 'FULL':
+                        is_valid = False
+                        break
+
+                if is_valid:
+                    result[0] = {
+                        'links':    list(current_edge_path),
+                        'is_valid': True,
+                        'hops':     len(current_edge_path),
+                    }
+                return
+
+            u = node_path[index]
+            v = node_path[index + 1]
+
+            if not graph_to_use.has_edge(u, v):
+                return
+
+            edges = graph_to_use[u][v]
+            for key, attr in edges.items():
+                if result[0] is not None:
+                    return  # early exit from the loop once found
+
+                # Determine traversal direction
+                if attr['original_src'] == u and attr['original_dst'] == v:
+                    out_port, in_port = attr['src_port'], attr['dst_port']
+                elif attr['original_src'] == v and attr['original_dst'] == u:
+                    out_port, in_port = attr['dst_port'], attr['src_port']
+                else:
+                    continue
+
+                current_edge_path.append({
+                    'id':       str(key),
+                    'src':      u,
+                    'dst':      v,
+                    'src_port': out_port,
+                    'dst_port': in_port,
+                    'name':     attr['name'],
+                    'status':   attr['status'],
+                    'otn_type': attr.get('otn_type'),
+                })
+                backtrack(index + 1, current_edge_path)
+                current_edge_path.pop()
+
+        backtrack(0, [])
+        return result[0]
+
+    @staticmethod
     def rsa_bitmap_pre_compute(path_obj, graph):
         """
         Computes available spectrum using reference bitmap alignment.
@@ -730,7 +816,14 @@ class TopologyHelper:
         return reference_bitmap, reference_slots, trace_steps, band_info
 
     @staticmethod
-    def perform_rsa(path_obj, bandwidth, graph):
+    def get_bandwidth(bitrate):
+        """
+        Calculates required optical bandwidth (in GHz) from requested bitrate (in Gbps).
+        """
+        return (float(bitrate) / 4.0) * 1.2
+
+    @staticmethod
+    def perform_rsa(path_obj, bitrate, graph):
         """
         Performs Routing and Spectrum Assignment (RSA) using reference bitmap alignment.
 
@@ -738,24 +831,28 @@ class TopologyHelper:
 
         Args:
             path_obj: Path object with 'links' list
-            bandwidth: Requested bandwidth in Gbps
+            bitrate: Requested bitrate in Gbps
             graph: NetworkX graph (not used in new implementation)
 
         Returns:
             dict: RSA result with success status, bitmaps, trace, and mask
         """
-        if not bandwidth:
-            logger.warning("[RSA] No bandwidth specified")
+        if not bitrate:
+            logger.warning("[RSA] No bitrate specified")
             return None
+
+        # The parameter passed as 'bitrate' is effectively the raw bitrate (Gbps)
+        bitrate_gbps = bitrate
+        calculated_bandwidth_ghz = TopologyHelper.get_bandwidth(bitrate_gbps)
 
         # Calculate required slots using ITU-T standard (Task 11: Fix from 12.5 to 6.25 GHz)
         SLOT_GRANULARITY_HZ = ITUStandards.SLOT_GRANULARITY.value  # 6250000000 Hz
         SLOT_GRANULARITY_GHZ = SLOT_GRANULARITY_HZ / \
             FrequencyMeasurementUnit.GHz.value  # 6.25 GHz
-        num_slots = math.ceil(float(bandwidth) / SLOT_GRANULARITY_GHZ)
+        num_slots = math.ceil(calculated_bandwidth_ghz / SLOT_GRANULARITY_GHZ)
 
         logger.info(
-            f"[RSA] Starting RSA for {bandwidth} Gbps. Required slots: {num_slots} (@ {SLOT_GRANULARITY_GHZ} GHz granularity)")
+            f"[RSA] Starting RSA for {bitrate_gbps} Gbps (Calculated Bandwidth: {calculated_bandwidth_ghz:.2f} GHz). Required slots: {num_slots} (@ {SLOT_GRANULARITY_GHZ} GHz granularity)")
 
         if not path_obj['links']:
             logger.warning("[RSA] Path has no links!")
@@ -858,9 +955,12 @@ class TopologyHelper:
             logger.info(
                 f"[RSA Commit] Starting slot reservation for {len(link_ids)} links")
 
-            # Step 1: Get all links and collect endpoints
-            links = OpticalLink.query.filter(
-                OpticalLink.id.in_(link_ids)).all()
+            # Step 1: Get all links and collect endpoints using joinedload
+            from sqlalchemy.orm import joinedload
+            links = OpticalLink.query.filter(OpticalLink.id.in_(link_ids)).options(
+                joinedload(OpticalLink.src_endpoint),
+                joinedload(OpticalLink.dst_endpoint)
+            ).all()
             if not links:
                 logger.error(
                     f"[RSA Commit] No links found for IDs: {link_ids}")
@@ -945,6 +1045,80 @@ class TopologyHelper:
         except Exception as e:
             db.session.rollback()
             logger.error(f"[RSA Commit] Error: {e}", exc_info=True)
+            return False
+
+    @staticmethod
+    def free_slots(link_ids, allocated_mask):
+        """
+        Reverses commit_slots by releasing the assigned spectrum back using Bitwise OR.
+        """
+        from models import db, OpticalLink, Endpoint
+
+        if not link_ids or allocated_mask is None:
+            logger.warning("[RSA Free] Missing link_ids or allocated_mask")
+            return False
+
+        try:
+            logger.info(f"[RSA Free] Starting slot release for {len(link_ids)} links")
+
+            from sqlalchemy.orm import joinedload
+            links = OpticalLink.query.filter(OpticalLink.id.in_(link_ids)).options(
+                joinedload(OpticalLink.src_endpoint),
+                joinedload(OpticalLink.dst_endpoint)
+            ).all()
+            if not links:
+                logger.error(f"[RSA Free] No links found for IDs: {link_ids}")
+                return False
+
+            path_endpoints = []
+            for link in links:
+                if link.src_endpoint and link.src_endpoint not in path_endpoints:
+                    path_endpoints.append(link.src_endpoint)
+                if link.dst_endpoint and link.dst_endpoint not in path_endpoints:
+                    path_endpoints.append(link.dst_endpoint)
+
+            valid_endpoints = [ep for ep in path_endpoints if ep.min_frequency and ep.max_frequency]
+
+            if not valid_endpoints:
+                logger.error("[RSA Free] No valid path endpoints found")
+                return False
+
+            _reference_min_freq = min([ep.min_frequency for ep in valid_endpoints])
+            _reference_max_freq = max([ep.max_frequency for ep in valid_endpoints])
+
+            band_info = OpticalBandHelper.detect_band(_reference_min_freq, _reference_max_freq)
+            if not band_info:
+                logger.error("[RSA Free] Could not detect band")
+                return False
+
+            _selected_min_freq, _selected_max_freq = band_info['frequency_range_hz']
+            SLOT_GRANULARITY_HZ = ITUStandards.SLOT_GRANULARITY.value
+
+            mask = int(allocated_mask)
+            updated_count = 0
+
+            for ep in valid_endpoints:
+                shrinked_mask = TopologyHelper.convert_mask_to_endpoint(
+                    mask, _selected_min_freq, ep, SLOT_GRANULARITY_HZ
+                )
+                current_bitmap = int(ep.bitmap_value) if ep.bitmap_value else 0
+                
+                # Bitwise OR to restore the allocated slots to 1 (Free)
+                new_bitmap = current_bitmap | shrinked_mask
+                ep.bitmap_value = str(new_bitmap)
+
+                all_available = (1 << ep.flex_slots) - 1
+                ep.in_use = (new_bitmap != all_available)
+
+                updated_count += 1
+
+            db.session.commit()
+            logger.info(f"[RSA Free] Success: Released slots on {updated_count} endpoints")
+            return True
+
+        except Exception as e:
+            db.session.rollback()
+            logger.error(f"[RSA Free] Error: {e}", exc_info=True)
             return False
 
     @staticmethod

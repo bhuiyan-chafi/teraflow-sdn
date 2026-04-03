@@ -21,6 +21,26 @@ services:
       timeout: 5s
       retries: 10
 
+  rsa_api:
+    image: rsa_project
+    build: .
+    container_name: rsa_api
+    command: python path_blocking/api.py
+    ports:
+      - "5001:5001"
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_DEBUG=1
+      - DATABASE_URL=postgresql://rsa_user:rsa_password@db:5432/rsa_db
+    links:
+      - db
+    depends_on:
+      db:
+        condition: service_healthy
+      rsa_dev:
+        condition: service_started
+
   db:
     image: postgres:15-alpine
     container_name: rsa_db

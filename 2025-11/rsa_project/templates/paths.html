@@ -15,7 +15,7 @@
 
       <div class="alert alert-info">
         <strong>Request:</strong> {{ src_device }}:{{ src_port }} &rarr; {{
-        dst_device }}:{{ dst_port }} ({{ bandwidth }} Gbps)
+        dst_device }}:{{ dst_port }} ({{ bitrate }} Gbps)
       </div>
 
       {# Dijkstra Path #} {% if dijkstra_paths %} {% set path_obj =
@@ -257,8 +257,8 @@
                       {% endfor %}
                       <input
                         type="hidden"
-                        name="bandwidth"
-                        value="{{ bandwidth }}"
+                        name="bitrate"
+                        value="{{ bitrate }}"
                       />
                       <button
                         type="submit"

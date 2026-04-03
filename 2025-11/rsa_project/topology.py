@@ -20,8 +20,15 @@ def build_graph(directed=False):
     for device in devices:
         G.add_node(device.name, type=device.type)
 
-    # Fetch all optical links (edges)
-    links = OpticalLink.query.all()
+    from sqlalchemy.orm import joinedload
+
+    # Fetch all optical links (edges) with joinedload to prevent N+1 queries
+    links = OpticalLink.query.options(
+        joinedload(OpticalLink.src_device),
+        joinedload(OpticalLink.dst_device),
+        joinedload(OpticalLink.src_endpoint),
+        joinedload(OpticalLink.dst_endpoint)
+    ).all()
     for link in links:
         src_device = link.src_device.name
         dst_device = link.dst_device.name
@@ -173,10 +180,17 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def find_paths(src_dev, src_port, dst_dev, dst_port, bandwidth=None):
-    HIGHEST_HOP = 10
+def find_paths(src_dev, src_port, dst_dev, dst_port, bitrate=None, dijkstra_only=False):
+    """
+    Find paths between two devices.
+
+    Both Dijkstra and alternative paths algorithms are now port-free.
+    The function receives src_port and dst_port but does not use them as
+    hard constraints, allowing the RSA algorithm complete freedom.
+    """
+    EXTRA_HOPS_ALLOWED = 1
     logger.info(
-        f"[DEBUG] find_paths called: {src_dev}:{src_port} -> {dst_dev}:{dst_port} (BW: {bandwidth})")
+        f"[DEBUG] find_paths called: {src_dev}:{src_port} -> {dst_dev}:{dst_port} (Bitrate: {bitrate})")
     G = build_graph()
     logger.info(
         f"[DEBUG] Graph built: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
@@ -212,26 +226,28 @@ def find_paths(src_dev, src_port, dst_dev, dst_port, bandwidth=None):
     logger.info(
         f"[DEBUG] Simple Graph (UNIQUE connected pairs with FREE links): {G_simple_free.number_of_nodes()} nodes, {G_simple_free.number_of_edges()} edges")
 
+    dijkstra_hops = None
     try:
         logger.info(
             f"[DEBUG] Searching for shortest path (Dijkstra) on FREE graph...")
         dijkstra_node_path = nx.shortest_path(
             G_simple_free, source=src_dev, target=dst_dev)
+        dijkstra_hops = len(dijkstra_node_path) - 1
         logger.info(f"[DEBUG] Dijkstra node path found: {dijkstra_node_path}")
 
-        # Expand using G_free to ensure we only pick FREE links
+        # Expand using G_free, port-free 
+        # Dijkstra path is expanded to all possible combinations, then the first is selected.
         d_edge_paths = TopologyHelper.expand_path(
-            dijkstra_node_path, G_free, src_port, dst_port)
+            dijkstra_node_path, G_free, None, None)
         logger.info(
             f"[DEBUG] Expanded Dijkstra path to {len(d_edge_paths)} valid physical paths.")
 
-        # User requested ONLY ONE path for Dijkstra, even if parallel links exist
         selected_path = d_edge_paths[:1]
 
-        if selected_path and bandwidth:
+        if selected_path and bitrate:
             expanded_dijkstra = selected_path[0]
             dijkstra_rsa = TopologyHelper.perform_rsa(
-                expanded_dijkstra, bandwidth, G)
+                expanded_dijkstra, bitrate, G)
             if dijkstra_rsa:
                 expanded_dijkstra['rsa_result'] = dijkstra_rsa
 
@@ -241,31 +257,58 @@ def find_paths(src_dev, src_port, dst_dev, dst_port, bandwidth=None):
         logger.info(f"[DEBUG] No Dijkstra path found on FREE graph.")
         pass
 
+    # Bypass alternative path generation if the endpoint only physically needs Dijkstra
+    if dijkstra_only:
+        return paths_result
+
     # --- 2. All Simple Paths (Include USED) ---
     # Use original G and G_simple
     G_simple = nx.Graph(G)
     logger.info(
         f"[DEBUG] Simple Graph (All) created: {G_simple.number_of_nodes()} nodes, {G_simple.number_of_edges()} edges")
 
+    # Determine dynamic cutoff based on Dijkstra shortest path
+    if dijkstra_hops is not None:
+        dynamic_cutoff = dijkstra_hops + EXTRA_HOPS_ALLOWED
+    else:
+        # Fallback to shortest path on the full graph if Dijkstra on FREE graph fails
+        try:
+            shortest_path_full = nx.shortest_path_length(G_simple, source=src_dev, target=dst_dev)
+            dynamic_cutoff = shortest_path_full + EXTRA_HOPS_ALLOWED
+        except nx.NetworkXNoPath:
+            # No possible path exists in the whole topology
+            logger.info(f"[DEBUG] No paths exist between {src_dev} and {dst_dev} in the full graph.")
+            return paths_result
+
     try:
         logger.info(
-            f"[DEBUG] Searching for all simple paths (HIGHEST_HOP={HIGHEST_HOP}) on full graph...")
+            f"[DEBUG] Searching for all simple paths (cutoff={dynamic_cutoff}) on full graph...")
         simple_node_paths = list(nx.all_simple_paths(
-            G_simple, source=src_dev, target=dst_dev, cutoff=HIGHEST_HOP))
+            G_simple, source=src_dev, target=dst_dev, cutoff=dynamic_cutoff))
         logger.info(
             f"[DEBUG] Found {len(simple_node_paths)} unique node sequences (routes).")
 
         total_edge_paths = 0
         for i, node_path in enumerate(simple_node_paths):
             logger.info(f"[DEBUG] Expanding Route {i+1}: {node_path}")
-            # Expand using full G to include USED links
-            edge_paths = TopologyHelper.expand_path(
-                node_path, G, src_port, dst_port)
-            count = len(edge_paths)
-            logger.info(
-                f"[DEBUG] Route {i+1} expanded to {count} physical paths.")
-            paths_result['all_paths'].extend(edge_paths)
-            total_edge_paths += count
+            # Use expand_path_first_valid instead of expand_path.
+            # expand_path produces ALL combinations of parallel links across
+            # every hop (k^N growth) which causes OOM crashes on topologies
+            # with parallel links.  Since RSA already inspects every endpoint
+            # on each device, the specific parallel link chosen at an
+            # intermediate hop does NOT affect RSA results — only the node
+            # sequence (route) matters.  One valid representative per route
+            # is sufficient for full spectrum diversity.
+            first_valid = TopologyHelper.expand_path_first_valid(node_path, G)
+            if first_valid:
+                paths_result['all_paths'].append(first_valid)
+                total_edge_paths += 1
+                logger.info(
+                    f"[DEBUG] Route {i+1} → 1 representative path appended.")
+            else:
+                logger.info(
+                    f"[DEBUG] Route {i+1} → no valid physical path found, skipped.")
+
 
         logger.info(f"[DEBUG] Total physical paths found: {total_edge_paths}")
     except nx.NetworkXNoPath:
@@ -275,7 +318,7 @@ def find_paths(src_dev, src_port, dst_dev, dst_port, bandwidth=None):
     return paths_result
 
 
-def perform_rsa_for_path(link_ids, bandwidth):
+def perform_rsa_for_path(link_ids, bitrate):
     """
     Reconstructs a path object from a list of link IDs and performs RSA.
     """
@@ -311,7 +354,7 @@ def perform_rsa_for_path(link_ids, bandwidth):
 
     # 2. Perform RSA
     from helpers import TopologyHelper
-    res = TopologyHelper.perform_rsa(path_obj, bandwidth, G)
+    res = TopologyHelper.perform_rsa(path_obj, bitrate, G)
     if res:
         res['links'] = path_links
     return res

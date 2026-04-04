@@ -43,6 +43,9 @@ def build_graph(directed=False):
             logger.error(
                 f"[Graph Build] OTN TYPE MISMATCH on link {link.name}: {src_otn} vs {dst_otn}")
 
+        # Derive status from endpoints
+        derived_status = link.src_endpoint.status
+
         # Add edge with all attributes
         G.add_edge(
             src_device,
@@ -54,7 +57,7 @@ def build_graph(directed=False):
             original_dst=dst_device,
             src_port=link.src_endpoint.name,
             dst_port=link.dst_endpoint.name,
-            status=link.status,
+            status=derived_status,
             capacity=100
         )
     return G
@@ -175,25 +178,86 @@ def generate_topology_graph():
     return "topology.png"
 
 
+def get_topology_data():
+    """
+    Returns topology data in a format suitable for Vis.js.
+    Nodes and edges are styled for premium aesthetics.
+    """
+    G = build_graph()
+    
+    nodes = []
+    edges = []
+    
+    # Process Nodes
+    for node_name, data in G.nodes(data=True):
+        node_type = data.get('type', 'unknown').upper()
+        
+        # Premium styling based on type
+        if 'ROADM' in node_type:
+            color = {'background': '#e67e22', 'border': '#d35400', 'highlight': '#f39c12'}
+            shape = 'dot'
+            size = 25
+            font_color = '#2c3e50'
+        else:
+            color = {'background': '#2c3e50', 'border': '#34495e', 'highlight': '#7f8c8d'}
+            shape = 'box'
+            size = 20
+            font_color = '#ffffff'
+
+        nodes.append({
+            'id': node_name,
+            'label': node_name,
+            'title': f"Type: {node_type}",
+            'color': color,
+            'shape': shape,
+            'size': size,
+            'font': {'color': font_color, 'size': 16, 'bold': True, 'face': 'Inter, Roboto, sans-serif'}
+        })
+    
+    # Process Edges (Aggregate parallel links)
+    edge_groups = {}
+    for u, v, k, d in G.edges(keys=True, data=True):
+        pair = tuple(sorted((u, v)))
+        if pair not in edge_groups:
+            edge_groups[pair] = {'count': 0, 'otn': d.get('otn_type'), 'status': d.get('status')}
+        edge_groups[pair]['count'] += 1
+
+    for pair, data in edge_groups.items():
+        u, v = pair
+        count = data['count']
+        
+        # Edge styling
+        color = '#bdc3c7' # Default
+        if data['otn'] == 'OCH':
+            color = '#3498db' # Blue for OCH
+        elif data['otn'] == 'OMS':
+            color = '#95a5a6' # Grey for OMS
+            
+        edges.append({
+            'from': u,
+            'to': v,
+            'label': f"{count} {'link' if count == 1 else 'links'}",
+            'title': f"Parallel Links: {count}<br>Type: {data['otn']}",
+            'color': color,
+            'width': 2 + (count * 0.5), # Scale width by link density
+            'smooth': {'type': 'continuous'}
+        })
+        
+    return {'nodes': nodes, 'edges': edges}
+
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def find_paths(src_dev, src_port, dst_dev, dst_port, bitrate=None, dijkstra_only=False):
+def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
     """
     Find paths between two devices.
-
-    Both Dijkstra and alternative paths algorithms are now port-free.
-    The function receives src_port and dst_port but does not use them as
-    hard constraints, allowing the RSA algorithm complete freedom.
+    The function is port-free, allowing the RSA algorithm complete freedom.
     """
     EXTRA_HOPS_ALLOWED = 1
-    logger.info(
-        f"[DEBUG] find_paths called: {src_dev}:{src_port} -> {dst_dev}:{dst_port} (Bitrate: {bitrate})")
     G = build_graph()
-    logger.info(
-        f"[DEBUG] Graph built: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
 
     paths_result = {
         'dijkstra': [],
@@ -201,60 +265,42 @@ def find_paths(src_dev, src_port, dst_dev, dst_port, bitrate=None, dijkstra_only
     }
 
     # --- 1. Dijkstra Shortest Path (Strictly FREE) ---
-    # Create G_free containing only FREE edges
     G_free = nx.MultiGraph()
     G_free.add_nodes_from(G.nodes(data=True))
-    # Dijkstra logic:
-    # - OCH links MUST be FREE (as they cannot be shared)
-    # - OMS links can be shared UNLESS they are FULL
+
     for u, v, k, d in G.edges(keys=True, data=True):
         otn = d.get('otn_type')
         status = d.get('status')
 
-        if otn == 'OCH' and status == 'FREE':
-            G_free.add_edge(u, v, key=k, **d)
-        elif otn == 'OMS' and status != 'FULL':
+        if (otn == 'OCH' or otn == 'OMS') and status != 'FULL':
             G_free.add_edge(u, v, key=k, **d)
         elif otn == 'ERROR':
-            logger.warning(
-                f"[Pathfinder] Skipping malformed link {d.get('name')} (ERROR type)")
-
-    logger.info(
-        f"[DEBUG] Filtered Graph (FREE links only): {G_free.number_of_nodes()} nodes, {G_free.number_of_edges()} edges")
+            pass
 
     G_simple_free = nx.Graph(G_free)
-    logger.info(
-        f"[DEBUG] Simple Graph (UNIQUE connected pairs with FREE links): {G_simple_free.number_of_nodes()} nodes, {G_simple_free.number_of_edges()} edges")
 
     dijkstra_hops = None
     try:
-        logger.info(
-            f"[DEBUG] Searching for shortest path (Dijkstra) on FREE graph...")
         dijkstra_node_path = nx.shortest_path(
             G_simple_free, source=src_dev, target=dst_dev)
         dijkstra_hops = len(dijkstra_node_path) - 1
-        logger.info(f"[DEBUG] Dijkstra node path found: {dijkstra_node_path}")
 
-        # Expand using G_free, port-free 
-        # Dijkstra path is expanded to all possible combinations, then the first is selected.
+        # Expand using G_free, port-free
         d_edge_paths = TopologyHelper.expand_path(
-            dijkstra_node_path, G_free, None, None)
-        logger.info(
-            f"[DEBUG] Expanded Dijkstra path to {len(d_edge_paths)} valid physical paths.")
+            dijkstra_node_path, G_free)
 
         selected_path = d_edge_paths[:1]
 
         if selected_path and bitrate:
             expanded_dijkstra = selected_path[0]
             dijkstra_rsa = TopologyHelper.perform_rsa(
-                expanded_dijkstra, bitrate, G)
+                expanded_dijkstra, bitrate)
             if dijkstra_rsa:
                 expanded_dijkstra['rsa_result'] = dijkstra_rsa
 
         if selected_path:
             paths_result['dijkstra'] = selected_path
     except nx.NetworkXNoPath:
-        logger.info(f"[DEBUG] No Dijkstra path found on FREE graph.")
         pass
 
     # Bypass alternative path generation if the endpoint only physically needs Dijkstra
@@ -262,57 +308,30 @@ def find_paths(src_dev, src_port, dst_dev, dst_port, bitrate=None, dijkstra_only
         return paths_result
 
     # --- 2. All Simple Paths (Include USED) ---
-    # Use original G and G_simple
     G_simple = nx.Graph(G)
-    logger.info(
-        f"[DEBUG] Simple Graph (All) created: {G_simple.number_of_nodes()} nodes, {G_simple.number_of_edges()} edges")
 
     # Determine dynamic cutoff based on Dijkstra shortest path
     if dijkstra_hops is not None:
         dynamic_cutoff = dijkstra_hops + EXTRA_HOPS_ALLOWED
     else:
-        # Fallback to shortest path on the full graph if Dijkstra on FREE graph fails
         try:
             shortest_path_full = nx.shortest_path_length(G_simple, source=src_dev, target=dst_dev)
             dynamic_cutoff = shortest_path_full + EXTRA_HOPS_ALLOWED
         except nx.NetworkXNoPath:
-            # No possible path exists in the whole topology
-            logger.info(f"[DEBUG] No paths exist between {src_dev} and {dst_dev} in the full graph.")
             return paths_result
 
     try:
-        logger.info(
-            f"[DEBUG] Searching for all simple paths (cutoff={dynamic_cutoff}) on full graph...")
         simple_node_paths = list(nx.all_simple_paths(
             G_simple, source=src_dev, target=dst_dev, cutoff=dynamic_cutoff))
-        logger.info(
-            f"[DEBUG] Found {len(simple_node_paths)} unique node sequences (routes).")
 
-        total_edge_paths = 0
         for i, node_path in enumerate(simple_node_paths):
-            logger.info(f"[DEBUG] Expanding Route {i+1}: {node_path}")
-            # Use expand_path_first_valid instead of expand_path.
-            # expand_path produces ALL combinations of parallel links across
-            # every hop (k^N growth) which causes OOM crashes on topologies
-            # with parallel links.  Since RSA already inspects every endpoint
-            # on each device, the specific parallel link chosen at an
-            # intermediate hop does NOT affect RSA results — only the node
-            # sequence (route) matters.  One valid representative per route
-            # is sufficient for full spectrum diversity.
             first_valid = TopologyHelper.expand_path_first_valid(node_path, G)
             if first_valid:
                 paths_result['all_paths'].append(first_valid)
-                total_edge_paths += 1
-                logger.info(
-                    f"[DEBUG] Route {i+1} → 1 representative path appended.")
             else:
-                logger.info(
-                    f"[DEBUG] Route {i+1} → no valid physical path found, skipped.")
+                pass
 
-
-        logger.info(f"[DEBUG] Total physical paths found: {total_edge_paths}")
     except nx.NetworkXNoPath:
-        logger.info(f"[DEBUG] No simple paths found.")
         pass
 
     return paths_result
@@ -321,40 +340,50 @@ def find_paths(src_dev, src_port, dst_dev, dst_port, bitrate=None, dijkstra_only
 def perform_rsa_for_path(link_ids, bitrate):
     """
     Reconstructs a path object from a list of link IDs and performs RSA.
+    Optimized: Queries DB directly instead of building full network graph.
     """
+    from models import OpticalLink
+    from sqlalchemy.orm import joinedload
+    from helpers import TopologyHelper
+
     if not link_ids:
         return None
 
-    G = build_graph()
-    path_links = []
+    # 1. Fetch links directly from DB with joined endpoints and devices
+    links_db = OpticalLink.query.filter(OpticalLink.id.in_(link_ids)).options(
+        joinedload(OpticalLink.src_device),
+        joinedload(OpticalLink.dst_device),
+        joinedload(OpticalLink.src_endpoint),
+        joinedload(OpticalLink.dst_endpoint)
+    ).all()
 
-    # 1. Reconstruct path object using precise IDs
+    if not links_db:
+        return None
+
+    # Map by ID for ordering
+    link_map = {str(link.id): link for link in links_db}
+    
+    path_links = []
     for link_id in link_ids:
-        found = False
-        for u, v, k, d in G.edges(keys=True, data=True):
-            if str(k) == str(link_id):
-                path_links.append({
-                    'id': str(k),
-                    'src': u,
-                    'dst': v,
-                    'src_port': d.get('src_port'),
-                    'dst_port': d.get('dst_port'),
-                    'name': d.get('name'),
-                    'status': d.get('status')
-                })
-                found = True
-                break
-        if not found:
-            logger.warning(f"[RSA Path] Link {link_id} not found in graph!")
+        link = link_map.get(str(link_id))
+        if link:
+            path_links.append({
+                'id': str(link.id),
+                'src': link.src_device.name,
+                'dst': link.dst_device.name,
+                'src_port': link.src_endpoint.name,
+                'dst_port': link.dst_endpoint.name,
+                'name': link.name,
+                'status': link.src_endpoint.status  # Correct source of truth
+            })
 
     if not path_links:
         return None
 
     path_obj = {'links': path_links}
 
-    # 2. Perform RSA
-    from helpers import TopologyHelper
-    res = TopologyHelper.perform_rsa(path_obj, bitrate, G)
+    # 2. Perform RSA (Port-free logic)
+    res = TopologyHelper.perform_rsa(path_obj, bitrate)
     if res:
         res['links'] = path_links
     return res

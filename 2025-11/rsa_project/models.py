@@ -38,6 +38,7 @@ class Endpoint(db.Model):
     max_frequency = db.Column(db.Float, nullable=True)
     flex_slots = db.Column(db.Integer, nullable=True)
     bitmap_value = db.Column(db.Text, nullable=True)
+    status = db.Column(db.String(50), nullable=False, default='FREE')
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(
         db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
@@ -64,7 +65,6 @@ class OpticalLink(db.Model):
         UUID(as_uuid=True), db.ForeignKey('endpoints.id'), nullable=False)
     dst_endpoint_id = db.Column(
         UUID(as_uuid=True), db.ForeignKey('endpoints.id'), nullable=False)
-    status = db.Column(db.String(50), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(
         db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
@@ -80,7 +80,7 @@ class OpticalLink(db.Model):
     dst_endpoint = db.relationship('Endpoint', foreign_keys=[dst_endpoint_id])
 
     def __repr__(self):
-        return f"<OpticalLink {self.id} ({self.status})>"
+        return f"<OpticalLink {self.id}>"
 
 class Lightpath(db.Model):
     __tablename__ = 'lightpaths'

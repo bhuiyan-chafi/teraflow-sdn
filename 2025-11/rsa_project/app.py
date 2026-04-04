@@ -121,9 +121,9 @@ def optical_links():
 
 @app.route('/topology')
 def topology():
-    from topology import generate_topology_graph
-    image_file = generate_topology_graph()
-    return render_template('topology.html', image=image_file)
+    from topology import get_topology_data
+    topo_data = get_topology_data()
+    return render_template('topology.html', topo_data=topo_data)
 
 
 @app.route('/path-finder', methods=['GET', 'POST'])
@@ -133,21 +133,17 @@ def path_finder():
 
     if request.method == 'POST':
         src_device = request.form.get('src_device')
-        src_port = request.form.get('src_port')
         dst_device = request.form.get('dst_device')
-        dst_port = request.form.get('dst_port')
         bitrate = request.form.get('bitrate')
 
-        paths = find_paths(src_device, src_port,
-                           dst_device, dst_port, bitrate)
+        # Ports are now handled dynamically by find_paths
+        paths = find_paths(src_device, dst_device, bitrate)
 
         return render_template('paths.html',
                                dijkstra_paths=paths['dijkstra'],
                                all_paths=paths['all_paths'],
                                src_device=src_device,
-                               src_port=src_port,
                                dst_device=dst_device,
-                               dst_port=dst_port,
                                bitrate=bitrate)
 
     devices = Devices.query.all()
@@ -177,34 +173,29 @@ def acquire_path():
     from helpers import TopologyHelper
 
     link_ids = request.form.getlist('link_ids')
-    final_bitmap_str = request.form.get('final_bitmap')
+    allocated_mask_str = request.form.get('allocated_mask')
 
-    logger.info(
-        f"[Acquire Path] Received: link_ids={link_ids}, final_bitmap_str='{final_bitmap_str}'")
-
-    # Check for missing or invalid data
     if not link_ids:
         logger.error("[Acquire Path] No link_ids received")
         return "Missing link IDs for acquisition.", 400
 
-    if not final_bitmap_str or final_bitmap_str == 'None' or final_bitmap_str == '':
-        logger.error(
-            f"[Acquire Path] Invalid final_bitmap: '{final_bitmap_str}'")
-        return "Missing or invalid final_bitmap for acquisition.", 400
+    if not allocated_mask_str:
+        logger.error("[Acquire Path] Missing allocated_mask")
+        return "Missing allocation mask for acquisition.", 400
 
     try:
-        final_bitmap = int(final_bitmap_str)
-        # Task 12: Use final_bitmap instead of mask for proper shrinking
-        success = TopologyHelper.commit_slots(link_ids, final_bitmap)
+        mask = int(allocated_mask_str)
+        success = TopologyHelper.commit_slots(link_ids, mask)
 
-        if success:
-            logger.info(
-                "[Acquire Path] Slots acquired successfully. Redirecting...")
+        if success == True:
             return redirect(url_for('optical_links'))
+        elif success == "collision":
+            return "Resource collision detected. Another request has taken these slots. Please try again.", 409
         else:
             return "Failed to commit slots to database.", 500
+            
     except ValueError:
-        return "Invalid final_bitmap value.", 400
+        return "Invalid allocation mask value.", 400
 
 
 if __name__ == '__main__':

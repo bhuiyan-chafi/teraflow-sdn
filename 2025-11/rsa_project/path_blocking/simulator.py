@@ -1,61 +1,193 @@
 import requests
 import json
-import time
+import heapq
+import random
+import math
+from sim_config import NSF_NODES, BIT_RATE, ERLANGS, N_REQ, HOLDING_TIME, Z_VALUE, TRANSIENT_UNIT
 
 API_URL = "http://127.0.0.1:5001/api/lightpath/request"
+TEARDOWN_URL = "http://127.0.0.1:5001/api/lightpath/teardown"
+
+
+class Event:
+    def __init__(self, v_time, event_type, data=None):
+        self.v_time = v_time
+        self.event_type = event_type  # "ARRIVAL" or "TEARDOWN"
+        self.data = data or {}
+
+    def __lt__(self, other):
+        # Priority Queue uses this to sort virtual timestamps chronologically
+        return self.v_time < other.v_time
+
 
 def run_simulation():
-    # 1. Define Request Parameters
-    payload = {
-        "src_device": "TPmissouri",
-        "dst_device": "TPtexas",
-        "bitrate": 400
-    }
+    results = []
 
-    print(f"--- Triggering Request: {payload['src_device']} -> {payload['dst_device']} ({payload['bitrate']} Gbps) ---")
-    
-    # 2. Make the POST request
-    try:
-        response = requests.post(API_URL, json=payload)
-        
-        # 3. Parse and Display Output
-        print(f"Response Code: {response.status_code}\n")
-        
-        try:
-            data = response.json()
-            print(json.dumps(data, indent=4))
-            
-            if data.get('status') == 'success':
-                comp_time = data.get("computation_time_s", 0)
-                lp_id = data.get("lightpath_id")
-                print(f"\n✅ SUCCESS: Path computed & slots acquired in {comp_time:.4f}s")
-                print(f"   Lightpath ID: {lp_id}")
-                
-                print("\n--- Triggering Instant Teardown Request ---")
-                teardown_payload = {"lightpath_id": lp_id}
-                td_resp = requests.post(API_URL.replace('request', 'teardown'), json=teardown_payload)
-                
+    # ERLANGS is sorted to guarantee consistent sequential loads (100 -> 1000)
+    for erlang in sorted(list(ERLANGS)):
+        print(f"============================================================")
+        print(f"STARTING SIMULATION FOR ERLANG LOAD: {erlang}")
+        print(f"============================================================")
+
+        arrival_rate = erlang / HOLDING_TIME
+        event_queue = []
+
+        # 1. Schedule the very first mathematical Arrival
+        first_arrival_delay = random.expovariate(arrival_rate)
+        heapq.heappush(event_queue, Event(first_arrival_delay, "ARRIVAL"))
+
+        virtual_time = 0.0
+        # Set transient limit to TRANSIENT_UNIT holding times for warm-up phase
+        transient_limit = TRANSIENT_UNIT * HOLDING_TIME
+
+        transient_requests = 0
+        transient_blocked = 0
+        counted_requests = 0
+        blocked_requests = 0
+        active_connections = 0
+        entered_steady_state = False
+
+        print(
+            f"\n--- [TRANSIENT PHASE INITIATED] (Warm-up until {transient_limit}s) ---")
+
+        # 2. Main Discrete Event Loop
+        while counted_requests < N_REQ:
+            if not event_queue:
+                break
+
+            current_event = heapq.heappop(event_queue)
+
+            # FAST FORWARD VIRTUAL TIME precisely to the millisecond of the next event
+            virtual_time = current_event.v_time
+
+            if current_event.event_type == "ARRIVAL":
+                # A. Queue the next mathematical arrival
+                next_arrival_time = virtual_time + \
+                    random.expovariate(arrival_rate)
+                heapq.heappush(event_queue, Event(
+                    next_arrival_time, "ARRIVAL"))
+
+                # B. Build random payload
+                src = random.choice(NSF_NODES)
+                dst = random.choice(NSF_NODES)
+                while dst == src:
+                    dst = random.choice(NSF_NODES)
+
+                bitrate = random.choice(BIT_RATE)
+
+                payload = {
+                    "src_device": src,
+                    "dst_device": dst,
+                    "bitrate": bitrate
+                }
+
+                # C. Execute the backend API!
                 try:
-                    td_data = td_resp.json()
-                    print(json.dumps(td_data, indent=4))
-                    if td_data.get('status') == 'success':
-                        td_time = td_data.get("teardown_time_s", 0)
-                        print(f"\n✅ SUCCESS: Path torn down and slots released in {td_time:.4f}s")
+                    resp = requests.post(API_URL, json=payload).json()
+                    status = resp.get('status')
+
+                    if virtual_time >= transient_limit and not entered_steady_state:
+                        print(
+                            f"\n============================================================")
+                        print(f" END OF TRANSIENT PHASE. ENTERING STEADY STATE ")
+                        print(
+                            f" Transient Requests: {transient_requests} | Success: {transient_requests - transient_blocked} | Blocked: {transient_blocked}")
+                        print(
+                            f" Active Connections Right Now: {active_connections}")
+                        if transient_requests > 0:
+                            print(
+                                f" Transient Contention Rate: {(transient_blocked/transient_requests)*100:.2f}%")
+                        print(
+                            f"============================================================\n")
+                        entered_steady_state = True
+
+                    phase_label = "STEADY" if entered_steady_state else "TRANSIENT"
+
+                    # Log every request for Saturation Test visibility
+                    if status == 'success':
+                        active_connections += 1
+                        lp_id = resp.get('lightpath_id')
+                        teardown_time = virtual_time + HOLDING_TIME
+                        heapq.heappush(event_queue, Event(
+                            teardown_time, "TEARDOWN", {"id": lp_id}))
+                        print(
+                            f"[{virtual_time:.2f}s] [{phase_label}] SUCCESS: {src}->{dst} (ID: {lp_id[:8]}...)")
                     else:
-                        print(f"\n❌ TEARDOWN FAILED: {td_data.get('reason')}")
-                except ValueError:
-                    print("Teardown Raw Response:", td_resp.text)
-                    
-            elif data.get('status') == 'path-blocked':
-                print(f"\n❌ BLOCKED: {data.get('reason')}")
-            else:
-                print(f"\n⚠️ ERROR: {data.get('reason')}")
-                
-        except ValueError:
-            print("Raw Response:", response.text)
-            
-    except requests.exceptions.ConnectionError:
-        print(f"Connection Error: Is the API running at {API_URL}?")
+                        print(
+                            f"[{virtual_time:.2f}s] [{phase_label}] BLOCKED: {src}->{dst}")
+
+                    # E. Check if we passed the Transient State
+                    if entered_steady_state:
+                        counted_requests += 1
+                        if status != 'success':
+                            blocked_requests += 1
+
+                        # Logging progress every request for clarity in small tests
+                        if counted_requests <= 150:  # Only for small N_REQ
+                            print(
+                                f"   -> Progress: {counted_requests}/{N_REQ} (Success: {counted_requests - blocked_requests}, Blocked: {blocked_requests})")
+                    else:
+                        transient_requests += 1
+                        if status != 'success':
+                            transient_blocked += 1
+
+                except Exception as e:
+                    print(f"⚠️ API Request Error: {e}")
+
+            elif current_event.event_type == "TEARDOWN":
+                # F. A lightpath holding time expired! Fire the API to extract its endpoints and run bitwise OR to free it.
+                lp_id = current_event.data['id']
+                try:
+                    td_resp = requests.post(
+                        TEARDOWN_URL, json={"lightpath_id": lp_id}).json()
+                    if td_resp.get('status') == 'success':
+                        active_connections -= 1
+                        print(
+                            f"[{virtual_time:.3f}s] TEARDOWN: Lightpath {lp_id} successfully released.")
+                    else:
+                        print(
+                            f"[{virtual_time:.3f}s] TEARDOWN FAILED: Lightpath {lp_id}.")
+                except Exception as e:
+                    pass
+
+        # 3. Calculate Results for this Erlang
+        total = counted_requests
+        prob = blocked_requests / float(total) if total > 0 else 0
+        ci = Z_VALUE * math.sqrt((prob * (1 - prob)) /
+                                 total) if total > 0 else 0
+
+        stat_dict = {
+            "load": erlang,
+            "total_requests": total,
+            "successful_requests": total - blocked_requests,
+            "blocked_requests": blocked_requests,
+            "blocking_probability": round(prob, 5),
+            "confidence_interval": round(ci, 5)
+        }
+        results.append(stat_dict)
+
+        print(f"\nERLANG {erlang} FINISHED!")
+        print(
+            f"Total: {total}, Success: {total-blocked_requests}, Blocked: {blocked_requests}")
+        print(f"Blocking Probability: {prob:.4f} ± {ci:.4f}")
+
+        # 4. Wipe Network Clean for the Next Erlang iteration!
+        print("Cleaning up remaining active lightpaths from topology before next Erlang starts...\n")
+        while event_queue:
+            ev = heapq.heappop(event_queue)
+            if ev.event_type == "TEARDOWN":
+                try:
+                    requests.post(TEARDOWN_URL, json={
+                                  "lightpath_id": ev.data['id']})
+                except:
+                    pass
+
+    # 5. Output Final Results
+    print("\n\n============================================================")
+    print("FINAL SIMULATION RESULTS")
+    print("============================================================")
+    print(json.dumps(results, indent=4))
+
 
 if __name__ == "__main__":
     run_simulation()

@@ -6,6 +6,15 @@ INSERT INTO devices (id, name, type, vendor, model, created_at, updated_at) VALU
 (gen_random_uuid(), 'TPmissouri', 'optical-transponder', 'Cisco', 'NCS1004', NOW(), NOW()),
 (gen_random_uuid(), 'TPnewyork', 'optical-transponder', 'Cisco', 'NCS1004', NOW(), NOW()),
 (gen_random_uuid(), 'TPtexas', 'optical-transponder', 'Cisco', 'NCS1004', NOW(), NOW()),
+(gen_random_uuid(), 'TPindiana', 'optical-transponder', 'Cisco', 'NCS1004', NOW(), NOW()),
+(gen_random_uuid(), 'TPohio', 'optical-transponder', 'Cisco', 'NCS1004', NOW(), NOW()),
+(gen_random_uuid(), 'TPmassachusetts', 'optical-transponder', 'Cisco', 'NCS1004', NOW(), NOW()),
+(gen_random_uuid(), 'TParizona', 'optical-transponder', 'Cisco', 'NCS1004', NOW(), NOW()),
+(gen_random_uuid(), 'TPwashington', 'optical-transponder', 'Cisco', 'NCS1004', NOW(), NOW()),
+(gen_random_uuid(), 'TPgeorgia', 'optical-transponder', 'Cisco', 'NCS1004', NOW(), NOW()),
+(gen_random_uuid(), 'TPtennessee', 'optical-transponder', 'Cisco', 'NCS1004', NOW(), NOW()),
+(gen_random_uuid(), 'TPpennsylvania', 'optical-transponder', 'Cisco', 'NCS1004', NOW(), NOW()),
+(gen_random_uuid(), 'TPmichigan', 'optical-transponder', 'Cisco', 'NCS1004', NOW(), NOW()),
 (gen_random_uuid(), 'RDMarizona', 'optical-roadm', 'Ciena', '6500', NOW(), NOW()),
 (gen_random_uuid(), 'RDMcalifornia', 'optical-roadm', 'Ciena', '6500', NOW(), NOW()),
 (gen_random_uuid(), 'RDMcolorado', 'optical-roadm', 'Ciena', '6500', NOW(), NOW()),
@@ -23,5 +32,9 @@ INSERT INTO devices (id, name, type, vendor, model, created_at, updated_at) VALU
 (gen_random_uuid(), 'RDMtennessee', 'optical-roadm', 'Ciena', '6500', NOW(), NOW()),
 (gen_random_uuid(), 'RDMtexas', 'optical-roadm', 'Ciena', '6500', NOW(), NOW()),
 (gen_random_uuid(), 'RDMvirginia', 'optical-roadm', 'Ciena', '6500', NOW(), NOW()),
-(gen_random_uuid(), 'RDMwashington', 'optical-roadm', 'Ciena', '6500', NOW(), NOW())
+(gen_random_uuid(), 'RDMwashington', 'optical-roadm', 'Ciena', '6500', NOW(), NOW()),
+(gen_random_uuid(), 'TPcolorado', 'optical-transponder', 'Cisco', 'NCS1004', NOW(), NOW()),
+(gen_random_uuid(), 'TPflorida', 'optical-transponder', 'Cisco', 'NCS1004', NOW(), NOW()),
+(gen_random_uuid(), 'TPmaryland', 'optical-transponder', 'Cisco', 'NCS1004', NOW(), NOW()),
+(gen_random_uuid(), 'TPvirginia', 'optical-transponder', 'Cisco', 'NCS1004', NOW(), NOW())
 ON CONFLICT (name) DO NOTHING;

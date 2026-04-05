@@ -3,6 +3,7 @@ import json
 import heapq
 import random
 import math
+from collections import Counter
 from sim_config import NSF_NODES, BIT_RATE, ERLANGS, N_REQ, HOLDING_TIME, Z_VALUE, TRANSIENT_UNIT
 
 API_URL = "http://127.0.0.1:5001/api/lightpath/request"
@@ -46,6 +47,9 @@ def run_simulation():
         blocked_requests = 0
         active_connections = 0
         entered_steady_state = False
+
+        # Track blocking reasons during steady state only
+        blocking_reasons = Counter()
 
         print(
             f"\n--- [TRANSIENT PHASE INITIATED] (Warm-up until {transient_limit}s) ---")
@@ -110,14 +114,18 @@ def run_simulation():
                         print(
                             f"[{virtual_time:.2f}s] [{phase_label}] SUCCESS: {src}->{dst} (ID: {lp_id[:8]}...)")
                     else:
+                        reason = resp.get('reason', 'Unknown')
                         print(
-                            f"[{virtual_time:.2f}s] [{phase_label}] BLOCKED: {src}->{dst}")
+                            f"[{virtual_time:.2f}s] [{phase_label}] BLOCKED: {src}->{dst} ({reason})")
 
                     # E. Check if we passed the Transient State
                     if entered_steady_state:
                         counted_requests += 1
                         if status != 'success':
                             blocked_requests += 1
+                            # Track blocking reason in steady state
+                            reason = resp.get('reason', 'Unknown')
+                            blocking_reasons[reason] += 1
 
                         # Logging progress every request for clarity in small tests
                         if counted_requests <= 150:  # Only for small N_REQ
@@ -159,7 +167,8 @@ def run_simulation():
             "successful_requests": total - blocked_requests,
             "blocked_requests": blocked_requests,
             "blocking_probability": round(prob, 5),
-            "confidence_interval": round(ci, 5)
+            "confidence_interval": round(ci, 5),
+            "blocking_reasons": dict(blocking_reasons)
         }
         results.append(stat_dict)
 
@@ -167,6 +176,14 @@ def run_simulation():
         print(
             f"Total: {total}, Success: {total-blocked_requests}, Blocked: {blocked_requests}")
         print(f"Blocking Probability: {prob:.4f} ± {ci:.4f}")
+
+        # Display blocking reasons breakdown
+        if blocking_reasons:
+            print(f"\nBlocking Reasons (Steady State):")
+            for reason, count in blocking_reasons.most_common():
+                pct = (count / blocked_requests *
+                       100) if blocked_requests > 0 else 0
+                print(f"  - {reason}: {count} ({pct:.1f}%)")
 
         # 4. Wipe Network Clean for the Next Erlang iteration!
         print("Cleaning up remaining active lightpaths from topology before next Erlang starts...\n")

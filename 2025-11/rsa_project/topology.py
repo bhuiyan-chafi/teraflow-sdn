@@ -184,22 +184,24 @@ def get_topology_data():
     Nodes and edges are styled for premium aesthetics.
     """
     G = build_graph()
-    
+
     nodes = []
     edges = []
-    
+
     # Process Nodes
     for node_name, data in G.nodes(data=True):
         node_type = data.get('type', 'unknown').upper()
-        
+
         # Premium styling based on type
         if 'ROADM' in node_type:
-            color = {'background': '#e67e22', 'border': '#d35400', 'highlight': '#f39c12'}
+            color = {'background': '#e67e22',
+                     'border': '#d35400', 'highlight': '#f39c12'}
             shape = 'dot'
             size = 25
             font_color = '#2c3e50'
         else:
-            color = {'background': '#2c3e50', 'border': '#34495e', 'highlight': '#7f8c8d'}
+            color = {'background': '#2c3e50',
+                     'border': '#34495e', 'highlight': '#7f8c8d'}
             shape = 'box'
             size = 20
             font_color = '#ffffff'
@@ -213,36 +215,37 @@ def get_topology_data():
             'size': size,
             'font': {'color': font_color, 'size': 16, 'bold': True, 'face': 'Inter, Roboto, sans-serif'}
         })
-    
+
     # Process Edges (Aggregate parallel links)
     edge_groups = {}
     for u, v, k, d in G.edges(keys=True, data=True):
         pair = tuple(sorted((u, v)))
         if pair not in edge_groups:
-            edge_groups[pair] = {'count': 0, 'otn': d.get('otn_type'), 'status': d.get('status')}
+            edge_groups[pair] = {'count': 0, 'otn': d.get(
+                'otn_type'), 'status': d.get('status')}
         edge_groups[pair]['count'] += 1
 
     for pair, data in edge_groups.items():
         u, v = pair
         count = data['count']
-        
+
         # Edge styling
-        color = '#bdc3c7' # Default
+        color = '#bdc3c7'  # Default
         if data['otn'] == 'OCH':
-            color = '#3498db' # Blue for OCH
+            color = '#3498db'  # Blue for OCH
         elif data['otn'] == 'OMS':
-            color = '#95a5a6' # Grey for OMS
-            
+            color = '#95a5a6'  # Grey for OMS
+
         edges.append({
             'from': u,
             'to': v,
             'label': f"{count} {'link' if count == 1 else 'links'}",
             'title': f"Parallel Links: {count}<br>Type: {data['otn']}",
             'color': color,
-            'width': 2 + (count * 0.5), # Scale width by link density
+            'width': 2 + (count * 0.5),  # Scale width by link density
             'smooth': {'type': 'continuous'}
         })
-        
+
     return {'nodes': nodes, 'edges': edges}
 
 
@@ -285,11 +288,20 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
             G_simple_free, source=src_dev, target=dst_dev)
         dijkstra_hops = len(dijkstra_node_path) - 1
 
+        # Log the dijkstra node path
+        # logger.info(f"[Dijkstra Path Discovery] Shortest path from {src_dev} to {dst_dev}: "
+        #             f"{' -> '.join(dijkstra_node_path)} ({dijkstra_hops} hops)")
+
         # Expand using G_free, port-free
         d_edge_paths = TopologyHelper.expand_path(
             dijkstra_node_path, G_free)
 
+        # All paths from G_free are valid, take the first one
         selected_path = d_edge_paths[:1]
+
+        # if selected_path:
+        #     logger.info(f"[Dijkstra Path Discovery] Found {len(d_edge_paths)} valid path expansion(s) "
+        #                 f"for dijkstra route {' -> '.join(dijkstra_node_path)}")
 
         if selected_path and bitrate:
             expanded_dijkstra = selected_path[0]
@@ -301,6 +313,8 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
         if selected_path:
             paths_result['dijkstra'] = selected_path
     except nx.NetworkXNoPath:
+        logger.info(
+            f"[Dijkstra Path Discovery] No shortest path exists from {src_dev} to {dst_dev}")
         pass
 
     # Bypass alternative path generation if the endpoint only physically needs Dijkstra
@@ -315,7 +329,8 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
         dynamic_cutoff = dijkstra_hops + EXTRA_HOPS_ALLOWED
     else:
         try:
-            shortest_path_full = nx.shortest_path_length(G_simple, source=src_dev, target=dst_dev)
+            shortest_path_full = nx.shortest_path_length(
+                G_simple, source=src_dev, target=dst_dev)
             dynamic_cutoff = shortest_path_full + EXTRA_HOPS_ALLOWED
         except nx.NetworkXNoPath:
             return paths_result
@@ -324,14 +339,24 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
         simple_node_paths = list(nx.all_simple_paths(
             G_simple, source=src_dev, target=dst_dev, cutoff=dynamic_cutoff))
 
+        logger.info(f"[All Paths Discovery] Found {len(simple_node_paths)} simple paths "
+                    f"from {src_dev} to {dst_dev} with cutoff {dynamic_cutoff}")
+
+        valid_all_paths_count = 0
         for i, node_path in enumerate(simple_node_paths):
             first_valid = TopologyHelper.expand_path_first_valid(node_path, G)
             if first_valid:
                 paths_result['all_paths'].append(first_valid)
+                valid_all_paths_count += 1
             else:
                 pass
 
+        logger.info(f"[All Paths Discovery] {valid_all_paths_count}/{len(simple_node_paths)} "
+                    f"simple paths have valid link expansions")
+
     except nx.NetworkXNoPath:
+        logger.info(
+            f"[All Paths Discovery] No simple paths found from {src_dev} to {dst_dev}")
         pass
 
     return paths_result
@@ -362,7 +387,7 @@ def perform_rsa_for_path(link_ids, bitrate):
 
     # Map by ID for ordering
     link_map = {str(link.id): link for link in links_db}
-    
+
     path_links = []
     for link_id in link_ids:
         link = link_map.get(str(link_id))

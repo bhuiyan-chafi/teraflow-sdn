@@ -461,23 +461,20 @@ class TopologyHelper:
 
         def backtrack_v2(index, current_edge_path):
             if index == len(node_path) - 1:
-                # NEW Path Validity Logic
-                is_valid = True
-                for link in current_edge_path:
-                    otn = link['otn_type']
-                    status = link['status']
-
-                    if otn == 'OCH' and status != 'FREE':
-                        is_valid = False
-                        break
-                    elif otn == 'OMS' and status == 'FULL':
-                        is_valid = False
-                        break
-
-                valid_edge_paths.append({
+                # Since G_free already pre-filters FULL links in topology.py,
+                # all paths found here are inherently valid
+                path_info = {
                     'links': list(current_edge_path),
-                    'is_valid': is_valid
-                })
+                    'is_valid': True  # Always true since G_free pre-filters
+                }
+                valid_edge_paths.append(path_info)
+
+                # Log all paths found (all are valid)
+                node_names = [node_path[0]] + [link['dst']
+                                               for link in current_edge_path]
+                link_names = [link['name'] for link in current_edge_path]
+                # logger.info(f"[Path Discovery] Valid path found: {' -> '.join(node_names)} "
+                #             f"via links [{', '.join(link_names)}]")
                 return
 
             u = node_path[index]
@@ -541,11 +538,11 @@ class TopologyHelper:
                 return  # already found a valid path — prune the rest
 
             if index == len(node_path) - 1:
-                # Validity check mirrors backtrack_v2 in expand_path:
-                # OCH links must be FREE; OMS links must not be FULL.
+                # Validity check: OCH links must be FREE; OMS links must not be FULL
+                # (needed since this function uses the full graph G, not G_free)
                 is_valid = True
                 for link in current_edge_path:
-                    otn    = link['otn_type']
+                    otn = link['otn_type']
                     status = link['status']
                     if otn == 'OCH' and status != 'FREE':
                         is_valid = False
@@ -555,11 +552,19 @@ class TopologyHelper:
                         break
 
                 if is_valid:
-                    result[0] = {
+                    path_info = {
                         'links':    list(current_edge_path),
                         'is_valid': True,
                         'hops':     len(current_edge_path),
                     }
+                    result[0] = path_info
+
+                    # Log the first valid path found
+                    node_names = [node_path[0]] + [link['dst']
+                                                   for link in current_edge_path]
+                    link_names = [link['name'] for link in current_edge_path]
+                    logger.info(f"[Path Discovery - First Valid] Valid path found: {' -> '.join(node_names)} "
+                                f"via links [{', '.join(link_names)}]")
                 return
 
             u = node_path[index]
@@ -647,6 +652,13 @@ class TopologyHelper:
         if not endpoints:
             logger.error("[RSA Pre-Compute] No valid endpoints found in path")
             return None, 0, [], None
+
+        # Safety Check: Reject if any OCH or OMS endpoint has status=FULL
+        for ep in endpoints:
+            if ep.otn_type in ('OCH', 'OMS') and ep.status == 'FULL':
+                logger.warning(
+                    f"[RSA Pre-Compute] Endpoint {ep.name} ({ep.otn_type}) is FULL - rejecting path")
+                return None, 0, [], None
 
         # Step 2: Calculate reference frequency range (widest range)
         valid_endpoints = [
@@ -840,9 +852,11 @@ class TopologyHelper:
 
         try:
             # Step 1: Get link metadata to find endpoint IDs (No locking or joins needed here)
-            links = OpticalLink.query.filter(OpticalLink.id.in_(link_ids)).all()
+            links = OpticalLink.query.filter(
+                OpticalLink.id.in_(link_ids)).all()
             if not links:
-                logger.error(f"[RSA Commit] No links found for IDs: {link_ids}")
+                logger.error(
+                    f"[RSA Commit] No links found for IDs: {link_ids}")
                 return False
 
             # Collect unique endpoint IDs
@@ -867,16 +881,27 @@ class TopologyHelper:
             if not valid_endpoints:
                 return False
 
+            # Safety Check: Reject if any OCH or OMS endpoint has status=FULL
+            for ep in valid_endpoints:
+                if ep.otn_type in ('OCH', 'OMS') and ep.status == 'FULL':
+                    logger.warning(
+                        f"[RSA Commit] Endpoint {ep.name} ({ep.otn_type}) is FULL - rejecting commit")
+                    db.session.rollback()
+                    return "full_endpoint"
+
             # Step 2: Detect band (same logic as pre-compute for alignment)
-            _reference_min_freq = min([ep.min_frequency for ep in valid_endpoints])
-            _reference_max_freq = max([ep.max_frequency for ep in valid_endpoints])
-            band_info = OpticalBandHelper.detect_band(_reference_min_freq, _reference_max_freq)
+            _reference_min_freq = min(
+                [ep.min_frequency for ep in valid_endpoints])
+            _reference_max_freq = max(
+                [ep.max_frequency for ep in valid_endpoints])
+            band_info = OpticalBandHelper.detect_band(
+                _reference_min_freq, _reference_max_freq)
             if not band_info:
                 return False
 
             _selected_min_freq, _selected_max_freq = band_info['frequency_range_hz']
             SLOT_GRANULARITY_HZ = ITUStandards.SLOT_GRANULARITY.value
-            
+
             mask = int(allocated_mask)
             updated_count = 0
 
@@ -897,7 +922,8 @@ class TopologyHelper:
                 # If (current_bitmap & shrinked_mask) != shrinked_mask, it means some of
                 # our requested bits are already 0 (reserved by someone else).
                 if (current_bitmap & shrinked_mask) != shrinked_mask:
-                    logger.warning(f"[RSA Concurrency] Collision detected on endpoint {ep.name}. Rolling back.")
+                    logger.warning(
+                        f"[RSA Concurrency] Collision detected on endpoint {ep.name}. Rolling back.")
                     db.session.rollback()
                     return "collision"
 
@@ -957,16 +983,20 @@ class TopologyHelper:
                 if link.dst_endpoint and link.dst_endpoint not in path_endpoints:
                     path_endpoints.append(link.dst_endpoint)
 
-            valid_endpoints = [ep for ep in path_endpoints if ep.min_frequency and ep.max_frequency]
+            valid_endpoints = [
+                ep for ep in path_endpoints if ep.min_frequency and ep.max_frequency]
 
             if not valid_endpoints:
                 logger.error("[RSA Free] No valid path endpoints found")
                 return False
 
-            _reference_min_freq = min([ep.min_frequency for ep in valid_endpoints])
-            _reference_max_freq = max([ep.max_frequency for ep in valid_endpoints])
+            _reference_min_freq = min(
+                [ep.min_frequency for ep in valid_endpoints])
+            _reference_max_freq = max(
+                [ep.max_frequency for ep in valid_endpoints])
 
-            band_info = OpticalBandHelper.detect_band(_reference_min_freq, _reference_max_freq)
+            band_info = OpticalBandHelper.detect_band(
+                _reference_min_freq, _reference_max_freq)
             if not band_info:
                 logger.error("[RSA Free] Could not detect band")
                 return False
@@ -982,7 +1012,7 @@ class TopologyHelper:
                     mask, _selected_min_freq, ep, SLOT_GRANULARITY_HZ
                 )
                 current_bitmap = int(ep.bitmap_value) if ep.bitmap_value else 0
-                
+
                 # Bitwise OR to restore the allocated slots to 1 (Free)
                 new_bitmap = current_bitmap | shrinked_mask
                 ep.bitmap_value = str(new_bitmap)

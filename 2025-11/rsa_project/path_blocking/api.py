@@ -1,5 +1,15 @@
 import sys
 from pathlib import Path
+
+# Add parent directory to path for imports when running from path_blocking/
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from helpers import TopologyHelper
+from topology import find_paths
+from models import db, Lightpath
+import json
+import time
+from app import app as rsa_app
 import logging
 from flask import Flask, request, jsonify
 
@@ -12,15 +22,10 @@ current_dir = Path(__file__).resolve().parent
 parent_dir = current_dir.parent
 sys.path.append(str(parent_dir))
 
-from app import app as rsa_app
-import time
-import json
-from models import db, Lightpath
-from topology import find_paths
-from helpers import TopologyHelper
 
 # Create a lightweight Flask app for the API server
 api_app = Flask(__name__)
+
 
 @api_app.route('/api/lightpath/request', methods=['POST'])
 def request_lightpath():
@@ -45,19 +50,20 @@ def request_lightpath():
         MAX_RETRIES = 5
         retry_count = 0
         collision_count = 0
-        
+
         while retry_count < MAX_RETRIES:
             start_time = time.time()
-            
+
             # 1. Path Computation & RSA internally combined in find_paths
             # We re-query the DB every time to get the latest spectrum state
-            paths_result = find_paths(src_device, dst_device, bitrate, dijkstra_only=True)
-            
+            paths_result = find_paths(
+                src_device, dst_device, bitrate, dijkstra_only=True)
+
             dijkstra_paths = paths_result.get('dijkstra', [])
             if not dijkstra_paths:
                 # Graph couldn't even connect the two nodes physically via free links
                 return jsonify({
-                    "status": "path-blocked", 
+                    "status": "path-blocked",
                     "reason": "No valid route found",
                     "retries": retry_count,
                     "collisions": collision_count
@@ -69,7 +75,7 @@ def request_lightpath():
             # 2. Check if slots were available
             if not rsa_res or not rsa_res.get('success'):
                 return jsonify({
-                    "status": "path-blocked", 
+                    "status": "path-blocked",
                     "reason": "No spectrum available",
                     "retries": retry_count,
                     "collisions": collision_count
@@ -84,7 +90,7 @@ def request_lightpath():
             if result == True:
                 # Success!
                 computation_time_s = time.time() - start_time
-                
+
                 # 4. Save to Lightpath tracking table
                 new_lp = Lightpath(
                     src_device=src_device,
@@ -107,23 +113,31 @@ def request_lightpath():
                     "retries": retry_count,
                     "collisions": collision_count
                 }), 200
-            
+
             elif result == "collision":
                 # A race condition occurred. "Send it back to initial phase"
                 retry_count += 1
                 collision_count += 1
-                logger.info(f"[API] Collision detected for {src_device}->{dst_device}. Retrying {retry_count}/{MAX_RETRIES}")
+                logger.info(
+                    f"[API] Collision detected for {src_device}->{dst_device}. Retrying {retry_count}/{MAX_RETRIES}")
+                continue
+            elif result == "full_endpoint":
+                # An OCH or OMS endpoint became FULL between RSA and commit
+                retry_count += 1
+                logger.info(
+                    f"[API] Full endpoint detected for {src_device}->{dst_device}. Retrying {retry_count}/{MAX_RETRIES}")
                 continue
             else:
                 return jsonify({"status": "error", "reason": "System error during slot commitment"}), 500
-        
+
         # If we reached here, we hit MAX_RETRIES due to collisions
         return jsonify({
-            "status": "path-blocked", 
+            "status": "path-blocked",
             "reason": "Persistent resource contention (Max retries reached)",
             "retries": retry_count,
             "collisions": collision_count
         }), 200
+
 
 @api_app.route('/api/lightpath/teardown', methods=['POST'])
 def teardown_lightpath():
@@ -154,12 +168,13 @@ def teardown_lightpath():
             db.session.delete(lp)
             db.session.commit()
             return jsonify({
-                "status": "success", 
+                "status": "success",
                 "message": "Lightpath torn down successfully",
                 "teardown_time_s": teardown_time_s
             }), 200
         else:
             return jsonify({"status": "error", "reason": "Failed to free slots"}), 500
+
 
 if __name__ == '__main__':
     # Run slightly offset from the main GUI (e.g., port 5001)

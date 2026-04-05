@@ -68,10 +68,7 @@ def run_simulation():
                     next_arrival_time, "ARRIVAL"))
 
                 # B. Build random payload
-                src = random.choice(NSF_NODES)
-                dst = random.choice(NSF_NODES)
-                while dst == src:
-                    dst = random.choice(NSF_NODES)
+                src, dst = random.sample(NSF_NODES, 2)
 
                 bitrate = random.choice(BIT_RATE)
 

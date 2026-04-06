@@ -1,0 +1,334 @@
+/Users/asmchafiullahbhuiyan/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+============================================================
+STARTING SIMULATION FOR ERLANG LOAD: 30
+============================================================
+
+--- [TRANSIENT PHASE INITIATED] (Warm-up until 600.0s) ---
+
+============================================================
+ END OF TRANSIENT PHASE. ENTERING STEADY STATE 
+ Transient Requests: 285 | Success: 285 | Blocked: 0
+ Active Connections Right Now: 29
+ Transient Contention Rate: 0.00%
+============================================================
+
+
+ERLANG 30 FINISHED!
+Total: 1000, Success: 1000, Blocked: 0
+Blocking Probability: 0.00000000 ± 0.00000000
+Cleaning up remaining active lightpaths from topology before next Erlang starts...
+
+============================================================
+STARTING SIMULATION FOR ERLANG LOAD: 35
+============================================================
+
+--- [TRANSIENT PHASE INITIATED] (Warm-up until 600.0s) ---
+
+============================================================
+ END OF TRANSIENT PHASE. ENTERING STEADY STATE 
+ Transient Requests: 339 | Success: 339 | Blocked: 0
+ Active Connections Right Now: 35
+ Transient Contention Rate: 0.00%
+============================================================
+
+
+ERLANG 35 FINISHED!
+Total: 1000, Success: 999, Blocked: 1
+Blocking Probability: 0.00100000 ± 0.00195902
+
+Blocking Reasons (Steady State):
+  - No valid route found: 1 (100.0%)
+Cleaning up remaining active lightpaths from topology before next Erlang starts...
+
+============================================================
+STARTING SIMULATION FOR ERLANG LOAD: 40
+============================================================
+
+--- [TRANSIENT PHASE INITIATED] (Warm-up until 600.0s) ---
+
+============================================================
+ END OF TRANSIENT PHASE. ENTERING STEADY STATE 
+ Transient Requests: 411 | Success: 411 | Blocked: 0
+ Active Connections Right Now: 43
+ Transient Contention Rate: 0.00%
+============================================================
+
+
+ERLANG 40 FINISHED!
+Total: 1000, Success: 998, Blocked: 2
+Blocking Probability: 0.00200000 ± 0.00276909
+
+Blocking Reasons (Steady State):
+  - No valid route found: 2 (100.0%)
+Cleaning up remaining active lightpaths from topology before next Erlang starts...
+
+============================================================
+STARTING SIMULATION FOR ERLANG LOAD: 45
+============================================================
+
+--- [TRANSIENT PHASE INITIATED] (Warm-up until 600.0s) ---
+
+============================================================
+ END OF TRANSIENT PHASE. ENTERING STEADY STATE 
+ Transient Requests: 427 | Success: 427 | Blocked: 0
+ Active Connections Right Now: 38
+ Transient Contention Rate: 0.00%
+============================================================
+
+
+ERLANG 45 FINISHED!
+Total: 1000, Success: 996, Blocked: 4
+Blocking Probability: 0.00400000 ± 0.00391215
+
+Blocking Reasons (Steady State):
+  - No valid route found: 4 (100.0%)
+Cleaning up remaining active lightpaths from topology before next Erlang starts...
+
+============================================================
+STARTING SIMULATION FOR ERLANG LOAD: 50
+============================================================
+
+--- [TRANSIENT PHASE INITIATED] (Warm-up until 600.0s) ---
+
+============================================================
+ END OF TRANSIENT PHASE. ENTERING STEADY STATE 
+ Transient Requests: 495 | Success: 490 | Blocked: 5
+ Active Connections Right Now: 42
+ Transient Contention Rate: 1.01%
+============================================================
+
+
+ERLANG 50 FINISHED!
+Total: 1000, Success: 980, Blocked: 20
+Blocking Probability: 0.02000000 ± 0.00867729
+
+Blocking Reasons (Steady State):
+  - No valid route found: 20 (100.0%)
+Cleaning up remaining active lightpaths from topology before next Erlang starts...
+
+============================================================
+STARTING SIMULATION FOR ERLANG LOAD: 60
+============================================================
+
+--- [TRANSIENT PHASE INITIATED] (Warm-up until 600.0s) ---
+
+============================================================
+ END OF TRANSIENT PHASE. ENTERING STEADY STATE 
+ Transient Requests: 579 | Success: 558 | Blocked: 21
+ Active Connections Right Now: 57
+ Transient Contention Rate: 3.63%
+============================================================
+
+
+ERLANG 60 FINISHED!
+Total: 1000, Success: 959, Blocked: 41
+Blocking Probability: 0.04100000 ± 0.01229015
+
+Blocking Reasons (Steady State):
+  - No valid route found: 41 (100.0%)
+Cleaning up remaining active lightpaths from topology before next Erlang starts...
+
+============================================================
+STARTING SIMULATION FOR ERLANG LOAD: 80
+============================================================
+
+--- [TRANSIENT PHASE INITIATED] (Warm-up until 600.0s) ---
+
+============================================================
+ END OF TRANSIENT PHASE. ENTERING STEADY STATE 
+ Transient Requests: 779 | Success: 683 | Blocked: 96
+ Active Connections Right Now: 69
+ Transient Contention Rate: 12.32%
+============================================================
+
+
+ERLANG 80 FINISHED!
+Total: 1000, Success: 847, Blocked: 153
+Blocking Probability: 0.15300000 ± 0.02231226
+
+Blocking Reasons (Steady State):
+  - No valid route found: 153 (100.0%)
+Cleaning up remaining active lightpaths from topology before next Erlang starts...
+
+============================================================
+STARTING SIMULATION FOR ERLANG LOAD: 100
+============================================================
+
+--- [TRANSIENT PHASE INITIATED] (Warm-up until 600.0s) ---
+
+============================================================
+ END OF TRANSIENT PHASE. ENTERING STEADY STATE 
+ Transient Requests: 973 | Success: 760 | Blocked: 213
+ Active Connections Right Now: 67
+ Transient Contention Rate: 21.89%
+============================================================
+
+
+ERLANG 100 FINISHED!
+Total: 1000, Success: 755, Blocked: 245
+Blocking Probability: 0.24500000 ± 0.02665708
+
+Blocking Reasons (Steady State):
+  - No valid route found: 245 (100.0%)
+Cleaning up remaining active lightpaths from topology before next Erlang starts...
+
+============================================================
+STARTING SIMULATION FOR ERLANG LOAD: 200
+============================================================
+
+--- [TRANSIENT PHASE INITIATED] (Warm-up until 600.0s) ---
+
+============================================================
+ END OF TRANSIENT PHASE. ENTERING STEADY STATE 
+ Transient Requests: 1947 | Success: 886 | Blocked: 1061
+ Active Connections Right Now: 80
+ Transient Contention Rate: 54.49%
+============================================================
+
+
+ERLANG 200 FINISHED!
+Total: 1000, Success: 441, Blocked: 559
+Blocking Probability: 0.55900000 ± 0.03077381
+
+Blocking Reasons (Steady State):
+  - No valid route found: 559 (100.0%)
+Cleaning up remaining active lightpaths from topology before next Erlang starts...
+
+============================================================
+STARTING SIMULATION FOR ERLANG LOAD: 300
+============================================================
+
+--- [TRANSIENT PHASE INITIATED] (Warm-up until 600.0s) ---
+
+============================================================
+ END OF TRANSIENT PHASE. ENTERING STEADY STATE 
+ Transient Requests: 3023 | Success: 940 | Blocked: 2083
+ Active Connections Right Now: 92
+ Transient Contention Rate: 68.91%
+============================================================
+
+
+ERLANG 300 FINISHED!
+Total: 1000, Success: 287, Blocked: 713
+Blocking Probability: 0.71300000 ± 0.02803766
+
+Blocking Reasons (Steady State):
+  - No valid route found: 713 (100.0%)
+Cleaning up remaining active lightpaths from topology before next Erlang starts...
+
+
+
+============================================================
+FINAL SIMULATION RESULTS
+============================================================
+[
+    {
+        "load": 30,
+        "total_requests": 1000,
+        "successful_requests": 1000,
+        "blocked_requests": 0,
+        "blocking_probability": 0.0,
+        "confidence_interval": 0.0,
+        "blocking_reasons": {}
+    },
+    {
+        "load": 35,
+        "total_requests": 1000,
+        "successful_requests": 999,
+        "blocked_requests": 1,
+        "blocking_probability": 0.001,
+        "confidence_interval": 0.00195902,
+        "blocking_reasons": {
+            "No valid route found": 1
+        }
+    },
+    {
+        "load": 40,
+        "total_requests": 1000,
+        "successful_requests": 998,
+        "blocked_requests": 2,
+        "blocking_probability": 0.002,
+        "confidence_interval": 0.00276909,
+        "blocking_reasons": {
+            "No valid route found": 2
+        }
+    },
+    {
+        "load": 45,
+        "total_requests": 1000,
+        "successful_requests": 996,
+        "blocked_requests": 4,
+        "blocking_probability": 0.004,
+        "confidence_interval": 0.00391215,
+        "blocking_reasons": {
+            "No valid route found": 4
+        }
+    },
+    {
+        "load": 50,
+        "total_requests": 1000,
+        "successful_requests": 980,
+        "blocked_requests": 20,
+        "blocking_probability": 0.02,
+        "confidence_interval": 0.00867729,
+        "blocking_reasons": {
+            "No valid route found": 20
+        }
+    },
+    {
+        "load": 60,
+        "total_requests": 1000,
+        "successful_requests": 959,
+        "blocked_requests": 41,
+        "blocking_probability": 0.041,
+        "confidence_interval": 0.01229015,
+        "blocking_reasons": {
+            "No valid route found": 41
+        }
+    },
+    {
+        "load": 80,
+        "total_requests": 1000,
+        "successful_requests": 847,
+        "blocked_requests": 153,
+        "blocking_probability": 0.153,
+        "confidence_interval": 0.02231226,
+        "blocking_reasons": {
+            "No valid route found": 153
+        }
+    },
+    {
+        "load": 100,
+        "total_requests": 1000,
+        "successful_requests": 755,
+        "blocked_requests": 245,
+        "blocking_probability": 0.245,
+        "confidence_interval": 0.02665708,
+        "blocking_reasons": {
+            "No valid route found": 245
+        }
+    },
+    {
+        "load": 200,
+        "total_requests": 1000,
+        "successful_requests": 441,
+        "blocked_requests": 559,
+        "blocking_probability": 0.559,
+        "confidence_interval": 0.03077381,
+        "blocking_reasons": {
+            "No valid route found": 559
+        }
+    },
+    {
+        "load": 300,
+        "total_requests": 1000,
+        "successful_requests": 287,
+        "blocked_requests": 713,
+        "blocking_probability": 0.713,
+        "confidence_interval": 0.02803766,
+        "blocking_reasons": {
+            "No valid route found": 713
+        }
+    }
+]

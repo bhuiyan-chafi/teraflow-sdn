@@ -83,9 +83,26 @@ def run_simulation():
                     "bitrate": bitrate
                 }
 
-                # C. Execute the backend API!
-                try:
-                    resp = requests.post(API_URL, json=payload).json()
+                # C. Execute the backend API with retry logic
+                max_retries = 3
+                resp = None
+                for attempt in range(max_retries):
+                    try:
+                        resp = requests.post(
+                            API_URL, json=payload, timeout=30).json()
+                        status = resp.get('status')
+                        break
+                    except Exception as e:
+                        if attempt < max_retries - 1:
+                            time.sleep(0.5 * (attempt + 1))
+                        else:
+                            print(
+                                f"⚠️ API Request Error after {max_retries} attempts: {e}")
+                            status = 'error'
+                            resp = {'status': 'error',
+                                    'reason': 'API_CONNECTION_FAILED'}
+
+                if resp:
                     status = resp.get('status')
 
                     if virtual_time >= transient_limit and not entered_steady_state:
@@ -112,12 +129,12 @@ def run_simulation():
                         teardown_time = virtual_time + HOLDING_TIME
                         heapq.heappush(event_queue, Event(
                             teardown_time, "TEARDOWN", {"id": lp_id}))
-                        print(
-                            f"[{virtual_time:.2f}s] [{phase_label}] SUCCESS: {src}->{dst} (ID: {lp_id[:8]}...)")
+                        # print(
+                        #     f"[{virtual_time:.2f}s] [{phase_label}] SUCCESS: {src}->{dst} (ID: {lp_id[:8]}...)")
                     else:
                         reason = resp.get('reason', 'Unknown')
-                        print(
-                            f"[{virtual_time:.2f}s] [{phase_label}] BLOCKED: {src}->{dst} ({reason})")
+                        # print(
+                        #     f"[{virtual_time:.2f}s] [{phase_label}] BLOCKED: {src}->{dst} ({reason})")
 
                     # E. Check if we passed the Transient State
                     if entered_steady_state:
@@ -129,32 +146,35 @@ def run_simulation():
                             blocking_reasons[reason] += 1
 
                         # Logging progress every request for clarity in small tests
-                        if counted_requests <= 150:  # Only for small N_REQ
-                            print(
-                                f"   -> Progress: {counted_requests}/{N_REQ} (Success: {counted_requests - blocked_requests}, Blocked: {blocked_requests})")
+                        # if counted_requests <= 150:  # Only for small N_REQ
+                        #     print(
+                        #         f"   -> Progress: {counted_requests}/{N_REQ} (Success: {counted_requests - blocked_requests}, Blocked: {blocked_requests})")
                     else:
                         transient_requests += 1
                         if status != 'success':
                             transient_blocked += 1
 
-                except Exception as e:
-                    print(f"⚠️ API Request Error: {e}")
-
             elif current_event.event_type == "TEARDOWN":
                 # F. A lightpath holding time expired! Fire the API to extract its endpoints and run bitwise OR to free it.
                 lp_id = current_event.data['id']
-                try:
-                    td_resp = requests.post(
-                        TEARDOWN_URL, json={"lightpath_id": lp_id}).json()
-                    if td_resp.get('status') == 'success':
-                        active_connections -= 1
-                        print(
-                            f"[{virtual_time:.3f}s] TEARDOWN: Lightpath {lp_id} successfully released.")
-                    else:
-                        print(
-                            f"[{virtual_time:.3f}s] TEARDOWN FAILED: Lightpath {lp_id}.")
-                except Exception as e:
-                    pass
+                max_retries = 3
+                for attempt in range(max_retries):
+                    try:
+                        td_resp = requests.post(
+                            TEARDOWN_URL, json={"lightpath_id": lp_id}, timeout=30).json()
+                        if td_resp.get('status') == 'success':
+                            active_connections -= 1
+                            # print(
+                            #     f"[{virtual_time:.3f}s] TEARDOWN: Lightpath {lp_id} successfully released.")
+                        else:
+                            print(
+                                f"[{virtual_time:.3f}s] TEARDOWN FAILED: Lightpath {lp_id}.")
+                        break
+                    except Exception as e:
+                        if attempt < max_retries - 1:
+                            time.sleep(0.5 * (attempt + 1))
+                        else:
+                            pass  # Silently fail after retries
 
         # 3. Calculate Results for this Erlang
         total = counted_requests
@@ -191,11 +211,14 @@ def run_simulation():
         while event_queue:
             ev = heapq.heappop(event_queue)
             if ev.event_type == "TEARDOWN":
-                try:
-                    requests.post(TEARDOWN_URL, json={
-                                  "lightpath_id": ev.data['id']})
-                except:
-                    pass
+                for attempt in range(3):
+                    try:
+                        requests.post(TEARDOWN_URL, json={
+                                      "lightpath_id": ev.data['id']}, timeout=30)
+                        break
+                    except:
+                        if attempt < 2:
+                            time.sleep(0.5 * (attempt + 1))
         time.sleep(2)
 
     # 5. Output Final Results

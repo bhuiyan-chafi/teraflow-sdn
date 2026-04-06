@@ -1,4 +1,5 @@
 import logging
+import random
 import os
 from helpers import TopologyHelper
 from models import Devices, OpticalLink, Endpoint
@@ -282,17 +283,25 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
 
     G_simple_free = nx.Graph(G_free)
 
-    try:
-        avg_hops = nx.average_shortest_path_length(G_simple_free)
-        logger.info(
-            f"[Topology] Average shortest path length (hops): {avg_hops:.2f}")
-    except Exception as e:
-        logger.warning(f"[Topology] Could not calculate average hops: {e}")
+    # try:
+    #     avg_hops = nx.average_shortest_path_length(G_simple_free)
+    #     logger.info(
+    #         f"[Topology] Average shortest path length (hops): {avg_hops:.2f}")
+    # except Exception as e:
+    #     logger.warning(f"[Topology] Could not calculate average hops: {e}")
 
     dijkstra_hops = None
     try:
+        # == CHOICE STARTS ==
+        # NOTE: Generate all shortest paths and make random pick
+        # all_shortest_paths = list(nx.all_shortest_paths(
+        #     G_simple_free, source=src_dev, target=dst_dev))
+        # dijkstra_node_path = random.choice(all_shortest_paths)
+        # or
+        # NOTE: Generate the most shortest one path
         dijkstra_node_path = nx.shortest_path(
             G_simple_free, source=src_dev, target=dst_dev)
+        # == CHOICE ENDS ==
         dijkstra_hops = len(dijkstra_node_path) - 1
 
         # Log the dijkstra node path
@@ -303,8 +312,15 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
         d_edge_paths = TopologyHelper.expand_path(
             dijkstra_node_path, G_free)
 
-        # All paths from G_free are valid, take the first one
+        # == CHOICE STARTS ==
+        # NOTE: Parallel paths from G_free are valid, take the first one
         selected_path = d_edge_paths[:1]
+
+        # or
+
+        # NOTE: Randomly select from valid path expansions
+        # selected_path = [random.choice(d_edge_paths)] if d_edge_paths else []
+        # == CHOICE ENDS ==
 
         # if selected_path:
         #     logger.info(f"[Dijkstra Path Discovery] Found {len(d_edge_paths)} valid path expansion(s) "

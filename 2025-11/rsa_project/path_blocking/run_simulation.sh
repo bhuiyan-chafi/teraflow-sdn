@@ -3,13 +3,16 @@
 
 echo "Starting simulation in the background..."
 
-# Generate a timestamp
+# Generate a timestamp and ensure results directory exists
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-OUTPUT_FILE="${TIMESTAMP}.txt"
+OUTPUT_DIR="results"
+mkdir -p "$OUTPUT_DIR"
+OUTPUT_FILE="${OUTPUT_DIR}/${TIMESTAMP}.txt"
 
 # Run the python script using nohup to keep it running even if the terminal closes.
+# We use 'python3 -W ignore' to suppress the LibreSSL/urllib3 warnings specific to macOS.
 # Standard output and standard error are redirected to the timestamped text file
-nohup python3 simulator.py > "$OUTPUT_FILE" 2>&1 &
+nohup python3 -u -W ignore simulator.py > "$OUTPUT_FILE" 2>&1 &
 
 PID=$!
 echo "Simulation is running with Process ID (PID): $PID"

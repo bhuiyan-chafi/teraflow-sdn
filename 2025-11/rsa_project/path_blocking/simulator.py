@@ -1,8 +1,9 @@
-import requests
+import time
 import json
+import math
 import heapq
 import random
-import math
+import requests
 from collections import Counter
 from sim_config import NSF_NODES, BIT_RATE, ERLANGS, N_REQ, HOLDING_TIME, Z_VALUE, TRANSIENT_UNIT
 
@@ -166,8 +167,8 @@ def run_simulation():
             "total_requests": total,
             "successful_requests": total - blocked_requests,
             "blocked_requests": blocked_requests,
-            "blocking_probability": round(prob, 5),
-            "confidence_interval": round(ci, 5),
+            "blocking_probability": round(prob, 8),
+            "confidence_interval": round(ci, 8),
             "blocking_reasons": dict(blocking_reasons)
         }
         results.append(stat_dict)
@@ -175,7 +176,7 @@ def run_simulation():
         print(f"\nERLANG {erlang} FINISHED!")
         print(
             f"Total: {total}, Success: {total-blocked_requests}, Blocked: {blocked_requests}")
-        print(f"Blocking Probability: {prob:.4f} ± {ci:.4f}")
+        print(f"Blocking Probability: {prob:.8f} ± {ci:.8f}")
 
         # Display blocking reasons breakdown
         if blocking_reasons:
@@ -195,6 +196,7 @@ def run_simulation():
                                   "lightpath_id": ev.data['id']})
                 except:
                     pass
+        time.sleep(2)
 
     # 5. Output Final Results
     print("\n\n============================================================")

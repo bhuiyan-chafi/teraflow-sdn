@@ -282,6 +282,13 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
 
     G_simple_free = nx.Graph(G_free)
 
+    try:
+        avg_hops = nx.average_shortest_path_length(G_simple_free)
+        logger.info(
+            f"[Topology] Average shortest path length (hops): {avg_hops:.2f}")
+    except Exception as e:
+        logger.warning(f"[Topology] Could not calculate average hops: {e}")
+
     dijkstra_hops = None
     try:
         dijkstra_node_path = nx.shortest_path(

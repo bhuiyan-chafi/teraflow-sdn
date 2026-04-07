@@ -294,13 +294,13 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
     try:
         # == CHOICE STARTS ==
         # NOTE: Generate all shortest paths and make random pick
-        # all_shortest_paths = list(nx.all_shortest_paths(
-        #     G_simple_free, source=src_dev, target=dst_dev))
-        # dijkstra_node_path = random.choice(all_shortest_paths)
+        all_shortest_paths = list(nx.all_shortest_paths(
+            G_simple_free, source=src_dev, target=dst_dev))
+        dijkstra_node_path = random.choice(all_shortest_paths)
         # or
         # NOTE: Generate the most shortest one path
-        dijkstra_node_path = nx.shortest_path(
-            G_simple_free, source=src_dev, target=dst_dev)
+        # dijkstra_node_path = nx.shortest_path(
+        #     G_simple_free, source=src_dev, target=dst_dev)
         # == CHOICE ENDS ==
         dijkstra_hops = len(dijkstra_node_path) - 1
 
@@ -314,12 +314,12 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
 
         # == CHOICE STARTS ==
         # NOTE: Parallel paths from G_free are valid, take the first one
-        selected_path = d_edge_paths[:1]
+        # selected_path = d_edge_paths[:1]
 
         # or
 
         # NOTE: Randomly select from valid path expansions
-        # selected_path = [random.choice(d_edge_paths)] if d_edge_paths else []
+        selected_path = [random.choice(d_edge_paths)] if d_edge_paths else []
         # == CHOICE ENDS ==
 
         # if selected_path:

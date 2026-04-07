@@ -6,7 +6,7 @@ NSF_NODES = ["TPcalifornia", "TPcolorado", "TPflorida", "TPgeorgia", "TPillinois
              "TPmissouri", "TPnewyork", "TPpennsylvania", "TPtennessee", "TPtexas", "TPvirginia", "TPwashington"]
 PANEU_NODES = []
 BIT_RATE = [100, 400, 800]
-ERLANGS = [30, 40, 50, 70, 90, 100, 130, 150, 200]
+ERLANGS = [40, 50, 70, 90, 100, 130, 150, 200]
 
 # CI-based stopping parameters
 MAX_TRIALS = 10000  # Maximum number of independent trials (10^4)

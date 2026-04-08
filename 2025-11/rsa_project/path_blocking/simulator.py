@@ -18,7 +18,7 @@ import json
 import time
 from collections import Counter
 from sim_config import (
-    NSF_NODES, BIT_RATE, ERLANGS, HOLDING_TIME, Z_VALUE,
+    NODES, BIT_RATE, ERLANGS, HOLDING_TIME, Z_VALUE,
     TRANSIENT_UNIT, MAX_TRIALS, MIN_TRIALS, CI_THRESHOLD
 )
 import warnings
@@ -143,7 +143,7 @@ def run_simulation():
                         next_arrival_time, "ARRIVAL"))
 
                     # Build random payload
-                    src, dst = random.sample(NSF_NODES, 2)
+                    src, dst = random.sample(NODES, 2)
                     bitrate = b_rate
 
                     payload = {

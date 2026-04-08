@@ -14,7 +14,7 @@
       }
       #topology-container {
         width: 100%;
-        height: 700px;
+        height: 85vh;
         background-color: #ffffff;
         border: 1px solid #dee2e6;
         border-radius: 12px;
@@ -43,8 +43,8 @@
   </head>
   <body>
     <div class="container-fluid py-5 px-4">
-      <div class="row justify-content-center">
-        <div class="col-xl-10">
+      <div class="row">
+        <div class="col-12">
           <div class="d-flex justify-content-between align-items-center mb-4">
             <div>
               <h1 class="h2 mb-1 fw-bold">Network Topology</h1>
@@ -100,14 +100,18 @@
       const options = {
         nodes: {
           borderWidth: 2,
-          shadow: true
+          shadow: true,
+          size: 35,
+          font: {
+            size: 18
+          }
         },
         edges: {
           width: 2,
           selectionWidth: 4,
           hoverWidth: 1.5,
           font: {
-            size: 16,
+            size: 18,
             bold: true,
             align: 'middle',
             background: 'rgba(255, 255, 255, 0.85)',
@@ -125,15 +129,15 @@
         physics: {
           enabled: true,
           barnesHut: {
-            gravitationalConstant: -2000,
-            centralGravity: 0.3,
-            springLength: 150,
-            springConstant: 0.04,
-            damping: 0.09,
-            avoidOverlap: 1
+            gravitationalConstant: -4000,
+            centralGravity: 0.1,
+            springLength: 200,
+            springConstant: 0.02,
+            damping: 0.15,
+            avoidOverlap: 0.5
           },
           stabilization: {
-            iterations: 200,
+            iterations: 500,
             updateInterval: 25
           }
         },

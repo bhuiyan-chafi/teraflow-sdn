@@ -1,0 +1,665 @@
+============================================================
+STARTING CI-BASED SIM: BITRATE=100G | ERLANG=50
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 300.20s ---
+    Transient: 245 requests, 14 blocked
+    Progress: 1000 trials | P_b=0.039000 | CI=0.011999 | Rel.CI=30.77%
+    Progress: 2000 trials | P_b=0.039500 | CI=0.008537 | Rel.CI=21.61%
+    Progress: 3000 trials | P_b=0.040667 | CI=0.007068 | Rel.CI=17.38%
+    Progress: 4000 trials | P_b=0.042500 | CI=0.006252 | Rel.CI=14.71%
+    Progress: 5000 trials | P_b=0.039600 | CI=0.005406 | Rel.CI=13.65%
+    Progress: 6000 trials | P_b=0.040500 | CI=0.004988 | Rel.CI=12.32%
+    Progress: 7000 trials | P_b=0.037857 | CI=0.004471 | Rel.CI=11.81%
+    Progress: 8000 trials | P_b=0.037750 | CI=0.004177 | Rel.CI=11.06%
+    Progress: 9000 trials | P_b=0.038667 | CI=0.003983 | Rel.CI=10.30%
+    Progress: 10000 trials | P_b=0.037900 | CI=0.003743 | Rel.CI=9.88%
+
+============================================================
+SIMULATION COMPLETED - MAX_TRIALS_REACHED
+============================================================
+{
+    "bitrate": 100,
+    "load": 50,
+    "stop_reason": "MAX_TRIALS_REACHED",
+    "total_trials": 10000,
+    "transient_contention_rate": 5.71428571,
+    "successful_requests": 9621,
+    "blocked_requests": 379,
+    "blocking_probability": 0.0379,
+    "absolute_confidence_interval": 0.00374271,
+    "relative_confidence_interval_pct": 9.8752,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No valid route found": 379
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=100G | ERLANG=100
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 300.94s ---
+    Transient: 492 requests, 116 blocked
+    Progress: 1000 trials | P_b=0.271000 | CI=0.027549 | Rel.CI=10.17%
+    Progress: 2000 trials | P_b=0.259000 | CI=0.019200 | Rel.CI=7.41%
+    Progress: 3000 trials | P_b=0.263333 | CI=0.015761 | Rel.CI=5.99%
+    Progress: 4000 trials | P_b=0.264500 | CI=0.013669 | Rel.CI=5.17%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 100,
+    "load": 100,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_trials": 4223,
+    "transient_contention_rate": 23.57723577,
+    "successful_requests": 3096,
+    "blocked_requests": 1127,
+    "blocking_probability": 0.26687189,
+    "absolute_confidence_interval": 0.01334095,
+    "relative_confidence_interval_pct": 4.999,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No valid route found": 1127
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=100G | ERLANG=150
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 300.47s ---
+    Transient: 777 requests, 338 blocked
+    Progress: 1000 trials | P_b=0.457000 | CI=0.030876 | Rel.CI=6.76%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 100,
+    "load": 150,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_trials": 1946,
+    "transient_contention_rate": 43.5006435,
+    "successful_requests": 1087,
+    "blocked_requests": 859,
+    "blocking_probability": 0.44141829,
+    "absolute_confidence_interval": 0.02206242,
+    "relative_confidence_interval_pct": 4.9981,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No valid route found": 859
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=100G | ERLANG=200
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 300.04s ---
+    Transient: 1013 requests, 540 blocked
+    Progress: 1000 trials | P_b=0.553000 | CI=0.030816 | Rel.CI=5.57%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 100,
+    "load": 200,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_trials": 1244,
+    "transient_contention_rate": 53.30700888,
+    "successful_requests": 556,
+    "blocked_requests": 688,
+    "blocking_probability": 0.55305466,
+    "absolute_confidence_interval": 0.02762849,
+    "relative_confidence_interval_pct": 4.9956,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No valid route found": 688
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=100G | ERLANG=300
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 300.05s ---
+    Transient: 1548 requests, 1042 blocked
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 100,
+    "load": 300,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_trials": 702,
+    "transient_contention_rate": 67.3126615,
+    "successful_requests": 220,
+    "blocked_requests": 482,
+    "blocking_probability": 0.68660969,
+    "absolute_confidence_interval": 0.0343151,
+    "relative_confidence_interval_pct": 4.9978,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No valid route found": 482
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=100G | ERLANG=400
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 300.01s ---
+    Transient: 2036 requests, 1514 blocked
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 100,
+    "load": 400,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_trials": 458,
+    "transient_contention_rate": 74.36149312,
+    "successful_requests": 105,
+    "blocked_requests": 353,
+    "blocking_probability": 0.77074236,
+    "absolute_confidence_interval": 0.03849815,
+    "relative_confidence_interval_pct": 4.9949,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No valid route found": 353
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=100G | ERLANG=500
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 300.24s ---
+    Transient: 2480 requests, 1958 blocked
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 100,
+    "load": 500,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_trials": 420,
+    "transient_contention_rate": 78.9516129,
+    "successful_requests": 90,
+    "blocked_requests": 330,
+    "blocking_probability": 0.78571429,
+    "absolute_confidence_interval": 0.03924283,
+    "relative_confidence_interval_pct": 4.9945,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No valid route found": 330
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=400G | ERLANG=50
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 302.20s ---
+    Transient: 242 requests, 5 blocked
+    Progress: 1000 trials | P_b=0.045000 | CI=0.012849 | Rel.CI=28.55%
+    Progress: 2000 trials | P_b=0.046000 | CI=0.009181 | Rel.CI=19.96%
+    Progress: 3000 trials | P_b=0.043667 | CI=0.007313 | Rel.CI=16.75%
+    Progress: 4000 trials | P_b=0.038500 | CI=0.005963 | Rel.CI=15.49%
+    Progress: 5000 trials | P_b=0.037400 | CI=0.005259 | Rel.CI=14.06%
+    Progress: 6000 trials | P_b=0.036833 | CI=0.004766 | Rel.CI=12.94%
+    Progress: 7000 trials | P_b=0.037714 | CI=0.004463 | Rel.CI=11.83%
+    Progress: 8000 trials | P_b=0.036625 | CI=0.004116 | Rel.CI=11.24%
+    Progress: 9000 trials | P_b=0.036333 | CI=0.003866 | Rel.CI=10.64%
+    Progress: 10000 trials | P_b=0.036600 | CI=0.003680 | Rel.CI=10.06%
+
+============================================================
+SIMULATION COMPLETED - MAX_TRIALS_REACHED
+============================================================
+{
+    "bitrate": 400,
+    "load": 50,
+    "stop_reason": "MAX_TRIALS_REACHED",
+    "total_trials": 10000,
+    "transient_contention_rate": 2.0661157,
+    "successful_requests": 9634,
+    "blocked_requests": 366,
+    "blocking_probability": 0.0366,
+    "absolute_confidence_interval": 0.00368044,
+    "relative_confidence_interval_pct": 10.0559,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No valid route found": 366
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=400G | ERLANG=100
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 300.34s ---
+    Transient: 518 requests, 133 blocked
+    Progress: 1000 trials | P_b=0.249000 | CI=0.026803 | Rel.CI=10.76%
+    Progress: 2000 trials | P_b=0.249500 | CI=0.018965 | Rel.CI=7.60%
+    Progress: 3000 trials | P_b=0.254667 | CI=0.015590 | Rel.CI=6.12%
+    Progress: 4000 trials | P_b=0.255500 | CI=0.013516 | Rel.CI=5.29%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 400,
+    "load": 100,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_trials": 4367,
+    "transient_contention_rate": 25.67567568,
+    "successful_requests": 3230,
+    "blocked_requests": 1137,
+    "blocking_probability": 0.2603618,
+    "absolute_confidence_interval": 0.01301556,
+    "relative_confidence_interval_pct": 4.999,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No valid route found": 1137
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=400G | ERLANG=150
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 300.16s ---
+    Transient: 739 requests, 300 blocked
+    Progress: 1000 trials | P_b=0.442000 | CI=0.030781 | Rel.CI=6.96%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 400,
+    "load": 150,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_trials": 1963,
+    "transient_contention_rate": 40.59539919,
+    "successful_requests": 1101,
+    "blocked_requests": 862,
+    "blocking_probability": 0.43912379,
+    "absolute_confidence_interval": 0.02195447,
+    "relative_confidence_interval_pct": 4.9996,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No valid route found": 861,
+        "No spectrum available": 1
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=400G | ERLANG=200
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 300.05s ---
+    Transient: 1066 requests, 598 blocked
+    Progress: 1000 trials | P_b=0.571000 | CI=0.030676 | Rel.CI=5.37%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 400,
+    "load": 200,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_trials": 1163,
+    "transient_contention_rate": 56.09756098,
+    "successful_requests": 501,
+    "blocked_requests": 662,
+    "blocking_probability": 0.56921754,
+    "absolute_confidence_interval": 0.02845996,
+    "relative_confidence_interval_pct": 4.9998,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No valid route found": 656,
+        "No spectrum available": 6
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=400G | ERLANG=300
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 301.29s ---
+    Transient: 1479 requests, 971 blocked
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 400,
+    "load": 300,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_trials": 785,
+    "transient_contention_rate": 65.65246788,
+    "successful_requests": 265,
+    "blocked_requests": 520,
+    "blocking_probability": 0.66242038,
+    "absolute_confidence_interval": 0.03308081,
+    "relative_confidence_interval_pct": 4.9939,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No valid route found": 516,
+        "No spectrum available": 4
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=400G | ERLANG=400
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 300.14s ---
+    Transient: 2020 requests, 1498 blocked
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 400,
+    "load": 400,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_trials": 468,
+    "transient_contention_rate": 74.15841584,
+    "successful_requests": 109,
+    "blocked_requests": 359,
+    "blocking_probability": 0.76709402,
+    "absolute_confidence_interval": 0.0382955,
+    "relative_confidence_interval_pct": 4.9923,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No valid route found": 359
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=400G | ERLANG=500
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 300.04s ---
+    Transient: 2562 requests, 2034 blocked
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 400,
+    "load": 500,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_trials": 451,
+    "transient_contention_rate": 79.3911007,
+    "successful_requests": 102,
+    "blocked_requests": 349,
+    "blocking_probability": 0.77383592,
+    "absolute_confidence_interval": 0.03861038,
+    "relative_confidence_interval_pct": 4.9895,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No valid route found": 349
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=800G | ERLANG=50
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 301.38s ---
+    Transient: 260 requests, 36 blocked
+    Progress: 1000 trials | P_b=0.129000 | CI=0.020776 | Rel.CI=16.11%
+    Progress: 2000 trials | P_b=0.124000 | CI=0.014445 | Rel.CI=11.65%
+    Progress: 3000 trials | P_b=0.120667 | CI=0.011656 | Rel.CI=9.66%
+    Progress: 4000 trials | P_b=0.117250 | CI=0.009970 | Rel.CI=8.50%
+    Progress: 5000 trials | P_b=0.120800 | CI=0.009033 | Rel.CI=7.48%
+    Progress: 6000 trials | P_b=0.122333 | CI=0.008291 | Rel.CI=6.78%
+    Progress: 7000 trials | P_b=0.125286 | CI=0.007755 | Rel.CI=6.19%
+    Progress: 8000 trials | P_b=0.125500 | CI=0.007260 | Rel.CI=5.78%
+    Progress: 9000 trials | P_b=0.124778 | CI=0.006828 | Rel.CI=5.47%
+    Progress: 10000 trials | P_b=0.126200 | CI=0.006509 | Rel.CI=5.16%
+
+============================================================
+SIMULATION COMPLETED - MAX_TRIALS_REACHED
+============================================================
+{
+    "bitrate": 800,
+    "load": 50,
+    "stop_reason": "MAX_TRIALS_REACHED",
+    "total_trials": 10000,
+    "transient_contention_rate": 13.84615385,
+    "successful_requests": 8738,
+    "blocked_requests": 1262,
+    "blocking_probability": 0.1262,
+    "absolute_confidence_interval": 0.00650866,
+    "relative_confidence_interval_pct": 5.1574,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No spectrum available": 1046,
+        "No valid route found": 216
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=800G | ERLANG=100
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 300.57s ---
+    Transient: 510 requests, 191 blocked
+    Progress: 1000 trials | P_b=0.373000 | CI=0.029974 | Rel.CI=8.04%
+    Progress: 2000 trials | P_b=0.369000 | CI=0.021148 | Rel.CI=5.73%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 800,
+    "load": 100,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_trials": 2551,
+    "transient_contention_rate": 37.45098039,
+    "successful_requests": 1592,
+    "blocked_requests": 959,
+    "blocking_probability": 0.37593101,
+    "absolute_confidence_interval": 0.01879625,
+    "relative_confidence_interval_pct": 4.9999,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No valid route found": 301,
+        "No spectrum available": 658
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=800G | ERLANG=150
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 300.25s ---
+    Transient: 752 requests, 385 blocked
+    Progress: 1000 trials | P_b=0.558000 | CI=0.030781 | Rel.CI=5.52%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 800,
+    "load": 150,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_trials": 1274,
+    "transient_contention_rate": 51.19680851,
+    "successful_requests": 577,
+    "blocked_requests": 697,
+    "blocking_probability": 0.54709576,
+    "absolute_confidence_interval": 0.02733419,
+    "relative_confidence_interval_pct": 4.9962,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No valid route found": 276,
+        "No spectrum available": 421
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=800G | ERLANG=200
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 300.01s ---
+    Transient: 1058 requests, 655 blocked
+    Progress: 1000 trials | P_b=0.599000 | CI=0.030377 | Rel.CI=5.07%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 800,
+    "load": 200,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_trials": 1013,
+    "transient_contention_rate": 61.90926276,
+    "successful_requests": 402,
+    "blocked_requests": 611,
+    "blocking_probability": 0.60315893,
+    "absolute_confidence_interval": 0.03012836,
+    "relative_confidence_interval_pct": 4.9951,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No valid route found": 311,
+        "No spectrum available": 300
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=800G | ERLANG=300
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 300.14s ---
+    Transient: 1509 requests, 1070 blocked
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 800,
+    "load": 300,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_trials": 614,
+    "transient_contention_rate": 70.90788602,
+    "successful_requests": 175,
+    "blocked_requests": 439,
+    "blocking_probability": 0.71498371,
+    "absolute_confidence_interval": 0.03570712,
+    "relative_confidence_interval_pct": 4.9941,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No spectrum available": 181,
+        "No valid route found": 258
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=800G | ERLANG=400
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 300.17s ---
+    Transient: 1973 requests, 1518 blocked
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 800,
+    "load": 400,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_trials": 430,
+    "transient_contention_rate": 76.93867207,
+    "successful_requests": 94,
+    "blocked_requests": 336,
+    "blocking_probability": 0.78139535,
+    "absolute_confidence_interval": 0.03906492,
+    "relative_confidence_interval_pct": 4.9994,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No spectrum available": 104,
+        "No valid route found": 232
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=800G | ERLANG=500
+Stopping: CI <= 5.0% of P_b OR max 10000 trials
+============================================================
+
+--- TRANSIENT PHASE ENDED at 300.08s ---
+    Transient: 2535 requests, 2067 blocked
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 800,
+    "load": 500,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_trials": 100,
+    "transient_contention_rate": 81.53846154,
+    "successful_requests": 5,
+    "blocked_requests": 95,
+    "blocking_probability": 0.95,
+    "absolute_confidence_interval": 0.04271721,
+    "relative_confidence_interval_pct": 4.4965,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_trials_limit": 10000,
+    "blocking_reasons": {
+        "No valid route found": 84,
+        "No spectrum available": 11
+    }
+}

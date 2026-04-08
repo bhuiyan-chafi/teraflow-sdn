@@ -2,11 +2,14 @@
 # Stopping criteria: CI <= 5% of blocking probability at 95% confidence level
 # OR maximum 10^4 independent trials reached
 
-NSF_NODES = ["TPcalifornia", "TPcolorado", "TPflorida", "TPgeorgia", "TPillinois", "TPmaryland", "TPmichigan",
-             "TPmissouri", "TPnewyork", "TPpennsylvania", "TPtennessee", "TPtexas", "TPvirginia", "TPwashington"]
-PANEU_NODES = []
+# NODES = ["TPcalifornia", "TPcolorado", "TPflorida", "TPgeorgia", "TPillinois", "TPmaryland", "TPmichigan",
+#              "TPmissouri", "TPnewyork", "TPpennsylvania", "TPtennessee", "TPtexas", "TPvirginia", "TPwashington"]
+NODES = ["TPlondon", "TPparis", "TPfrankfurt", "TPamsterdam", "TPmadrid", "TProme", "TPberlin",
+         "TPwarsaw", "TPstockholm", "TPathens", "TPvienna", "TPprague", "TPbrussels", "TPmilan",
+         "TPzurich", "TPdublin", "TPglasgow", "TPcopenhagen", "TPhamburg", "TPmunich", "TPbudapest",
+         "TPbelgrade", "TPbarcelona", "TPlyon", "TPbordeaux", "TPstrasbourg", "TPoslo"]
 BIT_RATE = [100, 400, 800]
-ERLANGS = [40, 50, 70, 90, 100, 130, 150, 200]
+ERLANGS = [50, 100, 150, 200, 300, 400, 500]
 
 # CI-based stopping parameters
 MAX_TRIALS = 10000  # Maximum number of independent trials (10^4)

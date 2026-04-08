@@ -198,7 +198,7 @@ def get_topology_data():
             color = {'background': '#e67e22',
                      'border': '#d35400', 'highlight': '#f39c12'}
             shape = 'dot'
-            size = 25
+            size = 18  # Reduced from 25 to give more space
             font_color = '#2c3e50'
         else:
             color = {'background': '#2c3e50',
@@ -291,16 +291,30 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
     #     logger.warning(f"[Topology] Could not calculate average hops: {e}")
 
     dijkstra_hops = None
+
+    # Debug: Log graph connectivity for this request
+    # if src_dev in G_simple_free.nodes() and dst_dev in G_simple_free.nodes():
+    #     src_degree = G_simple_free.degree(src_dev)
+    #     dst_degree = G_simple_free.degree(dst_dev)
+    #     if src_degree == 0 or dst_degree == 0:
+    #         logger.warning(f"[Dijkstra Debug] Node disconnected in G_free: "
+    #                        f"{src_dev} degree={src_degree}, {dst_dev} degree={dst_degree}")
+    # else:
+    #     missing = [n for n in [src_dev, dst_dev]
+    #                if n not in G_simple_free.nodes()]
+    #     logger.warning(
+    #         f"[Dijkstra Debug] Node(s) missing from graph: {missing}")
+
     try:
         # == CHOICE STARTS ==
         # NOTE: Generate all shortest paths and make random pick
-        all_shortest_paths = list(nx.all_shortest_paths(
-            G_simple_free, source=src_dev, target=dst_dev))
-        dijkstra_node_path = random.choice(all_shortest_paths)
+        # all_shortest_paths = list(nx.all_shortest_paths(
+        #     G_simple_free, source=src_dev, target=dst_dev))
+        # dijkstra_node_path = random.choice(all_shortest_paths)
         # or
         # NOTE: Generate the most shortest one path
-        # dijkstra_node_path = nx.shortest_path(
-        #     G_simple_free, source=src_dev, target=dst_dev)
+        dijkstra_node_path = nx.shortest_path(
+            G_simple_free, source=src_dev, target=dst_dev)
         # == CHOICE ENDS ==
         dijkstra_hops = len(dijkstra_node_path) - 1
 
@@ -314,12 +328,12 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
 
         # == CHOICE STARTS ==
         # NOTE: Parallel paths from G_free are valid, take the first one
-        # selected_path = d_edge_paths[:1]
+        selected_path = d_edge_paths[:1]
 
         # or
 
         # NOTE: Randomly select from valid path expansions
-        selected_path = [random.choice(d_edge_paths)] if d_edge_paths else []
+        # selected_path = [random.choice(d_edge_paths)] if d_edge_paths else []
         # == CHOICE ENDS ==
 
         # if selected_path:
@@ -336,9 +350,24 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
         if selected_path:
             paths_result['dijkstra'] = selected_path
     except nx.NetworkXNoPath:
+        # Debug: Log why no path exists
         logger.info(
             f"[Dijkstra Path Discovery] No shortest path exists from {src_dev} to {dst_dev}")
-        pass
+
+        # # Check which neighbor links are FULL
+        # for u, v, k, d in G.edges(keys=True, data=True):
+        #     if u == src_dev or v == src_dev:
+        #         status = d.get('status')
+        #         if status == 'FULL':
+        #             logger.debug(
+        #                 f"[Dijkstra Debug] FULL link at {src_dev}: {u}->{v} (key={k})")
+
+        # # Check if path exists in full graph (including FULL links)
+        # G_simple_full = nx.Graph(G)
+        # if nx.has_path(G_simple_full, src_dev, dst_dev):
+        #     logger.warning(f"[Dijkstra Debug] Path EXISTS in full graph but NOT in free graph. "
+        #                    f"All links on some hop are FULL.")
+        # pass
 
     # Bypass alternative path generation if the endpoint only physically needs Dijkstra
     if dijkstra_only:

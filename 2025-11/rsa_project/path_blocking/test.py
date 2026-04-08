@@ -1,5 +1,5 @@
-# python path_blocking/test.py request --src TPmissouri --dst TPtexas --bitrate 400
-# python path_blocking/test.py teardown --id YOUR_LIGHTPATH_ID_HERE
+# python3 path_blocking/test.py request --src TPmissouri --dst TPtexas --bitrate 4500
+# python3 test.py teardown --id YOUR_LIGHTPATH_ID_HERE
 
 import requests
 import json

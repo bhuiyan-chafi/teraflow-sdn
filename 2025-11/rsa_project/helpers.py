@@ -1,3 +1,4 @@
+import time
 import logging
 import math
 import networkx as nx
@@ -21,7 +22,7 @@ class OpticalBandHelper:
         Detects the optical band based on min and max frequencies.
         Supports both single-band (O, E, S, C, L) and multi-band (CL, SCL, WHOLE_BAND) scenarios.
 
-        The algorithm finds the SMALLEST (narrowest) band that contains the endpoint's 
+        The algorithm finds the SMALLEST (narrowest) band that contains the endpoint's
         frequency range. This ensures we don't unnecessarily expand to wider bands.
 
         Args:
@@ -361,8 +362,12 @@ class TopologyHelper:
         """
         from models import Endpoint
 
-        # Query all endpoints for this device
-        all_endpoints = Endpoint.query.filter_by(device_id=device_id).all()
+        # Query only endpoints for this device that are in use, plus the reference endpoint for tracing
+        from sqlalchemy import or_
+        all_endpoints = Endpoint.query.filter(
+            Endpoint.device_id == device_id,
+            or_(Endpoint.in_use == True, Endpoint.id == reference_endpoint_id)
+        ).all()
 
         # logger.info(
         #     f"[RSA Device] Processing device {device_id}: Found {len(all_endpoints)} endpoints")
@@ -563,8 +568,8 @@ class TopologyHelper:
                     node_names = [node_path[0]] + [link['dst']
                                                    for link in current_edge_path]
                     link_names = [link['name'] for link in current_edge_path]
-                    logger.info(f"[Path Discovery - First Valid] Valid path found: {' -> '.join(node_names)} "
-                                f"via links [{', '.join(link_names)}]")
+                    # logger.info(f"[Path Discovery - First Valid] Valid path found: {' -> '.join(node_names)} "
+                    #             f"via links [{', '.join(link_names)}]")
                 return
 
             u = node_path[index]
@@ -748,6 +753,7 @@ class TopologyHelper:
 
     @staticmethod
     def perform_rsa(path_obj, bitrate):
+        start_time = time.time()
         """
         Performs Routing and Spectrum Assignment (RSA) using reference bitmap alignment.
 
@@ -761,6 +767,8 @@ class TopologyHelper:
             dict: RSA result with success status, bitmaps, trace, and mask
         """
         if not bitrate:
+            # logger.info(
+            #     f"[Timing] perform_rsa execution time: {time.time() - start_time:.4f} seconds")
             return None
 
         bitrate_gbps = bitrate
@@ -772,6 +780,8 @@ class TopologyHelper:
         num_slots = math.ceil(calculated_bandwidth_ghz / SLOT_GRANULARITY_GHZ)
 
         if not path_obj['links']:
+            # logger.info(
+            #     f"[Timing] perform_rsa execution time: {time.time() - start_time:.4f} seconds")
             return None
 
         # Step 1: Pre-compute with reference bitmap
@@ -779,6 +789,8 @@ class TopologyHelper:
 
         if not result or result[0] is None:
             logger.error("[RSA] Pre-compute failed")
+            # logger.info(
+            #     f"[Timing] perform_rsa execution time: {time.time() - start_time:.4f} seconds")
             return None
 
         reference_bitmap, reference_slots, trace_steps, band_info = result
@@ -806,6 +818,8 @@ class TopologyHelper:
             required_slots_str = f"{mask:0{reference_slots}b}"
             final_bitmap_str = f"{final_bitmap_val:0{reference_slots}b}"
 
+            # logger.info(
+            #     f"[Timing] perform_rsa execution time: {time.time() - start_time:.4f} seconds")
             return {
                 'success': True,
                 'num_slots': num_slots,
@@ -820,6 +834,8 @@ class TopologyHelper:
                 'links': path_obj['links']
             }
         else:
+            # logger.info(
+            #     f"[Timing] perform_rsa execution time: {time.time() - start_time:.4f} seconds")
             return {
                 'success': False,
                 'num_slots': num_slots,
@@ -833,6 +849,7 @@ class TopologyHelper:
 
     @staticmethod
     def commit_slots(link_ids, allocated_mask):
+        start_time = time.time()
         """
         Updates endpoint bitmaps by reserving the assigned spectrum mask.
         Optimized with Row-level Locking (Pessimistic) and Collision Detection.
@@ -848,6 +865,8 @@ class TopologyHelper:
         from sqlalchemy.orm import joinedload
 
         if not link_ids or allocated_mask is None:
+            # logger.info(
+            #     f"[Timing] commit_slots execution time: {time.time() - start_time:.4f} seconds")
             return False
 
         try:
@@ -857,6 +876,8 @@ class TopologyHelper:
             if not links:
                 logger.error(
                     f"[RSA Commit] No links found for IDs: {link_ids}")
+                # logger.info(
+                #     f"[Timing] commit_slots execution time: {time.time() - start_time:.4f} seconds")
                 return False
 
             # Collect unique endpoint IDs
@@ -868,6 +889,8 @@ class TopologyHelper:
                     endpoint_ids.add(link.dst_endpoint_id)
 
             if not endpoint_ids:
+                # logger.info(
+                #     f"[Timing] commit_slots execution time: {time.time() - start_time:.4f} seconds")
                 return False
 
             # Step 2: Lock the actual resources (Endpoints) directly
@@ -879,6 +902,8 @@ class TopologyHelper:
             ).with_for_update().all()
 
             if not valid_endpoints:
+                # logger.info(
+                #     f"[Timing] commit_slots execution time: {time.time() - start_time:.4f} seconds")
                 return False
 
             # Safety Check: Reject if any OCH or OMS endpoint has status=FULL
@@ -887,6 +912,8 @@ class TopologyHelper:
                     logger.warning(
                         f"[RSA Commit] Endpoint {ep.name} ({ep.otn_type}) is FULL - rejecting commit")
                     db.session.rollback()
+                    # logger.info(
+                    #     f"[Timing] commit_slots execution time: {time.time() -  start_time:.4f} seconds")
                     return "full_endpoint"
 
             # Step 2: Detect band (same logic as pre-compute for alignment)
@@ -897,6 +924,8 @@ class TopologyHelper:
             band_info = OpticalBandHelper.detect_band(
                 _reference_min_freq, _reference_max_freq)
             if not band_info:
+                # logger.info(
+                #     f"[Timing] commit_slots execution time: {time.time() - start_time:.4f} seconds")
                 return False
 
             _selected_min_freq, _selected_max_freq = band_info['frequency_range_hz']
@@ -925,6 +954,9 @@ class TopologyHelper:
                     logger.warning(
                         f"[RSA Concurrency] Collision detected on endpoint {ep.name}. Rolling back.")
                     db.session.rollback()
+
+                    # logger.info(
+                    #     f"[Timing] commit_slots execution time: {time.time() - start_time:.4f} seconds")
                     return "collision"
 
                 # Reserved slots: Set bits to 0
@@ -948,11 +980,15 @@ class TopologyHelper:
                 updated_count += 1
 
             db.session.commit()
+            # logger.info(
+            #     f"[Timing] commit_slots execution time: {time.time() - start_time:.4f} seconds")
             return True
 
         except Exception as e:
             db.session.rollback()
             logger.error(f"[RSA Commit] Error: {e}", exc_info=True)
+            # logger.info(
+            #     f"[Timing] commit_slots execution time: {time.time() - start_time:.4f} seconds")
             return False
 
     @staticmethod
@@ -964,6 +1000,8 @@ class TopologyHelper:
         from models import db, OpticalLink, Endpoint
 
         if not link_ids or allocated_mask is None:
+            # logger.info(
+            #     f"[Timing] commit_slots execution time: {time.time() - start_time:.4f} seconds")
             return False
 
         try:

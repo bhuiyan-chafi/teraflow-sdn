@@ -1,6 +1,7 @@
 import logging
 import random
 import os
+import time
 from helpers import TopologyHelper
 from models import Devices, OpticalLink, Endpoint
 import matplotlib.pyplot as plt
@@ -10,6 +11,10 @@ matplotlib.use('Agg')
 
 
 def build_graph(directed=False):
+    from models import db
+    from sqlalchemy.orm import aliased
+    import logging
+
     # Create graph based on flag
     if directed:
         G = nx.MultiDiGraph()
@@ -17,25 +22,38 @@ def build_graph(directed=False):
         G = nx.MultiGraph()
 
     # Fetch all devices (nodes)
-    devices = Devices.query.all()
-    for device in devices:
-        G.add_node(device.name, type=device.type)
+    devices = Devices.query.with_entities(Devices.name, Devices.type).all()
+    for name, dev_type in devices:
+        G.add_node(name, type=dev_type)
 
-    from sqlalchemy.orm import joinedload
+    SrcDevice = aliased(Devices)
+    DstDevice = aliased(Devices)
+    SrcEndpoint = aliased(Endpoint)
+    DstEndpoint = aliased(Endpoint)
 
-    # Fetch all optical links (edges) with joinedload to prevent N+1 queries
-    links = OpticalLink.query.options(
-        joinedload(OpticalLink.src_device),
-        joinedload(OpticalLink.dst_device),
-        joinedload(OpticalLink.src_endpoint),
-        joinedload(OpticalLink.dst_endpoint)
-    ).all()
+    # Fetch all optical links (edges) using tuples to avoid ORM overhead
+    links = db.session.query(
+        OpticalLink.id,
+        OpticalLink.name,
+        SrcDevice.name.label('src_device_name'),
+        DstDevice.name.label('dst_device_name'),
+        SrcEndpoint.name.label('src_endpoint_name'),
+        DstEndpoint.name.label('dst_endpoint_name'),
+        SrcEndpoint.otn_type.label('src_otn_type'),
+        DstEndpoint.otn_type.label('dst_otn_type'),
+        SrcEndpoint.status.label('src_status')
+    ).join(SrcDevice, OpticalLink.src_device_id == SrcDevice.id) \
+     .join(DstDevice, OpticalLink.dst_device_id == DstDevice.id) \
+     .join(SrcEndpoint, OpticalLink.src_endpoint_id == SrcEndpoint.id) \
+     .join(DstEndpoint, OpticalLink.dst_endpoint_id == DstEndpoint.id) \
+     .all()
+
     for link in links:
-        src_device = link.src_device.name
-        dst_device = link.dst_device.name
+        src_device = link.src_device_name
+        dst_device = link.dst_device_name
         # Determine OTN Type
-        src_otn = link.src_endpoint.otn_type
-        dst_otn = link.dst_endpoint.otn_type
+        src_otn = link.src_otn_type
+        dst_otn = link.dst_otn_type
 
         if src_otn == dst_otn:
             otn_type = src_otn
@@ -45,7 +63,7 @@ def build_graph(directed=False):
                 f"[Graph Build] OTN TYPE MISMATCH on link {link.name}: {src_otn} vs {dst_otn}")
 
         # Derive status from endpoints
-        derived_status = link.src_endpoint.status
+        derived_status = link.src_status
 
         # Add edge with all attributes
         G.add_edge(
@@ -56,8 +74,8 @@ def build_graph(directed=False):
             otn_type=otn_type,
             original_src=src_device,
             original_dst=dst_device,
-            src_port=link.src_endpoint.name,
-            dst_port=link.dst_endpoint.name,
+            src_port=link.src_endpoint_name,
+            dst_port=link.dst_endpoint_name,
             status=derived_status,
             capacity=100
         )
@@ -260,31 +278,28 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
     Find paths between two devices.
     The function is port-free, allowing the RSA algorithm complete freedom.
     """
+    start_time = time.time()
     EXTRA_HOPS_ALLOWED = 1
     G = build_graph()
-
+    # logger.info(
+    #     f"[Timing] build_graph execution time: {time.time() - start_time:.4f} seconds")
     paths_result = {
         'dijkstra': [],
         'all_paths': []
     }
-
+    path_selection_start_time = time.time()
     # --- 1. Dijkstra Shortest Path (Strictly FREE) ---
     G_free = nx.MultiGraph()
     G_free.add_nodes_from(G.nodes(data=True))
 
-    for u, v, k, d in G.edges(keys=True, data=True):
-        otn = d.get('otn_type')
-        status = d.get('status')
-
-        if (otn == 'OCH' or otn == 'OMS') and status != 'FULL':
-            G_free.add_edge(u, v, key=k, **d)
-        elif otn == 'ERROR':
-            pass
-
-    G_simple_free = nx.Graph(G_free)
+    valid_edges = [
+        (u, v, k, d) for u, v, k, d in G.edges(keys=True, data=True)
+        if d.get('otn_type') in ('OCH', 'OMS') and d.get('status') != 'FULL'
+    ]
+    G_free.add_edges_from(valid_edges)
 
     # try:
-    #     avg_hops = nx.average_shortest_path_length(G_simple_free)
+    #     avg_hops = nx.average_shortest_path_length(G_free)
     #     logger.info(
     #         f"[Topology] Average shortest path length (hops): {avg_hops:.2f}")
     # except Exception as e:
@@ -293,15 +308,15 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
     dijkstra_hops = None
 
     # Debug: Log graph connectivity for this request
-    # if src_dev in G_simple_free.nodes() and dst_dev in G_simple_free.nodes():
-    #     src_degree = G_simple_free.degree(src_dev)
-    #     dst_degree = G_simple_free.degree(dst_dev)
+    # if src_dev in G_free.nodes() and dst_dev in G_free.nodes():
+    #     src_degree = G_free.degree(src_dev)
+    #     dst_degree = G_free.degree(dst_dev)
     #     if src_degree == 0 or dst_degree == 0:
     #         logger.warning(f"[Dijkstra Debug] Node disconnected in G_free: "
     #                        f"{src_dev} degree={src_degree}, {dst_dev} degree={dst_degree}")
     # else:
     #     missing = [n for n in [src_dev, dst_dev]
-    #                if n not in G_simple_free.nodes()]
+    #                if n not in G_free.nodes()]
     #     logger.warning(
     #         f"[Dijkstra Debug] Node(s) missing from graph: {missing}")
 
@@ -309,12 +324,18 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
         # == CHOICE STARTS ==
         # NOTE: Generate all shortest paths and make random pick
         # all_shortest_paths = list(nx.all_shortest_paths(
-        #     G_simple_free, source=src_dev, target=dst_dev))
+        #     G_free, source=src_dev, target=dst_dev))
+        # START : For logging only
+        # for i, path in enumerate(all_shortest_paths):
+        #     hops = len(path) - 1
+        #     logger.info(f"[Dijkstra Path Discovery] Shortest path {i+1} from {src_dev} to {dst_dev}: "
+        #                 f"{' -> '.join(path)} ({hops} hops)")
+        # END : For logging only
         # dijkstra_node_path = random.choice(all_shortest_paths)
         # or
         # NOTE: Generate the most shortest one path
         dijkstra_node_path = nx.shortest_path(
-            G_simple_free, source=src_dev, target=dst_dev)
+            G_free, source=src_dev, target=dst_dev)
         # == CHOICE ENDS ==
         dijkstra_hops = len(dijkstra_node_path) - 1
 
@@ -371,6 +392,8 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
 
     # Bypass alternative path generation if the endpoint only physically needs Dijkstra
     if dijkstra_only:
+        # logger.info(
+        #     f"[Timing] path_selection_time execution time: {time.time() - path_selection_start_time:.4f} seconds")
         return paths_result
 
     # --- 2. All Simple Paths (Include USED) ---
@@ -391,8 +414,8 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
         simple_node_paths = list(nx.all_simple_paths(
             G_simple, source=src_dev, target=dst_dev, cutoff=dynamic_cutoff))
 
-        logger.info(f"[All Paths Discovery] Found {len(simple_node_paths)} simple paths "
-                    f"from {src_dev} to {dst_dev} with cutoff {dynamic_cutoff}")
+        # logger.info(f"[All Paths Discovery] Found {len(simple_node_paths)} simple paths "
+        #             f"from {src_dev} to {dst_dev} with cutoff {dynamic_cutoff}")
 
         valid_all_paths_count = 0
         for i, node_path in enumerate(simple_node_paths):
@@ -403,36 +426,50 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
             else:
                 pass
 
-        logger.info(f"[All Paths Discovery] {valid_all_paths_count}/{len(simple_node_paths)} "
-                    f"simple paths have valid link expansions")
+        # logger.info(f"[All Paths Discovery] {valid_all_paths_count}/{len(simple_node_paths)} "
+        #             f"simple paths have valid link expansions")
 
     except nx.NetworkXNoPath:
         logger.info(
             f"[All Paths Discovery] No simple paths found from {src_dev} to {dst_dev}")
         pass
 
+    # logger.info(
+    #     f"[Timing] path_selection_start_time execution time: {time.time() - path_selection_start_time:.4f} seconds")
     return paths_result
 
 
 def perform_rsa_for_path(link_ids, bitrate):
     """
     Reconstructs a path object from a list of link IDs and performs RSA.
-    Optimized: Queries DB directly instead of building full network graph.
+    Optimized: Queries DB directly using tuples instead of ORM objects.
     """
-    from models import OpticalLink
-    from sqlalchemy.orm import joinedload
+    start_time = time.time()
+    from models import OpticalLink, Endpoint, Devices, db
+    from sqlalchemy.orm import aliased
     from helpers import TopologyHelper
 
     if not link_ids:
         return None
 
-    # 1. Fetch links directly from DB with joined endpoints and devices
-    links_db = OpticalLink.query.filter(OpticalLink.id.in_(link_ids)).options(
-        joinedload(OpticalLink.src_device),
-        joinedload(OpticalLink.dst_device),
-        joinedload(OpticalLink.src_endpoint),
-        joinedload(OpticalLink.dst_endpoint)
-    ).all()
+    SrcDevice = aliased(Devices)
+    DstDevice = aliased(Devices)
+    SrcEndpoint = aliased(Endpoint)
+    DstEndpoint = aliased(Endpoint)
+
+    links_db = db.session.query(
+        OpticalLink.id,
+        OpticalLink.name,
+        SrcDevice.name.label('src_device_name'),
+        DstDevice.name.label('dst_device_name'),
+        SrcEndpoint.name.label('src_endpoint_name'),
+        DstEndpoint.name.label('dst_endpoint_name'),
+        SrcEndpoint.status.label('src_status')
+    ).join(SrcDevice, OpticalLink.src_device_id == SrcDevice.id) \
+     .join(DstDevice, OpticalLink.dst_device_id == DstDevice.id) \
+     .join(SrcEndpoint, OpticalLink.src_endpoint_id == SrcEndpoint.id) \
+     .join(DstEndpoint, OpticalLink.dst_endpoint_id == DstEndpoint.id) \
+     .filter(OpticalLink.id.in_(link_ids)).all()
 
     if not links_db:
         return None
@@ -446,12 +483,12 @@ def perform_rsa_for_path(link_ids, bitrate):
         if link:
             path_links.append({
                 'id': str(link.id),
-                'src': link.src_device.name,
-                'dst': link.dst_device.name,
-                'src_port': link.src_endpoint.name,
-                'dst_port': link.dst_endpoint.name,
+                'src': link.src_device_name,
+                'dst': link.dst_device_name,
+                'src_port': link.src_endpoint_name,
+                'dst_port': link.dst_endpoint_name,
                 'name': link.name,
-                'status': link.src_endpoint.status  # Correct source of truth
+                'status': link.src_status  # Correct source of truth
             })
 
     if not path_links:
@@ -463,4 +500,7 @@ def perform_rsa_for_path(link_ids, bitrate):
     res = TopologyHelper.perform_rsa(path_obj, bitrate)
     if res:
         res['links'] = path_links
+
+    # logger.info(
+    #     f"[Timing] perform_rsa_for_path execution time: {time.time() - start_time:.4f} seconds")
     return res

@@ -3,7 +3,7 @@ Confidence Interval Based Simulation for Optical Network Blocking Probability
 
 Stopping Criteria:
 1. CI <= 5% of blocking probability at 95% confidence level, OR
-2. Maximum 10^4 independent trials reached
+2. Maximum 10^6 independent requests reached
 
 Results are output only when one of these conditions is met.
 
@@ -19,7 +19,7 @@ import time
 from collections import Counter
 from sim_config import (
     NODES, BIT_RATE, ERLANGS, HOLDING_TIME, Z_VALUE,
-    TRANSIENT_UNIT, MAX_TRIALS, MIN_TRIALS, CI_THRESHOLD
+    TRANSIENT_UNIT, MAX_REQUESTS, MIN_REQUESTS, CI_THRESHOLD
 )
 import warnings
 
@@ -63,31 +63,31 @@ def calculate_ci(blocked, total, z_value):
     return prob, absolute_ci, relative_ci
 
 
-def check_stopping_condition(blocked, total, z_value, ci_threshold, max_trials, min_trials):
+def check_stopping_condition(blocked, total, z_value, ci_threshold, max_requests, min_requests):
     """
     Check if stopping conditions are met.
     Returns (should_stop, reason, stats)
 
     Conditions:
     1. Relative CI <= ci_threshold (5%) at 95% confidence level
-    2. Maximum trials reached (10^4)
+    2. Maximum requests reached (10^6)
     """
     prob, absolute_ci, relative_ci = calculate_ci(blocked, total, z_value)
 
     stats = {
-        "trials": total,
+        "requests": total,
         "blocked": blocked,
         "probability": prob,
         "absolute_ci": absolute_ci,
         "relative_ci": relative_ci
     }
 
-    # Condition 2: Maximum trials reached
-    if total >= max_trials:
-        return True, "MAX_TRIALS_REACHED", stats
+    # Condition 2: Maximum requests reached
+    if total >= max_requests:
+        return True, "MAX_REQUESTS_REACHED", stats
 
-    # Condition 1: CI threshold met (only check after minimum trials)
-    if total >= min_trials and relative_ci <= ci_threshold:
+    # Condition 1: CI threshold met (only check after minimum requests)
+    if total >= min_requests and relative_ci <= ci_threshold:
         return True, "CI_THRESHOLD_MET", stats
 
     return False, None, stats
@@ -102,7 +102,7 @@ def run_simulation():
             print(
                 f"STARTING CI-BASED SIM: BITRATE={b_rate}G | ERLANG={erlang}")
             print(
-                f"Stopping: CI <= {CI_THRESHOLD*100}% of P_b OR max {MAX_TRIALS} trials")
+                f"Stopping: CI <= {CI_THRESHOLD*100}% of P_b OR max {MAX_REQUESTS} requests")
             print(f"============================================================")
 
             arrival_rate = erlang / HOLDING_TIME
@@ -125,7 +125,7 @@ def run_simulation():
 
             stop_reason = None
             last_progress_report = 0
-            progress_interval = 1000  # Report progress every 500 trials
+            progress_interval = 500  # Report progress every 500 requests
 
             # Main Discrete Event Loop - runs until stopping condition met
             while True:
@@ -184,7 +184,9 @@ def run_simulation():
                         if status == 'success':
                             active_connections += 1
                             lp_id = resp.get('lightpath_id')
-                            teardown_time = virtual_time + HOLDING_TIME
+                            # Exponentially distributed holding time
+                            duration = random.expovariate(1.0 / HOLDING_TIME)
+                            teardown_time = virtual_time + duration
                             heapq.heappush(event_queue, Event(
                                 teardown_time, "TEARDOWN", {"id": lp_id}))
                         else:
@@ -203,14 +205,14 @@ def run_simulation():
                                 last_progress_report = counted_requests
                                 prob, abs_ci, rel_ci = calculate_ci(
                                     blocked_requests, counted_requests, Z_VALUE)
-                                print(f"    Progress: {counted_requests} trials | "
+                                print(f"    Progress: {counted_requests} requests | "
                                       f"P_b={prob:.6f} | CI={abs_ci:.6f} | "
                                       f"Rel.CI={rel_ci*100:.2f}%")
 
                             # Check stopping condition
                             should_stop, reason, stats = check_stopping_condition(
                                 blocked_requests, counted_requests, Z_VALUE,
-                                CI_THRESHOLD, MAX_TRIALS, MIN_TRIALS
+                                CI_THRESHOLD, MAX_REQUESTS, MIN_REQUESTS
                             )
 
                             if should_stop:
@@ -244,7 +246,7 @@ def run_simulation():
                 "bitrate": b_rate,
                 "load": erlang,
                 "stop_reason": stop_reason,
-                "total_trials": total,
+                "total_requests": total,
                 "transient_contention_rate": round(
                     (transient_blocked/transient_requests)*100, 8) if transient_requests > 0 else 0,
                 "successful_requests": total - blocked_requests,
@@ -254,7 +256,7 @@ def run_simulation():
                 "relative_confidence_interval_pct": round(relative_ci * 100, 4),
                 "ci_threshold_pct": CI_THRESHOLD * 100,
                 "confidence_level_pct": 95,
-                "max_trials_limit": MAX_TRIALS,
+                "max_requests_limit": MAX_REQUESTS,
                 "blocking_reasons": dict(blocking_reasons)
             }
             results.append(stat_dict)

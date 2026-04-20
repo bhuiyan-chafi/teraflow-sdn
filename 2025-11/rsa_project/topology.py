@@ -325,13 +325,13 @@ def find_paths(src_dev, dst_dev, bitrate=None, dijkstra_only=False):
         # NOTE: Generate all shortest paths and make random pick
         # all_shortest_paths = list(nx.all_shortest_paths(
         #     G_free, source=src_dev, target=dst_dev))
+        # dijkstra_node_path = random.choice(all_shortest_paths)
         # START : For logging only
         # for i, path in enumerate(all_shortest_paths):
         #     hops = len(path) - 1
         #     logger.info(f"[Dijkstra Path Discovery] Shortest path {i+1} from {src_dev} to {dst_dev}: "
         #                 f"{' -> '.join(path)} ({hops} hops)")
         # END : For logging only
-        # dijkstra_node_path = random.choice(all_shortest_paths)
         # or
         # NOTE: Generate the most shortest one path
         dijkstra_node_path = nx.shortest_path(

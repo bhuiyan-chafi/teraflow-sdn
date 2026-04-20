@@ -96,8 +96,8 @@ def check_stopping_condition(blocked, total, z_value, ci_threshold, max_requests
 def run_simulation():
     results = []
 
-    for b_rate in sorted(list(BIT_RATE)):
-        for erlang in sorted(list(ERLANGS)):
+    for b_rate in sorted(list(BIT_RATE), reverse=True):
+        for erlang in sorted(list(ERLANGS), reverse=True):
             print(f"============================================================")
             print(
                 f"STARTING CI-BASED SIM: BITRATE={b_rate}G | ERLANG={erlang}")

@@ -1,0 +1,612 @@
+============================================================
+STARTING CI-BASED SIM: BITRATE=100G | ERLANG=70
+Stopping: CI <= 10.0% of P_b OR max 500000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.35s ---
+    Transient: 683 requests, 0 blocked
+    Progress: 500 requests | P_b=0.004000 | CI=0.005533 | Rel.CI=138.32%
+    Progress: 1000 requests | P_b=0.002000 | CI=0.002769 | Rel.CI=138.45%
+    Progress: 1500 requests | P_b=0.003333 | CI=0.002917 | Rel.CI=87.51%
+    Progress: 2000 requests | P_b=0.003000 | CI=0.002397 | Rel.CI=79.90%
+    Progress: 2500 requests | P_b=0.002400 | CI=0.001918 | Rel.CI=79.92%
+    Progress: 3000 requests | P_b=0.003000 | CI=0.001957 | Rel.CI=65.24%
+    Progress: 3500 requests | P_b=0.003429 | CI=0.001937 | Rel.CI=56.48%
+    Progress: 4000 requests | P_b=0.003250 | CI=0.001764 | Rel.CI=54.27%
+    Progress: 4500 requests | P_b=0.002889 | CI=0.001568 | Rel.CI=54.28%
+    Progress: 5000 requests | P_b=0.002800 | CI=0.001465 | Rel.CI=52.31%
+    Progress: 5500 requests | P_b=0.003818 | CI=0.001630 | Rel.CI=42.69%
+    Progress: 6000 requests | P_b=0.003667 | CI=0.001529 | Rel.CI=41.71%
+    Progress: 6500 requests | P_b=0.003385 | CI=0.001412 | Rel.CI=41.72%
+    Progress: 7000 requests | P_b=0.003571 | CI=0.001397 | Rel.CI=39.13%
+    Progress: 7500 requests | P_b=0.004267 | CI=0.001475 | Rel.CI=34.57%
+    Progress: 8000 requests | P_b=0.004125 | CI=0.001405 | Rel.CI=34.05%
+    Progress: 8500 requests | P_b=0.004118 | CI=0.001361 | Rel.CI=33.06%
+    Progress: 9000 requests | P_b=0.004778 | CI=0.001425 | Rel.CI=29.82%
+    Progress: 9500 requests | P_b=0.004526 | CI=0.001350 | Rel.CI=29.82%
+    Progress: 10000 requests | P_b=0.004300 | CI=0.001282 | Rel.CI=29.83%
+    Progress: 10500 requests | P_b=0.004190 | CI=0.001236 | Rel.CI=29.49%
+    Progress: 11000 requests | P_b=0.004727 | CI=0.001282 | Rel.CI=27.12%
+    Progress: 11500 requests | P_b=0.004522 | CI=0.001226 | Rel.CI=27.12%
+    Progress: 12000 requests | P_b=0.004667 | CI=0.001219 | Rel.CI=26.13%
+    Progress: 12500 requests | P_b=0.004480 | CI=0.001171 | Rel.CI=26.13%
+    Progress: 13000 requests | P_b=0.004308 | CI=0.001126 | Rel.CI=26.14%
+    Progress: 13500 requests | P_b=0.004222 | CI=0.001094 | Rel.CI=25.91%
+    Progress: 14000 requests | P_b=0.004214 | CI=0.001073 | Rel.CI=25.46%
+    Progress: 14500 requests | P_b=0.004345 | CI=0.001071 | Rel.CI=24.64%
+    Progress: 15000 requests | P_b=0.004267 | CI=0.001043 | Rel.CI=24.45%
+    Progress: 15500 requests | P_b=0.004258 | CI=0.001025 | Rel.CI=24.07%
+    Progress: 16000 requests | P_b=0.004125 | CI=0.000993 | Rel.CI=24.08%
+    Progress: 16500 requests | P_b=0.004000 | CI=0.000963 | Rel.CI=24.08%
+    Progress: 17000 requests | P_b=0.003941 | CI=0.000942 | Rel.CI=23.90%
+    Progress: 17500 requests | P_b=0.003829 | CI=0.000915 | Rel.CI=23.90%
+    Progress: 18000 requests | P_b=0.003722 | CI=0.000890 | Rel.CI=23.90%
+    Progress: 18500 requests | P_b=0.003784 | CI=0.000885 | Rel.CI=23.38%
+    Progress: 19000 requests | P_b=0.003684 | CI=0.000861 | Rel.CI=23.38%
+    Progress: 19500 requests | P_b=0.003744 | CI=0.000857 | Rel.CI=22.90%
+    Progress: 20000 requests | P_b=0.003700 | CI=0.000841 | Rel.CI=22.74%
+    Progress: 20500 requests | P_b=0.003707 | CI=0.000832 | Rel.CI=22.44%
+    Progress: 21000 requests | P_b=0.003905 | CI=0.000844 | Rel.CI=21.60%
+    Progress: 21500 requests | P_b=0.003814 | CI=0.000824 | Rel.CI=21.60%
+    Progress: 22000 requests | P_b=0.003909 | CI=0.000825 | Rel.CI=21.09%
+    Progress: 22500 requests | P_b=0.003822 | CI=0.000806 | Rel.CI=21.09%
+    Progress: 23000 requests | P_b=0.003783 | CI=0.000793 | Rel.CI=20.97%
+    Progress: 23500 requests | P_b=0.003745 | CI=0.000781 | Rel.CI=20.85%
+    Progress: 24000 requests | P_b=0.003667 | CI=0.000765 | Rel.CI=20.86%
+    Progress: 24500 requests | P_b=0.003592 | CI=0.000749 | Rel.CI=20.86%
+    Progress: 25000 requests | P_b=0.003680 | CI=0.000751 | Rel.CI=20.40%
+    Progress: 25500 requests | P_b=0.003843 | CI=0.000759 | Rel.CI=19.76%
+    Progress: 26000 requests | P_b=0.003808 | CI=0.000749 | Rel.CI=19.66%
+    Progress: 26500 requests | P_b=0.003849 | CI=0.000746 | Rel.CI=19.37%
+    Progress: 27000 requests | P_b=0.003778 | CI=0.000732 | Rel.CI=19.37%
+    Progress: 27500 requests | P_b=0.003745 | CI=0.000722 | Rel.CI=19.28%
+    Progress: 28000 requests | P_b=0.003679 | CI=0.000709 | Rel.CI=19.28%
+    Progress: 28500 requests | P_b=0.003649 | CI=0.000700 | Rel.CI=19.18%
+    Progress: 29000 requests | P_b=0.003793 | CI=0.000708 | Rel.CI=18.65%
+    Progress: 29500 requests | P_b=0.003797 | CI=0.000702 | Rel.CI=18.49%
+    Progress: 30000 requests | P_b=0.003900 | CI=0.000705 | Rel.CI=18.08%
+    Progress: 30500 requests | P_b=0.003869 | CI=0.000697 | Rel.CI=18.01%
+    Progress: 31000 requests | P_b=0.003806 | CI=0.000685 | Rel.CI=18.01%
+    Progress: 31500 requests | P_b=0.003746 | CI=0.000675 | Rel.CI=18.01%
+    Progress: 32000 requests | P_b=0.003781 | CI=0.000672 | Rel.CI=17.78%
+    Progress: 32500 requests | P_b=0.003723 | CI=0.000662 | Rel.CI=17.78%
+    Progress: 33000 requests | P_b=0.003879 | CI=0.000671 | Rel.CI=17.29%
+    Progress: 33500 requests | P_b=0.003821 | CI=0.000661 | Rel.CI=17.29%
+    Progress: 34000 requests | P_b=0.003794 | CI=0.000654 | Rel.CI=17.22%
+    Progress: 34500 requests | P_b=0.003768 | CI=0.000647 | Rel.CI=17.16%
+    Progress: 35000 requests | P_b=0.003714 | CI=0.000637 | Rel.CI=17.16%
+    Progress: 35500 requests | P_b=0.003662 | CI=0.000628 | Rel.CI=17.16%
+    Progress: 36000 requests | P_b=0.003778 | CI=0.000634 | Rel.CI=16.78%
+    Progress: 36500 requests | P_b=0.003945 | CI=0.000643 | Rel.CI=16.30%
+    Progress: 37000 requests | P_b=0.003892 | CI=0.000634 | Rel.CI=16.30%
+    Progress: 37500 requests | P_b=0.003840 | CI=0.000626 | Rel.CI=16.30%
+    Progress: 38000 requests | P_b=0.003842 | CI=0.000622 | Rel.CI=16.19%
+    Progress: 38500 requests | P_b=0.003818 | CI=0.000616 | Rel.CI=16.13%
+    Progress: 39000 requests | P_b=0.003846 | CI=0.000614 | Rel.CI=15.97%
+    Progress: 39500 requests | P_b=0.003873 | CI=0.000613 | Rel.CI=15.81%
+    Progress: 40000 requests | P_b=0.003850 | CI=0.000607 | Rel.CI=15.76%
+    Progress: 40500 requests | P_b=0.003852 | CI=0.000603 | Rel.CI=15.66%
+    Progress: 41000 requests | P_b=0.004122 | CI=0.000620 | Rel.CI=15.05%
+    Progress: 41500 requests | P_b=0.004120 | CI=0.000616 | Rel.CI=14.96%
+    Progress: 42000 requests | P_b=0.004071 | CI=0.000609 | Rel.CI=14.96%
+    Progress: 42500 requests | P_b=0.004024 | CI=0.000602 | Rel.CI=14.96%
+    Progress: 43000 requests | P_b=0.003977 | CI=0.000595 | Rel.CI=14.96%
+    Progress: 43500 requests | P_b=0.003954 | CI=0.000590 | Rel.CI=14.92%
+    Progress: 44000 requests | P_b=0.004091 | CI=0.000596 | Rel.CI=14.58%
+    Progress: 44500 requests | P_b=0.004090 | CI=0.000593 | Rel.CI=14.50%
+    Progress: 45000 requests | P_b=0.004044 | CI=0.000586 | Rel.CI=14.50%
+    Progress: 45500 requests | P_b=0.004110 | CI=0.000588 | Rel.CI=14.30%
+    Progress: 46000 requests | P_b=0.004087 | CI=0.000583 | Rel.CI=14.27%
+    Progress: 46500 requests | P_b=0.004043 | CI=0.000577 | Rel.CI=14.27%
+    Progress: 47000 requests | P_b=0.004021 | CI=0.000572 | Rel.CI=14.23%
+    Progress: 47500 requests | P_b=0.004042 | CI=0.000571 | Rel.CI=14.12%
+    Progress: 48000 requests | P_b=0.004104 | CI=0.000572 | Rel.CI=13.94%
+    Progress: 48500 requests | P_b=0.004103 | CI=0.000569 | Rel.CI=13.87%
+    Progress: 49000 requests | P_b=0.004184 | CI=0.000572 | Rel.CI=13.66%
+    Progress: 49500 requests | P_b=0.004162 | CI=0.000567 | Rel.CI=13.63%
+    Progress: 50000 requests | P_b=0.004120 | CI=0.000561 | Rel.CI=13.63%
+    Progress: 50500 requests | P_b=0.004158 | CI=0.000561 | Rel.CI=13.50%
+    Progress: 51000 requests | P_b=0.004118 | CI=0.000556 | Rel.CI=13.50%
+    Progress: 51500 requests | P_b=0.004117 | CI=0.000553 | Rel.CI=13.43%
+    Progress: 52000 requests | P_b=0.004192 | CI=0.000555 | Rel.CI=13.25%
+    Progress: 52500 requests | P_b=0.004171 | CI=0.000551 | Rel.CI=13.22%
+    Progress: 53000 requests | P_b=0.004132 | CI=0.000546 | Rel.CI=13.22%
+    Progress: 53500 requests | P_b=0.004112 | CI=0.000542 | Rel.CI=13.19%
+    Progress: 54000 requests | P_b=0.004093 | CI=0.000538 | Rel.CI=13.16%
+    Progress: 54500 requests | P_b=0.004055 | CI=0.000534 | Rel.CI=13.16%
+    Progress: 55000 requests | P_b=0.004018 | CI=0.000529 | Rel.CI=13.16%
+    Progress: 55500 requests | P_b=0.003982 | CI=0.000524 | Rel.CI=13.16%
+    Progress: 56000 requests | P_b=0.003964 | CI=0.000520 | Rel.CI=13.13%
+    Progress: 56500 requests | P_b=0.003929 | CI=0.000516 | Rel.CI=13.13%
+    Progress: 57000 requests | P_b=0.003912 | CI=0.000512 | Rel.CI=13.10%
+    Progress: 57500 requests | P_b=0.003948 | CI=0.000513 | Rel.CI=12.98%
+    Progress: 58000 requests | P_b=0.004000 | CI=0.000514 | Rel.CI=12.84%
+    Progress: 58500 requests | P_b=0.003966 | CI=0.000509 | Rel.CI=12.84%
+    Progress: 59000 requests | P_b=0.003983 | CI=0.000508 | Rel.CI=12.76%
+    Progress: 59500 requests | P_b=0.003983 | CI=0.000506 | Rel.CI=12.71%
+    Progress: 60000 requests | P_b=0.003950 | CI=0.000502 | Rel.CI=12.71%
+    Progress: 60500 requests | P_b=0.003967 | CI=0.000501 | Rel.CI=12.63%
+    Progress: 61000 requests | P_b=0.003951 | CI=0.000498 | Rel.CI=12.60%
+    Progress: 61500 requests | P_b=0.003935 | CI=0.000495 | Rel.CI=12.57%
+    Progress: 62000 requests | P_b=0.003935 | CI=0.000493 | Rel.CI=12.52%
+    Progress: 62500 requests | P_b=0.003904 | CI=0.000489 | Rel.CI=12.52%
+    Progress: 63000 requests | P_b=0.003921 | CI=0.000488 | Rel.CI=12.45%
+    Progress: 63500 requests | P_b=0.003906 | CI=0.000485 | Rel.CI=12.42%
+    Progress: 64000 requests | P_b=0.003875 | CI=0.000481 | Rel.CI=12.42%
+    Progress: 64500 requests | P_b=0.003922 | CI=0.000482 | Rel.CI=12.30%
+    Progress: 65000 requests | P_b=0.003908 | CI=0.000480 | Rel.CI=12.27%
+    Progress: 65500 requests | P_b=0.003924 | CI=0.000479 | Rel.CI=12.20%
+    Progress: 66000 requests | P_b=0.003894 | CI=0.000475 | Rel.CI=12.20%
+    Progress: 66500 requests | P_b=0.003865 | CI=0.000472 | Rel.CI=12.20%
+    Progress: 67000 requests | P_b=0.003881 | CI=0.000471 | Rel.CI=12.13%
+    Progress: 67500 requests | P_b=0.003852 | CI=0.000467 | Rel.CI=12.13%
+    Progress: 68000 requests | P_b=0.003824 | CI=0.000464 | Rel.CI=12.13%
+    Progress: 68500 requests | P_b=0.003854 | CI=0.000464 | Rel.CI=12.04%
+    Progress: 69000 requests | P_b=0.003826 | CI=0.000461 | Rel.CI=12.04%
+    Progress: 69500 requests | P_b=0.003827 | CI=0.000459 | Rel.CI=11.99%
+    Progress: 70000 requests | P_b=0.003843 | CI=0.000458 | Rel.CI=11.93%
+    Progress: 70500 requests | P_b=0.003915 | CI=0.000461 | Rel.CI=11.77%
+    Progress: 71000 requests | P_b=0.003901 | CI=0.000459 | Rel.CI=11.75%
+    Progress: 71500 requests | P_b=0.003874 | CI=0.000455 | Rel.CI=11.75%
+    Progress: 72000 requests | P_b=0.003875 | CI=0.000454 | Rel.CI=11.71%
+    Progress: 72500 requests | P_b=0.003848 | CI=0.000451 | Rel.CI=11.71%
+    Progress: 73000 requests | P_b=0.003849 | CI=0.000449 | Rel.CI=11.67%
+    Progress: 73500 requests | P_b=0.003850 | CI=0.000448 | Rel.CI=11.63%
+    Progress: 74000 requests | P_b=0.003838 | CI=0.000446 | Rel.CI=11.61%
+    Progress: 74500 requests | P_b=0.003812 | CI=0.000443 | Rel.CI=11.61%
+    Progress: 75000 requests | P_b=0.003853 | CI=0.000443 | Rel.CI=11.51%
+    Progress: 75500 requests | P_b=0.003828 | CI=0.000440 | Rel.CI=11.51%
+    Progress: 76000 requests | P_b=0.003816 | CI=0.000438 | Rel.CI=11.49%
+    Progress: 76500 requests | P_b=0.003817 | CI=0.000437 | Rel.CI=11.45%
+    Progress: 77000 requests | P_b=0.003792 | CI=0.000434 | Rel.CI=11.45%
+    Progress: 77500 requests | P_b=0.003832 | CI=0.000435 | Rel.CI=11.35%
+    Progress: 78000 requests | P_b=0.003808 | CI=0.000432 | Rel.CI=11.35%
+    Progress: 78500 requests | P_b=0.003783 | CI=0.000429 | Rel.CI=11.35%
+    Progress: 79000 requests | P_b=0.003797 | CI=0.000429 | Rel.CI=11.29%
+    Progress: 79500 requests | P_b=0.003774 | CI=0.000426 | Rel.CI=11.29%
+    Progress: 80000 requests | P_b=0.003838 | CI=0.000428 | Rel.CI=11.16%
+    Progress: 80500 requests | P_b=0.003814 | CI=0.000426 | Rel.CI=11.16%
+    Progress: 81000 requests | P_b=0.003790 | CI=0.000423 | Rel.CI=11.17%
+    Progress: 81500 requests | P_b=0.003779 | CI=0.000421 | Rel.CI=11.15%
+    Progress: 82000 requests | P_b=0.003817 | CI=0.000422 | Rel.CI=11.06%
+    Progress: 82500 requests | P_b=0.003818 | CI=0.000421 | Rel.CI=11.02%
+    Progress: 83000 requests | P_b=0.003928 | CI=0.000426 | Rel.CI=10.83%
+    Progress: 83500 requests | P_b=0.003916 | CI=0.000424 | Rel.CI=10.82%
+    Progress: 84000 requests | P_b=0.003893 | CI=0.000421 | Rel.CI=10.82%
+    Progress: 84500 requests | P_b=0.003941 | CI=0.000422 | Rel.CI=10.72%
+    Progress: 85000 requests | P_b=0.003929 | CI=0.000421 | Rel.CI=10.70%
+    Progress: 85500 requests | P_b=0.003977 | CI=0.000422 | Rel.CI=10.61%
+    Progress: 86000 requests | P_b=0.004000 | CI=0.000422 | Rel.CI=10.55%
+    Progress: 86500 requests | P_b=0.003988 | CI=0.000420 | Rel.CI=10.53%
+    Progress: 87000 requests | P_b=0.004046 | CI=0.000422 | Rel.CI=10.43%
+    Progress: 87500 requests | P_b=0.004057 | CI=0.000421 | Rel.CI=10.38%
+    Progress: 88000 requests | P_b=0.004034 | CI=0.000419 | Rel.CI=10.38%
+    Progress: 88500 requests | P_b=0.004079 | CI=0.000420 | Rel.CI=10.29%
+    Progress: 89000 requests | P_b=0.004124 | CI=0.000421 | Rel.CI=10.21%
+    Progress: 89500 requests | P_b=0.004101 | CI=0.000419 | Rel.CI=10.21%
+    Progress: 90000 requests | P_b=0.004078 | CI=0.000416 | Rel.CI=10.21%
+    Progress: 90500 requests | P_b=0.004077 | CI=0.000415 | Rel.CI=10.18%
+    Progress: 91000 requests | P_b=0.004077 | CI=0.000414 | Rel.CI=10.16%
+    Progress: 91500 requests | P_b=0.004087 | CI=0.000413 | Rel.CI=10.11%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 100,
+    "load": 70,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 91934,
+    "transient_contention_rate": 0.0,
+    "successful_requests": 91551,
+    "blocked_requests": 383,
+    "blocking_probability": 0.00416603,
+    "absolute_confidence_interval": 0.00041636,
+    "relative_confidence_interval_pct": 9.9942,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 500000,
+    "blocking_reasons": {
+        "No valid route found": 383
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=100G | ERLANG=60
+Stopping: CI <= 10.0% of P_b OR max 500000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.45s ---
+    Transient: 561 requests, 0 blocked
+    Progress: 500 requests | P_b=0.000000 | CI=0.000000 | Rel.CI=inf%
+    Progress: 1000 requests | P_b=0.000000 | CI=0.000000 | Rel.CI=inf%
+    Progress: 1500 requests | P_b=0.000000 | CI=0.000000 | Rel.CI=inf%
+    Progress: 2000 requests | P_b=0.000000 | CI=0.000000 | Rel.CI=inf%
+    Progress: 2500 requests | P_b=0.000000 | CI=0.000000 | Rel.CI=inf%
+    Progress: 3000 requests | P_b=0.000000 | CI=0.000000 | Rel.CI=inf%
+    Progress: 3500 requests | P_b=0.000286 | CI=0.000560 | Rel.CI=195.97%
+    Progress: 4000 requests | P_b=0.000500 | CI=0.000693 | Rel.CI=138.56%
+    Progress: 4500 requests | P_b=0.000444 | CI=0.000616 | Rel.CI=138.56%
+    Progress: 5000 requests | P_b=0.000400 | CI=0.000554 | Rel.CI=138.57%
+    Progress: 5500 requests | P_b=0.000364 | CI=0.000504 | Rel.CI=138.57%
+    Progress: 6000 requests | P_b=0.000500 | CI=0.000566 | Rel.CI=113.13%
+    Progress: 6500 requests | P_b=0.000615 | CI=0.000603 | Rel.CI=97.97%
+    Progress: 7000 requests | P_b=0.000571 | CI=0.000560 | Rel.CI=97.97%
+    Progress: 7500 requests | P_b=0.000533 | CI=0.000523 | Rel.CI=97.97%
+    Progress: 8000 requests | P_b=0.000500 | CI=0.000490 | Rel.CI=97.98%
+    Progress: 8500 requests | P_b=0.000588 | CI=0.000515 | Rel.CI=87.63%
+    Progress: 9000 requests | P_b=0.000556 | CI=0.000487 | Rel.CI=87.63%
+    Progress: 9500 requests | P_b=0.000526 | CI=0.000461 | Rel.CI=87.63%
+    Progress: 10000 requests | P_b=0.000600 | CI=0.000480 | Rel.CI=79.99%
+    Progress: 10500 requests | P_b=0.000857 | CI=0.000560 | Rel.CI=65.31%
+    Progress: 11000 requests | P_b=0.000818 | CI=0.000534 | Rel.CI=65.31%
+    Progress: 11500 requests | P_b=0.000783 | CI=0.000511 | Rel.CI=65.31%
+    Progress: 12000 requests | P_b=0.000833 | CI=0.000516 | Rel.CI=61.95%
+    Progress: 12500 requests | P_b=0.000800 | CI=0.000496 | Rel.CI=61.96%
+    Progress: 13000 requests | P_b=0.000769 | CI=0.000477 | Rel.CI=61.96%
+    Progress: 13500 requests | P_b=0.000963 | CI=0.000523 | Rel.CI=54.33%
+    Progress: 14000 requests | P_b=0.001071 | CI=0.000542 | Rel.CI=50.58%
+    Progress: 14500 requests | P_b=0.001034 | CI=0.000523 | Rel.CI=50.58%
+    Progress: 15000 requests | P_b=0.001000 | CI=0.000506 | Rel.CI=50.58%
+    Progress: 15500 requests | P_b=0.000968 | CI=0.000490 | Rel.CI=50.58%
+    Progress: 16000 requests | P_b=0.000937 | CI=0.000474 | Rel.CI=50.58%
+    Progress: 16500 requests | P_b=0.000909 | CI=0.000460 | Rel.CI=50.58%
+    Progress: 17000 requests | P_b=0.001176 | CI=0.000515 | Rel.CI=43.80%
+    Progress: 17500 requests | P_b=0.001200 | CI=0.000513 | Rel.CI=42.75%
+    Progress: 18000 requests | P_b=0.001222 | CI=0.000510 | Rel.CI=41.76%
+    Progress: 18500 requests | P_b=0.001189 | CI=0.000497 | Rel.CI=41.76%
+    Progress: 19000 requests | P_b=0.001211 | CI=0.000494 | Rel.CI=40.84%
+    Progress: 19500 requests | P_b=0.001179 | CI=0.000482 | Rel.CI=40.84%
+    Progress: 20000 requests | P_b=0.001150 | CI=0.000470 | Rel.CI=40.85%
+    Progress: 20500 requests | P_b=0.001122 | CI=0.000458 | Rel.CI=40.85%
+    Progress: 21000 requests | P_b=0.001095 | CI=0.000447 | Rel.CI=40.85%
+    Progress: 21500 requests | P_b=0.001070 | CI=0.000437 | Rel.CI=40.85%
+    Progress: 22000 requests | P_b=0.001045 | CI=0.000427 | Rel.CI=40.85%
+    Progress: 22500 requests | P_b=0.001067 | CI=0.000427 | Rel.CI=39.99%
+    Progress: 23000 requests | P_b=0.001043 | CI=0.000417 | Rel.CI=39.99%
+    Progress: 23500 requests | P_b=0.001021 | CI=0.000408 | Rel.CI=39.99%
+    Progress: 24000 requests | P_b=0.001042 | CI=0.000408 | Rel.CI=39.18%
+    Progress: 24500 requests | P_b=0.001265 | CI=0.000445 | Rel.CI=35.18%
+    Progress: 25000 requests | P_b=0.001240 | CI=0.000436 | Rel.CI=35.18%
+    Progress: 25500 requests | P_b=0.001216 | CI=0.000428 | Rel.CI=35.18%
+    Progress: 26000 requests | P_b=0.001192 | CI=0.000419 | Rel.CI=35.18%
+    Progress: 26500 requests | P_b=0.001170 | CI=0.000412 | Rel.CI=35.18%
+    Progress: 27000 requests | P_b=0.001148 | CI=0.000404 | Rel.CI=35.18%
+    Progress: 27500 requests | P_b=0.001127 | CI=0.000397 | Rel.CI=35.18%
+    Progress: 28000 requests | P_b=0.001107 | CI=0.000390 | Rel.CI=35.18%
+    Progress: 28500 requests | P_b=0.001088 | CI=0.000383 | Rel.CI=35.18%
+    Progress: 29000 requests | P_b=0.001069 | CI=0.000376 | Rel.CI=35.18%
+    Progress: 29500 requests | P_b=0.001051 | CI=0.000370 | Rel.CI=35.18%
+    Progress: 30000 requests | P_b=0.001033 | CI=0.000364 | Rel.CI=35.18%
+    Progress: 30500 requests | P_b=0.001115 | CI=0.000375 | Rel.CI=33.59%
+    Progress: 31000 requests | P_b=0.001097 | CI=0.000368 | Rel.CI=33.60%
+    Progress: 31500 requests | P_b=0.001079 | CI=0.000363 | Rel.CI=33.60%
+    Progress: 32000 requests | P_b=0.001063 | CI=0.000357 | Rel.CI=33.60%
+    Progress: 32500 requests | P_b=0.001046 | CI=0.000351 | Rel.CI=33.60%
+    Progress: 33000 requests | P_b=0.001091 | CI=0.000356 | Rel.CI=32.65%
+    Progress: 33500 requests | P_b=0.001075 | CI=0.000351 | Rel.CI=32.65%
+    Progress: 34000 requests | P_b=0.001059 | CI=0.000346 | Rel.CI=32.65%
+    Progress: 34500 requests | P_b=0.001043 | CI=0.000341 | Rel.CI=32.65%
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+    Progress: 35000 requests | P_b=0.009543 | CI=0.001019 | Rel.CI=10.67%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 100,
+    "load": 60,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 35190,
+    "transient_contention_rate": 0.0,
+    "successful_requests": 34809,
+    "blocked_requests": 381,
+    "blocking_probability": 0.01082694,
+    "absolute_confidence_interval": 0.00108127,
+    "relative_confidence_interval_pct": 9.9869,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 500000,
+    "blocking_reasons": {
+        "No valid route found": 113,
+        "API_CONNECTION_FAILED": 268
+    }
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=100G | ERLANG=50
+Stopping: CI <= 10.0% of P_b OR max 500000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 601.84s ---
+    Transient: 497 requests, 77 blocked
+    Progress: 500 requests | P_b=0.178000 | CI=0.033529 | Rel.CI=18.84%
+    Progress: 1000 requests | P_b=0.176000 | CI=0.023603 | Rel.CI=13.41%
+    Progress: 1500 requests | P_b=0.198000 | CI=0.020166 | Rel.CI=10.19%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": 100,
+    "load": 50,
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 1575,
+    "transient_contention_rate": 15.49295775,
+    "successful_requests": 1266,
+    "blocked_requests": 309,
+    "blocking_probability": 0.19619048,
+    "absolute_confidence_interval": 0.01961243,
+    "relative_confidence_interval_pct": 9.9966,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 500000,
+    "blocking_reasons": {
+        "No valid route found": 309
+    }
+}

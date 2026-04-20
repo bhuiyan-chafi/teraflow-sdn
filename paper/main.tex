@@ -1,0 +1,182 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+%Template version as of 6/27/2024
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Conference Paper Title*\\
+{\footnotesize \textsuperscript{*}Note: Sub-titles are not captured for https://ieeexplore.ieee.org  and
+should not be used}
+\thanks{Identify applicable funding agency here. If none, delete this.}
+}
+
+\author{\IEEEauthorblockN{1\textsuperscript{st} Given Name Surname}
+    \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+        \textit{name of organization (of Aff.)}\\
+        City, Country \\
+        email address or ORCID}
+    \and
+    \IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
+    \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+        \textit{name of organization (of Aff.)}\\
+        City, Country \\
+        email address or ORCID}
+    \and
+    \IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
+    \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+        \textit{name of organization (of Aff.)}\\
+        City, Country \\
+        email address or ORCID}
+}
+
+\maketitle
+
+\begin{abstract}
+    Flexible-grid optical networks improve spectrum efficiency but introduce additional challenges for Routing and Spectrum Allocation (RSA). These constraints become even more critical in the presence of parallel links between network nodes, where multiple links interconnect the same pair of nodes, causing a combinatorial growth of feasible routing options and making conventional SDN-based path computation inefficient. This is further complicated by strict spectrum continuity and contiguity constraints requiring fine-grained slot management.
+
+    This paper presents \emph{ParallelOpticalController}, a microservice integrated into \emph{TeraFlow} SDN ecosystem to address both routing scalability and spectrum allocation complexity. The solution models the network as a multi-directed graph to efficiently compute shortest and alternative paths, and employs a bitwise algorithm to rapidly identify contiguous spectrum slots across end-to-end paths.
+
+    With respect to solutions adopted in other SDN controllers, the proposed approach significantly reduces computational overhead while improving resource utilization, enabling scalable control of optical networks with parallel-link topologies. Furthermore, the work investigates key design parameters, such as the number of candidate paths and spectrum assignment policies, to identify the trade-offs that provide the best balance between scalability and resource utilization.
+\end{abstract}
+
+\begin{IEEEkeywords}
+    Software-defined optical networks (SDON), Elastic Optical Network (EON)
+\end{IEEEkeywords}
+
+\section{Introduction} %Max 1 page
+The paradigm shift in global data consumption, driven by bandwidth-intensive applications such as real-time ultra-high-definition (UHD) streaming, large-scale High-Performance Computing (HPC), and the pervasive deployment of Artificial Intelligence (AI) agents, has placed unprecedented pressure on optical core infrastructures. To accommodate this growth, the industry is transitioning from traditional fixed-grid Wavelength Division Multiplexing (WDM) toward more versatile Elastic Optical Networks (EONs) based on flexible grid architectures. While legacy WDM systems use rigid frequency channels that lead to spectral underutilization and low efficiency, EONs allow for dynamic spectrum allocation based on specific bitrate demands.
+
+However, the flexibility of EONs introduces a sophisticated computational challenge known as the Routing and Spectrum Allocation (RSA) problem. The fundamental complexity of RSA was formally established in \cite{wuDynamicRouting} as NP-hard. Recent research, such as the RFBSA framework in \cite{wuRFBSA}, has focused on joint optimization to improve throughput, yet significant scalability challenges remain regarding multi-fiber parallel links. Specifically, when multiple fibers are routed through the same Wavelength Selective Switch (WSS), frequency reuse is inhibited, causing the computational search space to expand exponentially. Traditional Software Defined Optical Network (SDON) controllers manage these resources through linear, recursive methods, resulting in prohibitive time complexity in high-density fiber environments.
+
+To address these bottlenecks, this paper introduces an optimized ParallelOpticalController integrated into the TeraFlowSDN ecosystem. The proposed framework utilizes Dijkstra's algorithm to identify unique path combinations and adopts a Random-Fit (RF) policy to balance the load across parallel resources. A novel RSA mechanism is implemented using endpoint-based bitmaps and parallel bitwise intersections, effectively shifting the computational complexity from exponential $\mathcal{O}(k^n)$ (in worst cases) to linear levels ($\mathcal{O}(n.k)$) where $n$ represents the number of hops and $k$ denotes the parallel link density. The remainder of this paper is organized as follows: Section II provides the technical background and problem statement; Section III details the implementation within TeraFlowSDN; Sections IV and V describe the architectural and algorithmic design; Section VI presents the performance evaluation; and Section VII concludes the work.
+\section{Background and Problem Statement} % Technical details and formal problem definition
+EONs utilize the ITU-T G.694.1 flexible DWDM grid standard to achieve high spectral efficiency. Under this standard, the optical spectrum is discretized into small Frequency Slot Units (FSUs). The nominal central frequency ($f_c$) is defined by the formula:
+\[
+    f_c = 193.1 THz + (n \times 0.00625) THz
+\]
+where $n$ is an integer. The allocated slot width ($\Delta f$) is determined by:
+\[
+    \Delta f = 12.5 GHz \times m
+\]
+where $m$ is a positive integer representing the number of contiguous FSUs. This granularity enables diverse bitrates to coexist within the same fiber with minimal guard bands, maximizing total throughput.
+
+An effective RSA algorithm must determine an optimal physical path while satisfying two critical constraints:
+\begin{itemize}
+    \item \textbf{Spectrum Continuity:} The same frequency slots must be allocated across every link along the chosen path.
+    \item \textbf{Spectrum Contiguity:} The allocated FSUs must be adjacent in the frequency domain to support a single lightpath.
+\end{itemize}
+Inefficient allocation leads to spectral fragmentation, where small gaps of free spectrum become unusable for new high-speed requests.
+
+In multi-fiber deployments, parallel links between nodes significantly increase routing complexity. When multiple fibers connect an optical muxponder to the same WSS of a ROADM, they cannot reuse frequencies for a single lightpath request because they propagate in the same direction. In scenarios with a uniform number of parallel links per hop, existing controllers often perform recursive, individual computations for every possible path. This approach treats each fiber as an isolated entity, leading to an exponential growth in path computation time as the network scale increases.
+\section{The Parallel Optical Controller} %Max 1.5 page including the subsections
+The TeraFlowSDN (TFS) ecosystem provides a cloud-native, modular framework for controlling software-defined optical networks. Within this ecosystem, the \texttt{ParallelOpticalController} is implemented as a decoupled, independent microservice. Unlike core infrastructural components, this modular design allows for portable deployment, enabling network operators to integrate advanced multi-fiber routing capabilities without altering the foundational control plane.
+%1. Brief intro on the TeraFlow ecosystem
+
+\subsection{Design} %An architectural figure could be useful
+
+%1. Architectural details on sofware implementation of your tool.
+The controller is containerized and orchestrated via MicroK8s, adhering to official TeraFlowSDN community guidelines. To ensure interoperability and expose advanced routing options to the overarching system, the deployment requires a coordinated restart of adjacent microservices, specifically the \texttt{DeviceService} and \texttt{ContextService}. Once integrated, the controller follows an event-driven operational lifecycle. When a new lightpath request is initiated via the TeraFlowSDN WebUI using a JSON descriptor, the TFS core generates a service request object which the \texttt{ParallelOpticalController} subsequently processes.
+\subsection{Algorithms}
+
+%1. Accurate description of implemented solution
+% --- Routing over Multi-Directed Graphs
+To achieve computationally efficient routing, the algorithm utilizes the NetworkX library for complex network analysis. The routing engine queries a simplified graph abstraction, $G_{simple}$, where parallel physical fibers between nodes are collapsed into single logical edges. By routing over $G_{simple}$ rather than a raw physical multi-graph, the controller prevents the state-space explosion and latency bottlenecks common in traditional algorithms. The engine first identifies the shortest path and then computes a set of viable alternative routes. Once these node-level routes are discovered, they are projected back onto the available-resource multi-graph, $G_{free}$. Finally, a Random-Fit (RF) policy is adopted to select the specific path from the available parallel resources.
+% --- Bitwise Spectrum Allocation
+Following path selection, the controller initiates the spectrum allocation phase based on the requested slot count, $N_r$. It retrieves the real-time operational state of all physical links comprising the path from its internal database. The spectrum utilization of each port is mathematically encoded as an integer \texttt{bitmap-value}, calculated using the formulation:
+\[
+    \text{bitmap-value} = 2^N - 1
+\]
+where $N$ represents the number of slots. The integer representing the widest supported operational band (e.g., C+L band) is designated as \texttt{bitmap\_initial}.
+
+For each hop between source $N_s$ and destination $N_d$, the controller aggregates all available source and destination ports into sets $P_{src}$ and $P_{dst}$, respectively. The utilization bitmaps are zero-padded or expanded to match the bit-length of the \texttt{bitmap\_initial}. Once aligned, the controller executes a concurrent bitwise intersection (logical AND operations) across the expanded bitmaps of all eligible ports within the hop. This concurrent evaluation collapses multi-fiber complexity into a unified mathematical representation, resulting in a \texttt{bitmap\_final}. Finally, the controller applies a First-Fit policy to the \texttt{bitmap\_final} to identify the lowest-indexed contiguous block of available slots that meets the required length $N_r$. The whole algorithm is presented as follows:
+\begin{algorithm}
+    \caption{RSA with parallel links}
+    \begin{algorithmic}[1] % [1] adds line numbers
+        \REQUIRE Topology $G=(V, E)$, Links $\mathcal{L}$, Request $\mathcal{R}$
+        \STATE \textbf{Step 1:} Create graph \textbf{G\_simple, G\_free}
+        \FORALL{$link \in \mathcal{L}$}
+        \STATE add devices as \textbf{nodes} in \textbf{G\_simple, G\_free}
+        \STATE add links as \textbf{edges} in \textbf{G\_simple}
+        \STATE filter valid links as \textbf{valid\_edges}
+        \STATE add links as \textbf{edges} in \textbf{G\_free}
+        \ENDFOR
+        \STATE \textbf{Step 2:} Calculate shortest path using Dijkstra's algorithm
+        \STATE $dijkstra\_node\_path$ = G\_free, shortest paths, random-fit
+        \STATE $dynamic\_cutoff$ = dijkstra\_hops + EXTRA\_HOPS
+        \STATE $simple\_node\_path$ = G\_simple, dynamic\_cutoff, first\_fit
+        \STATE \textbf{Step 3:} Perform RSA on selected path
+        \STATE RSA on \textbf{dijkstra\_node\_path} or \textbf{simple\_node\_path}
+        \STATE \textbf{Step 3.1:}
+        \STATE calculate required bandwidth $B\_r$, and number of slots $N\_s$
+        \STATE \textbf{Step 3.2:}
+        \FORALL{$hop \in path\_node$}
+        \STATE get link information
+        \STATE find min\_frequency \& max\_frequency
+        \STATE calculate $reference\_bitmap$
+        \STATE get source, destination parallel endpoint bitmaps
+        \STATE align them with $reference\_bitmap$
+        \STATE perform intersection \& update $reference\_bitmap$
+        \ENDFOR
+        \STATE \textbf{Step 3.3:}
+        \STATE check slot availability, continuity and contiguity
+        \IF{success}
+        \STATE $\mathcal{R}$ is \textbf{success}
+        \ELSE
+        \STATE $\mathcal{R}$ is \textbf{blocked}
+        \ENDIF
+    \end{algorithmic}
+\end{algorithm}
+\section{Performance Evaluation} %One page including at least 2 results figures
+To assess the performance of the \texttt{ParallelOpticalController}, we performed two distinct evaluations to determine both functional scalability and statistical network performance. The functional evaluation is conducted within the TeraFlowSDN ecosystem by issuing lightpath requests to the controller. To assess the scalability and algorithmic efficiency of the proposed scheme, execution times were recorded across four sequential phases: Graph Generation, Shortest Path Computation, RSA Computation, and Additional Path Computation.
+
+Measurements were taken across four reference topologies—Linear, Butterfly, NSFNet, and Pan-European (PANEU)—with each evaluated in both a standard single-fiber baseline and a highly dense multi-fiber parallel configuration. All execution metrics are measured in seconds. The results of these measurements are summarized in Table \ref{table:execution_times}.
+\begin{table}[htbp]
+    \centering
+    \resizebox{\textwidth}{!}{\begin{tabular}{|c|c|c|c|c|c|}
+            \hline
+            \textbf{Topology}  & \textbf{Graph gen.} & \textbf{Shortest path com.} & \textbf{RSA comp.} & \textbf{Additional path comp.} & \textbf{Efficiency} \\
+            \hline
+            Linear Single      & 0.0018              & 0.0012                      & 0.0003             & 0.0009                         & -                   \\
+            \hline
+            Linear Parallel    & 0.0018              & 0.0016                      & 0.0005             & 0.0009                         & 87.50\%             \\
+            \hline
+            Butterfly Single   & 0.0014              & 0.0008                      & 0.0004             & 0.0007                         & -                   \\
+            \hline
+            Butterfly Parallel & 0.0017              & 0.0016                      & 0.0007             & 0.0007                         & 70.21\%             \\
+            \hline
+            NSF Single         & 0.0019              & 0.0016                      & 0.0007             & 0.0023                         & -                   \\
+            \hline
+            NSF Parallel       & 0.0022              & 0.0021                      & 0.0011             & 0.0024                         & 83.33\%             \\
+            \hline
+            PANEU Single       & 0.0024              & 0.0024                      & 0.0013             & 0.0134                         & -                   \\
+            \hline
+            PANEU Parallel     & 0.0026              & 0.0027                      & 0.0019             & 0.0141                         & 91.54\%             \\
+            \hline
+        \end{tabular}}
+    \caption{Efficiency evaluation of ParallelOpticalController}
+    \label{tab:complexity_analysis_table}
+\end{table}
+
+
+\subsection{Simulation setup and metrics}
+The statistical evaluation is performed by mimicking the exact network configuration in a separate environment. Since TeraFlowSDN is a well-structured and secure micro-service-based SDN, it is more efficient to perform extensive load testing and statistical analysis outside the primary ecosystem.
+
+To perform this simulation, a simulator has been designed to test the NSFNET and Pan-European topologies under various traffic loads. The evaluation considers a variety bitrates, specifically 100, 400 and 800 Gbps. Furthermore, the test evaluates the controller's path blocking probability ($P_b$) by comparing two different path selection criteria: First-Fit and Random-Fit (RF).
+\subsection{Simulation results}
+The simulation results focus on the blocking probability ($P_b$) as a function of the offered load in Erlangs.
+\section{Conclusion} %5-8 lines
+% 1. Be short here, use past tense briefly recall what you did and which is the main results
+\bibliographystyle{IEEEtran}
+\bibliography{main}
+\end{document}

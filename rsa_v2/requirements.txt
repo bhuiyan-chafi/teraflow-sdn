@@ -1,0 +1,6 @@
+Flask
+networkx
+psycopg2-binary
+Flask-SQLAlchemy
+matplotlib
+

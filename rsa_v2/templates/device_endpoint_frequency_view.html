@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Endpoint Frequency View</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container mt-5">
+      <!-- Device Information -->
+      <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+          Device Information
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <p><strong>Device Name:</strong> {{ device.name }}</p>
+              <p><strong>Device Type:</strong> {{ device.type }}</p>
+            </div>
+            <div class="col-md-6">
+              <p><strong>Vendor:</strong> {{ device.vendor if device.vendor else '-' }}</p>
+              <p><strong>Model:</strong> {{ device.model if device.model else '-' }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Endpoint Information -->
+      <div class="card mb-4">
+        <div class="card-header bg-info text-white">
+          Endpoint Information
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <p><strong>Endpoint Name:</strong> {{ endpoint.name }}</p>
+              <p><strong>Type:</strong> {{ endpoint.type }}</p>
+              <p><strong>OTN Type:</strong> {{ endpoint.otn_type }}</p>
+            </div>
+            <div class="col-md-6">
+              <p><strong>In Use:</strong> 
+                {% if endpoint.in_use %}
+                <span class="badge bg-success">Yes</span>
+                {% else %}
+                <span class="badge bg-secondary">No</span>
+                {% endif %}
+              </p>
+              <p><strong>UUID:</strong> <small>{{ endpoint.id }}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Frequency Capabilities -->
+      <div class="card mb-4">
+        <div class="card-header bg-success text-white">
+          Frequency Capabilities
+        </div>
+        <div class="card-body">
+          {% if endpoint.min_frequency and endpoint.max_frequency %}
+          <div class="row">
+            <div class="col-md-6">
+              <h6 class="text-primary">Minimum Frequency</h6>
+              <p><strong>THz:</strong> {{ "{:.3f}".format(endpoint.min_frequency | hz_to_thz) }} THz</p>
+            </div>
+            <div class="col-md-6">
+              <h6 class="text-primary">Maximum Frequency</h6>
+              <p><strong>THz:</strong> {{ "{:.3f}".format(endpoint.max_frequency | hz_to_thz) }} THz</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-6">
+              <h6 class="text-primary">Frequency Range</h6>
+              <p><strong>Bandwidth:</strong> {{ "{:,.2f}".format((endpoint.max_frequency - endpoint.min_frequency) | hz_to_ghz) }} GHz</p>
+              {% if band_info %}
+              <p><strong>Optical Band:</strong> {{ band_info.band_name }}-Band</p>
+              <p><strong>Wavelength Range:</strong> {{ band_info.wavelength_range[0] }}-{{ band_info.wavelength_range[1] }} nm</p>
+              {% else %}
+              <p><strong>Optical Band:</strong> Not detected</p>
+              <p><strong>Wavelength Range:</strong> N/A</p>
+              {% endif %}
+            </div>
+            <div class="col-md-6">
+              <h6 class="text-primary">Flexible Grid Slots</h6>
+              <p><strong>Total Slots:</strong> {{ endpoint.flex_slots if endpoint.flex_slots else 'N/A' }}</p>
+              <p><strong>Slot Granularity:</strong> 6.25 GHz (ITU-T G.694.1)</p>
+            </div>
+          </div>
+          {% else %}
+          <p class="text-muted">Frequency capability information not available for this endpoint.</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Bitmap Information (Placeholder) -->
+      <div class="card mb-4">
+        <div class="card-header bg-warning text-dark">
+          Spectrum Allocation Table
+        </div>
+        <div class="card-body">
+          {% if slot_table %}
+          <p class="mb-3">
+            <strong>Slot Granularity:</strong> {{ "{:.2f}".format(slot_granularity | hz_to_ghz) }} GHz (ITU-T G.694.1)
+          </p>
+          <p class="mb-3 text-muted"><small>
+            <span class="badge bg-secondary">UNAVAILABLE</span> = Outside device capability | 
+            <span class="badge bg-success">AVAILABLE</span> = Free slot | 
+            <span class="badge bg-warning text-dark">IN_USE</span> = Allocated slot | 
+            <span class="badge bg-info">ANCHOR</span> = ITU anchor frequency
+          </small></p>
+          
+          <div class="table-responsive" style="max-height: 500px; overflow-y: auto;">
+            <table class="table table-sm table-striped table-hover">
+              <thead class="table-light sticky-top">
+                <tr>
+                  <th scope="col">Slot #</th>
+                  <th scope="col">Frequency (THz)</th>
+                  <th scope="col">Availability</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for slot in slot_table %}
+                <tr class="{% if slot.is_anchor %}table-info{% elif slot.availability == 'UNAVAILABLE' %}table-secondary{% elif slot.availability == 'AVAILABLE' %}table-success{% elif slot.availability == 'IN_USE' %}table-warning{% endif %}">
+                  <td>{{ loop.index0 }}</td>
+                  <td>{{ "{:.6f}".format(slot.frequency | hz_to_thz) }}</td>
+                  <td>
+                    {% if slot.is_anchor %}
+                    <span class="badge bg-info">ANCHOR - {{ slot.availability }}</span>
+                    {% elif slot.availability == 'UNAVAILABLE' %}
+                    <span class="badge bg-secondary">UNAVAILABLE</span>
+                    {% elif slot.availability == 'AVAILABLE' %}
+                    <span class="badge bg-success">AVAILABLE</span>
+                    {% elif slot.availability == 'IN_USE' %}
+                    <span class="badge bg-warning text-dark">IN_USE</span>
+                    {% endif %}
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="mt-3">
+            <p><strong>Summary:</strong></p>
+            <ul>
+              <li>Total Standard Slots: {{ slot_table | length }}</li>
+              <li>Device Capable Slots: {{ endpoint.flex_slots if endpoint.flex_slots else 'N/A' }}</li>
+              <li>Unavailable: {{ slot_table | selectattr('availability', 'equalto', 'UNAVAILABLE') | list | length }} (outside device range)</li>
+              <li>Available: {{ slot_table | selectattr('availability', 'equalto', 'AVAILABLE') | list | length }} (free)</li>
+              <li>In Use: {{ slot_table | selectattr('availability', 'equalto', 'IN_USE') | list | length }} (allocated)</li>
+            </ul>
+          </div>
+          {% else %}
+          <p class="text-muted">Spectrum allocation information not available for this endpoint.</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="d-flex gap-2 mb-5">
+        <a href="{{ url_for('device_details', device_id=device.id) }}" class="btn btn-secondary">Back to Device Details</a>
+        <a href="{{ url_for('devices') }}" class="btn btn-outline-secondary">Back to Devices</a>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

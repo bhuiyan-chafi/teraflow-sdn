@@ -1,0 +1,150 @@
+<org-openroadm-device xmlns="http://org/openroadm/device"
+    xmlns:org-openroadm-common-optical-channel-types="http://org/openroadm/common-optical-channel-types">
+    <!-- Device Identity -->
+    <info>
+        <node-id>ROADM-20</node-id>
+        <node-number>1</node-number>
+        <node-type>rdm</node-type>
+        <clli>PISA-OFFICE</clli>
+        <vendor>Mellanox</vendor>
+        <model>ROADM-20</model>
+        <serial-id>RDM-101</serial-id>
+    </info>
+
+    <!-- Physical Ports Definition -->
+    <circuit-packs>
+        <circuit-pack-name>1/0</circuit-pack-name>
+        <circuit-pack-type>Calient-S320</circuit-pack-type>
+        <admin-state>inService</admin-state>
+        <vendor>Mellanox</vendor>
+        <model>ROADM-20</model>
+
+        <!-- Degree 1 Ports (Network Side) -->
+        <ports>
+            <port-name>4101</port-name>
+            <port-type>broadband</port-type>
+            <port-qual>roadm-external</port-qual>
+            <label>Degree 1 Input</label>
+        </ports>
+        <ports>
+            <port-name>5201</port-name>
+            <port-type>broadband</port-type>
+            <port-qual>roadm-external</port-qual>
+            <label>Degree 1 Output</label>
+        </ports>
+        <ports>
+            <port-name>4102</port-name>
+            <port-type>broadband</port-type>
+            <port-qual>roadm-external</port-qual>
+        </ports>
+        <ports>
+            <port-name>5202</port-name>
+            <port-type>broadband</port-type>
+            <port-qual>roadm-external</port-qual>
+        </ports>
+
+        <!-- Degree 2 Ports (Network Side) -->
+        <ports>
+            <port-name>5101</port-name>
+            <port-type>broadband</port-type>
+            <port-qual>roadm-external</port-qual>
+            <label>Degree 2 Input</label>
+        </ports>
+        <ports>
+            <port-name>4201</port-name>
+            <port-type>broadband</port-type>
+            <port-qual>roadm-external</port-qual>
+            <label>Degree 2 Output</label>
+        </ports>
+
+        <!-- SRG1 Ports (Add/Drop Side) -->
+        <ports>
+            <port-name>1010</port-name>
+            <port-type>broadband</port-type>
+            <port-qual>roadm-external</port-qual>
+            <label>SRG1 Drop</label>
+        </ports>
+        <ports>
+            <port-name>1011</port-name>
+            <port-type>broadband</port-type>
+            <port-qual>roadm-external</port-qual>
+            <label>SRG1 Add</label>
+        </ports>
+    </circuit-packs>
+
+    <!-- Logical Degrees (Line Side) -->
+    <degree>
+        <degree-number>1</degree-number>
+        <max-wavelengths>96</max-wavelengths>
+        <circuit-packs>
+            <index>1</index>
+            <circuit-pack-name>1/0</circuit-pack-name>
+        </circuit-packs>
+        <!-- Mapping physical ports to connection ports -->
+        <connection-ports>
+            <index>1</index>
+            <circuit-pack-name>1/0</circuit-pack-name>
+            <port-name>4101</port-name> <!-- Input -->
+        </connection-ports>
+        <connection-ports>
+            <index>2</index>
+            <circuit-pack-name>1/0</circuit-pack-name>
+            <port-name>5201</port-name> <!-- Output -->
+        </connection-ports>
+        <!-- OpenROADM often uses an mc-capability-profile reference for spectrum -->
+        <mc-capability-profile-name>C-Band-Flex</mc-capability-profile-name>
+    </degree>
+
+    <degree>
+        <degree-number>2</degree-number>
+        <max-wavelengths>96</max-wavelengths>
+        <circuit-packs>
+            <index>1</index>
+            <circuit-pack-name>1/0</circuit-pack-name>
+        </circuit-packs>
+        <connection-ports>
+            <index>1</index>
+            <circuit-pack-name>1/0</circuit-pack-name>
+            <port-name>5101</port-name>
+        </connection-ports>
+        <connection-ports>
+            <index>2</index>
+            <circuit-pack-name>1/0</circuit-pack-name>
+            <port-name>4201</port-name>
+        </connection-ports>
+        <mc-capability-profile-name>C-Band-Flex</mc-capability-profile-name>
+    </degree>
+
+    <!-- Logical Shared Risk Groups (Add/Drop Side) -->
+    <shared-risk-group>
+        <srg-number>1</srg-number>
+        <max-add-drop-ports>4</max-add-drop-ports>
+        <circuit-packs>
+            <index>1</index>
+            <circuit-pack-name>1/0</circuit-pack-name>
+        </circuit-packs>
+        <srg-port>
+            <index>1</index>
+            <circuit-pack-name>1/0</circuit-pack-name>
+            <port-name>1010</port-name>
+        </srg-port>
+        <srg-port>
+            <index>2</index>
+            <circuit-pack-name>1/0</circuit-pack-name>
+            <port-name>1011</port-name>
+        </srg-port>
+        <mc-capability-profile-name>C-Band-Flex</mc-capability-profile-name>
+    </shared-risk-group>
+
+    <!-- Frequency Capabilities -->
+    <mc-capability-profile>
+        <profile-name>C-Band-Flex</profile-name>
+        <center-freq-granularity>6.25</center-freq-granularity>
+        <min-edge-freq>191.325</min-edge-freq>
+        <max-edge-freq>196.11875</max-edge-freq>
+        <slot-width-granularity>12.5</slot-width-granularity>
+        <min-slots>1</min-slots>
+        <max-slots>32</max-slots>
+    </mc-capability-profile>
+
+</org-openroadm-device>

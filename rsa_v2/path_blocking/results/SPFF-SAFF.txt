@@ -1,0 +1,16 @@
+✅ Successfully loaded 22 links for study.
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=500
+Stopping: CI <= 5.0% of P_b OR max 500000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.00s ---
+    Transient: 5052 requests, 336 blocked
+    Progress: 500 requests | P_b=0.072000 | CI=0.022657 | Rel.CI=31.47%
+    Progress: 1000 requests | P_b=0.096000 | CI=0.018259 | Rel.CI=19.02%
+    Progress: 1500 requests | P_b=0.101333 | CI=0.015272 | Rel.CI=15.07%
+    Progress: 2000 requests | P_b=0.101500 | CI=0.013235 | Rel.CI=13.04%
+    Progress: 2500 requests | P_b=0.097600 | CI=0.011634 | Rel.CI=11.92%
+    Progress: 3000 requests | P_b=0.096000 | CI=0.010542 | Rel.CI=10.98%
+    Progress: 3500 requests | P_b=0.094571 | CI=0.009695 | Rel.CI=10.25%
+    Progress: 4000 requests | P_b=0.092250 | CI=0.008968 | Rel.CI=9.72%

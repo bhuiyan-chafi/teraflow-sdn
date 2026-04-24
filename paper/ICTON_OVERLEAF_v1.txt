@@ -1,0 +1,241 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\graphicspath{{graphics/}}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage[hyphens]{url}
+\usepackage{comment}
+
+\usepackage[pscoord]{eso-pic}
+    \newcommand{\placetextbox}[3]{
+        \setbox0=\hbox{#3}
+        \AddToShipoutPictureFG*{
+            \put(\LenToUnit{#1\paperwidth},\LenToUnit{#2\paperheight}){
+                \vtop{{\null}\makebox[0pt][c]{#3}}}
+            }
+    }
+    \placetextbox{.2}{0.055}{979-8-3315-9777-1/25/\$31.00 ©2025 IEEE}
+\usepackage{flushend}
+\usetikzlibrary{positioning}
+\usetikzlibrary{positioning, arrows.meta, shapes}
+\usetikzlibrary{decorations.pathmorphing}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\title{Enabling Routing and Spectrum Assignment with Parallel Links in the TeraFlow SDN Ecosystem}
+\author{
+\begin{tabular}{ccc}
+Asm Chafiullah Bhuiyan & Andrea Sgambelluri & Alessio Giorgetti \\
+University of Pisa, CNIT & Scuola Superiore Sant'Anna, CNIT & University of Pisa, CNIT \\
+Pisa - Italy & Pisa - Italy & Pisa - Italy \\
+a.bhuiyan@studenti.unipi.it & & alessio.giorgetti@unipi.it\\[1em]
+\end{tabular}
+}
+
+\maketitle
+
+\begin{abstract}
+Flexible-grid optical networks improve spectrum efficiency but introduce additional challenges for Routing and Spectrum Allocation (RSA). These constraints become even more critical in the presence of parallel links between network nodes, where multiple links interconnect the same pair of nodes, causing a combinatorial growth of feasible routing options and making conventional SDN-based path computation inefficient. This is further complicated by strict spectrum continuity and contiguity constraints requiring fine-grained slot management.
+
+This paper presents \emph{ParallelOpticalController}, a microservice integrated into \emph{TeraFlow} SDN ecosystem to address both routing scalability and spectrum allocation complexity. The solution models the network as a multi-directed graph to efficiently compute shortest and alternative paths, and employs a bitwise algorithm to rapidly identify contiguous spectrum slots across end-to-end paths.
+
+With respect to solutions adopted in other SDN controllers, the proposed approach significantly reduces computational overhead while improving resource utilization, enabling scalable control of optical networks with parallel-link topologies. Furthermore, the work investigates key design parameters, such as the number of candidate paths and spectrum assignment policies, to identify the trade-offs that provide the best balance between scalability and resource utilization.
+\end{abstract}
+
+\begin{IEEEkeywords}
+%find other 2/3 keywords
+Software-defined optical networks (SDON); Elastic Optical Network (EON); Parallel links; Optical fiber networks; Flex-grid dynamic scenario
+\end{IEEEkeywords}
+
+%by Alessio: TOTAL lenght is 4 pages including references.
+
+%Here below you find a suggestion for the paper structure....
+
+\section{Introduction} %Max 1 page
+%1. Introduce the general context (flex-grid optical networks and RSA).
+The paradigm shift in global data consumption, driven by bandwidth-intensive applications such as real-time ultra-high-definition streaming, large-scale High-Performance Computing, and the pervasive deployment of AI agents, has placed unprecedented pressure on optical core infrastructures~\cite{decix2025traffic}. To accommodate this growth, transport networks transitioned from traditional fixed-grid Wavelength Division Multiplexing (WDM) toward more versatile Elastic Optical Networks (EONs) based on flexible grid architectures. While legacy WDM systems use rigid frequency channels that lead to spectral under-utilization and low efficiency, EONs allow dynamic spectrum allocation based on specific bit-rate demands. It utilizes the ITU-T G.694.1 DWDM flex-grid standard~\cite{ituG6941} to achieve high spectral efficiency. Under this standard, the optical spectrum is discretized into small frequency slot units. The nominal central frequency is defined by the formula: $f_c = 193.1 THz + (n \times 0.00625) THz$, where $n$ is an integer number. The width of the allocated slot ($\Delta f$) is determined by: $\Delta f = 12.5 GHz \times m$, where $m$ is a positive integer representing the number of contiguous slots. This granularity enables diverse bit rates to coexist within the same fiber, maximizing the total throughput. While EONs offer significant flexibility, they introduce the Routing and Spectrum Allocation (RSA) problem, a complex computational challenge in optical network management.
+
+%2. Briefly mention relevant literature (only key references).
+The complexity of this calculation grows with respect to the number of nodes and edges in a topology, and the fundamental complexity was formally established as NP-hard~\cite{wangRSAInfocom}. Wu et al.~\cite{wuDynamicRSAEON} address this through a joint RSA framework incorporating multipath selection, spectrum partitioning, resource sharing, and next-state-aware (NSA) assignment. Their approach utilizes offline MILP-calculated probabilities for online path selection and a partitioning scheme with an NSA algorithm designed to minimize network-wide capacity loss. Similarly, Srivastava et al.~\cite{srivaSpectrumStatusRSA} propose Spectrum Status Aware RSA (SS-RSA), which employs a modified Dijkstra’s algorithm with dynamic link weights derived from available contiguous spectrum slices. Final spectrum assignment is performed using First-Fit (FF) or First-Last Fit policies under standard continuity and contiguity constraints to reduce blocking probability. Alam et al. in~\cite{alamMHLS} further extended these resource-aware heuristics by proposing the Minimum Hops with Least Slots (MHLS) algorithm for sliced EON systems using sliceable bandwidth variable transponders (SBVT). Their methodology involves calculating the number of hops ($H$) and the required frequency slot units (FSUs) for each request to derive a novel ordering parameter, $NP=FSUs\times H$. By sorting traffic demands in ascending order of $NP$ and serving them sequentially, the algorithm optimizes traffic grooming and minimizes spectral occupancy compared to traditional benchmark policies.
+%3. Mention the problem (impact of parallel links on scalability).
+However, the scalability of these algorithmic solutions is often challenged by the increasing complexity of the underlying physical network architecture. Specifically, when multiple fibers (parallel links) are routed through the same Wavelength Selective Switch (WSS), frequency reuse is inhibited, causing the computational search space to expand exponentially.
+
+%4. Highlight limitations of existing solutions (especially controller implementation)
+ Traditional Software Defined Optical Network (SDON) controllers manage these resources through linear, recursive methods, resulting in prohibitive time complexity in high-density fiber environments. Consequently, inefficient RSA execution leads to premature spectral fragmentation and higher blocking probabilities, ultimately resulting in poor network resource utilization.
+%5. Summarize the main contributions of the paper (including contributions to Teraflow).
+To address these bottlenecks, this paper introduces an optimized ParallelOpticalController (POC) integrated into the TeraFlowSDN (TFS) ecosystem. The proposed framework utilizes Dijkstra's algorithm to identify shortest unique path combinations and adopts a Parallel Aware Routing Scheme (PARS) to balance the load across resources. Spectrum assignment mechanism is implemented using endpoint-based bitmaps and bitwise intersections, effectively shifting the computational complexity from exponential $\mathcal{O}(k^n)$ to linear ($\mathcal{O}(n.k)$) where $n$ represents the number of hops and $k$ denotes the parallel link density. The remainder of this paper is organized as follows: Section II provides the technical background and problem statement; Section III details the architectural, algorithmic design and implementation of POC, within TFS; Section IV presents the performance evaluation; and Section V concludes the work.
+\section{Background and Problem Statement} %Half a page, include some references
+%1. Define the RSA problem in flex-grid networks.
+The RSA problem in flex-grid (EONs) is an evolution of the Routing and Wavelength Assignment (RWA) problem found in traditional fixed-grid WDM systems \cite{chatterjeeRSATutorial}. The fundamental difference lies in the EON's ability to adaptively partition the optical spectrum into variable-sized slots to match specific bitrate demands. Common approaches to RSA involve utilizing the K-Shortest Path algorithm for route discovery and the FF heuristic for spectrum assignment \cite{yangHoldingAwareRSA}. Additionally, guard bands must be implemented between adjacent channels to mitigate inter-channel interference and ensure a high quality of transmission \cite{chrisEBAFlex, patelRSAWDM}. RSA problems are categorized into two scenarios, static where traffic demands are known in advance, and dynamic, where connection requests arrive stochastically following a Poisson process \cite{zhangOptimalRSA, velascoSolvingRSA}. %In dynamic environments, the pursuit of high Quality of Service (QoS) necessitates efficient heuristics for rapid resource allocation, the feasibility of which is strictly governed by two fundamental spectral constraints.
+%2. Explain key constraints (spectrum continuity and contiguity).
+The RSA algorithm must find a path and then allocate a specific number of frequency slots to satisfy the bandwidth requirement. This allocation is strictly governed by the \textit{spectrum continuity constraint}, which mandates that the FSU indices are utilized across every fiber link along the selected path. Simultaneously, the \textit{spectrum contiguity constraint} requires that these slots be adjacent to one another in the frequency spectrum \cite{recalcatiBenefitsOfEON}. If a network controller fails to identify a block of frequency slots that satisfies both conditions, the lightpath request is blocked, regardless of the total aggregate free capacity. These fundamental constraints become significantly more complex with parallel links. 
+%3. Describe the effect of parallel links on routing complexity.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Icton/graphics/rsa_issue_parallel_links.png}
+    \caption{Effect of Parallel Links on RSA}
+    \label{fig:rsa_issue_parallel_links}
+\end{figure}
+ As illustrated in Fig.~\ref{fig:rsa_issue_parallel_links}, a lightpath request from $A_z$ can be established to $C_y$ through $B_y$, yet success depends entirely on the number of FSUs required to fulfill the demand. For instance, if a connection requires 6 FSUs based on flex-grid standards, the lightpath may be rejected even if segments $A_z \leftrightarrow B_z$ and $B_y \leftrightarrow C_y$ both possess 6 consecutive free slots. This rejection occurs because frequencies passing through the same \textit{WSS} to a common destination cannot be reused across parallel links; thus, if specific slots are occupied in a neighboring link, they remain unavailable for the requested path. In topologies with a uniform number of parallel links per hop, this results in an exponential computational complexity.
+\section{The Parallel Optical Controller} %Max 1.5 page including the subsections
+%1. Brief intro on the TeraFlow ecosystem
+The \textit{POC} is an independent microservice within the \textit{TFS} ecosystem which is a state-of-the-art, open-source SDN controller developed under the European Telecommunications Standards Institute to radically advance the orchestration of beyond 5G and 6G networks. Designed as a secure, cloud-native platform, \textit{TFS} employs a microservices-based architecture orchestrated within Kubernetes environments, enabling individual control components to operate autonomously and scale independently. This inherent modularity provides an ideal ecosystem for integrating custom logic, such as vendor-agnostic device drivers and novel path computation engines. As illustrated in Fig.~\ref{fig:tfs_architecture} the architecture is explicitly engineered to seamlessly integrate with modern Network Function Virtualization (NFV) and Multi-access Edge Computing (MEC) frameworks, including ETSI OpenSourceMANO. By unifying network and cloud resource management, TeraFlowSDN equips telecom operators and hyperscale cloud providers with zero-touch automation, high business agility, and dynamic service provisioning across complex, multi-tenant optical and packet transport infrastructures.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{tfs_architecture.png}
+    \caption{TeraflowSDN Architecture}
+    \label{fig:tfs_architecture}
+\end{figure}
+%The ecosystem relies on a highly coordinated suite of specialized microservices, communicating via Remote Procedure Calls (gRPC), to maintain network state and execute dynamic configurations. At the core of this architecture is the Context Service, which acts as the highly available, stateful storage mechanism maintaining the definitive global view of multi-domain topologies, devices, endpoints, and active network slices. Interacting closely with this centralized database is the Device Service, which manages all southbound interfaces by utilizing a modular framework of vendor-agnostic drivers—often leveraging NETCONF and OpenConfig models—to dynamically onboard and configure physical or emulated hardware. Furthermore, the Service Component oversees the end-to-end lifecycle of network connections by interpreting incoming connectivity requests and delegating cross-layer configurations to appropriate handlers. These fundamental operations are visually managed through a graphical WebUI that provides topology visualization and telemetry display, while the broader ecosystem is fortified by complementary microservices dedicated to machine learning-based security, distributed ledger technologies for multi-tenancy, and policy-driven automation to ensure robust, zero-touch network orchestration.
+\subsection{Design} %An architectural figure could be useful
+%1. Architectural details on the software implementation of your tool.
+\textit{POC} is deliberately designed as a decoupled, portable solution via MicroK8s.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{poc_service_orchestration.png}
+    \caption{Service Architecture of the POC}
+    \label{fig:poc_service_orchestration}
+\end{figure}
+As illustrated in Fig.~\ref{fig:poc_service_orchestration}, when a lightpath request is initiated, the \textit{TFS} core generates a corresponding service request object, which is subsequently exposed to the \textit{POC}. To construct topological graph abstractions and endpoint-based mappings, the POC extracts essential network state data via \textit{ContextService} and \textit{DeviceService}. Additionally, the controller leverages internal sub-modules to facilitate automated graph generation, spectral band detection, and bitmap precomputation. The microservice executes a precomputation phase to filter unusable links prior to formulating the network graph. It then computes the shortest and additional paths, applying parallel expansion to each of them to account for multi-fiber density, followed by a random selection of specific link combinations. Subsequently, the controller performs bitmap-based spatial RSA, prioritizing the shortest path and evaluating additional paths only if the primary route is unsuccessful. Upon identifying a valid candidate, slot acquisition is executed via a First-Fit initiated from Least Signigicant Bits (FF-LSB) scheme. Finally, the controller aggregates the validated physical paths, spatial port mappings, and spectral bitmaps into a unified, structured response payload. This payload is then transmitted back to the TFS \textit{WebService}, translating the complex mathematical matrices into an intuitive visual representation.
+\subsection{Algorithms}
+%1. Accurate description of the implemented solution
+% --- Routing over Multi-Directed Graphs
+To achieve computationally efficient routing, the algorithm utilizes the \textit{NetworkX}\cite{networkX} library for complex network analysis. The PARS converts the initial multi-directed graph \textit{G} into a simplified graph abstraction, $G_{simple}$, in which parallel physical links between nodes are collapsed into a single logical edge. By routing over $G_{simple}$ rather than a raw physical multi-graph, the controller prevents the state-space explosion and latency. The algorithm first identifies the shortest path via Dijkstra's algorithm and one additional candidate path satisfying the hop-count constraint $H\leq H_{min}+\Delta H$, where $H_{min}$ is the shortest path length and $\Delta H$ is the allowed additional hops. These two paths are subsequently projected back onto the initial multi-directed graph \textit{G} for parallel path expansion. Finally, an Random-Fit (RF) scheme is employed to select specific paths from the available parallel resources.
+% --- Bitwise Spectrum Allocation
+Following the path selection, the controller initiates the spectrum allocation phase based on the calculated slot count, $N_r$. It retrieves the real-time operational state of all physical links comprising the path from its internal database. The spectrum utilization of each port is mathematically encoded as an integer \textit{bitmap-value}, calculated using the formulation: $bitmap-value = 2^N - 1$, where $N$ represents the number of slots. The integer representing the widest supported operational band (e.g., C+L band) is designated as \textit{reference\_bitmap}.
+
+For each hop between source $N_s$ and destination $N_d$, the controller aggregates all available source and destination ports into two sets $P_{src}$ and $P_{dst}$, respectively. The utilization bitmaps are zero-padded to match the bit-length of the \textit{reference\_bitmap}. Once aligned, the controller executes a concurrent bitwise intersection (logical AND operations) across the aligned bitmaps of all eligible ports within the hop. This concurrent evaluation collapses parallel-link complexity into a linear representation, resulting in a \textit{bitmap\_final}. Finally, the controller applies \textbf{FF-LSB} to identify the lowest-indexed contiguous block of available slots that meets the required length $N_r$. The whole algorithm is presented as follows:
+\vspace{0.4cm}
+\hrule
+\vspace{0.1cm}
+\noindent\textbf{Algorithm 1} RSA with parallel links
+\vspace{0.1cm}
+\hrule
+\vspace{0.2cm}
+
+\begin{algorithmic}[1] % [1] adds line numbers
+    \REQUIRE Graph $G=(V, E)$, Usable Links $\mathcal{L}$, Lightpath Request $\mathcal{R}$
+    \STATE \textbf{Step 1:} Create graph \textbf{G}
+    \FORALL{$link \in \mathcal{L}$}
+    \STATE add devices as \textbf{nodes} in \textbf{G}
+    \STATE add links as \textbf{edges} in \textbf{G}
+    \ENDFOR
+    \STATE \textbf{Step 2:} Calculate shortest path using Dijkstra's algorithm
+    \STATE convert \textit{G} into \textit{$G_{simple}$}
+    \STATE $dijkstra_{path}$=find\_path($G_{simple}$, RF)
+    \STATE $additional_{path}$=find\_path($G_{simple}$, $H$, RF)
+    \STATE $dijkstra_{final}$=expand\_path($G$, $dijkstra_{path}$, PARS-RF)
+    \STATE $additional_{final}$=expand\_path($G$, $additional_{path}$, PARS-RF)
+    \STATE $final_{paths}$=$dijkstra_{final}$ + $additional_{final}$
+    \STATE \textbf{Step 3:} Perform Spectrum Assignment on selected paths
+    \STATE calculate required bandwidth $B\_r$, and number of slots $N\_r$
+    \STATE Select $path\_node=final_{paths}[dijkstra_{final}]$
+    \FORALL{$hop \in path\_node$}
+    \STATE get link information
+    \STATE find $min, max$ frequencies
+    \ENDFOR
+    \STATE calculate $reference\_bitmap$
+    \FORALL{$hop \in path\_node$}
+    \STATE get source, destination parallel endpoint bitmaps
+    \STATE align them with $reference\_bitmap$
+    \STATE perform intersection \& update $reference\_bitmap$
+    \STATE $bitamp\_final=reference\_bitmap$
+    \ENDFOR
+    \STATE apply \textit{FF-LSB} on $bitamp\_final$
+    \IF{success}
+    \STATE $\mathcal{R}$ is \textbf{success}
+    \ELSE
+    \STATE $\mathcal{R}$ is \textbf{blocked}
+    \ENDIF
+\end{algorithmic}
+\vspace{0.2cm}
+\hrule
+\vspace{0.4cm}
+\section{Performance Evaluation} %One page including at least 2 results figures
+To assess the performance of the \textit{POC}, we performed two distinct evaluations to determine both efficiency and statistical network performance. The efficiency evaluation is conducted within the TFS ecosystem by issuing a lightpath request to the controller and recording the execution time across four sequential phases: Graph Generation (GG), Shortest Path Computation (SPC), RSA Computation (RSAC), and Additional Path Computation (APC). Finally, the efficiency ($\mathcal{E}$) is measured by comparing the execution time using the formula: $\mathcal{E}=T_{single} / T_{parallel}$. The tested topologies are—Linear (LS, LP), NSFNet (NS, NP), and Pan-European (PS, PP)—with each evaluated in both a standard single-link baseline and a highly dense parallel configuration. All execution metrics are measured in seconds.
+\begin{table}[htbp]
+\caption{Efficiency evaluation of POC}
+    \label{tab:complexity_analysis_table}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+            \textbf{Topo}  & \textbf{GG} & \textbf{SPC} & \textbf{RSAC} & \textbf{APC} & \textbf{E} \\
+            \hline
+            LS      & 0.0018              & 0.0012                      & 0.0003             & 0.0009                         & -                   \\
+            \hline
+            LP    & 0.0018              & 0.0016                      & 0.0005             & 0.0009                         & 87.50\%             \\
+            \hline
+            NS         & 0.0019              & 0.0016                      & 0.0007             & 0.0023                         & -                   \\
+            \hline
+            NP       & 0.0022              & 0.0021                      & 0.0011             & 0.0024                         & 83.33\%             \\
+            \hline
+            PS       & 0.0024              & 0.0024                      & 0.0013             & 0.0134                         & -                   \\
+            \hline
+            PP     & 0.0026              & 0.0027                      & 0.0019             & 0.0141                         & 91.54\%             \\
+            \hline
+\end{tabular}
+\end{table}
+As detailed in Table~\ref{tab:complexity_analysis_table}, the execution times naturally increase linearly with network size, but the system maintains highly competitive efficiency rates. Specifically, the Pan European topology with parallel links peaks at an impressive 91.54\% efficiency, followed closely by the linear (87.50\%) and NSFNET (83.33\%) configurations. These results underscore the controller's capacity to deliver consistent, high-performance routing and spectrum assignment regardless of the underlying structural complexity.
+\subsection{Simulation setup and metrics}
+To perform the dynamic traffic simulation, a simulator has been designed using Python's Flask microframework outside the TFS ecosystem. Later, it is containerized using Docker and orchestrated via Docker Compose. Lightpath provisioning requests are dynamically generated following a Poisson process and uniformly distributed among the source-destination pairs. The inter-arrival time and holding time of the lightpath requests are exponentially distributed with an average of $1/\lambda$ and $1/\mu$ seconds, respectively. The load offered to the network in provisioning state condition is expressed in Erlangs as the ratio $\lambda/\mu$. The test has been carried out on two topologies: NSFNET (14 nodes and 25 links) and Pan-European (27 nodes and 56 links), under various traffic loads. The evaluation considers a variety of bitrates, specifically 100 and 400 Gbps. Furthermore, the test evaluates the controller's path blocking probability ($P_b$) by comparing two different path selection scheme: PARS-FF and PARS-RF.
+\subsection{Simulation results}
+Simulation results were obtained via the simulator, with data collection terminating upon reaching either a 10\% relative confidence interval at a 95\% confidence level or a maximum limit of $5 \times 10^5$ requests.
+% PanEU topology
+\begin{figure*}[t]
+    \centering
+    
+    % Image (a)
+    \subfloat[]{
+        \includegraphics[width=0.45\textwidth]{Icton/graphics/pan_FF_RF_OCH_OMS_100.png}
+        \label{fig:pan_FF_RF_OCH_OMS_100}
+    }
+    \hfill % Gap 1
+    % Image (b)
+    \subfloat[]{
+        \includegraphics[width=0.45\textwidth]{Icton/graphics/pan_FF_RF_OCH_OMS_400.png}
+        \label{fig:pan_FF_RF_OCH_OMS_400}
+    }
+    \caption{Provisioning in the Pan-European network: $P_b$ vs \textit{Erlangs}, $1/\mu=60s$. (a) FF, RF 100Gbps scheme. (b) FF, RF 400Gbps scheme}
+    \label{fig:paneu_topo}
+\end{figure*}
+\begin{figure*}[t]
+    \centering
+    % Image (a)
+    \subfloat[]{
+        \includegraphics[width=0.45\textwidth]{Icton/graphics/nsf_FF_RF_OCH_OMS_100.png}
+        \label{fig:nsf_FF_RF_OCH_OMS_100}
+    }
+    \hfill % Gap 1
+    % Image (b)
+    \subfloat[]{
+        \includegraphics[width=0.45\textwidth]{Icton/graphics/nsf_FF_RF_OCH_OMS_400.png}
+        \label{fig:nsf_FF_RF_OCH_OMS_400}
+    }
+    \caption{Provisioning in the NSFNET network: $P_b$ vs \textit{Erlangs}, $1/\mu=60s$. (a) FF, RF 100Gbps scheme. (b) FF, RF 400Gbps scheme}
+    \label{fig:nsf_topo}
+\end{figure*}
+As shown in Fig.~\ref{fig:pan_FF_RF_OCH_OMS_100}, the PARS-FF scheme outperforms the PARS-RF approach under low and moderate network loads. At these stages, the network is less congested, making it significantly easier for the PARS-FF strategy to locate available resources. Conversely, under high loads, frequent requests make it less probable that the specific links prioritized by PARS-FF can satisfy demands. In this scenario, the congestion state of the OMS links becomes a critical factor for successful allocation. The PARS-RF scheme maintains a higher probability of identifying less congested OMS links, whereas the PARS-FF scheme frequently encounters saturation. This same logic explains why PARS-RF outperforms PARS-FF in Fig.~\ref{fig:pan_FF_RF_OCH_OMS_400} when the bandwidth requirement is significantly increased. As 400Gbps requests require more FSUs, PARS-RF uses randomization to identify suitable resources, effectively minimizing the overall blocking probability.
+
+The results are also consistent for the NSFNET topology illustrated in Figure 5~\ref{fig:nsf_FF_RF_OCH_OMS_100}, exhibiting the same performance trends. While this smaller topology accommodates less traffic, the comparative behavior between the two selection schemes remains fundamentally unchanged. For low-bitrate traffic, the PARS-FF scheme continues to outperform PARS-RF during low and moderate network load scenarios. For higher bitrates illustrated in Figure 5~\ref{fig:nsf_FF_RF_OCH_OMS_400}, the PARS-RF scheme proves superior under these same loads by distributing demands more effectively. However, both schemes perform equally under high load conditions as the network reaches a state of complete resource saturation.
+\section{Conclusion} %5-8 lines
+% 1. Be short here, use past tense briefly recall what you did and which is the main results
+This paper we developed a network controller and an optimized RSA framework that utilized bitwise algorithms and simplified graph abstractions to manage the computational complexity inherent in parallel-link topologies. The solution was validated through both functional execution time measurements and dynamic traffic simulations across multiple reference topologies. Experimental results demonstrated that the proposed mechanism achieved high computational efficiency and maintained linear scalability as network density increased. Furthermore, statistical analysis revealed that while the PARS-FF scheme was effective under low loads, the PARS-RF approach significantly reduced blocking probabilities in high-load and high-bitrate scenarios by balancing traffic across parallel resources.
+\section*{Acknowledgment}
+%Administrative staff, please do not modify
+This work has been partially supported by: the Chips Joint Undertaking (JU), European Union (EU) HORIZON-JU-IA, under GA No.~101140087 (SMARTY); the EU Horizon Europe research and innovation program, ALLEGRO Project, under GA No.~101092766; the Italian Ministry of Education and Research (MUR) in the framework of the FoReLab project (Departments of Excellence).
+
+%10-15 references
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}

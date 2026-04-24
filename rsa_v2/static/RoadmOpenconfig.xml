@@ -1,0 +1,286 @@
+<config xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0">
+    <components xmlns="http://openconfig.net/yang/platform">
+        <!-- Device Identity -->
+        <component>
+            <name>device</name>
+            <config>
+                <name>device</name>
+            </config>
+            <state>
+                <name>device</name>
+                <mfg-name>Mellanox</mfg-name>
+                <model-name>ROADM-20</model-name>
+                <hardware-version>1.0.0</hardware-version>
+                <firmware-version>2.1.0</firmware-version>
+                <software-version>3.0.0</software-version>
+                <serial-no>RDM-101</serial-no>
+                <type xmlns:oc-platform-types="http://openconfig.net/yang/platform-types">
+                    oc-platform-types:CHASSIS</type>
+            </state>
+        </component>
+
+        <!-- Degree 1 Ports (Network Side) -->
+        <!-- Port 4101: D1 INPUT -> INGRESS -->
+        <component>
+            <name>4101</name>
+            <config>
+                <name>4101</name>
+            </config>
+            <state>
+                <name>4101</name>
+                <type xmlns:oc-platform-types="http://openconfig.net/yang/platform-types">
+                    oc-platform-types:PORT</type>
+                <description>Degree 1 Input (Network Ingress)</description>
+            </state>
+            <port xmlns="http://openconfig.net/yang/platform">
+                <optical-port xmlns="http://openconfig.net/yang/transport-line-common">
+                    <state>
+                        <optical-port-type
+                            xmlns:oc-opt-types="http://openconfig.net/yang/transport-types">
+                            oc-opt-types:INGRESS</optical-port-type>
+                    </state>
+                </optical-port>
+            </port>
+        </component>
+
+        <!-- Port 5201: D1 OUTPUT -> EGRESS -->
+        <component>
+            <name>5201</name>
+            <config>
+                <name>5201</name>
+            </config>
+            <state>
+                <name>5201</name>
+                <type xmlns:oc-platform-types="http://openconfig.net/yang/platform-types">
+                    oc-platform-types:PORT</type>
+                <description>Degree 1 Output (Network Egress)</description>
+            </state>
+            <port xmlns="http://openconfig.net/yang/platform">
+                <optical-port xmlns="http://openconfig.net/yang/transport-line-common">
+                    <state>
+                        <optical-port-type
+                            xmlns:oc-opt-types="http://openconfig.net/yang/transport-types">
+                            oc-opt-types:EGRESS</optical-port-type>
+                    </state>
+                </optical-port>
+            </port>
+        </component>
+
+        <!-- Other D1 Ports from roadm.xml for completeness -->
+        <component>
+            <name>4102</name>
+            <config>
+                <name>4102</name>
+            </config>
+            <state>
+                <name>4102</name>
+                <type xmlns:oc-platform-types="http://openconfig.net/yang/platform-types">
+                    oc-platform-types:PORT</type>
+                <description>Degree 1 Input</description>
+            </state>
+            <port xmlns="http://openconfig.net/yang/platform">
+                <optical-port xmlns="http://openconfig.net/yang/transport-line-common">
+                    <state>
+                        <optical-port-type
+                            xmlns:oc-opt-types="http://openconfig.net/yang/transport-types">
+                            oc-opt-types:INGRESS</optical-port-type>
+                    </state>
+                </optical-port>
+            </port>
+        </component>
+
+        <component>
+            <name>5202</name>
+            <config>
+                <name>5202</name>
+            </config>
+            <state>
+                <name>5202</name>
+                <type xmlns:oc-platform-types="http://openconfig.net/yang/platform-types">
+                    oc-platform-types:PORT</type>
+                <description>Degree 1 Output</description>
+            </state>
+            <port xmlns="http://openconfig.net/yang/platform">
+                <optical-port xmlns="http://openconfig.net/yang/transport-line-common">
+                    <state>
+                        <optical-port-type
+                            xmlns:oc-opt-types="http://openconfig.net/yang/transport-types">
+                            oc-opt-types:EGRESS</optical-port-type>
+                    </state>
+                </optical-port>
+            </port>
+        </component>
+
+        <!-- Degree 2 Ports (Network Side) -->
+        <!-- Port 5101: D2 INPUT -> INGRESS (Based on '51' pattern being opposite of '52' or just
+        checking properties) -->
+        <!-- Checking roadm.xml: 5101 has DIRECTION=INPUT, DEGREE=D2 -->
+        <component>
+            <name>5101</name>
+            <config>
+                <name>5101</name>
+            </config>
+            <state>
+                <name>5101</name>
+                <type xmlns:oc-platform-types="http://openconfig.net/yang/platform-types">
+                    oc-platform-types:PORT</type>
+                <description>Degree 2 Input</description>
+            </state>
+            <port xmlns="http://openconfig.net/yang/platform">
+                <optical-port xmlns="http://openconfig.net/yang/transport-line-common">
+                    <state>
+                        <optical-port-type
+                            xmlns:oc-opt-types="http://openconfig.net/yang/transport-types">
+                            oc-opt-types:INGRESS</optical-port-type>
+                    </state>
+                </optical-port>
+            </port>
+        </component>
+
+        <!-- Port 4201: D2 OUTPUT -> EGRESS -->
+        <!-- Checking roadm.xml: 4201 has DIRECTION=OUTPUT, DEGREE=D2 -->
+        <component>
+            <name>4201</name>
+            <config>
+                <name>4201</name>
+            </config>
+            <state>
+                <name>4201</name>
+                <type xmlns:oc-platform-types="http://openconfig.net/yang/platform-types">
+                    oc-platform-types:PORT</type>
+                <description>Degree 2 Output</description>
+            </state>
+            <port xmlns="http://openconfig.net/yang/platform">
+                <optical-port xmlns="http://openconfig.net/yang/transport-line-common">
+                    <state>
+                        <optical-port-type
+                            xmlns:oc-opt-types="http://openconfig.net/yang/transport-types">
+                            oc-opt-types:EGRESS</optical-port-type>
+                    </state>
+                </optical-port>
+            </port>
+        </component>
+
+        <!-- SRG Ports (Add/Drop Side) - Added for Completeness as per OpenRoadmNodeTIM -->
+        <!-- Port 1010: SRG1 INPUT (DROP to Client) -->
+        <component>
+            <name>1010</name>
+            <config>
+                <name>1010</name>
+            </config>
+            <state>
+                <name>1010</name>
+                <type xmlns:oc-platform-types="http://openconfig.net/yang/platform-types">
+                    oc-platform-types:PORT</type>
+                <description>SRG1 Drop (Output to Client)</description>
+            </state>
+            <port xmlns="http://openconfig.net/yang/platform">
+                <optical-port xmlns="http://openconfig.net/yang/transport-line-common">
+                    <state>
+                        <optical-port-type
+                            xmlns:oc-opt-types="http://openconfig.net/yang/transport-types">
+                            oc-opt-types:DROP</optical-port-type>
+                    </state>
+                </optical-port>
+            </port>
+        </component>
+
+        <!-- Port 1011: SRG1 OUTPUT (ADD from Client) -->
+        <component>
+            <name>1011</name>
+            <config>
+                <name>1011</name>
+            </config>
+            <state>
+                <name>1011</name>
+                <type xmlns:oc-platform-types="http://openconfig.net/yang/platform-types">
+                    oc-platform-types:PORT</type>
+                <description>SRG1 Add (Input from Client)</description>
+            </state>
+            <port xmlns="http://openconfig.net/yang/platform">
+                <optical-port xmlns="http://openconfig.net/yang/transport-line-common">
+                    <state>
+                        <optical-port-type
+                            xmlns:oc-opt-types="http://openconfig.net/yang/transport-types">
+                            oc-opt-types:ADD</optical-port-type>
+                    </state>
+                </optical-port>
+            </port>
+        </component>
+
+    </components>
+
+    <!-- Wavelength Router: Frequency Capabilities using Port Profiles -->
+    <wavelength-router xmlns="http://openconfig.net/yang/wavelength-router">
+        <port-spectrum-power-profiles>
+            <!-- Degree 1 Input (Network Ingress) -->
+            <port>
+                <name>4101</name>
+                <config>
+                    <name>4101</name>
+                </config>
+                <spectrum-power-profile>
+                    <distribution>
+                        <lower-frequency>191325000</lower-frequency>
+                        <upper-frequency>196118750</upper-frequency>
+                        <config>
+                            <lower-frequency>191325000</lower-frequency>
+                            <upper-frequency>196118750</upper-frequency>
+                        </config>
+                    </distribution>
+                </spectrum-power-profile>
+            </port>
+            <!-- Degree 1 Output (Network Egress) -->
+            <port>
+                <name>5201</name>
+                <config>
+                    <name>5201</name>
+                </config>
+                <spectrum-power-profile>
+                    <distribution>
+                        <lower-frequency>191325000</lower-frequency>
+                        <upper-frequency>196118750</upper-frequency>
+                        <config>
+                            <lower-frequency>191325000</lower-frequency>
+                            <upper-frequency>196118750</upper-frequency>
+                        </config>
+                    </distribution>
+                </spectrum-power-profile>
+            </port>
+            <!-- SRG1 Drop (Client Ingress) -->
+            <port>
+                <name>1010</name>
+                <config>
+                    <name>1010</name>
+                </config>
+                <spectrum-power-profile>
+                    <distribution>
+                        <lower-frequency>191325000</lower-frequency>
+                        <upper-frequency>196118750</upper-frequency>
+                        <config>
+                            <lower-frequency>191325000</lower-frequency>
+                            <upper-frequency>196118750</upper-frequency>
+                        </config>
+                    </distribution>
+                </spectrum-power-profile>
+            </port>
+            <!-- SRG1 Add (Client Egress) -->
+            <port>
+                <name>1011</name>
+                <config>
+                    <name>1011</name>
+                </config>
+                <spectrum-power-profile>
+                    <distribution>
+                        <lower-frequency>191325000</lower-frequency>
+                        <upper-frequency>196118750</upper-frequency>
+                        <config>
+                            <lower-frequency>191325000</lower-frequency>
+                            <upper-frequency>196118750</upper-frequency>
+                        </config>
+                    </distribution>
+                </spectrum-power-profile>
+            </port>
+        </port-spectrum-power-profiles>
+    </wavelength-router>
+</config>

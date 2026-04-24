@@ -16,3 +16,9 @@ To test using python please run the following command from the desired directory
 ```bash
 python3 test.py request --src RDMca1 --dst RDMny --bitrate 100 --path_strategy first-fit --spectrum_strategy random --path_type dijkstra --parallelpath_strategy none
 ```
+
+To check the logs:
+
+```bash
+docker compose logs rsa_api_parallel --follow --tail 100
+```

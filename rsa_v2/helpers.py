@@ -907,9 +907,7 @@ class TopologyHelper:
                 ep.in_use = (new_bitmap != all_available)
 
                 # Update status following the same rules as commit_slots
-                if ep.otn_type == OTN_TYPE_OCH:
-                    ep.status = "FULL" if ep.in_use else "FREE"
-                elif ep.otn_type == OTN_TYPE_OMS:
+                if ep.otn_type == OTN_TYPE_OMS:
                     if new_bitmap == 0:
                         ep.status = "FULL"
                     elif new_bitmap == all_available:

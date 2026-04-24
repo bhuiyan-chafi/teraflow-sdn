@@ -7,5 +7,12 @@ V.2 is the modified version for the simulation. After receiving the comments fro
 To run a simulation you can check the configuration [here](./path_blocking/run_simulation.sh). One simple command is:
 
 ```bash
-bash run_simulation.sh first-fit first-fit dijkstra True NSF_SPFF-SAFF
+# Usage: ./run_simulation.sh [PATH_STRATEGY] [SPECTRUM_STRATEGY] [PATH_TYPE] [PP_STRAT] [LINK_STUDY] [LOG_NAME]
+bash run_simulation.sh first-fit first-fit both none True NSF_TEST
+```
+
+To test using python please run the following command from the desired directory:
+
+```bash
+python3 test.py request --src RDMca1 --dst RDMny --bitrate 100 --path_strategy first-fit --spectrum_strategy random --path_type dijkstra --parallelpath_strategy none
 ```

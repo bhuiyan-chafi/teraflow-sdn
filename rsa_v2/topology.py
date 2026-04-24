@@ -254,7 +254,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='both'):
+def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='both', parallelpath_strategy='none'):
     EXTRA_HOPS_ALLOWED = 1
     G = build_graph()
 
@@ -302,19 +302,23 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                     # Default: first-fit
                     chosen_node_path = dijkstra_node_paths[0]
 
-                # Expand the chosen node path to ALL parallel link combinations.
-                # G is already filtered (no FULL OCH), so all combinations are valid.
-                parallel_paths = TopologyHelper.expand_path(chosen_node_path, G)
+                # Expand the chosen node path based on parallelpath_strategy
+                if parallelpath_strategy != 'none':
+                    parallel_paths = TopologyHelper.expand_path(chosen_node_path, G)
 
-                if parallel_paths:
-                    # Apply strategy to pick ONE parallel combination
-                    if strategy == 'last-fit':
-                        dijkstra_collection = [parallel_paths[-1]]
-                    elif strategy == 'random':
-                        dijkstra_collection = [random.choice(parallel_paths)]
-                    else:
-                        # Default: first-fit
-                        dijkstra_collection = [parallel_paths[0]]
+                    if parallel_paths:
+                        # Apply strategy to pick ONE parallel combination
+                        if parallelpath_strategy == 'last-fit':
+                            dijkstra_collection = [parallel_paths[-1]]
+                        elif parallelpath_strategy == 'random':
+                            dijkstra_collection = [random.choice(parallel_paths)]
+                        else:
+                            # Default: first-fit
+                            dijkstra_collection = [parallel_paths[0]]
+                else:
+                    single_path = TopologyHelper.expand_path_first_valid(chosen_node_path, G)
+                    if single_path:
+                        dijkstra_collection = [single_path]
 
         # logger.info(f"[Phase 1] {len(dijkstra_node_paths)} dijkstra node path(s), "
         #             f"strategy='{strategy}' → 1 selected, "
@@ -371,17 +375,22 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                 else:
                     chosen_alt_path = simple_node_paths[0]
 
-                # Expand the chosen node path to ALL parallel link combinations
-                alt_parallel_paths = TopologyHelper.expand_path(chosen_alt_path, G)
+                # Expand the chosen node path based on parallelpath_strategy
+                if parallelpath_strategy != 'none':
+                    alt_parallel_paths = TopologyHelper.expand_path(chosen_alt_path, G)
 
-                if alt_parallel_paths:
-                    # Apply strategy to pick ONE parallel combination
-                    if strategy == 'last-fit':
-                        all_paths_collection = [alt_parallel_paths[-1]]
-                    elif strategy == 'random':
-                        all_paths_collection = [random.choice(alt_parallel_paths)]
-                    else:
-                        all_paths_collection = [alt_parallel_paths[0]]
+                    if alt_parallel_paths:
+                        # Apply strategy to pick ONE parallel combination
+                        if parallelpath_strategy == 'last-fit':
+                            all_paths_collection = [alt_parallel_paths[-1]]
+                        elif parallelpath_strategy == 'random':
+                            all_paths_collection = [random.choice(alt_parallel_paths)]
+                        else:
+                            all_paths_collection = [alt_parallel_paths[0]]
+                else:
+                    single_path = TopologyHelper.expand_path_first_valid(chosen_alt_path, G)
+                    if single_path:
+                        all_paths_collection = [single_path]
 
             # logger.info(f"[Phase 2] {len(simple_node_paths)} simple path(s), "
             #             f"{len(alt_node_paths)} after dijkstra dedup, "

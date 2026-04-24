@@ -501,9 +501,7 @@ class TopologyHelper:
                     'dst':      v,
                     'src_port': out_port,
                     'dst_port': in_port,
-                    'name':     attr['name'],
-                    'status':   attr['status'],
-                    'otn_type': attr.get('otn_type'),
+                    'name':     attr['name']
                 })
                 backtrack(index + 1, current_edge_path)
                 current_edge_path.pop()

@@ -25,4 +25,5 @@ TRANSIENT_UNIT = 10.0  # Warm-up factor (e.g., 10 * HOLDING_TIME)
 PATH_STRATEGY = os.environ.get('PATH_STRATEGY', 'first-fit')
 SPECTRUM_STRATEGY = os.environ.get('SPECTRUM_STRATEGY', 'first-fit')
 PATH_TYPE = os.environ.get('PATH_TYPE', 'dijkstra')
+PARALLELPATH_STRATEGY = os.environ.get('PARALLELPATH_STRATEGY', 'none')
 LINK_STUDY = os.environ.get('LINK_STUDY', 'True').lower() == 'true'

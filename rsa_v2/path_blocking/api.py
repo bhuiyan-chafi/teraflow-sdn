@@ -33,6 +33,7 @@ def request_lightpath():
     path_strategy = data.get('path_strategy', 'first-fit')
     spectrum_strategy = data.get('spectrum_strategy', 'first-fit')
     path_type = data.get('path_type', 'both')
+    parallelpath_strategy = data.get('parallelpath_strategy', 'none')
 
     if not src_device or not dst_device or not bitrate:
         return jsonify({"status": "error", "reason": "Missing required fields: src_device, dst_device, bitrate"}), 400
@@ -47,7 +48,7 @@ def request_lightpath():
 
         start_graph_time = time.time()
         # 1. Path Computation — returns ordered list [dijkstra, alt]
-        paths_result = find_paths(src_device, dst_device, bitrate, strategy=path_strategy, path_type=path_type)
+        paths_result = find_paths(src_device, dst_device, bitrate, strategy=path_strategy, path_type=path_type, parallelpath_strategy=parallelpath_strategy)
         graph_build_time = time.time() - start_graph_time
         # logger.info(f"[Timing] Time to build graphs: {graph_build_time:.4f} seconds")
         paths = paths_result.get('paths', [])

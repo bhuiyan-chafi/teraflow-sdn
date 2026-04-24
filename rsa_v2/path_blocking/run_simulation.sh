@@ -1,14 +1,15 @@
 #!/bin/bash
 
 # This script runs the RSA simulation with configurable parameters using environment variables.
-# Usage: ./run_simulation.sh [PATH_STRATEGY] [SPECTRUM_STRATEGY] [PATH_TYPE] [LINK_STUDY] [LOG_NAME]
+# Usage: ./run_simulation.sh [PATH_STRATEGY] [SPECTRUM_STRATEGY] [PATH_TYPE] [PP_STRAT] [LINK_STUDY] [LOG_NAME]
 
 # Default values if not provided
 P_STRAT=${1:-"first-fit"} # Path Strategy: 'first-fit', 'last-fit', 'random'
 S_STRAT=${2:-"first-fit"} # Spectrum Strategy: 'first-fit', 'last-fit', 'random'
 P_TYPE=${3:-"dijkstra"} # Path Type: 'dijkstra', 'additional', 'both'
-L_STUDY=${4:-"True"} # Link Study: True, Flase
-LOG_NAME=${5:-"NSF_$(date +%Y%m%d_%H%M%S)"}
+PP_STRAT=${4:-"none"} # Parallel Path Strategy: 'first-fit', 'last-fit', 'random', 'none'
+L_STUDY=${5:-"True"} # Link Study: True, False
+LOG_NAME=${6:-"NSF_$(date +%Y%m%d_%H%M%S)"}
 
 # Ensure results directory exists
 mkdir -p results
@@ -19,6 +20,7 @@ echo "------------------------------------------------------------"
 echo "🔹 Path Strategy:     $P_STRAT"
 echo "🔹 Spectrum Strategy: $S_STRAT"
 echo "🔹 Path Type:         $P_TYPE"
+echo "🔹 Parallel Strategy: $PP_STRAT"
 echo "🔹 Link Study:        $L_STUDY"
 echo "🔹 Output Log:        results/$LOG_NAME.txt"
 echo "------------------------------------------------------------"
@@ -27,6 +29,7 @@ echo "------------------------------------------------------------"
 export PATH_STRATEGY=$P_STRAT
 export SPECTRUM_STRATEGY=$S_STRAT
 export PATH_TYPE=$P_TYPE
+export PARALLELPATH_STRATEGY=$PP_STRAT
 export LINK_STUDY=$L_STUDY
 
 # Run simulation in background

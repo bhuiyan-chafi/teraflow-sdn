@@ -10,14 +10,15 @@ API_URL = "http://127.0.0.1:5001/api/lightpath/request"
 TEARDOWN_URL = "http://127.0.0.1:5001/api/lightpath/teardown"
 
 
-def test_request(src, dst, bitrate, path_strategy='first-fit', spectrum_strategy='first-fit', path_type='dijkstra'):
+def test_request(src, dst, bitrate, path_strategy='first-fit', spectrum_strategy='first-fit', path_type='dijkstra', parallelpath_strategy='none'):
     payload = {
         "src_device": src,
         "dst_device": dst,
         "bitrate": bitrate,
         "path_strategy": path_strategy,
         "spectrum_strategy": spectrum_strategy,
-        "path_type": path_type
+        "path_type": path_type,
+        "parallelpath_strategy": parallelpath_strategy
     }
     print(f"--- Sending REQUEST: {src} -> {dst} at {bitrate} Gbps (path_strategy: {path_strategy}, spectrum_strategy: {spectrum_strategy}) ---")
     try:
@@ -62,6 +63,9 @@ if __name__ == "__main__":
     parser.add_argument('--path_type', type=str, default='dijkstra',
                         choices=['dijkstra', 'additional', 'both'],
                         help="Path generation type (default: dijkstra)")
+    parser.add_argument('--parallelpath_strategy', type=str, default='none',
+                        choices=['first-fit', 'last-fit', 'random', 'none'],
+                        help="Parallel path expansion strategy (default: none)")
 
     # Teardown Arguments
     parser.add_argument('--id', type=str, help="Lightpath ID for teardown")
@@ -69,7 +73,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.action == 'request':
-        test_request(args.src, args.dst, args.bitrate, args.path_strategy, args.spectrum_strategy, args.path_type)
+        test_request(args.src, args.dst, args.bitrate, args.path_strategy, args.spectrum_strategy, args.path_type, args.parallelpath_strategy)
     elif args.action == 'teardown':
         if not args.id:
             print(

@@ -20,7 +20,7 @@ from collections import Counter
 from sim_config import (
     NODES, BIT_RATES, BIT_RATE_PROBS, ERLANGS, HOLDING_TIME, Z_VALUE,
     TRANSIENT_UNIT, MAX_REQUESTS, MIN_REQUESTS, CI_THRESHOLD,
-    PATH_STRATEGY, SPECTRUM_STRATEGY, PATH_TYPE, LINK_STUDY
+    PATH_STRATEGY, SPECTRUM_STRATEGY, PATH_TYPE, LINK_STUDY, PARALLELPATH_STRATEGY
 )
 import warnings
 
@@ -104,11 +104,11 @@ def run_simulation():
             mapping_resp = requests.get(LINK_MAP_URL, timeout=10)
             if mapping_resp.status_code == 200:
                 link_names_map = mapping_resp.json()
-                print(f"✅ Successfully loaded {len(link_names_map)} links for study.")
+                print(f"Successfully loaded {len(link_names_map)} links for study.")
             else:
-                print(f"⚠️ Warning: Could not fetch link mapping (Status: {mapping_resp.status_code})")
+                print(f"Warning: Could not fetch link mapping (Status: {mapping_resp.status_code})")
         except Exception as e:
-            print(f"⚠️ Warning: Link mapping fetch failed: {e}")
+            print(f"Warning: Link mapping fetch failed: {e}")
             
     results = []
 
@@ -172,7 +172,8 @@ def run_simulation():
                     "bitrate": bitrate,
                     "path_strategy": PATH_STRATEGY,
                     "spectrum_strategy": SPECTRUM_STRATEGY,
-                    "path_type": PATH_TYPE
+                    "path_type": PATH_TYPE,
+                    "parallelpath_strategy": PARALLELPATH_STRATEGY
                 }
 
                 # Execute API with retry logic
@@ -285,6 +286,7 @@ def run_simulation():
             "path_strategy": PATH_STRATEGY,
             "spectrum_strategy": SPECTRUM_STRATEGY,
             "path_type": PATH_TYPE,
+            "parallelpath_strategy": PARALLELPATH_STRATEGY,
             "stop_reason": stop_reason,
             "total_requests": total,
             "transient_contention_rate": round(

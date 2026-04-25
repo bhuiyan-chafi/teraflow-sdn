@@ -1,0 +1,68 @@
+Successfully loaded 66 links for study.
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=500
+Stopping: CI <= 5.0% of P_b OR max 500000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.09s ---
+    Transient: 5054 requests, 375 blocked
+    Progress: 500 requests | P_b=0.094000 | CI=0.025580 | Rel.CI=27.21%
+    Progress: 1000 requests | P_b=0.081000 | CI=0.016910 | Rel.CI=20.88%
+    Progress: 1500 requests | P_b=0.082000 | CI=0.013885 | Rel.CI=16.93%
+    Progress: 2000 requests | P_b=0.074500 | CI=0.011508 | Rel.CI=15.45%
+    Progress: 2500 requests | P_b=0.071600 | CI=0.010107 | Rel.CI=14.12%
+    Progress: 3000 requests | P_b=0.073000 | CI=0.009309 | Rel.CI=12.75%
+    Progress: 3500 requests | P_b=0.073714 | CI=0.008657 | Rel.CI=11.74%
+    Progress: 4000 requests | P_b=0.076750 | CI=0.008249 | Rel.CI=10.75%
+    Progress: 4500 requests | P_b=0.078889 | CI=0.007876 | Rel.CI=9.98%
+    Progress: 5000 requests | P_b=0.079800 | CI=0.007511 | Rel.CI=9.41%
+    Progress: 5500 requests | P_b=0.081091 | CI=0.007214 | Rel.CI=8.90%
+    Progress: 6000 requests | P_b=0.080000 | CI=0.006865 | Rel.CI=8.58%
+    Progress: 6500 requests | P_b=0.080462 | CI=0.006613 | Rel.CI=8.22%
+    Progress: 7000 requests | P_b=0.081000 | CI=0.006392 | Rel.CI=7.89%
+    Progress: 7500 requests | P_b=0.082533 | CI=0.006228 | Rel.CI=7.55%
+    Progress: 8000 requests | P_b=0.084625 | CI=0.006099 | Rel.CI=7.21%
+    Progress: 8500 requests | P_b=0.083059 | CI=0.005867 | Rel.CI=7.06%
+    Progress: 9000 requests | P_b=0.083556 | CI=0.005717 | Rel.CI=6.84%
+    Progress: 9500 requests | P_b=0.085474 | CI=0.005622 | Rel.CI=6.58%
+    Progress: 10000 requests | P_b=0.086500 | CI=0.005510 | Rel.CI=6.37%
+    Progress: 10500 requests | P_b=0.087333 | CI=0.005400 | Rel.CI=6.18%
+    Progress: 11000 requests | P_b=0.087818 | CI=0.005289 | Rel.CI=6.02%
+    Progress: 11500 requests | P_b=0.088957 | CI=0.005203 | Rel.CI=5.85%
+    Progress: 12000 requests | P_b=0.089833 | CI=0.005116 | Rel.CI=5.70%
+    Progress: 12500 requests | P_b=0.088800 | CI=0.004987 | Rel.CI=5.62%
+    Progress: 13000 requests | P_b=0.088462 | CI=0.004881 | Rel.CI=5.52%
+    Progress: 13500 requests | P_b=0.087556 | CI=0.004768 | Rel.CI=5.45%
+    Progress: 14000 requests | P_b=0.088286 | CI=0.004700 | Rel.CI=5.32%
+    Progress: 14500 requests | P_b=0.088414 | CI=0.004621 | Rel.CI=5.23%
+    Progress: 15000 requests | P_b=0.088733 | CI=0.004551 | Rel.CI=5.13%
+    Progress: 15500 requests | P_b=0.089097 | CI=0.004485 | Rel.CI=5.03%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 500,
+    "path_strategy": "first-fit",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 15735,
+    "transient_contention_rate": 7.41986545,
+    "successful_requests": 14335,
+    "blocked_requests": 1400,
+    "path_blocked": 0,
+    "spectral_blocked": 1400,
+    "blocking_probability": 0.08897363,
+    "absolute_confidence_interval": 0.00444855,
+    "relative_confidence_interval_pct": 4.9999,
+    "ci_threshold_pct": 5.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 500000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 1400
+    },
+    "most_used_links": "RDMwa->RDMny_2 (2758), RDMil->RDMpa_1 (2672), RDMil->RDMmi_1 (2468), RDMca2->RDMtx_1 (2393), RDMtx->RDMga_1 (2335), RDMut->RDMco_1 (2118), RDMca1->RDMca2_1 (2091), RDMtx->RDMil_1 (2033), RDMpa->RDMma_1 (1988), RDMwa->RDMut_1 (1955)"
+}

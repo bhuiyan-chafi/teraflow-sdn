@@ -95,13 +95,14 @@ def check_stopping_condition(blocked, total, z_value, ci_threshold, max_requests
 
 
 def run_simulation():
+    session = requests.Session()
     # Load link names for study if enabled
     link_names_map = {}
     if LINK_STUDY:
         try:
             # Fetch mapping from the API to avoid direct DB/Flask dependencies
             LINK_MAP_URL = API_URL.replace("/lightpath/request", "/topology/links")
-            mapping_resp = requests.get(LINK_MAP_URL, timeout=10)
+            mapping_resp = session.get(LINK_MAP_URL, timeout=10)
             if mapping_resp.status_code == 200:
                 link_names_map = mapping_resp.json()
                 print(f"Successfully loaded {len(link_names_map)} links for study.")
@@ -181,7 +182,7 @@ def run_simulation():
                 resp = None
                 for attempt in range(max_retries):
                     try:
-                        resp = requests.post(
+                        resp = session.post(
                             API_URL, json=payload, timeout=30).json()
                         status = resp.get('status')
                         break
@@ -260,7 +261,7 @@ def run_simulation():
                 max_retries = 3
                 for attempt in range(max_retries):
                     try:
-                        td_resp = requests.post(
+                        td_resp = session.post(
                             TEARDOWN_URL, json={"lightpath_id": lp_id}, timeout=30).json()
                         if td_resp.get('status') == 'success':
                             active_connections -= 1
@@ -318,7 +319,7 @@ def run_simulation():
             if ev.event_type == "TEARDOWN":
                 for attempt in range(3):
                     try:
-                        requests.post(TEARDOWN_URL, json={
+                        session.post(TEARDOWN_URL, json={
                             "lightpath_id": ev.data['id']}, timeout=30)
                         break
                     except:

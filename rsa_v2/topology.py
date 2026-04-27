@@ -269,10 +269,12 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
         'strategy': strategy,
         'blocked_reason': None
     }
-    # logger.info(
-    #         f"[Strategy: path selection] {strategy}")
-    # logger.info(
-    #         f"[Strategy: path type] {path_type}")
+    logger.info(
+            f"[Strategy:] path selection {strategy}")
+    logger.info(
+            f"[Strategy:] path type {path_type}")
+    logger.info(
+            f"[Strategy:] parallel path type {parallelpath_strategy}")      
     # ================================================================
     # Phase 1: Dijkstra — pick ONE node path via strategy, expand to ONE path
     # ================================================================
@@ -301,6 +303,7 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                 else:
                     # Default: first-fit
                     chosen_node_path = dijkstra_node_paths[0]
+                logger.info(f"[Phase 1] chosen dijkstra shortest path: {' -> '.join(chosen_node_path)}")
 
                 # Expand the chosen node path based on parallelpath_strategy
                 if parallelpath_strategy != 'none':
@@ -315,16 +318,12 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                         else:
                             # Default: first-fit
                             dijkstra_collection = [parallel_paths[0]]
+                        # p = dijkstra_collection[0]; logger.info(f"[Phase 1] chosen parallel link path: {' -> '.join([p['links'][0]['src']] + [l['dst'] for l in p['links']])} via links [{', '.join([l['name'] for l in p['links']])}]")
                 else:
                     single_path = TopologyHelper.expand_path_first_valid(chosen_node_path, G)
                     if single_path:
                         dijkstra_collection = [single_path]
-
-        # logger.info(f"[Phase 1] {len(dijkstra_node_paths)} dijkstra node path(s), "
-        #             f"strategy='{strategy}' → 1 selected, "
-        #             f"{len(parallel_paths) if dijkstra_node_paths else 0} parallel combo(s) → 1 chosen "
-        #             f"for {src_dev} -> {dst_dev}")
-
+                        # p = dijkstra_collection[0]; logger.info(f"[Phase 1] chosen single link path: {' -> '.join([p['links'][0]['src']] + [l['dst'] for l in p['links']])} via links [{', '.join([l['name'] for l in p['links']])}]")
     except nx.NetworkXNoPath:
         logger.info(
             f"[Phase 1] No dijkstra path from {src_dev} to {dst_dev}")
@@ -349,16 +348,14 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                 # No connectivity at all
                 result['blocked_reason'] = 'no_path'
                 return result
-
-        # Deduplicate: track dijkstra node paths as tuples to skip them
-        dijkstra_node_set = set(tuple(p) for p in dijkstra_node_paths)
-
         try:
             simple_node_paths = list(nx.all_simple_paths(
                 G_simple, source=src_dev, target=dst_dev, cutoff=dynamic_cutoff))
 
             # Remove node paths already covered by dijkstra Phase 1
             if path_type == 'both':
+                # Deduplicate: track dijkstra node paths as tuples to skip them
+                dijkstra_node_set = set(tuple(p) for p in dijkstra_node_paths)
                 simple_node_paths = [
                     p for p in simple_node_paths
                     if tuple(p) not in dijkstra_node_set
@@ -374,7 +371,7 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                     chosen_alt_path = TopologyHelper.highest_slot_path(simple_node_paths, G)
                 else:
                     chosen_alt_path = simple_node_paths[0]
-
+                logger.info(f"[Phase 2] chosen additional path: {' -> '.join(chosen_alt_path)}")
                 # Expand the chosen node path based on parallelpath_strategy
                 if parallelpath_strategy != 'none':
                     alt_parallel_paths = TopologyHelper.expand_path(chosen_alt_path, G)
@@ -387,17 +384,12 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                             all_paths_collection = [random.choice(alt_parallel_paths)]
                         else:
                             all_paths_collection = [alt_parallel_paths[0]]
+                        # p = all_paths_collection[0]; logger.info(f"[Phase 2] chosen parallel link path: {' -> '.join([p['links'][0]['src']] + [l['dst'] for l in p['links']])} via links [{', '.join([l['name'] for l in p['links']])}]")
                 else:
                     single_path = TopologyHelper.expand_path_first_valid(chosen_alt_path, G)
                     if single_path:
                         all_paths_collection = [single_path]
-
-            # logger.info(f"[Phase 2] {len(simple_node_paths)} simple path(s), "
-            #             f"{len(alt_node_paths)} after dijkstra dedup, "
-            #             f"strategy='{strategy}' → {len(all_paths_collection)} chosen "
-            #             f"for {src_dev} -> {dst_dev}")
-
-
+                        # p = all_paths_collection[0]; logger.info(f"[Phase 2] chosen single link path: {' -> '.join([p['links'][0]['src']] + [l['dst'] for l in p['links']])} via links [{', '.join([l['name'] for l in p['links']])}]")
         except nx.NetworkXNoPath:
             logger.info(
                 f"[Phase 2] No simple paths from {src_dev} to {dst_dev}")

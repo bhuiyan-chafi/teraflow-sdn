@@ -403,8 +403,8 @@ class TopologyHelper:
                 node_names = [node_path[0]] + [link['dst']
                                                for link in current_edge_path]
                 link_names = [link['name'] for link in current_edge_path]
-                # logger.info(f"[Path Discovery] Valid path found: {' -> '.join(node_names)} "
-                #             f"via links [{', '.join(link_names)}]")
+                logger.info(f"[Path Discovery] Valid path found: {' -> '.join(node_names)} "
+                            f"via links [{', '.join(link_names)}]")
                 return
 
             u = node_path[index]

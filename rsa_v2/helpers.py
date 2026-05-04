@@ -388,6 +388,18 @@ class TopologyHelper:
             return endpoint_mask
 
     @staticmethod
+    def log_path_links(path_collection, phase_name, path_type):
+        if not path_collection:
+            return
+        for p in path_collection:
+            if isinstance(p, dict) and 'links' in p and p['links']:
+                node_seq = ' -> '.join([p['links'][0]['src']] + [l['dst'] for l in p['links']])
+                link_names = ', '.join([l['name'] for l in p['links']])
+                logger.info(f"[{phase_name}] chosen {path_type} path: {node_seq} via links [{link_names}]")
+            elif isinstance(p, list) and all(isinstance(node, str) for node in p):
+                logger.info(f"[{phase_name}] chosen {path_type} path: {' -> '.join(p)}")
+
+    @staticmethod
     def expand_path(node_path, graph_to_use):
         valid_edge_paths = []
 
@@ -523,11 +535,18 @@ class TopologyHelper:
                     
                 edge_path = valid_edge_paths[0]
                 
-                endpoint_names = []
-                for link in edge_path['links']:
-                    endpoint_names.extend([link['src_port'], link['dst_port']])
-                    
-                endpoints = Endpoint.query.filter(Endpoint.name.in_(endpoint_names)).all()
+                from models import OpticalLink
+                link_ids = [link['id'] for link in edge_path['links']]
+                links_db = OpticalLink.query.filter(OpticalLink.id.in_(link_ids)).all()
+                
+                endpoint_ids = []
+                for l in links_db:
+                    if l.src_endpoint_id:
+                        endpoint_ids.append(l.src_endpoint_id)
+                    if l.dst_endpoint_id:
+                        endpoint_ids.append(l.dst_endpoint_id)
+                        
+                endpoints = Endpoint.query.filter(Endpoint.id.in_(endpoint_ids)).all()
                 
                 total_slots = 0
                 for ep in endpoints:
@@ -536,8 +555,8 @@ class TopologyHelper:
                     
                 hops = len(edge_path['links'])
                 if hops > 0:
-                    avg_slots = total_slots / hops
-                    # logger.info(f"[Highest Slot] Evaluated Path: {' -> '.join(path)} | Avg Slots: {avg_slots:.2f}")
+                    avg_slots = total_slots / (hops*2) # because two endpoints represent one link
+                    logger.info(f"[Highest Slot] Evaluated Path: {' -> '.join(path)} | Avg Slots: {avg_slots:.2f}")
                     if avg_slots > max_value:
                         max_value = avg_slots
                         best_path = path

@@ -114,6 +114,26 @@ Now in the API we are going to perform slot acquisition as step 3. In line numbe
 - if you look at the queries we perform for a "request" from the API. First we are querying the links in @topology.py #L35-45. Then again in @helpers.py #L534-537. Then again in commit_slots() in @helpers.py #L755-758. The same information is retrieved isn't it? Can you confirm? 
 - if that is the case then why don't we cache the links at the build_graph() phase. This query has the largest quantity of the information. When a request is placed, we can do this once and then use it in every function when we need to query the database. If the request is successful we can clear that cache before leaving. The next request will perform the query again and then use it till it is finished. It doesn't matter if the request is a success or a block. It must clear the link cache before it leaves the execution. 
 
+- a side task. If you look at a sample at linen #378, you will find how we are printing the paths with link details for logging. But putting these lines in codes creates congestion. Instead I want to define a function in @helpers.py as log_path_links(path_collection[]) where I will send a path collection (can contain single or multiple) computed from NetworkX. From there it must print the paths with links (names to distinguish them properly) and log them properly. You can see the current procedure already available in the mentioned lines. Then from the @topology.py I will call the function and pass the parameter. 
+
+- there is a flaw in the highest_slot finding. Have a look at these logs:
+
+rsa_api      | INFO:helpers:[Path Discovery] Valid path found: RDMma -> RDMpa -> RDMil -> RDMtx via links [RDMpa->RDMma_19, RDMil->RDMpa_15, RDMtx->RDMil_12]
+rsa_api      | INFO:helpers:[Path Discovery] Valid path found: RDMma -> RDMga -> RDMtx via links [RDMga->RDMma_22, RDMtx->RDMga_13]
+rsa_api      | INFO:helpers:[Highest Slot] Selected Path: RDMma -> RDMga -> RDMtx with Max Avg Slots: 19628.00
+rsa_api      | INFO:helpers:[Phase 2] chosen additional path: RDMma -> RDMga -> RDMtx
+rsa_api      | INFO:helpers:[Phase 2] chosen single link path: RDMma -> RDMga -> RDMtx via links [RDMga->RDMma_22, RDMtx->RDMga_13]
+
+We have two paths and for the first request it selects the shortest path. And assigns the spectrum. But for the second request, since in the first path we have some spectrum booked; for sure the alternative path has more slots available and thus it must be selected. Why the used path is selected again?
+
+rsa_api      | INFO:helpers:[Path Discovery] Valid path found: RDMma -> RDMpa -> RDMil -> RDMtx via links [RDMpa->RDMma_19, RDMil->RDMpa_15, RDMtx->RDMil_12]
+rsa_api      | INFO:helpers:[Path Discovery] Valid path found: RDMma -> RDMga -> RDMtx via links [RDMga->RDMma_22, RDMtx->RDMga_13]
+rsa_api      | INFO:helpers:[Highest Slot] Selected Path: RDMma -> RDMga -> RDMtx with Max Avg Slots: 19618.00
+rsa_api      | INFO:helpers:[Phase 2] chosen additional path: RDMma -> RDMga -> RDMtx
+rsa_api      | INFO:helpers:[Phase 2] chosen single link path: RDMma -> RDMga -> RDMtx via links [RDMga->RDMma_22, RDMtx->RDMga_13]
+
+What is the flaw?
+
 #### Checking the progress
 
 If you look at @test.py, I have a command to test one request. Since we added new strategies, can you reform the command to test one request?
@@ -138,7 +158,9 @@ Before I used this command to run the simulation: nohup python3 -u -W ignore sim
 Now, that we have several constraints to fix, how can I set them and run a simulation for different scenarios. I think if you design a run_simulation.py where I can set the parameters and run the simulation, will help. 
 
 
-## Optimisations
+## Fixing the SP+1 logic
+
+So, we had a confusion about the shortest path + 1 path selection. What my professor meant by this is to select all the shortest paths + the paths discovered by increasing one hop. But in the code I implemented only the path selection of shortest paths+1. This gives us less paths, thus increases the path blocking probability. If you go to @topology.py, we can see that we are calculating "simple_node_paths" and then removing the dijkstra paths. For any cases additional paths (shortest path+1) must include the dijkstra shortest paths as well. So, we have to remove the dijkstra deduplication completely. 
 
 ### Querying the links in Perform RSA phase
 

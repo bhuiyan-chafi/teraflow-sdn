@@ -1,0 +1,45 @@
+Successfully loaded 22 links for study.
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=500
+Stopping: CI <= 10.0% of P_b OR max 1000000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.08s ---
+    Transient: 4972 requests, 352 blocked
+    Progress: 500 requests | P_b=0.066000 | CI=0.021763 | Rel.CI=32.97%
+    Progress: 1000 requests | P_b=0.084000 | CI=0.017193 | Rel.CI=20.47%
+    Progress: 1500 requests | P_b=0.094667 | CI=0.014815 | Rel.CI=15.65%
+    Progress: 2000 requests | P_b=0.088500 | CI=0.012448 | Rel.CI=14.07%
+    Progress: 2500 requests | P_b=0.091200 | CI=0.011285 | Rel.CI=12.37%
+    Progress: 3000 requests | P_b=0.087667 | CI=0.010120 | Rel.CI=11.54%
+    Progress: 3500 requests | P_b=0.088857 | CI=0.009427 | Rel.CI=10.61%
+    Progress: 4000 requests | P_b=0.084000 | CI=0.008596 | Rel.CI=10.23%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 500,
+    "path_strategy": "first-fit",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 4239,
+    "transient_contention_rate": 7.07964602,
+    "successful_requests": 3886,
+    "blocked_requests": 353,
+    "path_blocked": 0,
+    "spectral_blocked": 353,
+    "blocking_probability": 0.08327436,
+    "absolute_confidence_interval": 0.00831763,
+    "relative_confidence_interval_pct": 9.9882,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 1000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 353
+    },
+    "most_used_links": "RDMwa->RDMny_3 (1260), RDMil->RDMpa_15 (1247), RDMca2->RDMtx_6 (1099), RDMtx->RDMga_13 (1079), RDMil->RDMmi_14 (1030), RDMtx->RDMil_12 (971), RDMut->RDMco_7 (952), RDMca1->RDMca2_4 (949), RDMco->RDMne_9 (895), RDMpa->RDMma_19 (886)"
+}

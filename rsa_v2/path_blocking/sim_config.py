@@ -7,13 +7,13 @@ NODES = ["RDMwa", "RDMca1", "RDMca2", "RDMut", "RDMco", "RDMne", "RDMtx",
 
 BIT_RATES = [100, 200, 400]
 BIT_RATE_PROBS = [0.5, 0.25, 0.25]
-ERLANGS = [600, 700, 750, 900, 1050, 1100, 1200, 1300, 1350, 1500 ]
+ERLANGS = [250, 350, 450, 550, 650, 750, 850, 950, 1050, 1150 ]
 
 # CI-based stopping parameters
 MAX_REQUESTS = 1000000  # Maximum number of independent trials (10^4)
 # Minimum trials before checking CI (for statistical validity)
-MIN_REQUESTS = 1000
-CI_THRESHOLD = 0.05  #5% relative CI threshold
+MIN_REQUESTS = 500
+CI_THRESHOLD = 0.1  #10% relative CI threshold
 Z_VALUE = 1.96       # 95% confidence level
 
 HOLDING_TIME = 60.0

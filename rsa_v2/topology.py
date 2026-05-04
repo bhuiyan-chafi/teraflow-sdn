@@ -269,12 +269,12 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
         'strategy': strategy,
         'blocked_reason': None
     }
-    logger.info(
-            f"[Strategy:] path selection {strategy}")
-    logger.info(
-            f"[Strategy:] path type {path_type}")
-    logger.info(
-            f"[Strategy:] parallel path type {parallelpath_strategy}")      
+    # logger.info(
+    #         f"[Strategy:] path selection {strategy}")
+    # logger.info(
+    #         f"[Strategy:] path type {path_type}")
+    # logger.info(
+    #         f"[Strategy:] parallel path type {parallelpath_strategy}")      
     # ================================================================
     # Phase 1: Dijkstra — pick ONE node path via strategy, expand to ONE path
     # ================================================================
@@ -303,7 +303,7 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                 else:
                     # Default: first-fit
                     chosen_node_path = dijkstra_node_paths[0]
-                TopologyHelper.log_path_links([chosen_node_path], "Phase 1", "dijkstra shortest")
+                # TopologyHelper.log_path_links([chosen_node_path], "Phase 1", "dijkstra shortest")
 
                 # Expand the chosen node path based on parallelpath_strategy
                 if parallelpath_strategy != 'none':
@@ -318,12 +318,12 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                         else:
                             # Default: first-fit
                             dijkstra_collection = [parallel_paths[0]]
-                        TopologyHelper.log_path_links(dijkstra_collection, "Phase 1", "parallel link")
+                        # TopologyHelper.log_path_links(dijkstra_collection, "Phase 1", "parallel link")
                 else:
                     single_path = TopologyHelper.expand_path_first_valid(chosen_node_path, G)
                     if single_path:
                         dijkstra_collection = [single_path]
-                        TopologyHelper.log_path_links(dijkstra_collection, "Phase 1", "single link")
+                        # TopologyHelper.log_path_links(dijkstra_collection, "Phase 1", "single link")
     except nx.NetworkXNoPath:
         logger.info(
             f"[Phase 1] No dijkstra path from {src_dev} to {dst_dev}")
@@ -362,7 +362,7 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                     chosen_alt_path = TopologyHelper.highest_slot_path(simple_node_paths, G)
                 else:
                     chosen_alt_path = simple_node_paths[0]
-                TopologyHelper.log_path_links([chosen_alt_path], "Phase 2", "additional")
+                # TopologyHelper.log_path_links([chosen_alt_path], "Phase 2", "additional")
                 # Expand the chosen node path based on parallelpath_strategy
                 if parallelpath_strategy != 'none':
                     alt_parallel_paths = TopologyHelper.expand_path(chosen_alt_path, G)
@@ -375,12 +375,12 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                             all_paths_collection = [random.choice(alt_parallel_paths)]
                         else:
                             all_paths_collection = [alt_parallel_paths[0]]
-                        TopologyHelper.log_path_links(all_paths_collection, "Phase 2", "parallel link")
+                        # TopologyHelper.log_path_links(all_paths_collection, "Phase 2", "parallel link")
                 else:
                     single_path = TopologyHelper.expand_path_first_valid(chosen_alt_path, G)
                     if single_path:
                         all_paths_collection = [single_path]
-                        TopologyHelper.log_path_links(all_paths_collection, "Phase 2", "single link")
+                        # TopologyHelper.log_path_links(all_paths_collection, "Phase 2", "single link")
         except nx.NetworkXNoPath:
             logger.info(
                 f"[Phase 2] No simple paths from {src_dev} to {dst_dev}")

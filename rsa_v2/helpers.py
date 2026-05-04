@@ -415,8 +415,8 @@ class TopologyHelper:
                 node_names = [node_path[0]] + [link['dst']
                                                for link in current_edge_path]
                 link_names = [link['name'] for link in current_edge_path]
-                logger.info(f"[Path Discovery] Valid path found: {' -> '.join(node_names)} "
-                            f"via links [{', '.join(link_names)}]")
+                # logger.info(f"[Path Discovery] Valid path found: {' -> '.join(node_names)} "
+                #             f"via links [{', '.join(link_names)}]")
                 return
 
             u = node_path[index]
@@ -556,7 +556,7 @@ class TopologyHelper:
                 hops = len(edge_path['links'])
                 if hops > 0:
                     avg_slots = total_slots / (hops*2) # because two endpoints represent one link
-                    logger.info(f"[Highest Slot] Evaluated Path: {' -> '.join(path)} | Avg Slots: {avg_slots:.2f}")
+                    # logger.info(f"[Highest Slot] Evaluated Path: {' -> '.join(path)} | Avg Slots: {avg_slots:.2f}")
                     if avg_slots > max_value:
                         max_value = avg_slots
                         best_path = path
@@ -564,7 +564,7 @@ class TopologyHelper:
                 logger.error(f"[Highest Slot] Error evaluating path: {e}")
                 continue
                 
-        logger.info(f"[Highest Slot] Selected Path: {' -> '.join(best_path)} with Max Avg Slots: {max_value:.2f}")
+        # logger.info(f"[Highest Slot] Selected Path: {' -> '.join(best_path)} with Max Avg Slots: {max_value:.2f}")
         return best_path if best_path else node_paths[0]
 
     @staticmethod

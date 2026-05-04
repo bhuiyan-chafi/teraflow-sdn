@@ -4,7 +4,7 @@
 # Usage: ./run_simulation.sh [PATH_STRATEGY] [SPECTRUM_STRATEGY] [PATH_TYPE] [PP_STRAT] [LINK_STUDY] [LOG_NAME]
 
 # Default values if not provided
-P_STRAT=${1:-"first-fit"} # Path Strategy: 'first-fit', 'highest-slot', 'random'
+P_STRAT=${1:-"first-fit"} # Path strategy: 'first-fit', 'last-fit', 'random', 'highest-slot'
 S_STRAT=${2:-"first-fit"} # Spectrum Strategy: 'first-fit', 'last-fit', 'random'
 P_TYPE=${3:-"dijkstra"} # Path Type: 'dijkstra', 'additional', 'both'
 PP_STRAT=${4:-"none"} # Parallel Path Strategy: 'first-fit', 'last-fit', 'random', 'none'

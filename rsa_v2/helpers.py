@@ -744,7 +744,7 @@ class TopologyHelper:
                     available_blocks.append(i - num_slots + 1)
             else:
                 current_run = 0
-
+ 
         # Step 3: Selection Phase based on strategy
         start_bit = -1
         # logger.info(

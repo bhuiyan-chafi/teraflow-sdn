@@ -162,7 +162,9 @@ Now, that we have several constraints to fix, how can I set them and run a simul
 
 So, we had a confusion about the shortest path + 1 path selection. What my professor meant by this is to select all the shortest paths + the paths discovered by increasing one hop. But in the code I implemented only the path selection of shortest paths+1. This gives us less paths, thus increases the path blocking probability. If you go to @topology.py, we can see that we are calculating "simple_node_paths" and then removing the dijkstra paths. For any cases additional paths (shortest path+1) must include the dijkstra shortest paths as well. So, we have to remove the dijkstra deduplication completely. 
 
-### Querying the links in Perform RSA phase
+## Fixing the PANEU topology
+
+Now we will fix the PANEU topology based on the correction on NSFNET. 
 
 
 

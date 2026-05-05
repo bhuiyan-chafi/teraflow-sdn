@@ -6,13 +6,13 @@ import os
 # NODES = ["RDMwa", "RDMca1", "RDMca2", "RDMut", "RDMco", "RDMne", "RDMtx",
 #          "RDMil", "RDMmi", "RDMpa", "RDMny", "RDMnj", "RDMma", "RDMga"]
 
-# Pan-EU 28-node topology:
+# Pan-EU 27-node topology:
 NODES = [
     "RDMdublin", "RDMglasgow", "RDMlondon", "RDMoslo", "RDMstockholm",
     "RDMcopenhagen", "RDMhamburg", "RDMamsterdam", "RDMbrussels", "RDMparis",
     "RDMbordeaux", "RDMlyon", "RDMstrasbourg", "RDMfrankfurt", "RDMberlin",
     "RDMwarsaw", "RDMprague", "RDMmunich", "RDMzurich", "RDMvienna",
-    "RDMbudapest", "RDMmilan", "RDMturin", "RDMrome", "RDMbarcelona",
+    "RDMbudapest", "RDMmilan", "RDMrome", "RDMbarcelona",
     "RDMmadrid", "RDMathens", "RDMbelgrade",
 ]
 BIT_RATES = [100, 200, 400]

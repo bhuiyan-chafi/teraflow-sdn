@@ -1,0 +1,33 @@
+Successfully loaded 55 links for study.
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=1150
+Stopping: CI <= 10.0% of P_b OR max 1000000 requests
+============================================================
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: Expecting value: line 1 column 1 (char 0)
+API Request Error after 3 attempts: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/lightpath/request (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107b24310>: Failed to establish a new connection: [Errno 61] Connection refused'))
+API Request Error after 3 attempts: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/lightpath/request (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107bcb100>: Failed to establish a new connection: [Errno 61] Connection refused'))
+API Request Error after 3 attempts: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/lightpath/request (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107bcbb20>: Failed to establish a new connection: [Errno 61] Connection refused'))
+API Request Error after 3 attempts: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/lightpath/request (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107bdb610>: Failed to establish a new connection: [Errno 61] Connection refused'))
+API Request Error after 3 attempts: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/lightpath/request (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107bcb7c0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+API Request Error after 3 attempts: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/lightpath/request (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107bc12b0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+API Request Error after 3 attempts: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/lightpath/request (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107bdb2b0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+API Request Error after 3 attempts: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/lightpath/request (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107beb550>: Failed to establish a new connection: [Errno 61] Connection refused'))
+API Request Error after 3 attempts: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/lightpath/request (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107beb670>: Failed to establish a new connection: [Errno 61] Connection refused'))
+API Request Error after 3 attempts: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/lightpath/request (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107bebdf0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+API Request Error after 3 attempts: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/lightpath/request (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107bdd8b0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+API Request Error after 3 attempts: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/lightpath/request (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107bdbaf0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+API Request Error after 3 attempts: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/lightpath/request (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107bebd60>: Failed to establish a new connection: [Errno 61] Connection refused'))
+API Request Error after 3 attempts: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/lightpath/request (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107bdd730>: Failed to establish a new connection: [Errno 61] Connection refused'))
+API Request Error after 3 attempts: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/lightpath/request (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107bc1fd0>: Failed to establish a new connection: [Errno 61] Connection refused'))

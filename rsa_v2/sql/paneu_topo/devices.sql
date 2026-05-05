@@ -1,4 +1,4 @@
--- Pan-EU 28-Node Topology - Devices
+-- Pan-EU 27-Node Topology - Devices
 
 DELETE FROM optical_links;
 DELETE FROM endpoints;
@@ -27,7 +27,6 @@ INSERT INTO devices (id, name, type, vendor, model, created_at, updated_at) VALU
   (gen_random_uuid(), 'RDMvienna', 'optical-roadm', 'Ciena', '6500', NOW(), NOW()),
   (gen_random_uuid(), 'RDMbudapest', 'optical-roadm', 'Ciena', '6500', NOW(), NOW()),
   (gen_random_uuid(), 'RDMmilan', 'optical-roadm', 'Ciena', '6500', NOW(), NOW()),
-  (gen_random_uuid(), 'RDMturin', 'optical-roadm', 'Ciena', '6500', NOW(), NOW()),
   (gen_random_uuid(), 'RDMrome', 'optical-roadm', 'Ciena', '6500', NOW(), NOW()),
   (gen_random_uuid(), 'RDMbarcelona', 'optical-roadm', 'Ciena', '6500', NOW(), NOW()),
   (gen_random_uuid(), 'RDMmadrid', 'optical-roadm', 'Ciena', '6500', NOW(), NOW()),

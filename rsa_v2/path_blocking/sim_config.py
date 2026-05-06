@@ -20,7 +20,7 @@ BIT_RATE_PROBS = [0.5, 0.25, 0.25]
 ERLANGS = [250, 350, 450, 550, 650, 750, 850, 950, 1050, 1150]
 
 # CI-based stopping parameters
-MAX_REQUESTS = 1000000  # Maximum number of independent trials (10^4)
+MAX_REQUESTS = 2000000  # Maximum number of independent trials (10^4)
 # Minimum trials before checking CI (for statistical validity)
 MIN_REQUESTS = 1000
 CI_THRESHOLD = 0.1  # 10% relative CI threshold

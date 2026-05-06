@@ -338,7 +338,6 @@ class TopologyHelper:
 
         return shrinked
 
-
     @staticmethod
     def convert_mask_to_endpoint(reference_mask, _selected_min_freq, endpoint, SLOT_GRANULARITY_HZ):
         """
@@ -393,11 +392,14 @@ class TopologyHelper:
             return
         for p in path_collection:
             if isinstance(p, dict) and 'links' in p and p['links']:
-                node_seq = ' -> '.join([p['links'][0]['src']] + [l['dst'] for l in p['links']])
+                node_seq = ' -> '.join([p['links'][0]['src']] +
+                                       [l['dst'] for l in p['links']])
                 link_names = ', '.join([l['name'] for l in p['links']])
-                logger.info(f"[{phase_name}] chosen {path_type} path: {node_seq} via links [{link_names}]")
+                logger.info(
+                    f"[{phase_name}] chosen {path_type} path: {node_seq} via links [{link_names}]")
             elif isinstance(p, list) and all(isinstance(node, str) for node in p):
-                logger.info(f"[{phase_name}] chosen {path_type} path: {' -> '.join(p)}")
+                logger.info(
+                    f"[{phase_name}] chosen {path_type} path: {' -> '.join(p)}")
 
     @staticmethod
     def expand_path(node_path, graph_to_use):
@@ -526,44 +528,49 @@ class TopologyHelper:
         from models import Endpoint
         best_path = None
         max_value = -1
-        
+
         for path in node_paths:
             try:
                 valid_edge_paths = TopologyHelper.expand_path(path, G)
                 if not valid_edge_paths:
                     continue
-                    
+
                 edge_path = valid_edge_paths[0]
-                
+
                 from models import OpticalLink
                 link_ids = [link['id'] for link in edge_path['links']]
-                links_db = OpticalLink.query.filter(OpticalLink.id.in_(link_ids)).all()
-                
+                links_db = OpticalLink.query.filter(
+                    OpticalLink.id.in_(link_ids)).all()
+
                 endpoint_ids = []
                 for l in links_db:
                     if l.src_endpoint_id:
                         endpoint_ids.append(l.src_endpoint_id)
                     if l.dst_endpoint_id:
                         endpoint_ids.append(l.dst_endpoint_id)
-                        
-                endpoints = Endpoint.query.filter(Endpoint.id.in_(endpoint_ids)).all()
-                
+
+                endpoints = Endpoint.query.filter(
+                    Endpoint.id.in_(endpoint_ids)).all()
+
                 total_slots = 0
                 for ep in endpoints:
-                    bitmap_str = TopologyHelper.int_to_bitmap(ep.bitmap_value, ep.flex_slots if ep.flex_slots else 35)
+                    bitmap_str = TopologyHelper.int_to_bitmap(
+                        ep.bitmap_value, ep.flex_slots if ep.flex_slots else 35)
                     total_slots += bitmap_str.count('1')
-                    
+
                 hops = len(edge_path['links'])
                 if hops > 0:
-                    avg_slots = total_slots / (hops*2) # because two endpoints represent one link
-                    # logger.info(f"[Highest Slot] Evaluated Path: {' -> '.join(path)} | Avg Slots: {avg_slots:.2f}")
+                    # because two endpoints represent one link
+                    avg_slots = total_slots / (hops*2)
+                    logger.info(
+                        f"[Highest Slot] Evaluated Path: {' -> '.join(path)} | Avg Slots: {avg_slots:.2f}")
                     if avg_slots > max_value:
                         max_value = avg_slots
                         best_path = path
             except Exception as e:
                 logger.error(f"[Highest Slot] Error evaluating path: {e}")
                 continue
-                
+
         # logger.info(f"[Highest Slot] Selected Path: {' -> '.join(best_path)} with Max Avg Slots: {max_value:.2f}")
         return best_path if best_path else node_paths[0]
 
@@ -594,7 +601,7 @@ class TopologyHelper:
                     endpoints_dict[link.src_endpoint.id] = link.src_endpoint
                 if link.dst_endpoint:
                     endpoints_dict[link.dst_endpoint.id] = link.dst_endpoint
-                    
+
         endpoints = list(endpoints_dict.values())
 
         if not endpoints:
@@ -628,8 +635,8 @@ class TopologyHelper:
         # Step 4: Initialize reference bitmap (all available)
         reference_bitmap = (1 << reference_slots) - 1
         trace_steps = []
-        # the 'reference_bitmap' is a long sequence of 1's which represents the capacity in bits. The 1 represents the bit as free. 
-        
+        # the 'reference_bitmap' is a long sequence of 1's which represents the capacity in bits. The 1 represents the bit as free.
+
         # Step 5: Iterate through hops with direct endpoint intersection (No parallel blocking)
         for i, link_info in enumerate(path_obj['links']):
             link_id = link_info['id']
@@ -744,7 +751,7 @@ class TopologyHelper:
                     available_blocks.append(i - num_slots + 1)
             else:
                 current_run = 0
- 
+
         # Step 3: Selection Phase based on strategy
         start_bit = -1
         # logger.info(
@@ -794,7 +801,7 @@ class TopologyHelper:
 
     @staticmethod
     def commit_slots(endpoints, allocated_mask):
-        
+
         from models import db, OpticalLink, Endpoint
         if not endpoints or allocated_mask is None:
             return False

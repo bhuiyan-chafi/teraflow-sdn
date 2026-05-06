@@ -65,14 +65,6 @@ def calculate_ci(blocked, total, z_value):
 
 
 def check_stopping_condition(blocked, total, z_value, ci_threshold, max_requests, min_requests):
-    """
-    Check if stopping conditions are met.
-    Returns (should_stop, reason, stats)
-
-    Conditions:
-    1. Relative CI <= ci_threshold (5%) at 95% confidence level
-    2. Maximum requests reached (10^6)
-    """
     prob, absolute_ci, relative_ci = calculate_ci(blocked, total, z_value)
 
     stats = {
@@ -101,16 +93,19 @@ def run_simulation():
     if LINK_STUDY:
         try:
             # Fetch mapping from the API to avoid direct DB/Flask dependencies
-            LINK_MAP_URL = API_URL.replace("/lightpath/request", "/topology/links")
+            LINK_MAP_URL = API_URL.replace(
+                "/lightpath/request", "/topology/links")
             mapping_resp = session.get(LINK_MAP_URL, timeout=10)
             if mapping_resp.status_code == 200:
                 link_names_map = mapping_resp.json()
-                print(f"Successfully loaded {len(link_names_map)} links for study.")
+                print(
+                    f"Successfully loaded {len(link_names_map)} links for study.")
             else:
-                print(f"Warning: Could not fetch link mapping (Status: {mapping_resp.status_code})")
+                print(
+                    f"Warning: Could not fetch link mapping (Status: {mapping_resp.status_code})")
         except Exception as e:
             print(f"Warning: Link mapping fetch failed: {e}")
-            
+
     results = []
 
     for erlang in sorted(list(ERLANGS), reverse=True):
@@ -142,7 +137,7 @@ def run_simulation():
         spectral_blocked_count = 0
 
         stop_reason = None
-        
+
         if LINK_STUDY:
             link_usage_counts = Counter()
         last_progress_report = 0
@@ -165,7 +160,8 @@ def run_simulation():
 
                 # Build random payload
                 src, dst = random.sample(NODES, 2)
-                bitrate = random.choices(BIT_RATES, weights=BIT_RATE_PROBS, k=1)[0]
+                bitrate = random.choices(
+                    BIT_RATES, weights=BIT_RATE_PROBS, k=1)[0]
 
                 payload = {
                     "src_device": src,
@@ -210,7 +206,7 @@ def run_simulation():
                         if LINK_STUDY:
                             for l_id in resp.get("links", []):
                                 link_usage_counts[str(l_id)] += 1
-                                
+
                         active_connections += 1
                         lp_id = resp.get('lightpath_id')
                         # Exponentially distributed holding time
@@ -239,7 +235,7 @@ def run_simulation():
                             prob, abs_ci, rel_ci = calculate_ci(
                                 blocked_requests, counted_requests, Z_VALUE)
                             print(f"    Progress: {counted_requests} requests | "
-                                  f"P_b={prob:.6f} | CI={abs_ci:.6f} | "
+                                  f"P_b={prob:.8f} | CI={abs_ci:.8f} | "
                                   f"Rel.CI={rel_ci*100:.2f}%")
 
                         # Check stopping condition
@@ -274,11 +270,12 @@ def run_simulation():
         total = counted_requests
         prob, absolute_ci, relative_ci = calculate_ci(
             blocked_requests, total, Z_VALUE)
-            
+
         top_links_str = ""
         if LINK_STUDY and link_usage_counts:
             top_10 = link_usage_counts.most_common(10)
-            formatted_links = [f"{link_names_map.get(str(l_id), str(l_id))} ({count})" for l_id, count in top_10]
+            formatted_links = [
+                f"{link_names_map.get(str(l_id), str(l_id))} ({count})" for l_id, count in top_10]
             top_links_str = ", ".join(formatted_links)
 
         stat_dict = {

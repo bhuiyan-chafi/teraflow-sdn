@@ -1,3 +1,4 @@
+from functools import lru_cache
 import logging
 import random
 import os
@@ -8,7 +9,6 @@ import networkx as nx
 import matplotlib
 matplotlib.use('Agg')
 
-from functools import lru_cache
 
 @lru_cache(maxsize=None)
 def build_graph(directed=False):
@@ -274,7 +274,7 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
     # logger.info(
     #         f"[Strategy:] path type {path_type}")
     # logger.info(
-    #         f"[Strategy:] parallel path type {parallelpath_strategy}")      
+    #         f"[Strategy:] parallel path type {parallelpath_strategy}")
     # ================================================================
     # Phase 1: Dijkstra — pick ONE node path via strategy, expand to ONE path
     # ================================================================
@@ -300,34 +300,40 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                     chosen_node_path = dijkstra_node_paths[-1]
                 elif strategy == 'random':
                     chosen_node_path = random.choice(dijkstra_node_paths)
+                elif strategy == 'highest-slot':
+                    chosen_node_path = TopologyHelper.highest_slot_path(
+                        dijkstra_node_paths, G)
                 else:
                     # Default: first-fit
                     chosen_node_path = dijkstra_node_paths[0]
-                # TopologyHelper.log_path_links([chosen_node_path], "Phase 1", "dijkstra shortest")
+                TopologyHelper.log_path_links(
+                    [chosen_node_path], "Phase 1", "dijkstra shortest")
 
                 # Expand the chosen node path based on parallelpath_strategy
                 if parallelpath_strategy != 'none':
-                    parallel_paths = TopologyHelper.expand_path(chosen_node_path, G)
+                    parallel_paths = TopologyHelper.expand_path(
+                        chosen_node_path, G)
 
                     if parallel_paths:
                         # Apply strategy to pick ONE parallel combination
                         if parallelpath_strategy == 'last-fit':
                             dijkstra_collection = [parallel_paths[-1]]
                         elif parallelpath_strategy == 'random':
-                            dijkstra_collection = [random.choice(parallel_paths)]
+                            dijkstra_collection = [
+                                random.choice(parallel_paths)]
                         else:
                             # Default: first-fit
                             dijkstra_collection = [parallel_paths[0]]
                         # TopologyHelper.log_path_links(dijkstra_collection, "Phase 1", "parallel link")
                 else:
-                    single_path = TopologyHelper.expand_path_first_valid(chosen_node_path, G)
+                    single_path = TopologyHelper.expand_path_first_valid(
+                        chosen_node_path, G)
                     if single_path:
                         dijkstra_collection = [single_path]
                         # TopologyHelper.log_path_links(dijkstra_collection, "Phase 1", "single link")
     except nx.NetworkXNoPath:
         logger.info(
             f"[Phase 1] No dijkstra path from {src_dev} to {dst_dev}")
-
 
     # ================================================================
     all_paths_collection = []
@@ -359,25 +365,29 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                 elif strategy == 'random':
                     chosen_alt_path = random.choice(simple_node_paths)
                 elif strategy == 'highest-slot':
-                    chosen_alt_path = TopologyHelper.highest_slot_path(simple_node_paths, G)
+                    chosen_alt_path = TopologyHelper.highest_slot_path(
+                        simple_node_paths, G)
                 else:
                     chosen_alt_path = simple_node_paths[0]
                 # TopologyHelper.log_path_links([chosen_alt_path], "Phase 2", "additional")
                 # Expand the chosen node path based on parallelpath_strategy
                 if parallelpath_strategy != 'none':
-                    alt_parallel_paths = TopologyHelper.expand_path(chosen_alt_path, G)
+                    alt_parallel_paths = TopologyHelper.expand_path(
+                        chosen_alt_path, G)
 
                     if alt_parallel_paths:
                         # Apply strategy to pick ONE parallel combination
                         if parallelpath_strategy == 'last-fit':
                             all_paths_collection = [alt_parallel_paths[-1]]
                         elif parallelpath_strategy == 'random':
-                            all_paths_collection = [random.choice(alt_parallel_paths)]
+                            all_paths_collection = [
+                                random.choice(alt_parallel_paths)]
                         else:
                             all_paths_collection = [alt_parallel_paths[0]]
                         # TopologyHelper.log_path_links(all_paths_collection, "Phase 2", "parallel link")
                 else:
-                    single_path = TopologyHelper.expand_path_first_valid(chosen_alt_path, G)
+                    single_path = TopologyHelper.expand_path_first_valid(
+                        chosen_alt_path, G)
                     if single_path:
                         all_paths_collection = [single_path]
                         # TopologyHelper.log_path_links(all_paths_collection, "Phase 2", "single link")
@@ -408,6 +418,7 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
     #             f"for {src_dev} -> {dst_dev}")
 
     return result
+
 
 def perform_rsa_for_path(link_ids, bitrate):
     """

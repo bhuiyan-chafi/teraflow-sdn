@@ -1,0 +1,8 @@
+Successfully loaded 22 links for study.
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=250
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+============================================================
+API Request Error after 3 attempts: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/lightpath/request (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10808adc0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+API Request Error after 3 attempts: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/lightpath/request (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10808adc0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+API Request Error after 3 attempts: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/lightpath/request (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10808a2b0>: Failed to establish a new connection: [Errno 61] Connection refused'))

@@ -562,8 +562,8 @@ class TopologyHelper:
                 if hops > 0:
                     # because two endpoints represent one link
                     avg_slots = total_slots / (hops*2)
-                    logger.info(
-                        f"[Highest Slot] Evaluated Path: {' -> '.join(path)} | Avg Slots: {avg_slots:.2f}")
+                    # logger.info(
+                    #     f"[Highest Slot] Evaluated Path: {' -> '.join(path)} | Avg Slots: {avg_slots:.2f}")
                     if avg_slots > max_value:
                         max_value = avg_slots
                         best_path = path

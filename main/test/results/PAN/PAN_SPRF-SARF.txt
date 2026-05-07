@@ -1,0 +1,494 @@
+Successfully loaded 55 links for study.(PID: 480808)
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=1150
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+================================================
+--- TRANSIENT PHASE ENDED at 600.05s ---
+    Transient: 11584 requests, 2812 blocked
+    Progress: 500 requests | P_b=0.262000 | CI=0.038543 | Rel.CI=14.71%
+    Progress: 1000 requests | P_b=0.257000 | CI=0.027084 | Rel.CI=10.54%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 1150,
+    "path_strategy": "random",
+    "spectrum_strategy": "random",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 1100,
+    "transient_contention_rate": 24.27486188,
+    "successful_requests": 815,
+    "blocked_requests": 285,
+    "path_blocked": 0,
+    "spectral_blocked": 285,
+    "blocking_probability": 0.25909091,
+    "absolute_confidence_interval": 0.02589216,
+    "relative_confidence_interval_pct": 9.9935,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 285
+    },
+    "most_used_links": "RDMlyon->RDMmilan_1 (1068), RDMbrussels->RDMfrankfurt_1 (879), RDMlyon->RDMparis_1 (784), RDMamsterdam->RDMhamburg_1 (782), RDMparis->RDMbordeaux_1 (740), RDMglasgow->RDMlondon_1 (736), RDMfrankfurt->RDMmunich_1 (667), RDMamsterdam->RDMparis_1 (646), RDMmilan->RDMrome_1 (641), RDMstockholm->RDMwarsaw_1 (641)"
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=1050
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.01s ---
+    Transient: 10565 requests, 2374 blocked
+    Progress: 500 requests | P_b=0.236000 | CI=0.037220 | Rel.CI=15.77%
+    Progress: 1000 requests | P_b=0.230000 | CI=0.026083 | Rel.CI=11.34%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 1050,
+    "path_strategy": "random",
+    "spectrum_strategy": "random",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 1215,
+    "transient_contention_rate": 22.4704212,
+    "successful_requests": 923,
+    "blocked_requests": 292,
+    "path_blocked": 0,
+    "spectral_blocked": 292,
+    "blocking_probability": 0.24032922,
+    "absolute_confidence_interval": 0.02402614,
+    "relative_confidence_interval_pct": 9.9972,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 292
+    },
+    "most_used_links": "RDMlyon->RDMmilan_1 (1019), RDMbrussels->RDMfrankfurt_1 (823), RDMlyon->RDMparis_1 (757), RDMamsterdam->RDMhamburg_1 (731), RDMparis->RDMbordeaux_1 (711), RDMglasgow->RDMlondon_1 (660), RDMmilan->RDMrome_1 (639), RDMamsterdam->RDMparis_1 (635), RDMfrankfurt->RDMmunich_1 (621), RDMstockholm->RDMwarsaw_1 (616)"
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=950
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.04s ---
+    Transient: 9454 requests, 1851 blocked
+    Progress: 500 requests | P_b=0.244000 | CI=0.037647 | Rel.CI=15.43%
+    Progress: 1000 requests | P_b=0.237000 | CI=0.026357 | Rel.CI=11.12%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 950,
+    "path_strategy": "random",
+    "spectrum_strategy": "random",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 1316,
+    "transient_contention_rate": 19.57901417,
+    "successful_requests": 1018,
+    "blocked_requests": 298,
+    "path_blocked": 0,
+    "spectral_blocked": 298,
+    "blocking_probability": 0.22644377,
+    "absolute_confidence_interval": 0.0226128,
+    "relative_confidence_interval_pct": 9.9861,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 298
+    },
+    "most_used_links": "RDMlyon->RDMmilan_1 (1015), RDMbrussels->RDMfrankfurt_1 (805), RDMlyon->RDMparis_1 (742), RDMamsterdam->RDMhamburg_1 (724), RDMglasgow->RDMlondon_1 (686), RDMparis->RDMbordeaux_1 (679), RDMamsterdam->RDMparis_1 (639), RDMfrankfurt->RDMmunich_1 (620), RDMmilan->RDMrome_1 (601), RDMstockholm->RDMwarsaw_1 (599)"
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=850
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.04s ---
+    Transient: 8612 requests, 1544 blocked
+    Progress: 500 requests | P_b=0.188000 | CI=0.034247 | Rel.CI=18.22%
+    Progress: 1000 requests | P_b=0.195000 | CI=0.024557 | Rel.CI=12.59%
+    Progress: 1500 requests | P_b=0.191333 | CI=0.019906 | Rel.CI=10.40%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 850,
+    "path_strategy": "random",
+    "spectrum_strategy": "random",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 1727,
+    "transient_contention_rate": 17.9284719,
+    "successful_requests": 1412,
+    "blocked_requests": 315,
+    "path_blocked": 0,
+    "spectral_blocked": 315,
+    "blocking_probability": 0.18239722,
+    "absolute_confidence_interval": 0.01821336,
+    "relative_confidence_interval_pct": 9.9855,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 315
+    },
+    "most_used_links": "RDMlyon->RDMmilan_1 (1058), RDMbrussels->RDMfrankfurt_1 (828), RDMlyon->RDMparis_1 (751), RDMparis->RDMbordeaux_1 (697), RDMamsterdam->RDMhamburg_1 (674), RDMglasgow->RDMlondon_1 (632), RDMfrankfurt->RDMmunich_1 (627), RDMmilan->RDMrome_1 (605), RDMamsterdam->RDMparis_1 (584), RDMstockholm->RDMwarsaw_1 (575)"
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=750
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.06s ---
+    Transient: 7400 requests, 1073 blocked
+    Progress: 500 requests | P_b=0.140000 | CI=0.030415 | Rel.CI=21.72%
+    Progress: 1000 requests | P_b=0.137000 | CI=0.021312 | Rel.CI=15.56%
+    Progress: 1500 requests | P_b=0.144000 | CI=0.017768 | Rel.CI=12.34%
+    Progress: 2000 requests | P_b=0.157000 | CI=0.015944 | Rel.CI=10.16%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 750,
+    "path_strategy": "random",
+    "spectrum_strategy": "random",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 2048,
+    "transient_contention_rate": 14.5,
+    "successful_requests": 1724,
+    "blocked_requests": 324,
+    "path_blocked": 0,
+    "spectral_blocked": 324,
+    "blocking_probability": 0.15820312,
+    "absolute_confidence_interval": 0.01580528,
+    "relative_confidence_interval_pct": 9.9905,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 324
+    },
+    "most_used_links": "RDMlyon->RDMmilan_1 (1006), RDMbrussels->RDMfrankfurt_1 (812), RDMlyon->RDMparis_1 (723), RDMamsterdam->RDMhamburg_1 (675), RDMglasgow->RDMlondon_1 (651), RDMparis->RDMbordeaux_1 (636), RDMfrankfurt->RDMmunich_1 (602), RDMstockholm->RDMwarsaw_1 (587), RDMamsterdam->RDMparis_1 (577), RDMmilan->RDMrome_1 (563)"
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=650
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.12s ---
+    Transient: 6507 requests, 827 blocked
+    Progress: 500 requests | P_b=0.132000 | CI=0.029670 | Rel.CI=22.48%
+    Progress: 1000 requests | P_b=0.134000 | CI=0.021114 | Rel.CI=15.76%
+    Progress: 1500 requests | P_b=0.140000 | CI=0.017560 | Rel.CI=12.54%
+    Progress: 2000 requests | P_b=0.139500 | CI=0.015185 | Rel.CI=10.89%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 650,
+    "path_strategy": "random",
+    "spectrum_strategy": "random",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 2257,
+    "transient_contention_rate": 12.70938989,
+    "successful_requests": 1928,
+    "blocked_requests": 329,
+    "path_blocked": 0,
+    "spectral_blocked": 329,
+    "blocking_probability": 0.14576872,
+    "absolute_confidence_interval": 0.01455828,
+    "relative_confidence_interval_pct": 9.9872,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 329
+    },
+    "most_used_links": "RDMlyon->RDMmilan_1 (1000), RDMbrussels->RDMfrankfurt_1 (742), RDMlyon->RDMparis_1 (681), RDMamsterdam->RDMhamburg_1 (648), RDMparis->RDMbordeaux_1 (630), RDMglasgow->RDMlondon_1 (616), RDMfrankfurt->RDMmunich_1 (593), RDMamsterdam->RDMparis_1 (578), RDMmilan->RDMrome_1 (547), RDMstockholm->RDMwarsaw_1 (534)"
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=550
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.14s ---
+    Transient: 5576 requests, 471 blocked
+    Progress: 500 requests | P_b=0.094000 | CI=0.025580 | Rel.CI=27.21%
+    Progress: 1000 requests | P_b=0.109000 | CI=0.019316 | Rel.CI=17.72%
+    Progress: 1500 requests | P_b=0.107333 | CI=0.015665 | Rel.CI=14.59%
+    Progress: 2000 requests | P_b=0.106000 | CI=0.013492 | Rel.CI=12.73%
+    Progress: 2500 requests | P_b=0.104400 | CI=0.011987 | Rel.CI=11.48%
+    Progress: 3000 requests | P_b=0.103667 | CI=0.010908 | Rel.CI=10.52%
+    Progress: 3500 requests | P_b=0.098857 | CI=0.009888 | Rel.CI=10.00%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 550,
+    "path_strategy": "random",
+    "spectrum_strategy": "random",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 3501,
+    "transient_contention_rate": 8.44691535,
+    "successful_requests": 3154,
+    "blocked_requests": 347,
+    "path_blocked": 0,
+    "spectral_blocked": 347,
+    "blocking_probability": 0.09911454,
+    "absolute_confidence_interval": 0.00989837,
+    "relative_confidence_interval_pct": 9.9868,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 347
+    },
+    "most_used_links": "RDMlyon->RDMmilan_1 (1125), RDMbrussels->RDMfrankfurt_1 (850), RDMlyon->RDMparis_1 (844), RDMamsterdam->RDMhamburg_1 (727), RDMglasgow->RDMlondon_1 (711), RDMparis->RDMbordeaux_1 (666), RDMamsterdam->RDMparis_1 (666), RDMmilan->RDMrome_1 (664), RDMfrankfurt->RDMmunich_1 (638), RDMlondon->RDMparis_1 (631)"
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=450
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.24s ---
+    Transient: 4477 requests, 271 blocked
+    Progress: 500 requests | P_b=0.046000 | CI=0.018362 | Rel.CI=39.92%
+    Progress: 1000 requests | P_b=0.058000 | CI=0.014488 | Rel.CI=24.98%
+    Progress: 1500 requests | P_b=0.060667 | CI=0.012081 | Rel.CI=19.91%
+    Progress: 2000 requests | P_b=0.058500 | CI=0.010286 | Rel.CI=17.58%
+    Progress: 2500 requests | P_b=0.060400 | CI=0.009338 | Rel.CI=15.46%
+    Progress: 3000 requests | P_b=0.061667 | CI=0.008608 | Rel.CI=13.96%
+    Progress: 3500 requests | P_b=0.060571 | CI=0.007903 | Rel.CI=13.05%
+    Progress: 4000 requests | P_b=0.060500 | CI=0.007388 | Rel.CI=12.21%
+    Progress: 4500 requests | P_b=0.060222 | CI=0.006951 | Rel.CI=11.54%
+    Progress: 5000 requests | P_b=0.063000 | CI=0.006735 | Rel.CI=10.69%
+    Progress: 5500 requests | P_b=0.064545 | CI=0.006494 | Rel.CI=10.06%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 450,
+    "path_strategy": "random",
+    "spectrum_strategy": "random",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 5547,
+    "transient_contention_rate": 6.0531606,
+    "successful_requests": 5187,
+    "blocked_requests": 360,
+    "path_blocked": 0,
+    "spectral_blocked": 360,
+    "blocking_probability": 0.06489995,
+    "absolute_confidence_interval": 0.00648303,
+    "relative_confidence_interval_pct": 9.9893,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 360
+    },
+    "most_used_links": "RDMlyon->RDMmilan_1 (1296), RDMbrussels->RDMfrankfurt_1 (988), RDMlyon->RDMparis_1 (892), RDMparis->RDMbordeaux_1 (827), RDMamsterdam->RDMhamburg_1 (817), RDMglasgow->RDMlondon_1 (805), RDMamsterdam->RDMparis_1 (716), RDMmilan->RDMrome_1 (706), RDMfrankfurt->RDMmunich_1 (700), RDMlondon->RDMparis_1 (687)"
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=350
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.12s ---
+    Transient: 3504 requests, 120 blocked
+    Progress: 500 requests | P_b=0.026000 | CI=0.013949 | Rel.CI=53.65%
+    Progress: 1000 requests | P_b=0.027000 | CI=0.010046 | Rel.CI=37.21%
+    Progress: 1500 requests | P_b=0.030667 | CI=0.008725 | Rel.CI=28.45%
+    Progress: 2000 requests | P_b=0.029000 | CI=0.007354 | Rel.CI=25.36%
+    Progress: 2500 requests | P_b=0.029200 | CI=0.006600 | Rel.CI=22.60%
+    Progress: 3000 requests | P_b=0.028667 | CI=0.005971 | Rel.CI=20.83%
+    Progress: 3500 requests | P_b=0.029429 | CI=0.005599 | Rel.CI=19.03%
+    Progress: 4000 requests | P_b=0.031750 | CI=0.005434 | Rel.CI=17.11%
+    Progress: 4500 requests | P_b=0.034444 | CI=0.005328 | Rel.CI=15.47%
+    Progress: 5000 requests | P_b=0.034400 | CI=0.005052 | Rel.CI=14.69%
+    Progress: 5500 requests | P_b=0.033818 | CI=0.004777 | Rel.CI=14.13%
+    Progress: 6000 requests | P_b=0.032833 | CI=0.004509 | Rel.CI=13.73%
+    Progress: 6500 requests | P_b=0.032923 | CI=0.004338 | Rel.CI=13.18%
+    Progress: 7000 requests | P_b=0.033571 | CI=0.004220 | Rel.CI=12.57%
+    Progress: 7500 requests | P_b=0.034533 | CI=0.004133 | Rel.CI=11.97%
+    Progress: 8000 requests | P_b=0.033750 | CI=0.003957 | Rel.CI=11.73%
+    Progress: 8500 requests | P_b=0.033412 | CI=0.003820 | Rel.CI=11.43%
+    Progress: 9000 requests | P_b=0.033889 | CI=0.003738 | Rel.CI=11.03%
+    Progress: 9500 requests | P_b=0.034316 | CI=0.003661 | Rel.CI=10.67%
+    Progress: 10000 requests | P_b=0.033800 | CI=0.003542 | Rel.CI=10.48%
+    Progress: 10500 requests | P_b=0.033810 | CI=0.003457 | Rel.CI=10.23%
+    Progress: 11000 requests | P_b=0.033727 | CI=0.003374 | Rel.CI=10.00%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 350,
+    "path_strategy": "random",
+    "spectrum_strategy": "random",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 11012,
+    "transient_contention_rate": 3.42465753,
+    "successful_requests": 10640,
+    "blocked_requests": 372,
+    "path_blocked": 0,
+    "spectral_blocked": 372,
+    "blocking_probability": 0.03378133,
+    "absolute_confidence_interval": 0.00337442,
+    "relative_confidence_interval_pct": 9.989,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 372
+    },
+    "most_used_links": "RDMlyon->RDMmilan_1 (2106), RDMbrussels->RDMfrankfurt_1 (1533), RDMlyon->RDMparis_1 (1469), RDMamsterdam->RDMhamburg_1 (1272), RDMparis->RDMbordeaux_1 (1214), RDMglasgow->RDMlondon_1 (1174), RDMmilan->RDMrome_1 (1136), RDMfrankfurt->RDMmunich_1 (1095), RDMamsterdam->RDMparis_1 (1091), RDMlondon->RDMparis_1 (1045)"
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=250
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.32s ---
+    Transient: 2543 requests, 18 blocked
+    Progress: 500 requests | P_b=0.008000 | CI=0.007809 | Rel.CI=97.61%
+    Progress: 1000 requests | P_b=0.007000 | CI=0.005167 | Rel.CI=73.82%
+    Progress: 1500 requests | P_b=0.005333 | CI=0.003686 | Rel.CI=69.11%
+    Progress: 2000 requests | P_b=0.005500 | CI=0.003241 | Rel.CI=58.93%
+    Progress: 2500 requests | P_b=0.006800 | CI=0.003222 | Rel.CI=47.38%
+    Progress: 3000 requests | P_b=0.006333 | CI=0.002839 | Rel.CI=44.82%
+    Progress: 3500 requests | P_b=0.006571 | CI=0.002677 | Rel.CI=40.73%
+    Progress: 4000 requests | P_b=0.006500 | CI=0.002490 | Rel.CI=38.31%
+    Progress: 4500 requests | P_b=0.007556 | CI=0.002530 | Rel.CI=33.49%
+    Progress: 5000 requests | P_b=0.008600 | CI=0.002559 | Rel.CI=29.76%
+    Progress: 5500 requests | P_b=0.009091 | CI=0.002508 | Rel.CI=27.59%
+    Progress: 6000 requests | P_b=0.008833 | CI=0.002368 | Rel.CI=26.80%
+    Progress: 6500 requests | P_b=0.008769 | CI=0.002267 | Rel.CI=25.85%
+    Progress: 7000 requests | P_b=0.009000 | CI=0.002212 | Rel.CI=24.58%
+    Progress: 7500 requests | P_b=0.009733 | CI=0.002222 | Rel.CI=22.83%
+    Progress: 8000 requests | P_b=0.009875 | CI=0.002167 | Rel.CI=21.94%
+    Progress: 8500 requests | P_b=0.010471 | CI=0.002164 | Rel.CI=20.67%
+    Progress: 9000 requests | P_b=0.010000 | CI=0.002056 | Rel.CI=20.56%
+    Progress: 9500 requests | P_b=0.009789 | CI=0.001980 | Rel.CI=20.22%
+    Progress: 10000 requests | P_b=0.010200 | CI=0.001969 | Rel.CI=19.31%
+    Progress: 10500 requests | P_b=0.010476 | CI=0.001947 | Rel.CI=18.59%
+    Progress: 11000 requests | P_b=0.010364 | CI=0.001893 | Rel.CI=18.26%
+    Progress: 11500 requests | P_b=0.010348 | CI=0.001850 | Rel.CI=17.87%
+    Progress: 12000 requests | P_b=0.010583 | CI=0.001831 | Rel.CI=17.30%
+    Progress: 12500 requests | P_b=0.010640 | CI=0.001799 | Rel.CI=16.90%
+    Progress: 13000 requests | P_b=0.010462 | CI=0.001749 | Rel.CI=16.72%
+    Progress: 13500 requests | P_b=0.010963 | CI=0.001757 | Rel.CI=16.02%
+    Progress: 14000 requests | P_b=0.010929 | CI=0.001722 | Rel.CI=15.76%
+    Progress: 14500 requests | P_b=0.011172 | CI=0.001711 | Rel.CI=15.31%
+    Progress: 15000 requests | P_b=0.011200 | CI=0.001684 | Rel.CI=15.04%
+    Progress: 15500 requests | P_b=0.011032 | CI=0.001644 | Rel.CI=14.91%
+    Progress: 16000 requests | P_b=0.011187 | CI=0.001630 | Rel.CI=14.57%
+    Progress: 16500 requests | P_b=0.010970 | CI=0.001589 | Rel.CI=14.49%
+    Progress: 17000 requests | P_b=0.010941 | CI=0.001564 | Rel.CI=14.29%
+    Progress: 17500 requests | P_b=0.010857 | CI=0.001535 | Rel.CI=14.14%
+    Progress: 18000 requests | P_b=0.010611 | CI=0.001497 | Rel.CI=14.11%
+    Progress: 18500 requests | P_b=0.010486 | CI=0.001468 | Rel.CI=14.00%
+    Progress: 19000 requests | P_b=0.010579 | CI=0.001455 | Rel.CI=13.75%
+    Progress: 19500 requests | P_b=0.010308 | CI=0.001418 | Rel.CI=13.75%
+    Progress: 20000 requests | P_b=0.010400 | CI=0.001406 | Rel.CI=13.52%
+    Progress: 20500 requests | P_b=0.010439 | CI=0.001391 | Rel.CI=13.33%
+    Progress: 21000 requests | P_b=0.010381 | CI=0.001371 | Rel.CI=13.21%
+    Progress: 21500 requests | P_b=0.010233 | CI=0.001345 | Rel.CI=13.15%
+    Progress: 22000 requests | P_b=0.010136 | CI=0.001324 | Rel.CI=13.06%
+    Progress: 22500 requests | P_b=0.010044 | CI=0.001303 | Rel.CI=12.97%
+    Progress: 23000 requests | P_b=0.009913 | CI=0.001280 | Rel.CI=12.92%
+    Progress: 23500 requests | P_b=0.010043 | CI=0.001275 | Rel.CI=12.69%
+    Progress: 24000 requests | P_b=0.009917 | CI=0.001254 | Rel.CI=12.64%
+    Progress: 24500 requests | P_b=0.010041 | CI=0.001248 | Rel.CI=12.43%
+    Progress: 25000 requests | P_b=0.010040 | CI=0.001236 | Rel.CI=12.31%
+    Progress: 25500 requests | P_b=0.010000 | CI=0.001221 | Rel.CI=12.21%
+    Progress: 26000 requests | P_b=0.009923 | CI=0.001205 | Rel.CI=12.14%
+    Progress: 26500 requests | P_b=0.009925 | CI=0.001193 | Rel.CI=12.03%
+    Progress: 27000 requests | P_b=0.009741 | CI=0.001172 | Rel.CI=12.03%
+    Progress: 27500 requests | P_b=0.009600 | CI=0.001152 | Rel.CI=12.00%
+    Progress: 28000 requests | P_b=0.009536 | CI=0.001138 | Rel.CI=11.94%
+    Progress: 28500 requests | P_b=0.009474 | CI=0.001125 | Rel.CI=11.87%
+    Progress: 29000 requests | P_b=0.009828 | CI=0.001135 | Rel.CI=11.55%
+    Progress: 29500 requests | P_b=0.009729 | CI=0.001120 | Rel.CI=11.51%
+    Progress: 30000 requests | P_b=0.009667 | CI=0.001107 | Rel.CI=11.45%
+    Progress: 30500 requests | P_b=0.009639 | CI=0.001097 | Rel.CI=11.38%
+    Progress: 31000 requests | P_b=0.009677 | CI=0.001090 | Rel.CI=11.26%
+    Progress: 31500 requests | P_b=0.009619 | CI=0.001078 | Rel.CI=11.21%
+    Progress: 32000 requests | P_b=0.009781 | CI=0.001078 | Rel.CI=11.02%
+    Progress: 32500 requests | P_b=0.009723 | CI=0.001067 | Rel.CI=10.97%
+    Progress: 33000 requests | P_b=0.009758 | CI=0.001061 | Rel.CI=10.87%
+    Progress: 33500 requests | P_b=0.009761 | CI=0.001053 | Rel.CI=10.79%
+    Progress: 34000 requests | P_b=0.009882 | CI=0.001051 | Rel.CI=10.64%
+    Progress: 34500 requests | P_b=0.010087 | CI=0.001054 | Rel.CI=10.45%
+    Progress: 35000 requests | P_b=0.010143 | CI=0.001050 | Rel.CI=10.35%
+    Progress: 35500 requests | P_b=0.010000 | CI=0.001035 | Rel.CI=10.35%
+    Progress: 36000 requests | P_b=0.009889 | CI=0.001022 | Rel.CI=10.34%
+    Progress: 36500 requests | P_b=0.009945 | CI=0.001018 | Rel.CI=10.24%
+    Progress: 37000 requests | P_b=0.009892 | CI=0.001008 | Rel.CI=10.19%
+    Progress: 37500 requests | P_b=0.009813 | CI=0.000998 | Rel.CI=10.17%
+    Progress: 38000 requests | P_b=0.009684 | CI=0.000985 | Rel.CI=10.17%
+    Progress: 38500 requests | P_b=0.009740 | CI=0.000981 | Rel.CI=10.07%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 250,
+    "path_strategy": "random",
+    "spectrum_strategy": "random",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 38788,
+    "transient_contention_rate": 0.7078254,
+    "successful_requests": 38407,
+    "blocked_requests": 381,
+    "path_blocked": 0,
+    "spectral_blocked": 381,
+    "blocking_probability": 0.00982263,
+    "absolute_confidence_interval": 0.00098147,
+    "relative_confidence_interval_pct": 9.9919,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 381
+    },
+    "most_used_links": "RDMlyon->RDMmilan_1 (6453), RDMlyon->RDMparis_1 (4537), RDMbrussels->RDMfrankfurt_1 (4471), RDMamsterdam->RDMhamburg_1 (3771), RDMparis->RDMbordeaux_1 (3678), RDMglasgow->RDMlondon_1 (3604), RDMmilan->RDMrome_1 (3514), RDMamsterdam->RDMparis_1 (3419), RDMfrankfurt->RDMmunich_1 (3193), RDMlondon->RDMparis_1 (3173)"
+}

@@ -1904,3 +1904,44 @@ Stopping: CI <= 10.0% of P_b OR max 2000000 requests
     Progress: 722500 requests | P_b=0.00000692 | CI=0.00000607 | Rel.CI=87.65%
     Progress: 723000 requests | P_b=0.00000692 | CI=0.00000606 | Rel.CI=87.65%
     Progress: 723500 requests | P_b=0.00000691 | CI=0.00000606 | Rel.CI=87.65%
+    Progress: 724000 requests | P_b=0.00000691 | CI=0.00000605 | Rel.CI=87.65%
+    Progress: 724500 requests | P_b=0.00000690 | CI=0.00000605 | Rel.CI=87.65%
+    Progress: 725000 requests | P_b=0.00000690 | CI=0.00000605 | Rel.CI=87.65%
+    Progress: 725500 requests | P_b=0.00000689 | CI=0.00000604 | Rel.CI=87.65%
+    Progress: 726000 requests | P_b=0.00000689 | CI=0.00000604 | Rel.CI=87.65%
+    Progress: 726500 requests | P_b=0.00000688 | CI=0.00000603 | Rel.CI=87.65%
+    Progress: 727000 requests | P_b=0.00000688 | CI=0.00000603 | Rel.CI=87.65%
+    Progress: 727500 requests | P_b=0.00000687 | CI=0.00000602 | Rel.CI=87.65%
+    Progress: 728000 requests | P_b=0.00000687 | CI=0.00000602 | Rel.CI=87.65%
+    Progress: 728500 requests | P_b=0.00000686 | CI=0.00000602 | Rel.CI=87.65%
+    Progress: 729000 requests | P_b=0.00000686 | CI=0.00000601 | Rel.CI=87.65%
+    Progress: 729500 requests | P_b=0.00000685 | CI=0.00000601 | Rel.CI=87.65%
+    Progress: 730000 requests | P_b=0.00000685 | CI=0.00000600 | Rel.CI=87.65%
+    Progress: 730500 requests | P_b=0.00000684 | CI=0.00000600 | Rel.CI=87.65%
+    Progress: 731000 requests | P_b=0.00000684 | CI=0.00000600 | Rel.CI=87.65%
+    Progress: 731500 requests | P_b=0.00000684 | CI=0.00000599 | Rel.CI=87.65%
+    Progress: 732000 requests | P_b=0.00000683 | CI=0.00000599 | Rel.CI=87.65%
+    Progress: 732500 requests | P_b=0.00000683 | CI=0.00000598 | Rel.CI=87.65%
+    Progress: 733000 requests | P_b=0.00000682 | CI=0.00000598 | Rel.CI=87.65%
+    Progress: 733500 requests | P_b=0.00000682 | CI=0.00000598 | Rel.CI=87.65%
+    Progress: 734000 requests | P_b=0.00000681 | CI=0.00000597 | Rel.CI=87.65%
+    Progress: 734500 requests | P_b=0.00000681 | CI=0.00000597 | Rel.CI=87.65%
+    Progress: 735000 requests | P_b=0.00000680 | CI=0.00000596 | Rel.CI=87.65%
+    Progress: 735500 requests | P_b=0.00000680 | CI=0.00000596 | Rel.CI=87.65%
+    Progress: 736000 requests | P_b=0.00000679 | CI=0.00000595 | Rel.CI=87.65%
+    Progress: 736500 requests | P_b=0.00000679 | CI=0.00000595 | Rel.CI=87.65%
+    Progress: 737000 requests | P_b=0.00000678 | CI=0.00000595 | Rel.CI=87.65%
+    Progress: 737500 requests | P_b=0.00000678 | CI=0.00000594 | Rel.CI=87.65%
+    Progress: 738000 requests | P_b=0.00000678 | CI=0.00000594 | Rel.CI=87.65%
+    Progress: 738500 requests | P_b=0.00000677 | CI=0.00000593 | Rel.CI=87.65%
+    Progress: 739000 requests | P_b=0.00000677 | CI=0.00000593 | Rel.CI=87.65%
+    Progress: 739500 requests | P_b=0.00000676 | CI=0.00000593 | Rel.CI=87.65%
+    Progress: 740000 requests | P_b=0.00000676 | CI=0.00000592 | Rel.CI=87.65%
+    Progress: 740500 requests | P_b=0.00000675 | CI=0.00000592 | Rel.CI=87.65%
+    Progress: 741000 requests | P_b=0.00000675 | CI=0.00000591 | Rel.CI=87.65%
+    Progress: 741500 requests | P_b=0.00000674 | CI=0.00000591 | Rel.CI=87.65%
+    Progress: 742000 requests | P_b=0.00000674 | CI=0.00000591 | Rel.CI=87.65%
+    Progress: 742500 requests | P_b=0.00000673 | CI=0.00000590 | Rel.CI=87.65%
+    Progress: 743000 requests | P_b=0.00000673 | CI=0.00000590 | Rel.CI=87.65%
+    Progress: 743500 requests | P_b=0.00000672 | CI=0.00000589 | Rel.CI=87.65%
+    Progress: 744000 requests | P_b=0.00000672 | CI=0.00000589 | Rel.CI=87.65%

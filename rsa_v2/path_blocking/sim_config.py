@@ -18,6 +18,7 @@ NODES = ["RDMwa", "RDMca1", "RDMca2", "RDMut", "RDMco", "RDMne", "RDMtx",
 BIT_RATES = [100, 200, 400]
 BIT_RATE_PROBS = [0.5, 0.25, 0.25]
 ERLANGS = [250, 350, 450, 550, 650, 750]
+# for parallel loads: 2250, 1950, 1650, 1350, 1050, 750
 
 # CI-based stopping parameters
 MAX_REQUESTS = 2000000  # Maximum number of independent trials (10^4)

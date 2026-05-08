@@ -1,4 +1,4 @@
-# python3 test.py request --src RDMca1 --dst RDMny --bitrate 100 --path_strategy first-fit --spectrum_strategy random --path_type dijkstra --parallelpath_strategy first-fit
+# python3 test.py request --src RDMny --dst RDMtx --bitrate 100 --path_strategy first-fit --spectrum_strategy random --path_type dijkstra --parallelpath_strategy first-fit
 # python3 test.py teardown --id YOUR_LIGHTPATH_ID_HERE
 
 import requests
@@ -20,7 +20,8 @@ def test_request(src, dst, bitrate, path_strategy='first-fit', spectrum_strategy
         "path_type": path_type,
         "parallelpath_strategy": parallelpath_strategy
     }
-    print(f"--- Sending REQUEST: {src} -> {dst} at {bitrate} Gbps (path_strategy: {path_strategy}, spectrum_strategy: {spectrum_strategy}) ---")
+    print(
+        f"--- Sending REQUEST: {src} -> {dst} at {bitrate} Gbps (path_strategy: {path_strategy}, spectrum_strategy: {spectrum_strategy}) ---")
     try:
         resp = requests.post(API_URL, json=payload)
         print(f"Status Code: {resp.status_code}")
@@ -55,7 +56,8 @@ if __name__ == "__main__":
     parser.add_argument('--bitrate', type=int, default=100,
                         help="Bitrate in Gbps (default: 100)")
     parser.add_argument('--path_strategy', type=str, default='first-fit',
-                        choices=['first-fit', 'last-fit', 'highest-slot','random'],
+                        choices=['first-fit', 'last-fit',
+                                 'highest-slot', 'random'],
                         help="Path selection strategy (default: first-fit)")
     parser.add_argument('--spectrum_strategy', type=str, default='first-fit',
                         choices=['first-fit', 'last-fit', 'random'],
@@ -64,7 +66,8 @@ if __name__ == "__main__":
                         choices=['dijkstra', 'additional', 'both'],
                         help="Path generation type (default: dijkstra)")
     parser.add_argument('--parallelpath_strategy', type=str, default='none',
-                        choices=['first-fit', 'last-fit', 'random', 'none'],
+                        choices=['first-fit', 'last-fit',
+                                 'random', 'highest-slot', 'none'],
                         help="Parallel path expansion strategy (default: none)")
 
     # Teardown Arguments
@@ -73,11 +76,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.action == 'request':
-        test_request(args.src, args.dst, args.bitrate, args.path_strategy, args.spectrum_strategy, args.path_type, args.parallelpath_strategy)
+        test_request(args.src, args.dst, args.bitrate, args.path_strategy,
+                     args.spectrum_strategy, args.path_type, args.parallelpath_strategy)
     elif args.action == 'teardown':
         if not args.id:
             print(
                 "Error: You must provide a Lightpath ID using '--id' for the teardown endpoint.")
             sys.exit(1)
         test_teardown(args.id)
-

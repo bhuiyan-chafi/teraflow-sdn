@@ -554,8 +554,9 @@ class TopologyHelper:
                 hops = len(edge_path['links'])
                 if hops > 0:
                     avg_slots = total_slots / (hops*2)
+                    # link_seq = [l['name'] for l in edge_path['links']]
                     # logger.info(
-                    #     f"[Highest Slot] Evaluated Path: {' -> '.join(path)} | Avg Slots: {avg_slots:.2f}")
+                    #     f"[Highest Slot Edge] Evaluated Path Links: {' -> '.join(link_seq)} | Avg Slots: {avg_slots:.2f}")
                     if avg_slots > max_value:
                         max_value = avg_slots
                         best_edge_path = edge_path
@@ -564,6 +565,10 @@ class TopologyHelper:
                     f"[Highest Slot Edge] Error evaluating edge path: {e}")
                 continue
 
+        # if best_edge_path:
+        #     link_seq = [l['name'] for l in best_edge_path['links']]
+            # logger.info(
+            #     f"[Highest Slot Edge] Selected Path Links: {' -> '.join(link_seq)} with Max Avg Slots: {max_value:.2f}")
         return best_edge_path if best_edge_path else edge_paths[0]
 
     @staticmethod

@@ -321,6 +321,9 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                         elif parallelpath_strategy == 'random':
                             dijkstra_collection = [
                                 random.choice(parallel_paths)]
+                        elif parallelpath_strategy == 'highest-slot':
+                            dijkstra_collection = [
+                                TopologyHelper.highest_slot_edge_path(parallel_paths)]
                         else:
                             # Default: first-fit
                             dijkstra_collection = [parallel_paths[0]]
@@ -382,6 +385,9 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                         elif parallelpath_strategy == 'random':
                             all_paths_collection = [
                                 random.choice(alt_parallel_paths)]
+                        elif parallelpath_strategy == 'highest-slot':
+                            all_paths_collection = [
+                                TopologyHelper.highest_slot_edge_path(alt_parallel_paths)]
                         else:
                             all_paths_collection = [alt_parallel_paths[0]]
                         # TopologyHelper.log_path_links(all_paths_collection, "Phase 2", "parallel link")

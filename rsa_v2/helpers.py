@@ -524,6 +524,49 @@ class TopologyHelper:
         return result[0]
 
     @staticmethod
+    def highest_slot_edge_path(edge_paths):
+        from models import Endpoint, OpticalLink
+        best_edge_path = None
+        max_value = -1
+
+        for edge_path in edge_paths:
+            try:
+                link_ids = [link['id'] for link in edge_path['links']]
+                links_db = OpticalLink.query.filter(
+                    OpticalLink.id.in_(link_ids)).all()
+
+                endpoint_ids = []
+                for l in links_db:
+                    if l.src_endpoint_id:
+                        endpoint_ids.append(l.src_endpoint_id)
+                    if l.dst_endpoint_id:
+                        endpoint_ids.append(l.dst_endpoint_id)
+
+                endpoints = Endpoint.query.filter(
+                    Endpoint.id.in_(endpoint_ids)).all()
+
+                total_slots = 0
+                for ep in endpoints:
+                    bitmap_str = TopologyHelper.int_to_bitmap(
+                        ep.bitmap_value, ep.flex_slots if ep.flex_slots else 35)
+                    total_slots += bitmap_str.count('1')
+
+                hops = len(edge_path['links'])
+                if hops > 0:
+                    avg_slots = total_slots / (hops*2)
+                    # logger.info(
+                    #     f"[Highest Slot] Evaluated Path: {' -> '.join(path)} | Avg Slots: {avg_slots:.2f}")
+                    if avg_slots > max_value:
+                        max_value = avg_slots
+                        best_edge_path = edge_path
+            except Exception as e:
+                logger.error(
+                    f"[Highest Slot Edge] Error evaluating edge path: {e}")
+                continue
+
+        return best_edge_path if best_edge_path else edge_paths[0]
+
+    @staticmethod
     def highest_slot_path(node_paths, G):
         from models import Endpoint
         best_path = None

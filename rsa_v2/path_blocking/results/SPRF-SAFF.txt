@@ -1,0 +1,1934 @@
+Successfully loaded 77 links for study.(PID: 21249)
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=750
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+=================================================
+--- TRANSIENT PHASE ENDED at 600.04s ---
+    Transient: 7448 requests, 1200 blocked
+    Progress: 500 requests | P_b=0.14800000 | CI=0.03112589 | Rel.CI=21.03%
+    Progress: 1000 requests | P_b=0.17700000 | CI=0.02365607 | Rel.CI=13.37%
+    Progress: 1500 requests | P_b=0.17333333 | CI=0.01915652 | Rel.CI=11.05%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 750,
+    "path_strategy": "random",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 1870,
+    "transient_contention_rate": 16.11170784,
+    "successful_requests": 1551,
+    "blocked_requests": 319,
+    "path_blocked": 0,
+    "spectral_blocked": 319,
+    "blocking_probability": 0.17058824,
+    "absolute_confidence_interval": 0.01704884,
+    "relative_confidence_interval_pct": 9.9941,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 319
+    },
+    "most_used_links": "RDMil->RDMpa_15 (1017), RDMwa->RDMny_3 (1001), RDMtx->RDMga_13 (992), RDMut->RDMco_7 (938), RDMtx->RDMil_12 (926), RDMca2->RDMtx_6 (923), RDMco->RDMtx_10 (783), RDMga->RDMma_22 (779), RDMut->RDMmi_8 (774), RDMil->RDMmi_14 (744)"
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=650
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.05s ---
+    Transient: 6529 requests, 894 blocked
+    Progress: 500 requests | P_b=0.17000000 | CI=0.03292567 | Rel.CI=19.37%
+    Progress: 1000 requests | P_b=0.16200000 | CI=0.02283682 | Rel.CI=14.10%
+    Progress: 1500 requests | P_b=0.15600000 | CI=0.01836301 | Rel.CI=11.77%
+    Progress: 2000 requests | P_b=0.15150000 | CI=0.01571351 | Rel.CI=10.37%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 650,
+    "path_strategy": "random",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 2287,
+    "transient_contention_rate": 13.6927554,
+    "successful_requests": 1958,
+    "blocked_requests": 329,
+    "path_blocked": 0,
+    "spectral_blocked": 329,
+    "blocking_probability": 0.14385658,
+    "absolute_confidence_interval": 0.01438339,
+    "relative_confidence_interval_pct": 9.9984,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 329
+    },
+    "most_used_links": "RDMwa->RDMny_3 (1014), RDMtx->RDMga_13 (1003), RDMil->RDMpa_15 (976), RDMca2->RDMtx_6 (946), RDMtx->RDMil_12 (917), RDMut->RDMco_7 (901), RDMco->RDMtx_10 (779), RDMny->RDMnj_20 (752), RDMil->RDMmi_14 (735), RDMga->RDMma_22 (733)"
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=550
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.29s ---
+    Transient: 5584 requests, 493 blocked
+    Progress: 500 requests | P_b=0.09600000 | CI=0.02582206 | Rel.CI=26.90%
+    Progress: 1000 requests | P_b=0.09600000 | CI=0.01825895 | Rel.CI=19.02%
+    Progress: 1500 requests | P_b=0.09866667 | CI=0.01509171 | Rel.CI=15.30%
+    Progress: 2000 requests | P_b=0.10950000 | CI=0.01368564 | Rel.CI=12.50%
+    Progress: 2500 requests | P_b=0.11400000 | CI=0.01245820 | Rel.CI=10.93%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 550,
+    "path_strategy": "random",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 2839,
+    "transient_contention_rate": 8.82879656,
+    "successful_requests": 2500,
+    "blocked_requests": 339,
+    "path_blocked": 0,
+    "spectral_blocked": 339,
+    "blocking_probability": 0.11940824,
+    "absolute_confidence_interval": 0.01192828,
+    "relative_confidence_interval_pct": 9.9895,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 339
+    },
+    "most_used_links": "RDMwa->RDMny_3 (1062), RDMil->RDMpa_15 (1016), RDMtx->RDMga_13 (982), RDMut->RDMco_7 (950), RDMtx->RDMil_12 (938), RDMca2->RDMtx_6 (873), RDMut->RDMmi_8 (767), RDMga->RDMma_22 (762), RDMco->RDMtx_10 (754), RDMil->RDMmi_14 (740)"
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=450
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.15s ---
+    Transient: 4580 requests, 260 blocked
+    Progress: 500 requests | P_b=0.09400000 | CI=0.02557991 | Rel.CI=27.21%
+    Progress: 1000 requests | P_b=0.07700000 | CI=0.01652351 | Rel.CI=21.46%
+    Progress: 1500 requests | P_b=0.06466667 | CI=0.01244612 | Rel.CI=19.25%
+    Progress: 2000 requests | P_b=0.06150000 | CI=0.01052921 | Rel.CI=17.12%
+    Progress: 2500 requests | P_b=0.06120000 | CI=0.00939611 | Rel.CI=15.35%
+    Progress: 3000 requests | P_b=0.06200000 | CI=0.00862964 | Rel.CI=13.92%
+    Progress: 3500 requests | P_b=0.06228571 | CI=0.00800666 | Rel.CI=12.85%
+    Progress: 4000 requests | P_b=0.06475000 | CI=0.00762623 | Rel.CI=11.78%
+    Progress: 4500 requests | P_b=0.06444444 | CI=0.00717426 | Rel.CI=11.13%
+    Progress: 5000 requests | P_b=0.06320000 | CI=0.00674455 | Rel.CI=10.67%
+    Progress: 5500 requests | P_b=0.06254545 | CI=0.00639952 | Rel.CI=10.23%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 450,
+    "path_strategy": "random",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 5749,
+    "transient_contention_rate": 5.6768559,
+    "successful_requests": 5388,
+    "blocked_requests": 361,
+    "path_blocked": 0,
+    "spectral_blocked": 361,
+    "blocking_probability": 0.06279353,
+    "absolute_confidence_interval": 0.00627097,
+    "relative_confidence_interval_pct": 9.9867,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 361
+    },
+    "most_used_links": "RDMil->RDMpa_15 (1331), RDMtx->RDMga_13 (1307), RDMwa->RDMny_3 (1301), RDMtx->RDMil_12 (1253), RDMut->RDMco_7 (1218), RDMca2->RDMtx_6 (1189), RDMga->RDMma_22 (1016), RDMco->RDMtx_10 (1013), RDMil->RDMmi_14 (964), RDMne->RDMil_11 (958)"
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=350
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.10s ---
+    Transient: 3532 requests, 45 blocked
+    Progress: 500 requests | P_b=0.01800000 | CI=0.01165368 | Rel.CI=64.74%
+    Progress: 1000 requests | P_b=0.01600000 | CI=0.00777703 | Rel.CI=48.61%
+    Progress: 1500 requests | P_b=0.01533333 | CI=0.00621832 | Rel.CI=40.55%
+    Progress: 2000 requests | P_b=0.01350000 | CI=0.00505774 | Rel.CI=37.46%
+    Progress: 2500 requests | P_b=0.01400000 | CI=0.00460562 | Rel.CI=32.90%
+    Progress: 3000 requests | P_b=0.01666667 | CI=0.00458110 | Rel.CI=27.49%
+    Progress: 3500 requests | P_b=0.01428571 | CI=0.00393141 | Rel.CI=27.52%
+    Progress: 4000 requests | P_b=0.01450000 | CI=0.00370457 | Rel.CI=25.55%
+    Progress: 4500 requests | P_b=0.01688889 | CI=0.00376488 | Rel.CI=22.29%
+    Progress: 5000 requests | P_b=0.01760000 | CI=0.00364478 | Rel.CI=20.71%
+    Progress: 5500 requests | P_b=0.01636364 | CI=0.00335299 | Rel.CI=20.49%
+    Progress: 6000 requests | P_b=0.01533333 | CI=0.00310916 | Rel.CI=20.28%
+    Progress: 6500 requests | P_b=0.01692308 | CI=0.00313569 | Rel.CI=18.53%
+    Progress: 7000 requests | P_b=0.01800000 | CI=0.00311458 | Rel.CI=17.30%
+    Progress: 7500 requests | P_b=0.01773333 | CI=0.00298700 | Rel.CI=16.84%
+    Progress: 8000 requests | P_b=0.01762500 | CI=0.00288346 | Rel.CI=16.36%
+    Progress: 8500 requests | P_b=0.01823529 | CI=0.00284451 | Rel.CI=15.60%
+    Progress: 9000 requests | P_b=0.01755556 | CI=0.00271329 | Rel.CI=15.46%
+    Progress: 9500 requests | P_b=0.01726316 | CI=0.00261923 | Rel.CI=15.17%
+    Progress: 10000 requests | P_b=0.01920000 | CI=0.00268966 | Rel.CI=14.01%
+    Progress: 10500 requests | P_b=0.01895238 | CI=0.00260818 | Rel.CI=13.76%
+    Progress: 11000 requests | P_b=0.01881818 | CI=0.00253935 | Rel.CI=13.49%
+    Progress: 11500 requests | P_b=0.01895652 | CI=0.00249247 | Rel.CI=13.15%
+    Progress: 12000 requests | P_b=0.01925000 | CI=0.00245844 | Rel.CI=12.77%
+    Progress: 12500 requests | P_b=0.01936000 | CI=0.00241551 | Rel.CI=12.48%
+    Progress: 13000 requests | P_b=0.01869231 | CI=0.00232819 | Rel.CI=12.46%
+    Progress: 13500 requests | P_b=0.01829630 | CI=0.00226079 | Rel.CI=12.36%
+    Progress: 14000 requests | P_b=0.01857143 | CI=0.00223637 | Rel.CI=12.04%
+    Progress: 14500 requests | P_b=0.01855172 | CI=0.00219633 | Rel.CI=11.84%
+    Progress: 15000 requests | P_b=0.01953333 | CI=0.00221470 | Rel.CI=11.34%
+    Progress: 15500 requests | P_b=0.02064516 | CI=0.00223856 | Rel.CI=10.84%
+    Progress: 16000 requests | P_b=0.02043750 | CI=0.00219243 | Rel.CI=10.73%
+    Progress: 16500 requests | P_b=0.02006061 | CI=0.00213937 | Rel.CI=10.66%
+    Progress: 17000 requests | P_b=0.01970588 | CI=0.00208933 | Rel.CI=10.60%
+    Progress: 17500 requests | P_b=0.01925714 | CI=0.00203615 | Rel.CI=10.57%
+    Progress: 18000 requests | P_b=0.01905556 | CI=0.00199734 | Rel.CI=10.48%
+    Progress: 18500 requests | P_b=0.01929730 | CI=0.00198238 | Rel.CI=10.27%
+    Progress: 19000 requests | P_b=0.01942105 | CI=0.00196226 | Rel.CI=10.10%
+    Progress: 19500 requests | P_b=0.01907692 | CI=0.00192004 | Rel.CI=10.06%
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 350,
+    "path_strategy": "random",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 19769,
+    "transient_contention_rate": 1.27406569,
+    "successful_requests": 19392,
+    "blocked_requests": 377,
+    "path_blocked": 0,
+    "spectral_blocked": 377,
+    "blocking_probability": 0.01907026,
+    "absolute_confidence_interval": 0.00190661,
+    "relative_confidence_interval_pct": 9.9978,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 377
+    },
+    "most_used_links": "RDMwa->RDMny_3 (3310), RDMil->RDMpa_15 (3253), RDMtx->RDMga_13 (3138), RDMtx->RDMil_12 (3052), RDMca2->RDMtx_6 (2898), RDMut->RDMco_7 (2840), RDMil->RDMmi_14 (2423), RDMco->RDMtx_10 (2332), RDMga->RDMma_22 (2263), RDMne->RDMil_11 (2199)"
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=250
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.85s ---
+    Transient: 2502 requests, 0 blocked
+    Progress: 500 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf%
+    Progress: 1000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf%
+    Progress: 1500 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf%
+    Progress: 2000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf%
+    Progress: 2500 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf%
+    Progress: 3000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf%
+    Progress: 3500 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf%
+    Progress: 4000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf%
+    Progress: 4500 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf%
+    Progress: 5000 requests | P_b=0.00040000 | CI=0.00055426 | Rel.CI=138.57%
+    Progress: 5500 requests | P_b=0.00036364 | CI=0.00050388 | Rel.CI=138.57%
+    Progress: 6000 requests | P_b=0.00033333 | CI=0.00046190 | Rel.CI=138.57%
+    Progress: 6500 requests | P_b=0.00030769 | CI=0.00042637 | Rel.CI=138.57%
+    Progress: 7000 requests | P_b=0.00028571 | CI=0.00039592 | Rel.CI=138.57%
+    Progress: 7500 requests | P_b=0.00026667 | CI=0.00036953 | Rel.CI=138.57%
+    Progress: 8000 requests | P_b=0.00025000 | CI=0.00034644 | Rel.CI=138.58%
+    Progress: 8500 requests | P_b=0.00023529 | CI=0.00032606 | Rel.CI=138.58%
+    Progress: 9000 requests | P_b=0.00022222 | CI=0.00030795 | Rel.CI=138.58%
+    Progress: 9500 requests | P_b=0.00021053 | CI=0.00029174 | Rel.CI=138.58%
+    Progress: 10000 requests | P_b=0.00020000 | CI=0.00027716 | Rel.CI=138.58%
+    Progress: 10500 requests | P_b=0.00019048 | CI=0.00026396 | Rel.CI=138.58%
+    Progress: 11000 requests | P_b=0.00018182 | CI=0.00025196 | Rel.CI=138.58%
+    Progress: 11500 requests | P_b=0.00026087 | CI=0.00029516 | Rel.CI=113.15%
+    Progress: 12000 requests | P_b=0.00041667 | CI=0.00036515 | Rel.CI=87.64%
+    Progress: 12500 requests | P_b=0.00040000 | CI=0.00035055 | Rel.CI=87.64%
+    Progress: 13000 requests | P_b=0.00038462 | CI=0.00033707 | Rel.CI=87.64%
+    Progress: 13500 requests | P_b=0.00037037 | CI=0.00032458 | Rel.CI=87.64%
+    Progress: 14000 requests | P_b=0.00035714 | CI=0.00031299 | Rel.CI=87.64%
+    Progress: 14500 requests | P_b=0.00034483 | CI=0.00030220 | Rel.CI=87.64%
+    Progress: 15000 requests | P_b=0.00046667 | CI=0.00034563 | Rel.CI=74.06%
+    Progress: 15500 requests | P_b=0.00051613 | CI=0.00035757 | Rel.CI=69.28%
+    Progress: 16000 requests | P_b=0.00050000 | CI=0.00034640 | Rel.CI=69.28%
+    Progress: 16500 requests | P_b=0.00048485 | CI=0.00033590 | Rel.CI=69.28%
+    Progress: 17000 requests | P_b=0.00047059 | CI=0.00032602 | Rel.CI=69.28%
+    Progress: 17500 requests | P_b=0.00068571 | CI=0.00038785 | Rel.CI=56.56%
+    Progress: 18000 requests | P_b=0.00066667 | CI=0.00037708 | Rel.CI=56.56%
+    Progress: 18500 requests | P_b=0.00064865 | CI=0.00036689 | Rel.CI=56.56%
+    Progress: 19000 requests | P_b=0.00063158 | CI=0.00035724 | Rel.CI=56.56%
+    Progress: 19500 requests | P_b=0.00061538 | CI=0.00034808 | Rel.CI=56.56%
+    Progress: 20000 requests | P_b=0.00065000 | CI=0.00035323 | Rel.CI=54.34%
+    Progress: 20500 requests | P_b=0.00063415 | CI=0.00034462 | Rel.CI=54.34%
+    Progress: 21000 requests | P_b=0.00061905 | CI=0.00033641 | Rel.CI=54.34%
+    Progress: 21500 requests | P_b=0.00060465 | CI=0.00032859 | Rel.CI=54.34%
+    Progress: 22000 requests | P_b=0.00059091 | CI=0.00032113 | Rel.CI=54.34%
+    Progress: 22500 requests | P_b=0.00057778 | CI=0.00031399 | Rel.CI=54.34%
+    Progress: 23000 requests | P_b=0.00065217 | CI=0.00032994 | Rel.CI=50.59%
+    Progress: 23500 requests | P_b=0.00080851 | CI=0.00036340 | Rel.CI=44.95%
+    Progress: 24000 requests | P_b=0.00079167 | CI=0.00035584 | Rel.CI=44.95%
+    Progress: 24500 requests | P_b=0.00077551 | CI=0.00034858 | Rel.CI=44.95%
+    Progress: 25000 requests | P_b=0.00076000 | CI=0.00034161 | Rel.CI=44.95%
+    Progress: 25500 requests | P_b=0.00074510 | CI=0.00033491 | Rel.CI=44.95%
+    Progress: 26000 requests | P_b=0.00073077 | CI=0.00032847 | Rel.CI=44.95%
+    Progress: 26500 requests | P_b=0.00071698 | CI=0.00032228 | Rel.CI=44.95%
+    Progress: 27000 requests | P_b=0.00070370 | CI=0.00031631 | Rel.CI=44.95%
+    Progress: 27500 requests | P_b=0.00069091 | CI=0.00031056 | Rel.CI=44.95%
+    Progress: 28000 requests | P_b=0.00067857 | CI=0.00030502 | Rel.CI=44.95%
+    Progress: 28500 requests | P_b=0.00066667 | CI=0.00029967 | Rel.CI=44.95%
+    Progress: 29000 requests | P_b=0.00065517 | CI=0.00029450 | Rel.CI=44.95%
+    Progress: 29500 requests | P_b=0.00064407 | CI=0.00028951 | Rel.CI=44.95%
+    Progress: 30000 requests | P_b=0.00063333 | CI=0.00028469 | Rel.CI=44.95%
+    Progress: 30500 requests | P_b=0.00062295 | CI=0.00028003 | Rel.CI=44.95%
+    Progress: 31000 requests | P_b=0.00061290 | CI=0.00027551 | Rel.CI=44.95%
+    Progress: 31500 requests | P_b=0.00060317 | CI=0.00027114 | Rel.CI=44.95%
+    Progress: 32000 requests | P_b=0.00062500 | CI=0.00027383 | Rel.CI=43.81%
+    Progress: 32500 requests | P_b=0.00064615 | CI=0.00027628 | Rel.CI=42.76%
+    Progress: 33000 requests | P_b=0.00063636 | CI=0.00027209 | Rel.CI=42.76%
+    Progress: 33500 requests | P_b=0.00062687 | CI=0.00026803 | Rel.CI=42.76%
+    Progress: 34000 requests | P_b=0.00061765 | CI=0.00026409 | Rel.CI=42.76%
+    Progress: 34500 requests | P_b=0.00060870 | CI=0.00026026 | Rel.CI=42.76%
+    Progress: 35000 requests | P_b=0.00062857 | CI=0.00026258 | Rel.CI=41.77%
+    Progress: 35500 requests | P_b=0.00061972 | CI=0.00025888 | Rel.CI=41.77%
+    Progress: 36000 requests | P_b=0.00061111 | CI=0.00025529 | Rel.CI=41.77%
+    Progress: 36500 requests | P_b=0.00060274 | CI=0.00025179 | Rel.CI=41.77%
+    Progress: 37000 requests | P_b=0.00059459 | CI=0.00024839 | Rel.CI=41.77%
+    Progress: 37500 requests | P_b=0.00061333 | CI=0.00025059 | Rel.CI=40.86%
+    Progress: 38000 requests | P_b=0.00060526 | CI=0.00024729 | Rel.CI=40.86%
+    Progress: 38500 requests | P_b=0.00059740 | CI=0.00024408 | Rel.CI=40.86%
+    Progress: 39000 requests | P_b=0.00058974 | CI=0.00024095 | Rel.CI=40.86%
+    Progress: 39500 requests | P_b=0.00063291 | CI=0.00024802 | Rel.CI=39.19%
+    Progress: 40000 requests | P_b=0.00067500 | CI=0.00025453 | Rel.CI=37.71%
+    Progress: 40500 requests | P_b=0.00066667 | CI=0.00025138 | Rel.CI=37.71%
+    Progress: 41000 requests | P_b=0.00065854 | CI=0.00024832 | Rel.CI=37.71%
+    Progress: 41500 requests | P_b=0.00065060 | CI=0.00024533 | Rel.CI=37.71%
+    Progress: 42000 requests | P_b=0.00064286 | CI=0.00024241 | Rel.CI=37.71%
+    Progress: 42500 requests | P_b=0.00063529 | CI=0.00023956 | Rel.CI=37.71%
+    Progress: 43000 requests | P_b=0.00062791 | CI=0.00023677 | Rel.CI=37.71%
+    Progress: 43500 requests | P_b=0.00062069 | CI=0.00023405 | Rel.CI=37.71%
+    Progress: 44000 requests | P_b=0.00061364 | CI=0.00023139 | Rel.CI=37.71%
+    Progress: 44500 requests | P_b=0.00060674 | CI=0.00022879 | Rel.CI=37.71%
+    Progress: 45000 requests | P_b=0.00060000 | CI=0.00022625 | Rel.CI=37.71%
+    Progress: 45500 requests | P_b=0.00059341 | CI=0.00022377 | Rel.CI=37.71%
+    Progress: 46000 requests | P_b=0.00058696 | CI=0.00022134 | Rel.CI=37.71%
+    Progress: 46500 requests | P_b=0.00058065 | CI=0.00021896 | Rel.CI=37.71%
+    Progress: 47000 requests | P_b=0.00057447 | CI=0.00021663 | Rel.CI=37.71%
+    Progress: 47500 requests | P_b=0.00056842 | CI=0.00021435 | Rel.CI=37.71%
+    Progress: 48000 requests | P_b=0.00058333 | CI=0.00021601 | Rel.CI=37.03%
+    Progress: 48500 requests | P_b=0.00057732 | CI=0.00021378 | Rel.CI=37.03%
+    Progress: 49000 requests | P_b=0.00057143 | CI=0.00021160 | Rel.CI=37.03%
+    Progress: 49500 requests | P_b=0.00056566 | CI=0.00020946 | Rel.CI=37.03%
+    Progress: 50000 requests | P_b=0.00056000 | CI=0.00020737 | Rel.CI=37.03%
+    Progress: 50500 requests | P_b=0.00055446 | CI=0.00020532 | Rel.CI=37.03%
+    Progress: 51000 requests | P_b=0.00054902 | CI=0.00020330 | Rel.CI=37.03%
+    Progress: 51500 requests | P_b=0.00054369 | CI=0.00020133 | Rel.CI=37.03%
+    Progress: 52000 requests | P_b=0.00053846 | CI=0.00019940 | Rel.CI=37.03%
+    Progress: 52500 requests | P_b=0.00053333 | CI=0.00019750 | Rel.CI=37.03%
+    Progress: 53000 requests | P_b=0.00052830 | CI=0.00019563 | Rel.CI=37.03%
+    Progress: 53500 requests | P_b=0.00052336 | CI=0.00019381 | Rel.CI=37.03%
+    Progress: 54000 requests | P_b=0.00051852 | CI=0.00019201 | Rel.CI=37.03%
+    Progress: 54500 requests | P_b=0.00051376 | CI=0.00019025 | Rel.CI=37.03%
+    Progress: 55000 requests | P_b=0.00050909 | CI=0.00018852 | Rel.CI=37.03%
+    Progress: 55500 requests | P_b=0.00050450 | CI=0.00018682 | Rel.CI=37.03%
+    Progress: 56000 requests | P_b=0.00050000 | CI=0.00018516 | Rel.CI=37.03%
+    Progress: 56500 requests | P_b=0.00049558 | CI=0.00018352 | Rel.CI=37.03%
+    Progress: 57000 requests | P_b=0.00049123 | CI=0.00018191 | Rel.CI=37.03%
+    Progress: 57500 requests | P_b=0.00048696 | CI=0.00018033 | Rel.CI=37.03%
+    Progress: 58000 requests | P_b=0.00048276 | CI=0.00017877 | Rel.CI=37.03%
+    Progress: 58500 requests | P_b=0.00047863 | CI=0.00017725 | Rel.CI=37.03%
+    Progress: 59000 requests | P_b=0.00047458 | CI=0.00017574 | Rel.CI=37.03%
+    Progress: 59500 requests | P_b=0.00047059 | CI=0.00017427 | Rel.CI=37.03%
+    Progress: 60000 requests | P_b=0.00051667 | CI=0.00018183 | Rel.CI=35.19%
+    Progress: 60500 requests | P_b=0.00051240 | CI=0.00018033 | Rel.CI=35.19%
+    Progress: 61000 requests | P_b=0.00050820 | CI=0.00017885 | Rel.CI=35.19%
+    Progress: 61500 requests | P_b=0.00050407 | CI=0.00017740 | Rel.CI=35.19%
+    Progress: 62000 requests | P_b=0.00050000 | CI=0.00017597 | Rel.CI=35.19%
+    Progress: 62500 requests | P_b=0.00049600 | CI=0.00017456 | Rel.CI=35.19%
+    Progress: 63000 requests | P_b=0.00049206 | CI=0.00017318 | Rel.CI=35.19%
+    Progress: 63500 requests | P_b=0.00048819 | CI=0.00017181 | Rel.CI=35.19%
+    Progress: 64000 requests | P_b=0.00048437 | CI=0.00017047 | Rel.CI=35.19%
+    Progress: 64500 requests | P_b=0.00048062 | CI=0.00016915 | Rel.CI=35.19%
+    Progress: 65000 requests | P_b=0.00047692 | CI=0.00016785 | Rel.CI=35.19%
+    Progress: 65500 requests | P_b=0.00047328 | CI=0.00016657 | Rel.CI=35.19%
+    Progress: 66000 requests | P_b=0.00046970 | CI=0.00016531 | Rel.CI=35.19%
+    Progress: 66500 requests | P_b=0.00046617 | CI=0.00016406 | Rel.CI=35.19%
+    Progress: 67000 requests | P_b=0.00046269 | CI=0.00016284 | Rel.CI=35.19%
+    Progress: 67500 requests | P_b=0.00045926 | CI=0.00016163 | Rel.CI=35.19%
+    Progress: 68000 requests | P_b=0.00045588 | CI=0.00016045 | Rel.CI=35.19%
+    Progress: 68500 requests | P_b=0.00045255 | CI=0.00015928 | Rel.CI=35.19%
+    Progress: 69000 requests | P_b=0.00044928 | CI=0.00015812 | Rel.CI=35.19%
+    Progress: 69500 requests | P_b=0.00046043 | CI=0.00015949 | Rel.CI=34.64%
+    Progress: 70000 requests | P_b=0.00045714 | CI=0.00015836 | Rel.CI=34.64%
+    Progress: 70500 requests | P_b=0.00045390 | CI=0.00015723 | Rel.CI=34.64%
+    Progress: 71000 requests | P_b=0.00045070 | CI=0.00015613 | Rel.CI=34.64%
+    Progress: 71500 requests | P_b=0.00044755 | CI=0.00015503 | Rel.CI=34.64%
+    Progress: 72000 requests | P_b=0.00044444 | CI=0.00015396 | Rel.CI=34.64%
+    Progress: 72500 requests | P_b=0.00044138 | CI=0.00015290 | Rel.CI=34.64%
+    Progress: 73000 requests | P_b=0.00046575 | CI=0.00015652 | Rel.CI=33.61%
+    Progress: 73500 requests | P_b=0.00047619 | CI=0.00015772 | Rel.CI=33.12%
+    Progress: 74000 requests | P_b=0.00047297 | CI=0.00015666 | Rel.CI=33.12%
+    Progress: 74500 requests | P_b=0.00046980 | CI=0.00015561 | Rel.CI=33.12%
+    Progress: 75000 requests | P_b=0.00046667 | CI=0.00015457 | Rel.CI=33.12%
+    Progress: 75500 requests | P_b=0.00046358 | CI=0.00015355 | Rel.CI=33.12%
+    Progress: 76000 requests | P_b=0.00047368 | CI=0.00015470 | Rel.CI=32.66%
+    Progress: 76500 requests | P_b=0.00047059 | CI=0.00015369 | Rel.CI=32.66%
+    Progress: 77000 requests | P_b=0.00046753 | CI=0.00015269 | Rel.CI=32.66%
+    Progress: 77500 requests | P_b=0.00046452 | CI=0.00015171 | Rel.CI=32.66%
+    Progress: 78000 requests | P_b=0.00046154 | CI=0.00015073 | Rel.CI=32.66%
+    Progress: 78500 requests | P_b=0.00045860 | CI=0.00014977 | Rel.CI=32.66%
+    Progress: 79000 requests | P_b=0.00045570 | CI=0.00014883 | Rel.CI=32.66%
+    Progress: 79500 requests | P_b=0.00045283 | CI=0.00014789 | Rel.CI=32.66%
+    Progress: 80000 requests | P_b=0.00045000 | CI=0.00014697 | Rel.CI=32.66%
+    Progress: 80500 requests | P_b=0.00045963 | CI=0.00014807 | Rel.CI=32.21%
+    Progress: 81000 requests | P_b=0.00045679 | CI=0.00014715 | Rel.CI=32.21%
+    Progress: 81500 requests | P_b=0.00046626 | CI=0.00014821 | Rel.CI=31.79%
+    Progress: 82000 requests | P_b=0.00046341 | CI=0.00014731 | Rel.CI=31.79%
+    Progress: 82500 requests | P_b=0.00046061 | CI=0.00014642 | Rel.CI=31.79%
+    Progress: 83000 requests | P_b=0.00045783 | CI=0.00014554 | Rel.CI=31.79%
+    Progress: 83500 requests | P_b=0.00045509 | CI=0.00014466 | Rel.CI=31.79%
+    Progress: 84000 requests | P_b=0.00045238 | CI=0.00014380 | Rel.CI=31.79%
+    Progress: 84500 requests | P_b=0.00044970 | CI=0.00014295 | Rel.CI=31.79%
+    Progress: 85000 requests | P_b=0.00044706 | CI=0.00014211 | Rel.CI=31.79%
+    Progress: 85500 requests | P_b=0.00044444 | CI=0.00014128 | Rel.CI=31.79%
+    Progress: 86000 requests | P_b=0.00044186 | CI=0.00014046 | Rel.CI=31.79%
+    Progress: 86500 requests | P_b=0.00043931 | CI=0.00013965 | Rel.CI=31.79%
+    Progress: 87000 requests | P_b=0.00043678 | CI=0.00013885 | Rel.CI=31.79%
+    Progress: 87500 requests | P_b=0.00043429 | CI=0.00013805 | Rel.CI=31.79%
+    Progress: 88000 requests | P_b=0.00043182 | CI=0.00013727 | Rel.CI=31.79%
+    Progress: 88500 requests | P_b=0.00044068 | CI=0.00013828 | Rel.CI=31.38%
+    Progress: 89000 requests | P_b=0.00043820 | CI=0.00013750 | Rel.CI=31.38%
+    Progress: 89500 requests | P_b=0.00044693 | CI=0.00013847 | Rel.CI=30.98%
+    Progress: 90000 requests | P_b=0.00044444 | CI=0.00013770 | Rel.CI=30.98%
+    Progress: 90500 requests | P_b=0.00044199 | CI=0.00013694 | Rel.CI=30.98%
+    Progress: 91000 requests | P_b=0.00043956 | CI=0.00013619 | Rel.CI=30.98%
+    Progress: 91500 requests | P_b=0.00043716 | CI=0.00013545 | Rel.CI=30.98%
+    Progress: 92000 requests | P_b=0.00043478 | CI=0.00013471 | Rel.CI=30.98%
+    Progress: 92500 requests | P_b=0.00043243 | CI=0.00013398 | Rel.CI=30.98%
+    Progress: 93000 requests | P_b=0.00043011 | CI=0.00013326 | Rel.CI=30.98%
+    Progress: 93500 requests | P_b=0.00042781 | CI=0.00013255 | Rel.CI=30.98%
+    Progress: 94000 requests | P_b=0.00042553 | CI=0.00013185 | Rel.CI=30.98%
+    Progress: 94500 requests | P_b=0.00042328 | CI=0.00013115 | Rel.CI=30.98%
+    Progress: 95000 requests | P_b=0.00042105 | CI=0.00013046 | Rel.CI=30.98%
+    Progress: 95500 requests | P_b=0.00045026 | CI=0.00013455 | Rel.CI=29.88%
+    Progress: 96000 requests | P_b=0.00044792 | CI=0.00013385 | Rel.CI=29.88%
+    Progress: 96500 requests | P_b=0.00045596 | CI=0.00013470 | Rel.CI=29.54%
+    Progress: 97000 requests | P_b=0.00045361 | CI=0.00013400 | Rel.CI=29.54%
+    Progress: 97500 requests | P_b=0.00045128 | CI=0.00013332 | Rel.CI=29.54%
+    Progress: 98000 requests | P_b=0.00044898 | CI=0.00013264 | Rel.CI=29.54%
+    Progress: 98500 requests | P_b=0.00044670 | CI=0.00013196 | Rel.CI=29.54%
+    Progress: 99000 requests | P_b=0.00044444 | CI=0.00013130 | Rel.CI=29.54%
+    Progress: 99500 requests | P_b=0.00044221 | CI=0.00013064 | Rel.CI=29.54%
+    Progress: 100000 requests | P_b=0.00045000 | CI=0.00013145 | Rel.CI=29.21%
+    Progress: 100500 requests | P_b=0.00044776 | CI=0.00013080 | Rel.CI=29.21%
+    Progress: 101000 requests | P_b=0.00044554 | CI=0.00013015 | Rel.CI=29.21%
+    Progress: 101500 requests | P_b=0.00044335 | CI=0.00012951 | Rel.CI=29.21%
+    Progress: 102000 requests | P_b=0.00044118 | CI=0.00012887 | Rel.CI=29.21%
+    Progress: 102500 requests | P_b=0.00043902 | CI=0.00012825 | Rel.CI=29.21%
+    Progress: 103000 requests | P_b=0.00043689 | CI=0.00012762 | Rel.CI=29.21%
+    Progress: 103500 requests | P_b=0.00043478 | CI=0.00012701 | Rel.CI=29.21%
+    Progress: 104000 requests | P_b=0.00043269 | CI=0.00012640 | Rel.CI=29.21%
+    Progress: 104500 requests | P_b=0.00043062 | CI=0.00012579 | Rel.CI=29.21%
+    Progress: 105000 requests | P_b=0.00044762 | CI=0.00012794 | Rel.CI=28.58%
+    Progress: 105500 requests | P_b=0.00045498 | CI=0.00012868 | Rel.CI=28.28%
+    Progress: 106000 requests | P_b=0.00045283 | CI=0.00012808 | Rel.CI=28.28%
+    Progress: 106500 requests | P_b=0.00045070 | CI=0.00012748 | Rel.CI=28.28%
+    Progress: 107000 requests | P_b=0.00044860 | CI=0.00012688 | Rel.CI=28.28%
+    Progress: 107500 requests | P_b=0.00044651 | CI=0.00012629 | Rel.CI=28.28%
+    Progress: 108000 requests | P_b=0.00044444 | CI=0.00012571 | Rel.CI=28.28%
+    Progress: 108500 requests | P_b=0.00044240 | CI=0.00012513 | Rel.CI=28.28%
+    Progress: 109000 requests | P_b=0.00044037 | CI=0.00012455 | Rel.CI=28.28%
+    Progress: 109500 requests | P_b=0.00043836 | CI=0.00012398 | Rel.CI=28.28%
+    Progress: 110000 requests | P_b=0.00043636 | CI=0.00012342 | Rel.CI=28.28%
+    Progress: 110500 requests | P_b=0.00043439 | CI=0.00012286 | Rel.CI=28.28%
+    Progress: 111000 requests | P_b=0.00043243 | CI=0.00012231 | Rel.CI=28.28%
+    Progress: 111500 requests | P_b=0.00043049 | CI=0.00012176 | Rel.CI=28.28%
+    Progress: 112000 requests | P_b=0.00042857 | CI=0.00012122 | Rel.CI=28.28%
+    Progress: 112500 requests | P_b=0.00047111 | CI=0.00012681 | Rel.CI=26.92%
+    Progress: 113000 requests | P_b=0.00046903 | CI=0.00012624 | Rel.CI=26.92%
+    Progress: 113500 requests | P_b=0.00046696 | CI=0.00012569 | Rel.CI=26.92%
+    Progress: 114000 requests | P_b=0.00046491 | CI=0.00012514 | Rel.CI=26.92%
+    Progress: 114500 requests | P_b=0.00046288 | CI=0.00012459 | Rel.CI=26.92%
+    Progress: 115000 requests | P_b=0.00046087 | CI=0.00012405 | Rel.CI=26.92%
+    Progress: 115500 requests | P_b=0.00045887 | CI=0.00012351 | Rel.CI=26.92%
+    Progress: 116000 requests | P_b=0.00045690 | CI=0.00012298 | Rel.CI=26.92%
+    Progress: 116500 requests | P_b=0.00045494 | CI=0.00012245 | Rel.CI=26.92%
+    Progress: 117000 requests | P_b=0.00045299 | CI=0.00012193 | Rel.CI=26.92%
+    Progress: 117500 requests | P_b=0.00045106 | CI=0.00012141 | Rel.CI=26.92%
+    Progress: 118000 requests | P_b=0.00044915 | CI=0.00012090 | Rel.CI=26.92%
+    Progress: 118500 requests | P_b=0.00044726 | CI=0.00012039 | Rel.CI=26.92%
+    Progress: 119000 requests | P_b=0.00044538 | CI=0.00011988 | Rel.CI=26.92%
+    Progress: 119500 requests | P_b=0.00044351 | CI=0.00011938 | Rel.CI=26.92%
+    Progress: 120000 requests | P_b=0.00044167 | CI=0.00011888 | Rel.CI=26.92%
+    Progress: 120500 requests | P_b=0.00043983 | CI=0.00011839 | Rel.CI=26.92%
+    Progress: 121000 requests | P_b=0.00043802 | CI=0.00011790 | Rel.CI=26.92%
+    Progress: 121500 requests | P_b=0.00043621 | CI=0.00011741 | Rel.CI=26.92%
+    Progress: 122000 requests | P_b=0.00043443 | CI=0.00011693 | Rel.CI=26.92%
+    Progress: 122500 requests | P_b=0.00043265 | CI=0.00011646 | Rel.CI=26.92%
+    Progress: 123000 requests | P_b=0.00043089 | CI=0.00011598 | Rel.CI=26.92%
+    Progress: 123500 requests | P_b=0.00042915 | CI=0.00011551 | Rel.CI=26.92%
+    Progress: 124000 requests | P_b=0.00042742 | CI=0.00011505 | Rel.CI=26.92%
+    Progress: 124500 requests | P_b=0.00044980 | CI=0.00011778 | Rel.CI=26.19%
+    Progress: 125000 requests | P_b=0.00044800 | CI=0.00011731 | Rel.CI=26.19%
+    Progress: 125500 requests | P_b=0.00044622 | CI=0.00011684 | Rel.CI=26.19%
+    Progress: 126000 requests | P_b=0.00044444 | CI=0.00011638 | Rel.CI=26.19%
+    Progress: 126500 requests | P_b=0.00044269 | CI=0.00011592 | Rel.CI=26.19%
+    Progress: 127000 requests | P_b=0.00044094 | CI=0.00011547 | Rel.CI=26.19%
+    Progress: 127500 requests | P_b=0.00044706 | CI=0.00011603 | Rel.CI=25.96%
+    Progress: 128000 requests | P_b=0.00044531 | CI=0.00011558 | Rel.CI=25.96%
+    Progress: 128500 requests | P_b=0.00044358 | CI=0.00011513 | Rel.CI=25.96%
+    Progress: 129000 requests | P_b=0.00044186 | CI=0.00011469 | Rel.CI=25.96%
+    Progress: 129500 requests | P_b=0.00044015 | CI=0.00011424 | Rel.CI=25.96%
+    Progress: 130000 requests | P_b=0.00043846 | CI=0.00011380 | Rel.CI=25.96%
+    Progress: 130500 requests | P_b=0.00043678 | CI=0.00011337 | Rel.CI=25.96%
+    Progress: 131000 requests | P_b=0.00043511 | CI=0.00011293 | Rel.CI=25.96%
+    Progress: 131500 requests | P_b=0.00043346 | CI=0.00011251 | Rel.CI=25.96%
+    Progress: 132000 requests | P_b=0.00043182 | CI=0.00011208 | Rel.CI=25.96%
+    Progress: 132500 requests | P_b=0.00043019 | CI=0.00011166 | Rel.CI=25.96%
+    Progress: 133000 requests | P_b=0.00042857 | CI=0.00011124 | Rel.CI=25.96%
+    Progress: 133500 requests | P_b=0.00042697 | CI=0.00011082 | Rel.CI=25.96%
+    Progress: 134000 requests | P_b=0.00042537 | CI=0.00011041 | Rel.CI=25.96%
+    Progress: 134500 requests | P_b=0.00042379 | CI=0.00011000 | Rel.CI=25.96%
+    Progress: 135000 requests | P_b=0.00042222 | CI=0.00010959 | Rel.CI=25.96%
+    Progress: 135500 requests | P_b=0.00042066 | CI=0.00010918 | Rel.CI=25.96%
+    Progress: 136000 requests | P_b=0.00041912 | CI=0.00010878 | Rel.CI=25.96%
+    Progress: 136500 requests | P_b=0.00041758 | CI=0.00010839 | Rel.CI=25.96%
+    Progress: 137000 requests | P_b=0.00041606 | CI=0.00010799 | Rel.CI=25.96%
+    Progress: 137500 requests | P_b=0.00042909 | CI=0.00010947 | Rel.CI=25.51%
+    Progress: 138000 requests | P_b=0.00042754 | CI=0.00010907 | Rel.CI=25.51%
+    Progress: 138500 requests | P_b=0.00042599 | CI=0.00010868 | Rel.CI=25.51%
+    Progress: 139000 requests | P_b=0.00042446 | CI=0.00010829 | Rel.CI=25.51%
+    Progress: 139500 requests | P_b=0.00042294 | CI=0.00010790 | Rel.CI=25.51%
+    Progress: 140000 requests | P_b=0.00042143 | CI=0.00010751 | Rel.CI=25.51%
+    Progress: 140500 requests | P_b=0.00041993 | CI=0.00010713 | Rel.CI=25.51%
+    Progress: 141000 requests | P_b=0.00041844 | CI=0.00010675 | Rel.CI=25.51%
+    Progress: 141500 requests | P_b=0.00041696 | CI=0.00010637 | Rel.CI=25.51%
+    Progress: 142000 requests | P_b=0.00041549 | CI=0.00010600 | Rel.CI=25.51%
+    Progress: 142500 requests | P_b=0.00041404 | CI=0.00010563 | Rel.CI=25.51%
+    Progress: 143000 requests | P_b=0.00041259 | CI=0.00010526 | Rel.CI=25.51%
+    Progress: 143500 requests | P_b=0.00041115 | CI=0.00010489 | Rel.CI=25.51%
+    Progress: 144000 requests | P_b=0.00040972 | CI=0.00010453 | Rel.CI=25.51%
+    Progress: 144500 requests | P_b=0.00040830 | CI=0.00010417 | Rel.CI=25.51%
+    Progress: 145000 requests | P_b=0.00040690 | CI=0.00010381 | Rel.CI=25.51%
+    Progress: 145500 requests | P_b=0.00040550 | CI=0.00010345 | Rel.CI=25.51%
+    Progress: 146000 requests | P_b=0.00040411 | CI=0.00010310 | Rel.CI=25.51%
+    Progress: 146500 requests | P_b=0.00040273 | CI=0.00010274 | Rel.CI=25.51%
+    Progress: 147000 requests | P_b=0.00040136 | CI=0.00010239 | Rel.CI=25.51%
+    Progress: 147500 requests | P_b=0.00040000 | CI=0.00010205 | Rel.CI=25.51%
+    Progress: 148000 requests | P_b=0.00039865 | CI=0.00010170 | Rel.CI=25.51%
+    Progress: 148500 requests | P_b=0.00039731 | CI=0.00010136 | Rel.CI=25.51%
+    Progress: 149000 requests | P_b=0.00039597 | CI=0.00010102 | Rel.CI=25.51%
+    Progress: 149500 requests | P_b=0.00039465 | CI=0.00010068 | Rel.CI=25.51%
+    Progress: 150000 requests | P_b=0.00039333 | CI=0.00010035 | Rel.CI=25.51%
+    Progress: 150500 requests | P_b=0.00039203 | CI=0.00010001 | Rel.CI=25.51%
+    Progress: 151000 requests | P_b=0.00039073 | CI=0.00009968 | Rel.CI=25.51%
+    Progress: 151500 requests | P_b=0.00038944 | CI=0.00009935 | Rel.CI=25.51%
+    Progress: 152000 requests | P_b=0.00038816 | CI=0.00009903 | Rel.CI=25.51%
+    Progress: 152500 requests | P_b=0.00038689 | CI=0.00009870 | Rel.CI=25.51%
+    Progress: 153000 requests | P_b=0.00038562 | CI=0.00009838 | Rel.CI=25.51%
+    Progress: 153500 requests | P_b=0.00038436 | CI=0.00009806 | Rel.CI=25.51%
+    Progress: 154000 requests | P_b=0.00038961 | CI=0.00009857 | Rel.CI=25.30%
+    Progress: 154500 requests | P_b=0.00038835 | CI=0.00009825 | Rel.CI=25.30%
+    Progress: 155000 requests | P_b=0.00038710 | CI=0.00009793 | Rel.CI=25.30%
+    Progress: 155500 requests | P_b=0.00038585 | CI=0.00009762 | Rel.CI=25.30%
+    Progress: 156000 requests | P_b=0.00038462 | CI=0.00009730 | Rel.CI=25.30%
+    Progress: 156500 requests | P_b=0.00038339 | CI=0.00009699 | Rel.CI=25.30%
+    Progress: 157000 requests | P_b=0.00038217 | CI=0.00009668 | Rel.CI=25.30%
+    Progress: 157500 requests | P_b=0.00038730 | CI=0.00009718 | Rel.CI=25.09%
+    Progress: 158000 requests | P_b=0.00038608 | CI=0.00009687 | Rel.CI=25.09%
+    Progress: 158500 requests | P_b=0.00038486 | CI=0.00009656 | Rel.CI=25.09%
+    Progress: 159000 requests | P_b=0.00038365 | CI=0.00009626 | Rel.CI=25.09%
+    Progress: 159500 requests | P_b=0.00038245 | CI=0.00009596 | Rel.CI=25.09%
+    Progress: 160000 requests | P_b=0.00038125 | CI=0.00009566 | Rel.CI=25.09%
+    Progress: 160500 requests | P_b=0.00038006 | CI=0.00009536 | Rel.CI=25.09%
+    Progress: 161000 requests | P_b=0.00037888 | CI=0.00009506 | Rel.CI=25.09%
+    Progress: 161500 requests | P_b=0.00037771 | CI=0.00009477 | Rel.CI=25.09%
+    Progress: 162000 requests | P_b=0.00037654 | CI=0.00009448 | Rel.CI=25.09%
+    Progress: 162500 requests | P_b=0.00037538 | CI=0.00009419 | Rel.CI=25.09%
+    Progress: 163000 requests | P_b=0.00037423 | CI=0.00009390 | Rel.CI=25.09%
+    Progress: 163500 requests | P_b=0.00037309 | CI=0.00009361 | Rel.CI=25.09%
+    Progress: 164000 requests | P_b=0.00039024 | CI=0.00009559 | Rel.CI=24.50%
+    Progress: 164500 requests | P_b=0.00040122 | CI=0.00009678 | Rel.CI=24.12%
+    Progress: 165000 requests | P_b=0.00040000 | CI=0.00009648 | Rel.CI=24.12%
+    Progress: 165500 requests | P_b=0.00039879 | CI=0.00009619 | Rel.CI=24.12%
+    Progress: 166000 requests | P_b=0.00039759 | CI=0.00009590 | Rel.CI=24.12%
+    Progress: 166500 requests | P_b=0.00039640 | CI=0.00009562 | Rel.CI=24.12%
+    Progress: 167000 requests | P_b=0.00039521 | CI=0.00009533 | Rel.CI=24.12%
+    Progress: 167500 requests | P_b=0.00039403 | CI=0.00009504 | Rel.CI=24.12%
+    Progress: 168000 requests | P_b=0.00039286 | CI=0.00009476 | Rel.CI=24.12%
+    Progress: 168500 requests | P_b=0.00039169 | CI=0.00009448 | Rel.CI=24.12%
+    Progress: 169000 requests | P_b=0.00039053 | CI=0.00009420 | Rel.CI=24.12%
+    Progress: 169500 requests | P_b=0.00038938 | CI=0.00009392 | Rel.CI=24.12%
+    Progress: 170000 requests | P_b=0.00038824 | CI=0.00009365 | Rel.CI=24.12%
+    Progress: 170500 requests | P_b=0.00038710 | CI=0.00009337 | Rel.CI=24.12%
+    Progress: 171000 requests | P_b=0.00038596 | CI=0.00009310 | Rel.CI=24.12%
+    Progress: 171500 requests | P_b=0.00038484 | CI=0.00009283 | Rel.CI=24.12%
+    Progress: 172000 requests | P_b=0.00038372 | CI=0.00009256 | Rel.CI=24.12%
+    Progress: 172500 requests | P_b=0.00038261 | CI=0.00009229 | Rel.CI=24.12%
+    Progress: 173000 requests | P_b=0.00038150 | CI=0.00009202 | Rel.CI=24.12%
+    Progress: 173500 requests | P_b=0.00038040 | CI=0.00009176 | Rel.CI=24.12%
+    Progress: 174000 requests | P_b=0.00037931 | CI=0.00009149 | Rel.CI=24.12%
+    Progress: 174500 requests | P_b=0.00037822 | CI=0.00009123 | Rel.CI=24.12%
+    Progress: 175000 requests | P_b=0.00037714 | CI=0.00009097 | Rel.CI=24.12%
+    Progress: 175500 requests | P_b=0.00037607 | CI=0.00009071 | Rel.CI=24.12%
+    Progress: 176000 requests | P_b=0.00037500 | CI=0.00009046 | Rel.CI=24.12%
+    Progress: 176500 requests | P_b=0.00038527 | CI=0.00009156 | Rel.CI=23.76%
+    Progress: 177000 requests | P_b=0.00038418 | CI=0.00009130 | Rel.CI=23.76%
+    Progress: 177500 requests | P_b=0.00038310 | CI=0.00009104 | Rel.CI=23.76%
+    Progress: 178000 requests | P_b=0.00038202 | CI=0.00009078 | Rel.CI=23.76%
+    Progress: 178500 requests | P_b=0.00038095 | CI=0.00009053 | Rel.CI=23.76%
+    Progress: 179000 requests | P_b=0.00037989 | CI=0.00009028 | Rel.CI=23.76%
+    Progress: 179500 requests | P_b=0.00037883 | CI=0.00009003 | Rel.CI=23.76%
+    Progress: 180000 requests | P_b=0.00037778 | CI=0.00008978 | Rel.CI=23.76%
+    Progress: 180500 requests | P_b=0.00037673 | CI=0.00008953 | Rel.CI=23.76%
+    Progress: 181000 requests | P_b=0.00037569 | CI=0.00008928 | Rel.CI=23.76%
+    Progress: 181500 requests | P_b=0.00037466 | CI=0.00008903 | Rel.CI=23.76%
+    Progress: 182000 requests | P_b=0.00037363 | CI=0.00008879 | Rel.CI=23.76%
+    Progress: 182500 requests | P_b=0.00037260 | CI=0.00008855 | Rel.CI=23.76%
+    Progress: 183000 requests | P_b=0.00037158 | CI=0.00008830 | Rel.CI=23.76%
+    Progress: 183500 requests | P_b=0.00037057 | CI=0.00008806 | Rel.CI=23.76%
+    Progress: 184000 requests | P_b=0.00036957 | CI=0.00008782 | Rel.CI=23.76%
+    Progress: 184500 requests | P_b=0.00036856 | CI=0.00008759 | Rel.CI=23.76%
+    Progress: 185000 requests | P_b=0.00036757 | CI=0.00008735 | Rel.CI=23.76%
+    Progress: 185500 requests | P_b=0.00036658 | CI=0.00008711 | Rel.CI=23.76%
+    Progress: 186000 requests | P_b=0.00036559 | CI=0.00008688 | Rel.CI=23.76%
+    Progress: 186500 requests | P_b=0.00038070 | CI=0.00008854 | Rel.CI=23.26%
+    Progress: 187000 requests | P_b=0.00037968 | CI=0.00008830 | Rel.CI=23.26%
+    Progress: 187500 requests | P_b=0.00037867 | CI=0.00008806 | Rel.CI=23.26%
+    Progress: 188000 requests | P_b=0.00037766 | CI=0.00008783 | Rel.CI=23.26%
+    Progress: 188500 requests | P_b=0.00037666 | CI=0.00008760 | Rel.CI=23.26%
+    Progress: 189000 requests | P_b=0.00037566 | CI=0.00008737 | Rel.CI=23.26%
+    Progress: 189500 requests | P_b=0.00037467 | CI=0.00008714 | Rel.CI=23.26%
+    Progress: 190000 requests | P_b=0.00037368 | CI=0.00008691 | Rel.CI=23.26%
+    Progress: 190500 requests | P_b=0.00037270 | CI=0.00008668 | Rel.CI=23.26%
+    Progress: 191000 requests | P_b=0.00037173 | CI=0.00008645 | Rel.CI=23.26%
+    Progress: 191500 requests | P_b=0.00037076 | CI=0.00008623 | Rel.CI=23.26%
+    Progress: 192000 requests | P_b=0.00036979 | CI=0.00008600 | Rel.CI=23.26%
+    Progress: 192500 requests | P_b=0.00037403 | CI=0.00008638 | Rel.CI=23.09%
+    Progress: 193000 requests | P_b=0.00037306 | CI=0.00008616 | Rel.CI=23.09%
+    Progress: 193500 requests | P_b=0.00037209 | CI=0.00008593 | Rel.CI=23.09%
+    Progress: 194000 requests | P_b=0.00037113 | CI=0.00008571 | Rel.CI=23.09%
+    Progress: 194500 requests | P_b=0.00037018 | CI=0.00008549 | Rel.CI=23.09%
+    Progress: 195000 requests | P_b=0.00036923 | CI=0.00008527 | Rel.CI=23.09%
+    Progress: 195500 requests | P_b=0.00037340 | CI=0.00008564 | Rel.CI=22.94%
+    Progress: 196000 requests | P_b=0.00037245 | CI=0.00008542 | Rel.CI=22.94%
+    Progress: 196500 requests | P_b=0.00037150 | CI=0.00008521 | Rel.CI=22.94%
+    Progress: 197000 requests | P_b=0.00037056 | CI=0.00008499 | Rel.CI=22.94%
+    Progress: 197500 requests | P_b=0.00036962 | CI=0.00008478 | Rel.CI=22.94%
+    Progress: 198000 requests | P_b=0.00036869 | CI=0.00008456 | Rel.CI=22.94%
+    Progress: 198500 requests | P_b=0.00036776 | CI=0.00008435 | Rel.CI=22.94%
+    Progress: 199000 requests | P_b=0.00036683 | CI=0.00008414 | Rel.CI=22.94%
+    Progress: 199500 requests | P_b=0.00036591 | CI=0.00008393 | Rel.CI=22.94%
+    Progress: 200000 requests | P_b=0.00036500 | CI=0.00008372 | Rel.CI=22.94%
+    Progress: 200500 requests | P_b=0.00036409 | CI=0.00008351 | Rel.CI=22.94%
+    Progress: 201000 requests | P_b=0.00036318 | CI=0.00008330 | Rel.CI=22.94%
+    Progress: 201500 requests | P_b=0.00036228 | CI=0.00008309 | Rel.CI=22.94%
+    Progress: 202000 requests | P_b=0.00036139 | CI=0.00008289 | Rel.CI=22.94%
+    Progress: 202500 requests | P_b=0.00036049 | CI=0.00008268 | Rel.CI=22.94%
+    Progress: 203000 requests | P_b=0.00035961 | CI=0.00008248 | Rel.CI=22.94%
+    Progress: 203500 requests | P_b=0.00035872 | CI=0.00008228 | Rel.CI=22.94%
+    Progress: 204000 requests | P_b=0.00035784 | CI=0.00008207 | Rel.CI=22.94%
+    Progress: 204500 requests | P_b=0.00037653 | CI=0.00008409 | Rel.CI=22.33%
+    Progress: 205000 requests | P_b=0.00037561 | CI=0.00008388 | Rel.CI=22.33%
+    Progress: 205500 requests | P_b=0.00037470 | CI=0.00008368 | Rel.CI=22.33%
+    Progress: 206000 requests | P_b=0.00037379 | CI=0.00008347 | Rel.CI=22.33%
+    Progress: 206500 requests | P_b=0.00037288 | CI=0.00008327 | Rel.CI=22.33%
+    Progress: 207000 requests | P_b=0.00037198 | CI=0.00008307 | Rel.CI=22.33%
+    Progress: 207500 requests | P_b=0.00037108 | CI=0.00008287 | Rel.CI=22.33%
+    Progress: 208000 requests | P_b=0.00037019 | CI=0.00008267 | Rel.CI=22.33%
+    Progress: 208500 requests | P_b=0.00036930 | CI=0.00008247 | Rel.CI=22.33%
+    Progress: 209000 requests | P_b=0.00036842 | CI=0.00008228 | Rel.CI=22.33%
+    Progress: 209500 requests | P_b=0.00036754 | CI=0.00008208 | Rel.CI=22.33%
+    Progress: 210000 requests | P_b=0.00036667 | CI=0.00008188 | Rel.CI=22.33%
+    Progress: 210500 requests | P_b=0.00036580 | CI=0.00008169 | Rel.CI=22.33%
+    Progress: 211000 requests | P_b=0.00036493 | CI=0.00008150 | Rel.CI=22.33%
+    Progress: 211500 requests | P_b=0.00036407 | CI=0.00008130 | Rel.CI=22.33%
+    Progress: 212000 requests | P_b=0.00036321 | CI=0.00008111 | Rel.CI=22.33%
+    Progress: 212500 requests | P_b=0.00036235 | CI=0.00008092 | Rel.CI=22.33%
+    Progress: 213000 requests | P_b=0.00036150 | CI=0.00008073 | Rel.CI=22.33%
+    Progress: 213500 requests | P_b=0.00036066 | CI=0.00008054 | Rel.CI=22.33%
+    Progress: 214000 requests | P_b=0.00035981 | CI=0.00008035 | Rel.CI=22.33%
+    Progress: 214500 requests | P_b=0.00035897 | CI=0.00008017 | Rel.CI=22.33%
+    Progress: 215000 requests | P_b=0.00035814 | CI=0.00007998 | Rel.CI=22.33%
+    Progress: 215500 requests | P_b=0.00036195 | CI=0.00008031 | Rel.CI=22.19%
+    Progress: 216000 requests | P_b=0.00036111 | CI=0.00008013 | Rel.CI=22.19%
+    Progress: 216500 requests | P_b=0.00036028 | CI=0.00007994 | Rel.CI=22.19%
+    Progress: 217000 requests | P_b=0.00035945 | CI=0.00007976 | Rel.CI=22.19%
+    Progress: 217500 requests | P_b=0.00035862 | CI=0.00007957 | Rel.CI=22.19%
+    Progress: 218000 requests | P_b=0.00035780 | CI=0.00007939 | Rel.CI=22.19%
+    Progress: 218500 requests | P_b=0.00035698 | CI=0.00007921 | Rel.CI=22.19%
+    Progress: 219000 requests | P_b=0.00035616 | CI=0.00007903 | Rel.CI=22.19%
+    Progress: 219500 requests | P_b=0.00035535 | CI=0.00007885 | Rel.CI=22.19%
+    Progress: 220000 requests | P_b=0.00035455 | CI=0.00007867 | Rel.CI=22.19%
+    Progress: 220500 requests | P_b=0.00035374 | CI=0.00007849 | Rel.CI=22.19%
+    Progress: 221000 requests | P_b=0.00035294 | CI=0.00007831 | Rel.CI=22.19%
+    Progress: 221500 requests | P_b=0.00035214 | CI=0.00007814 | Rel.CI=22.19%
+    Progress: 222000 requests | P_b=0.00035135 | CI=0.00007796 | Rel.CI=22.19%
+    Progress: 222500 requests | P_b=0.00035955 | CI=0.00007878 | Rel.CI=21.91%
+    Progress: 223000 requests | P_b=0.00035874 | CI=0.00007860 | Rel.CI=21.91%
+    Progress: 223500 requests | P_b=0.00035794 | CI=0.00007842 | Rel.CI=21.91%
+    Progress: 224000 requests | P_b=0.00035714 | CI=0.00007825 | Rel.CI=21.91%
+    Progress: 224500 requests | P_b=0.00035635 | CI=0.00007807 | Rel.CI=21.91%
+    Progress: 225000 requests | P_b=0.00035556 | CI=0.00007790 | Rel.CI=21.91%
+    Progress: 225500 requests | P_b=0.00035477 | CI=0.00007773 | Rel.CI=21.91%
+    Progress: 226000 requests | P_b=0.00035398 | CI=0.00007756 | Rel.CI=21.91%
+    Progress: 226500 requests | P_b=0.00035320 | CI=0.00007738 | Rel.CI=21.91%
+    Progress: 227000 requests | P_b=0.00035242 | CI=0.00007721 | Rel.CI=21.91%
+    Progress: 227500 requests | P_b=0.00036923 | CI=0.00007895 | Rel.CI=21.38%
+    Progress: 228000 requests | P_b=0.00036842 | CI=0.00007877 | Rel.CI=21.38%
+    Progress: 228500 requests | P_b=0.00036761 | CI=0.00007860 | Rel.CI=21.38%
+    Progress: 229000 requests | P_b=0.00036681 | CI=0.00007843 | Rel.CI=21.38%
+    Progress: 229500 requests | P_b=0.00036601 | CI=0.00007826 | Rel.CI=21.38%
+    Progress: 230000 requests | P_b=0.00036522 | CI=0.00007809 | Rel.CI=21.38%
+    Progress: 230500 requests | P_b=0.00036443 | CI=0.00007792 | Rel.CI=21.38%
+    Progress: 231000 requests | P_b=0.00036364 | CI=0.00007775 | Rel.CI=21.38%
+    Progress: 231500 requests | P_b=0.00036285 | CI=0.00007758 | Rel.CI=21.38%
+    Progress: 232000 requests | P_b=0.00036207 | CI=0.00007742 | Rel.CI=21.38%
+    Progress: 232500 requests | P_b=0.00036129 | CI=0.00007725 | Rel.CI=21.38%
+    Progress: 233000 requests | P_b=0.00036052 | CI=0.00007708 | Rel.CI=21.38%
+    Progress: 233500 requests | P_b=0.00036831 | CI=0.00007783 | Rel.CI=21.13%
+    Progress: 234000 requests | P_b=0.00036752 | CI=0.00007766 | Rel.CI=21.13%
+    Progress: 234500 requests | P_b=0.00036674 | CI=0.00007750 | Rel.CI=21.13%
+    Progress: 235000 requests | P_b=0.00036596 | CI=0.00007733 | Rel.CI=21.13%
+    Progress: 235500 requests | P_b=0.00036518 | CI=0.00007717 | Rel.CI=21.13%
+    Progress: 236000 requests | P_b=0.00036441 | CI=0.00007700 | Rel.CI=21.13%
+    Progress: 236500 requests | P_b=0.00036364 | CI=0.00007684 | Rel.CI=21.13%
+    Progress: 237000 requests | P_b=0.00036287 | CI=0.00007668 | Rel.CI=21.13%
+    Progress: 237500 requests | P_b=0.00036211 | CI=0.00007652 | Rel.CI=21.13%
+    Progress: 238000 requests | P_b=0.00036134 | CI=0.00007636 | Rel.CI=21.13%
+    Progress: 238500 requests | P_b=0.00036059 | CI=0.00007620 | Rel.CI=21.13%
+    Progress: 239000 requests | P_b=0.00035983 | CI=0.00007604 | Rel.CI=21.13%
+    Progress: 239500 requests | P_b=0.00035908 | CI=0.00007588 | Rel.CI=21.13%
+    Progress: 240000 requests | P_b=0.00035833 | CI=0.00007572 | Rel.CI=21.13%
+    Progress: 240500 requests | P_b=0.00035759 | CI=0.00007556 | Rel.CI=21.13%
+    Progress: 241000 requests | P_b=0.00035685 | CI=0.00007541 | Rel.CI=21.13%
+    Progress: 241500 requests | P_b=0.00035611 | CI=0.00007525 | Rel.CI=21.13%
+    Progress: 242000 requests | P_b=0.00035537 | CI=0.00007510 | Rel.CI=21.13%
+    Progress: 242500 requests | P_b=0.00035464 | CI=0.00007494 | Rel.CI=21.13%
+    Progress: 243000 requests | P_b=0.00035391 | CI=0.00007479 | Rel.CI=21.13%
+    Progress: 243500 requests | P_b=0.00035318 | CI=0.00007463 | Rel.CI=21.13%
+    Progress: 244000 requests | P_b=0.00035246 | CI=0.00007448 | Rel.CI=21.13%
+    Progress: 244500 requests | P_b=0.00035174 | CI=0.00007433 | Rel.CI=21.13%
+    Progress: 245000 requests | P_b=0.00036735 | CI=0.00007588 | Rel.CI=20.66%
+    Progress: 245500 requests | P_b=0.00036660 | CI=0.00007573 | Rel.CI=20.66%
+    Progress: 246000 requests | P_b=0.00036585 | CI=0.00007557 | Rel.CI=20.66%
+    Progress: 246500 requests | P_b=0.00036511 | CI=0.00007542 | Rel.CI=20.66%
+    Progress: 247000 requests | P_b=0.00036437 | CI=0.00007527 | Rel.CI=20.66%
+    Progress: 247500 requests | P_b=0.00036364 | CI=0.00007511 | Rel.CI=20.66%
+    Progress: 248000 requests | P_b=0.00036290 | CI=0.00007496 | Rel.CI=20.66%
+    Progress: 248500 requests | P_b=0.00036217 | CI=0.00007481 | Rel.CI=20.66%
+    Progress: 249000 requests | P_b=0.00036948 | CI=0.00007549 | Rel.CI=20.43%
+    Progress: 249500 requests | P_b=0.00036874 | CI=0.00007534 | Rel.CI=20.43%
+    Progress: 250000 requests | P_b=0.00036800 | CI=0.00007518 | Rel.CI=20.43%
+    Progress: 250500 requests | P_b=0.00036727 | CI=0.00007503 | Rel.CI=20.43%
+    Progress: 251000 requests | P_b=0.00036653 | CI=0.00007489 | Rel.CI=20.43%
+    Progress: 251500 requests | P_b=0.00036581 | CI=0.00007474 | Rel.CI=20.43%
+    Progress: 252000 requests | P_b=0.00036508 | CI=0.00007459 | Rel.CI=20.43%
+    Progress: 252500 requests | P_b=0.00036436 | CI=0.00007444 | Rel.CI=20.43%
+    Progress: 253000 requests | P_b=0.00036364 | CI=0.00007429 | Rel.CI=20.43%
+    Progress: 253500 requests | P_b=0.00036292 | CI=0.00007415 | Rel.CI=20.43%
+    Progress: 254000 requests | P_b=0.00036220 | CI=0.00007400 | Rel.CI=20.43%
+    Progress: 254500 requests | P_b=0.00036149 | CI=0.00007386 | Rel.CI=20.43%
+    Progress: 255000 requests | P_b=0.00036078 | CI=0.00007371 | Rel.CI=20.43%
+    Progress: 255500 requests | P_b=0.00036008 | CI=0.00007357 | Rel.CI=20.43%
+    Progress: 256000 requests | P_b=0.00037109 | CI=0.00007461 | Rel.CI=20.11%
+    Progress: 256500 requests | P_b=0.00037427 | CI=0.00007486 | Rel.CI=20.00%
+    Progress: 257000 requests | P_b=0.00037354 | CI=0.00007471 | Rel.CI=20.00%
+    Progress: 257500 requests | P_b=0.00037282 | CI=0.00007456 | Rel.CI=20.00%
+    Progress: 258000 requests | P_b=0.00037209 | CI=0.00007442 | Rel.CI=20.00%
+    Progress: 258500 requests | P_b=0.00037137 | CI=0.00007428 | Rel.CI=20.00%
+    Progress: 259000 requests | P_b=0.00037452 | CI=0.00007452 | Rel.CI=19.90%
+    Progress: 259500 requests | P_b=0.00037380 | CI=0.00007437 | Rel.CI=19.90%
+    Progress: 260000 requests | P_b=0.00038462 | CI=0.00007537 | Rel.CI=19.60%
+    Progress: 260500 requests | P_b=0.00038388 | CI=0.00007523 | Rel.CI=19.60%
+    Progress: 261000 requests | P_b=0.00038314 | CI=0.00007508 | Rel.CI=19.60%
+    Progress: 261500 requests | P_b=0.00038241 | CI=0.00007494 | Rel.CI=19.60%
+    Progress: 262000 requests | P_b=0.00038168 | CI=0.00007479 | Rel.CI=19.60%
+    Progress: 262500 requests | P_b=0.00038095 | CI=0.00007465 | Rel.CI=19.60%
+    Progress: 263000 requests | P_b=0.00038023 | CI=0.00007451 | Rel.CI=19.60%
+    Progress: 263500 requests | P_b=0.00037951 | CI=0.00007437 | Rel.CI=19.60%
+    Progress: 264000 requests | P_b=0.00037879 | CI=0.00007423 | Rel.CI=19.60%
+    Progress: 264500 requests | P_b=0.00037807 | CI=0.00007409 | Rel.CI=19.60%
+    Progress: 265000 requests | P_b=0.00037736 | CI=0.00007395 | Rel.CI=19.60%
+    Progress: 265500 requests | P_b=0.00037665 | CI=0.00007381 | Rel.CI=19.60%
+    Progress: 266000 requests | P_b=0.00037594 | CI=0.00007367 | Rel.CI=19.60%
+    Progress: 266500 requests | P_b=0.00037523 | CI=0.00007353 | Rel.CI=19.60%
+    Progress: 267000 requests | P_b=0.00037453 | CI=0.00007339 | Rel.CI=19.60%
+    Progress: 267500 requests | P_b=0.00037383 | CI=0.00007326 | Rel.CI=19.60%
+    Progress: 268000 requests | P_b=0.00037313 | CI=0.00007312 | Rel.CI=19.60%
+    Progress: 268500 requests | P_b=0.00037244 | CI=0.00007298 | Rel.CI=19.60%
+    Progress: 269000 requests | P_b=0.00037175 | CI=0.00007285 | Rel.CI=19.60%
+    Progress: 269500 requests | P_b=0.00037106 | CI=0.00007271 | Rel.CI=19.60%
+    Progress: 270000 requests | P_b=0.00037037 | CI=0.00007258 | Rel.CI=19.60%
+    Progress: 270500 requests | P_b=0.00036969 | CI=0.00007245 | Rel.CI=19.60%
+    Progress: 271000 requests | P_b=0.00036900 | CI=0.00007231 | Rel.CI=19.60%
+    Progress: 271500 requests | P_b=0.00036832 | CI=0.00007218 | Rel.CI=19.60%
+    Progress: 272000 requests | P_b=0.00036765 | CI=0.00007205 | Rel.CI=19.60%
+    Progress: 272500 requests | P_b=0.00036697 | CI=0.00007191 | Rel.CI=19.60%
+    Progress: 273000 requests | P_b=0.00036630 | CI=0.00007178 | Rel.CI=19.60%
+    Progress: 273500 requests | P_b=0.00036563 | CI=0.00007165 | Rel.CI=19.60%
+    Progress: 274000 requests | P_b=0.00036496 | CI=0.00007152 | Rel.CI=19.60%
+    Progress: 274500 requests | P_b=0.00037158 | CI=0.00007210 | Rel.CI=19.40%
+    Progress: 275000 requests | P_b=0.00037091 | CI=0.00007197 | Rel.CI=19.40%
+    Progress: 275500 requests | P_b=0.00037024 | CI=0.00007184 | Rel.CI=19.40%
+    Progress: 276000 requests | P_b=0.00036957 | CI=0.00007171 | Rel.CI=19.40%
+    Progress: 276500 requests | P_b=0.00036890 | CI=0.00007158 | Rel.CI=19.40%
+    Progress: 277000 requests | P_b=0.00036823 | CI=0.00007145 | Rel.CI=19.40%
+    Progress: 277500 requests | P_b=0.00036757 | CI=0.00007132 | Rel.CI=19.40%
+    Progress: 278000 requests | P_b=0.00036691 | CI=0.00007119 | Rel.CI=19.40%
+    Progress: 278500 requests | P_b=0.00036625 | CI=0.00007106 | Rel.CI=19.40%
+    Progress: 279000 requests | P_b=0.00036559 | CI=0.00007094 | Rel.CI=19.40%
+    Progress: 279500 requests | P_b=0.00036494 | CI=0.00007081 | Rel.CI=19.40%
+    Progress: 280000 requests | P_b=0.00036429 | CI=0.00007068 | Rel.CI=19.40%
+    Progress: 280500 requests | P_b=0.00036364 | CI=0.00007056 | Rel.CI=19.40%
+    Progress: 281000 requests | P_b=0.00036299 | CI=0.00007043 | Rel.CI=19.40%
+    Progress: 281500 requests | P_b=0.00036234 | CI=0.00007031 | Rel.CI=19.40%
+    Progress: 282000 requests | P_b=0.00036170 | CI=0.00007018 | Rel.CI=19.40%
+    Progress: 282500 requests | P_b=0.00036106 | CI=0.00007006 | Rel.CI=19.40%
+    Progress: 283000 requests | P_b=0.00036042 | CI=0.00006993 | Rel.CI=19.40%
+    Progress: 283500 requests | P_b=0.00035979 | CI=0.00006981 | Rel.CI=19.40%
+    Progress: 284000 requests | P_b=0.00035915 | CI=0.00006969 | Rel.CI=19.40%
+    Progress: 284500 requests | P_b=0.00035852 | CI=0.00006957 | Rel.CI=19.40%
+    Progress: 285000 requests | P_b=0.00035789 | CI=0.00006944 | Rel.CI=19.40%
+    Progress: 285500 requests | P_b=0.00035727 | CI=0.00006932 | Rel.CI=19.40%
+    Progress: 286000 requests | P_b=0.00035664 | CI=0.00006920 | Rel.CI=19.40%
+    Progress: 286500 requests | P_b=0.00035602 | CI=0.00006908 | Rel.CI=19.40%
+    Progress: 287000 requests | P_b=0.00035540 | CI=0.00006896 | Rel.CI=19.40%
+    Progress: 287500 requests | P_b=0.00035478 | CI=0.00006884 | Rel.CI=19.40%
+    Progress: 288000 requests | P_b=0.00035417 | CI=0.00006872 | Rel.CI=19.40%
+    Progress: 288500 requests | P_b=0.00035355 | CI=0.00006860 | Rel.CI=19.40%
+    Progress: 289000 requests | P_b=0.00035294 | CI=0.00006848 | Rel.CI=19.40%
+    Progress: 289500 requests | P_b=0.00035233 | CI=0.00006836 | Rel.CI=19.40%
+    Progress: 290000 requests | P_b=0.00035172 | CI=0.00006825 | Rel.CI=19.40%
+    Progress: 290500 requests | P_b=0.00035112 | CI=0.00006813 | Rel.CI=19.40%
+    Progress: 291000 requests | P_b=0.00035052 | CI=0.00006801 | Rel.CI=19.40%
+    Progress: 291500 requests | P_b=0.00034991 | CI=0.00006790 | Rel.CI=19.40%
+    Progress: 292000 requests | P_b=0.00034932 | CI=0.00006778 | Rel.CI=19.40%
+    Progress: 292500 requests | P_b=0.00036239 | CI=0.00006898 | Rel.CI=19.03%
+    Progress: 293000 requests | P_b=0.00036177 | CI=0.00006886 | Rel.CI=19.03%
+    Progress: 293500 requests | P_b=0.00036116 | CI=0.00006874 | Rel.CI=19.03%
+    Progress: 294000 requests | P_b=0.00036054 | CI=0.00006863 | Rel.CI=19.03%
+    Progress: 294500 requests | P_b=0.00035993 | CI=0.00006851 | Rel.CI=19.03%
+    Progress: 295000 requests | P_b=0.00035932 | CI=0.00006839 | Rel.CI=19.03%
+    Progress: 295500 requests | P_b=0.00035871 | CI=0.00006828 | Rel.CI=19.03%
+    Progress: 296000 requests | P_b=0.00035811 | CI=0.00006816 | Rel.CI=19.03%
+    Progress: 296500 requests | P_b=0.00036425 | CI=0.00006869 | Rel.CI=18.86%
+    Progress: 297000 requests | P_b=0.00037710 | CI=0.00006983 | Rel.CI=18.52%
+    Progress: 297500 requests | P_b=0.00037647 | CI=0.00006971 | Rel.CI=18.52%
+    Progress: 298000 requests | P_b=0.00037584 | CI=0.00006959 | Rel.CI=18.52%
+    Progress: 298500 requests | P_b=0.00037521 | CI=0.00006948 | Rel.CI=18.52%
+    Progress: 299000 requests | P_b=0.00037458 | CI=0.00006936 | Rel.CI=18.52%
+    Progress: 299500 requests | P_b=0.00037396 | CI=0.00006924 | Rel.CI=18.52%
+    Progress: 300000 requests | P_b=0.00037333 | CI=0.00006913 | Rel.CI=18.52%
+    Progress: 300500 requests | P_b=0.00037271 | CI=0.00006901 | Rel.CI=18.52%
+    Progress: 301000 requests | P_b=0.00037209 | CI=0.00006890 | Rel.CI=18.52%
+    Progress: 301500 requests | P_b=0.00037148 | CI=0.00006879 | Rel.CI=18.52%
+    Progress: 302000 requests | P_b=0.00037086 | CI=0.00006867 | Rel.CI=18.52%
+    Progress: 302500 requests | P_b=0.00037025 | CI=0.00006856 | Rel.CI=18.52%
+    Progress: 303000 requests | P_b=0.00036964 | CI=0.00006845 | Rel.CI=18.52%
+    Progress: 303500 requests | P_b=0.00036903 | CI=0.00006833 | Rel.CI=18.52%
+    Progress: 304000 requests | P_b=0.00036842 | CI=0.00006822 | Rel.CI=18.52%
+    Progress: 304500 requests | P_b=0.00036782 | CI=0.00006811 | Rel.CI=18.52%
+    Progress: 305000 requests | P_b=0.00036721 | CI=0.00006800 | Rel.CI=18.52%
+    Progress: 305500 requests | P_b=0.00036661 | CI=0.00006789 | Rel.CI=18.52%
+    Progress: 306000 requests | P_b=0.00037255 | CI=0.00006838 | Rel.CI=18.35%
+    Progress: 306500 requests | P_b=0.00037194 | CI=0.00006826 | Rel.CI=18.35%
+    Progress: 307000 requests | P_b=0.00037134 | CI=0.00006815 | Rel.CI=18.35%
+    Progress: 307500 requests | P_b=0.00037073 | CI=0.00006804 | Rel.CI=18.35%
+    Progress: 308000 requests | P_b=0.00037013 | CI=0.00006793 | Rel.CI=18.35%
+    Progress: 308500 requests | P_b=0.00036953 | CI=0.00006782 | Rel.CI=18.35%
+    Progress: 309000 requests | P_b=0.00036893 | CI=0.00006771 | Rel.CI=18.35%
+    Progress: 309500 requests | P_b=0.00036834 | CI=0.00006760 | Rel.CI=18.35%
+    Progress: 310000 requests | P_b=0.00036774 | CI=0.00006749 | Rel.CI=18.35%
+    Progress: 310500 requests | P_b=0.00036715 | CI=0.00006739 | Rel.CI=18.35%
+    Progress: 311000 requests | P_b=0.00036656 | CI=0.00006728 | Rel.CI=18.35%
+    Progress: 311500 requests | P_b=0.00036918 | CI=0.00006746 | Rel.CI=18.27%
+    Progress: 312000 requests | P_b=0.00036859 | CI=0.00006736 | Rel.CI=18.27%
+    Progress: 312500 requests | P_b=0.00036800 | CI=0.00006725 | Rel.CI=18.27%
+    Progress: 313000 requests | P_b=0.00036741 | CI=0.00006714 | Rel.CI=18.27%
+    Progress: 313500 requests | P_b=0.00036683 | CI=0.00006703 | Rel.CI=18.27%
+    Progress: 314000 requests | P_b=0.00036624 | CI=0.00006693 | Rel.CI=18.27%
+    Progress: 314500 requests | P_b=0.00037520 | CI=0.00006769 | Rel.CI=18.04%
+    Progress: 315000 requests | P_b=0.00037460 | CI=0.00006758 | Rel.CI=18.04%
+    Progress: 315500 requests | P_b=0.00037401 | CI=0.00006747 | Rel.CI=18.04%
+    Progress: 316000 requests | P_b=0.00037342 | CI=0.00006736 | Rel.CI=18.04%
+    Progress: 316500 requests | P_b=0.00037283 | CI=0.00006726 | Rel.CI=18.04%
+    Progress: 317000 requests | P_b=0.00037224 | CI=0.00006715 | Rel.CI=18.04%
+    Progress: 317500 requests | P_b=0.00037165 | CI=0.00006705 | Rel.CI=18.04%
+    Progress: 318000 requests | P_b=0.00037107 | CI=0.00006694 | Rel.CI=18.04%
+    Progress: 318500 requests | P_b=0.00037049 | CI=0.00006684 | Rel.CI=18.04%
+    Progress: 319000 requests | P_b=0.00036991 | CI=0.00006673 | Rel.CI=18.04%
+    Progress: 319500 requests | P_b=0.00036933 | CI=0.00006663 | Rel.CI=18.04%
+    Progress: 320000 requests | P_b=0.00036875 | CI=0.00006652 | Rel.CI=18.04%
+    Progress: 320500 requests | P_b=0.00036817 | CI=0.00006642 | Rel.CI=18.04%
+    Progress: 321000 requests | P_b=0.00036760 | CI=0.00006632 | Rel.CI=18.04%
+    Progress: 321500 requests | P_b=0.00036703 | CI=0.00006621 | Rel.CI=18.04%
+    Progress: 322000 requests | P_b=0.00036646 | CI=0.00006611 | Rel.CI=18.04%
+    Progress: 322500 requests | P_b=0.00036589 | CI=0.00006601 | Rel.CI=18.04%
+    Progress: 323000 requests | P_b=0.00036533 | CI=0.00006590 | Rel.CI=18.04%
+    Progress: 323500 requests | P_b=0.00036476 | CI=0.00006580 | Rel.CI=18.04%
+    Progress: 324000 requests | P_b=0.00036420 | CI=0.00006570 | Rel.CI=18.04%
+    Progress: 324500 requests | P_b=0.00036364 | CI=0.00006560 | Rel.CI=18.04%
+    Progress: 325000 requests | P_b=0.00036308 | CI=0.00006550 | Rel.CI=18.04%
+    Progress: 325500 requests | P_b=0.00036252 | CI=0.00006540 | Rel.CI=18.04%
+    Progress: 326000 requests | P_b=0.00036196 | CI=0.00006530 | Rel.CI=18.04%
+    Progress: 326500 requests | P_b=0.00036141 | CI=0.00006520 | Rel.CI=18.04%
+    Progress: 327000 requests | P_b=0.00036086 | CI=0.00006510 | Rel.CI=18.04%
+    Progress: 327500 requests | P_b=0.00036031 | CI=0.00006500 | Rel.CI=18.04%
+    Progress: 328000 requests | P_b=0.00035976 | CI=0.00006490 | Rel.CI=18.04%
+    Progress: 328500 requests | P_b=0.00035921 | CI=0.00006480 | Rel.CI=18.04%
+    Progress: 329000 requests | P_b=0.00035866 | CI=0.00006470 | Rel.CI=18.04%
+    Progress: 329500 requests | P_b=0.00035812 | CI=0.00006460 | Rel.CI=18.04%
+    Progress: 330000 requests | P_b=0.00035758 | CI=0.00006451 | Rel.CI=18.04%
+    Progress: 330500 requests | P_b=0.00035703 | CI=0.00006441 | Rel.CI=18.04%
+    Progress: 331000 requests | P_b=0.00035650 | CI=0.00006431 | Rel.CI=18.04%
+    Progress: 331500 requests | P_b=0.00036501 | CI=0.00006503 | Rel.CI=17.81%
+    Progress: 332000 requests | P_b=0.00036446 | CI=0.00006493 | Rel.CI=17.81%
+    Progress: 332500 requests | P_b=0.00036692 | CI=0.00006510 | Rel.CI=17.74%
+    Progress: 333000 requests | P_b=0.00036637 | CI=0.00006500 | Rel.CI=17.74%
+    Progress: 333500 requests | P_b=0.00036582 | CI=0.00006490 | Rel.CI=17.74%
+    Progress: 334000 requests | P_b=0.00036527 | CI=0.00006481 | Rel.CI=17.74%
+    Progress: 334500 requests | P_b=0.00037070 | CI=0.00006524 | Rel.CI=17.60%
+    Progress: 335000 requests | P_b=0.00038806 | CI=0.00006670 | Rel.CI=17.19%
+    Progress: 335500 requests | P_b=0.00038748 | CI=0.00006660 | Rel.CI=17.19%
+    Progress: 336000 requests | P_b=0.00038988 | CI=0.00006675 | Rel.CI=17.12%
+    Progress: 336500 requests | P_b=0.00038930 | CI=0.00006665 | Rel.CI=17.12%
+    Progress: 337000 requests | P_b=0.00039466 | CI=0.00006706 | Rel.CI=16.99%
+    Progress: 337500 requests | P_b=0.00039407 | CI=0.00006696 | Rel.CI=16.99%
+    Progress: 338000 requests | P_b=0.00039349 | CI=0.00006686 | Rel.CI=16.99%
+    Progress: 338500 requests | P_b=0.00039291 | CI=0.00006676 | Rel.CI=16.99%
+    Progress: 339000 requests | P_b=0.00039233 | CI=0.00006666 | Rel.CI=16.99%
+    Progress: 339500 requests | P_b=0.00039175 | CI=0.00006657 | Rel.CI=16.99%
+    Progress: 340000 requests | P_b=0.00039118 | CI=0.00006647 | Rel.CI=16.99%
+    Progress: 340500 requests | P_b=0.00039060 | CI=0.00006637 | Rel.CI=16.99%
+    Progress: 341000 requests | P_b=0.00039003 | CI=0.00006627 | Rel.CI=16.99%
+    Progress: 341500 requests | P_b=0.00038946 | CI=0.00006618 | Rel.CI=16.99%
+    Progress: 342000 requests | P_b=0.00038889 | CI=0.00006608 | Rel.CI=16.99%
+    Progress: 342500 requests | P_b=0.00038832 | CI=0.00006598 | Rel.CI=16.99%
+    Progress: 343000 requests | P_b=0.00038776 | CI=0.00006589 | Rel.CI=16.99%
+    Progress: 343500 requests | P_b=0.00038719 | CI=0.00006579 | Rel.CI=16.99%
+    Progress: 344000 requests | P_b=0.00038663 | CI=0.00006570 | Rel.CI=16.99%
+    Progress: 344500 requests | P_b=0.00039478 | CI=0.00006634 | Rel.CI=16.80%
+    Progress: 345000 requests | P_b=0.00039710 | CI=0.00006648 | Rel.CI=16.74%
+    Progress: 345500 requests | P_b=0.00039653 | CI=0.00006639 | Rel.CI=16.74%
+    Progress: 346000 requests | P_b=0.00040751 | CI=0.00006725 | Rel.CI=16.50%
+    Progress: 346500 requests | P_b=0.00040693 | CI=0.00006715 | Rel.CI=16.50%
+    Progress: 347000 requests | P_b=0.00040634 | CI=0.00006706 | Rel.CI=16.50%
+    Progress: 347500 requests | P_b=0.00040576 | CI=0.00006696 | Rel.CI=16.50%
+    Progress: 348000 requests | P_b=0.00040517 | CI=0.00006686 | Rel.CI=16.50%
+    Progress: 348500 requests | P_b=0.00040459 | CI=0.00006677 | Rel.CI=16.50%
+    Progress: 349000 requests | P_b=0.00040401 | CI=0.00006667 | Rel.CI=16.50%
+    Progress: 349500 requests | P_b=0.00040343 | CI=0.00006658 | Rel.CI=16.50%
+    Progress: 350000 requests | P_b=0.00040286 | CI=0.00006648 | Rel.CI=16.50%
+    Progress: 350500 requests | P_b=0.00040228 | CI=0.00006639 | Rel.CI=16.50%
+    Progress: 351000 requests | P_b=0.00040171 | CI=0.00006629 | Rel.CI=16.50%
+    Progress: 351500 requests | P_b=0.00040114 | CI=0.00006620 | Rel.CI=16.50%
+    Progress: 352000 requests | P_b=0.00040057 | CI=0.00006611 | Rel.CI=16.50%
+    Progress: 352500 requests | P_b=0.00040000 | CI=0.00006601 | Rel.CI=16.50%
+    Progress: 353000 requests | P_b=0.00039943 | CI=0.00006592 | Rel.CI=16.50%
+    Progress: 353500 requests | P_b=0.00039887 | CI=0.00006582 | Rel.CI=16.50%
+    Progress: 354000 requests | P_b=0.00039831 | CI=0.00006573 | Rel.CI=16.50%
+    Progress: 354500 requests | P_b=0.00039774 | CI=0.00006564 | Rel.CI=16.50%
+    Progress: 355000 requests | P_b=0.00039718 | CI=0.00006555 | Rel.CI=16.50%
+    Progress: 355500 requests | P_b=0.00039662 | CI=0.00006545 | Rel.CI=16.50%
+    Progress: 356000 requests | P_b=0.00039607 | CI=0.00006536 | Rel.CI=16.50%
+    Progress: 356500 requests | P_b=0.00039551 | CI=0.00006527 | Rel.CI=16.50%
+    Progress: 357000 requests | P_b=0.00039496 | CI=0.00006518 | Rel.CI=16.50%
+    Progress: 357500 requests | P_b=0.00039441 | CI=0.00006509 | Rel.CI=16.50%
+    Progress: 358000 requests | P_b=0.00039385 | CI=0.00006500 | Rel.CI=16.50%
+    Progress: 358500 requests | P_b=0.00039609 | CI=0.00006514 | Rel.CI=16.44%
+    Progress: 359000 requests | P_b=0.00039833 | CI=0.00006527 | Rel.CI=16.39%
+    Progress: 359500 requests | P_b=0.00039777 | CI=0.00006518 | Rel.CI=16.39%
+    Progress: 360000 requests | P_b=0.00039722 | CI=0.00006509 | Rel.CI=16.39%
+    Progress: 360500 requests | P_b=0.00039667 | CI=0.00006500 | Rel.CI=16.39%
+    Progress: 361000 requests | P_b=0.00039612 | CI=0.00006491 | Rel.CI=16.39%
+    Progress: 361500 requests | P_b=0.00039557 | CI=0.00006482 | Rel.CI=16.39%
+    Progress: 362000 requests | P_b=0.00039503 | CI=0.00006473 | Rel.CI=16.39%
+    Progress: 362500 requests | P_b=0.00039448 | CI=0.00006464 | Rel.CI=16.39%
+    Progress: 363000 requests | P_b=0.00039394 | CI=0.00006456 | Rel.CI=16.39%
+    Progress: 363500 requests | P_b=0.00039340 | CI=0.00006447 | Rel.CI=16.39%
+    Progress: 364000 requests | P_b=0.00039286 | CI=0.00006438 | Rel.CI=16.39%
+    Progress: 364500 requests | P_b=0.00039232 | CI=0.00006429 | Rel.CI=16.39%
+    Progress: 365000 requests | P_b=0.00039178 | CI=0.00006420 | Rel.CI=16.39%
+    Progress: 365500 requests | P_b=0.00039124 | CI=0.00006411 | Rel.CI=16.39%
+    Progress: 366000 requests | P_b=0.00039071 | CI=0.00006403 | Rel.CI=16.39%
+    Progress: 366500 requests | P_b=0.00039018 | CI=0.00006394 | Rel.CI=16.39%
+    Progress: 367000 requests | P_b=0.00038965 | CI=0.00006385 | Rel.CI=16.39%
+    Progress: 367500 requests | P_b=0.00038912 | CI=0.00006376 | Rel.CI=16.39%
+    Progress: 368000 requests | P_b=0.00038859 | CI=0.00006368 | Rel.CI=16.39%
+    Progress: 368500 requests | P_b=0.00040434 | CI=0.00006491 | Rel.CI=16.05%
+    Progress: 369000 requests | P_b=0.00040650 | CI=0.00006504 | Rel.CI=16.00%
+    Progress: 369500 requests | P_b=0.00040866 | CI=0.00006517 | Rel.CI=15.95%
+    Progress: 370000 requests | P_b=0.00040811 | CI=0.00006508 | Rel.CI=15.95%
+    Progress: 370500 requests | P_b=0.00040756 | CI=0.00006499 | Rel.CI=15.95%
+    Progress: 371000 requests | P_b=0.00040701 | CI=0.00006491 | Rel.CI=15.95%
+    Progress: 371500 requests | P_b=0.00040646 | CI=0.00006482 | Rel.CI=15.95%
+    Progress: 372000 requests | P_b=0.00040591 | CI=0.00006473 | Rel.CI=15.95%
+    Progress: 372500 requests | P_b=0.00040537 | CI=0.00006464 | Rel.CI=15.95%
+    Progress: 373000 requests | P_b=0.00040483 | CI=0.00006456 | Rel.CI=15.95%
+    Progress: 373500 requests | P_b=0.00041232 | CI=0.00006511 | Rel.CI=15.79%
+    Progress: 374000 requests | P_b=0.00041176 | CI=0.00006502 | Rel.CI=15.79%
+    Progress: 374500 requests | P_b=0.00041389 | CI=0.00006514 | Rel.CI=15.74%
+    Progress: 375000 requests | P_b=0.00041333 | CI=0.00006506 | Rel.CI=15.74%
+    Progress: 375500 requests | P_b=0.00041278 | CI=0.00006497 | Rel.CI=15.74%
+    Progress: 376000 requests | P_b=0.00042287 | CI=0.00006572 | Rel.CI=15.54%
+    Progress: 376500 requests | P_b=0.00042231 | CI=0.00006563 | Rel.CI=15.54%
+    Progress: 377000 requests | P_b=0.00042175 | CI=0.00006554 | Rel.CI=15.54%
+    Progress: 377500 requests | P_b=0.00042119 | CI=0.00006546 | Rel.CI=15.54%
+    Progress: 378000 requests | P_b=0.00042063 | CI=0.00006537 | Rel.CI=15.54%
+    Progress: 378500 requests | P_b=0.00042008 | CI=0.00006528 | Rel.CI=15.54%
+    Progress: 379000 requests | P_b=0.00041953 | CI=0.00006520 | Rel.CI=15.54%
+    Progress: 379500 requests | P_b=0.00041897 | CI=0.00006511 | Rel.CI=15.54%
+    Progress: 380000 requests | P_b=0.00041842 | CI=0.00006502 | Rel.CI=15.54%
+    Progress: 380500 requests | P_b=0.00041787 | CI=0.00006494 | Rel.CI=15.54%
+    Progress: 381000 requests | P_b=0.00041732 | CI=0.00006485 | Rel.CI=15.54%
+    Progress: 381500 requests | P_b=0.00041678 | CI=0.00006477 | Rel.CI=15.54%
+    Progress: 382000 requests | P_b=0.00041623 | CI=0.00006468 | Rel.CI=15.54%
+    Progress: 382500 requests | P_b=0.00042614 | CI=0.00006541 | Rel.CI=15.35%
+    Progress: 383000 requests | P_b=0.00042559 | CI=0.00006532 | Rel.CI=15.35%
+    Progress: 383500 requests | P_b=0.00042503 | CI=0.00006524 | Rel.CI=15.35%
+    Progress: 384000 requests | P_b=0.00042969 | CI=0.00006555 | Rel.CI=15.26%
+    Progress: 384500 requests | P_b=0.00042913 | CI=0.00006546 | Rel.CI=15.26%
+    Progress: 385000 requests | P_b=0.00042857 | CI=0.00006538 | Rel.CI=15.26%
+    Progress: 385500 requests | P_b=0.00042802 | CI=0.00006530 | Rel.CI=15.26%
+    Progress: 386000 requests | P_b=0.00042746 | CI=0.00006521 | Rel.CI=15.26%
+    Progress: 386500 requests | P_b=0.00042691 | CI=0.00006513 | Rel.CI=15.26%
+    Progress: 387000 requests | P_b=0.00042636 | CI=0.00006504 | Rel.CI=15.26%
+    Progress: 387500 requests | P_b=0.00042581 | CI=0.00006496 | Rel.CI=15.26%
+    Progress: 388000 requests | P_b=0.00042526 | CI=0.00006487 | Rel.CI=15.26%
+    Progress: 388500 requests | P_b=0.00042471 | CI=0.00006479 | Rel.CI=15.26%
+    Progress: 389000 requests | P_b=0.00043445 | CI=0.00006549 | Rel.CI=15.07%
+    Progress: 389500 requests | P_b=0.00043389 | CI=0.00006540 | Rel.CI=15.07%
+    Progress: 390000 requests | P_b=0.00043333 | CI=0.00006532 | Rel.CI=15.07%
+    Progress: 390500 requests | P_b=0.00043278 | CI=0.00006524 | Rel.CI=15.07%
+    Progress: 391000 requests | P_b=0.00043478 | CI=0.00006534 | Rel.CI=15.03%
+    Progress: 391500 requests | P_b=0.00043423 | CI=0.00006526 | Rel.CI=15.03%
+    Progress: 392000 requests | P_b=0.00043367 | CI=0.00006518 | Rel.CI=15.03%
+    Progress: 392500 requests | P_b=0.00043312 | CI=0.00006509 | Rel.CI=15.03%
+    Progress: 393000 requests | P_b=0.00043257 | CI=0.00006501 | Rel.CI=15.03%
+    Progress: 393500 requests | P_b=0.00043202 | CI=0.00006493 | Rel.CI=15.03%
+    Progress: 394000 requests | P_b=0.00043147 | CI=0.00006485 | Rel.CI=15.03%
+    Progress: 394500 requests | P_b=0.00043093 | CI=0.00006476 | Rel.CI=15.03%
+    Progress: 395000 requests | P_b=0.00043038 | CI=0.00006468 | Rel.CI=15.03%
+    Progress: 395500 requests | P_b=0.00042984 | CI=0.00006460 | Rel.CI=15.03%
+    Progress: 396000 requests | P_b=0.00042929 | CI=0.00006452 | Rel.CI=15.03%
+    Progress: 396500 requests | P_b=0.00042875 | CI=0.00006444 | Rel.CI=15.03%
+    Progress: 397000 requests | P_b=0.00042821 | CI=0.00006436 | Rel.CI=15.03%
+    Progress: 397500 requests | P_b=0.00043270 | CI=0.00006465 | Rel.CI=14.94%
+    Progress: 398000 requests | P_b=0.00043216 | CI=0.00006457 | Rel.CI=14.94%
+    Progress: 398500 requests | P_b=0.00043162 | CI=0.00006449 | Rel.CI=14.94%
+    Progress: 399000 requests | P_b=0.00043108 | CI=0.00006441 | Rel.CI=14.94%
+    Progress: 399500 requests | P_b=0.00043054 | CI=0.00006433 | Rel.CI=14.94%
+    Progress: 400000 requests | P_b=0.00043000 | CI=0.00006425 | Rel.CI=14.94%
+    Progress: 400500 requests | P_b=0.00042946 | CI=0.00006417 | Rel.CI=14.94%
+    Progress: 401000 requests | P_b=0.00042893 | CI=0.00006409 | Rel.CI=14.94%
+    Progress: 401500 requests | P_b=0.00042839 | CI=0.00006401 | Rel.CI=14.94%
+    Progress: 402000 requests | P_b=0.00042786 | CI=0.00006393 | Rel.CI=14.94%
+    Progress: 402500 requests | P_b=0.00042733 | CI=0.00006385 | Rel.CI=14.94%
+    Progress: 403000 requests | P_b=0.00042680 | CI=0.00006377 | Rel.CI=14.94%
+    Progress: 403500 requests | P_b=0.00042627 | CI=0.00006369 | Rel.CI=14.94%
+    Progress: 404000 requests | P_b=0.00042574 | CI=0.00006361 | Rel.CI=14.94%
+    Progress: 404500 requests | P_b=0.00042522 | CI=0.00006353 | Rel.CI=14.94%
+    Progress: 405000 requests | P_b=0.00042469 | CI=0.00006346 | Rel.CI=14.94%
+    Progress: 405500 requests | P_b=0.00042417 | CI=0.00006338 | Rel.CI=14.94%
+    Progress: 406000 requests | P_b=0.00042365 | CI=0.00006330 | Rel.CI=14.94%
+    Progress: 406500 requests | P_b=0.00042312 | CI=0.00006322 | Rel.CI=14.94%
+    Progress: 407000 requests | P_b=0.00042260 | CI=0.00006314 | Rel.CI=14.94%
+    Progress: 407500 requests | P_b=0.00042209 | CI=0.00006307 | Rel.CI=14.94%
+    Progress: 408000 requests | P_b=0.00042157 | CI=0.00006299 | Rel.CI=14.94%
+    Progress: 408500 requests | P_b=0.00042105 | CI=0.00006291 | Rel.CI=14.94%
+    Progress: 409000 requests | P_b=0.00042054 | CI=0.00006284 | Rel.CI=14.94%
+    Progress: 409500 requests | P_b=0.00042002 | CI=0.00006276 | Rel.CI=14.94%
+    Progress: 410000 requests | P_b=0.00041951 | CI=0.00006268 | Rel.CI=14.94%
+    Progress: 410500 requests | P_b=0.00041900 | CI=0.00006261 | Rel.CI=14.94%
+    Progress: 411000 requests | P_b=0.00041849 | CI=0.00006253 | Rel.CI=14.94%
+    Progress: 411500 requests | P_b=0.00041798 | CI=0.00006245 | Rel.CI=14.94%
+    Progress: 412000 requests | P_b=0.00041748 | CI=0.00006238 | Rel.CI=14.94%
+    Progress: 412500 requests | P_b=0.00041697 | CI=0.00006230 | Rel.CI=14.94%
+    Progress: 413000 requests | P_b=0.00041646 | CI=0.00006223 | Rel.CI=14.94%
+    Progress: 413500 requests | P_b=0.00041596 | CI=0.00006215 | Rel.CI=14.94%
+    Progress: 414000 requests | P_b=0.00041546 | CI=0.00006208 | Rel.CI=14.94%
+    Progress: 414500 requests | P_b=0.00041496 | CI=0.00006200 | Rel.CI=14.94%
+    Progress: 415000 requests | P_b=0.00041446 | CI=0.00006193 | Rel.CI=14.94%
+    Progress: 415500 requests | P_b=0.00041396 | CI=0.00006185 | Rel.CI=14.94%
+    Progress: 416000 requests | P_b=0.00041346 | CI=0.00006178 | Rel.CI=14.94%
+    Progress: 416500 requests | P_b=0.00041297 | CI=0.00006170 | Rel.CI=14.94%
+    Progress: 417000 requests | P_b=0.00041247 | CI=0.00006163 | Rel.CI=14.94%
+    Progress: 417500 requests | P_b=0.00041198 | CI=0.00006156 | Rel.CI=14.94%
+    Progress: 418000 requests | P_b=0.00041148 | CI=0.00006148 | Rel.CI=14.94%
+    Progress: 418500 requests | P_b=0.00041099 | CI=0.00006141 | Rel.CI=14.94%
+    Progress: 419000 requests | P_b=0.00041050 | CI=0.00006134 | Rel.CI=14.94%
+    Progress: 419500 requests | P_b=0.00041001 | CI=0.00006126 | Rel.CI=14.94%
+    Progress: 420000 requests | P_b=0.00040952 | CI=0.00006119 | Rel.CI=14.94%
+    Progress: 420500 requests | P_b=0.00040904 | CI=0.00006112 | Rel.CI=14.94%
+    Progress: 421000 requests | P_b=0.00040855 | CI=0.00006104 | Rel.CI=14.94%
+    Progress: 421500 requests | P_b=0.00040807 | CI=0.00006097 | Rel.CI=14.94%
+    Progress: 422000 requests | P_b=0.00040758 | CI=0.00006090 | Rel.CI=14.94%
+    Progress: 422500 requests | P_b=0.00040710 | CI=0.00006083 | Rel.CI=14.94%
+    Progress: 423000 requests | P_b=0.00040662 | CI=0.00006076 | Rel.CI=14.94%
+    Progress: 423500 requests | P_b=0.00040614 | CI=0.00006068 | Rel.CI=14.94%
+    Progress: 424000 requests | P_b=0.00040566 | CI=0.00006061 | Rel.CI=14.94%
+    Progress: 424500 requests | P_b=0.00040518 | CI=0.00006054 | Rel.CI=14.94%
+    Progress: 425000 requests | P_b=0.00041412 | CI=0.00006117 | Rel.CI=14.77%
+    Progress: 425500 requests | P_b=0.00041363 | CI=0.00006110 | Rel.CI=14.77%
+    Progress: 426000 requests | P_b=0.00041315 | CI=0.00006103 | Rel.CI=14.77%
+    Progress: 426500 requests | P_b=0.00041266 | CI=0.00006095 | Rel.CI=14.77%
+    Progress: 427000 requests | P_b=0.00041218 | CI=0.00006088 | Rel.CI=14.77%
+    Progress: 427500 requests | P_b=0.00041170 | CI=0.00006081 | Rel.CI=14.77%
+    Progress: 428000 requests | P_b=0.00041121 | CI=0.00006074 | Rel.CI=14.77%
+    Progress: 428500 requests | P_b=0.00041074 | CI=0.00006067 | Rel.CI=14.77%
+    Progress: 429000 requests | P_b=0.00041026 | CI=0.00006060 | Rel.CI=14.77%
+    Progress: 429500 requests | P_b=0.00040978 | CI=0.00006053 | Rel.CI=14.77%
+    Progress: 430000 requests | P_b=0.00040930 | CI=0.00006046 | Rel.CI=14.77%
+    Progress: 430500 requests | P_b=0.00040883 | CI=0.00006039 | Rel.CI=14.77%
+    Progress: 431000 requests | P_b=0.00040835 | CI=0.00006032 | Rel.CI=14.77%
+    Progress: 431500 requests | P_b=0.00041020 | CI=0.00006042 | Rel.CI=14.73%
+    Progress: 432000 requests | P_b=0.00040972 | CI=0.00006035 | Rel.CI=14.73%
+    Progress: 432500 requests | P_b=0.00040925 | CI=0.00006028 | Rel.CI=14.73%
+    Progress: 433000 requests | P_b=0.00040878 | CI=0.00006021 | Rel.CI=14.73%
+    Progress: 433500 requests | P_b=0.00040830 | CI=0.00006014 | Rel.CI=14.73%
+    Progress: 434000 requests | P_b=0.00041014 | CI=0.00006024 | Rel.CI=14.69%
+    Progress: 434500 requests | P_b=0.00041427 | CI=0.00006051 | Rel.CI=14.61%
+    Progress: 435000 requests | P_b=0.00041379 | CI=0.00006044 | Rel.CI=14.61%
+    Progress: 435500 requests | P_b=0.00041332 | CI=0.00006037 | Rel.CI=14.61%
+    Progress: 436000 requests | P_b=0.00041284 | CI=0.00006030 | Rel.CI=14.61%
+    Progress: 436500 requests | P_b=0.00041237 | CI=0.00006023 | Rel.CI=14.61%
+    Progress: 437000 requests | P_b=0.00041190 | CI=0.00006016 | Rel.CI=14.61%
+    Progress: 437500 requests | P_b=0.00041143 | CI=0.00006009 | Rel.CI=14.61%
+    Progress: 438000 requests | P_b=0.00041096 | CI=0.00006002 | Rel.CI=14.61%
+    Progress: 438500 requests | P_b=0.00041049 | CI=0.00005996 | Rel.CI=14.61%
+    Progress: 439000 requests | P_b=0.00041002 | CI=0.00005989 | Rel.CI=14.61%
+    Progress: 439500 requests | P_b=0.00040956 | CI=0.00005982 | Rel.CI=14.61%
+    Progress: 440000 requests | P_b=0.00040909 | CI=0.00005975 | Rel.CI=14.61%
+    Progress: 440500 requests | P_b=0.00040863 | CI=0.00005968 | Rel.CI=14.61%
+    Progress: 441000 requests | P_b=0.00040816 | CI=0.00005962 | Rel.CI=14.61%
+    Progress: 441500 requests | P_b=0.00040997 | CI=0.00005971 | Rel.CI=14.57%
+    Progress: 442000 requests | P_b=0.00040950 | CI=0.00005965 | Rel.CI=14.57%
+    Progress: 442500 requests | P_b=0.00040904 | CI=0.00005958 | Rel.CI=14.57%
+    Progress: 443000 requests | P_b=0.00040858 | CI=0.00005951 | Rel.CI=14.57%
+    Progress: 443500 requests | P_b=0.00040812 | CI=0.00005944 | Rel.CI=14.57%
+    Progress: 444000 requests | P_b=0.00040766 | CI=0.00005938 | Rel.CI=14.57%
+    Progress: 444500 requests | P_b=0.00040720 | CI=0.00005931 | Rel.CI=14.57%
+    Progress: 445000 requests | P_b=0.00040674 | CI=0.00005924 | Rel.CI=14.57%
+    Progress: 445500 requests | P_b=0.00040629 | CI=0.00005918 | Rel.CI=14.57%
+    Progress: 446000 requests | P_b=0.00040583 | CI=0.00005911 | Rel.CI=14.57%
+    Progress: 446500 requests | P_b=0.00040538 | CI=0.00005905 | Rel.CI=14.57%
+    Progress: 447000 requests | P_b=0.00040492 | CI=0.00005898 | Rel.CI=14.57%
+    Progress: 447500 requests | P_b=0.00040447 | CI=0.00005891 | Rel.CI=14.57%
+    Progress: 448000 requests | P_b=0.00040402 | CI=0.00005885 | Rel.CI=14.57%
+    Progress: 448500 requests | P_b=0.00040357 | CI=0.00005878 | Rel.CI=14.57%
+    Progress: 449000 requests | P_b=0.00040312 | CI=0.00005872 | Rel.CI=14.57%
+    Progress: 449500 requests | P_b=0.00040267 | CI=0.00005865 | Rel.CI=14.57%
+    Progress: 450000 requests | P_b=0.00040222 | CI=0.00005859 | Rel.CI=14.57%
+    Progress: 450500 requests | P_b=0.00040178 | CI=0.00005852 | Rel.CI=14.57%
+    Progress: 451000 requests | P_b=0.00040133 | CI=0.00005846 | Rel.CI=14.57%
+    Progress: 451500 requests | P_b=0.00040089 | CI=0.00005839 | Rel.CI=14.57%
+    Progress: 452000 requests | P_b=0.00040044 | CI=0.00005833 | Rel.CI=14.57%
+    Progress: 452500 requests | P_b=0.00040442 | CI=0.00005858 | Rel.CI=14.49%
+    Progress: 453000 requests | P_b=0.00040839 | CI=0.00005884 | Rel.CI=14.41%
+    Progress: 453500 requests | P_b=0.00040794 | CI=0.00005877 | Rel.CI=14.41%
+    Progress: 454000 requests | P_b=0.00040969 | CI=0.00005887 | Rel.CI=14.37%
+    Progress: 454500 requests | P_b=0.00040924 | CI=0.00005880 | Rel.CI=14.37%
+    Progress: 455000 requests | P_b=0.00040879 | CI=0.00005874 | Rel.CI=14.37%
+    Progress: 455500 requests | P_b=0.00041054 | CI=0.00005883 | Rel.CI=14.33%
+    Progress: 456000 requests | P_b=0.00041009 | CI=0.00005877 | Rel.CI=14.33%
+    Progress: 456500 requests | P_b=0.00040964 | CI=0.00005870 | Rel.CI=14.33%
+    Progress: 457000 requests | P_b=0.00040919 | CI=0.00005864 | Rel.CI=14.33%
+    Progress: 457500 requests | P_b=0.00040874 | CI=0.00005857 | Rel.CI=14.33%
+    Progress: 458000 requests | P_b=0.00040830 | CI=0.00005851 | Rel.CI=14.33%
+    Progress: 458500 requests | P_b=0.00040785 | CI=0.00005845 | Rel.CI=14.33%
+    Progress: 459000 requests | P_b=0.00040741 | CI=0.00005838 | Rel.CI=14.33%
+    Progress: 459500 requests | P_b=0.00040696 | CI=0.00005832 | Rel.CI=14.33%
+    Progress: 460000 requests | P_b=0.00040652 | CI=0.00005825 | Rel.CI=14.33%
+    Progress: 460500 requests | P_b=0.00040608 | CI=0.00005819 | Rel.CI=14.33%
+    Progress: 461000 requests | P_b=0.00040564 | CI=0.00005813 | Rel.CI=14.33%
+    Progress: 461500 requests | P_b=0.00040520 | CI=0.00005807 | Rel.CI=14.33%
+    Progress: 462000 requests | P_b=0.00040476 | CI=0.00005800 | Rel.CI=14.33%
+    Progress: 462500 requests | P_b=0.00040432 | CI=0.00005794 | Rel.CI=14.33%
+    Progress: 463000 requests | P_b=0.00040389 | CI=0.00005788 | Rel.CI=14.33%
+    Progress: 463500 requests | P_b=0.00040345 | CI=0.00005781 | Rel.CI=14.33%
+    Progress: 464000 requests | P_b=0.00040302 | CI=0.00005775 | Rel.CI=14.33%
+    Progress: 464500 requests | P_b=0.00040258 | CI=0.00005769 | Rel.CI=14.33%
+    Progress: 465000 requests | P_b=0.00040215 | CI=0.00005763 | Rel.CI=14.33%
+    Progress: 465500 requests | P_b=0.00040172 | CI=0.00005757 | Rel.CI=14.33%
+    Progress: 466000 requests | P_b=0.00040558 | CI=0.00005781 | Rel.CI=14.25%
+    Progress: 466500 requests | P_b=0.00040514 | CI=0.00005775 | Rel.CI=14.25%
+    Progress: 467000 requests | P_b=0.00040471 | CI=0.00005769 | Rel.CI=14.25%
+    Progress: 467500 requests | P_b=0.00040428 | CI=0.00005763 | Rel.CI=14.25%
+    Progress: 468000 requests | P_b=0.00040385 | CI=0.00005756 | Rel.CI=14.25%
+    Progress: 468500 requests | P_b=0.00040342 | CI=0.00005750 | Rel.CI=14.25%
+    Progress: 469000 requests | P_b=0.00040299 | CI=0.00005744 | Rel.CI=14.25%
+    Progress: 469500 requests | P_b=0.00040256 | CI=0.00005738 | Rel.CI=14.25%
+    Progress: 470000 requests | P_b=0.00040213 | CI=0.00005732 | Rel.CI=14.25%
+    Progress: 470500 requests | P_b=0.00040383 | CI=0.00005741 | Rel.CI=14.22%
+    Progress: 471000 requests | P_b=0.00040340 | CI=0.00005735 | Rel.CI=14.22%
+    Progress: 471500 requests | P_b=0.00040297 | CI=0.00005729 | Rel.CI=14.22%
+    Progress: 472000 requests | P_b=0.00040254 | CI=0.00005723 | Rel.CI=14.22%
+    Progress: 472500 requests | P_b=0.00040212 | CI=0.00005717 | Rel.CI=14.22%
+    Progress: 473000 requests | P_b=0.00040169 | CI=0.00005711 | Rel.CI=14.22%
+    Progress: 473500 requests | P_b=0.00040127 | CI=0.00005705 | Rel.CI=14.22%
+    Progress: 474000 requests | P_b=0.00040084 | CI=0.00005699 | Rel.CI=14.22%
+    Progress: 474500 requests | P_b=0.00040042 | CI=0.00005693 | Rel.CI=14.22%
+    Progress: 475000 requests | P_b=0.00040000 | CI=0.00005687 | Rel.CI=14.22%
+    Progress: 475500 requests | P_b=0.00039958 | CI=0.00005681 | Rel.CI=14.22%
+    Progress: 476000 requests | P_b=0.00039916 | CI=0.00005675 | Rel.CI=14.22%
+    Progress: 476500 requests | P_b=0.00039874 | CI=0.00005669 | Rel.CI=14.22%
+    Progress: 477000 requests | P_b=0.00039832 | CI=0.00005663 | Rel.CI=14.22%
+    Progress: 477500 requests | P_b=0.00039791 | CI=0.00005657 | Rel.CI=14.22%
+    Progress: 478000 requests | P_b=0.00039749 | CI=0.00005651 | Rel.CI=14.22%
+    Progress: 478500 requests | P_b=0.00039707 | CI=0.00005645 | Rel.CI=14.22%
+    Progress: 479000 requests | P_b=0.00039666 | CI=0.00005639 | Rel.CI=14.22%
+    Progress: 479500 requests | P_b=0.00039625 | CI=0.00005633 | Rel.CI=14.22%
+    Progress: 480000 requests | P_b=0.00039583 | CI=0.00005627 | Rel.CI=14.22%
+    Progress: 480500 requests | P_b=0.00039542 | CI=0.00005622 | Rel.CI=14.22%
+    Progress: 481000 requests | P_b=0.00039501 | CI=0.00005616 | Rel.CI=14.22%
+    Progress: 481500 requests | P_b=0.00039460 | CI=0.00005610 | Rel.CI=14.22%
+    Progress: 482000 requests | P_b=0.00039419 | CI=0.00005604 | Rel.CI=14.22%
+    Progress: 482500 requests | P_b=0.00039378 | CI=0.00005598 | Rel.CI=14.22%
+    Progress: 483000 requests | P_b=0.00039337 | CI=0.00005592 | Rel.CI=14.22%
+    Progress: 483500 requests | P_b=0.00039297 | CI=0.00005587 | Rel.CI=14.22%
+    Progress: 484000 requests | P_b=0.00039256 | CI=0.00005581 | Rel.CI=14.22%
+    Progress: 484500 requests | P_b=0.00039216 | CI=0.00005575 | Rel.CI=14.22%
+    Progress: 485000 requests | P_b=0.00039175 | CI=0.00005569 | Rel.CI=14.22%
+    Progress: 485500 requests | P_b=0.00039135 | CI=0.00005564 | Rel.CI=14.22%
+    Progress: 486000 requests | P_b=0.00039095 | CI=0.00005558 | Rel.CI=14.22%
+    Progress: 486500 requests | P_b=0.00039054 | CI=0.00005552 | Rel.CI=14.22%
+    Progress: 487000 requests | P_b=0.00039014 | CI=0.00005547 | Rel.CI=14.22%
+    Progress: 487500 requests | P_b=0.00038974 | CI=0.00005541 | Rel.CI=14.22%
+    Progress: 488000 requests | P_b=0.00038934 | CI=0.00005535 | Rel.CI=14.22%
+    Progress: 488500 requests | P_b=0.00039099 | CI=0.00005544 | Rel.CI=14.18%
+    Progress: 489000 requests | P_b=0.00039059 | CI=0.00005538 | Rel.CI=14.18%
+    Progress: 489500 requests | P_b=0.00039019 | CI=0.00005533 | Rel.CI=14.18%
+    Progress: 490000 requests | P_b=0.00038980 | CI=0.00005527 | Rel.CI=14.18%
+    Progress: 490500 requests | P_b=0.00038940 | CI=0.00005521 | Rel.CI=14.18%
+    Progress: 491000 requests | P_b=0.00038900 | CI=0.00005516 | Rel.CI=14.18%
+    Progress: 491500 requests | P_b=0.00038861 | CI=0.00005510 | Rel.CI=14.18%
+    Progress: 492000 requests | P_b=0.00038821 | CI=0.00005505 | Rel.CI=14.18%
+    Progress: 492500 requests | P_b=0.00038782 | CI=0.00005499 | Rel.CI=14.18%
+    Progress: 493000 requests | P_b=0.00038945 | CI=0.00005508 | Rel.CI=14.14%
+    Progress: 493500 requests | P_b=0.00038906 | CI=0.00005502 | Rel.CI=14.14%
+    Progress: 494000 requests | P_b=0.00038866 | CI=0.00005497 | Rel.CI=14.14%
+    Progress: 494500 requests | P_b=0.00038827 | CI=0.00005491 | Rel.CI=14.14%
+    Progress: 495000 requests | P_b=0.00038788 | CI=0.00005486 | Rel.CI=14.14%
+    Progress: 495500 requests | P_b=0.00038749 | CI=0.00005480 | Rel.CI=14.14%
+    Progress: 496000 requests | P_b=0.00038710 | CI=0.00005474 | Rel.CI=14.14%
+    Progress: 496500 requests | P_b=0.00038671 | CI=0.00005469 | Rel.CI=14.14%
+    Progress: 497000 requests | P_b=0.00038632 | CI=0.00005463 | Rel.CI=14.14%
+    Progress: 497500 requests | P_b=0.00038593 | CI=0.00005458 | Rel.CI=14.14%
+    Progress: 498000 requests | P_b=0.00038554 | CI=0.00005452 | Rel.CI=14.14%
+    Progress: 498500 requests | P_b=0.00039117 | CI=0.00005489 | Rel.CI=14.03%
+    Progress: 499000 requests | P_b=0.00039078 | CI=0.00005484 | Rel.CI=14.03%
+    Progress: 499500 requests | P_b=0.00039039 | CI=0.00005478 | Rel.CI=14.03%
+    Progress: 500000 requests | P_b=0.00039000 | CI=0.00005473 | Rel.CI=14.03%
+    Progress: 500500 requests | P_b=0.00038961 | CI=0.00005467 | Rel.CI=14.03%
+    Progress: 501000 requests | P_b=0.00038922 | CI=0.00005462 | Rel.CI=14.03%
+    Progress: 501500 requests | P_b=0.00038883 | CI=0.00005457 | Rel.CI=14.03%
+    Progress: 502000 requests | P_b=0.00039044 | CI=0.00005465 | Rel.CI=14.00%
+    Progress: 502500 requests | P_b=0.00039005 | CI=0.00005460 | Rel.CI=14.00%
+    Progress: 503000 requests | P_b=0.00038966 | CI=0.00005454 | Rel.CI=14.00%
+    Progress: 503500 requests | P_b=0.00038928 | CI=0.00005449 | Rel.CI=14.00%
+    Progress: 504000 requests | P_b=0.00038889 | CI=0.00005443 | Rel.CI=14.00%
+    Progress: 504500 requests | P_b=0.00038850 | CI=0.00005438 | Rel.CI=14.00%
+    Progress: 505000 requests | P_b=0.00038812 | CI=0.00005433 | Rel.CI=14.00%
+    Progress: 505500 requests | P_b=0.00038773 | CI=0.00005427 | Rel.CI=14.00%
+    Progress: 506000 requests | P_b=0.00038735 | CI=0.00005422 | Rel.CI=14.00%
+    Progress: 506500 requests | P_b=0.00038697 | CI=0.00005417 | Rel.CI=14.00%
+    Progress: 507000 requests | P_b=0.00038659 | CI=0.00005411 | Rel.CI=14.00%
+    Progress: 507500 requests | P_b=0.00038621 | CI=0.00005406 | Rel.CI=14.00%
+    Progress: 508000 requests | P_b=0.00038780 | CI=0.00005414 | Rel.CI=13.96%
+    Progress: 508500 requests | P_b=0.00039135 | CI=0.00005436 | Rel.CI=13.89%
+    Progress: 509000 requests | P_b=0.00039096 | CI=0.00005431 | Rel.CI=13.89%
+    Progress: 509500 requests | P_b=0.00039058 | CI=0.00005426 | Rel.CI=13.89%
+    Progress: 510000 requests | P_b=0.00039020 | CI=0.00005420 | Rel.CI=13.89%
+    Progress: 510500 requests | P_b=0.00038981 | CI=0.00005415 | Rel.CI=13.89%
+    Progress: 511000 requests | P_b=0.00038943 | CI=0.00005410 | Rel.CI=13.89%
+    Progress: 511500 requests | P_b=0.00038905 | CI=0.00005404 | Rel.CI=13.89%
+    Progress: 512000 requests | P_b=0.00038867 | CI=0.00005399 | Rel.CI=13.89%
+    Progress: 512500 requests | P_b=0.00038829 | CI=0.00005394 | Rel.CI=13.89%
+    Progress: 513000 requests | P_b=0.00038791 | CI=0.00005389 | Rel.CI=13.89%
+    Progress: 513500 requests | P_b=0.00038754 | CI=0.00005383 | Rel.CI=13.89%
+    Progress: 514000 requests | P_b=0.00038716 | CI=0.00005378 | Rel.CI=13.89%
+    Progress: 514500 requests | P_b=0.00038678 | CI=0.00005373 | Rel.CI=13.89%
+    Progress: 515000 requests | P_b=0.00038641 | CI=0.00005368 | Rel.CI=13.89%
+    Progress: 515500 requests | P_b=0.00038603 | CI=0.00005363 | Rel.CI=13.89%
+    Progress: 516000 requests | P_b=0.00038953 | CI=0.00005384 | Rel.CI=13.82%
+    Progress: 516500 requests | P_b=0.00038916 | CI=0.00005379 | Rel.CI=13.82%
+    Progress: 517000 requests | P_b=0.00039072 | CI=0.00005387 | Rel.CI=13.79%
+    Progress: 517500 requests | P_b=0.00039034 | CI=0.00005382 | Rel.CI=13.79%
+    Progress: 518000 requests | P_b=0.00038996 | CI=0.00005377 | Rel.CI=13.79%
+    Progress: 518500 requests | P_b=0.00038959 | CI=0.00005372 | Rel.CI=13.79%
+    Progress: 519000 requests | P_b=0.00038921 | CI=0.00005366 | Rel.CI=13.79%
+    Progress: 519500 requests | P_b=0.00038884 | CI=0.00005361 | Rel.CI=13.79%
+    Progress: 520000 requests | P_b=0.00038846 | CI=0.00005356 | Rel.CI=13.79%
+    Progress: 520500 requests | P_b=0.00038809 | CI=0.00005351 | Rel.CI=13.79%
+    Progress: 521000 requests | P_b=0.00038772 | CI=0.00005346 | Rel.CI=13.79%
+    Progress: 521500 requests | P_b=0.00038734 | CI=0.00005341 | Rel.CI=13.79%
+    Progress: 522000 requests | P_b=0.00038697 | CI=0.00005336 | Rel.CI=13.79%
+    Progress: 522500 requests | P_b=0.00038660 | CI=0.00005330 | Rel.CI=13.79%
+    Progress: 523000 requests | P_b=0.00038623 | CI=0.00005325 | Rel.CI=13.79%
+    Progress: 523500 requests | P_b=0.00038586 | CI=0.00005320 | Rel.CI=13.79%
+    Progress: 524000 requests | P_b=0.00038740 | CI=0.00005328 | Rel.CI=13.75%
+    Progress: 524500 requests | P_b=0.00038704 | CI=0.00005323 | Rel.CI=13.75%
+    Progress: 525000 requests | P_b=0.00038667 | CI=0.00005318 | Rel.CI=13.75%
+    Progress: 525500 requests | P_b=0.00038630 | CI=0.00005313 | Rel.CI=13.75%
+    Progress: 526000 requests | P_b=0.00038593 | CI=0.00005308 | Rel.CI=13.75%
+    Progress: 526500 requests | P_b=0.00038557 | CI=0.00005303 | Rel.CI=13.75%
+    Progress: 527000 requests | P_b=0.00038520 | CI=0.00005298 | Rel.CI=13.75%
+    Progress: 527500 requests | P_b=0.00038483 | CI=0.00005293 | Rel.CI=13.75%
+    Progress: 528000 requests | P_b=0.00038447 | CI=0.00005288 | Rel.CI=13.75%
+    Progress: 528500 requests | P_b=0.00038411 | CI=0.00005283 | Rel.CI=13.75%
+    Progress: 529000 requests | P_b=0.00038374 | CI=0.00005278 | Rel.CI=13.75%
+    Progress: 529500 requests | P_b=0.00038338 | CI=0.00005273 | Rel.CI=13.75%
+    Progress: 530000 requests | P_b=0.00038302 | CI=0.00005268 | Rel.CI=13.75%
+    Progress: 530500 requests | P_b=0.00038266 | CI=0.00005263 | Rel.CI=13.75%
+    Progress: 531000 requests | P_b=0.00038230 | CI=0.00005258 | Rel.CI=13.75%
+    Progress: 531500 requests | P_b=0.00038194 | CI=0.00005253 | Rel.CI=13.75%
+    Progress: 532000 requests | P_b=0.00038158 | CI=0.00005248 | Rel.CI=13.75%
+    Progress: 532500 requests | P_b=0.00038122 | CI=0.00005243 | Rel.CI=13.75%
+    Progress: 533000 requests | P_b=0.00038462 | CI=0.00005264 | Rel.CI=13.69%
+    Progress: 533500 requests | P_b=0.00038425 | CI=0.00005259 | Rel.CI=13.69%
+    Progress: 534000 requests | P_b=0.00038390 | CI=0.00005254 | Rel.CI=13.69%
+    Progress: 534500 requests | P_b=0.00038354 | CI=0.00005249 | Rel.CI=13.69%
+    Progress: 535000 requests | P_b=0.00038318 | CI=0.00005244 | Rel.CI=13.69%
+    Progress: 535500 requests | P_b=0.00038469 | CI=0.00005252 | Rel.CI=13.65%
+    Progress: 536000 requests | P_b=0.00038433 | CI=0.00005247 | Rel.CI=13.65%
+    Progress: 536500 requests | P_b=0.00038397 | CI=0.00005242 | Rel.CI=13.65%
+    Progress: 537000 requests | P_b=0.00038361 | CI=0.00005238 | Rel.CI=13.65%
+    Progress: 537500 requests | P_b=0.00038512 | CI=0.00005245 | Rel.CI=13.62%
+    Progress: 538000 requests | P_b=0.00038476 | CI=0.00005241 | Rel.CI=13.62%
+    Progress: 538500 requests | P_b=0.00038440 | CI=0.00005236 | Rel.CI=13.62%
+    Progress: 539000 requests | P_b=0.00038404 | CI=0.00005231 | Rel.CI=13.62%
+    Progress: 539500 requests | P_b=0.00038369 | CI=0.00005226 | Rel.CI=13.62%
+    Progress: 540000 requests | P_b=0.00038333 | CI=0.00005221 | Rel.CI=13.62%
+    Progress: 540500 requests | P_b=0.00038298 | CI=0.00005216 | Rel.CI=13.62%
+    Progress: 541000 requests | P_b=0.00038262 | CI=0.00005211 | Rel.CI=13.62%
+    Progress: 541500 requests | P_b=0.00038227 | CI=0.00005207 | Rel.CI=13.62%
+    Progress: 542000 requests | P_b=0.00038561 | CI=0.00005227 | Rel.CI=13.55%
+    Progress: 542500 requests | P_b=0.00038525 | CI=0.00005222 | Rel.CI=13.55%
+    Progress: 543000 requests | P_b=0.00038490 | CI=0.00005217 | Rel.CI=13.55%
+    Progress: 543500 requests | P_b=0.00038454 | CI=0.00005213 | Rel.CI=13.55%
+    Progress: 544000 requests | P_b=0.00038419 | CI=0.00005208 | Rel.CI=13.55%
+    Progress: 544500 requests | P_b=0.00038384 | CI=0.00005203 | Rel.CI=13.56%
+    Progress: 545000 requests | P_b=0.00038716 | CI=0.00005223 | Rel.CI=13.49%
+    Progress: 545500 requests | P_b=0.00038680 | CI=0.00005218 | Rel.CI=13.49%
+    Progress: 546000 requests | P_b=0.00038645 | CI=0.00005213 | Rel.CI=13.49%
+    Progress: 546500 requests | P_b=0.00038609 | CI=0.00005209 | Rel.CI=13.49%
+    Progress: 547000 requests | P_b=0.00038574 | CI=0.00005204 | Rel.CI=13.49%
+    Progress: 547500 requests | P_b=0.00038539 | CI=0.00005199 | Rel.CI=13.49%
+    Progress: 548000 requests | P_b=0.00038504 | CI=0.00005194 | Rel.CI=13.49%
+    Progress: 548500 requests | P_b=0.00038469 | CI=0.00005190 | Rel.CI=13.49%
+    Progress: 549000 requests | P_b=0.00038434 | CI=0.00005185 | Rel.CI=13.49%
+    Progress: 549500 requests | P_b=0.00038399 | CI=0.00005180 | Rel.CI=13.49%
+    Progress: 550000 requests | P_b=0.00038364 | CI=0.00005175 | Rel.CI=13.49%
+    Progress: 550500 requests | P_b=0.00038329 | CI=0.00005171 | Rel.CI=13.49%
+    Progress: 551000 requests | P_b=0.00038294 | CI=0.00005166 | Rel.CI=13.49%
+    Progress: 551500 requests | P_b=0.00038259 | CI=0.00005161 | Rel.CI=13.49%
+    Progress: 552000 requests | P_b=0.00038225 | CI=0.00005157 | Rel.CI=13.49%
+    Progress: 552500 requests | P_b=0.00038190 | CI=0.00005152 | Rel.CI=13.49%
+    Progress: 553000 requests | P_b=0.00038156 | CI=0.00005147 | Rel.CI=13.49%
+    Progress: 553500 requests | P_b=0.00038121 | CI=0.00005143 | Rel.CI=13.49%
+    Progress: 554000 requests | P_b=0.00038087 | CI=0.00005138 | Rel.CI=13.49%
+    Progress: 554500 requests | P_b=0.00038052 | CI=0.00005133 | Rel.CI=13.49%
+    Progress: 555000 requests | P_b=0.00038018 | CI=0.00005129 | Rel.CI=13.49%
+    Progress: 555500 requests | P_b=0.00037984 | CI=0.00005124 | Rel.CI=13.49%
+    Progress: 556000 requests | P_b=0.00037950 | CI=0.00005120 | Rel.CI=13.49%
+    Progress: 556500 requests | P_b=0.00037916 | CI=0.00005115 | Rel.CI=13.49%
+    Progress: 557000 requests | P_b=0.00037882 | CI=0.00005110 | Rel.CI=13.49%
+    Progress: 557500 requests | P_b=0.00037848 | CI=0.00005106 | Rel.CI=13.49%
+    Progress: 558000 requests | P_b=0.00037814 | CI=0.00005101 | Rel.CI=13.49%
+    Progress: 558500 requests | P_b=0.00037780 | CI=0.00005097 | Rel.CI=13.49%
+    Progress: 559000 requests | P_b=0.00037746 | CI=0.00005092 | Rel.CI=13.49%
+    Progress: 559500 requests | P_b=0.00037712 | CI=0.00005088 | Rel.CI=13.49%
+    Progress: 560000 requests | P_b=0.00037679 | CI=0.00005083 | Rel.CI=13.49%
+    Progress: 560500 requests | P_b=0.00037645 | CI=0.00005079 | Rel.CI=13.49%
+    Progress: 561000 requests | P_b=0.00037611 | CI=0.00005074 | Rel.CI=13.49%
+    Progress: 561500 requests | P_b=0.00037578 | CI=0.00005070 | Rel.CI=13.49%
+    Progress: 562000 requests | P_b=0.00037544 | CI=0.00005065 | Rel.CI=13.49%
+    Progress: 562500 requests | P_b=0.00037511 | CI=0.00005060 | Rel.CI=13.49%
+    Progress: 563000 requests | P_b=0.00037478 | CI=0.00005056 | Rel.CI=13.49%
+    Progress: 563500 requests | P_b=0.00037445 | CI=0.00005052 | Rel.CI=13.49%
+    Progress: 564000 requests | P_b=0.00037411 | CI=0.00005047 | Rel.CI=13.49%
+    Progress: 564500 requests | P_b=0.00037378 | CI=0.00005043 | Rel.CI=13.49%
+    Progress: 565000 requests | P_b=0.00037345 | CI=0.00005038 | Rel.CI=13.49%
+    Progress: 565500 requests | P_b=0.00037312 | CI=0.00005034 | Rel.CI=13.49%
+    Progress: 566000 requests | P_b=0.00037279 | CI=0.00005029 | Rel.CI=13.49%
+    Progress: 566500 requests | P_b=0.00037246 | CI=0.00005025 | Rel.CI=13.49%
+    Progress: 567000 requests | P_b=0.00037213 | CI=0.00005020 | Rel.CI=13.49%
+    Progress: 567500 requests | P_b=0.00037181 | CI=0.00005016 | Rel.CI=13.49%
+    Progress: 568000 requests | P_b=0.00037148 | CI=0.00005012 | Rel.CI=13.49%
+    Progress: 568500 requests | P_b=0.00037115 | CI=0.00005007 | Rel.CI=13.49%
+    Progress: 569000 requests | P_b=0.00037083 | CI=0.00005003 | Rel.CI=13.49%
+    Progress: 569500 requests | P_b=0.00037050 | CI=0.00004998 | Rel.CI=13.49%
+    Progress: 570000 requests | P_b=0.00037018 | CI=0.00004994 | Rel.CI=13.49%
+    Progress: 570500 requests | P_b=0.00036985 | CI=0.00004990 | Rel.CI=13.49%
+    Progress: 571000 requests | P_b=0.00036953 | CI=0.00004985 | Rel.CI=13.49%
+    Progress: 571500 requests | P_b=0.00036920 | CI=0.00004981 | Rel.CI=13.49%
+    Progress: 572000 requests | P_b=0.00036888 | CI=0.00004976 | Rel.CI=13.49%
+    Progress: 572500 requests | P_b=0.00036856 | CI=0.00004972 | Rel.CI=13.49%
+    Progress: 573000 requests | P_b=0.00036824 | CI=0.00004968 | Rel.CI=13.49%
+    Progress: 573500 requests | P_b=0.00036792 | CI=0.00004963 | Rel.CI=13.49%
+    Progress: 574000 requests | P_b=0.00036760 | CI=0.00004959 | Rel.CI=13.49%
+    Progress: 574500 requests | P_b=0.00036728 | CI=0.00004955 | Rel.CI=13.49%
+    Progress: 575000 requests | P_b=0.00036696 | CI=0.00004951 | Rel.CI=13.49%
+    Progress: 575500 requests | P_b=0.00036664 | CI=0.00004946 | Rel.CI=13.49%
+    Progress: 576000 requests | P_b=0.00036632 | CI=0.00004942 | Rel.CI=13.49%
+    Progress: 576500 requests | P_b=0.00036600 | CI=0.00004938 | Rel.CI=13.49%
+    Progress: 577000 requests | P_b=0.00036568 | CI=0.00004933 | Rel.CI=13.49%
+    Progress: 577500 requests | P_b=0.00036537 | CI=0.00004929 | Rel.CI=13.49%
+    Progress: 578000 requests | P_b=0.00036505 | CI=0.00004925 | Rel.CI=13.49%
+    Progress: 578500 requests | P_b=0.00036474 | CI=0.00004921 | Rel.CI=13.49%
+    Progress: 579000 requests | P_b=0.00036442 | CI=0.00004916 | Rel.CI=13.49%
+    Progress: 579500 requests | P_b=0.00036411 | CI=0.00004912 | Rel.CI=13.49%
+    Progress: 580000 requests | P_b=0.00036379 | CI=0.00004908 | Rel.CI=13.49%
+    Progress: 580500 requests | P_b=0.00036348 | CI=0.00004904 | Rel.CI=13.49%
+    Progress: 581000 requests | P_b=0.00036317 | CI=0.00004899 | Rel.CI=13.49%
+    Progress: 581500 requests | P_b=0.00036285 | CI=0.00004895 | Rel.CI=13.49%
+    Progress: 582000 requests | P_b=0.00036254 | CI=0.00004891 | Rel.CI=13.49%
+    Progress: 582500 requests | P_b=0.00036223 | CI=0.00004887 | Rel.CI=13.49%
+    Progress: 583000 requests | P_b=0.00036192 | CI=0.00004883 | Rel.CI=13.49%
+    Progress: 583500 requests | P_b=0.00036161 | CI=0.00004878 | Rel.CI=13.49%
+    Progress: 584000 requests | P_b=0.00036130 | CI=0.00004874 | Rel.CI=13.49%
+    Progress: 584500 requests | P_b=0.00036099 | CI=0.00004870 | Rel.CI=13.49%
+    Progress: 585000 requests | P_b=0.00036068 | CI=0.00004866 | Rel.CI=13.49%
+    Progress: 585500 requests | P_b=0.00036038 | CI=0.00004862 | Rel.CI=13.49%
+    Progress: 586000 requests | P_b=0.00036007 | CI=0.00004858 | Rel.CI=13.49%
+    Progress: 586500 requests | P_b=0.00035976 | CI=0.00004853 | Rel.CI=13.49%
+    Progress: 587000 requests | P_b=0.00036286 | CI=0.00004872 | Rel.CI=13.43%
+    Progress: 587500 requests | P_b=0.00036255 | CI=0.00004868 | Rel.CI=13.43%
+    Progress: 588000 requests | P_b=0.00036224 | CI=0.00004864 | Rel.CI=13.43%
+    Progress: 588500 requests | P_b=0.00036194 | CI=0.00004860 | Rel.CI=13.43%
+    Progress: 589000 requests | P_b=0.00036163 | CI=0.00004856 | Rel.CI=13.43%
+    Progress: 589500 requests | P_b=0.00036132 | CI=0.00004852 | Rel.CI=13.43%
+    Progress: 590000 requests | P_b=0.00036102 | CI=0.00004847 | Rel.CI=13.43%
+    Progress: 590500 requests | P_b=0.00036071 | CI=0.00004843 | Rel.CI=13.43%
+    Progress: 591000 requests | P_b=0.00036041 | CI=0.00004839 | Rel.CI=13.43%
+    Progress: 591500 requests | P_b=0.00036010 | CI=0.00004835 | Rel.CI=13.43%
+    Progress: 592000 requests | P_b=0.00035980 | CI=0.00004831 | Rel.CI=13.43%
+    Progress: 592500 requests | P_b=0.00035949 | CI=0.00004827 | Rel.CI=13.43%
+    Progress: 593000 requests | P_b=0.00035919 | CI=0.00004823 | Rel.CI=13.43%
+    Progress: 593500 requests | P_b=0.00035889 | CI=0.00004819 | Rel.CI=13.43%
+    Progress: 594000 requests | P_b=0.00035859 | CI=0.00004815 | Rel.CI=13.43%
+    Progress: 594500 requests | P_b=0.00035828 | CI=0.00004811 | Rel.CI=13.43%
+    Progress: 595000 requests | P_b=0.00035798 | CI=0.00004807 | Rel.CI=13.43%
+    Progress: 595500 requests | P_b=0.00035768 | CI=0.00004803 | Rel.CI=13.43%
+    Progress: 596000 requests | P_b=0.00035738 | CI=0.00004799 | Rel.CI=13.43%
+    Progress: 596500 requests | P_b=0.00036044 | CI=0.00004817 | Rel.CI=13.36%
+    Progress: 597000 requests | P_b=0.00036013 | CI=0.00004813 | Rel.CI=13.36%
+    Progress: 597500 requests | P_b=0.00035983 | CI=0.00004809 | Rel.CI=13.36%
+    Progress: 598000 requests | P_b=0.00035953 | CI=0.00004805 | Rel.CI=13.36%
+    Progress: 598500 requests | P_b=0.00035923 | CI=0.00004801 | Rel.CI=13.36%
+    Progress: 599000 requests | P_b=0.00035893 | CI=0.00004797 | Rel.CI=13.36%
+    Progress: 599500 requests | P_b=0.00035863 | CI=0.00004793 | Rel.CI=13.36%
+    Progress: 600000 requests | P_b=0.00035833 | CI=0.00004789 | Rel.CI=13.36%
+    Progress: 600500 requests | P_b=0.00036303 | CI=0.00004818 | Rel.CI=13.27%
+    Progress: 601000 requests | P_b=0.00036273 | CI=0.00004814 | Rel.CI=13.27%
+    Progress: 601500 requests | P_b=0.00036243 | CI=0.00004810 | Rel.CI=13.27%
+    Progress: 602000 requests | P_b=0.00036213 | CI=0.00004806 | Rel.CI=13.27%
+    Progress: 602500 requests | P_b=0.00036183 | CI=0.00004802 | Rel.CI=13.27%
+    Progress: 603000 requests | P_b=0.00036153 | CI=0.00004798 | Rel.CI=13.27%
+    Progress: 603500 requests | P_b=0.00036123 | CI=0.00004794 | Rel.CI=13.27%
+    Progress: 604000 requests | P_b=0.00036093 | CI=0.00004790 | Rel.CI=13.27%
+    Progress: 604500 requests | P_b=0.00036063 | CI=0.00004786 | Rel.CI=13.27%
+    Progress: 605000 requests | P_b=0.00036033 | CI=0.00004782 | Rel.CI=13.27%
+    Progress: 605500 requests | P_b=0.00036003 | CI=0.00004779 | Rel.CI=13.27%
+    Progress: 606000 requests | P_b=0.00035974 | CI=0.00004775 | Rel.CI=13.27%
+    Progress: 606500 requests | P_b=0.00035944 | CI=0.00004771 | Rel.CI=13.27%
+    Progress: 607000 requests | P_b=0.00035914 | CI=0.00004767 | Rel.CI=13.27%
+    Progress: 607500 requests | P_b=0.00035885 | CI=0.00004763 | Rel.CI=13.27%
+    Progress: 608000 requests | P_b=0.00035855 | CI=0.00004759 | Rel.CI=13.27%
+    Progress: 608500 requests | P_b=0.00035826 | CI=0.00004755 | Rel.CI=13.27%
+    Progress: 609000 requests | P_b=0.00035796 | CI=0.00004751 | Rel.CI=13.27%
+    Progress: 609500 requests | P_b=0.00035767 | CI=0.00004747 | Rel.CI=13.27%
+    Progress: 610000 requests | P_b=0.00035738 | CI=0.00004743 | Rel.CI=13.27%
+    Progress: 610500 requests | P_b=0.00035708 | CI=0.00004739 | Rel.CI=13.27%
+    Progress: 611000 requests | P_b=0.00035679 | CI=0.00004735 | Rel.CI=13.27%
+    Progress: 611500 requests | P_b=0.00035650 | CI=0.00004732 | Rel.CI=13.27%
+    Progress: 612000 requests | P_b=0.00035621 | CI=0.00004728 | Rel.CI=13.27%
+    Progress: 612500 requests | P_b=0.00035592 | CI=0.00004724 | Rel.CI=13.27%
+    Progress: 613000 requests | P_b=0.00035563 | CI=0.00004720 | Rel.CI=13.27%
+    Progress: 613500 requests | P_b=0.00035534 | CI=0.00004716 | Rel.CI=13.27%
+    Progress: 614000 requests | P_b=0.00035505 | CI=0.00004712 | Rel.CI=13.27%
+    Progress: 614500 requests | P_b=0.00035476 | CI=0.00004709 | Rel.CI=13.27%
+    Progress: 615000 requests | P_b=0.00035447 | CI=0.00004705 | Rel.CI=13.27%
+    Progress: 615500 requests | P_b=0.00035418 | CI=0.00004701 | Rel.CI=13.27%
+    Progress: 616000 requests | P_b=0.00035390 | CI=0.00004697 | Rel.CI=13.27%
+    Progress: 616500 requests | P_b=0.00035685 | CI=0.00004715 | Rel.CI=13.21%
+    Progress: 617000 requests | P_b=0.00035656 | CI=0.00004711 | Rel.CI=13.21%
+    Progress: 617500 requests | P_b=0.00035951 | CI=0.00004728 | Rel.CI=13.15%
+    Progress: 618000 requests | P_b=0.00035922 | CI=0.00004725 | Rel.CI=13.15%
+    Progress: 618500 requests | P_b=0.00037348 | CI=0.00004815 | Rel.CI=12.89%
+    Progress: 619000 requests | P_b=0.00037318 | CI=0.00004812 | Rel.CI=12.89%
+    Progress: 619500 requests | P_b=0.00037288 | CI=0.00004808 | Rel.CI=12.89%
+    Progress: 620000 requests | P_b=0.00037258 | CI=0.00004804 | Rel.CI=12.89%
+    Progress: 620500 requests | P_b=0.00037228 | CI=0.00004800 | Rel.CI=12.89%
+    Progress: 621000 requests | P_b=0.00037198 | CI=0.00004796 | Rel.CI=12.89%
+    Progress: 621500 requests | P_b=0.00037168 | CI=0.00004792 | Rel.CI=12.89%
+    Progress: 622000 requests | P_b=0.00038103 | CI=0.00004850 | Rel.CI=12.73%
+    Progress: 622500 requests | P_b=0.00038072 | CI=0.00004846 | Rel.CI=12.73%
+    Progress: 623000 requests | P_b=0.00038042 | CI=0.00004842 | Rel.CI=12.73%
+    Progress: 623500 requests | P_b=0.00038011 | CI=0.00004839 | Rel.CI=12.73%
+    Progress: 624000 requests | P_b=0.00037981 | CI=0.00004835 | Rel.CI=12.73%
+    Progress: 624500 requests | P_b=0.00037950 | CI=0.00004831 | Rel.CI=12.73%
+    Progress: 625000 requests | P_b=0.00037920 | CI=0.00004827 | Rel.CI=12.73%
+    Progress: 625500 requests | P_b=0.00037890 | CI=0.00004823 | Rel.CI=12.73%
+    Progress: 626000 requests | P_b=0.00037859 | CI=0.00004819 | Rel.CI=12.73%
+    Progress: 626500 requests | P_b=0.00037829 | CI=0.00004815 | Rel.CI=12.73%
+    Progress: 627000 requests | P_b=0.00037799 | CI=0.00004812 | Rel.CI=12.73%
+    Progress: 627500 requests | P_b=0.00037769 | CI=0.00004808 | Rel.CI=12.73%
+    Progress: 628000 requests | P_b=0.00037739 | CI=0.00004804 | Rel.CI=12.73%
+    Progress: 628500 requests | P_b=0.00037709 | CI=0.00004800 | Rel.CI=12.73%
+    Progress: 629000 requests | P_b=0.00037679 | CI=0.00004796 | Rel.CI=12.73%
+    Progress: 629500 requests | P_b=0.00037649 | CI=0.00004792 | Rel.CI=12.73%
+    Progress: 630000 requests | P_b=0.00037619 | CI=0.00004789 | Rel.CI=12.73%
+    Progress: 630500 requests | P_b=0.00037589 | CI=0.00004785 | Rel.CI=12.73%
+    Progress: 631000 requests | P_b=0.00037559 | CI=0.00004781 | Rel.CI=12.73%
+    Progress: 631500 requests | P_b=0.00037530 | CI=0.00004777 | Rel.CI=12.73%
+    Progress: 632000 requests | P_b=0.00037500 | CI=0.00004773 | Rel.CI=12.73%
+    Progress: 632500 requests | P_b=0.00037470 | CI=0.00004770 | Rel.CI=12.73%
+    Progress: 633000 requests | P_b=0.00037441 | CI=0.00004766 | Rel.CI=12.73%
+    Progress: 633500 requests | P_b=0.00037411 | CI=0.00004762 | Rel.CI=12.73%
+    Progress: 634000 requests | P_b=0.00037382 | CI=0.00004758 | Rel.CI=12.73%
+    Progress: 634500 requests | P_b=0.00037352 | CI=0.00004755 | Rel.CI=12.73%
+    Progress: 635000 requests | P_b=0.00037323 | CI=0.00004751 | Rel.CI=12.73%
+    Progress: 635500 requests | P_b=0.00037608 | CI=0.00004767 | Rel.CI=12.68%
+    Progress: 636000 requests | P_b=0.00037579 | CI=0.00004763 | Rel.CI=12.68%
+    Progress: 636500 requests | P_b=0.00037549 | CI=0.00004760 | Rel.CI=12.68%
+    Progress: 637000 requests | P_b=0.00037520 | CI=0.00004756 | Rel.CI=12.68%
+    Progress: 637500 requests | P_b=0.00037490 | CI=0.00004752 | Rel.CI=12.68%
+    Progress: 638000 requests | P_b=0.00037461 | CI=0.00004748 | Rel.CI=12.68%
+    Progress: 638500 requests | P_b=0.00037431 | CI=0.00004745 | Rel.CI=12.68%
+    Progress: 639000 requests | P_b=0.00037402 | CI=0.00004741 | Rel.CI=12.68%
+    Progress: 639500 requests | P_b=0.00037373 | CI=0.00004737 | Rel.CI=12.68%
+    Progress: 640000 requests | P_b=0.00037344 | CI=0.00004734 | Rel.CI=12.68%
+    Progress: 640500 requests | P_b=0.00037315 | CI=0.00004730 | Rel.CI=12.68%
+    Progress: 641000 requests | P_b=0.00037285 | CI=0.00004726 | Rel.CI=12.68%
+    Progress: 641500 requests | P_b=0.00037256 | CI=0.00004723 | Rel.CI=12.68%
+    Progress: 642000 requests | P_b=0.00037227 | CI=0.00004719 | Rel.CI=12.68%
+    Progress: 642500 requests | P_b=0.00037198 | CI=0.00004715 | Rel.CI=12.68%
+    Progress: 643000 requests | P_b=0.00037170 | CI=0.00004712 | Rel.CI=12.68%
+    Progress: 643500 requests | P_b=0.00037451 | CI=0.00004728 | Rel.CI=12.62%
+    Progress: 644000 requests | P_b=0.00037422 | CI=0.00004724 | Rel.CI=12.62%
+    Progress: 644500 requests | P_b=0.00037393 | CI=0.00004720 | Rel.CI=12.62%
+    Progress: 645000 requests | P_b=0.00037364 | CI=0.00004717 | Rel.CI=12.62%
+    Progress: 645500 requests | P_b=0.00037645 | CI=0.00004732 | Rel.CI=12.57%
+    Progress: 646000 requests | P_b=0.00037616 | CI=0.00004729 | Rel.CI=12.57%
+    Progress: 646500 requests | P_b=0.00037587 | CI=0.00004725 | Rel.CI=12.57%
+    Progress: 647000 requests | P_b=0.00037558 | CI=0.00004721 | Rel.CI=12.57%
+    Progress: 647500 requests | P_b=0.00037529 | CI=0.00004718 | Rel.CI=12.57%
+    Progress: 648000 requests | P_b=0.00037500 | CI=0.00004714 | Rel.CI=12.57%
+    Progress: 648500 requests | P_b=0.00037471 | CI=0.00004711 | Rel.CI=12.57%
+    Progress: 649000 requests | P_b=0.00037442 | CI=0.00004707 | Rel.CI=12.57%
+    Progress: 649500 requests | P_b=0.00037413 | CI=0.00004703 | Rel.CI=12.57%
+    Progress: 650000 requests | P_b=0.00037385 | CI=0.00004700 | Rel.CI=12.57%
+    Progress: 650500 requests | P_b=0.00037356 | CI=0.00004696 | Rel.CI=12.57%
+    Progress: 651000 requests | P_b=0.00037327 | CI=0.00004692 | Rel.CI=12.57%
+    Progress: 651500 requests | P_b=0.00037299 | CI=0.00004689 | Rel.CI=12.57%
+    Progress: 652000 requests | P_b=0.00037270 | CI=0.00004685 | Rel.CI=12.57%
+    Progress: 652500 requests | P_b=0.00037241 | CI=0.00004682 | Rel.CI=12.57%
+    Progress: 653000 requests | P_b=0.00037213 | CI=0.00004678 | Rel.CI=12.57%
+    Progress: 653500 requests | P_b=0.00037184 | CI=0.00004674 | Rel.CI=12.57%
+    Progress: 654000 requests | P_b=0.00037156 | CI=0.00004671 | Rel.CI=12.57%
+    Progress: 654500 requests | P_b=0.00037433 | CI=0.00004686 | Rel.CI=12.52%
+    Progress: 655000 requests | P_b=0.00037405 | CI=0.00004683 | Rel.CI=12.52%
+    Progress: 655500 requests | P_b=0.00037376 | CI=0.00004679 | Rel.CI=12.52%
+    Progress: 656000 requests | P_b=0.00037348 | CI=0.00004676 | Rel.CI=12.52%
+    Progress: 656500 requests | P_b=0.00037319 | CI=0.00004672 | Rel.CI=12.52%
+    Progress: 657000 requests | P_b=0.00037443 | CI=0.00004678 | Rel.CI=12.49%
+    Progress: 657500 requests | P_b=0.00037414 | CI=0.00004675 | Rel.CI=12.49%
+    Progress: 658000 requests | P_b=0.00037386 | CI=0.00004671 | Rel.CI=12.49%
+    Progress: 658500 requests | P_b=0.00037358 | CI=0.00004668 | Rel.CI=12.49%
+    Progress: 659000 requests | P_b=0.00037329 | CI=0.00004664 | Rel.CI=12.49%
+    Progress: 659500 requests | P_b=0.00037301 | CI=0.00004660 | Rel.CI=12.49%
+    Progress: 660000 requests | P_b=0.00037576 | CI=0.00004676 | Rel.CI=12.44%
+    Progress: 660500 requests | P_b=0.00037699 | CI=0.00004682 | Rel.CI=12.42%
+    Progress: 661000 requests | P_b=0.00037821 | CI=0.00004688 | Rel.CI=12.39%
+    Progress: 661500 requests | P_b=0.00038851 | CI=0.00004749 | Rel.CI=12.22%
+    Progress: 662000 requests | P_b=0.00038822 | CI=0.00004745 | Rel.CI=12.22%
+    Progress: 662500 requests | P_b=0.00038792 | CI=0.00004742 | Rel.CI=12.22%
+    Progress: 663000 requests | P_b=0.00038763 | CI=0.00004738 | Rel.CI=12.22%
+    Progress: 663500 requests | P_b=0.00038734 | CI=0.00004735 | Rel.CI=12.22%
+    Progress: 664000 requests | P_b=0.00038705 | CI=0.00004731 | Rel.CI=12.22%
+    Progress: 664500 requests | P_b=0.00038676 | CI=0.00004728 | Rel.CI=12.22%
+    Progress: 665000 requests | P_b=0.00038647 | CI=0.00004724 | Rel.CI=12.22%
+    Progress: 665500 requests | P_b=0.00038618 | CI=0.00004721 | Rel.CI=12.22%
+    Progress: 666000 requests | P_b=0.00038589 | CI=0.00004717 | Rel.CI=12.22%
+    Progress: 666500 requests | P_b=0.00038560 | CI=0.00004713 | Rel.CI=12.22%
+    Progress: 667000 requests | P_b=0.00038531 | CI=0.00004710 | Rel.CI=12.22%
+    Progress: 667500 requests | P_b=0.00038502 | CI=0.00004706 | Rel.CI=12.22%
+    Progress: 668000 requests | P_b=0.00038623 | CI=0.00004712 | Rel.CI=12.20%
+    Progress: 668500 requests | P_b=0.00038594 | CI=0.00004708 | Rel.CI=12.20%
+    Progress: 669000 requests | P_b=0.00038565 | CI=0.00004705 | Rel.CI=12.20%
+    Progress: 669500 requests | P_b=0.00038536 | CI=0.00004701 | Rel.CI=12.20%
+    Progress: 670000 requests | P_b=0.00038507 | CI=0.00004698 | Rel.CI=12.20%
+    Progress: 670500 requests | P_b=0.00038479 | CI=0.00004694 | Rel.CI=12.20%
+    Progress: 671000 requests | P_b=0.00038450 | CI=0.00004691 | Rel.CI=12.20%
+    Progress: 671500 requests | P_b=0.00038421 | CI=0.00004687 | Rel.CI=12.20%
+    Progress: 672000 requests | P_b=0.00038393 | CI=0.00004684 | Rel.CI=12.20%
+    Progress: 672500 requests | P_b=0.00038364 | CI=0.00004680 | Rel.CI=12.20%
+    Progress: 673000 requests | P_b=0.00038336 | CI=0.00004677 | Rel.CI=12.20%
+    Progress: 673500 requests | P_b=0.00038307 | CI=0.00004674 | Rel.CI=12.20%
+    Progress: 674000 requests | P_b=0.00038279 | CI=0.00004670 | Rel.CI=12.20%
+    Progress: 674500 requests | P_b=0.00038399 | CI=0.00004676 | Rel.CI=12.18%
+    Progress: 675000 requests | P_b=0.00038815 | CI=0.00004699 | Rel.CI=12.11%
+    Progress: 675500 requests | P_b=0.00038934 | CI=0.00004705 | Rel.CI=12.08%
+    Progress: 676000 requests | P_b=0.00038905 | CI=0.00004701 | Rel.CI=12.08%
+    Progress: 676500 requests | P_b=0.00038877 | CI=0.00004698 | Rel.CI=12.08%
+    Progress: 677000 requests | P_b=0.00038848 | CI=0.00004694 | Rel.CI=12.08%
+    Progress: 677500 requests | P_b=0.00038819 | CI=0.00004691 | Rel.CI=12.08%
+    Progress: 678000 requests | P_b=0.00038791 | CI=0.00004687 | Rel.CI=12.08%
+    Progress: 678500 requests | P_b=0.00038909 | CI=0.00004693 | Rel.CI=12.06%
+    Progress: 679000 requests | P_b=0.00039175 | CI=0.00004707 | Rel.CI=12.02%
+    Progress: 679500 requests | P_b=0.00039146 | CI=0.00004704 | Rel.CI=12.02%
+    Progress: 680000 requests | P_b=0.00039118 | CI=0.00004700 | Rel.CI=12.02%
+    Progress: 680500 requests | P_b=0.00039089 | CI=0.00004697 | Rel.CI=12.02%
+    Progress: 681000 requests | P_b=0.00039060 | CI=0.00004693 | Rel.CI=12.02%
+    Progress: 681500 requests | P_b=0.00039032 | CI=0.00004690 | Rel.CI=12.02%
+    Progress: 682000 requests | P_b=0.00039003 | CI=0.00004686 | Rel.CI=12.02%
+    Progress: 682500 requests | P_b=0.00038974 | CI=0.00004683 | Rel.CI=12.02%
+    Progress: 683000 requests | P_b=0.00038946 | CI=0.00004679 | Rel.CI=12.02%
+    Progress: 683500 requests | P_b=0.00038917 | CI=0.00004676 | Rel.CI=12.02%
+    Progress: 684000 requests | P_b=0.00038889 | CI=0.00004673 | Rel.CI=12.02%
+    Progress: 684500 requests | P_b=0.00038860 | CI=0.00004669 | Rel.CI=12.02%
+    Progress: 685000 requests | P_b=0.00038832 | CI=0.00004666 | Rel.CI=12.02%
+    Progress: 685500 requests | P_b=0.00038804 | CI=0.00004662 | Rel.CI=12.02%
+    Progress: 686000 requests | P_b=0.00039067 | CI=0.00004676 | Rel.CI=11.97%
+    Progress: 686500 requests | P_b=0.00039184 | CI=0.00004682 | Rel.CI=11.95%
+    Progress: 687000 requests | P_b=0.00039156 | CI=0.00004678 | Rel.CI=11.95%
+    Progress: 687500 requests | P_b=0.00039127 | CI=0.00004675 | Rel.CI=11.95%
+    Progress: 688000 requests | P_b=0.00039390 | CI=0.00004689 | Rel.CI=11.90%
+    Progress: 688500 requests | P_b=0.00039361 | CI=0.00004685 | Rel.CI=11.90%
+    Progress: 689000 requests | P_b=0.00039332 | CI=0.00004682 | Rel.CI=11.90%
+    Progress: 689500 requests | P_b=0.00039304 | CI=0.00004679 | Rel.CI=11.90%
+    Progress: 690000 requests | P_b=0.00039275 | CI=0.00004675 | Rel.CI=11.90%
+    Progress: 690500 requests | P_b=0.00039247 | CI=0.00004672 | Rel.CI=11.90%
+    Progress: 691000 requests | P_b=0.00039508 | CI=0.00004686 | Rel.CI=11.86%
+    Progress: 691500 requests | P_b=0.00039479 | CI=0.00004682 | Rel.CI=11.86%
+    Progress: 692000 requests | P_b=0.00039451 | CI=0.00004679 | Rel.CI=11.86%
+    Progress: 692500 requests | P_b=0.00039422 | CI=0.00004676 | Rel.CI=11.86%
+    Progress: 693000 requests | P_b=0.00039394 | CI=0.00004672 | Rel.CI=11.86%
+    Progress: 693500 requests | P_b=0.00039366 | CI=0.00004669 | Rel.CI=11.86%
+    Progress: 694000 requests | P_b=0.00039337 | CI=0.00004665 | Rel.CI=11.86%
+    Progress: 694500 requests | P_b=0.00039309 | CI=0.00004662 | Rel.CI=11.86%
+    Progress: 695000 requests | P_b=0.00039712 | CI=0.00004684 | Rel.CI=11.80%
+    Progress: 695500 requests | P_b=0.00039684 | CI=0.00004681 | Rel.CI=11.80%
+    Progress: 696000 requests | P_b=0.00039655 | CI=0.00004678 | Rel.CI=11.80%
+    Progress: 696500 requests | P_b=0.00040057 | CI=0.00004699 | Rel.CI=11.73%
+    Progress: 697000 requests | P_b=0.00040029 | CI=0.00004696 | Rel.CI=11.73%
+    Progress: 697500 requests | P_b=0.00040000 | CI=0.00004693 | Rel.CI=11.73%
+    Progress: 698000 requests | P_b=0.00039971 | CI=0.00004689 | Rel.CI=11.73%
+    Progress: 698500 requests | P_b=0.00039943 | CI=0.00004686 | Rel.CI=11.73%
+    Progress: 699000 requests | P_b=0.00039914 | CI=0.00004683 | Rel.CI=11.73%
+    Progress: 699500 requests | P_b=0.00039886 | CI=0.00004679 | Rel.CI=11.73%
+    Progress: 700000 requests | P_b=0.00039857 | CI=0.00004676 | Rel.CI=11.73%
+    Progress: 700500 requests | P_b=0.00039829 | CI=0.00004673 | Rel.CI=11.73%
+    Progress: 701000 requests | P_b=0.00039800 | CI=0.00004669 | Rel.CI=11.73%
+    Progress: 701500 requests | P_b=0.00039772 | CI=0.00004666 | Rel.CI=11.73%
+    Progress: 702000 requests | P_b=0.00039744 | CI=0.00004663 | Rel.CI=11.73%
+    Progress: 702500 requests | P_b=0.00039715 | CI=0.00004659 | Rel.CI=11.73%
+    Progress: 703000 requests | P_b=0.00039687 | CI=0.00004656 | Rel.CI=11.73%
+    Progress: 703500 requests | P_b=0.00039659 | CI=0.00004653 | Rel.CI=11.73%
+    Progress: 704000 requests | P_b=0.00039631 | CI=0.00004649 | Rel.CI=11.73%
+    Progress: 704500 requests | P_b=0.00039603 | CI=0.00004646 | Rel.CI=11.73%
+    Progress: 705000 requests | P_b=0.00039574 | CI=0.00004643 | Rel.CI=11.73%
+    Progress: 705500 requests | P_b=0.00039546 | CI=0.00004640 | Rel.CI=11.73%
+    Progress: 706000 requests | P_b=0.00039518 | CI=0.00004636 | Rel.CI=11.73%
+    Progress: 706500 requests | P_b=0.00039490 | CI=0.00004633 | Rel.CI=11.73%
+    Progress: 707000 requests | P_b=0.00039463 | CI=0.00004630 | Rel.CI=11.73%
+    Progress: 707500 requests | P_b=0.00039435 | CI=0.00004626 | Rel.CI=11.73%
+    Progress: 708000 requests | P_b=0.00039407 | CI=0.00004623 | Rel.CI=11.73%
+    Progress: 708500 requests | P_b=0.00039379 | CI=0.00004620 | Rel.CI=11.73%
+    Progress: 709000 requests | P_b=0.00039351 | CI=0.00004617 | Rel.CI=11.73%
+    Progress: 709500 requests | P_b=0.00039323 | CI=0.00004613 | Rel.CI=11.73%
+    Progress: 710000 requests | P_b=0.00039296 | CI=0.00004610 | Rel.CI=11.73%
+    Progress: 710500 requests | P_b=0.00039268 | CI=0.00004607 | Rel.CI=11.73%
+    Progress: 711000 requests | P_b=0.00039241 | CI=0.00004604 | Rel.CI=11.73%
+    Progress: 711500 requests | P_b=0.00039213 | CI=0.00004600 | Rel.CI=11.73%
+    Progress: 712000 requests | P_b=0.00039185 | CI=0.00004597 | Rel.CI=11.73%
+    Progress: 712500 requests | P_b=0.00039158 | CI=0.00004594 | Rel.CI=11.73%
+    Progress: 713000 requests | P_b=0.00039130 | CI=0.00004591 | Rel.CI=11.73%
+    Progress: 713500 requests | P_b=0.00039103 | CI=0.00004588 | Rel.CI=11.73%
+    Progress: 714000 requests | P_b=0.00039076 | CI=0.00004584 | Rel.CI=11.73%
+    Progress: 714500 requests | P_b=0.00039048 | CI=0.00004581 | Rel.CI=11.73%
+    Progress: 715000 requests | P_b=0.00039021 | CI=0.00004578 | Rel.CI=11.73%
+    Progress: 715500 requests | P_b=0.00038994 | CI=0.00004575 | Rel.CI=11.73%
+    Progress: 716000 requests | P_b=0.00038966 | CI=0.00004572 | Rel.CI=11.73%
+    Progress: 716500 requests | P_b=0.00038939 | CI=0.00004568 | Rel.CI=11.73%
+    Progress: 717000 requests | P_b=0.00039052 | CI=0.00004573 | Rel.CI=11.71%
+    Progress: 717500 requests | P_b=0.00039024 | CI=0.00004570 | Rel.CI=11.71%
+    Progress: 718000 requests | P_b=0.00038997 | CI=0.00004567 | Rel.CI=11.71%
+    Progress: 718500 requests | P_b=0.00038970 | CI=0.00004564 | Rel.CI=11.71%
+    Progress: 719000 requests | P_b=0.00038943 | CI=0.00004561 | Rel.CI=11.71%
+    Progress: 719500 requests | P_b=0.00038916 | CI=0.00004557 | Rel.CI=11.71%
+    Progress: 720000 requests | P_b=0.00038889 | CI=0.00004554 | Rel.CI=11.71%
+    Progress: 720500 requests | P_b=0.00038862 | CI=0.00004551 | Rel.CI=11.71%
+    Progress: 721000 requests | P_b=0.00038835 | CI=0.00004548 | Rel.CI=11.71%
+    Progress: 721500 requests | P_b=0.00038808 | CI=0.00004545 | Rel.CI=11.71%
+    Progress: 722000 requests | P_b=0.00038781 | CI=0.00004542 | Rel.CI=11.71%
+    Progress: 722500 requests | P_b=0.00038754 | CI=0.00004539 | Rel.CI=11.71%
+    Progress: 723000 requests | P_b=0.00038728 | CI=0.00004535 | Rel.CI=11.71%
+    Progress: 723500 requests | P_b=0.00038701 | CI=0.00004532 | Rel.CI=11.71%
+    Progress: 724000 requests | P_b=0.00038674 | CI=0.00004529 | Rel.CI=11.71%
+    Progress: 724500 requests | P_b=0.00038647 | CI=0.00004526 | Rel.CI=11.71%
+    Progress: 725000 requests | P_b=0.00038621 | CI=0.00004523 | Rel.CI=11.71%
+    Progress: 725500 requests | P_b=0.00038594 | CI=0.00004520 | Rel.CI=11.71%
+    Progress: 726000 requests | P_b=0.00038567 | CI=0.00004517 | Rel.CI=11.71%
+    Progress: 726500 requests | P_b=0.00038541 | CI=0.00004514 | Rel.CI=11.71%
+    Progress: 727000 requests | P_b=0.00038514 | CI=0.00004510 | Rel.CI=11.71%
+    Progress: 727500 requests | P_b=0.00038488 | CI=0.00004507 | Rel.CI=11.71%
+    Progress: 728000 requests | P_b=0.00038462 | CI=0.00004504 | Rel.CI=11.71%
+    Progress: 728500 requests | P_b=0.00038435 | CI=0.00004501 | Rel.CI=11.71%
+    Progress: 729000 requests | P_b=0.00038409 | CI=0.00004498 | Rel.CI=11.71%
+    Progress: 729500 requests | P_b=0.00038382 | CI=0.00004495 | Rel.CI=11.71%
+    Progress: 730000 requests | P_b=0.00038356 | CI=0.00004492 | Rel.CI=11.71%
+    Progress: 730500 requests | P_b=0.00038330 | CI=0.00004489 | Rel.CI=11.71%
+    Progress: 731000 requests | P_b=0.00038304 | CI=0.00004486 | Rel.CI=11.71%
+    Progress: 731500 requests | P_b=0.00038278 | CI=0.00004483 | Rel.CI=11.71%
+    Progress: 732000 requests | P_b=0.00038251 | CI=0.00004480 | Rel.CI=11.71%
+    Progress: 732500 requests | P_b=0.00038225 | CI=0.00004477 | Rel.CI=11.71%
+    Progress: 733000 requests | P_b=0.00038608 | CI=0.00004497 | Rel.CI=11.65%
+    Progress: 733500 requests | P_b=0.00038582 | CI=0.00004494 | Rel.CI=11.65%
+    Progress: 734000 requests | P_b=0.00038556 | CI=0.00004491 | Rel.CI=11.65%
+    Progress: 734500 requests | P_b=0.00038530 | CI=0.00004488 | Rel.CI=11.65%
+    Progress: 735000 requests | P_b=0.00038503 | CI=0.00004485 | Rel.CI=11.65%
+    Progress: 735500 requests | P_b=0.00038477 | CI=0.00004482 | Rel.CI=11.65%
+    Progress: 736000 requests | P_b=0.00038451 | CI=0.00004479 | Rel.CI=11.65%
+    Progress: 736500 requests | P_b=0.00038425 | CI=0.00004476 | Rel.CI=11.65%
+    Progress: 737000 requests | P_b=0.00038399 | CI=0.00004473 | Rel.CI=11.65%
+    Progress: 737500 requests | P_b=0.00038373 | CI=0.00004470 | Rel.CI=11.65%
+    Progress: 738000 requests | P_b=0.00038347 | CI=0.00004467 | Rel.CI=11.65%
+    Progress: 738500 requests | P_b=0.00038321 | CI=0.00004464 | Rel.CI=11.65%
+    Progress: 739000 requests | P_b=0.00038295 | CI=0.00004461 | Rel.CI=11.65%
+    Progress: 739500 requests | P_b=0.00038269 | CI=0.00004458 | Rel.CI=11.65%
+    Progress: 740000 requests | P_b=0.00038243 | CI=0.00004455 | Rel.CI=11.65%
+    Progress: 740500 requests | P_b=0.00038217 | CI=0.00004452 | Rel.CI=11.65%
+    Progress: 741000 requests | P_b=0.00038192 | CI=0.00004449 | Rel.CI=11.65%
+    Progress: 741500 requests | P_b=0.00038166 | CI=0.00004446 | Rel.CI=11.65%
+    Progress: 742000 requests | P_b=0.00038140 | CI=0.00004443 | Rel.CI=11.65%
+    Progress: 742500 requests | P_b=0.00038114 | CI=0.00004440 | Rel.CI=11.65%
+    Progress: 743000 requests | P_b=0.00038089 | CI=0.00004437 | Rel.CI=11.65%
+    Progress: 743500 requests | P_b=0.00038063 | CI=0.00004434 | Rel.CI=11.65%
+    Progress: 744000 requests | P_b=0.00038038 | CI=0.00004431 | Rel.CI=11.65%
+    Progress: 744500 requests | P_b=0.00038012 | CI=0.00004428 | Rel.CI=11.65%
+    Progress: 745000 requests | P_b=0.00037987 | CI=0.00004425 | Rel.CI=11.65%
+    Progress: 745500 requests | P_b=0.00037961 | CI=0.00004422 | Rel.CI=11.65%
+    Progress: 746000 requests | P_b=0.00037936 | CI=0.00004419 | Rel.CI=11.65%
+    Progress: 746500 requests | P_b=0.00037910 | CI=0.00004416 | Rel.CI=11.65%
+    Progress: 747000 requests | P_b=0.00037885 | CI=0.00004413 | Rel.CI=11.65%
+    Progress: 747500 requests | P_b=0.00037860 | CI=0.00004410 | Rel.CI=11.65%
+    Progress: 748000 requests | P_b=0.00037834 | CI=0.00004407 | Rel.CI=11.65%
+    Progress: 748500 requests | P_b=0.00037809 | CI=0.00004404 | Rel.CI=11.65%
+    Progress: 749000 requests | P_b=0.00037784 | CI=0.00004401 | Rel.CI=11.65%
+    Progress: 749500 requests | P_b=0.00037759 | CI=0.00004398 | Rel.CI=11.65%
+    Progress: 750000 requests | P_b=0.00037733 | CI=0.00004395 | Rel.CI=11.65%
+    Progress: 750500 requests | P_b=0.00037708 | CI=0.00004393 | Rel.CI=11.65%
+    Progress: 751000 requests | P_b=0.00037816 | CI=0.00004397 | Rel.CI=11.63%
+    Progress: 751500 requests | P_b=0.00037924 | CI=0.00004402 | Rel.CI=11.61%
+    Progress: 752000 requests | P_b=0.00037899 | CI=0.00004399 | Rel.CI=11.61%
+    Progress: 752500 requests | P_b=0.00037874 | CI=0.00004396 | Rel.CI=11.61%
+    Progress: 753000 requests | P_b=0.00037849 | CI=0.00004393 | Rel.CI=11.61%
+    Progress: 753500 requests | P_b=0.00037823 | CI=0.00004390 | Rel.CI=11.61%
+    Progress: 754000 requests | P_b=0.00037798 | CI=0.00004388 | Rel.CI=11.61%
+    Progress: 754500 requests | P_b=0.00037773 | CI=0.00004385 | Rel.CI=11.61%
+    Progress: 755000 requests | P_b=0.00037748 | CI=0.00004382 | Rel.CI=11.61%
+    Progress: 755500 requests | P_b=0.00037723 | CI=0.00004379 | Rel.CI=11.61%
+    Progress: 756000 requests | P_b=0.00037698 | CI=0.00004376 | Rel.CI=11.61%
+    Progress: 756500 requests | P_b=0.00037673 | CI=0.00004373 | Rel.CI=11.61%
+    Progress: 757000 requests | P_b=0.00037649 | CI=0.00004370 | Rel.CI=11.61%
+    Progress: 757500 requests | P_b=0.00037624 | CI=0.00004367 | Rel.CI=11.61%
+    Progress: 758000 requests | P_b=0.00037599 | CI=0.00004364 | Rel.CI=11.61%
+    Progress: 758500 requests | P_b=0.00037574 | CI=0.00004362 | Rel.CI=11.61%
+    Progress: 759000 requests | P_b=0.00037549 | CI=0.00004359 | Rel.CI=11.61%
+    Progress: 759500 requests | P_b=0.00037525 | CI=0.00004356 | Rel.CI=11.61%
+    Progress: 760000 requests | P_b=0.00037500 | CI=0.00004353 | Rel.CI=11.61%
+    Progress: 760500 requests | P_b=0.00037475 | CI=0.00004350 | Rel.CI=11.61%
+    Progress: 761000 requests | P_b=0.00037451 | CI=0.00004347 | Rel.CI=11.61%
+    Progress: 761500 requests | P_b=0.00037426 | CI=0.00004344 | Rel.CI=11.61%
+    Progress: 762000 requests | P_b=0.00037664 | CI=0.00004357 | Rel.CI=11.57%
+    Progress: 762500 requests | P_b=0.00037639 | CI=0.00004354 | Rel.CI=11.57%
+    Progress: 763000 requests | P_b=0.00037615 | CI=0.00004351 | Rel.CI=11.57%
+    Progress: 763500 requests | P_b=0.00037590 | CI=0.00004348 | Rel.CI=11.57%
+    Progress: 764000 requests | P_b=0.00037565 | CI=0.00004345 | Rel.CI=11.57%
+    Progress: 764500 requests | P_b=0.00037541 | CI=0.00004342 | Rel.CI=11.57%
+    Progress: 765000 requests | P_b=0.00037516 | CI=0.00004340 | Rel.CI=11.57%
+    Progress: 765500 requests | P_b=0.00037492 | CI=0.00004337 | Rel.CI=11.57%
+    Progress: 766000 requests | P_b=0.00037467 | CI=0.00004334 | Rel.CI=11.57%
+    Progress: 766500 requests | P_b=0.00037443 | CI=0.00004331 | Rel.CI=11.57%
+    Progress: 767000 requests | P_b=0.00037419 | CI=0.00004328 | Rel.CI=11.57%
+    Progress: 767500 requests | P_b=0.00037394 | CI=0.00004326 | Rel.CI=11.57%
+    Progress: 768000 requests | P_b=0.00037370 | CI=0.00004323 | Rel.CI=11.57%
+    Progress: 768500 requests | P_b=0.00037345 | CI=0.00004320 | Rel.CI=11.57%
+    Progress: 769000 requests | P_b=0.00037321 | CI=0.00004317 | Rel.CI=11.57%
+    Progress: 769500 requests | P_b=0.00037297 | CI=0.00004314 | Rel.CI=11.57%
+    Progress: 770000 requests | P_b=0.00037273 | CI=0.00004311 | Rel.CI=11.57%
+    Progress: 770500 requests | P_b=0.00037249 | CI=0.00004309 | Rel.CI=11.57%
+    Progress: 771000 requests | P_b=0.00037224 | CI=0.00004306 | Rel.CI=11.57%
+    Progress: 771500 requests | P_b=0.00037200 | CI=0.00004303 | Rel.CI=11.57%
+    Progress: 772000 requests | P_b=0.00037176 | CI=0.00004300 | Rel.CI=11.57%
+    Progress: 772500 requests | P_b=0.00037152 | CI=0.00004298 | Rel.CI=11.57%
+    Progress: 773000 requests | P_b=0.00037128 | CI=0.00004295 | Rel.CI=11.57%
+    Progress: 773500 requests | P_b=0.00037104 | CI=0.00004292 | Rel.CI=11.57%
+    Progress: 774000 requests | P_b=0.00037209 | CI=0.00004297 | Rel.CI=11.55%
+    Progress: 774500 requests | P_b=0.00037185 | CI=0.00004294 | Rel.CI=11.55%
+    Progress: 775000 requests | P_b=0.00037161 | CI=0.00004291 | Rel.CI=11.55%
+    Progress: 775500 requests | P_b=0.00037137 | CI=0.00004288 | Rel.CI=11.55%
+    Progress: 776000 requests | P_b=0.00037113 | CI=0.00004286 | Rel.CI=11.55%
+    Progress: 776500 requests | P_b=0.00037090 | CI=0.00004283 | Rel.CI=11.55%
+    Progress: 777000 requests | P_b=0.00037066 | CI=0.00004280 | Rel.CI=11.55%
+    Progress: 777500 requests | P_b=0.00037042 | CI=0.00004277 | Rel.CI=11.55%
+    Progress: 778000 requests | P_b=0.00037018 | CI=0.00004275 | Rel.CI=11.55%
+    Progress: 778500 requests | P_b=0.00036994 | CI=0.00004272 | Rel.CI=11.55%
+    Progress: 779000 requests | P_b=0.00038383 | CI=0.00004350 | Rel.CI=11.33%
+    Progress: 779500 requests | P_b=0.00038358 | CI=0.00004347 | Rel.CI=11.33%
+    Progress: 780000 requests | P_b=0.00038333 | CI=0.00004344 | Rel.CI=11.33%
+    Progress: 780500 requests | P_b=0.00038309 | CI=0.00004341 | Rel.CI=11.33%
+    Progress: 781000 requests | P_b=0.00038284 | CI=0.00004339 | Rel.CI=11.33%
+    Progress: 781500 requests | P_b=0.00038260 | CI=0.00004336 | Rel.CI=11.33%
+    Progress: 782000 requests | P_b=0.00038363 | CI=0.00004340 | Rel.CI=11.31%
+    Progress: 782500 requests | P_b=0.00038594 | CI=0.00004352 | Rel.CI=11.28%
+    Progress: 783000 requests | P_b=0.00038570 | CI=0.00004349 | Rel.CI=11.28%
+    Progress: 783500 requests | P_b=0.00039183 | CI=0.00004382 | Rel.CI=11.18%
+    Progress: 784000 requests | P_b=0.00039286 | CI=0.00004387 | Rel.CI=11.17%
+    Progress: 784500 requests | P_b=0.00039261 | CI=0.00004384 | Rel.CI=11.17%
+    Progress: 785000 requests | P_b=0.00039236 | CI=0.00004381 | Rel.CI=11.17%
+    Progress: 785500 requests | P_b=0.00039211 | CI=0.00004378 | Rel.CI=11.17%
+    Progress: 786000 requests | P_b=0.00039186 | CI=0.00004375 | Rel.CI=11.17%
+    Progress: 786500 requests | P_b=0.00039161 | CI=0.00004373 | Rel.CI=11.17%
+    Progress: 787000 requests | P_b=0.00040152 | CI=0.00004426 | Rel.CI=11.02%
+    Progress: 787500 requests | P_b=0.00040127 | CI=0.00004423 | Rel.CI=11.02%
+    Progress: 788000 requests | P_b=0.00040102 | CI=0.00004421 | Rel.CI=11.02%
+    Progress: 788500 requests | P_b=0.00040583 | CI=0.00004446 | Rel.CI=10.95%
+    Progress: 789000 requests | P_b=0.00040558 | CI=0.00004443 | Rel.CI=10.95%
+    Progress: 789500 requests | P_b=0.00040532 | CI=0.00004440 | Rel.CI=10.95%
+    Progress: 790000 requests | P_b=0.00040506 | CI=0.00004437 | Rel.CI=10.95%
+    Progress: 790500 requests | P_b=0.00040481 | CI=0.00004434 | Rel.CI=10.95%
+    Progress: 791000 requests | P_b=0.00040455 | CI=0.00004432 | Rel.CI=10.95%
+    Progress: 791500 requests | P_b=0.00040430 | CI=0.00004429 | Rel.CI=10.95%
+    Progress: 792000 requests | P_b=0.00040404 | CI=0.00004426 | Rel.CI=10.95%
+    Progress: 792500 requests | P_b=0.00040379 | CI=0.00004423 | Rel.CI=10.95%
+    Progress: 793000 requests | P_b=0.00040353 | CI=0.00004420 | Rel.CI=10.95%
+    Progress: 793500 requests | P_b=0.00040328 | CI=0.00004418 | Rel.CI=10.95%
+    Progress: 794000 requests | P_b=0.00040302 | CI=0.00004415 | Rel.CI=10.95%
+    Progress: 794500 requests | P_b=0.00040277 | CI=0.00004412 | Rel.CI=10.95%
+    Progress: 795000 requests | P_b=0.00040252 | CI=0.00004409 | Rel.CI=10.95%
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+    Progress: 795500 requests | P_b=0.00040729 | CI=0.00004434 | Rel.CI=10.89%
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+API Request Error after 3 attempts: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 250,
+    "path_strategy": "random",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 795560,
+    "transient_contention_rate": 0.0,
+    "successful_requests": 795176,
+    "blocked_requests": 384,
+    "path_blocked": 0,
+    "spectral_blocked": 320,
+    "blocking_probability": 0.00048268,
+    "absolute_confidence_interval": 4.827e-05,
+    "relative_confidence_interval_pct": 9.9997,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 320,
+        "API_CONNECTION_FAILED": 64
+    },
+    "most_used_links": "RDMil->RDMpa_15 (117368), RDMtx->RDMga_13 (114096), RDMwa->RDMny_3 (114040), RDMtx->RDMil_12 (109947), RDMca2->RDMtx_6 (103306), RDMut->RDMco_7 (99247), RDMco->RDMtx_10 (86239), RDMil->RDMmi_14 (83135), RDMga->RDMma_22 (78563), RDMpa->RDMny_17 (76159)"
+}

@@ -1,0 +1,45 @@
+Successfully loaded 22 links for study.
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=450
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.12s ---
+    Transient: 4439 requests, 356 blocked
+    Progress: 500 requests | P_b=0.11800000 | CI=0.02827785 | Rel.CI=23.96% | Avg.GraphGen=0.4192 ms | Avg.AdditionalPath=0.2170 ms
+    Progress: 1000 requests | P_b=0.11100000 | CI=0.01947011 | Rel.CI=17.54% | Avg.GraphGen=0.3552 ms | Avg.AdditionalPath=0.2061 ms
+    Progress: 1500 requests | P_b=0.11333333 | CI=0.01604240 | Rel.CI=14.16% | Avg.GraphGen=0.3173 ms | Avg.AdditionalPath=0.1936 ms
+    Progress: 2000 requests | P_b=0.10650000 | CI=0.01351958 | Rel.CI=12.69% | Avg.GraphGen=0.3635 ms | Avg.AdditionalPath=0.2176 ms
+    Progress: 2500 requests | P_b=0.10800000 | CI=0.01216691 | Rel.CI=11.27% | Avg.GraphGen=0.3706 ms | Avg.AdditionalPath=0.2020 ms
+    Progress: 3000 requests | P_b=0.11066667 | CI=0.01122629 | Rel.CI=10.14% | Avg.GraphGen=0.3189 ms | Avg.AdditionalPath=0.2048 ms
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 450,
+    "path_strategy": "random",
+    "spectrum_strategy": "first-fit",
+    "path_type": "additional",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 3148,
+    "transient_contention_rate": 8.01982428,
+    "successful_requests": 2805,
+    "blocked_requests": 343,
+    "path_blocked": 0,
+    "spectral_blocked": 343,
+    "blocking_probability": 0.10895807,
+    "absolute_confidence_interval": 0.01088473,
+    "relative_confidence_interval_pct": 9.9898,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 343
+    },
+    "most_used_links": "RDMil->RDMpa_15 (1027), RDMtx->RDMil_12 (1001), RDMwa->RDMny_3 (966), RDMtx->RDMga_13 (915), RDMut->RDMco_7 (902), RDMca1->RDMut_5 (857), RDMil->RDMmi_14 (814), RDMca2->RDMtx_6 (812), RDMpa->RDMnj_18 (810), RDMut->RDMmi_8 (805)",
+    "avg_graph_gen_ms": 0.3574,
+    "avg_path_comp_ms": 0.2069
+}

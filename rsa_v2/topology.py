@@ -1,4 +1,5 @@
 from functools import lru_cache
+import time
 import logging
 import random
 import os
@@ -256,12 +257,27 @@ logger = logging.getLogger(__name__)
 
 def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='both', parallelpath_strategy='none'):
     EXTRA_HOPS_ALLOWED = 1
+
+    # --- Phase: Graph Generation ---
+    # build_graph() is @lru_cache: DB query only on first call, pointer return thereafter.
+    # nx.Graph(G) copies the multigraph to a simple graph every call — this is the real cost.
+    t_graph_start = time.time()
     G = build_graph()
+    build_ms = (time.time() - t_graph_start) * 1000
 
     # Convert to simple graph for route-level path finding to avoid
     # NetworkX redundantly traversing parallel links and returning
     # duplicate node sequences.
+    t_simple_start = time.time()
     G_simple = nx.Graph(G)
+    simple_ms = (time.time() - t_simple_start) * 1000
+
+    graph_gen_ms = build_ms + simple_ms
+    logger.info(
+        f"[Timing] Graph generation: {graph_gen_ms:.4f} ms "
+        f"(build_graph={build_ms:.4f} ms, nx.Graph simplify={simple_ms:.4f} ms)")
+
+    # --- Phase: Path Computation ---
     result = {
         'path': None,
         'total_candidates': 0,
@@ -295,6 +311,7 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
             dijkstra_hops = len(dijkstra_node_paths[0]) - 1
 
             if path_type in ['dijkstra', 'both']:
+                t_dijkstra_start = time.time()
                 # Apply strategy to select ONE node path
                 if strategy == 'last-fit':
                     chosen_node_path = dijkstra_node_paths[-1]
@@ -306,6 +323,9 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                 else:
                     # Default: first-fit
                     chosen_node_path = dijkstra_node_paths[0]
+                dijkstra_path_ms = (time.time() - t_dijkstra_start) * 1000
+                logger.info(f"[Timing] Dijkstra path selection: {dijkstra_path_ms:.4f} ms")
+                result['dijkstra_path_ms'] = dijkstra_path_ms
                 # TopologyHelper.log_path_links(
                 #     [chosen_node_path], "Phase 1", "dijkstra shortest")
 
@@ -328,6 +348,9 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                             # Default: first-fit
                             dijkstra_collection = [parallel_paths[0]]
                         # TopologyHelper.log_path_links(dijkstra_collection, "Phase 1", "parallel link")
+                    dijkstra_parallel_ms = (time.time() - t_dijkstra_start) * 1000
+                    logger.info(f"[Timing] Dijkstra path + parallel expansion: {dijkstra_parallel_ms:.4f} ms")
+                    result['dijkstra_parallel_ms'] = dijkstra_parallel_ms
                 else:
                     single_path = TopologyHelper.expand_path_first_valid(
                         chosen_node_path, G)
@@ -356,8 +379,10 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
             except nx.NetworkXNoPath:
                 # No connectivity at all
                 result['blocked_reason'] = 'no_path'
+                result['graph_gen_ms'] = graph_gen_ms
                 return result
         try:
+            t_additional_start = time.time()
             simple_node_paths = list(nx.all_simple_paths(
                 G_simple, source=src_dev, target=dst_dev, cutoff=dynamic_cutoff))
 
@@ -372,6 +397,9 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                         simple_node_paths, G)
                 else:
                     chosen_alt_path = simple_node_paths[0]
+                additional_path_ms = (time.time() - t_additional_start) * 1000
+                logger.info(f"[Timing] Additional path selection: {additional_path_ms:.4f} ms")
+                result['additional_path_ms'] = additional_path_ms
                 # TopologyHelper.log_path_links([chosen_alt_path], "Phase 2", "additional")
                 # Expand the chosen node path based on parallelpath_strategy
                 if parallelpath_strategy != 'none':
@@ -391,6 +419,9 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                         else:
                             all_paths_collection = [alt_parallel_paths[0]]
                         # TopologyHelper.log_path_links(all_paths_collection, "Phase 2", "parallel link")
+                    additional_parallel_ms = (time.time() - t_additional_start) * 1000
+                    logger.info(f"[Timing] Additional path + parallel expansion: {additional_parallel_ms:.4f} ms")
+                    result['additional_parallel_ms'] = additional_parallel_ms
                 else:
                     single_path = TopologyHelper.expand_path_first_valid(
                         chosen_alt_path, G)
@@ -411,6 +442,9 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
         paths = all_paths_collection
     else:
         paths = dijkstra_collection + all_paths_collection
+
+    result['graph_gen_ms'] = graph_gen_ms
+
     if not paths:
         result['blocked_reason'] = 'no_path'
         # logger.info(

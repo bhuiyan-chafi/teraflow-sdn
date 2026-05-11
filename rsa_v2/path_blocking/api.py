@@ -50,9 +50,18 @@ def request_lightpath():
         # 1. Path Computation — returns ordered list [dijkstra, alt]
         paths_result = find_paths(src_device, dst_device, bitrate, strategy=path_strategy, path_type=path_type, parallelpath_strategy=parallelpath_strategy)
         graph_build_time = time.time() - start_graph_time
+        graph_gen_ms = paths_result.get('graph_gen_ms', 0)
         # logger.info(f"[Timing] Time to build graphs: {graph_build_time:.4f} seconds")
         paths = paths_result.get('paths', [])
         blocked_reason = paths_result.get('blocked_reason')
+
+        # Collect only the timing keys that were actually computed this call
+        path_timings = {}
+        for key in ('dijkstra_path_ms', 'dijkstra_parallel_ms',
+                    'additional_path_ms', 'additional_parallel_ms'):
+            val = paths_result.get(key)
+            if val is not None:
+                path_timings[key] = val
 
         if not paths:
             # No physically usable path exists (all OCH dead or disconnected)
@@ -60,19 +69,24 @@ def request_lightpath():
                 "status": "path-blocked",
                 "reason": blocked_reason or "no_path",
                 "path_strategy": path_strategy,
-                "spectrum_strategy": spectrum_strategy
+                "spectrum_strategy": spectrum_strategy,
+                "graph_gen_ms": graph_gen_ms,
+                **path_timings
             }), 200
 
         # 2. Try RSA on each path in order (dijkstra first, alt second)
         selected_path = None
         rsa_res = None
+        rsa_ms = 0
         start_rsa_time = time.time()
         for path in paths:
             rsa = TopologyHelper.perform_rsa(path, bitrate, spectrum_strategy)
-            if rsa and rsa.get('success'):
-                selected_path = path
-                rsa_res = rsa
-                break
+            if rsa:
+                rsa_ms = rsa.get('rsa_ms', 0)
+                if rsa.get('success'):
+                    selected_path = path
+                    rsa_res = rsa
+                    break
         rsa_time = time.time() - start_rsa_time
         # logger.info(f"[Timing] Time to perform RSA: {rsa_time:.4f} seconds")
 
@@ -83,7 +97,10 @@ def request_lightpath():
                 "reason": "No contiguous spectrum available on any candidate path",
                 "paths_tried": len(paths),
                 "path_strategy": path_strategy,
-                "spectrum_strategy": spectrum_strategy
+                "spectrum_strategy": spectrum_strategy,
+                "graph_gen_ms": graph_gen_ms,
+                "rsa_ms": rsa_ms,
+                **path_timings
             }), 200
 
         link_ids = [link['id'] for link in selected_path.get('links', [])]
@@ -113,6 +130,9 @@ def request_lightpath():
                 "status": "success",
                 "lightpath_id": str(new_lp.id),
                 "computation_time_s": computation_time_s,
+                "graph_gen_ms": graph_gen_ms,
+                "rsa_ms": rsa_ms,
+                **path_timings,
                 "allocated_mask": mask,
                 "start_slot": rsa_res.get('start_slot'),
                 "num_slots": rsa_res.get('num_slots'),

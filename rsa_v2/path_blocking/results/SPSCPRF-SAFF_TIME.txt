@@ -1,0 +1,52 @@
+Successfully loaded 66 links for study.
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=1350
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.20s ---
+    Transient: 13611 requests, 809 blocked
+    Progress: 500 requests | P_b=0.04000000 | CI=0.01717658 | Rel.CI=42.94% | Avg.GraphGen=0.4723 ms | Avg.DijkstraParallel=7.3435 ms | Avg.RSA=4.8232 ms
+    Progress: 1000 requests | P_b=0.04800000 | CI=0.01324937 | Rel.CI=27.60% | Avg.GraphGen=0.4584 ms | Avg.DijkstraParallel=7.4984 ms | Avg.RSA=4.9296 ms
+    Progress: 1500 requests | P_b=0.06066667 | CI=0.01208079 | Rel.CI=19.91% | Avg.GraphGen=0.4156 ms | Avg.DijkstraParallel=7.3727 ms | Avg.RSA=4.7684 ms
+    Progress: 2000 requests | P_b=0.06450000 | CI=0.01076571 | Rel.CI=16.69% | Avg.GraphGen=0.4846 ms | Avg.DijkstraParallel=7.8713 ms | Avg.RSA=5.0892 ms
+    Progress: 2500 requests | P_b=0.06400000 | CI=0.00959432 | Rel.CI=14.99% | Avg.GraphGen=0.6296 ms | Avg.DijkstraParallel=9.5949 ms | Avg.RSA=5.9872 ms
+    Progress: 3000 requests | P_b=0.06300000 | CI=0.00869432 | Rel.CI=13.80% | Avg.GraphGen=0.4085 ms | Avg.DijkstraParallel=7.0284 ms | Avg.RSA=4.6248 ms
+    Progress: 3500 requests | P_b=0.06085714 | CI=0.00792034 | Rel.CI=13.01% | Avg.GraphGen=0.4069 ms | Avg.DijkstraParallel=6.8652 ms | Avg.RSA=4.6057 ms
+    Progress: 4000 requests | P_b=0.06125000 | CI=0.00743112 | Rel.CI=12.13% | Avg.GraphGen=0.4102 ms | Avg.DijkstraParallel=6.7902 ms | Avg.RSA=4.5697 ms
+    Progress: 4500 requests | P_b=0.06044444 | CI=0.00696289 | Rel.CI=11.52% | Avg.GraphGen=0.4170 ms | Avg.DijkstraParallel=6.9112 ms | Avg.RSA=4.6057 ms
+    Progress: 5000 requests | P_b=0.05980000 | CI=0.00657252 | Rel.CI=10.99% | Avg.GraphGen=0.4205 ms | Avg.DijkstraParallel=7.2093 ms | Avg.RSA=4.6278 ms
+    Progress: 5500 requests | P_b=0.05800000 | CI=0.00617752 | Rel.CI=10.65% | Avg.GraphGen=0.4118 ms | Avg.DijkstraParallel=6.6448 ms | Avg.RSA=4.5948 ms
+    Progress: 6000 requests | P_b=0.05750000 | CI=0.00589054 | Rel.CI=10.24% | Avg.GraphGen=0.4187 ms | Avg.DijkstraParallel=6.5591 ms | Avg.RSA=4.6610 ms
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 1350,
+    "path_strategy": "highest-slot",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "random",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 6350,
+    "transient_contention_rate": 5.94372199,
+    "successful_requests": 5987,
+    "blocked_requests": 363,
+    "path_blocked": 0,
+    "spectral_blocked": 363,
+    "blocking_probability": 0.05716535,
+    "absolute_confidence_interval": 0.00571023,
+    "relative_confidence_interval_pct": 9.989,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 363
+    },
+    "most_used_links": "RDMtx->RDMga_1 (852), RDMwa->RDMny_3 (845), RDMwa->RDMny_1 (838), RDMca2->RDMtx_2 (813), RDMil->RDMpa_3 (805), RDMtx->RDMga_3 (795), RDMtx->RDMga_2 (794), RDMil->RDMpa_2 (779), RDMil->RDMpa_1 (775), RDMut->RDMco_3 (761)",
+    "avg_graph_gen_ms": 0.4462,
+    "avg_path_comp_ms": 7.3074,
+    "avg_rsa_ms": 4.8239
+}

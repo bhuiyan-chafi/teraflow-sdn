@@ -142,6 +142,19 @@ def run_simulation():
             link_usage_counts = Counter()
         last_progress_report = 0
         progress_interval = 500  # Report progress every 500 requests
+        # Per-key timing accumulators — only the keys active this simulation
+        timing_buckets = {
+            'graph_gen_ms': [],
+            'dijkstra_path_ms': [],
+            'dijkstra_parallel_ms': [],
+            'additional_path_ms': [],
+            'additional_parallel_ms': [],
+            'rsa_ms': [],
+        }
+        # Collect per-window averages to compute average-of-averages in final results
+        window_avgs_graph_gen = []
+        window_avgs_path_comp = []
+        window_avgs_rsa = []
 
         # Main Discrete Event Loop - runs until stopping condition met
         while True:
@@ -229,14 +242,67 @@ def run_simulation():
                             elif status == 'spectral-blocked':
                                 spectral_blocked_count += 1
 
+                        # Collect timing readings present in this response
+                        for tkey in timing_buckets:
+                            val = resp.get(tkey)
+                            if val is not None:
+                                timing_buckets[tkey].append(val)
+
                         # Progress reporting
                         if counted_requests - last_progress_report >= progress_interval:
                             last_progress_report = counted_requests
                             prob, abs_ci, rel_ci = calculate_ci(
                                 blocked_requests, counted_requests, Z_VALUE)
+
+                            # Build timing summary for keys relevant to this run
+                            timing_parts = []
+                            def _avg(key):
+                                b = timing_buckets[key]
+                                return sum(b) / len(b) if b else 0.0
+
+                            avg_graph = _avg('graph_gen_ms')
+                            timing_parts.append(
+                                f"Avg.GraphGen={avg_graph:.4f} ms")
+                            window_avgs_graph_gen.append(avg_graph)
+
+                            # Determine which path timing key is active
+                            path_avg = None
+                            if PATH_TYPE in ('dijkstra', 'both'):
+                                if PARALLELPATH_STRATEGY != 'none':
+                                    path_avg = _avg('dijkstra_parallel_ms')
+                                    timing_parts.append(
+                                        f"Avg.DijkstraParallel={path_avg:.4f} ms")
+                                else:
+                                    path_avg = _avg('dijkstra_path_ms')
+                                    timing_parts.append(
+                                        f"Avg.DijkstraPath={path_avg:.4f} ms")
+
+                            if PATH_TYPE in ('additional', 'both'):
+                                if PARALLELPATH_STRATEGY != 'none':
+                                    path_avg = _avg('additional_parallel_ms')
+                                    timing_parts.append(
+                                        f"Avg.AdditionalParallel={path_avg:.4f} ms")
+                                else:
+                                    path_avg = _avg('additional_path_ms')
+                                    timing_parts.append(
+                                        f"Avg.AdditionalPath={path_avg:.4f} ms")
+
+                            if path_avg is not None:
+                                window_avgs_path_comp.append(path_avg)
+
+                            avg_rsa = _avg('rsa_ms')
+                            timing_parts.append(
+                                f"Avg.RSA={avg_rsa:.4f} ms")
+                            window_avgs_rsa.append(avg_rsa)
+
                             print(f"    Progress: {counted_requests} requests | "
                                   f"P_b={prob:.8f} | CI={abs_ci:.8f} | "
-                                  f"Rel.CI={rel_ci*100:.2f}%")
+                                  f"Rel.CI={rel_ci*100:.2f}% | "
+                                  + " | ".join(timing_parts))
+
+                            # Reset buckets for the next window
+                            for tkey in timing_buckets:
+                                timing_buckets[tkey].clear()
 
                         # Check stopping condition
                         should_stop, reason, stats = check_stopping_condition(
@@ -300,7 +366,13 @@ def run_simulation():
             "confidence_level_pct": 95,
             "max_requests_limit": MAX_REQUESTS,
             "blocking_reasons": dict(blocking_reasons),
-            "most_used_links": top_links_str
+            "most_used_links": top_links_str,
+            "avg_graph_gen_ms": round(
+                sum(window_avgs_graph_gen) / len(window_avgs_graph_gen), 4) if window_avgs_graph_gen else 0,
+            "avg_path_comp_ms": round(
+                sum(window_avgs_path_comp) / len(window_avgs_path_comp), 4) if window_avgs_path_comp else 0,
+            "avg_rsa_ms": round(
+                sum(window_avgs_rsa) / len(window_avgs_rsa), 4) if window_avgs_rsa else 0
         }
         results.append(stat_dict)
 

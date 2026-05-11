@@ -47,7 +47,7 @@ y3 = np.array([
     0.090933,
     0.040905,
     0.008902,
-    0.00000672])
+    0.00001556])
 # SP+1RF-SAFF
 y4 = np.array([
     0.22507553,
@@ -186,25 +186,20 @@ legend_elements = [
 
     Line2D([0], [0], color='green', lw=0.8,
            linestyle='-', label='Overall Blocking'),
-
     Line2D([0], [0], color='green', lw=0, marker='^',
-           markersize=6, markeredgewidth=0.5, markerfacecolor='none', label='SPSC-SAFF'),
-
+           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPSC-SAFF'),
     Line2D([0], [0], color='brown', lw=0, marker='o',
-           markersize=6, markeredgewidth=0.5, markerfacecolor='none', label='SPRF-SAFF'),
-
+           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPRF-SAFF'),
+    Line2D([0], [0], color='red', lw=0, marker='s',
+           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPRF-SARF'),
     Line2D([0], [0], color='blue', lw=0, marker='x',
-           markersize=6, markeredgewidth=0.5, markerfacecolor='none', label='SPFF-SAFF'),
-
+           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPFF-SAFF'),
     Line2D([0], [0], color='violet', lw=0, marker='v',
-           markersize=6, markeredgewidth=0.5, markerfacecolor='none', label='SP+1SC-SAFF'),
+           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SP+1SC-SAFF'),
 
     Line2D([0], [0], color='black', lw=0, marker='<',
-           markersize=6, markeredgewidth=0.5, markerfacecolor='none', label='SP+1RF-SAFF'),
+           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SP+1RF-SAFF'),
 
-
-    Line2D([0], [0], color='red', lw=0, marker='s',
-           markersize=6, markeredgewidth=0.5, markerfacecolor='none', label='SPRF-SARF'),
 ]
 
 # Add the custom legend inside the plot area at the lower right

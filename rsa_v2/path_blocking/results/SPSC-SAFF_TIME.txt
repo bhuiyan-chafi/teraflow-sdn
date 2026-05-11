@@ -1,0 +1,56 @@
+Successfully loaded 22 links for study.
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=450
+Stopping: CI <= 10.0% of P_b OR max 2000000 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.01s ---
+    Transient: 4497 requests, 136 blocked
+    Progress: 500 requests | P_b=0.04800000 | CI=0.01873744 | Rel.CI=39.04% | Avg.GraphGen=0.3614 ms | Avg.DijkstraPath=6.4799 ms | Avg.RSA=4.4771 ms
+    Progress: 1000 requests | P_b=0.03800000 | CI=0.01185047 | Rel.CI=31.19% | Avg.GraphGen=0.3670 ms | Avg.DijkstraPath=6.7175 ms | Avg.RSA=4.5882 ms
+    Progress: 1500 requests | P_b=0.03400000 | CI=0.00917146 | Rel.CI=26.97% | Avg.GraphGen=0.4012 ms | Avg.DijkstraPath=7.0609 ms | Avg.RSA=4.6859 ms
+    Progress: 2000 requests | P_b=0.03750000 | CI=0.00832640 | Rel.CI=22.20% | Avg.GraphGen=0.3380 ms | Avg.DijkstraPath=6.1156 ms | Avg.RSA=4.3318 ms
+    Progress: 2500 requests | P_b=0.03560000 | CI=0.00726340 | Rel.CI=20.40% | Avg.GraphGen=0.4774 ms | Avg.DijkstraPath=7.9080 ms | Avg.RSA=5.2659 ms
+    Progress: 3000 requests | P_b=0.03466667 | CI=0.00654621 | Rel.CI=18.88% | Avg.GraphGen=0.4074 ms | Avg.DijkstraPath=7.2953 ms | Avg.RSA=4.7867 ms
+    Progress: 3500 requests | P_b=0.03828571 | CI=0.00635716 | Rel.CI=16.60% | Avg.GraphGen=0.3162 ms | Avg.DijkstraPath=6.0728 ms | Avg.RSA=4.3041 ms
+    Progress: 4000 requests | P_b=0.03925000 | CI=0.00601799 | Rel.CI=15.33% | Avg.GraphGen=0.3343 ms | Avg.DijkstraPath=5.9439 ms | Avg.RSA=4.1897 ms
+    Progress: 4500 requests | P_b=0.04133333 | CI=0.00581613 | Rel.CI=14.07% | Avg.GraphGen=0.3381 ms | Avg.DijkstraPath=5.9866 ms | Avg.RSA=4.2593 ms
+    Progress: 5000 requests | P_b=0.04220000 | CI=0.00557269 | Rel.CI=13.21% | Avg.GraphGen=0.3279 ms | Avg.DijkstraPath=5.9425 ms | Avg.RSA=4.2592 ms
+    Progress: 5500 requests | P_b=0.04509091 | CI=0.00548404 | Rel.CI=12.16% | Avg.GraphGen=0.3205 ms | Avg.DijkstraPath=6.1679 ms | Avg.RSA=4.1718 ms
+    Progress: 6000 requests | P_b=0.04716667 | CI=0.00536422 | Rel.CI=11.37% | Avg.GraphGen=0.3124 ms | Avg.DijkstraPath=5.9961 ms | Avg.RSA=4.0774 ms
+    Progress: 6500 requests | P_b=0.04523077 | CI=0.00505203 | Rel.CI=11.17% | Avg.GraphGen=0.3272 ms | Avg.DijkstraPath=5.9061 ms | Avg.RSA=4.2069 ms
+    Progress: 7000 requests | P_b=0.04457143 | CI=0.00483431 | Rel.CI=10.85% | Avg.GraphGen=0.3237 ms | Avg.DijkstraPath=5.9061 ms | Avg.RSA=4.1774 ms
+    Progress: 7500 requests | P_b=0.04506667 | CI=0.00469504 | Rel.CI=10.42% | Avg.GraphGen=0.3193 ms | Avg.DijkstraPath=5.8955 ms | Avg.RSA=4.2081 ms
+    Progress: 8000 requests | P_b=0.04550000 | CI=0.00456672 | Rel.CI=10.04% | Avg.GraphGen=0.2986 ms | Avg.DijkstraPath=5.7439 ms | Avg.RSA=4.1228 ms
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 450,
+    "path_strategy": "highest-slot",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "total_requests": 8020,
+    "transient_contention_rate": 3.02423838,
+    "successful_requests": 7653,
+    "blocked_requests": 367,
+    "path_blocked": 0,
+    "spectral_blocked": 367,
+    "blocking_probability": 0.0457606,
+    "absolute_confidence_interval": 0.00457344,
+    "relative_confidence_interval_pct": 9.9943,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 2000000,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 367
+    },
+    "most_used_links": "RDMwa->RDMny_3 (1585), RDMtx->RDMga_13 (1561), RDMil->RDMpa_15 (1547), RDMca2->RDMtx_6 (1406), RDMut->RDMco_7 (1393), RDMtx->RDMil_12 (1374), RDMut->RDMmi_8 (1358), RDMco->RDMtx_10 (1246), RDMil->RDMmi_14 (1225), RDMga->RDMma_22 (1200)",
+    "avg_graph_gen_ms": 0.3482,
+    "avg_path_comp_ms": 6.3212,
+    "avg_rsa_ms": 4.382
+}

@@ -764,6 +764,8 @@ class TopologyHelper:
 
     @staticmethod
     def perform_rsa(path_obj, bitrate, strategy='first-fit'):
+        import time
+        t_rsa_start = time.time()
         if not bitrate:
             return None
         bitrate_gbps = bitrate
@@ -820,6 +822,8 @@ class TopologyHelper:
             common_bitmap_str = f"{reference_bitmap:0{reference_slots}b}"
             required_slots_str = f"{mask:0{reference_slots}b}"
             final_bitmap_str = f"{final_bitmap_val:0{reference_slots}b}"
+            rsa_ms = (time.time() - t_rsa_start) * 1000
+            logger.info(f"[Timing] RSA computation: {rsa_ms:.4f} ms")
             return {
                 'success': True,
                 'num_slots': num_slots,
@@ -832,9 +836,12 @@ class TopologyHelper:
                 'band_info': band_info,
                 'mask': mask,
                 'endpoints': endpoints,
-                'links': path_obj['links']
+                'links': path_obj['links'],
+                'rsa_ms': rsa_ms
             }
         else:
+            rsa_ms = (time.time() - t_rsa_start) * 1000
+            logger.info(f"[Timing] RSA computation: {rsa_ms:.4f} ms")
             return {
                 'success': False,
                 'num_slots': num_slots,
@@ -844,7 +851,8 @@ class TopologyHelper:
                 'band_info': band_info,
                 'mask': 0,
                 'endpoints': [],
-                'links': path_obj['links']
+                'links': path_obj['links'],
+                'rsa_ms': rsa_ms
             }
 
     @staticmethod

@@ -17,7 +17,7 @@ NODES = ["RDMwa", "RDMca1", "RDMca2", "RDMut", "RDMco", "RDMne", "RDMtx",
 # ]
 BIT_RATES = [100, 200, 400]
 BIT_RATE_PROBS = [0.5, 0.25, 0.25]
-ERLANGS = [1350]
+ERLANGS = [10000]
 # for parallel loads: 2250, 1950, 1650, 1350, 1050, 750
 
 # CI-based stopping parameters

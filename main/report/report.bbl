@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.3 $
+% $ biblatex bbl format version 3.2 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,8 +18,8 @@
 
 
 \refsection{0}
-  \datalist[entry]{none/global//global/global/global}
-    \entry{itu694}{manual}{}{}
+  \datalist[entry]{none/global//global/global}
+    \entry{itu694}{manual}{}
       \name{author}{1}{}{%
         {{hash=5c3541b083d376fcf7bf52bd401a8ab9}{%
            family={Union},
@@ -29,12 +29,10 @@
       }
       \strng{namehash}{5c3541b083d376fcf7bf52bd401a8ab9}
       \strng{fullhash}{5c3541b083d376fcf7bf52bd401a8ab9}
-      \strng{fullhashraw}{5c3541b083d376fcf7bf52bd401a8ab9}
       \strng{bibnamehash}{5c3541b083d376fcf7bf52bd401a8ab9}
       \strng{authorbibnamehash}{5c3541b083d376fcf7bf52bd401a8ab9}
       \strng{authornamehash}{5c3541b083d376fcf7bf52bd401a8ab9}
       \strng{authorfullhash}{5c3541b083d376fcf7bf52bd401a8ab9}
-      \strng{authorfullhashraw}{5c3541b083d376fcf7bf52bd401a8ab9}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -47,7 +45,7 @@
       \verb https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-G.694.1-202010-I!!PDF-E&type=items
       \endverb
     \endentry
-    \entry{algorithmsRSATaxonomy}{inproceedings}{}{}
+    \entry{algorithmsRSATaxonomy}{inproceedings}{}
       \name{author}{3}{}{%
         {{hash=5f518644af06fc8c2f76b79432abe1b9}{%
            family={Bogado-Martínez},
@@ -70,18 +68,15 @@
            family={IEEE},
            familyi={I\bibinitperiod}}}%
       }
-      \strng{namehash}{ef5472efc7c48cf67edeb586caa67af2}
+      \strng{namehash}{a9fcc336fa51ceecb13b542e61c8720b}
       \strng{fullhash}{a9fcc336fa51ceecb13b542e61c8720b}
-      \strng{fullhashraw}{a9fcc336fa51ceecb13b542e61c8720b}
       \strng{bibnamehash}{a9fcc336fa51ceecb13b542e61c8720b}
       \strng{authorbibnamehash}{a9fcc336fa51ceecb13b542e61c8720b}
-      \strng{authornamehash}{ef5472efc7c48cf67edeb586caa67af2}
+      \strng{authornamehash}{a9fcc336fa51ceecb13b542e61c8720b}
       \strng{authorfullhash}{a9fcc336fa51ceecb13b542e61c8720b}
-      \strng{authorfullhashraw}{a9fcc336fa51ceecb13b542e61c8720b}
       \strng{editorbibnamehash}{472abfae8142fdb6f39d081303e8af85}
       \strng{editornamehash}{472abfae8142fdb6f39d081303e8af85}
       \strng{editorfullhash}{472abfae8142fdb6f39d081303e8af85}
-      \strng{editorfullhashraw}{472abfae8142fdb6f39d081303e8af85}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
@@ -89,7 +84,7 @@
       \field{title}{Algorithms for Routing and Spectrum Allocation in Elastic Optical Networks: A Taxonomy}
       \field{year}{2014}
     \endentry
-    \entry{efficientDynamicRSAEon}{inproceedings}{}{}
+    \entry{efficientDynamicRSAEon}{inproceedings}{}
       \name{author}{3}{}{%
         {{hash=42f497f3b80141fd90fc0b4b55c19aed}{%
            family={Wu},
@@ -112,19 +107,15 @@
            family={OSA},
            familyi={O\bibinitperiod}}}%
       }
-      \strng{namehash}{21c5c8450859eb4ba0c0c471e450087d}
+      \strng{namehash}{56ba189381ae012d73d4b9833f5ca09a}
       \strng{fullhash}{56ba189381ae012d73d4b9833f5ca09a}
-      \strng{fullhashraw}{56ba189381ae012d73d4b9833f5ca09a}
       \strng{bibnamehash}{56ba189381ae012d73d4b9833f5ca09a}
       \strng{authorbibnamehash}{56ba189381ae012d73d4b9833f5ca09a}
-      \strng{authornamehash}{21c5c8450859eb4ba0c0c471e450087d}
+      \strng{authornamehash}{56ba189381ae012d73d4b9833f5ca09a}
       \strng{authorfullhash}{56ba189381ae012d73d4b9833f5ca09a}
-      \strng{authorfullhashraw}{56ba189381ae012d73d4b9833f5ca09a}
       \strng{editorbibnamehash}{979e888081a8454b643d9b1250a5f745}
       \strng{editornamehash}{979e888081a8454b643d9b1250a5f745}
       \strng{editorfullhash}{979e888081a8454b643d9b1250a5f745}
-      \strng{editorfullhashraw}{979e888081a8454b643d9b1250a5f745}
-      \field{extraname}{1}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
@@ -132,7 +123,7 @@
       \field{title}{Efficient Dynamic Routing and Spectrum Assignment for Multifiber Elastic Optical Networks}
       \field{year}{2019}
     \endentry
-    \entry{heuristicWSAMultihop}{inproceedings}{}{}
+    \entry{heuristicWSAMultihop}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=91500b50d2b0a382a7aaa98bd34b11bd}{%
            family={Zhang},
@@ -152,16 +143,13 @@
       }
       \strng{namehash}{bb629cbfb4ab1c9b534b059412f75b41}
       \strng{fullhash}{bb629cbfb4ab1c9b534b059412f75b41}
-      \strng{fullhashraw}{bb629cbfb4ab1c9b534b059412f75b41}
       \strng{bibnamehash}{bb629cbfb4ab1c9b534b059412f75b41}
       \strng{authorbibnamehash}{bb629cbfb4ab1c9b534b059412f75b41}
       \strng{authornamehash}{bb629cbfb4ab1c9b534b059412f75b41}
       \strng{authorfullhash}{bb629cbfb4ab1c9b534b059412f75b41}
-      \strng{authorfullhashraw}{bb629cbfb4ab1c9b534b059412f75b41}
       \strng{editorbibnamehash}{472abfae8142fdb6f39d081303e8af85}
       \strng{editornamehash}{472abfae8142fdb6f39d081303e8af85}
       \strng{editorfullhash}{472abfae8142fdb6f39d081303e8af85}
-      \strng{editorfullhashraw}{472abfae8142fdb6f39d081303e8af85}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
@@ -169,7 +157,7 @@
       \field{title}{A Heuristic Wavelength Assignment Algorithm for Multihop WDM Networks with Wavelength Routing and Wavelength Re-Use}
       \field{year}{1995}
     \endentry
-    \entry{novelRoutingWSA}{inproceedings}{}{}
+    \entry{novelRoutingWSA}{inproceedings}{}
       \name{author}{5}{}{%
         {{hash=2a887263d22622462029b5b0191f8132}{%
            family={Wu},
@@ -202,19 +190,15 @@
            family={ACP},
            familyi={A\bibinitperiod}}}%
       }
-      \strng{namehash}{5d46e14f05f68983d73360eaf83da551}
+      \strng{namehash}{13bc62d330d83e4d712e15d4d004a492}
       \strng{fullhash}{c061a3ed41a7c332b88230d90bc1e08d}
-      \strng{fullhashraw}{c061a3ed41a7c332b88230d90bc1e08d}
       \strng{bibnamehash}{c061a3ed41a7c332b88230d90bc1e08d}
       \strng{authorbibnamehash}{c061a3ed41a7c332b88230d90bc1e08d}
-      \strng{authornamehash}{5d46e14f05f68983d73360eaf83da551}
+      \strng{authornamehash}{13bc62d330d83e4d712e15d4d004a492}
       \strng{authorfullhash}{c061a3ed41a7c332b88230d90bc1e08d}
-      \strng{authorfullhashraw}{c061a3ed41a7c332b88230d90bc1e08d}
       \strng{editorbibnamehash}{036578329f4509e4a7be59eb39666009}
       \strng{editornamehash}{036578329f4509e4a7be59eb39666009}
       \strng{editorfullhash}{036578329f4509e4a7be59eb39666009}
-      \strng{editorfullhashraw}{036578329f4509e4a7be59eb39666009}
-      \field{extraname}{2}
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
@@ -222,7 +206,7 @@
       \field{title}{A Novel Routing and Wavelength Assignment Algorithm based on Colored Multigraph Model in WDM Networks}
       \field{year}{2009}
     \endentry
-    \entry{aboutTFS}{manual}{}{}
+    \entry{aboutTFS}{manual}{}
       \name{author}{1}{}{%
         {{hash=d35591bdf12c3515b328845fbce3fac8}{%
            family={ETSI},
@@ -230,12 +214,10 @@
       }
       \strng{namehash}{d35591bdf12c3515b328845fbce3fac8}
       \strng{fullhash}{d35591bdf12c3515b328845fbce3fac8}
-      \strng{fullhashraw}{d35591bdf12c3515b328845fbce3fac8}
       \strng{bibnamehash}{d35591bdf12c3515b328845fbce3fac8}
       \strng{authorbibnamehash}{d35591bdf12c3515b328845fbce3fac8}
       \strng{authornamehash}{d35591bdf12c3515b328845fbce3fac8}
       \strng{authorfullhash}{d35591bdf12c3515b328845fbce3fac8}
-      \strng{authorfullhashraw}{d35591bdf12c3515b328845fbce3fac8}
       \field{extraname}{1}
       \field{sortinit}{7}
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
@@ -249,7 +231,7 @@
       \verb https://tfs.etsi.org
       \endverb
     \endentry
-    \entry{openconfigYang}{inproceedings}{}{}
+    \entry{openconfigYang}{inproceedings}{}
       \name{author}{6}{}{%
         {{hash=3a915795c22dfa68cfd8a45567890e74}{%
            family={Amlou},
@@ -282,14 +264,12 @@
            given={Abdella},
            giveni={A\bibinitperiod}}}%
       }
-      \strng{namehash}{06460a2a244c6bbb666944abbb683aaa}
+      \strng{namehash}{ec7bb622e65b860181c1433594f49440}
       \strng{fullhash}{f712e151d80c5bd0e915e36f7ef90857}
-      \strng{fullhashraw}{f712e151d80c5bd0e915e36f7ef90857}
       \strng{bibnamehash}{f712e151d80c5bd0e915e36f7ef90857}
       \strng{authorbibnamehash}{f712e151d80c5bd0e915e36f7ef90857}
-      \strng{authornamehash}{06460a2a244c6bbb666944abbb683aaa}
+      \strng{authornamehash}{ec7bb622e65b860181c1433594f49440}
       \strng{authorfullhash}{f712e151d80c5bd0e915e36f7ef90857}
-      \strng{authorfullhashraw}{f712e151d80c5bd0e915e36f7ef90857}
       \field{sortinit}{8}
       \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
@@ -304,7 +284,7 @@
       \endverb
       \keyw{Performance evaluation;Fault tolerance;Protocols;Computational modeling;Computer network reliability;Fault tolerant systems;Microservice architectures;Network management;Network automation;Network configuration;OpenConfig;YANG model;NETCONF}
     \endentry
-    \entry{openroadmYang}{inproceedings}{}{}
+    \entry{openroadmYang}{inproceedings}{}
       \name{author}{5}{}{%
         {{hash=472b21d6f69856a176a324691fb4e428}{%
            family={Karunakaran},
@@ -332,14 +312,12 @@
            given={Thomas},
            giveni={T\bibinitperiod}}}%
       }
-      \strng{namehash}{56065f173fb7fbcce7cc9b15dd487487}
+      \strng{namehash}{b7053c9eaede68b2ec135cfb052af614}
       \strng{fullhash}{f77e5f1f33d7e8dbae2af5718dac03d2}
-      \strng{fullhashraw}{f77e5f1f33d7e8dbae2af5718dac03d2}
       \strng{bibnamehash}{f77e5f1f33d7e8dbae2af5718dac03d2}
       \strng{authorbibnamehash}{f77e5f1f33d7e8dbae2af5718dac03d2}
-      \strng{authornamehash}{56065f173fb7fbcce7cc9b15dd487487}
+      \strng{authornamehash}{b7053c9eaede68b2ec135cfb052af614}
       \strng{authorfullhash}{f77e5f1f33d7e8dbae2af5718dac03d2}
-      \strng{authorfullhashraw}{f77e5f1f33d7e8dbae2af5718dac03d2}
       \field{sortinit}{9}
       \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
@@ -350,7 +328,7 @@
       \field{pages}{1\bibrangedash 5}
       \range{pages}{5}
     \endentry
-    \entry{softwareDefinedOpticalNetwork}{inproceedings}{}{}
+    \entry{softwareDefinedOpticalNetwork}{inproceedings}{}
       \name{author}{1}{}{%
         {{hash=18c20916cfab531192e99eb443d25657}{%
            family={Ji},
@@ -360,12 +338,10 @@
       }
       \strng{namehash}{18c20916cfab531192e99eb443d25657}
       \strng{fullhash}{18c20916cfab531192e99eb443d25657}
-      \strng{fullhashraw}{18c20916cfab531192e99eb443d25657}
       \strng{bibnamehash}{18c20916cfab531192e99eb443d25657}
       \strng{authorbibnamehash}{18c20916cfab531192e99eb443d25657}
       \strng{authornamehash}{18c20916cfab531192e99eb443d25657}
       \strng{authorfullhash}{18c20916cfab531192e99eb443d25657}
-      \strng{authorfullhashraw}{18c20916cfab531192e99eb443d25657}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -380,7 +356,7 @@
       \endverb
       \keyw{Optical switches;Optical filters;Optical fiber networks;Optical transmitters;Optical packet switching;Optical receivers;Hardware;Transponders;Switching circuits;Optical fibers;Software defined optical network;software defined network;transport network;flexible grid;WDM network;ROADM;variable transponder;control plane}
     \endentry
-    \entry{largeScaleOpticalSDN}{inproceedings}{}{}
+    \entry{largeScaleOpticalSDN}{inproceedings}{}
       \name{author}{8}{}{%
         {{hash=b9d754f1c8e4f4cb248fc98fa2495afa}{%
            family={Shah},
@@ -423,14 +399,12 @@
            given={G.},
            giveni={G\bibinitperiod}}}%
       }
-      \strng{namehash}{d0f25fa7ac96fafa36c118194be361a5}
+      \strng{namehash}{eda70188afcbc43ae52546c20a75496a}
       \strng{fullhash}{99020b94d0945d778c7c67e27e70d8cc}
-      \strng{fullhashraw}{99020b94d0945d778c7c67e27e70d8cc}
-      \strng{bibnamehash}{d0f25fa7ac96fafa36c118194be361a5}
-      \strng{authorbibnamehash}{d0f25fa7ac96fafa36c118194be361a5}
-      \strng{authornamehash}{d0f25fa7ac96fafa36c118194be361a5}
+      \strng{bibnamehash}{eda70188afcbc43ae52546c20a75496a}
+      \strng{authorbibnamehash}{eda70188afcbc43ae52546c20a75496a}
+      \strng{authornamehash}{eda70188afcbc43ae52546c20a75496a}
       \strng{authorfullhash}{99020b94d0945d778c7c67e27e70d8cc}
-      \strng{authorfullhashraw}{99020b94d0945d778c7c67e27e70d8cc}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -445,7 +419,7 @@
       \endverb
       \keyw{Protocols;Optical fiber networks;Optical switches;Integrated optics;Computer architecture;Telecommunications;Cloud computing;Optical Transport Networks;Software-Defined Networking;Virtual Network Functions;Simulation Framework}
     \endentry
-    \entry{odtn}{inproceedings}{}{}
+    \entry{odtn}{inproceedings}{}
       \name{author}{7}{}{%
         {{hash=70fb3ce0f6ff7365851efbd87d130333}{%
            family={Campanella},
@@ -483,14 +457,12 @@
            given={Yi},
            giveni={Y\bibinitperiod}}}%
       }
-      \strng{namehash}{c73b3a8f7923830823211f9ffbfdf8eb}
+      \strng{namehash}{c11794ea791323747985005d1a4465ab}
       \strng{fullhash}{b84d6a9e29dc73917ba6f5581199d12a}
-      \strng{fullhashraw}{b84d6a9e29dc73917ba6f5581199d12a}
-      \strng{bibnamehash}{c73b3a8f7923830823211f9ffbfdf8eb}
-      \strng{authorbibnamehash}{c73b3a8f7923830823211f9ffbfdf8eb}
-      \strng{authornamehash}{c73b3a8f7923830823211f9ffbfdf8eb}
+      \strng{bibnamehash}{c11794ea791323747985005d1a4465ab}
+      \strng{authorbibnamehash}{c11794ea791323747985005d1a4465ab}
+      \strng{authornamehash}{c11794ea791323747985005d1a4465ab}
       \strng{authorfullhash}{b84d6a9e29dc73917ba6f5581199d12a}
-      \strng{authorfullhashraw}{b84d6a9e29dc73917ba6f5581199d12a}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -505,7 +477,7 @@
       \endverb
       \keyw{Optical design;Optical switches;Optical fiber networks;Adaptive optics;Topology;Transponders;Optical devices;Disaggregated Optical Networks;Software Defined Networking (SDN);Control Plane Resilience;Open and Disaggregated Transport Networks (ODTN);Leaf-Spine Fabric;Data Plane Programmability;Open Networking Foundation (ONF);Open Network Operating System (ONOS)}
     \endentry
-    \entry{opticalNetworksAndMangementControl}{article}{}{}
+    \entry{opticalNetworksAndMangementControl}{article}{}
       \name{author}{11}{}{%
         {{hash=28d1015a8e263a27be7f9587671272b6}{%
            family={Andriolli},
@@ -563,14 +535,12 @@
            given={Francesco},
            giveni={F\bibinitperiod}}}%
       }
-      \strng{namehash}{e5a26a551ad9b2aa5f7e3b13d77a4e03}
+      \strng{namehash}{1b51a951ef2117d73ba93e0571e7d0eb}
       \strng{fullhash}{549cbcb111f421248c799c1a178b29c4}
-      \strng{fullhashraw}{549cbcb111f421248c799c1a178b29c4}
-      \strng{bibnamehash}{e5a26a551ad9b2aa5f7e3b13d77a4e03}
-      \strng{authorbibnamehash}{e5a26a551ad9b2aa5f7e3b13d77a4e03}
-      \strng{authornamehash}{e5a26a551ad9b2aa5f7e3b13d77a4e03}
+      \strng{bibnamehash}{1b51a951ef2117d73ba93e0571e7d0eb}
+      \strng{authorbibnamehash}{1b51a951ef2117d73ba93e0571e7d0eb}
+      \strng{authornamehash}{1b51a951ef2117d73ba93e0571e7d0eb}
       \strng{authorfullhash}{549cbcb111f421248c799c1a178b29c4}
-      \strng{authorfullhashraw}{549cbcb111f421248c799c1a178b29c4}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -592,7 +562,7 @@
       \verb https://www.sciencedirect.com/science/article/pii/S1573427721000497
       \endverb
     \endentry
-    \entry{rsaHeuristicSliced}{inproceedings}{}{}
+    \entry{rsaHeuristicSliced}{inproceedings}{}
       \name{author}{3}{}{%
         {{hash=7a9b41db8ddfa80352e18c9c7900d32a}{%
            family={Alam},
@@ -615,18 +585,15 @@
            family={IEEE},
            familyi={I\bibinitperiod}}}%
       }
-      \strng{namehash}{67827fa11d8faaf5f2bce23bb0968846}
+      \strng{namehash}{325f42cac94a429238ca956e054f40a3}
       \strng{fullhash}{325f42cac94a429238ca956e054f40a3}
-      \strng{fullhashraw}{325f42cac94a429238ca956e054f40a3}
       \strng{bibnamehash}{325f42cac94a429238ca956e054f40a3}
       \strng{authorbibnamehash}{325f42cac94a429238ca956e054f40a3}
-      \strng{authornamehash}{67827fa11d8faaf5f2bce23bb0968846}
+      \strng{authornamehash}{325f42cac94a429238ca956e054f40a3}
       \strng{authorfullhash}{325f42cac94a429238ca956e054f40a3}
-      \strng{authorfullhashraw}{325f42cac94a429238ca956e054f40a3}
       \strng{editorbibnamehash}{472abfae8142fdb6f39d081303e8af85}
       \strng{editornamehash}{472abfae8142fdb6f39d081303e8af85}
       \strng{editorfullhash}{472abfae8142fdb6f39d081303e8af85}
-      \strng{editorfullhashraw}{472abfae8142fdb6f39d081303e8af85}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -634,7 +601,7 @@
       \field{title}{Routing and Spectrum Allocation Heuristic for Sliced Elastic Optical Network System}
       \field{year}{2023}
     \endentry
-    \entry{algorithmResearchRSAONR}{inproceedings}{}{}
+    \entry{algorithmResearchRSAONR}{inproceedings}{}
       \name{author}{6}{}{%
         {{hash=20151ce330324501b36f53ba560fe9ed}{%
            family={Chai},
@@ -672,18 +639,15 @@
            family={ICOCN},
            familyi={I\bibinitperiod}}}%
       }
-      \strng{namehash}{7298f4b68071272115ef86aed696f02a}
+      \strng{namehash}{b7d8b1a7cfe5e71ce99c2634c31781ba}
       \strng{fullhash}{370849b2da15b92eb33d37bc5bb729db}
-      \strng{fullhashraw}{370849b2da15b92eb33d37bc5bb729db}
       \strng{bibnamehash}{370849b2da15b92eb33d37bc5bb729db}
       \strng{authorbibnamehash}{370849b2da15b92eb33d37bc5bb729db}
-      \strng{authornamehash}{7298f4b68071272115ef86aed696f02a}
+      \strng{authornamehash}{b7d8b1a7cfe5e71ce99c2634c31781ba}
       \strng{authorfullhash}{370849b2da15b92eb33d37bc5bb729db}
-      \strng{authorfullhashraw}{370849b2da15b92eb33d37bc5bb729db}
       \strng{editorbibnamehash}{1848eb03dbce42a3b43b72eb23d8b7ba}
       \strng{editornamehash}{1848eb03dbce42a3b43b72eb23d8b7ba}
       \strng{editorfullhash}{1848eb03dbce42a3b43b72eb23d8b7ba}
-      \strng{editorfullhashraw}{1848eb03dbce42a3b43b72eb23d8b7ba}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
@@ -691,7 +655,7 @@
       \field{title}{Algorithm Research of Routing and Spectrum Allocation based on OSNR impairment model in Elastic Optical Network}
       \field{year}{2017}
     \endentry
-    \entry{rsaFlexGrid}{inproceedings}{}{}
+    \entry{rsaFlexGrid}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=766dacbaa67a3542a5f796131b1765a2}{%
            family={Ning},
@@ -706,19 +670,17 @@
       }
       \strng{namehash}{561728efe78534ff519cecdfc5f386f9}
       \strng{fullhash}{561728efe78534ff519cecdfc5f386f9}
-      \strng{fullhashraw}{561728efe78534ff519cecdfc5f386f9}
       \strng{bibnamehash}{561728efe78534ff519cecdfc5f386f9}
       \strng{authorbibnamehash}{561728efe78534ff519cecdfc5f386f9}
       \strng{authornamehash}{561728efe78534ff519cecdfc5f386f9}
       \strng{authorfullhash}{561728efe78534ff519cecdfc5f386f9}
-      \strng{authorfullhashraw}{561728efe78534ff519cecdfc5f386f9}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Routing and Spectrum Allocation in Flexi-Grid Optical Networks}
     \endentry
-    \entry{distanceAdaptive}{inproceedings}{}{}
+    \entry{distanceAdaptive}{inproceedings}{}
       \name{author}{3}{}{%
         {{hash=252402881651dcc176bcfd27a6564d12}{%
            family={Izquierdo-Zaragoza},
@@ -741,18 +703,15 @@
            family={ONDM},
            familyi={O\bibinitperiod}}}%
       }
-      \strng{namehash}{dfa564c9f40ae25c672831e0be59f04e}
+      \strng{namehash}{787eeb6a62a357979eaf326c9fb52e71}
       \strng{fullhash}{787eeb6a62a357979eaf326c9fb52e71}
-      \strng{fullhashraw}{787eeb6a62a357979eaf326c9fb52e71}
       \strng{bibnamehash}{787eeb6a62a357979eaf326c9fb52e71}
       \strng{authorbibnamehash}{787eeb6a62a357979eaf326c9fb52e71}
-      \strng{authornamehash}{dfa564c9f40ae25c672831e0be59f04e}
+      \strng{authornamehash}{787eeb6a62a357979eaf326c9fb52e71}
       \strng{authorfullhash}{787eeb6a62a357979eaf326c9fb52e71}
-      \strng{authorfullhashraw}{787eeb6a62a357979eaf326c9fb52e71}
       \strng{editorbibnamehash}{aecc74596b2137766f574cb2f3c2b100}
       \strng{editornamehash}{aecc74596b2137766f574cb2f3c2b100}
       \strng{editorfullhash}{aecc74596b2137766f574cb2f3c2b100}
-      \strng{editorfullhashraw}{aecc74596b2137766f574cb2f3c2b100}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
@@ -760,7 +719,7 @@
       \field{title}{Distance-adaptive online RSA algorithms for heterogeneous flex-grid networks}
       \field{year}{2014}
     \endentry
-    \entry{failureProbability}{inproceedings}{}{}
+    \entry{failureProbability}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=3b7e7e14be8d075d42b38fe392b82d66}{%
            family={Yan},
@@ -780,16 +739,13 @@
       }
       \strng{namehash}{85a3bec66f98276bb245ae6f03648f45}
       \strng{fullhash}{85a3bec66f98276bb245ae6f03648f45}
-      \strng{fullhashraw}{85a3bec66f98276bb245ae6f03648f45}
       \strng{bibnamehash}{85a3bec66f98276bb245ae6f03648f45}
       \strng{authorbibnamehash}{85a3bec66f98276bb245ae6f03648f45}
       \strng{authornamehash}{85a3bec66f98276bb245ae6f03648f45}
       \strng{authorfullhash}{85a3bec66f98276bb245ae6f03648f45}
-      \strng{authorfullhashraw}{85a3bec66f98276bb245ae6f03648f45}
       \strng{editorbibnamehash}{b7ebdbe3127036305cea6053057d6181}
       \strng{editornamehash}{b7ebdbe3127036305cea6053057d6181}
       \strng{editorfullhash}{b7ebdbe3127036305cea6053057d6181}
-      \strng{editorfullhashraw}{b7ebdbe3127036305cea6053057d6181}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
@@ -797,7 +753,7 @@
       \field{title}{Failure probability and spectrum occupancy rate based routing and spectrum allocation algorithm in elastic optical networks}
       \field{year}{2023}
     \endentry
-    \entry{maximumSpectrumCompleteness}{inproceedings}{}{}
+    \entry{maximumSpectrumCompleteness}{inproceedings}{}
       \name{author}{5}{}{%
         {{hash=cdf7729c14e1032a92313121b3f3fe11}{%
            family={Zhang},
@@ -830,18 +786,15 @@
            family={WOCC},
            familyi={W\bibinitperiod}}}%
       }
-      \strng{namehash}{ef918811eaea046bbad04d9c2fd5c40d}
+      \strng{namehash}{226d0c4167c893da8a900ccd3ed78703}
       \strng{fullhash}{c80b1a28a01c1f12240c7c6a98412c46}
-      \strng{fullhashraw}{c80b1a28a01c1f12240c7c6a98412c46}
       \strng{bibnamehash}{c80b1a28a01c1f12240c7c6a98412c46}
       \strng{authorbibnamehash}{c80b1a28a01c1f12240c7c6a98412c46}
-      \strng{authornamehash}{ef918811eaea046bbad04d9c2fd5c40d}
+      \strng{authornamehash}{226d0c4167c893da8a900ccd3ed78703}
       \strng{authorfullhash}{c80b1a28a01c1f12240c7c6a98412c46}
-      \strng{authorfullhashraw}{c80b1a28a01c1f12240c7c6a98412c46}
       \strng{editorbibnamehash}{116588b54c618909e8ad92144b4e8b54}
       \strng{editornamehash}{116588b54c618909e8ad92144b4e8b54}
       \strng{editorfullhash}{116588b54c618909e8ad92144b4e8b54}
-      \strng{editorfullhashraw}{116588b54c618909e8ad92144b4e8b54}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
@@ -849,7 +802,7 @@
       \field{title}{Maximum-Spectrum-Completeness based Routing and Spectrum Assignment Algorithms for Elastic Optical Networks}
       \field{year}{2019}
     \endentry
-    \entry{spectrumStatusAware}{inproceedings}{}{}
+    \entry{spectrumStatusAware}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=206cb723d348a372b3e43eab7da5e3ac}{%
            family={Srivastava},
@@ -877,18 +830,15 @@
            family={IEEE},
            familyi={I\bibinitperiod}}}%
       }
-      \strng{namehash}{1a9a4a45cfd9a4f96dc4d773d3a4715f}
+      \strng{namehash}{68e1d3ba9eca785de8741b255746737d}
       \strng{fullhash}{71d3e2a2914899b50072026692bbcbf6}
-      \strng{fullhashraw}{71d3e2a2914899b50072026692bbcbf6}
       \strng{bibnamehash}{71d3e2a2914899b50072026692bbcbf6}
       \strng{authorbibnamehash}{71d3e2a2914899b50072026692bbcbf6}
-      \strng{authornamehash}{1a9a4a45cfd9a4f96dc4d773d3a4715f}
+      \strng{authornamehash}{68e1d3ba9eca785de8741b255746737d}
       \strng{authorfullhash}{71d3e2a2914899b50072026692bbcbf6}
-      \strng{authorfullhashraw}{71d3e2a2914899b50072026692bbcbf6}
       \strng{editorbibnamehash}{472abfae8142fdb6f39d081303e8af85}
       \strng{editornamehash}{472abfae8142fdb6f39d081303e8af85}
       \strng{editorfullhash}{472abfae8142fdb6f39d081303e8af85}
-      \strng{editorfullhashraw}{472abfae8142fdb6f39d081303e8af85}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
@@ -896,7 +846,7 @@
       \field{title}{Spectrum Status Aware Dynamic Routing and Spectrum Allocation in Elastic Optical Network}
       \field{year}{2024}
     \endentry
-    \entry{optimizingSpectrumAllocationEON}{inproceedings}{}{}
+    \entry{optimizingSpectrumAllocationEON}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=10cf16a812b33f7f62b2305a86caf632}{%
            family={Ghallaj},
@@ -924,18 +874,15 @@
            family={ITG},
            familyi={I\bibinitperiod}}}%
       }
-      \strng{namehash}{62e066da699b8581c0e6447d4baea346}
+      \strng{namehash}{40b3b6ae65be201117fba93552541c41}
       \strng{fullhash}{f15c0f77d2adc20ffbd230432e94d088}
-      \strng{fullhashraw}{f15c0f77d2adc20ffbd230432e94d088}
       \strng{bibnamehash}{f15c0f77d2adc20ffbd230432e94d088}
       \strng{authorbibnamehash}{f15c0f77d2adc20ffbd230432e94d088}
-      \strng{authornamehash}{62e066da699b8581c0e6447d4baea346}
+      \strng{authornamehash}{40b3b6ae65be201117fba93552541c41}
       \strng{authorfullhash}{f15c0f77d2adc20ffbd230432e94d088}
-      \strng{authorfullhashraw}{f15c0f77d2adc20ffbd230432e94d088}
       \strng{editorbibnamehash}{a3c9b602bc4d8480362c2c658003fdb3}
       \strng{editornamehash}{a3c9b602bc4d8480362c2c658003fdb3}
       \strng{editorfullhash}{a3c9b602bc4d8480362c2c658003fdb3}
-      \strng{editorfullhashraw}{a3c9b602bc4d8480362c2c658003fdb3}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
@@ -943,7 +890,7 @@
       \field{title}{Optimizing Spectrum Allocation in Flex-grid Optical Networks}
       \field{year}{2017}
     \endentry
-    \entry{routingModulation}{inproceedings}{}{}
+    \entry{routingModulation}{inproceedings}{}
       \name{author}{3}{}{%
         {{hash=5c703c9c4b927cc84f3d0e48e10574a8}{%
            family={Velinska},
@@ -966,18 +913,15 @@
            family={TELFOR},
            familyi={T\bibinitperiod}}}%
       }
-      \strng{namehash}{372682261b01a9b252d73aef21da77c1}
+      \strng{namehash}{8326756f99dacfb282de9b7d618f5aa4}
       \strng{fullhash}{8326756f99dacfb282de9b7d618f5aa4}
-      \strng{fullhashraw}{8326756f99dacfb282de9b7d618f5aa4}
       \strng{bibnamehash}{8326756f99dacfb282de9b7d618f5aa4}
       \strng{authorbibnamehash}{8326756f99dacfb282de9b7d618f5aa4}
-      \strng{authornamehash}{372682261b01a9b252d73aef21da77c1}
+      \strng{authornamehash}{8326756f99dacfb282de9b7d618f5aa4}
       \strng{authorfullhash}{8326756f99dacfb282de9b7d618f5aa4}
-      \strng{authorfullhashraw}{8326756f99dacfb282de9b7d618f5aa4}
       \strng{editorbibnamehash}{10ca1b76ec41f7a519a86feed8d900fa}
       \strng{editornamehash}{10ca1b76ec41f7a519a86feed8d900fa}
       \strng{editorfullhash}{10ca1b76ec41f7a519a86feed8d900fa}
-      \strng{editorfullhashraw}{10ca1b76ec41f7a519a86feed8d900fa}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
@@ -985,7 +929,7 @@
       \field{title}{Routing, modulation and spectrum allocation in elastic optical networks}
       \field{year}{2018}
     \endentry
-    \entry{adaptiveRSAFlex}{inproceedings}{}{}
+    \entry{adaptiveRSAFlex}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=4b1cdcff93b89f7317703cbb8e71f361}{%
            family={Reyes},
@@ -1005,16 +949,13 @@
       }
       \strng{namehash}{ce7d4820bd4e91646db1f500503a8ccc}
       \strng{fullhash}{ce7d4820bd4e91646db1f500503a8ccc}
-      \strng{fullhashraw}{ce7d4820bd4e91646db1f500503a8ccc}
       \strng{bibnamehash}{ce7d4820bd4e91646db1f500503a8ccc}
       \strng{authorbibnamehash}{ce7d4820bd4e91646db1f500503a8ccc}
       \strng{authornamehash}{ce7d4820bd4e91646db1f500503a8ccc}
       \strng{authorfullhash}{ce7d4820bd4e91646db1f500503a8ccc}
-      \strng{authorfullhashraw}{ce7d4820bd4e91646db1f500503a8ccc}
       \strng{editorbibnamehash}{a3c9b602bc4d8480362c2c658003fdb3}
       \strng{editornamehash}{a3c9b602bc4d8480362c2c658003fdb3}
       \strng{editorfullhash}{a3c9b602bc4d8480362c2c658003fdb3}
-      \strng{editorfullhashraw}{a3c9b602bc4d8480362c2c658003fdb3}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
@@ -1022,7 +963,7 @@
       \field{title}{Adaptive Routing and Spectrum Assignment in Flex-grid Optical Networks}
       \field{year}{2016}
     \endentry
-    \entry{odtnONOS}{manual}{}{}
+    \entry{odtnONOS}{manual}{}
       \name{author}{1}{}{%
         {{hash=75ec8149d4697572f2c87b2bc3fb0e14}{%
            family={ONOS},
@@ -1030,12 +971,10 @@
       }
       \strng{namehash}{75ec8149d4697572f2c87b2bc3fb0e14}
       \strng{fullhash}{75ec8149d4697572f2c87b2bc3fb0e14}
-      \strng{fullhashraw}{75ec8149d4697572f2c87b2bc3fb0e14}
       \strng{bibnamehash}{75ec8149d4697572f2c87b2bc3fb0e14}
       \strng{authorbibnamehash}{75ec8149d4697572f2c87b2bc3fb0e14}
       \strng{authornamehash}{75ec8149d4697572f2c87b2bc3fb0e14}
       \strng{authorfullhash}{75ec8149d4697572f2c87b2bc3fb0e14}
-      \strng{authorfullhashraw}{75ec8149d4697572f2c87b2bc3fb0e14}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
@@ -1048,7 +987,7 @@
       \verb https://wiki.onosproject.org/display/ODTN/ODTN
       \endverb
     \endentry
-    \entry{odlTPCE}{manual}{}{}
+    \entry{odlTPCE}{manual}{}
       \name{author}{1}{}{%
         {{hash=bfb1fa5a35d18a50aa744cc8c96cfa69}{%
            family={ODL},
@@ -1056,12 +995,10 @@
       }
       \strng{namehash}{bfb1fa5a35d18a50aa744cc8c96cfa69}
       \strng{fullhash}{bfb1fa5a35d18a50aa744cc8c96cfa69}
-      \strng{fullhashraw}{bfb1fa5a35d18a50aa744cc8c96cfa69}
       \strng{bibnamehash}{bfb1fa5a35d18a50aa744cc8c96cfa69}
       \strng{authorbibnamehash}{bfb1fa5a35d18a50aa744cc8c96cfa69}
       \strng{authornamehash}{bfb1fa5a35d18a50aa744cc8c96cfa69}
       \strng{authorfullhash}{bfb1fa5a35d18a50aa744cc8c96cfa69}
-      \strng{authorfullhashraw}{bfb1fa5a35d18a50aa744cc8c96cfa69}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
@@ -1074,7 +1011,7 @@
       \verb https://docs.opendaylight.org/en/latest/release-notes/projects/transportpce.html
       \endverb
     \endentry
-    \entry{ntiaBandwidth}{manual}{}{}
+    \entry{ntiaBandwidth}{manual}{}
       \name{author}{1}{}{%
         {{hash=878ae867e6fee01cf91296a41f5f5370}{%
            family={NTIA},
@@ -1082,12 +1019,10 @@
       }
       \strng{namehash}{878ae867e6fee01cf91296a41f5f5370}
       \strng{fullhash}{878ae867e6fee01cf91296a41f5f5370}
-      \strng{fullhashraw}{878ae867e6fee01cf91296a41f5f5370}
       \strng{bibnamehash}{878ae867e6fee01cf91296a41f5f5370}
       \strng{authorbibnamehash}{878ae867e6fee01cf91296a41f5f5370}
       \strng{authornamehash}{878ae867e6fee01cf91296a41f5f5370}
       \strng{authorfullhash}{878ae867e6fee01cf91296a41f5f5370}
-      \strng{authorfullhashraw}{878ae867e6fee01cf91296a41f5f5370}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
@@ -1100,7 +1035,7 @@
       \verb https://www.ntia.gov/sites/default/files/2023-11/j_2021_edition_rev_2023.pdf
       \endverb
     \endentry
-    \entry{networkX}{manual}{}{}
+    \entry{networkX}{manual}{}
       \name{author}{1}{}{%
         {{hash=c2c87f4e7c2a7d1b6c66c8f0a89d3f47}{%
            family={NetworkX},
@@ -1108,12 +1043,10 @@
       }
       \strng{namehash}{c2c87f4e7c2a7d1b6c66c8f0a89d3f47}
       \strng{fullhash}{c2c87f4e7c2a7d1b6c66c8f0a89d3f47}
-      \strng{fullhashraw}{c2c87f4e7c2a7d1b6c66c8f0a89d3f47}
       \strng{bibnamehash}{c2c87f4e7c2a7d1b6c66c8f0a89d3f47}
       \strng{authorbibnamehash}{c2c87f4e7c2a7d1b6c66c8f0a89d3f47}
       \strng{authornamehash}{c2c87f4e7c2a7d1b6c66c8f0a89d3f47}
       \strng{authorfullhash}{c2c87f4e7c2a7d1b6c66c8f0a89d3f47}
-      \strng{authorfullhashraw}{c2c87f4e7c2a7d1b6c66c8f0a89d3f47}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
@@ -1126,7 +1059,7 @@
       \verb https://networkx.org/documentation/stable/reference/algorithms/shortest_paths.html
       \endverb
     \endentry
-    \entry{chafiTFSGit}{manual}{}{}
+    \entry{chafiTFSGit}{manual}{}
       \name{author}{1}{}{%
         {{hash=b623ce8904dddeee951405d6185990ff}{%
            family={BHUIYAN},
@@ -1136,12 +1069,10 @@
       }
       \strng{namehash}{b623ce8904dddeee951405d6185990ff}
       \strng{fullhash}{b623ce8904dddeee951405d6185990ff}
-      \strng{fullhashraw}{b623ce8904dddeee951405d6185990ff}
       \strng{bibnamehash}{b623ce8904dddeee951405d6185990ff}
       \strng{authorbibnamehash}{b623ce8904dddeee951405d6185990ff}
       \strng{authornamehash}{b623ce8904dddeee951405d6185990ff}
       \strng{authorfullhash}{b623ce8904dddeee951405d6185990ff}
-      \strng{authorfullhashraw}{b623ce8904dddeee951405d6185990ff}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
@@ -1154,7 +1085,7 @@
       \verb https://github.com/bhuiyan-chafi/teraflow-sdn/tree/main
       \endverb
     \endentry
-    \entry{tfsRepo}{manual}{}{}
+    \entry{tfsRepo}{manual}{}
       \name{author}{1}{}{%
         {{hash=d35591bdf12c3515b328845fbce3fac8}{%
            family={ETSI},
@@ -1162,12 +1093,10 @@
       }
       \strng{namehash}{d35591bdf12c3515b328845fbce3fac8}
       \strng{fullhash}{d35591bdf12c3515b328845fbce3fac8}
-      \strng{fullhashraw}{d35591bdf12c3515b328845fbce3fac8}
       \strng{bibnamehash}{d35591bdf12c3515b328845fbce3fac8}
       \strng{authorbibnamehash}{d35591bdf12c3515b328845fbce3fac8}
       \strng{authornamehash}{d35591bdf12c3515b328845fbce3fac8}
       \strng{authorfullhash}{d35591bdf12c3515b328845fbce3fac8}
-      \strng{authorfullhashraw}{d35591bdf12c3515b328845fbce3fac8}
       \field{extraname}{2}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}

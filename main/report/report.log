@@ -1,55 +1,53 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.12.23)  3 APR 2026 12:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.5.14)  14 MAY 2026 11:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/asmchafiullahbhuiyan/teraflow-sdn/main/report/report.tex
-(/Users/asmchafiullahbhuiyan/teraflow-sdn/main/report/report.tex
-LaTeX2e <2025-11-01>
-L3 programming layer <2025-11-06>
-(/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/koma-script/scrreprt.cls
-Document Class: scrreprt 2026/02/02 v3.49.2 KOMA-Script document class (report)
-(/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/koma-script/scrlfile.sty
-Package: scrlfile 2026/02/02 v3.49.2 KOMA-Script package (file load hooks)
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/koma-script/scrlfile-hook.sty
-Package: scrlfile-hook 2026/02/02 v3.49.2 KOMA-Script package (using LaTeX hooks)
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/koma-script/scrlogo.sty
-Package: scrlogo 2026/02/02 v3.49.2 KOMA-Script package (logo)
-))) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks17
+**/home/chafi/teraflow-sdn/main/report/report.tex
+(/home/chafi/teraflow-sdn/main/report/report.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrreprt.cls
+Document Class: scrreprt 2021/11/13 v3.35 KOMA-Script document class (report)
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2021/11/13 v3.35 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2021/11/13 v3.35 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2021/11/13 v3.35 KOMA-Script package (file load hooks)
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2021/11/13 v3.35 KOMA-Script package (using LaTeX hooks)
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2021/11/13 v3.35 KOMA-Script package (logo)
+))) (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
 )
-Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
-Already applied: [0000/00/00] Usage of raw or classic option list on input line 370.
-)) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/koma-script/tocbasic.sty
-Package: tocbasic 2026/02/02 v3.49.2 KOMA-Script package (handling toc-files)
-\scr@dte@tocline@numberwidth=\skip49
-\scr@dte@tocline@numbox=\box53
+Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line 368.
+)) (/usr/share/texlive/texmf-dist/tex/latex/koma-script/tocbasic.sty
+Package: tocbasic 2021/11/13 v3.35 KOMA-Script package (handling toc-files)
+\scr@dte@tocline@numberwidth=\skip47
+\scr@dte@tocline@numbox=\box50
 )
-Package tocbasic Info: omitting babel extension for `toc'
-(tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `toc' on input line 143.
-Class scrreprt Info: File `size14.clo' used to setup font sizes on input line 2710.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/extsizes/size14.clo
+Package tocbasic Info: babel extension for `toc' omitted
+(tocbasic)             because of missing \bbl@set@language on input line 137.
+Class scrreprt Info: File `size14.clo' used to setup font sizes on input line 2487.
+ (/usr/share/texlive/texmf-dist/tex/latex/extsizes/size14.clo
 File: size14.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/koma-script/typearea.sty
-Package: typearea 2026/02/02 v3.49.2 KOMA-Script package (type area)
-\ta@bcor=\skip50
-\ta@div=\count275
+) (/usr/share/texlive/texmf-dist/tex/latex/koma-script/typearea.sty
+Package: typearea 2021/11/13 v3.35 KOMA-Script package (type area)
+\ta@bcor=\skip48
+\ta@div=\count185
 Package typearea Info: You've used standard option `a4paper'.
 (typearea)             This is correct!
 (typearea)             Internally I'm using `paper=a4'.
 (typearea)             If you'd like to set the option with \KOMAoptions,
 (typearea)             you'd have to use `paper=a4' there
 (typearea)             instead of `a4paper', too.
-\ta@hblk=\skip51
-\ta@vblk=\skip52
-\ta@temp=\skip53
-\footheight=\skip54
+\ta@hblk=\skip49
+\ta@vblk=\skip50
+\ta@temp=\skip51
+\footheight=\skip52
 Package typearea Info: These are the values describing the layout:
 (typearea)             DIV  = 14
 (typearea)             BCOR = 0.0pt
@@ -66,586 +64,126 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 14.0pt
 (typearea)              \footskip       = 59.5pt
 (typearea)              \baselineskip   = 17.0pt
-(typearea)              on input line 1810.
+(typearea)              on input line 1743.
 )
-\c@part=\count276
-\c@chapter=\count277
-\c@section=\count278
-\c@subsection=\count279
-\c@subsubsection=\count280
-\c@paragraph=\count281
-\c@subparagraph=\count282
-\scr@dte@chapter@maxnumwidth=\skip55
+\c@part=\count186
+\c@chapter=\count187
+\c@section=\count188
+\c@subsection=\count189
+\c@subsubsection=\count190
+\c@paragraph=\count191
+\c@subparagraph=\count192
+\scr@dte@chapter@maxnumwidth=\skip53
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\chapter on input line 5934.
-\scr@dte@section@maxnumwidth=\skip56
+(scrreprt)           for `\chapter on input line 5717.
+\scr@dte@section@maxnumwidth=\skip54
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\section on input line 5945.
+(scrreprt)           for `\section on input line 5728.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\section on input line 5945.
-\scr@dte@part@maxnumwidth=\skip57
+(scrreprt)           for `\section on input line 5728.
+\scr@dte@part@maxnumwidth=\skip55
 Class scrreprt Info: using compatibility default `afterindent=true'
-(scrreprt)           for `\part on input line 5954.
-\scr@dte@subsection@maxnumwidth=\skip58
+(scrreprt)           for `\part on input line 5737.
+\scr@dte@subsection@maxnumwidth=\skip56
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\subsection on input line 5964.
+(scrreprt)           for `\subsection on input line 5747.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\subsection on input line 5964.
-\scr@dte@subsubsection@maxnumwidth=\skip59
+(scrreprt)           for `\subsection on input line 5747.
+\scr@dte@subsubsection@maxnumwidth=\skip57
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\subsubsection on input line 5974.
+(scrreprt)           for `\subsubsection on input line 5757.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\subsubsection on input line 5974.
-\scr@dte@paragraph@maxnumwidth=\skip60
+(scrreprt)           for `\subsubsection on input line 5757.
+\scr@dte@paragraph@maxnumwidth=\skip58
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\paragraph on input line 5985.
+(scrreprt)           for `\paragraph on input line 5768.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\paragraph on input line 5985.
-\scr@dte@subparagraph@maxnumwidth=\skip61
+(scrreprt)           for `\paragraph on input line 5768.
+\scr@dte@subparagraph@maxnumwidth=\skip59
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\subparagraph on input line 5995.
+(scrreprt)           for `\subparagraph on input line 5778.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\subparagraph on input line 5995.
-\abovecaptionskip=\skip62
-\belowcaptionskip=\skip63
-\c@pti@nb@sid@b@x=\box54
-Package tocbasic Info: omitting babel extension for `lof'
-(tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lof' on input line 7225.
-\scr@dte@figure@maxnumwidth=\skip64
-\c@figure=\count283
-Package tocbasic Info: omitting babel extension for `lot'
-(tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lot' on input line 7238.
-\scr@dte@table@maxnumwidth=\skip65
-\c@table=\count284
-Class scrreprt Info: Redefining `\numberline' on input line 7409.
-\bibindent=\dimen148
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/babel.sty
-Package: babel 2025/11/09 v25.15 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
-\babel@savecnt=\count285
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2050.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2052.
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2054.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2055.
-LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2056.
-LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2058.
-LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2083.
-\U@D=\dimen149
-\l@unhyphenated=\language79
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/txtbabel.def)
+(scrreprt)           for `\subparagraph on input line 5778.
+\abovecaptionskip=\skip60
+\belowcaptionskip=\skip61
+\c@pti@nb@sid@b@x=\box51
+Package tocbasic Info: babel extension for `lof' omitted
+(tocbasic)             because of missing \bbl@set@language on input line 6958.
+\scr@dte@figure@maxnumwidth=\skip62
+\c@figure=\count193
+Package tocbasic Info: babel extension for `lot' omitted
+(tocbasic)             because of missing \bbl@set@language on input line 6974.
+\scr@dte@table@maxnumwidth=\skip63
+\c@table=\count194
+Class scrreprt Info: Redefining `\numberline' on input line 7142.
+\bibindent=\dimen138
+) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2022/01/26 3.70 The Babel package
+\babel@savecnt=\count195
+\U@D=\dimen139
+\l@unhyphenated=\language3
+ (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count286
-Package babel Info: Configuration files are deprecated, as
-(babel)             they can break document portability.
-(babel)             Reported on input line 4175.
-
-*************************************
-* Local config file bblopts.cfg used
-*
-(/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/arabi/bblopts.cfg
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/generic/babel/locale/en/babel-english.tex)
-Package babel Info: Importing font and identification data for english
-(babel)             from babel-en.ini. Reported on input line 4298.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/babel-english/english.ldf
+\bbl@dirlevel=\count196
+ (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'british' set to \l@english
+(babel)             (\language0). Reported on input line 82.
+Package babel Info: Hyphen rules for 'UKenglish' set to \l@english
+(babel)             (\language0). Reported on input line 83.
 Package babel Info: Hyphen rules for 'canadian' set to \l@english
 (babel)             (\language0). Reported on input line 102.
-Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
-(babel)             (\language73). Reported on input line 105.
-Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
-(babel)             (\language73). Reported on input line 108.
-)) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/inputenc.sty
-Package: inputenc 2024/02/08 v1.3d Input encoding file
-\inpenc@prehook=\toks18
-\inpenc@posthook=\toks19
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/ucs/utf8x.def
-File: utf8x.def 2023/11/09 UCS: Input encoding UTF-8
-
-
-Package ucs Info: utf8x disabled, assuming standard utf8 processing
-(ucs)             load ucs package to force utf8x processing.
-
-(/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/utf8.def
-File: utf8.def 2022/06/07 v1.3c UTF-8 support
-Now handling font encoding OML ...
-... no UTF-8 mapping file for font encoding OML
-Now handling font encoding OMS ...
-... processing UTF-8 mapping file for font encoding OMS
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/omsenc.dfu
-File: omsenc.dfu 2022/06/07 v1.3c UTF-8 support
-   defining Unicode char U+00A7 (decimal 167)
-   defining Unicode char U+00B6 (decimal 182)
-   defining Unicode char U+00B7 (decimal 183)
-   defining Unicode char U+2020 (decimal 8224)
-   defining Unicode char U+2021 (decimal 8225)
-   defining Unicode char U+2022 (decimal 8226)
+Package babel Info: Hyphen rules for 'australian' set to \l@english
+(babel)             (\language0). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@english
+(babel)             (\language0). Reported on input line 108.
+)) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2021-02-22 v5.2l context-sensitive quotations (JAW)
+ (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count197
 )
-Now handling font encoding OT1 ...
-... processing UTF-8 mapping file for font encoding OT1
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/ot1enc.dfu
-File: ot1enc.dfu 2022/06/07 v1.3c UTF-8 support
-   defining Unicode char U+00A0 (decimal 160)
-   defining Unicode char U+00A1 (decimal 161)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00AD (decimal 173)
-   defining Unicode char U+00B8 (decimal 184)
-   defining Unicode char U+00BF (decimal 191)
-   defining Unicode char U+00C5 (decimal 197)
-   defining Unicode char U+00C6 (decimal 198)
-   defining Unicode char U+00D8 (decimal 216)
-   defining Unicode char U+00DF (decimal 223)
-   defining Unicode char U+00E6 (decimal 230)
-   defining Unicode char U+00EC (decimal 236)
-   defining Unicode char U+00ED (decimal 237)
-   defining Unicode char U+00EE (decimal 238)
-   defining Unicode char U+00EF (decimal 239)
-   defining Unicode char U+00F8 (decimal 248)
-   defining Unicode char U+0131 (decimal 305)
-   defining Unicode char U+0141 (decimal 321)
-   defining Unicode char U+0142 (decimal 322)
-   defining Unicode char U+0152 (decimal 338)
-   defining Unicode char U+0153 (decimal 339)
-   defining Unicode char U+0174 (decimal 372)
-   defining Unicode char U+0175 (decimal 373)
-   defining Unicode char U+0176 (decimal 374)
-   defining Unicode char U+0177 (decimal 375)
-   defining Unicode char U+0218 (decimal 536)
-   defining Unicode char U+0219 (decimal 537)
-   defining Unicode char U+021A (decimal 538)
-   defining Unicode char U+021B (decimal 539)
-   defining Unicode char U+0237 (decimal 567)
-   defining Unicode char U+2013 (decimal 8211)
-   defining Unicode char U+2014 (decimal 8212)
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
-   defining Unicode char U+FB00 (decimal 64256)
-   defining Unicode char U+FB01 (decimal 64257)
-   defining Unicode char U+FB02 (decimal 64258)
-   defining Unicode char U+FB03 (decimal 64259)
-   defining Unicode char U+FB04 (decimal 64260)
-   defining Unicode char U+FB05 (decimal 64261)
-   defining Unicode char U+FB06 (decimal 64262)
-)
-Now handling font encoding T1 ...
-... processing UTF-8 mapping file for font encoding T1
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/t1enc.dfu
-File: t1enc.dfu 2022/06/07 v1.3c UTF-8 support
-   defining Unicode char U+00A0 (decimal 160)
-   defining Unicode char U+00A1 (decimal 161)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00AB (decimal 171)
-   defining Unicode char U+00AD (decimal 173)
-   defining Unicode char U+00BB (decimal 187)
-   defining Unicode char U+00BF (decimal 191)
-   defining Unicode char U+00C0 (decimal 192)
-   defining Unicode char U+00C1 (decimal 193)
-   defining Unicode char U+00C2 (decimal 194)
-   defining Unicode char U+00C3 (decimal 195)
-   defining Unicode char U+00C4 (decimal 196)
-   defining Unicode char U+00C5 (decimal 197)
-   defining Unicode char U+00C6 (decimal 198)
-   defining Unicode char U+00C7 (decimal 199)
-   defining Unicode char U+00C8 (decimal 200)
-   defining Unicode char U+00C9 (decimal 201)
-   defining Unicode char U+00CA (decimal 202)
-   defining Unicode char U+00CB (decimal 203)
-   defining Unicode char U+00CC (decimal 204)
-   defining Unicode char U+00CD (decimal 205)
-   defining Unicode char U+00CE (decimal 206)
-   defining Unicode char U+00CF (decimal 207)
-   defining Unicode char U+00D0 (decimal 208)
-   defining Unicode char U+00D1 (decimal 209)
-   defining Unicode char U+00D2 (decimal 210)
-   defining Unicode char U+00D3 (decimal 211)
-   defining Unicode char U+00D4 (decimal 212)
-   defining Unicode char U+00D5 (decimal 213)
-   defining Unicode char U+00D6 (decimal 214)
-   defining Unicode char U+00D8 (decimal 216)
-   defining Unicode char U+00D9 (decimal 217)
-   defining Unicode char U+00DA (decimal 218)
-   defining Unicode char U+00DB (decimal 219)
-   defining Unicode char U+00DC (decimal 220)
-   defining Unicode char U+00DD (decimal 221)
-   defining Unicode char U+00DE (decimal 222)
-   defining Unicode char U+00DF (decimal 223)
-   defining Unicode char U+00E0 (decimal 224)
-   defining Unicode char U+00E1 (decimal 225)
-   defining Unicode char U+00E2 (decimal 226)
-   defining Unicode char U+00E3 (decimal 227)
-   defining Unicode char U+00E4 (decimal 228)
-   defining Unicode char U+00E5 (decimal 229)
-   defining Unicode char U+00E6 (decimal 230)
-   defining Unicode char U+00E7 (decimal 231)
-   defining Unicode char U+00E8 (decimal 232)
-   defining Unicode char U+00E9 (decimal 233)
-   defining Unicode char U+00EA (decimal 234)
-   defining Unicode char U+00EB (decimal 235)
-   defining Unicode char U+00EC (decimal 236)
-   defining Unicode char U+00ED (decimal 237)
-   defining Unicode char U+00EE (decimal 238)
-   defining Unicode char U+00EF (decimal 239)
-   defining Unicode char U+00F0 (decimal 240)
-   defining Unicode char U+00F1 (decimal 241)
-   defining Unicode char U+00F2 (decimal 242)
-   defining Unicode char U+00F3 (decimal 243)
-   defining Unicode char U+00F4 (decimal 244)
-   defining Unicode char U+00F5 (decimal 245)
-   defining Unicode char U+00F6 (decimal 246)
-   defining Unicode char U+00F8 (decimal 248)
-   defining Unicode char U+00F9 (decimal 249)
-   defining Unicode char U+00FA (decimal 250)
-   defining Unicode char U+00FB (decimal 251)
-   defining Unicode char U+00FC (decimal 252)
-   defining Unicode char U+00FD (decimal 253)
-   defining Unicode char U+00FE (decimal 254)
-   defining Unicode char U+00FF (decimal 255)
-   defining Unicode char U+0100 (decimal 256)
-   defining Unicode char U+0101 (decimal 257)
-   defining Unicode char U+0102 (decimal 258)
-   defining Unicode char U+0103 (decimal 259)
-   defining Unicode char U+0104 (decimal 260)
-   defining Unicode char U+0105 (decimal 261)
-   defining Unicode char U+0106 (decimal 262)
-   defining Unicode char U+0107 (decimal 263)
-   defining Unicode char U+0108 (decimal 264)
-   defining Unicode char U+0109 (decimal 265)
-   defining Unicode char U+010A (decimal 266)
-   defining Unicode char U+010B (decimal 267)
-   defining Unicode char U+010C (decimal 268)
-   defining Unicode char U+010D (decimal 269)
-   defining Unicode char U+010E (decimal 270)
-   defining Unicode char U+010F (decimal 271)
-   defining Unicode char U+0110 (decimal 272)
-   defining Unicode char U+0111 (decimal 273)
-   defining Unicode char U+0112 (decimal 274)
-   defining Unicode char U+0113 (decimal 275)
-   defining Unicode char U+0114 (decimal 276)
-   defining Unicode char U+0115 (decimal 277)
-   defining Unicode char U+0116 (decimal 278)
-   defining Unicode char U+0117 (decimal 279)
-   defining Unicode char U+0118 (decimal 280)
-   defining Unicode char U+0119 (decimal 281)
-   defining Unicode char U+011A (decimal 282)
-   defining Unicode char U+011B (decimal 283)
-   defining Unicode char U+011C (decimal 284)
-   defining Unicode char U+011D (decimal 285)
-   defining Unicode char U+011E (decimal 286)
-   defining Unicode char U+011F (decimal 287)
-   defining Unicode char U+0120 (decimal 288)
-   defining Unicode char U+0121 (decimal 289)
-   defining Unicode char U+0122 (decimal 290)
-   defining Unicode char U+0123 (decimal 291)
-   defining Unicode char U+0124 (decimal 292)
-   defining Unicode char U+0125 (decimal 293)
-   defining Unicode char U+0128 (decimal 296)
-   defining Unicode char U+0129 (decimal 297)
-   defining Unicode char U+012A (decimal 298)
-   defining Unicode char U+012B (decimal 299)
-   defining Unicode char U+012C (decimal 300)
-   defining Unicode char U+012D (decimal 301)
-   defining Unicode char U+012E (decimal 302)
-   defining Unicode char U+012F (decimal 303)
-   defining Unicode char U+0130 (decimal 304)
-   defining Unicode char U+0131 (decimal 305)
-   defining Unicode char U+0132 (decimal 306)
-   defining Unicode char U+0133 (decimal 307)
-   defining Unicode char U+0134 (decimal 308)
-   defining Unicode char U+0135 (decimal 309)
-   defining Unicode char U+0136 (decimal 310)
-   defining Unicode char U+0137 (decimal 311)
-   defining Unicode char U+0139 (decimal 313)
-   defining Unicode char U+013A (decimal 314)
-   defining Unicode char U+013B (decimal 315)
-   defining Unicode char U+013C (decimal 316)
-   defining Unicode char U+013D (decimal 317)
-   defining Unicode char U+013E (decimal 318)
-   defining Unicode char U+0141 (decimal 321)
-   defining Unicode char U+0142 (decimal 322)
-   defining Unicode char U+0143 (decimal 323)
-   defining Unicode char U+0144 (decimal 324)
-   defining Unicode char U+0145 (decimal 325)
-   defining Unicode char U+0146 (decimal 326)
-   defining Unicode char U+0147 (decimal 327)
-   defining Unicode char U+0148 (decimal 328)
-   defining Unicode char U+014A (decimal 330)
-   defining Unicode char U+014B (decimal 331)
-   defining Unicode char U+014C (decimal 332)
-   defining Unicode char U+014D (decimal 333)
-   defining Unicode char U+014E (decimal 334)
-   defining Unicode char U+014F (decimal 335)
-   defining Unicode char U+0150 (decimal 336)
-   defining Unicode char U+0151 (decimal 337)
-   defining Unicode char U+0152 (decimal 338)
-   defining Unicode char U+0153 (decimal 339)
-   defining Unicode char U+0154 (decimal 340)
-   defining Unicode char U+0155 (decimal 341)
-   defining Unicode char U+0156 (decimal 342)
-   defining Unicode char U+0157 (decimal 343)
-   defining Unicode char U+0158 (decimal 344)
-   defining Unicode char U+0159 (decimal 345)
-   defining Unicode char U+015A (decimal 346)
-   defining Unicode char U+015B (decimal 347)
-   defining Unicode char U+015C (decimal 348)
-   defining Unicode char U+015D (decimal 349)
-   defining Unicode char U+015E (decimal 350)
-   defining Unicode char U+015F (decimal 351)
-   defining Unicode char U+0160 (decimal 352)
-   defining Unicode char U+0161 (decimal 353)
-   defining Unicode char U+0162 (decimal 354)
-   defining Unicode char U+0163 (decimal 355)
-   defining Unicode char U+0164 (decimal 356)
-   defining Unicode char U+0165 (decimal 357)
-   defining Unicode char U+0168 (decimal 360)
-   defining Unicode char U+0169 (decimal 361)
-   defining Unicode char U+016A (decimal 362)
-   defining Unicode char U+016B (decimal 363)
-   defining Unicode char U+016C (decimal 364)
-   defining Unicode char U+016D (decimal 365)
-   defining Unicode char U+016E (decimal 366)
-   defining Unicode char U+016F (decimal 367)
-   defining Unicode char U+0170 (decimal 368)
-   defining Unicode char U+0171 (decimal 369)
-   defining Unicode char U+0172 (decimal 370)
-   defining Unicode char U+0173 (decimal 371)
-   defining Unicode char U+0174 (decimal 372)
-   defining Unicode char U+0175 (decimal 373)
-   defining Unicode char U+0176 (decimal 374)
-   defining Unicode char U+0177 (decimal 375)
-   defining Unicode char U+0178 (decimal 376)
-   defining Unicode char U+0179 (decimal 377)
-   defining Unicode char U+017A (decimal 378)
-   defining Unicode char U+017B (decimal 379)
-   defining Unicode char U+017C (decimal 380)
-   defining Unicode char U+017D (decimal 381)
-   defining Unicode char U+017E (decimal 382)
-   defining Unicode char U+01C4 (decimal 452)
-   defining Unicode char U+01C5 (decimal 453)
-   defining Unicode char U+01C6 (decimal 454)
-   defining Unicode char U+01C7 (decimal 455)
-   defining Unicode char U+01C8 (decimal 456)
-   defining Unicode char U+01C9 (decimal 457)
-   defining Unicode char U+01CA (decimal 458)
-   defining Unicode char U+01CB (decimal 459)
-   defining Unicode char U+01CC (decimal 460)
-   defining Unicode char U+01CD (decimal 461)
-   defining Unicode char U+01CE (decimal 462)
-   defining Unicode char U+01CF (decimal 463)
-   defining Unicode char U+01D0 (decimal 464)
-   defining Unicode char U+01D1 (decimal 465)
-   defining Unicode char U+01D2 (decimal 466)
-   defining Unicode char U+01D3 (decimal 467)
-   defining Unicode char U+01D4 (decimal 468)
-   defining Unicode char U+01E2 (decimal 482)
-   defining Unicode char U+01E3 (decimal 483)
-   defining Unicode char U+01E6 (decimal 486)
-   defining Unicode char U+01E7 (decimal 487)
-   defining Unicode char U+01E8 (decimal 488)
-   defining Unicode char U+01E9 (decimal 489)
-   defining Unicode char U+01EA (decimal 490)
-   defining Unicode char U+01EB (decimal 491)
-   defining Unicode char U+01F0 (decimal 496)
-   defining Unicode char U+01F4 (decimal 500)
-   defining Unicode char U+01F5 (decimal 501)
-   defining Unicode char U+0218 (decimal 536)
-   defining Unicode char U+0219 (decimal 537)
-   defining Unicode char U+021A (decimal 538)
-   defining Unicode char U+021B (decimal 539)
-   defining Unicode char U+0232 (decimal 562)
-   defining Unicode char U+0233 (decimal 563)
-   defining Unicode char U+0237 (decimal 567)
-   defining Unicode char U+02D9 (decimal 729)
-   defining Unicode char U+02DB (decimal 731)
-   defining Unicode char U+1E02 (decimal 7682)
-   defining Unicode char U+1E03 (decimal 7683)
-   defining Unicode char U+1E0D (decimal 7693)
-   defining Unicode char U+1E1E (decimal 7710)
-   defining Unicode char U+1E1F (decimal 7711)
-   defining Unicode char U+1E25 (decimal 7717)
-   defining Unicode char U+1E30 (decimal 7728)
-   defining Unicode char U+1E31 (decimal 7729)
-   defining Unicode char U+1E37 (decimal 7735)
-   defining Unicode char U+1E8E (decimal 7822)
-   defining Unicode char U+1E8F (decimal 7823)
-   defining Unicode char U+1E43 (decimal 7747)
-   defining Unicode char U+1E45 (decimal 7749)
-   defining Unicode char U+1E47 (decimal 7751)
-   defining Unicode char U+1E5B (decimal 7771)
-   defining Unicode char U+1E63 (decimal 7779)
-   defining Unicode char U+1E6D (decimal 7789)
-   defining Unicode char U+1E90 (decimal 7824)
-   defining Unicode char U+1E91 (decimal 7825)
-   defining Unicode char U+1E9E (decimal 7838)
-   defining Unicode char U+1EF2 (decimal 7922)
-   defining Unicode char U+1EF3 (decimal 7923)
-   defining Unicode char U+200C (decimal 8204)
-   defining Unicode char U+2010 (decimal 8208)
-   defining Unicode char U+2011 (decimal 8209)
-   defining Unicode char U+2012 (decimal 8210)
-   defining Unicode char U+2013 (decimal 8211)
-   defining Unicode char U+2014 (decimal 8212)
-   defining Unicode char U+2015 (decimal 8213)
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201A (decimal 8218)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
-   defining Unicode char U+201E (decimal 8222)
-   defining Unicode char U+2030 (decimal 8240)
-   defining Unicode char U+2031 (decimal 8241)
-   defining Unicode char U+2039 (decimal 8249)
-   defining Unicode char U+203A (decimal 8250)
-   defining Unicode char U+2423 (decimal 9251)
-   defining Unicode char U+1E20 (decimal 7712)
-   defining Unicode char U+1E21 (decimal 7713)
-   defining Unicode char U+FB00 (decimal 64256)
-   defining Unicode char U+FB01 (decimal 64257)
-   defining Unicode char U+FB02 (decimal 64258)
-   defining Unicode char U+FB03 (decimal 64259)
-   defining Unicode char U+FB04 (decimal 64260)
-   defining Unicode char U+FB05 (decimal 64261)
-   defining Unicode char U+FB06 (decimal 64262)
-)
-Now handling font encoding TS1 ...
-... processing UTF-8 mapping file for font encoding TS1
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/ts1enc.dfu
-File: ts1enc.dfu 2022/06/07 v1.3c UTF-8 support
-   defining Unicode char U+00A2 (decimal 162)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00A4 (decimal 164)
-   defining Unicode char U+00A5 (decimal 165)
-   defining Unicode char U+00A6 (decimal 166)
-   defining Unicode char U+00A7 (decimal 167)
-   defining Unicode char U+00A8 (decimal 168)
-   defining Unicode char U+00A9 (decimal 169)
-   defining Unicode char U+00AA (decimal 170)
-   defining Unicode char U+00AC (decimal 172)
-   defining Unicode char U+00AE (decimal 174)
-   defining Unicode char U+00AF (decimal 175)
-   defining Unicode char U+00B0 (decimal 176)
-   defining Unicode char U+00B1 (decimal 177)
-   defining Unicode char U+00B2 (decimal 178)
-   defining Unicode char U+00B3 (decimal 179)
-   defining Unicode char U+00B4 (decimal 180)
-   defining Unicode char U+00B5 (decimal 181)
-   defining Unicode char U+00B6 (decimal 182)
-   defining Unicode char U+00B7 (decimal 183)
-   defining Unicode char U+00B9 (decimal 185)
-   defining Unicode char U+00BA (decimal 186)
-   defining Unicode char U+00BC (decimal 188)
-   defining Unicode char U+00BD (decimal 189)
-   defining Unicode char U+00BE (decimal 190)
-   defining Unicode char U+00D7 (decimal 215)
-   defining Unicode char U+00F7 (decimal 247)
-   defining Unicode char U+0192 (decimal 402)
-   defining Unicode char U+02C7 (decimal 711)
-   defining Unicode char U+02D8 (decimal 728)
-   defining Unicode char U+02DD (decimal 733)
-   defining Unicode char U+0E3F (decimal 3647)
-   defining Unicode char U+2016 (decimal 8214)
-   defining Unicode char U+2020 (decimal 8224)
-   defining Unicode char U+2021 (decimal 8225)
-   defining Unicode char U+2022 (decimal 8226)
-   defining Unicode char U+2030 (decimal 8240)
-   defining Unicode char U+2031 (decimal 8241)
-   defining Unicode char U+203B (decimal 8251)
-   defining Unicode char U+203D (decimal 8253)
-   defining Unicode char U+2044 (decimal 8260)
-   defining Unicode char U+204E (decimal 8270)
-   defining Unicode char U+2052 (decimal 8274)
-   defining Unicode char U+20A1 (decimal 8353)
-   defining Unicode char U+20A4 (decimal 8356)
-   defining Unicode char U+20A6 (decimal 8358)
-   defining Unicode char U+20A9 (decimal 8361)
-   defining Unicode char U+20AB (decimal 8363)
-   defining Unicode char U+20AC (decimal 8364)
-   defining Unicode char U+20B1 (decimal 8369)
-   defining Unicode char U+2103 (decimal 8451)
-   defining Unicode char U+2116 (decimal 8470)
-   defining Unicode char U+2117 (decimal 8471)
-   defining Unicode char U+211E (decimal 8478)
-   defining Unicode char U+2120 (decimal 8480)
-   defining Unicode char U+2122 (decimal 8482)
-   defining Unicode char U+2126 (decimal 8486)
-   defining Unicode char U+2127 (decimal 8487)
-   defining Unicode char U+212E (decimal 8494)
-   defining Unicode char U+2190 (decimal 8592)
-   defining Unicode char U+2191 (decimal 8593)
-   defining Unicode char U+2192 (decimal 8594)
-   defining Unicode char U+2193 (decimal 8595)
-   defining Unicode char U+2329 (decimal 9001)
-   defining Unicode char U+3008 (decimal 12296)
-   defining Unicode char U+232A (decimal 9002)
-   defining Unicode char U+3009 (decimal 12297)
-   defining Unicode char U+2422 (decimal 9250)
-   defining Unicode char U+25E6 (decimal 9702)
-   defining Unicode char U+25EF (decimal 9711)
-   defining Unicode char U+266A (decimal 9834)
-   defining Unicode char U+27E8 (decimal 10216)
-   defining Unicode char U+27E9 (decimal 10217)
-   defining Unicode char U+FEFF (decimal 65279)
-)
-Now handling font encoding OMX ...
-... no UTF-8 mapping file for font encoding OMX
-Now handling font encoding U ...
-... no UTF-8 mapping file for font encoding U
-   defining Unicode char U+00A9 (decimal 169)
-   defining Unicode char U+00AA (decimal 170)
-   defining Unicode char U+00AE (decimal 174)
-   defining Unicode char U+00BA (decimal 186)
-   defining Unicode char U+02C6 (decimal 710)
-   defining Unicode char U+02DC (decimal 732)
-   defining Unicode char U+200C (decimal 8204)
-   defining Unicode char U+2026 (decimal 8230)
-   defining Unicode char U+2122 (decimal 8482)
-   defining Unicode char U+2423 (decimal 9251)
-   defining Unicode char U+FEFF (decimal 65279)
-))) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/fontenc.sty
-Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/csquotes/csquotes.sty
-Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count287
-)
-\csq@reset=\count288
-\csq@gtype=\count289
-\csq@glevel=\count290
-\csq@qlevel=\count291
-\csq@maxlvl=\count292
-\csq@tshold=\count293
-\csq@ltx@everypar=\toks20
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/csquotes/csquotes.def
-File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
+\csq@reset=\count198
+\csq@gtype=\count199
+\csq@glevel=\count266
+\csq@qlevel=\count267
+\csq@maxlvl=\count268
+\csq@tshold=\count269
+\csq@ltx@everypar=\toks19
+ (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2021-02-22 v5.2l csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/csquotes/csquotes.cfg
+ (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
 File: csquotes.cfg 
-)) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/ifvtex.sty
+ (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/iftex.sty
-Package: iftex 2024/12/12 v1.0g TeX engine tests
+ (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
-\Gm@cnth=\count294
-\Gm@cntv=\count295
-\c@Gm@tempcnt=\count296
-\Gm@bindingoffset=\dimen150
-\Gm@wd@mp=\dimen151
-\Gm@odd@mp=\dimen152
-\Gm@even@mp=\dimen153
-\Gm@layoutwidth=\dimen154
-\Gm@layoutheight=\dimen155
-\Gm@layouthoffset=\dimen156
-\Gm@layoutvoffset=\dimen157
-\Gm@dimlist=\toks21
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.cfg)) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/lmodern.sty
-Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+\Gm@cnth=\count270
+\Gm@cntv=\count271
+\c@Gm@tempcnt=\count272
+\Gm@bindingoffset=\dimen140
+\Gm@wd@mp=\dimen141
+\Gm@odd@mp=\dimen142
+\Gm@even@mp=\dimen143
+\Gm@layoutwidth=\dimen144
+\Gm@layoutheight=\dimen145
+\Gm@layouthoffset=\dimen146
+\Gm@layoutvoffset=\dimen147
+\Gm@dimlist=\toks20
+) (/usr/share/texmf/tex/latex/lm/lmodern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
@@ -678,577 +216,560 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/microtype/microtype.sty
-Package: microtype 2025/07/09 v3.2b Micro-typographical refinements (RS)
-\MT@toks=\toks22
-\MT@tempbox=\box55
-\MT@count=\count297
-LaTeX Info: Redefining \noprotrusionifhmode on input line 1087.
-LaTeX Info: Redefining \leftprotrusion on input line 1088.
-\MT@prot@toks=\toks23
-LaTeX Info: Redefining \rightprotrusion on input line 1107.
-LaTeX Info: Redefining \textls on input line 1449.
-\MT@outer@kern=\dimen158
-LaTeX Info: Redefining \microtypecontext on input line 2053.
-LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
-\MT@listname@count=\count298
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/microtype/microtype-pdftex.def
-File: microtype-pdftex.def 2025/07/09 v3.2b Definitions specific to pdftex (RS)
-LaTeX Info: Redefining \lsstyle on input line 944.
-LaTeX Info: Redefining \lslig on input line 944.
-\MT@outer@space=\skip66
+) (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2021/12/10 v3.0b Micro-typographical refinements (RS)
+\MT@toks=\toks21
+\MT@count=\count273
+\MT@tempbox=\box52
+LaTeX Info: Redefining \leftprotrusion on input line 1010.
+LaTeX Info: Redefining \rightprotrusion on input line 1018.
+LaTeX Info: Redefining \textls on input line 1173.
+\MT@outer@kern=\dimen148
+LaTeX Info: Redefining \textmicrotypecontext on input line 1759.
+\MT@listname@count=\count274
+ (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2021/12/10 v3.0b Definitions specific to pdftex (RS)
+LaTeX Info: Redefining \lsstyle on input line 897.
+LaTeX Info: Redefining \lslig on input line 897.
+\MT@outer@space=\skip64
 )
 Package microtype Info: Loading configuration file microtype.cfg.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/microtype/microtype.cfg
-File: microtype.cfg 2025/07/09 v3.2b microtype main configuration file (RS)
-)
-LaTeX Info: Redefining \microtypesetup on input line 3065.
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2025/07/09 v2.17z AMS math features
-\@mathmargin=\skip67
+ (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2021/12/10 v3.0b microtype main configuration file (RS)
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip65
 
 For additional information on amsmath, use the `?' option.
-(/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amstext.sty
-Package: amstext 2024/11/17 v2.01 AMS text
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsgen.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks24
-\ex@=\dimen159
-)) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsbsy.sty
+\@emptytoks=\toks22
+\ex@=\dimen149
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen160
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsmath/amsopn.sty
-Package: amsopn 2022/04/08 v2.04 operator names
+\pmbraise@=\dimen150
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
 )
-\inf@bad=\count299
-LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count300
-\leftroot@=\count301
-LaTeX Info: Redefining \overline on input line 398.
-LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count302
-\DOTSCASE@=\count303
-LaTeX Info: Redefining \ldots on input line 495.
-LaTeX Info: Redefining \dots on input line 498.
-LaTeX Info: Redefining \cdots on input line 619.
-\Mathstrutbox@=\box56
-\strutbox@=\box57
-LaTeX Info: Redefining \big on input line 721.
-LaTeX Info: Redefining \Big on input line 722.
-LaTeX Info: Redefining \bigg on input line 723.
-LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen161
-LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count304
-LaTeX Info: Redefining \bmod on input line 904.
-LaTeX Info: Redefining \pmod on input line 909.
-LaTeX Info: Redefining \smash on input line 939.
-LaTeX Info: Redefining \relbar on input line 969.
-LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count305
-\dotsspace@=\muskip17
-\c@parentequation=\count306
-\dspbrk@lvl=\count307
-\tag@help=\toks25
-\row@=\count308
-\column@=\count309
-\maxfields@=\count310
-\andhelp@=\toks26
-\eqnshift@=\dimen162
-\alignsep@=\dimen163
-\tagshift@=\dimen164
-\tagwidth@=\dimen165
-\totwidth@=\dimen166
-\lineht@=\dimen167
-\@envbody=\toks27
-\multlinegap=\skip68
-\multlinetaggap=\skip69
-\mathdisplay@stack=\toks28
-LaTeX Info: Redefining \[ on input line 2950.
-LaTeX Info: Redefining \] on input line 2951.
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphicx.sty
-Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/graphics.sty
-Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/trig.sty
-Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
+\inf@bad=\count275
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count276
+\leftroot@=\count277
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count278
+\DOTSCASE@=\count279
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+\big@size=\dimen151
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count280
+\c@MaxMatrixCols=\count281
+\dotsspace@=\muskip16
+\c@parentequation=\count282
+\dspbrk@lvl=\count283
+\tag@help=\toks23
+\row@=\count284
+\column@=\count285
+\maxfields@=\count286
+\andhelp@=\toks24
+\eqnshift@=\dimen152
+\alignsep@=\dimen153
+\tagshift@=\dimen154
+\tagwidth@=\dimen155
+\totwidth@=\dimen156
+\lineht@=\dimen157
+\@envbody=\toks25
+\multlinegap=\skip66
+\multlinetaggap=\skip67
+\mathdisplay@stack=\toks26
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 106.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen168
-\Gin@req@width=\dimen169
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/caption/caption.sty
-Package: caption 2023/08/05 v3.6o Customizing captions (AR)
-
-Package tocbasic Info: Loading of class-dependent code for package caption3
-(tocbasic)             prevented on line 50.
-
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/caption/caption3.sty
-Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen170
-\captionmargin=\dimen171
-\caption@leftmargin=\dimen172
-\caption@rightmargin=\dimen173
-\caption@width=\dimen174
-\caption@indent=\dimen175
-\caption@parindent=\dimen176
-\caption@hangindent=\dimen177
-)
-\c@caption@flags=\count311
-\c@continuedfloat=\count312
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/color.cfg
+\Gin@req@height=\dimen158
+\Gin@req@width=\dimen159
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen160
+\captionmargin@=\dimen161
+\captionwidth=\dimen162
+\caption@tempdima=\dimen163
+\caption@indent=\dimen164
+\caption@parindent=\dimen165
+\caption@hangindent=\dimen166
+Package caption Info: KOMA-Script document class detected.
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption-koma.sto
+File: caption-koma.sto 2020/09/21 v2.0b Adaption of the caption package to the KOMA-Script document classes (AR)
+))
+\c@caption@flags=\count287
+\c@continuedfloat=\count288
+) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: pdftex.def on input line 274.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics/mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
-Package xcolor Info: Model `RGB' extended on input line 1365.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/scrhack/scrhack.sty
-Package: scrhack 2024-09-04 v3.42 scrhack emulation package
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count313
-\float@exts=\toks29
-\float@box=\box58
-\@float@everytoks=\toks30
-\@floatcapt=\box59
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/floatbytocbasic/floatbytocbasic.sty
-Package: floatbytocbasic 2023-08-16 v1.0 improved float package using tocbasic
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xpatch/xpatch.sty (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3kernel/expl3.sty
-Package: expl3 2025-11-06 L3 programming layer (loader) 
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count314
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+) (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrhack.sty
+Package: scrhack 2021/11/13 v3.35 KOMA-Script package (hacking other packages)
+ (/usr/share/texlive/texmf-dist/tex/latex/xpatch/xpatch.sty (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-01-21 L3 programming layer (loader) 
+ (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count289
+\l__pdf_internal_box=\box55
 ))
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2025-10-09 L3 Experimental document command parser
-))) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/listings.sty
-\lst@mode=\count315
-\lst@gtempboxa=\box60
-\lst@token=\toks31
-\lst@length=\count316
-\lst@currlwidth=\dimen178
-\lst@column=\count317
-\lst@pos=\count318
-\lst@lostspace=\dimen179
-\lst@width=\dimen180
-\lst@newlines=\count319
-\lst@lineno=\count320
-\lst@maxwidth=\dimen181
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstpatch.sty
-File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
-\c@lstnumber=\count321
-\lst@skipnumbers=\count322
-\lst@framebox=\box61
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/listings.cfg
-File: listings.cfg 2025/11/14 1.11b listings configuration
+ (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2022-01-12 L3 Experimental document command parser
+))) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count290
+\float@exts=\toks27
+\float@box=\box56
+\@float@everytoks=\toks28
+\@floatcapt=\box57
+)
+Package scrhack Info: loading float hack on input line 24.
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/float.hak
+File: float.hak 2021/11/13 v3.35 KOMA-Script scrhack part (hacking package float)
+Package scrhack Info: redefining \newfloat on input line 163.
+Package scrhack Info: redefining \listof on input line 163.
+Package scrhack Info: undefining \float@addtolists on input line 163.
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count291
+\lst@gtempboxa=\box58
+\lst@token=\toks29
+\lst@length=\count292
+\lst@currlwidth=\dimen167
+\lst@column=\count293
+\lst@pos=\count294
+\lst@lostspace=\dimen168
+\lst@width=\dimen169
+\lst@newlines=\count295
+\lst@lineno=\count296
+\lst@maxwidth=\dimen170
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count297
+\lst@skipnumbers=\count298
+\lst@framebox=\box59
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
-Package: listings 2025/11/14 1.11b (Carsten Heinz)
-
-==> First Aid for listings.sty no longer applied!
-    Expected:
-        2024/09/23 1.10c (Carsten Heinz)
-    but found:
-        2025/11/14 1.11b (Carsten Heinz)
-    so I'm assuming it got fixed.
-(/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/biblatex/biblatex.sty
-Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pdftexcmds/pdftexcmds.sty
+Package scrhack Info: loading listings hack on input line 25.
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/listings.hak
+File: listings.hak 2021/11/13 v3.35 KOMA-Script scrhack part (hacking package listings)
+Package tocbasic Info: setting babel extension for `lol' on input line 143.
+Package scrhack Info: redefining \lstlistoflistings on input line 143.
+)
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2022/02/02 v3.17 programmable bibliographies (PK/MW)
+ (/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/generic/infwarerr/infwarerr.sty
+ (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/logreq/logreq.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)) (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count323
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/logreq/logreq.def
+\lrq@indent=\count299
+ (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-)) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/ifthen.sty
-Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/url/url.sty
-\Urlmuskip=\muskip18
+)) (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count324
-\c@listtotal=\count325
-\c@listcount=\count326
-\c@liststart=\count327
-\c@liststop=\count328
-\c@citecount=\count329
-\c@citetotal=\count330
-\c@multicitecount=\count331
-\c@multicitetotal=\count332
-\c@instcount=\count333
-\c@maxnames=\count334
-\c@minnames=\count335
-\c@maxitems=\count336
-\c@minitems=\count337
-\c@citecounter=\count338
-\c@maxcitecounter=\count339
-\c@savedcitecounter=\count340
-\c@uniquelist=\count341
-\c@uniquename=\count342
-\c@refsection=\count343
-\c@refsegment=\count344
-\c@maxextratitle=\count345
-\c@maxextratitleyear=\count346
-\c@maxextraname=\count347
-\c@maxextradate=\count348
-\c@maxextraalpha=\count349
-\c@abbrvpenalty=\count350
-\c@highnamepenalty=\count351
-\c@lownamepenalty=\count352
-\c@maxparens=\count353
-\c@parenlevel=\count354
-\blx@tempcnta=\count355
-\blx@tempcntb=\count356
-\blx@tempcntc=\count357
-\c@blx@maxsection=\count358
-\blx@maxsegment@0=\count359
-\blx@notetype=\count360
-\blx@parenlevel@text=\count361
-\blx@parenlevel@foot=\count362
-\blx@sectionciteorder@0=\count363
-\blx@sectionciteorderinternal@0=\count364
-\blx@entrysetcounter=\count365
-\blx@biblioinstance=\count366
-\labelnumberwidth=\skip70
-\labelalphawidth=\skip71
-\biblabelsep=\skip72
-\bibitemsep=\skip73
-\bibnamesep=\skip74
-\bibinitsep=\skip75
-\bibparsep=\skip76
-\bibhang=\skip77
+\c@tabx@nest=\count300
+\c@listtotal=\count301
+\c@listcount=\count302
+\c@liststart=\count303
+\c@liststop=\count304
+\c@citecount=\count305
+\c@citetotal=\count306
+\c@multicitecount=\count307
+\c@multicitetotal=\count308
+\c@instcount=\count309
+\c@maxnames=\count310
+\c@minnames=\count311
+\c@maxitems=\count312
+\c@minitems=\count313
+\c@citecounter=\count314
+\c@maxcitecounter=\count315
+\c@savedcitecounter=\count316
+\c@uniquelist=\count317
+\c@uniquename=\count318
+\c@refsection=\count319
+\c@refsegment=\count320
+\c@maxextratitle=\count321
+\c@maxextratitleyear=\count322
+\c@maxextraname=\count323
+\c@maxextradate=\count324
+\c@maxextraalpha=\count325
+\c@abbrvpenalty=\count326
+\c@highnamepenalty=\count327
+\c@lownamepenalty=\count328
+\c@maxparens=\count329
+\c@parenlevel=\count330
+\blx@tempcnta=\count331
+\blx@tempcntb=\count332
+\blx@tempcntc=\count333
+\c@blx@maxsection=\count334
+\c@blx@maxsegment@0=\count335
+\blx@notetype=\count336
+\blx@parenlevel@text=\count337
+\blx@parenlevel@foot=\count338
+\c@blx@sectionciteorder@0=\count339
+\blx@entrysetcounter=\count340
+\blx@biblioinstance=\count341
+\labelnumberwidth=\skip68
+\labelalphawidth=\skip69
+\biblabelsep=\skip70
+\bibitemsep=\skip71
+\bibnamesep=\skip72
+\bibinitsep=\skip73
+\bibparsep=\skip74
+\bibhang=\skip75
 \blx@bcfin=\read3
 \blx@bcfout=\write3
-\blx@langwohyphens=\language80
-\c@mincomprange=\count367
-\c@maxcomprange=\count368
-\c@mincompwidth=\count369
+\blx@langwohyphens=\language4
+\c@mincomprange=\count342
+\c@maxcomprange=\count343
+\c@mincompwidth=\count344
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/biblatex/blx-dm.def
-File: blx-dm.def 2025/07/10 v3.21 biblatex datamodel (PK/MW)
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2022/02/02 v3.17 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'ieee.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count370
-\c@savedafterword=\count371
-\c@annotator=\count372
-\c@savedannotator=\count373
-\c@author=\count374
-\c@savedauthor=\count375
-\c@bookauthor=\count376
-\c@savedbookauthor=\count377
-\c@commentator=\count378
-\c@savedcommentator=\count379
-\c@editor=\count380
-\c@savededitor=\count381
-\c@editora=\count382
-\c@savededitora=\count383
-\c@editorb=\count384
-\c@savededitorb=\count385
-\c@editorc=\count386
-\c@savededitorc=\count387
-\c@foreword=\count388
-\c@savedforeword=\count389
-\c@holder=\count390
-\c@savedholder=\count391
-\c@introduction=\count392
-\c@savedintroduction=\count393
-\c@namea=\count394
-\c@savednamea=\count395
-\c@nameb=\count396
-\c@savednameb=\count397
-\c@namec=\count398
-\c@savednamec=\count399
-\c@translator=\count400
-\c@savedtranslator=\count401
-\c@shortauthor=\count402
-\c@savedshortauthor=\count403
-\c@shorteditor=\count404
-\c@savedshorteditor=\count405
-\c@labelname=\count406
-\c@savedlabelname=\count407
-\c@institution=\count408
-\c@savedinstitution=\count409
-\c@lista=\count410
-\c@savedlista=\count411
-\c@listb=\count412
-\c@savedlistb=\count413
-\c@listc=\count414
-\c@savedlistc=\count415
-\c@listd=\count416
-\c@savedlistd=\count417
-\c@liste=\count418
-\c@savedliste=\count419
-\c@listf=\count420
-\c@savedlistf=\count421
-\c@location=\count422
-\c@savedlocation=\count423
-\c@organization=\count424
-\c@savedorganization=\count425
-\c@origlocation=\count426
-\c@savedoriglocation=\count427
-\c@origpublisher=\count428
-\c@savedorigpublisher=\count429
-\c@publisher=\count430
-\c@savedpublisher=\count431
-\c@language=\count432
-\c@savedlanguage=\count433
-\c@origlanguage=\count434
-\c@savedoriglanguage=\count435
-\c@pageref=\count436
-\c@savedpageref=\count437
-\shorthandwidth=\skip78
-\shortjournalwidth=\skip79
-\shortserieswidth=\skip80
-\shorttitlewidth=\skip81
-\shortauthorwidth=\skip82
-\shorteditorwidth=\skip83
-\locallabelnumberwidth=\skip84
-\locallabelalphawidth=\skip85
-\localshorthandwidth=\skip86
-\localshortjournalwidth=\skip87
-\localshortserieswidth=\skip88
-\localshorttitlewidth=\skip89
-\localshortauthorwidth=\skip90
-\localshorteditorwidth=\skip91
+\c@afterword=\count345
+\c@savedafterword=\count346
+\c@annotator=\count347
+\c@savedannotator=\count348
+\c@author=\count349
+\c@savedauthor=\count350
+\c@bookauthor=\count351
+\c@savedbookauthor=\count352
+\c@commentator=\count353
+\c@savedcommentator=\count354
+\c@editor=\count355
+\c@savededitor=\count356
+\c@editora=\count357
+\c@savededitora=\count358
+\c@editorb=\count359
+\c@savededitorb=\count360
+\c@editorc=\count361
+\c@savededitorc=\count362
+\c@foreword=\count363
+\c@savedforeword=\count364
+\c@holder=\count365
+\c@savedholder=\count366
+\c@introduction=\count367
+\c@savedintroduction=\count368
+\c@namea=\count369
+\c@savednamea=\count370
+\c@nameb=\count371
+\c@savednameb=\count372
+\c@namec=\count373
+\c@savednamec=\count374
+\c@translator=\count375
+\c@savedtranslator=\count376
+\c@shortauthor=\count377
+\c@savedshortauthor=\count378
+\c@shorteditor=\count379
+\c@savedshorteditor=\count380
+\c@labelname=\count381
+\c@savedlabelname=\count382
+\c@institution=\count383
+\c@savedinstitution=\count384
+\c@lista=\count385
+\c@savedlista=\count386
+\c@listb=\count387
+\c@savedlistb=\count388
+\c@listc=\count389
+\c@savedlistc=\count390
+\c@listd=\count391
+\c@savedlistd=\count392
+\c@liste=\count393
+\c@savedliste=\count394
+\c@listf=\count395
+\c@savedlistf=\count396
+\c@location=\count397
+\c@savedlocation=\count398
+\c@organization=\count399
+\c@savedorganization=\count400
+\c@origlocation=\count401
+\c@savedoriglocation=\count402
+\c@origpublisher=\count403
+\c@savedorigpublisher=\count404
+\c@publisher=\count405
+\c@savedpublisher=\count406
+\c@language=\count407
+\c@savedlanguage=\count408
+\c@origlanguage=\count409
+\c@savedoriglanguage=\count410
+\c@pageref=\count411
+\c@savedpageref=\count412
+\shorthandwidth=\skip76
+\shortjournalwidth=\skip77
+\shortserieswidth=\skip78
+\shorttitlewidth=\skip79
+\shortauthorwidth=\skip80
+\shorteditorwidth=\skip81
+\locallabelnumberwidth=\skip82
+\locallabelalphawidth=\skip83
+\localshorthandwidth=\skip84
+\localshortjournalwidth=\skip85
+\localshortserieswidth=\skip86
+\localshorttitlewidth=\skip87
+\localshortauthorwidth=\skip88
+\localshorteditorwidth=\skip89
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/biblatex/blx-compat.def
-File: blx-compat.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2022/02/02 v3.17 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/biblatex/biblatex.def
-File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
-\c@textcitecount=\count438
-\c@textcitetotal=\count439
-\c@textcitemaxnames=\count440
-\c@biburlbigbreakpenalty=\count441
-\c@biburlbreakpenalty=\count442
-\c@biburlnumpenalty=\count443
-\c@biburlucpenalty=\count444
-\c@biburllcpenalty=\count445
-\biburlbigskip=\muskip19
-\biburlnumskip=\muskip20
-\biburlucskip=\muskip21
-\biburllcskip=\muskip22
-\c@smartand=\count446
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2022/02/02 v3.17 biblatex compatibility (PK/MW)
+\c@textcitecount=\count413
+\c@textcitetotal=\count414
+\c@textcitemaxnames=\count415
+\c@biburlbigbreakpenalty=\count416
+\c@biburlbreakpenalty=\count417
+\c@biburlnumpenalty=\count418
+\c@biburlucpenalty=\count419
+\c@biburllcpenalty=\count420
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count421
 )
 Package biblatex Info: Trying to load bibliography style 'ieee'...
 Package biblatex Info: ... file 'ieee.bbx' found.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/biblatex-ieee/ieee.bbx
-File: ieee.bbx 2025-08-01 v1.4f biblatex bibliography style
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex-ieee/ieee.bbx
+File: ieee.bbx 2021/12/06 v1.3f biblatex bibliography style
 Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
 Package biblatex Info: ... file 'numeric-comp.bbx' found.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/biblatex/bbx/numeric-comp.bbx
-File: numeric-comp.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx
+File: numeric-comp.bbx 2022/02/02 v3.17 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/biblatex/bbx/numeric.bbx
-File: numeric.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2022/02/02 v3.17 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/biblatex/bbx/standard.bbx
-File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count447
-\c@bbx:relatedtotal=\count448
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2022/02/02 v3.17 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count422
+\c@bbx:relatedtotal=\count423
 ))))
 Package biblatex Info: Trying to load citation style 'ieee'...
 Package biblatex Info: ... file 'ieee.cbx' found.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/biblatex-ieee/ieee.cbx
-File: ieee.cbx 2025-08-01 v1.4f biblatex citation style
-Package biblatex Info: Trying to load citation style 'numeric-verb'...
-Package biblatex Info: ... file 'numeric-verb.cbx' found.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/biblatex/cbx/numeric-verb.cbx
-File: numeric-verb.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex-ieee/ieee.cbx
+File: ieee.cbx 2021/12/06 v1.3f biblatex citation style
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx
+File: numeric-comp.cbx 2022/02/02 v3.17 biblatex citation style (PK/MW)
+\c@cbx@tempcnta=\count424
+\c@cbx@tempcntb=\count425
+\c@cbx@tempcntc=\count426
+\c@cbx@tempcntd=\count427
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
 Package biblatex Info: Redefining '\footcitetext'.
 Package biblatex Info: Redefining '\smartcite'.
-Package biblatex Info: Redefining '\textcite'.
 Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
 Package biblatex Info: Redefining '\parencites'.
 Package biblatex Info: Redefining '\smartcites'.
-Package biblatex Info: Redefining '\textcites'.
-))
+)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\cites'.
+)
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/biblatex/biblatex.cfg
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 )
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
 Package biblatex Info: ... and expl3
-(biblatex)             2025-11-06 L3 programming layer (loader) 
+(biblatex)             2022-01-21 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/biblatex/blx-case-expl3.sty
-Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
-)) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/generic/kvdefinekeys/kvdefinekeys.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+Package: blx-case-expl3 2022/02/02 v3.17 expl3 case changing code for biblatex
+))
+Package scrhack Info: hyperref hack deactivated because of
+(scrhack)             detection of KOMA-Script class, that doesn't
+(scrhack)             need that hack, on input line 52.
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
+ (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/generic/pdfescape/pdfescape.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hycolor/hycolor.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/nameref.sty
-Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/refcount/refcount.sty
-Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/generic/gettitlestring/gettitlestring.sty
-Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-\c@section@level=\count449
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/generic/stringenc/stringenc.sty
-Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
-)
-\@linkdim=\dimen182
-\Hy@linkcounter=\count450
-\Hy@pagecounter=\count451
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
+\@linkdim=\dimen171
+\Hy@linkcounter=\count428
+\Hy@pagecounter=\count429
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/generic/intcalc/intcalc.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
+File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel languages
+) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count452
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/puenc.def
-File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
+\Hy@SavedSpaceFactor=\count430
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 4066.
-Package hyperref Info: Hyper figures OFF on input line 4195.
-Package hyperref Info: Link nesting OFF on input line 4200.
-Package hyperref Info: Hyper index ON on input line 4203.
-Package hyperref Info: Plain pages OFF on input line 4210.
-Package hyperref Info: Backreferencing OFF on input line 4215.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4073.
+Package hyperref Info: Hyper figures OFF on input line 4192.
+Package hyperref Info: Link nesting OFF on input line 4197.
+Package hyperref Info: Hyper index ON on input line 4200.
+Package hyperref Info: Plain pages OFF on input line 4207.
+Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4462.
-\c@Hy@tempcnt=\count453
-LaTeX Info: Redefining \url on input line 4801.
-\XeTeXLinkMargin=\dimen183
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/generic/bitset/bitset.sty
+Package hyperref Info: Bookmarks ON on input line 4445.
+\c@Hy@tempcnt=\count431
+LaTeX Info: Redefining \url on input line 4804.
+\XeTeXLinkMargin=\dimen172
+ (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/generic/bigintcalc/bigintcalc.sty
+ (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count454
-\Field@Width=\dimen184
-\Fld@charsize=\dimen185
-Package hyperref Info: Hyper figures OFF on input line 6078.
-Package hyperref Info: Link nesting OFF on input line 6083.
-Package hyperref Info: Hyper index ON on input line 6086.
-Package hyperref Info: backreferencing OFF on input line 6093.
-Package hyperref Info: Link coloring ON on input line 6096.
-Package hyperref Info: Link coloring with OCG OFF on input line 6103.
-Package hyperref Info: PDF/A mode OFF on input line 6108.
-\Hy@abspage=\count455
-\c@Item=\count456
-\c@Hfootnote=\count457
+\Fld@menulength=\count432
+\Field@Width=\dimen173
+\Fld@charsize=\dimen174
+Package hyperref Info: Hyper figures OFF on input line 6076.
+Package hyperref Info: Link nesting OFF on input line 6081.
+Package hyperref Info: Hyper index ON on input line 6084.
+Package hyperref Info: backreferencing OFF on input line 6091.
+Package hyperref Info: Link coloring ON on input line 6094.
+Package hyperref Info: Link coloring with OCG OFF on input line 6101.
+Package hyperref Info: PDF/A mode OFF on input line 6106.
+LaTeX Info: Redefining \ref on input line 6146.
+LaTeX Info: Redefining \pageref on input line 6150.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count433
+\c@Item=\count434
+\c@Hfootnote=\count435
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
-\Fld@listcount=\count458
-\c@bookmark@seq@number=\count459
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/rerunfilecheck/rerunfilecheck.sty
-Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/generic/uniquecounter/uniquecounter.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2021-06-07 v7.00m Hyperref driver for pdfTeX
+ (/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count436
+\c@bookmark@seq@number=\count437
+ (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
 )
-\Hy@SectionHShift=\skip92
+\Hy@SectionHShift=\skip90
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
-Class scrreprt Info: loading recommended package `bookmark'.
-(scrreprt)           Using `bookmark' together with `hyperref' is recommended,
-(scrreprt)           because of handling of possible bookmark level gaps.
-(scrreprt)           You can avoid loading `bookmark' with KOMA-Script option
-(scrreprt)           `bookmarkpackage=false' before \begin{document} and
-(scrreprt)           you can avoid this message adding:
-(scrreprt)             \usepackage{bookmark}
-(scrreprt)           before \begin{document} on input line 70.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/bookmark/bookmark.sty
-Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/bookmark/bkm-pdftex.def
-File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
-\BKM@id=\count460
-))
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 70.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/t1lmr.fd
-File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (report.aux)
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 72.
+ (/usr/share/texmf/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-Package scrbase Info: activating english \abstractname on input line 70.
-Package scrbase Info: activating english \partname on input line 70.
-Package scrbase Info: activating english \chaptername on input line 70.
-Package scrbase Info: activating english \appendixname on input line 70.
-Package scrbase Info: activating english \figurename on input line 70.
-Package scrbase Info: activating english \tablename on input line 70.
-Package scrbase Info: activating english \contentsname on input line 70.
-Package scrbase Info: activating english \listfigurename on input line 70.
-Package scrbase Info: activating english \listtablename on input line 70.
-Package scrbase Info: activating english \bibname on input line 70.
-Package scrbase Info: activating english \indexname on input line 70.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+Package scrbase Info: activating english \contentsname on input line 72.
+Package scrbase Info: activating english \listfigurename on input line 72.
+Package scrbase Info: activating english \listtablename on input line 72.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1284,56 +805,53 @@ Package scrbase Info: activating english \indexname on input line 70.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 70.
-Package microtype Info: Applying patch `item' on input line 70.
-Package microtype Info: Applying patch `toc' on input line 70.
-Package microtype Info: Applying patch `eqnum' on input line 70.
-Package microtype Info: Applying patch `footnote' on input line 70.
-Package microtype Info: Applying patch `verbatim' on input line 70.
-LaTeX Info: Redefining \microtypesetup on input line 70.
+LaTeX Info: Redefining \microtypecontext on input line 72.
+Package microtype Info: Applying patch `item' on input line 72.
+Package microtype Info: Applying patch `toc' on input line 72.
+Package microtype Info: Applying patch `eqnum' on input line 72.
+Package microtype Info: Applying patch `footnote' on input line 72.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-Package microtype Info: Patching command `\showhyphens'.
+LaTeX Info: Redefining \showhyphens on input line 72.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
-(/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/microtype/mt-cmr.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
+) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count461
-\scratchdimen=\dimen186
-\scratchbox=\box62
-\nofMPsegments=\count462
-\nofMParguments=\count463
-\everyMPshowfont=\toks32
-\MPscratchCnt=\count464
-\MPscratchDim=\dimen187
-\MPnumerator=\count465
-\makeMPintoPDFobject=\count466
-\everyMPtoPDFconversion=\toks33
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
+\scratchcounter=\count438
+\scratchdimen=\dimen175
+\scratchbox=\box60
+\nofMPsegments=\count439
+\nofMParguments=\count440
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count441
+\MPscratchDim=\dimen176
+\MPnumerator=\count442
+\makeMPintoPDFobject=\count443
+\everyMPtoPDFconversion=\toks31
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count467
-Package tocbasic Info: setting babel extension for `lol' on input line 70.
-\scr@dte@lstlisting@maxnumwidth=\skip93
+\c@lstlisting=\count444
+Package scrhack Info: undefining \float@addtolists on input line 72.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/biblatex/lbx/english.lbx
-File: english.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
@@ -1342,20 +860,50 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'report.bbl' found.
- (report.bbl)
-Package biblatex Info: Reference section=0 on input line 70.
-Package biblatex Info: Reference segment=0 on input line 70.
-Package hyperref Info: Link coloring ON on input line 70.
+ (./report.bbl)
+Package biblatex Info: Reference section=0 on input line 72.
+Package biblatex Info: Reference segment=0 on input line 72.
+Package hyperref Info: Link coloring ON on input line 72.
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+ (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count445
+)
+LaTeX Info: Redefining \ref on input line 72.
+LaTeX Info: Redefining \pageref on input line 72.
+LaTeX Info: Redefining \nameref on input line 72.
+ (./report.out) (./report.out)
+\@outlinefile=\write4
+\openout4 = `report.out'.
+
+Class scrreprt Info: loading recommended package `bookmark'.
+(scrreprt)           Using `bookmark' together with `hyperref' is recommended,
+(scrreprt)           because of handling of possible bookmark level gaps.
+(scrreprt)           You can avoid loading `bookmark' with KOMA-Script option
+(scrreprt)           `bookmarkpackage=false' before \begin{document} and
+(scrreprt)           you can avoid this message adding:
+(scrreprt)             \usepackage{bookmark}
+(scrreprt)           before \begin{document} on input line 72.
+ (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
+ (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
+\BKM@id=\count446
+))
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/24.88'.
 (microtype)             Ignoring protrusion settings for this character.
-<images/unipi_logo.png, id=3, 2055.68pt x 2056.68375pt>
-File: images/unipi_logo.png Graphic file (type png)
-<use images/unipi_logo.png>
-Package pdftex.def Info: images/unipi_logo.png  used on input line 80.
+<images//unipi_logo.png, id=4, 2055.68pt x 2056.68375pt>
+File: images//unipi_logo.png Graphic file (type png)
+<use images//unipi_logo.png>
+Package pdftex.def Info: images//unipi_logo.png  used on input line 82.
 (pdftex.def)             Requested size: 102.42836pt x 102.46362pt.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/20.74'.
@@ -1363,328 +911,226 @@ Package microtype Info: Character `029' is missing
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
-
-
-[1
+ [1
 
 
 
-{/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map} <./images/unipi_logo.png>]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images//unipi_logo.png>]
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 95.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/t1lmss.fd
-File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+ (/usr/share/texmf/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+ [2
 
-
-[2]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 107.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 108.
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-
-[3
+ [3
 
 ]
-Package tocbasic Info: character protrusion at toc deactivated on input line 110.
- (report.toc
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+Package tocbasic Info: character protrusion at toc deactivated on input line 111.
+ (./report.toc
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4.
+ (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4.
+ (/usr/share/texmf/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 3.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 4.
+ (/usr/share/texmf/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 3.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 4.
+ (/usr/share/texmf/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 3.
+(Font)              <14.4> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 3.
+(Font)              <10> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 3.
-
-
-[4
+(Font)              <7> on input line 4.
+ [4
 
 
 ])
-\tf@toc=\write4
-\openout4 = `report.toc'.
+\tf@toc=\write5
+\openout5 = `report.toc'.
 
+ [5]
+Package tocbasic Info: character protrusion at lof deactivated on input line 112.
+ (./report.lof)
+\tf@lof=\write6
+\openout6 = `report.lof'.
 
-
-[5]
-Package tocbasic Info: character protrusion at lof deactivated on input line 111.
- (report.lof)
-\tf@lof=\write5
-\openout5 = `report.lof'.
-
-
-
-[6
+ [6
 
 ]
-Package tocbasic Info: character protrusion at lot deactivated on input line 112.
- (report.lot)
-\tf@lot=\write6
-\openout6 = `report.lot'.
+Package tocbasic Info: character protrusion at lot deactivated on input line 113.
+ (./report.lot)
+\tf@lot=\write7
+\openout7 = `report.lot'.
 
- (contents/chapterOne.tex
-
-[7
+ (./contents/chapterOne.tex [7
 
 ]
 chapter 1.
-<images/internet_user_report_oct_25_datareportal.png, id=198, 1927.2pt x 1084.05pt>
-File: images/internet_user_report_oct_25_datareportal.png Graphic file (type png)
-<use images/internet_user_report_oct_25_datareportal.png>
-Package pdftex.def Info: images/internet_user_report_oct_25_datareportal.png  used on input line 7.
+<images//internet_user_report_oct_25_datareportal.png, id=202, 1927.2pt x 1084.05pt>
+File: images//internet_user_report_oct_25_datareportal.png Graphic file (type png)
+<use images//internet_user_report_oct_25_datareportal.png>
+Package pdftex.def Info: images//internet_user_report_oct_25_datareportal.png  used on input line 7.
 (pdftex.def)             Requested size: 307.2929pt x 172.83951pt.
-<images/example_of_flex_grid.png, id=200, 865.2325pt x 213.79875pt>
-File: images/example_of_flex_grid.png Graphic file (type png)
-<use images/example_of_flex_grid.png>
-Package pdftex.def Info: images/example_of_flex_grid.png  used on input line 16.
+<images//example_of_flex_grid.png, id=204, 865.2325pt x 213.79875pt>
+File: images//example_of_flex_grid.png Graphic file (type png)
+<use images//example_of_flex_grid.png>
+Package pdftex.def Info: images//example_of_flex_grid.png  used on input line 16.
 (pdftex.def)             Requested size: 358.50317pt x 88.58453pt.
-
-
 [8
 
- <./images/internet_user_report_oct_25_datareportal.png (PNG copy)>]
-
-[9 <./images/example_of_flex_grid.png>]
+ <./images//internet_user_report_oct_25_datareportal.png (PNG copy)>] [9 <./images//example_of_flex_grid.png>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 30.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-
-[10]
-
-[11]
-
-[12]) (contents/chapterTwo.tex
-
-[13]
+ (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [10] [11] [12]) (./contents/chapterTwo.tex [13]
 chapter 2.
-
-
 [14
 
 ]
-<images/tfs_architecture.png, id=251, 853.1875pt x 524.96124pt>
-File: images/tfs_architecture.png Graphic file (type png)
-<use images/tfs_architecture.png>
-Package pdftex.def Info: images/tfs_architecture.png  used on input line 14.
-(pdftex.def)             Requested size: 307.2929pt x 189.074pt.
-
-
-[15]
-
-[16 <./images/tfs_architecture.png>]
-<images/dwdm_flex_grid.jpg, id=266, 248.78787pt x 130.46974pt>
-File: images/dwdm_flex_grid.jpg Graphic file (type jpg)
-<use images/dwdm_flex_grid.jpg>
-Package pdftex.def Info: images/dwdm_flex_grid.jpg  used on input line 25.
+<images//tfs_architecture.png, id=255, 644.4075pt x 345.29pt>
+File: images//tfs_architecture.png Graphic file (type png)
+<use images//tfs_architecture.png>
+Package pdftex.def Info: images//tfs_architecture.png  used on input line 14.
+(pdftex.def)             Requested size: 307.2929pt x 164.66249pt.
+ [15] [16 <./images//tfs_architecture.png>]
+<images//dwdm_flex_grid.jpg, id=270, 248.78787pt x 130.46974pt>
+File: images//dwdm_flex_grid.jpg Graphic file (type jpg)
+<use images//dwdm_flex_grid.jpg>
+Package pdftex.def Info: images//dwdm_flex_grid.jpg  used on input line 25.
 (pdftex.def)             Requested size: 307.2929pt x 161.15367pt.
-
-
-[17 <./images/dwdm_flex_grid.jpg>]
-<images/roadm_muxponder.png, id=272, 514.3215pt x 462.7689pt>
-File: images/roadm_muxponder.png Graphic file (type png)
-<use images/roadm_muxponder.png>
-Package pdftex.def Info: images/roadm_muxponder.png  used on input line 40.
+ [17 <./images//dwdm_flex_grid.jpg>]
+<images//roadm_muxponder.png, id=276, 514.3215pt x 462.7689pt>
+File: images//roadm_muxponder.png Graphic file (type png)
+<use images//roadm_muxponder.png>
+Package pdftex.def Info: images//roadm_muxponder.png  used on input line 40.
 (pdftex.def)             Requested size: 307.2929pt x 276.4913pt.
-
-
-[18]
-
-[19 <./images/roadm_muxponder.png>]
-
-[20]
-
-[21]
-
-[22]
-
-[23]) (contents/chapterThree.tex
-
-[24]
+ [18] [19 <./images//roadm_muxponder.png>] [20] [21] [22] [23]) (./contents/chapterThree.tex [24]
 chapter 3.
-
-
 [25
 
-]
-
-[26]
-<images/full_algo_er.png, id=359, 2109.8825pt x 1164.35pt>
-File: images/full_algo_er.png Graphic file (type png)
-<use images/full_algo_er.png>
-Package pdftex.def Info: images/full_algo_er.png  used on input line 13.
+] [26]
+<images//full_algo_er.png, id=364, 2109.8825pt x 1164.35pt>
+File: images//full_algo_er.png Graphic file (type png)
+<use images//full_algo_er.png>
+Package pdftex.def Info: images//full_algo_er.png  used on input line 13.
 (pdftex.def)             Requested size: 512.14963pt x 282.62991pt.
-
-
-[27 <./images/full_algo_er.png>]
-
-[28]
-
-[29]
-
-[30]) (contents/chapterFour.tex
-
-[31]
+ [27 <./images//full_algo_er.png>] [28] [29] [30]) (./contents/chapterFour.tex [31]
 chapter 4.
-
-
 [32
 
-]
-
-[33]
-
-[34]
+] [33] [34]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 26.
-<images/poc_service_orchestration.png, id=400, 2111.89pt x 1027.84pt>
-File: images/poc_service_orchestration.png Graphic file (type png)
-<use images/poc_service_orchestration.png>
-Package pdftex.def Info: images/poc_service_orchestration.png  used on input line 29.
+<images//poc_service_orchestration.png, id=407, 2111.89pt x 1027.84pt>
+File: images//poc_service_orchestration.png Graphic file (type png)
+<use images//poc_service_orchestration.png>
+Package pdftex.def Info: images//poc_service_orchestration.png  used on input line 29.
 (pdftex.def)             Requested size: 512.14963pt x 249.25874pt.
- (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2025/11/14 1.11b listings language file
-) (/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2025/11/14 1.11b listings language file
-)
-
-[35 <./images/poc_service_orchestration.png>]) (contents/chapterFive.tex
-
-[36]
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+) [35 <./images//poc_service_orchestration.png>]) (./contents/chapterFive.tex [36]
 chapter 5.
-
-
 [37
 
-]
-
-[38]
-
-[39]
-
-[40]
-<images/linear_single_topo.png, id=493, 2896.8225pt x 1265.72874pt>
-File: images/linear_single_topo.png Graphic file (type png)
-<use images/linear_single_topo.png>
-Package pdftex.def Info: images/linear_single_topo.png  used on input line 74.
+] [38] [39] [40]
+<images//linear_single_topo.png, id=501, 2896.8225pt x 1265.72874pt>
+File: images//linear_single_topo.png Graphic file (type png)
+<use images//linear_single_topo.png>
+Package pdftex.def Info: images//linear_single_topo.png  used on input line 74.
 (pdftex.def)             Requested size: 409.72125pt x 179.01628pt.
-) (contents/chapterSix.tex
-
-[41 <./images/linear_single_topo.png>]
+) (./contents/chapterSix.tex [41 <./images//linear_single_topo.png>]
 chapter 6.
-
-
 [42
 
 ]
-File: images/linear_single_topo.png Graphic file (type png)
-<use images/linear_single_topo.png>
-Package pdftex.def Info: images/linear_single_topo.png  used on input line 17.
+File: images//linear_single_topo.png Graphic file (type png)
+<use images//linear_single_topo.png>
+Package pdftex.def Info: images//linear_single_topo.png  used on input line 17.
 (pdftex.def)             Requested size: 512.14963pt x 223.76552pt.
-<images/butterfly_parallel.png, id=507, 1437.37pt x 633.36626pt>
-File: images/butterfly_parallel.png Graphic file (type png)
-<use images/butterfly_parallel.png>
-Package pdftex.def Info: images/butterfly_parallel.png  used on input line 23.
+<images//butterfly_parallel.png, id=516, 1437.37pt x 633.36626pt>
+File: images//butterfly_parallel.png Graphic file (type png)
+<use images//butterfly_parallel.png>
+Package pdftex.def Info: images//butterfly_parallel.png  used on input line 23.
 (pdftex.def)             Requested size: 512.14963pt x 225.68256pt.
-<images/nsf_parallel.png, id=508, 1437.37pt x 632.3625pt>
-File: images/nsf_parallel.png Graphic file (type png)
-<use images/nsf_parallel.png>
-Package pdftex.def Info: images/nsf_parallel.png  used on input line 30.
+<images//nsf_parallel.png, id=517, 1437.37pt x 632.3625pt>
+File: images//nsf_parallel.png Graphic file (type png)
+<use images//nsf_parallel.png>
+Package pdftex.def Info: images//nsf_parallel.png  used on input line 30.
 (pdftex.def)             Requested size: 512.14963pt x 225.3249pt.
-
-
-[43 <./images/butterfly_parallel.png>]
-<images/paneu_parallel.png, id=515, 1435.3625pt x 633.36626pt>
-File: images/paneu_parallel.png Graphic file (type png)
-<use images/paneu_parallel.png>
-Package pdftex.def Info: images/paneu_parallel.png  used on input line 37.
+ [43 <./images//butterfly_parallel.png>]
+<images//paneu_parallel.png, id=524, 1435.3625pt x 633.36626pt>
+File: images//paneu_parallel.png Graphic file (type png)
+<use images//paneu_parallel.png>
+Package pdftex.def Info: images//paneu_parallel.png  used on input line 37.
 (pdftex.def)             Requested size: 512.14963pt x 225.99182pt.
-
-
-[44 <./images/nsf_parallel.png> <./images/paneu_parallel.png>]
-<images/web_view_device_info.png, id=522, 1460.45625pt x 546.04pt>
-File: images/web_view_device_info.png Graphic file (type png)
-<use images/web_view_device_info.png>
-Package pdftex.def Info: images/web_view_device_info.png  used on input line 52.
+ [44 <./images//nsf_parallel.png> <./images//paneu_parallel.png>]
+<images//web_view_device_info.png, id=531, 1460.45625pt x 546.04pt>
+File: images//web_view_device_info.png Graphic file (type png)
+<use images//web_view_device_info.png>
+Package pdftex.def Info: images//web_view_device_info.png  used on input line 52.
 (pdftex.def)             Requested size: 409.72125pt x 153.18176pt.
-
-
-[45 <./images/web_view_device_info.png>]
-<images/device_info_extraction.png, id=528, 1895.08pt x 290.08376pt>
-File: images/device_info_extraction.png Graphic file (type png)
-<use images/device_info_extraction.png>
-Package pdftex.def Info: images/device_info_extraction.png  used on input line 61.
+ [45 <./images//web_view_device_info.png>]
+<images//device_info_extraction.png, id=538, 1895.08pt x 290.08376pt>
+File: images//device_info_extraction.png Graphic file (type png)
+<use images//device_info_extraction.png>
+Package pdftex.def Info: images//device_info_extraction.png  used on input line 61.
 (pdftex.def)             Requested size: 512.14963pt x 78.39447pt.
-<images/frequency_mapping_roadm_ports.png, id=529, 1182.4175pt x 363.3575pt>
-File: images/frequency_mapping_roadm_ports.png Graphic file (type png)
-<use images/frequency_mapping_roadm_ports.png>
-Package pdftex.def Info: images/frequency_mapping_roadm_ports.png  used on input line 68.
+<images//frequency_mapping_roadm_ports.png, id=539, 1182.4175pt x 363.3575pt>
+File: images//frequency_mapping_roadm_ports.png Graphic file (type png)
+<use images//frequency_mapping_roadm_ports.png>
+Package pdftex.def Info: images//frequency_mapping_roadm_ports.png  used on input line 68.
 (pdftex.def)             Requested size: 512.14963pt x 157.38835pt.
-<images/port_rsa.png, id=530, 1403.2425pt x 774.895pt>
-File: images/port_rsa.png Graphic file (type png)
-<use images/port_rsa.png>
-Package pdftex.def Info: images/port_rsa.png  used on input line 75.
+<images//port_rsa.png, id=540, 1403.2425pt x 774.895pt>
+File: images//port_rsa.png Graphic file (type png)
+<use images//port_rsa.png>
+Package pdftex.def Info: images//port_rsa.png  used on input line 75.
 (pdftex.def)             Requested size: 409.72125pt x 226.2509pt.
-<images/link_rsa.png, id=531, 1436.36626pt x 744.7825pt>
-File: images/link_rsa.png Graphic file (type png)
-<use images/link_rsa.png>
-Package pdftex.def Info: images/link_rsa.png  used on input line 83.
+<images//link_rsa.png, id=541, 1436.36626pt x 744.7825pt>
+File: images//link_rsa.png Graphic file (type png)
+<use images//link_rsa.png>
+Package pdftex.def Info: images//link_rsa.png  used on input line 83.
 (pdftex.def)             Requested size: 409.72125pt x 212.44705pt.
-<images/shortest_path.png, id=532, 1442.38875pt x 562.1pt>
-File: images/shortest_path.png Graphic file (type png)
-<use images/shortest_path.png>
-Package pdftex.def Info: images/shortest_path.png  used on input line 91.
+<images//shortest_path.png, id=542, 1442.38875pt x 562.1pt>
+File: images//shortest_path.png Graphic file (type png)
+<use images//shortest_path.png>
+Package pdftex.def Info: images//shortest_path.png  used on input line 91.
 (pdftex.def)             Requested size: 409.72125pt x 159.6684pt.
-<images/hop_rsa.png, id=533, 1388.18625pt x 587.19376pt>
-File: images/hop_rsa.png Graphic file (type png)
-<use images/hop_rsa.png>
-Package pdftex.def Info: images/hop_rsa.png  used on input line 97.
+<images//hop_rsa.png, id=543, 1388.18625pt x 587.19376pt>
+File: images//hop_rsa.png Graphic file (type png)
+<use images//hop_rsa.png>
+Package pdftex.def Info: images//hop_rsa.png  used on input line 97.
 (pdftex.def)             Requested size: 409.72125pt x 173.31026pt.
-
-
-[46 <./images/device_info_extraction.png> <./images/frequency_mapping_roadm_ports.png>]
-
-[47 <./images/port_rsa.png> <./images/link_rsa.png>]
-<images/additional_path.png, id=546, 1448.41125pt x 334.24875pt>
-File: images/additional_path.png Graphic file (type png)
-<use images/additional_path.png>
-Package pdftex.def Info: images/additional_path.png  used on input line 104.
+ [46 <./images//device_info_extraction.png> <./images//frequency_mapping_roadm_ports.png>] [47 <./images//port_rsa.png> <./images//link_rsa.png>]
+<images//additional_path.png, id=559, 1448.41125pt x 334.24875pt>
+File: images//additional_path.png Graphic file (type png)
+<use images//additional_path.png>
+Package pdftex.def Info: images//additional_path.png  used on input line 104.
 (pdftex.def)             Requested size: 409.72125pt x 94.54785pt.
-
-
-[48 <./images/shortest_path.png> <./images/hop_rsa.png> <./images/additional_path.png>]
-
-[49]
-
-[50]) (contents/chapterSeven.tex
-
-[51]
+ [48 <./images//shortest_path.png> <./images//hop_rsa.png> <./images//additional_path.png>] [49] [50]) (./contents/chapterSeven.tex [51]
 chapter 7.
-
-
 [52
 
 ]
@@ -1692,53 +1138,38 @@ Overfull \hbox (4.45497pt too wide) in paragraph at lines 14--15
 \T1/lmr/m/n/14.4 (-20) A fun-da-men-tal ar-chi-tec-tural lim-i-ta-tion is the state-ful op-er-a-tion of the \T1/lmtt/m/n/14.4 ParallelOptic- 
  []
 
-
-
-[53]
-
-[54]
-
-[55])
-
-[56]
-
-[57
+[53] [54] [55]) [56] [57
 
 ]
-Overfull \hbox (7.90434pt too wide) in paragraph at lines 121--121
+Overfull \hbox (7.90434pt too wide) in paragraph at lines 122--122
 []\T1/lmr/m/n/14.4 (-20) J.[]L. Izquierdo-Zaragoza, P. Pavon-Marino, and M.[]V. Bueno-Delgado, ^^P  Distance-
  []
 
 
-Overfull \hbox (0.16068pt too wide) in paragraph at lines 121--121
+Overfull \hbox (0.16068pt too wide) in paragraph at lines 122--122
 []\T1/lmr/m/n/14.4 (-20) J. Zhang, C. Yu, L. Luo, X. Liu, and J. Shen, ^^P  Maximum-spectrum-completeness
  []
 
-
-
-[58]
-
-[59] (report.aux)
- ***********
-LaTeX2e <2025-11-01>
-L3 programming layer <2020/03/25>
- ***********
+[58] [59] (./report.aux)
+Package rerunfilecheck Info: File `report.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'report.run.xml'.
 \openout1 = `report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29396 strings out of 467875
- 555805 string characters out of 5402536
- 1678204 words of memory out of 5000000
- 57442 multiletter control sequences out of 15000+600000
- 720576 words of font info for 203 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 108i,10n,107p,11262b,2383s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc}{/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc}{/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ts1.enc}</Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbx12.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmbxi10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmcsc10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmmi12.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr12.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr6.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmr7.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmri12.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmssbx10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsy10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt10.pfb></Users/asmchafiullahbhuiyan/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmtt12.pfb>
-Output written on report.pdf (59 pages, 6471763 bytes).
+ 28410 strings out of 480247
+ 518298 string characters out of 5896151
+ 1520417 words of memory out of 5000000
+ 45468 multiletter control sequences out of 15000+600000
+ 561272 words of font info for 191 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 108i,10n,106p,10638b,2218s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
+Output written on report.pdf (59 pages, 6656878 bytes).
 PDF statistics:
- 914 PDF objects out of 1000 (max. 8388607)
- 227 named destinations out of 1000 (max. 500000)
- 54813 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 948 PDF objects out of 1000 (max. 8388607)
+ 809 compressed objects within 9 object streams
+ 243 named destinations out of 1000 (max. 500000)
+ 54821 words of extra memory for PDF output out of 61914 (max. 10000000)
 

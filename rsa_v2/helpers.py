@@ -409,7 +409,7 @@ class TopologyHelper:
             if index == len(node_path) - 1:
                 path_info = {
                     'links': list(current_edge_path),
-                    'is_valid': True  # Always true since G_free pre-filters
+                    'is_valid': True
                 }
                 valid_edge_paths.append(path_info)
 
@@ -579,10 +579,11 @@ class TopologyHelper:
 
         for path in node_paths:
             try:
+                # basically expand_path() calculates the parallel paths for a path node. Here even for the single link topology this function has been used. It didn't affect the results because the topology was physically differentiated.
                 valid_edge_paths = TopologyHelper.expand_path(path, G)
                 if not valid_edge_paths:
                     continue
-
+                # never mind because it always returns 1 valid path.
                 edge_path = valid_edge_paths[0]
 
                 from models import OpticalLink
@@ -772,8 +773,7 @@ class TopologyHelper:
         calculated_bandwidth_ghz = TopologyHelper.get_bandwidth(bitrate_gbps)
 
         SLOT_GRANULARITY_HZ = ITUStandards.SLOT_GRANULARITY.value
-        SLOT_GRANULARITY_GHZ = SLOT_GRANULARITY_HZ / \
-            FrequencyMeasurementUnit.GHz.value
+        SLOT_GRANULARITY_GHZ = SLOT_GRANULARITY_HZ / FrequencyMeasurementUnit.GHz.value
         num_slots = math.ceil(calculated_bandwidth_ghz / SLOT_GRANULARITY_GHZ)
 
         if not path_obj['links']:
@@ -885,7 +885,7 @@ class TopologyHelper:
             mask = int(allocated_mask)
             updated_count = 0
 
-            # Step 3: Atomic Validation and Update
+            # Step 3: Validation and Update
             for ep in valid_endpoints:
                 if not ep.min_frequency or not ep.flex_slots:
                     continue

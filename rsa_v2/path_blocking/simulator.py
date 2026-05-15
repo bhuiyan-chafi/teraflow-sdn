@@ -115,6 +115,7 @@ def run_simulation():
         print(
             f"Stopping: CI <= {CI_THRESHOLD*100}% of P_b OR max {MAX_REQUESTS} requests")
         print(f"============================================================")
+        sim_start = time.time()
 
         arrival_rate = erlang / HOLDING_TIME
         event_queue = []
@@ -256,6 +257,7 @@ def run_simulation():
 
                             # Build timing summary for keys relevant to this run
                             timing_parts = []
+
                             def _avg(key):
                                 b = timing_buckets[key]
                                 return sum(b) / len(b) if b else 0.0
@@ -344,6 +346,14 @@ def run_simulation():
                 f"{link_names_map.get(str(l_id), str(l_id))} ({count})" for l_id, count in top_10]
             top_links_str = ", ".join(formatted_links)
 
+        simulation_time_s = round(time.time() - sim_start, 2)
+
+        if transient_requests > 0:
+            transient_contention_rate = round(
+                (transient_blocked / transient_requests) * 100, 8)  # type: ignore[operator]
+        else:
+            transient_contention_rate = 0
+
         stat_dict = {
             "bitrate": "Dynamic",
             "load": erlang,
@@ -352,9 +362,9 @@ def run_simulation():
             "path_type": PATH_TYPE,
             "parallelpath_strategy": PARALLELPATH_STRATEGY,
             "stop_reason": stop_reason,
+            "simulation_time_s": simulation_time_s,
             "total_requests": total,
-            "transient_contention_rate": round(
-                (transient_blocked/transient_requests)*100, 8) if transient_requests > 0 else 0,
+            "transient_contention_rate": transient_contention_rate,
             "successful_requests": total - blocked_requests,
             "blocked_requests": blocked_requests,
             "path_blocked": path_blocked_count,

@@ -3,7 +3,7 @@
 %%%%%%%% CREATE DOCUMENT STRUCTURE %%%%%%%%
 %% Language and font encodings
 \usepackage[english]{babel}
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{csquotes}  % required by biblatex when babel is loaded
 
@@ -49,6 +49,8 @@
 \addbibresource{references.bib}
 %% hyperref loaded last
 \usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, citecolor=blue]{hyperref}
+\let\oldlabel\label
+\renewcommand{\label}[1]{\oldlabel{#1}\ignorespaces}
 
 %% KOMA-Script font settings
 \setkomafont{chapter}{\huge\bfseries}
@@ -90,9 +92,8 @@
     \vfill
 \end{titlepage}
 %%% Acknowledgement
-\section*{\begin{center}
-      Acknowledgement
-  \end{center}}
+\chapter*{Acknowledgement}
+\addcontentsline{toc}{chapter}{Acknowledgement}
 First and foremost, I would like to express my deepest gratitude to my primary supervisor, Professor Alessio Giorgetti. I am incredibly thankful for his unwavering support, his willingness to share his resources, and for granting me welcoming access to his office. His generous investment of valuable time and expertise was instrumental in allowing me to complete this extensive and complex project within the given timeframe. Furthermore, I am deeply appreciative of his provision of dedicated hardware resources, which afforded me endless opportunities to conduct rigorous testing and successfully validate my work.
 
 \vspace{0.4cm}

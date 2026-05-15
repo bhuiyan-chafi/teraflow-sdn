@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bcf:controlfile version="3.11" bltxversion="3.21" xmlns:bcf="https://sourceforge.net/projects/biblatex">
+<bcf:controlfile version="3.8" bltxversion="3.17" xmlns:bcf="https://sourceforge.net/projects/biblatex">
   <!-- BIBER OPTIONS -->
   <bcf:options component="biber" type="global">
     <bcf:option type="singlevalued">
@@ -37,11 +37,6 @@
     <bcf:option type="singlevalued">
       <bcf:key>alphaothers</bcf:key>
       <bcf:value>+</bcf:value>
-    </bcf:option>
-    <bcf:option type="multivalued">
-      <bcf:key>extradatecontext</bcf:key>
-      <bcf:value order="1">labelname</bcf:value>
-      <bcf:value order="2">labeltitle</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>labelalpha</bcf:key>
@@ -100,7 +95,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxcitenames</bcf:key>
-      <bcf:value>2</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxsortnames</bcf:key>
@@ -116,15 +111,15 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minbibnames</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>mincitenames</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minsortnames</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minitems</bcf:key>
@@ -140,10 +135,6 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>nosortothers</bcf:key>
-      <bcf:value>0</bcf:value>
-    </bcf:option>
-    <bcf:option type="singlevalued">
-      <bcf:key>pluralothers</bcf:key>
       <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
@@ -281,11 +272,6 @@
   </bcf:options>
   <!-- online -->
   <bcf:options component="biblatex" type="online">
-    <bcf:option type="multivalued">
-      <bcf:key>extradatecontext</bcf:key>
-      <bcf:value order="1">labelname</bcf:value>
-      <bcf:value order="2">labeltitle</bcf:value>
-    </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>labelalpha</bcf:key>
       <bcf:value>0</bcf:value>
@@ -335,7 +321,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxcitenames</bcf:key>
-      <bcf:value>2</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxsortnames</bcf:key>
@@ -351,15 +337,15 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minbibnames</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>mincitenames</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minsortnames</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minitems</bcf:key>
@@ -386,11 +372,11 @@
       <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
-      <bcf:key>skipbiblist</bcf:key>
+      <bcf:key>skiplab</bcf:key>
       <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
-      <bcf:key>skiplab</bcf:key>
+      <bcf:key>skipbiblist</bcf:key>
       <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
@@ -502,11 +488,9 @@
     <bcf:option datatype="xml">inheritance</bcf:option>
     <bcf:option datatype="xml">translit</bcf:option>
     <bcf:option datatype="xml">uniquenametemplate</bcf:option>
-    <bcf:option datatype="xml">namehashtemplate</bcf:option>
     <bcf:option datatype="xml">sortingnamekeytemplate</bcf:option>
     <bcf:option datatype="xml">sortingtemplate</bcf:option>
     <bcf:option datatype="xml">extradatespec</bcf:option>
-    <bcf:option datatype="xml">extradatecontext</bcf:option>
     <bcf:option datatype="xml">labelnamespec</bcf:option>
     <bcf:option datatype="xml">labeltitlespec</bcf:option>
     <bcf:option datatype="xml">labeldatespec</bcf:option>
@@ -514,7 +498,6 @@
     <bcf:option datatype="string">alphaothers</bcf:option>
     <bcf:option datatype="string">sortalphaothers</bcf:option>
     <bcf:option datatype="string">presort</bcf:option>
-    <bcf:option datatype="string">citepagerange</bcf:option>
     <bcf:option datatype="string">texencoding</bcf:option>
     <bcf:option datatype="string">bibencoding</bcf:option>
     <bcf:option datatype="string">sortingtemplatename</bcf:option>
@@ -616,7 +599,6 @@
     <bcf:option datatype="boolean">labeltitle</bcf:option>
     <bcf:option datatype="boolean">labeltitleyear</bcf:option>
     <bcf:option datatype="boolean">labeldateparts</bcf:option>
-    <bcf:option datatype="boolean">pluralothers</bcf:option>
     <bcf:option datatype="boolean">nohashothers</bcf:option>
     <bcf:option datatype="boolean">nosortothers</bcf:option>
     <bcf:option datatype="boolean">noroman</bcf:option>
@@ -645,6 +627,7 @@
     <bcf:option datatype="boolean">related</bcf:option>
     <bcf:option datatype="boolean">subentry</bcf:option>
     <bcf:option datatype="boolean">dashed</bcf:option>
+    <bcf:option datatype="boolean">subentrycomp</bcf:option>
     <bcf:option datatype="boolean">bibtexcaseprotection</bcf:option>
     <bcf:option datatype="integer">mincrossrefs</bcf:option>
     <bcf:option datatype="integer">minxrefs</bcf:option>
@@ -727,12 +710,12 @@
     <bcf:option datatype="boolean">eprint</bcf:option>
     <bcf:option datatype="boolean">related</bcf:option>
     <bcf:option datatype="boolean">subentry</bcf:option>
+    <bcf:option datatype="boolean">subentrycomp</bcf:option>
     <bcf:option datatype="boolean">bibtexcaseprotection</bcf:option>
     <bcf:option datatype="xml">labelalphatemplate</bcf:option>
     <bcf:option datatype="xml">translit</bcf:option>
     <bcf:option datatype="xml">sortexclusion</bcf:option>
     <bcf:option datatype="xml">sortinclusion</bcf:option>
-    <bcf:option datatype="xml">extradatecontext</bcf:option>
     <bcf:option datatype="xml">labelnamespec</bcf:option>
     <bcf:option datatype="xml">labeltitlespec</bcf:option>
     <bcf:option datatype="xml">labeldatespec</bcf:option>
@@ -751,10 +734,9 @@
   </bcf:optionscope>
   <bcf:optionscope type="ENTRY">
     <bcf:option datatype="string">noinherit</bcf:option>
-    <bcf:option datatype="string" backendin="sortingnamekeytemplatename,uniquenametemplatename,labelalphanametemplatename,namehashtemplatename">nametemplates</bcf:option>
+    <bcf:option datatype="string" backendin="sortingnamekeytemplatename,uniquenametemplatename,labelalphanametemplatename">nametemplates</bcf:option>
     <bcf:option datatype="string" backendout="1">labelalphanametemplatename</bcf:option>
     <bcf:option datatype="string" backendout="1">uniquenametemplatename</bcf:option>
-    <bcf:option datatype="string" backendout="1">namehashtemplatename</bcf:option>
     <bcf:option datatype="string" backendout="1">sortingnamekeytemplatename</bcf:option>
     <bcf:option datatype="string">presort</bcf:option>
     <bcf:option datatype="string" backendout="1">indexing</bcf:option>
@@ -816,6 +798,7 @@
     <bcf:option datatype="boolean" backendout="1">eprint</bcf:option>
     <bcf:option datatype="boolean" backendout="1">related</bcf:option>
     <bcf:option datatype="boolean" backendout="1">subentry</bcf:option>
+    <bcf:option datatype="boolean" backendout="1">subentrycomp</bcf:option>
     <bcf:option datatype="boolean" backendout="1">bibtexcaseprotection</bcf:option>
     <bcf:option datatype="integer" backendin="maxcitenames,maxbibnames,maxsortnames">maxnames</bcf:option>
     <bcf:option datatype="integer" backendin="mincitenames,minbibnames,minsortnames">minnames</bcf:option>
@@ -831,10 +814,9 @@
     <bcf:option datatype="integer" backendout="1">minalphanames</bcf:option>
   </bcf:optionscope>
   <bcf:optionscope type="NAMELIST">
-    <bcf:option datatype="string" backendin="sortingnamekeytemplatename,uniquenametemplatename,labelalphanametemplatename,namehashtemplatename">nametemplates</bcf:option>
+    <bcf:option datatype="string" backendin="sortingnamekeytemplatename,uniquenametemplatename,labelalphanametemplatename">nametemplates</bcf:option>
     <bcf:option datatype="string" backendout="1">labelalphanametemplatename</bcf:option>
     <bcf:option datatype="string" backendout="1">uniquenametemplatename</bcf:option>
-    <bcf:option datatype="string" backendout="1">namehashtemplatename</bcf:option>
     <bcf:option datatype="string" backendout="1">sortingnamekeytemplatename</bcf:option>
     <bcf:option datatype="string">uniquelist</bcf:option>
     <bcf:option datatype="string">uniquename</bcf:option>
@@ -848,10 +830,9 @@
     <bcf:option datatype="boolean" backendout="1">useprefix</bcf:option>
   </bcf:optionscope>
   <bcf:optionscope type="NAME">
-    <bcf:option datatype="string" backendin="sortingnamekeytemplatename,uniquenametemplatename,labelalphanametemplatename,namehashtemplatename">nametemplates</bcf:option>
+    <bcf:option datatype="string" backendin="sortingnamekeytemplatename,uniquenametemplatename,labelalphanametemplatename">nametemplates</bcf:option>
     <bcf:option datatype="string" backendout="1">labelalphanametemplatename</bcf:option>
     <bcf:option datatype="string" backendout="1">uniquenametemplatename</bcf:option>
-    <bcf:option datatype="string" backendout="1">namehashtemplatename</bcf:option>
     <bcf:option datatype="string" backendout="1">sortingnamekeytemplatename</bcf:option>
     <bcf:option datatype="string">uniquename</bcf:option>
     <bcf:option datatype="boolean" backendout="1">familyinits</bcf:option>
@@ -1065,15 +1046,8 @@
     <bcf:namepart order="2" base="1">family</bcf:namepart>
     <bcf:namepart order="3">given</bcf:namepart>
   </bcf:uniquenametemplate>
-  <!-- NAME HASH TEMPLATES -->
-  <bcf:namehashtemplate name="global">
-    <bcf:namepart order="1" hashscope="full">family</bcf:namepart>
-    <bcf:namepart order="2" hashscope="full">given</bcf:namepart>
-    <bcf:namepart order="3" hashscope="full">prefix</bcf:namepart>
-    <bcf:namepart order="4" hashscope="full">suffix</bcf:namepart>
-  </bcf:namehashtemplate>
   <!-- SORTING NAME KEY TEMPLATES -->
-  <bcf:sortingnamekeytemplate name="global" visibility="sort">
+  <bcf:sortingnamekeytemplate name="global">
     <bcf:keypart order="1">
       <bcf:part type="namepart" order="1" use="1">prefix</bcf:part>
       <bcf:part type="namepart" order="2">family</bcf:part>
@@ -2374,72 +2348,96 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">itu694</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">algorithmsRSATaxonomy</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">efficientDynamicRSAEon</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">heuristicWSAMultihop</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">novelRoutingWSA</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">efficientDynamicRSAEon</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">aboutTFS</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">openconfigYang</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">openroadmYang</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">softwareDefinedOpticalNetwork</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">largeScaleOpticalSDN</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">odtn</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">opticalNetworksAndMangementControl</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">itu694</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">openconfigYang</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">openroadmYang</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">rsaHeuristicSliced</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">rsaHeuristicSliced</bcf:citekey>
-    <bcf:citekey order="19" intorder="1">algorithmsRSATaxonomy</bcf:citekey>
-    <bcf:citekey order="20" intorder="1">algorithmResearchRSAONR</bcf:citekey>
-    <bcf:citekey order="21" intorder="1">efficientDynamicRSAEon</bcf:citekey>
-    <bcf:citekey order="22" intorder="1">efficientDynamicRSAEon</bcf:citekey>
-    <bcf:citekey order="23" intorder="1">algorithmsRSATaxonomy</bcf:citekey>
-    <bcf:citekey order="24" intorder="1">efficientDynamicRSAEon</bcf:citekey>
-    <bcf:citekey order="25" intorder="1">rsaFlexGrid</bcf:citekey>
-    <bcf:citekey order="26" intorder="1">rsaHeuristicSliced</bcf:citekey>
-    <bcf:citekey order="27" intorder="1">distanceAdaptive</bcf:citekey>
-    <bcf:citekey order="28" intorder="1">algorithmsRSATaxonomy</bcf:citekey>
-    <bcf:citekey order="29" intorder="1">heuristicWSAMultihop</bcf:citekey>
-    <bcf:citekey order="30" intorder="1">rsaHeuristicSliced</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">rsaHeuristicSliced</bcf:citekey>
-    <bcf:citekey order="32" intorder="1">failureProbability</bcf:citekey>
-    <bcf:citekey order="33" intorder="1">failureProbability</bcf:citekey>
-    <bcf:citekey order="34" intorder="1">maximumSpectrumCompleteness</bcf:citekey>
-    <bcf:citekey order="35" intorder="1">spectrumStatusAware</bcf:citekey>
-    <bcf:citekey order="36" intorder="1">optimizingSpectrumAllocationEON</bcf:citekey>
-    <bcf:citekey order="37" intorder="1">routingModulation</bcf:citekey>
-    <bcf:citekey order="37" intorder="2">adaptiveRSAFlex</bcf:citekey>
-    <bcf:citekey order="38" intorder="1">odtnONOS</bcf:citekey>
-    <bcf:citekey order="39" intorder="1">odlTPCE</bcf:citekey>
-    <bcf:citekey order="40" intorder="1">ntiaBandwidth</bcf:citekey>
-    <bcf:citekey order="41" intorder="1">networkX</bcf:citekey>
-    <bcf:citekey order="42" intorder="1">chafiTFSGit</bcf:citekey>
-    <bcf:citekey order="43" intorder="1">chafiTFSGit</bcf:citekey>
-    <bcf:citekey order="44" intorder="1">tfsRepo</bcf:citekey>
-    <bcf:citekey order="45" intorder="1">chafiTFSGit</bcf:citekey>
-    <bcf:citekey order="46" intorder="1">chafiTFSGit</bcf:citekey>
+    <bcf:citekey order="1">itu694</bcf:citekey>
+    <bcf:citekey order="2">algorithmsRSATaxonomy</bcf:citekey>
+    <bcf:citekey order="3">efficientDynamicRSAEon</bcf:citekey>
+    <bcf:citekey order="4">heuristicWSAMultihop</bcf:citekey>
+    <bcf:citekey order="5">novelRoutingWSA</bcf:citekey>
+    <bcf:citekey order="6">efficientDynamicRSAEon</bcf:citekey>
+    <bcf:citekey order="7">aboutTFS</bcf:citekey>
+    <bcf:citekey order="8">openconfigYang</bcf:citekey>
+    <bcf:citekey order="9">openroadmYang</bcf:citekey>
+    <bcf:citekey order="10">softwareDefinedOpticalNetwork</bcf:citekey>
+    <bcf:citekey order="11">largeScaleOpticalSDN</bcf:citekey>
+    <bcf:citekey order="12">odtn</bcf:citekey>
+    <bcf:citekey order="13">opticalNetworksAndMangementControl</bcf:citekey>
+    <bcf:citekey order="14">itu694</bcf:citekey>
+    <bcf:citekey order="15">openconfigYang</bcf:citekey>
+    <bcf:citekey order="16">openroadmYang</bcf:citekey>
+    <bcf:citekey order="17">rsaHeuristicSliced</bcf:citekey>
+    <bcf:citekey order="18">rsaHeuristicSliced</bcf:citekey>
+    <bcf:citekey order="19">algorithmsRSATaxonomy</bcf:citekey>
+    <bcf:citekey order="20">algorithmResearchRSAONR</bcf:citekey>
+    <bcf:citekey order="21">efficientDynamicRSAEon</bcf:citekey>
+    <bcf:citekey order="22">efficientDynamicRSAEon</bcf:citekey>
+    <bcf:citekey order="23">algorithmsRSATaxonomy</bcf:citekey>
+    <bcf:citekey order="24">efficientDynamicRSAEon</bcf:citekey>
+    <bcf:citekey order="25">rsaFlexGrid</bcf:citekey>
+    <bcf:citekey order="26">rsaHeuristicSliced</bcf:citekey>
+    <bcf:citekey order="27">distanceAdaptive</bcf:citekey>
+    <bcf:citekey order="28">algorithmsRSATaxonomy</bcf:citekey>
+    <bcf:citekey order="29">heuristicWSAMultihop</bcf:citekey>
+    <bcf:citekey order="30">rsaHeuristicSliced</bcf:citekey>
+    <bcf:citekey order="31">rsaHeuristicSliced</bcf:citekey>
+    <bcf:citekey order="32">failureProbability</bcf:citekey>
+    <bcf:citekey order="33">failureProbability</bcf:citekey>
+    <bcf:citekey order="34">maximumSpectrumCompleteness</bcf:citekey>
+    <bcf:citekey order="35">spectrumStatusAware</bcf:citekey>
+    <bcf:citekey order="36">optimizingSpectrumAllocationEON</bcf:citekey>
+    <bcf:citekey order="37">routingModulation</bcf:citekey>
+    <bcf:citekey order="37">adaptiveRSAFlex</bcf:citekey>
+    <bcf:citekey order="38">odtnONOS</bcf:citekey>
+    <bcf:citekey order="39">odlTPCE</bcf:citekey>
+    <bcf:citekey order="40">ntiaBandwidth</bcf:citekey>
+    <bcf:citekey order="41">networkX</bcf:citekey>
+    <bcf:citekey order="42">chafiTFSGit</bcf:citekey>
+    <bcf:citekey order="43">chafiTFSGit</bcf:citekey>
+    <bcf:citekey order="44">tfsRepo</bcf:citekey>
+    <bcf:citekey order="45">chafiTFSGit</bcf:citekey>
+    <bcf:citekey order="46">chafiTFSGit</bcf:citekey>
+    <bcf:citekey order="47">itu694</bcf:citekey>
+    <bcf:citekey order="48">algorithmsRSATaxonomy</bcf:citekey>
+    <bcf:citekey order="49">efficientDynamicRSAEon</bcf:citekey>
+    <bcf:citekey order="50">heuristicWSAMultihop</bcf:citekey>
+    <bcf:citekey order="51">novelRoutingWSA</bcf:citekey>
+    <bcf:citekey order="52">aboutTFS</bcf:citekey>
+    <bcf:citekey order="53">openconfigYang</bcf:citekey>
+    <bcf:citekey order="54">openroadmYang</bcf:citekey>
+    <bcf:citekey order="55">softwareDefinedOpticalNetwork</bcf:citekey>
+    <bcf:citekey order="56">largeScaleOpticalSDN</bcf:citekey>
+    <bcf:citekey order="57">odtn</bcf:citekey>
+    <bcf:citekey order="58">opticalNetworksAndMangementControl</bcf:citekey>
+    <bcf:citekey order="59">rsaHeuristicSliced</bcf:citekey>
+    <bcf:citekey order="60">algorithmResearchRSAONR</bcf:citekey>
+    <bcf:citekey order="61">rsaFlexGrid</bcf:citekey>
+    <bcf:citekey order="62">distanceAdaptive</bcf:citekey>
+    <bcf:citekey order="63">failureProbability</bcf:citekey>
+    <bcf:citekey order="64">maximumSpectrumCompleteness</bcf:citekey>
+    <bcf:citekey order="65">spectrumStatusAware</bcf:citekey>
+    <bcf:citekey order="66">optimizingSpectrumAllocationEON</bcf:citekey>
+    <bcf:citekey order="67">routingModulation</bcf:citekey>
+    <bcf:citekey order="68">adaptiveRSAFlex</bcf:citekey>
+    <bcf:citekey order="69">odtnONOS</bcf:citekey>
+    <bcf:citekey order="70">odlTPCE</bcf:citekey>
+    <bcf:citekey order="71">ntiaBandwidth</bcf:citekey>
+    <bcf:citekey order="72">networkX</bcf:citekey>
+    <bcf:citekey order="73">chafiTFSGit</bcf:citekey>
+    <bcf:citekey order="74">tfsRepo</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
     <bcf:sort order="1">
       <bcf:sortitem order="1">citeorder</bcf:sortitem>
     </bcf:sort>
-    <bcf:sort order="2">
-      <bcf:sortitem order="1">intciteorder</bcf:sortitem>
-    </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
   <bcf:datalist section="0"
-                name="none/global//global/global/global"
+                name="none/global//global/global"
                 type="entry"
                 sortingtemplatename="none"
                 sortingnamekeytemplatename="global"
                 labelprefix=""
                 uniquenametemplatename="global"
-                labelalphanametemplatename="global"
-                namehashtemplatename="global">
+                labelalphanametemplatename="global">
   </bcf:datalist>
 </bcf:controlfile>

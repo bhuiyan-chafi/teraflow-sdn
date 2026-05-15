@@ -683,8 +683,8 @@ class TopologyHelper:
         """
         n_paths = len(edge_paths)
         # To run always sequential, change the condition to always use sequential.
-        # if False:
-        if n_paths >= 2:
+        if False:
+        # if n_paths >= 2:
             logger.info(
                 f"[Highest Slot Edge] Dispatching to PARALLEL evaluation ({n_paths} edge paths)")
             return TopologyHelper._highest_slot_edge_path_parallel(edge_paths)
@@ -881,8 +881,8 @@ class TopologyHelper:
         """
         n_paths = len(node_paths)
         # To run always sequential, change the condition to always use sequential.
-        # if False:
-        if n_paths >= 2:
+        if False:
+        # if n_paths >= 2:
             logger.info(
                 f"[Highest Slot] Dispatching to PARALLEL evaluation ({n_paths} paths)")
             return TopologyHelper._highest_slot_path_parallel(node_paths, G)

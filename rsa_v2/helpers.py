@@ -536,6 +536,13 @@ class TopologyHelper:
         Returns:
             tuple (path_index, avg_slots) or None if the path is invalid.
         """
+        import threading
+        t = threading.current_thread()
+        link_seq = [l['name'] for l in edge_path['links']]
+        logger.info(
+            f"[Highest Slot Edge Worker] Thread {t.name} (id={t.ident}) "
+            f"starting edge path {path_index}: [{', '.join(link_seq)}]")
+
         with app.app_context():
             try:
                 from models import OpticalLink, Endpoint
@@ -562,10 +569,9 @@ class TopologyHelper:
                 hops = len(edge_path['links'])
                 if hops > 0:
                     avg_slots = total_slots / (hops * 2)
-                    link_seq = [l['name'] for l in edge_path['links']]
-                    logger.info(
-                        f"[Highest Slot Edge Worker] Path {path_index}: "
-                        f"{' -> '.join(link_seq)} | avg_slots={avg_slots:.2f}")
+                    # logger.info(
+                    #     f"[Highest Slot Edge Worker] Thread {t.name} done edge path {path_index}: "
+                    #     f"[{', '.join(link_seq)}] | avg_slots={avg_slots:.2f}")
                     return (path_index, avg_slots)
             except Exception as e:
                 logger.error(
@@ -677,8 +683,8 @@ class TopologyHelper:
         """
         n_paths = len(edge_paths)
         # To run always sequential, change the condition to always use sequential.
-        if False:
-        # if n_paths >= 2:
+        # if False:
+        if n_paths >= 2:
             logger.info(
                 f"[Highest Slot Edge] Dispatching to PARALLEL evaluation ({n_paths} edge paths)")
             return TopologyHelper._highest_slot_edge_path_parallel(edge_paths)
@@ -721,6 +727,12 @@ class TopologyHelper:
         Returns:
             tuple (path_index, avg_slots) or None if the path is invalid.
         """
+        import threading
+        t = threading.current_thread()
+        logger.info(
+            f"[Highest Slot Worker] Thread {t.name} (id={t.ident}) "
+            f"starting path {path_index}: {' -> '.join(path)}")
+
         with app.app_context():
             try:
                 edge_path = TopologyHelper.expand_path_first_valid(path, G)
@@ -752,8 +764,8 @@ class TopologyHelper:
                 if hops > 0:
                     avg_slots = total_slots / (hops * 2)
                     logger.info(
-                        f"[Highest Slot Worker] Path {path_index}: "
-                        f"{' -> '.join(path)} | avg_slots={avg_slots:.2f}")
+                        f"[Highest Slot Worker] Thread {t.name} (id={t.ident}) "
+                        f"done path {path_index}: {' -> '.join(path)} | avg_slots={avg_slots:.2f}")
                     return (path_index, avg_slots)
             except Exception as e:
                 logger.error(
@@ -869,8 +881,8 @@ class TopologyHelper:
         """
         n_paths = len(node_paths)
         # To run always sequential, change the condition to always use sequential.
-        if False:
-        # if n_paths >= 2:
+        # if False:
+        if n_paths >= 2:
             logger.info(
                 f"[Highest Slot] Dispatching to PARALLEL evaluation ({n_paths} paths)")
             return TopologyHelper._highest_slot_path_parallel(node_paths, G)

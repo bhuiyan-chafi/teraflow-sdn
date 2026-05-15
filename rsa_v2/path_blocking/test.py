@@ -1,4 +1,4 @@
-# python3 test.py request --src RDMny --dst RDMtx --bitrate 100 --path_strategy first-fit --spectrum_strategy random --path_type dijkstra --parallelpath_strategy first-fit
+# python3 test.py request --src RDMny --dst RDMtx --bitrate 100 --path_strategy highest-slot --spectrum_strategy first-fit --path_type dijkstra --parallelpath_strategy highest-slot
 # python3 test.py teardown --id YOUR_LIGHTPATH_ID_HERE
 
 import requests

@@ -524,7 +524,111 @@ class TopologyHelper:
         return result[0]
 
     @staticmethod
-    def highest_slot_edge_path(edge_paths):
+    def _evaluate_edge_path_score(path_index, edge_path, app):
+        """
+        Evaluates a single edge path and returns (path_index, avg_slots).
+        Designed to run inside a ThreadPoolExecutor worker.
+        Pushes its own Flask app context for DB access.
+
+        Unlike _evaluate_path_score(), this takes an already-expanded edge path
+        (with 'links' key), so no expand_path step is needed.
+
+        Returns:
+            tuple (path_index, avg_slots) or None if the path is invalid.
+        """
+        with app.app_context():
+            try:
+                from models import OpticalLink, Endpoint
+                link_ids = [link['id'] for link in edge_path['links']]
+                links_db = OpticalLink.query.filter(
+                    OpticalLink.id.in_(link_ids)).all()
+
+                endpoint_ids = []
+                for l in links_db:
+                    if l.src_endpoint_id:
+                        endpoint_ids.append(l.src_endpoint_id)
+                    if l.dst_endpoint_id:
+                        endpoint_ids.append(l.dst_endpoint_id)
+
+                endpoints = Endpoint.query.filter(
+                    Endpoint.id.in_(endpoint_ids)).all()
+
+                total_slots = 0
+                for ep in endpoints:
+                    bitmap_str = TopologyHelper.int_to_bitmap(
+                        ep.bitmap_value, ep.flex_slots if ep.flex_slots else 35)
+                    total_slots += bitmap_str.count('1')
+
+                hops = len(edge_path['links'])
+                if hops > 0:
+                    avg_slots = total_slots / (hops * 2)
+                    link_seq = [l['name'] for l in edge_path['links']]
+                    logger.info(
+                        f"[Highest Slot Edge Worker] Path {path_index}: "
+                        f"{' -> '.join(link_seq)} | avg_slots={avg_slots:.2f}")
+                    return (path_index, avg_slots)
+            except Exception as e:
+                logger.error(
+                    f"[Highest Slot Edge Worker] Error evaluating edge path {path_index}: {e}")
+        return None
+
+    @staticmethod
+    def _highest_slot_edge_path_parallel(edge_paths):
+        """
+        Parallel version of highest_slot_edge_path.
+        Evaluates all edge paths concurrently using ThreadPoolExecutor
+        and picks the one with highest avg free slots.
+        First path (lowest index) wins on tie.
+        """
+        import threading
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+        # pyrefly: ignore [missing-import]
+        from flask import current_app
+
+        app = current_app._get_current_object()
+        n_paths = len(edge_paths)
+        num_workers = TopologyHelper._decide_workers(n_paths)
+
+        results = []        # list of (index, avg_slots)
+        results_lock = threading.Lock()
+
+        def worker(index, edge_path):
+            score_tuple = TopologyHelper._evaluate_edge_path_score(index, edge_path, app)
+            if score_tuple is not None:
+                with results_lock:
+                    results.append(score_tuple)
+
+        logger.info(
+            f"[Highest Slot Edge Parallel] Starting parallel evaluation: "
+            f"{n_paths} edge paths, {num_workers} workers")
+
+        with ThreadPoolExecutor(max_workers=num_workers) as executor:
+            futures = {
+                executor.submit(worker, i, edge_path): i
+                for i, edge_path in enumerate(edge_paths)
+            }
+            for future in as_completed(futures):
+                future.result()   # propagate exceptions if any
+
+        if not results:
+            logger.info(
+                f"[Highest Slot Edge Parallel] No valid edge paths scored, falling back to first")
+            return edge_paths[0]
+
+        # Select edge path with highest average free slots (first path wins on tie)
+        best_index, best_score = max(results, key=lambda x: x[1])
+        link_seq = [l['name'] for l in edge_paths[best_index]['links']]
+        logger.info(
+            f"[Highest Slot Edge Parallel] Selected edge path index {best_index} "
+            f"({' -> '.join(link_seq)}) with avg_slots={best_score:.2f}")
+        return edge_paths[best_index]
+
+    @staticmethod
+    def _highest_slot_edge_path_sequential(edge_paths):
+        """
+        Original sequential version of highest_slot_edge_path.
+        Preserved for easy rollback — change the dispatcher to call this instead.
+        """
         from models import Endpoint, OpticalLink
         best_edge_path = None
         max_value = -1
@@ -554,9 +658,6 @@ class TopologyHelper:
                 hops = len(edge_path['links'])
                 if hops > 0:
                     avg_slots = total_slots / (hops*2)
-                    # link_seq = [l['name'] for l in edge_path['links']]
-                    # logger.info(
-                    #     f"[Highest Slot Edge] Evaluated Path Links: {' -> '.join(link_seq)} | Avg Slots: {avg_slots:.2f}")
                     if avg_slots > max_value:
                         max_value = avg_slots
                         best_edge_path = edge_path
@@ -565,26 +666,165 @@ class TopologyHelper:
                     f"[Highest Slot Edge] Error evaluating edge path: {e}")
                 continue
 
-        # if best_edge_path:
-        #     link_seq = [l['name'] for l in best_edge_path['links']]
-            # logger.info(
-            #     f"[Highest Slot Edge] Selected Path Links: {' -> '.join(link_seq)} with Max Avg Slots: {max_value:.2f}")
         return best_edge_path if best_edge_path else edge_paths[0]
 
     @staticmethod
-    def highest_slot_path(node_paths, G):
+    def highest_slot_edge_path(edge_paths):
+        """
+        Entry point for highest-slot edge path selection.
+        Dispatches to parallel or sequential based on edge path count.
+        To rollback to sequential-only, change the condition to always use sequential.
+        """
+        n_paths = len(edge_paths)
+        # To run always sequential, change the condition to always use sequential.
+        if False:
+        # if n_paths >= 2:
+            logger.info(
+                f"[Highest Slot Edge] Dispatching to PARALLEL evaluation ({n_paths} edge paths)")
+            return TopologyHelper._highest_slot_edge_path_parallel(edge_paths)
+        else:
+            logger.info(
+                f"[Highest Slot Edge] Dispatching to SEQUENTIAL evaluation ({n_paths} edge paths)")
+            return TopologyHelper._highest_slot_edge_path_sequential(edge_paths)
+
+    @staticmethod
+    def _decide_workers(n_paths):
+        """
+        Decides optimal worker count based on path count and available cores.
+
+        D = floor(log2(N))   — binary degree of the path count
+        P = physical cores
+        workers = D if D < P else P // 2
+        Always >= 1.
+        """
+        import os
+        P = os.cpu_count() or 4
+        if n_paths <= 1:
+            logger.info(
+                f"[Highest Slot Workers] P={P}, N={n_paths}, D=0 → workers=1 (trivial)")
+            return 1
+        D = int(math.log2(n_paths))
+        D = max(D, 1)
+        workers = D if D < P else P // 2
+        workers = max(workers, 1)
+        logger.info(
+            f"[Highest Slot Workers] P={P}, N={n_paths}, D={D} → workers={workers}")
+        return workers
+
+    @staticmethod
+    def _evaluate_path_score(path_index, path, G, app):
+        """
+        Evaluates a single node path and returns (path_index, avg_slots).
+        Designed to run inside a ThreadPoolExecutor worker.
+        Pushes its own Flask app context for DB access.
+
+        Returns:
+            tuple (path_index, avg_slots) or None if the path is invalid.
+        """
+        with app.app_context():
+            try:
+                edge_path = TopologyHelper.expand_path_first_valid(path, G)
+                if not edge_path:
+                    return None
+
+                from models import OpticalLink, Endpoint
+                link_ids = [link['id'] for link in edge_path['links']]
+                links_db = OpticalLink.query.filter(
+                    OpticalLink.id.in_(link_ids)).all()
+
+                endpoint_ids = []
+                for l in links_db:
+                    if l.src_endpoint_id:
+                        endpoint_ids.append(l.src_endpoint_id)
+                    if l.dst_endpoint_id:
+                        endpoint_ids.append(l.dst_endpoint_id)
+
+                endpoints = Endpoint.query.filter(
+                    Endpoint.id.in_(endpoint_ids)).all()
+
+                total_slots = 0
+                for ep in endpoints:
+                    bitmap_str = TopologyHelper.int_to_bitmap(
+                        ep.bitmap_value, ep.flex_slots if ep.flex_slots else 35)
+                    total_slots += bitmap_str.count('1')
+
+                hops = len(edge_path['links'])
+                if hops > 0:
+                    avg_slots = total_slots / (hops * 2)
+                    logger.info(
+                        f"[Highest Slot Worker] Path {path_index}: "
+                        f"{' -> '.join(path)} | avg_slots={avg_slots:.2f}")
+                    return (path_index, avg_slots)
+            except Exception as e:
+                logger.error(
+                    f"[Highest Slot Worker] Error evaluating path {path_index}: {e}")
+        return None
+
+    @staticmethod
+    def _highest_slot_path_parallel(node_paths, G):
+        """
+        Parallel version of highest_slot_path.
+        Evaluates all node paths concurrently using ThreadPoolExecutor
+        and picks the one with highest avg free slots.
+        First path (lowest index) wins on tie.
+        """
+        import threading
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+        # pyrefly: ignore [missing-import]
+        from flask import current_app
+
+        app = current_app._get_current_object()
+        n_paths = len(node_paths)
+        num_workers = TopologyHelper._decide_workers(n_paths)
+
+        results = []        # list of (index, avg_slots)
+        results_lock = threading.Lock()
+
+        def worker(index, path):
+            score_tuple = TopologyHelper._evaluate_path_score(index, path, G, app)
+            if score_tuple is not None:
+                with results_lock:
+                    results.append(score_tuple)
+
+        logger.info(
+            f"[Highest Slot Parallel] Starting parallel evaluation: "
+            f"{n_paths} paths, {num_workers} workers")
+
+        with ThreadPoolExecutor(max_workers=num_workers) as executor:
+            futures = {
+                executor.submit(worker, i, path): i
+                for i, path in enumerate(node_paths)
+            }
+            for future in as_completed(futures):
+                future.result()   # propagate exceptions if any
+
+        if not results:
+            logger.info(
+                f"[Highest Slot Parallel] No valid paths scored, falling back to first path")
+            return node_paths[0]
+
+        # Select path with highest average free slots (first path wins on tie)
+        best_index, best_score = max(results, key=lambda x: x[1])
+        logger.info(
+            f"[Highest Slot Parallel] Selected path index {best_index} "
+            f"({' -> '.join(node_paths[best_index])}) with avg_slots={best_score:.2f}")
+        return node_paths[best_index]
+
+    @staticmethod
+    def _highest_slot_path_sequential(node_paths, G):
+        """
+        Original sequential version of highest_slot_path.
+        Preserved for easy rollback — change the dispatcher to call this instead.
+        """
         from models import Endpoint
         best_path = None
         max_value = -1
 
         for path in node_paths:
             try:
-                # basically expand_path() calculates the parallel paths for a path node. Here even for the single link topology this function has been used. It didn't affect the results because the topology was physically differentiated.
-                valid_edge_paths = TopologyHelper.expand_path(path, G)
-                if not valid_edge_paths:
+                edge_path = TopologyHelper.expand_path_first_valid(path, G)
+                if not edge_path:
                     continue
-                # never mind because it always returns 1 valid path.
-                edge_path = valid_edge_paths[0]
 
                 from models import OpticalLink
                 link_ids = [link['id'] for link in edge_path['links']]
@@ -611,8 +851,6 @@ class TopologyHelper:
                 if hops > 0:
                     # because two endpoints represent one link
                     avg_slots = total_slots / (hops*2)
-                    # logger.info(
-                    #     f"[Highest Slot] Evaluated Path: {' -> '.join(path)} | Avg Slots: {avg_slots:.2f}")
                     if avg_slots > max_value:
                         max_value = avg_slots
                         best_path = path
@@ -620,8 +858,26 @@ class TopologyHelper:
                 logger.error(f"[Highest Slot] Error evaluating path: {e}")
                 continue
 
-        # logger.info(f"[Highest Slot] Selected Path: {' -> '.join(best_path)} with Max Avg Slots: {max_value:.2f}")
         return best_path if best_path else node_paths[0]
+
+    @staticmethod
+    def highest_slot_path(node_paths, G):
+        """
+        Entry point for highest-slot path selection.
+        Dispatches to parallel or sequential based on path count.
+        To rollback to sequential-only, change the condition to always use sequential.
+        """
+        n_paths = len(node_paths)
+        # To run always sequential, change the condition to always use sequential.
+        if False:
+        # if n_paths >= 2:
+            logger.info(
+                f"[Highest Slot] Dispatching to PARALLEL evaluation ({n_paths} paths)")
+            return TopologyHelper._highest_slot_path_parallel(node_paths, G)
+        else:
+            logger.info(
+                f"[Highest Slot] Dispatching to SEQUENTIAL evaluation ({n_paths} paths)")
+            return TopologyHelper._highest_slot_path_sequential(node_paths, G)
 
     @staticmethod
     def rsa_bitmap_pre_compute(path_obj):

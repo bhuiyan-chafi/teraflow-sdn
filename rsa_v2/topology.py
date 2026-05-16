@@ -343,8 +343,8 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                         else:
                             # Default: first-fit
                             dijkstra_collection = [parallel_paths[0]]
-                        TopologyHelper.log_path_links(
-                            dijkstra_collection, "Phase 1", "parallel link")
+                        # TopologyHelper.log_path_links(
+                        #    dijkstra_collection, "Phase 1", "parallel link")
                     dijkstra_parallel_ms = (
                         time.time() - t_dijkstra_start) * 1000
                     # logger.info(
@@ -356,8 +356,8 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                         chosen_node_path, G)
                     if single_path:
                         dijkstra_collection = [single_path]
-                        TopologyHelper.log_path_links(
-                            dijkstra_collection, "Phase 1", "single link")
+                        # TopologyHelper.log_path_links(
+                        #    dijkstra_collection, "Phase 1", "single link")
     except nx.NetworkXNoPath:
         logger.info(
             f"[Phase 1] No dijkstra path from {src_dev} to {dst_dev}")

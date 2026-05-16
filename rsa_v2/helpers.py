@@ -539,9 +539,9 @@ class TopologyHelper:
         import threading
         t = threading.current_thread()
         link_seq = [l['name'] for l in edge_path['links']]
-        logger.info(
-            f"[Highest Slot Edge Worker] Thread {t.name} (id={t.ident}) "
-            f"starting edge path {path_index}: [{', '.join(link_seq)}]")
+        # logger.info(
+        #   f"[Highest Slot Edge Worker] Thread {t.name} (id={t.ident}) "
+        #  f"starting edge path {path_index}: [{', '.join(link_seq)}]")
 
         with app.app_context():
             try:
@@ -605,9 +605,9 @@ class TopologyHelper:
                 with results_lock:
                     results.append(score_tuple)
 
-        logger.info(
-            f"[Highest Slot Edge Parallel] Starting parallel evaluation: "
-            f"{n_paths} edge paths, {num_workers} workers")
+        # logger.info(
+        #    f"[Highest Slot Edge Parallel] Starting parallel evaluation: "
+        #    f"{n_paths} edge paths, {num_workers} workers")
 
         with ThreadPoolExecutor(max_workers=num_workers) as executor:
             futures = {
@@ -618,16 +618,16 @@ class TopologyHelper:
                 future.result()   # propagate exceptions if any
 
         if not results:
-            logger.info(
-                f"[Highest Slot Edge Parallel] No valid edge paths scored, falling back to first")
+            # logger.info(
+            #    f"[Highest Slot Edge Parallel] No valid edge paths scored, falling back to first")
             return edge_paths[0]
 
         # Select edge path with highest average free slots (first path wins on tie)
         best_index, best_score = max(results, key=lambda x: x[1])
         link_seq = [l['name'] for l in edge_paths[best_index]['links']]
-        logger.info(
-            f"[Highest Slot Edge Parallel] Selected edge path index {best_index} "
-            f"({' -> '.join(link_seq)}) with avg_slots={best_score:.2f}")
+        # logger.info(
+        #    f"[Highest Slot Edge Parallel] Selected edge path index {best_index} "
+        #    f"({' -> '.join(link_seq)}) with avg_slots={best_score:.2f}")
         return edge_paths[best_index]
 
     @staticmethod
@@ -686,12 +686,12 @@ class TopologyHelper:
         # To run always sequential, change the condition to always use sequential.
         if False:
             # if n_paths >= 2:
-            logger.info(
-                f"[Highest Slot Edge] Dispatching to PARALLEL evaluation ({n_paths} edge paths)")
+            # logger.info(
+            #    f"[Highest Slot Edge] Dispatching to PARALLEL evaluation ({n_paths} edge paths)")
             return TopologyHelper._highest_slot_edge_path_parallel(edge_paths)
         else:
-            logger.info(
-                f"[Highest Slot Edge] Dispatching to SEQUENTIAL evaluation ({n_paths} edge paths)")
+            # logger.info(
+            #    f"[Highest Slot Edge] Dispatching to SEQUENTIAL evaluation ({n_paths} edge paths)")
             return TopologyHelper._highest_slot_edge_path_sequential(edge_paths)
 
     @staticmethod
@@ -707,15 +707,15 @@ class TopologyHelper:
         import os
         P = os.cpu_count() or 4
         if n_paths <= 1:
-            logger.info(
-                f"[Highest Slot Workers] P={P}, N={n_paths}, D=0 → workers=1 (trivial)")
+            # logger.info(
+            #    f"[Highest Slot Workers] P={P}, N={n_paths}, D=0 → workers=1 (trivial)")
             return 1
         D = int(math.log2(n_paths))
         D = max(D, 1)
         workers = D if D < P else P // 2
         workers = max(workers, 1)
-        logger.info(
-            f"[Highest Slot Workers] P={P}, N={n_paths}, D={D} → workers={workers}")
+        # logger.info(
+        #    f"[Highest Slot Workers] P={P}, N={n_paths}, D={D} → workers={workers}")
         return workers
 
     @staticmethod
@@ -730,9 +730,9 @@ class TopologyHelper:
         """
         import threading
         t = threading.current_thread()
-        logger.info(
-            f"[Highest Slot Worker] Thread {t.name} (id={t.ident}) "
-            f"starting path {path_index}: {' -> '.join(path)}")
+        # logger.info(
+        #    f"[Highest Slot Worker] Thread {t.name} (id={t.ident}) "
+        #    f"starting path {path_index}: {' -> '.join(path)}")
 
         with app.app_context():
             try:
@@ -764,9 +764,9 @@ class TopologyHelper:
                 hops = len(edge_path['links'])
                 if hops > 0:
                     avg_slots = total_slots / (hops * 2)
-                    logger.info(
-                        f"[Highest Slot Worker] Thread {t.name} (id={t.ident}) "
-                        f"done path {path_index}: {' -> '.join(path)} | avg_slots={avg_slots:.2f}")
+                    # logger.info(
+                    #    f"[Highest Slot Worker] Thread {t.name} (id={t.ident}) "
+                    #    f"done path {path_index}: {' -> '.join(path)} | avg_slots={avg_slots:.2f}")
                     return (path_index, avg_slots)
             except Exception as e:
                 logger.error(
@@ -800,9 +800,9 @@ class TopologyHelper:
                 with results_lock:
                     results.append(score_tuple)
 
-        logger.info(
-            f"[Highest Slot Parallel] Starting parallel evaluation: "
-            f"{n_paths} paths, {num_workers} workers")
+        # logger.info(
+        #    f"[Highest Slot Parallel] Starting parallel evaluation: "
+        #    f"{n_paths} paths, {num_workers} workers")
 
         with ThreadPoolExecutor(max_workers=num_workers) as executor:
             futures = {
@@ -813,15 +813,15 @@ class TopologyHelper:
                 future.result()   # propagate exceptions if any
 
         if not results:
-            logger.info(
-                f"[Highest Slot Parallel] No valid paths scored, falling back to first path")
+            # logger.info(
+            #    f"[Highest Slot Parallel] No valid paths scored, falling back to first path")
             return node_paths[0]
 
         # Select path with highest average free slots (first path wins on tie)
         best_index, best_score = max(results, key=lambda x: x[1])
-        logger.info(
-            f"[Highest Slot Parallel] Selected path index {best_index} "
-            f"({' -> '.join(node_paths[best_index])}) with avg_slots={best_score:.2f}")
+        # logger.info(
+        #    f"[Highest Slot Parallel] Selected path index {best_index} "
+        #    f"({' -> '.join(node_paths[best_index])}) with avg_slots={best_score:.2f}")
         return node_paths[best_index]
 
     @staticmethod
@@ -885,12 +885,12 @@ class TopologyHelper:
         # To run always sequential, change the condition to always use sequential.
         if False:
             # if n_paths >= 2:
-            logger.info(
-                f"[Highest Slot] Dispatching to PARALLEL evaluation ({n_paths} paths)")
+            # logger.info(
+            #    f"[Highest Slot] Dispatching to PARALLEL evaluation ({n_paths} paths)")
             return TopologyHelper._highest_slot_path_parallel(node_paths, G)
         else:
-            logger.info(
-                f"[Highest Slot] Dispatching to SEQUENTIAL evaluation ({n_paths} paths)")
+            # logger.info(
+            #    f"[Highest Slot] Dispatching to SEQUENTIAL evaluation ({n_paths} paths)")
             return TopologyHelper._highest_slot_path_sequential(node_paths, G)
 
     @staticmethod
@@ -1055,7 +1055,8 @@ class TopologyHelper:
 
         if not path_obj['links']:
             return None
-
+        logger.info(
+            f"[SLOT SELECTION: Bitrate:] {strategy} [6.25 SLOTS: ] {num_slots}")
         # Step 1: Pre-compute with reference bitmap
         result = TopologyHelper.rsa_bitmap_pre_compute(path_obj)
 
@@ -1100,7 +1101,7 @@ class TopologyHelper:
             required_slots_str = f"{mask:0{reference_slots}b}"
             final_bitmap_str = f"{final_bitmap_val:0{reference_slots}b}"
             rsa_ms = (time.time() - t_rsa_start) * 1000
-            logger.info(f"[Timing] RSA computation: {rsa_ms:.4f} ms")
+            # logger.info(f"[Timing] RSA computation: {rsa_ms:.4f} ms")
             return {
                 'success': True,
                 'num_slots': num_slots,
@@ -1118,7 +1119,7 @@ class TopologyHelper:
             }
         else:
             rsa_ms = (time.time() - t_rsa_start) * 1000
-            logger.info(f"[Timing] RSA computation: {rsa_ms:.4f} ms")
+            # logger.info(f"[Timing] RSA computation: {rsa_ms:.4f} ms")
             return {
                 'success': False,
                 'num_slots': num_slots,

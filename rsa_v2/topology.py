@@ -14,6 +14,7 @@ matplotlib.use('Agg')
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+
 @lru_cache(maxsize=None)
 def build_graph(directed=False):
     from models import db
@@ -271,9 +272,9 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
     simple_ms = (time.time() - t_simple_start) * 1000
 
     graph_gen_ms = build_ms + simple_ms
-    logger.info(
-        f"[Timing] Graph generation: {graph_gen_ms:.4f} ms "
-        f"(build_graph={build_ms:.4f} ms, nx.Graph simplify={simple_ms:.4f} ms)")
+    # logger.info(
+    #    f"[Timing] Graph generation: {graph_gen_ms:.4f} ms "
+    #    f"(build_graph={build_ms:.4f} ms, nx.Graph simplify={simple_ms:.4f} ms)")
 
     # --- Phase: Path Computation ---
     result = {
@@ -283,12 +284,12 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
         'strategy': strategy,
         'blocked_reason': None
     }
-    logger.info(
-        f"[Strategy:] path selection {strategy}")
-    logger.info(
-        f"[Strategy:] path type {path_type}")
-    logger.info(
-        f"[Strategy:] parallel path type {parallelpath_strategy}")
+    # logger.info(
+    #    f"[Strategy:] path selection {strategy}")
+    # logger.info(
+    #    f"[Strategy:] path type {path_type}")
+    # logger.info(
+    #    f"[Strategy:] parallel path type {parallelpath_strategy}")
     # ================================================================
     # Phase 1: Dijkstra — pick ONE node path via strategy, expand to ONE path
     # ================================================================
@@ -318,8 +319,8 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                     # Default: first-fit
                     chosen_node_path = dijkstra_node_paths[0]
                 dijkstra_path_ms = (time.time() - t_dijkstra_start) * 1000
-                logger.info(
-                    f"[Timing] Dijkstra path selection: {dijkstra_path_ms:.4f} ms")
+                # logger.info(
+                #    f"[Timing] Dijkstra path selection: {dijkstra_path_ms:.4f} ms")
                 result['dijkstra_path_ms'] = dijkstra_path_ms
                 TopologyHelper.log_path_links(
                     [chosen_node_path], "Phase 1", "dijkstra shortest")
@@ -346,8 +347,8 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                             dijkstra_collection, "Phase 1", "parallel link")
                     dijkstra_parallel_ms = (
                         time.time() - t_dijkstra_start) * 1000
-                    logger.info(
-                        f"[Timing] Dijkstra path + parallel expansion: {dijkstra_parallel_ms:.4f} ms")
+                    # logger.info(
+                    #    f"[Timing] Dijkstra path + parallel expansion: {dijkstra_parallel_ms:.4f} ms")
                     result['dijkstra_parallel_ms'] = dijkstra_parallel_ms
                 else:
                     # This is redundant after the last logic change: we select parallel paths only if asked
@@ -398,8 +399,8 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                 else:
                     chosen_alt_path = simple_node_paths[0]
                 additional_path_ms = (time.time() - t_additional_start) * 1000
-                logger.info(
-                    f"[Timing] Additional path selection: {additional_path_ms:.4f} ms")
+                # logger.info(
+                #    f"[Timing] Additional path selection: {additional_path_ms:.4f} ms")
                 result['additional_path_ms'] = additional_path_ms
                 # TopologyHelper.log_path_links([chosen_alt_path], "Phase 2", "additional")
                 # Expand the chosen node path based on parallelpath_strategy
@@ -422,8 +423,8 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                         # TopologyHelper.log_path_links(all_paths_collection, "Phase 2", "parallel link")
                     additional_parallel_ms = (
                         time.time() - t_additional_start) * 1000
-                    logger.info(
-                        f"[Timing] Additional path + parallel expansion: {additional_parallel_ms:.4f} ms")
+                    # logger.info(
+                    #    f"[Timing] Additional path + parallel expansion: {additional_parallel_ms:.4f} ms")
                     result['additional_parallel_ms'] = additional_parallel_ms
                 else:
                     single_path = TopologyHelper.expand_path_first_valid(

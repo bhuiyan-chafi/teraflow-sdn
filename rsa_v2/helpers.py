@@ -599,7 +599,8 @@ class TopologyHelper:
         results_lock = threading.Lock()
 
         def worker(index, edge_path):
-            score_tuple = TopologyHelper._evaluate_edge_path_score(index, edge_path, app)
+            score_tuple = TopologyHelper._evaluate_edge_path_score(
+                index, edge_path, app)
             if score_tuple is not None:
                 with results_lock:
                     results.append(score_tuple)
@@ -684,7 +685,7 @@ class TopologyHelper:
         n_paths = len(edge_paths)
         # To run always sequential, change the condition to always use sequential.
         if False:
-        # if n_paths >= 2:
+            # if n_paths >= 2:
             logger.info(
                 f"[Highest Slot Edge] Dispatching to PARALLEL evaluation ({n_paths} edge paths)")
             return TopologyHelper._highest_slot_edge_path_parallel(edge_paths)
@@ -793,7 +794,8 @@ class TopologyHelper:
         results_lock = threading.Lock()
 
         def worker(index, path):
-            score_tuple = TopologyHelper._evaluate_path_score(index, path, G, app)
+            score_tuple = TopologyHelper._evaluate_path_score(
+                index, path, G, app)
             if score_tuple is not None:
                 with results_lock:
                     results.append(score_tuple)
@@ -882,7 +884,7 @@ class TopologyHelper:
         n_paths = len(node_paths)
         # To run always sequential, change the condition to always use sequential.
         if False:
-        # if n_paths >= 2:
+            # if n_paths >= 2:
             logger.info(
                 f"[Highest Slot] Dispatching to PARALLEL evaluation ({n_paths} paths)")
             return TopologyHelper._highest_slot_path_parallel(node_paths, G)
@@ -1043,6 +1045,13 @@ class TopologyHelper:
         SLOT_GRANULARITY_HZ = ITUStandards.SLOT_GRANULARITY.value
         SLOT_GRANULARITY_GHZ = SLOT_GRANULARITY_HZ / FrequencyMeasurementUnit.GHz.value
         num_slots = math.ceil(calculated_bandwidth_ghz / SLOT_GRANULARITY_GHZ)
+        # Based on the last discussion slots as fixed 100gb-4, 200gb-5 & 400gb-6 slots of 12.5GHz width
+        if bitrate_gbps == 100:
+            num_slots = 8
+        elif bitrate_gbps == 200:
+            num_slots = 10
+        else:
+            num_slots = 12
 
         if not path_obj['links']:
             return None

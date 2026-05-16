@@ -108,15 +108,15 @@ legend_elements = [
     Line2D([0], [0], color='green', lw=0.8,
            linestyle='-', label='Overall Blocking'),
     Line2D([0], [0], color='blue', lw=0, marker='x',
-           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPFFPRF-SAFF'),
+           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPFF-PRF-SAFF'),
     Line2D([0], [0], color='brown', lw=0, marker='o',
-           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPRFPRF-SAFF'),
+           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPRF-PRF-SAFF'),
     Line2D([0], [0], color='green', lw=0, marker='^',
-           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPSCPRF-SAFF'),
+           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPSC-PRF-SAFF'),
     Line2D([0], [0], color='red', lw=0, marker='v',
-           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPSCPRF-SARF'),
+           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPSC-PRF-SARF'),
     Line2D([0], [0], color='black', lw=0, marker='s',
-           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPSCPSC-SAFF'),
+           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPSC-PSC-SAFF'),
 ]
 
 # Add the custom legend inside the plot area at the lower right

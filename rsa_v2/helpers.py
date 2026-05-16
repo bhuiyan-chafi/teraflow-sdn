@@ -1056,7 +1056,7 @@ class TopologyHelper:
         if not path_obj['links']:
             return None
         logger.info(
-            f"[SLOT SELECTION: Bitrate:] {strategy} [6.25 SLOTS: ] {num_slots}")
+            f"[SLOT SELECTION: Bitrate:] {bitrate_gbps} [6.25 SLOTS: ] {num_slots}")
         # Step 1: Pre-compute with reference bitmap
         result = TopologyHelper.rsa_bitmap_pre_compute(path_obj)
 

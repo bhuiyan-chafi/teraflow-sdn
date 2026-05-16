@@ -322,8 +322,8 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                 # logger.info(
                 #    f"[Timing] Dijkstra path selection: {dijkstra_path_ms:.4f} ms")
                 result['dijkstra_path_ms'] = dijkstra_path_ms
-                TopologyHelper.log_path_links(
-                    [chosen_node_path], "Phase 1", "dijkstra shortest")
+                # TopologyHelper.log_path_links(
+                #    [chosen_node_path], "Phase 1", "dijkstra shortest")
 
                 # Expand the chosen node path based on parallelpath_strategy
                 if parallelpath_strategy != 'none':

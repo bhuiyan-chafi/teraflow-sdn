@@ -142,7 +142,7 @@ def run_simulation():
         if LINK_STUDY:
             link_usage_counts = Counter()
         last_progress_report = 0
-        progress_interval = 500  # Report progress every 500 requests
+        progress_interval = 1000  # Report progress every 500 requests
         # Per-key timing accumulators — only the keys active this simulation
         timing_buckets = {
             'graph_gen_ms': [],

@@ -18,11 +18,10 @@ NODES = ["RDMwa", "RDMca1", "RDMca2", "RDMut", "RDMco", "RDMne", "RDMtx",
 # ]
 BIT_RATES = [100, 200, 400]
 BIT_RATE_PROBS = [0.5, 0.25, 0.25]
-ERLANGS = [750, 650, 550, 450, 350, 250]
-# for parallel loads: 2250, 1950, 1650, 1350, 1050, 750
 
 # CI-based stopping parameters
-MAX_REQUESTS = sys.maxsize  # Maximum number Requests
+MAX_REQUESTS = 10000000  # 10M requests to prove stability
+# MAX_REQUESTS = sys.maxsize  # Maximum number Requests
 # Minimum trials before checking CI (for statistical validity)
 MIN_REQUESTS = 1000
 CI_THRESHOLD = 0.1  # 10% relative CI threshold
@@ -39,3 +38,8 @@ SPECTRUM_STRATEGY = os.environ.get('SPECTRUM_STRATEGY', 'first-fit')
 PATH_TYPE = os.environ.get('PATH_TYPE', 'dijkstra')
 PARALLELPATH_STRATEGY = os.environ.get('PARALLELPATH_STRATEGY', 'none')
 LINK_STUDY = os.environ.get('LINK_STUDY', 'True').lower() == 'true'
+
+if PARALLELPATH_STRATEGY == 'none':
+    ERLANGS = [750, 650, 550, 450, 350, 250]
+else:
+    ERLANGS = [2250, 1950, 1650, 1350, 1050, 750]

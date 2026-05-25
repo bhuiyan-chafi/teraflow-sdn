@@ -20,8 +20,8 @@ BIT_RATES = [100, 200, 400]
 BIT_RATE_PROBS = [0.5, 0.25, 0.25]
 
 # CI-based stopping parameters
-MAX_REQUESTS = 10000000  # 10M requests to prove stability
-# MAX_REQUESTS = sys.maxsize  # Maximum number Requests
+# MAX_REQUESTS = 10000000  # 10M requests to prove stability
+MAX_REQUESTS = sys.maxsize  # Maximum number Requests
 # Minimum trials before checking CI (for statistical validity)
 MIN_REQUESTS = 1000
 CI_THRESHOLD = 0.1  # 10% relative CI threshold

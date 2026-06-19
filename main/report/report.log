@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.5.14)  14 MAY 2026 11:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.5.14)  11 JUN 2026 14:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -927,7 +927,7 @@ Package microtype Info: Loading generic protrusion settings for font family
  [2
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 108.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 110.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -938,7 +938,7 @@ Package microtype Info: Loading generic protrusion settings for font family
  [3
 
 ]
-Package tocbasic Info: character protrusion at toc deactivated on input line 111.
+Package tocbasic Info: character protrusion at toc deactivated on input line 113.
  (./report.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
@@ -970,7 +970,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \openout5 = `report.toc'.
 
  [5]
-Package tocbasic Info: character protrusion at lof deactivated on input line 112.
+Package tocbasic Info: character protrusion at lof deactivated on input line 114.
  (./report.lof)
 \tf@lof=\write6
 \openout6 = `report.lof'.
@@ -978,7 +978,7 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 112
  [6
 
 ]
-Package tocbasic Info: character protrusion at lot deactivated on input line 113.
+Package tocbasic Info: character protrusion at lot deactivated on input line 115.
  (./report.lot)
 \tf@lot=\write7
 \openout7 = `report.lot'.
@@ -1141,12 +1141,12 @@ Overfull \hbox (4.45497pt too wide) in paragraph at lines 14--15
 [53] [54] [55]) [56] [57
 
 ]
-Overfull \hbox (7.90434pt too wide) in paragraph at lines 122--122
+Overfull \hbox (7.90434pt too wide) in paragraph at lines 124--124
 []\T1/lmr/m/n/14.4 (-20) J.[]L. Izquierdo-Zaragoza, P. Pavon-Marino, and M.[]V. Bueno-Delgado, ^^P  Distance-
  []
 
 
-Overfull \hbox (0.16068pt too wide) in paragraph at lines 122--122
+Overfull \hbox (0.16068pt too wide) in paragraph at lines 124--124
 []\T1/lmr/m/n/14.4 (-20) J. Zhang, C. Yu, L. Luo, X. Liu, and J. Shen, ^^P  Maximum-spectrum-completeness
  []
 
@@ -1166,7 +1166,7 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  108i,10n,106p,10638b,2218s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on report.pdf (59 pages, 6656878 bytes).
+Output written on report.pdf (59 pages, 6656769 bytes).
 PDF statistics:
  948 PDF objects out of 1000 (max. 8388607)
  809 compressed objects within 9 object streams

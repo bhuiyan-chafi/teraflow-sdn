@@ -1,0 +1,18 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'report.blg'
+[131] biber:340> INFO - === sab lug 11, 2026, 18:44:35
+[155] Biber.pm:418> INFO - Reading 'report.bcf'
+[270] Biber.pm:972> INFO - Found 28 citekeys in bib section 0
+[290] Biber.pm:4383> INFO - Processing section 0
+[308] Biber.pm:4574> INFO - Looking for bibtex file 'references.bib' for section 0
+[312] bibtex.pm:1713> INFO - LaTeX decoding ...
+[357] bibtex.pm:1518> INFO - Found BibTeX data source 'references.bib'
+[720] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[720] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[721] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[721] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[745] bbl.pm:654> INFO - Writing 'report.bbl' with encoding 'UTF-8'
+[771] bbl.pm:757> INFO - Output to report.bbl
+[771] Biber.pm:130> WARN - Duplicate entry key: 'algorithmsRSATaxonomy' in file 'references.bib', skipping ...
+[772] Biber.pm:130> WARN - Duplicate entry key: 'efficientDynamicRSAEon' in file 'references.bib', skipping ...
+[772] Biber.pm:132> INFO - WARNINGS: 2

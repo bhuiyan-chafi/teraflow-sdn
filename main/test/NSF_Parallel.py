@@ -18,70 +18,74 @@ plt.rcParams.update({
 
 x = np.array([2250, 1950, 1650, 1350, 1050, 750])
 
-# SPFFPRF-SAFF
-y1 = np.array([0.19961115,
-               0.15490944,
-               0.11683849,
-               0.08894536,
-               0.02591211,
-               0.00106754])
-# SPRFPRF-SAFF
-y2 = np.array([0.19845857,
-               0.15326751,
-               0.11631885,
-               0.06376196,
-               0.02380048,
-               0.00082972])
+# SPSC-PSC-SAFF
+y1 = np.array([
+    0.24232365,
+    0.18525074,
+    0.12357902,
+    0.04675159,
+    0.00145466,
+    0.00000142
+])
+# SPSC-PRF-SAFF
+y2 = np.array([
+    0.26448598,
+    0.20706042,
+    0.1425486,
+    0.06569076,
+    0.00970182,
+    0.00000236
+])
+# SPRF-PRF-SAFF
+y3 = np.array([
+    0.27158099,
+    0.24351464,
+    0.15155742,
+    0.07710686,
+    0.02375726,
+    0.000029
+])
+# SPFF-PRF-SAFF
+y4 = np.array([
+    0.278,
+    0.21843251,
+    0.17533186,
+    0.11655811,
+    0.02888477,
+    0.00005624
+])
+# SPSC-PSC-SARF
+y5 = np.array([
+    0.312,
+    0.25488455,
+    0.16345178,
+    0.09576225,
+    0.02982568,
+    0.00034188
+])
 
-# SPSCPSC-SAFF
-y3 = np.array([0.1848146,
-               0.13128931,
-               0.10491003,
-               0.04445518,
-               0.0094473,
-               0.0000001])
-
-# SPSCPRF-SAFF
-y4 = np.array([0.18586698,
-               0.16166166,
-               0.10416667,
-               0.06027306,
-               0.01689914,
-               0.0001328])
-
-# SPSCPRF-SARF
-y5 = np.array([0.27744511,
-               0.20157584,
-               0.15632516,
-               0.13702022,
-               0.07821106,
-               0.02617436])
 plt.figure(figsize=(3.5, 2.7))
 
-# SPFFPRF-SAFF
-plt.plot(x, y1, color="blue",
+# SPSC-PSC-SAFF
+plt.plot(x, y1, color="green",
          linestyle='-', linewidth=1.0, alpha=1,
-         zorder=3, marker='x', markersize=4, markerfacecolor='none', markeredgewidth=0.8)
-
-# SPRFPRF-SAFF
-plt.plot(x, y2, color="brown",
-         linestyle='-', linewidth=1.0, alpha=1,
-         zorder=3, marker='o', markersize=4, markerfacecolor='none', markeredgewidth=0.8)
-
-# SPSCPSC-SAFF
-plt.plot(x, y3, color="black",
-         linestyle='-', linewidth=1.0, alpha=1,
-         zorder=3, marker='s', markersize=4, markerfacecolor='none', markeredgewidth=0.8)
-
-# SPSCPRF-SAFF
-plt.plot(x, y4, color="green",
+         zorder=3, marker='*', markersize=4, markerfacecolor='none', markeredgewidth=0.8)
+# SPSC-PRF-SAFF
+plt.plot(x, y2, color="olive",
          linestyle='-', linewidth=1.0, alpha=1,
          zorder=3, marker='^', markersize=4, markerfacecolor='none', markeredgewidth=0.8)
-
-# SPSCPRF-SARF
-plt.plot(x, y5, color="red",
+# SPRF-PRF-SAFF
+plt.plot(x, y3, color="slateblue",
          linestyle='-', linewidth=1.0, alpha=1,
-         zorder=3, marker='v', markersize=4, markerfacecolor='none', markeredgewidth=0.8)
+         zorder=3, marker='>', markersize=4, markerfacecolor='none', markeredgewidth=0.8)
+# SPRF-PRF-SAFF
+plt.plot(x, y4, color="maroon",
+         linestyle='-', linewidth=1.0, alpha=1,
+         zorder=3, marker='o', markersize=4, markerfacecolor='none', markeredgewidth=0.8)
+# SPSC-PSC-SARF
+plt.plot(x, y5, color="orangered",
+         linestyle='-', linewidth=1.0, alpha=1,
+         zorder=3, marker='s', markersize=4, markerfacecolor='none', markeredgewidth=0.8)
 
 plt.xticks([2250, 1950, 1650, 1350, 1050, 750])
 # Labels (Removed the empty title, let the LaTeX caption do the talking)
@@ -105,18 +109,18 @@ plt.grid(True, linestyle='-', alpha=0.7)
 # Create custom legend entries
 legend_elements = [
 
-    Line2D([0], [0], color='green', lw=0.8,
+    Line2D([0], [0], color='black', lw=0.8,
            linestyle='-', label='Overall Blocking'),
-    Line2D([0], [0], color='blue', lw=0, marker='x',
-           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPFF-PRF-SAFF'),
-    Line2D([0], [0], color='brown', lw=0, marker='o',
-           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPRF-PRF-SAFF'),
-    Line2D([0], [0], color='green', lw=0, marker='^',
-           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPSC-PRF-SAFF'),
-    Line2D([0], [0], color='red', lw=0, marker='v',
-           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPSC-PRF-SARF'),
-    Line2D([0], [0], color='black', lw=0, marker='s',
+    Line2D([0], [0], color='green', lw=0, marker='*',
            markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPSC-PSC-SAFF'),
+    Line2D([0], [0], color='olive', lw=0, marker='^',
+           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPSC-PRF-SAFF'),
+    Line2D([0], [0], color='slateblue', lw=0, marker='>',
+           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPRF-PRF-SAFF'),
+    Line2D([0], [0], color='maroon', lw=0, marker='o',
+           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPFF-PRF-SAFF'),
+    Line2D([0], [0], color='orangered', lw=0, marker='s',
+           markersize=6, markeredgewidth=0.8, markerfacecolor='none', label='SPSC-PSC-SARF'),
 ]
 
 # Add the custom legend inside the plot area at the lower right
@@ -129,6 +133,6 @@ plt.tight_layout(pad=0.2)
 # -------------------------------------------------------------
 # 4. SAVE AS PDF (Crucial for LaTeX vector graphics!)
 # -------------------------------------------------------------
-plt.savefig('images/NSF_Parallel_Colored.pdf', format='pdf',
+plt.savefig('images/NSF_Parallel.pdf', format='pdf',
             bbox_inches='tight')
 print("Chart successfully saved!")

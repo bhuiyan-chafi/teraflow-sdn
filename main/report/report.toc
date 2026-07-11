@@ -37,22 +37,21 @@
 \contentsline {chapter}{\numberline {4}System Design and Implementation}{32}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Modifications to TeraFlowSDN}{32}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Enhancement of the DeviceService}{32}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Context Service \& Database Schema Extensions}{33}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Algorithmic Core and Helper Modules}{34}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Parallel Optical Controller Microservice}{35}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Testbed Setup and Deployment}{37}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Deployment of TeraFlowSDN}{37}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Creating a Virtual Network}{38}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Emulated Devices}{39}{section.5.3}%
-\contentsline {section}{\numberline {5.4}An Example Topology Deployment}{40}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Results and Evaluation}{42}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Evaluation Methodology \& Test Scenarios}{42}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Functional Validation}{45}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Performance Evaluation \& Efficiency Analysis}{49}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Throughput Analysis}{50}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Statistical Analysis}{51}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{52}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Summary of Contributions}{52}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Limitations}{53}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Future Work Directions}{55}{section.7.3}%
+\contentsline {section}{\numberline {4.2}Algorithmic Core and Helper Modules}{33}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Parallel Optical Controller Microservice}{34}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Testbed Setup and Deployment}{36}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Deployment of TeraFlowSDN}{36}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Creating a Virtual Network}{37}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Emulated Devices}{38}{section.5.3}%
+\contentsline {section}{\numberline {5.4}An Example Topology Deployment}{39}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Results and Evaluation}{41}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Evaluation Methodology \& Test Scenarios}{41}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Functional Validation}{44}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Performance Evaluation \& Efficiency Analysis}{48}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Throughput Analysis}{49}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Statistical Analysis}{50}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{51}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Summary of Contributions}{51}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Limitations}{52}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Future Work Directions}{54}{section.7.3}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

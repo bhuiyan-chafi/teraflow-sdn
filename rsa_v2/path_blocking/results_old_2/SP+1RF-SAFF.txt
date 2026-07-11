@@ -1,0 +1,94 @@
+Successfully loaded 22 links for study.
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=450
+Stopping: CI <= 10.0% of P_b OR max 9223372036854775807 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.01s ---
+    Transient: 4503 requests, 553 blocked
+    Progress: 1000 requests | P_b=0.15400000 | CI=0.02237184 | Rel.CI=14.53% | Avg.GraphGen=0.3250 ms | Avg.AdditionalPath=0.0970 ms | Avg.RSA=4.1222 ms
+    Progress: 2000 requests | P_b=0.15700000 | CI=0.01594427 | Rel.CI=10.16% | Avg.GraphGen=0.3265 ms | Avg.AdditionalPath=0.0958 ms | Avg.RSA=4.0784 ms
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 450,
+    "path_strategy": "random",
+    "spectrum_strategy": "first-fit",
+    "path_type": "additional",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "simulation_time_s": 219.85,
+    "total_requests": 2088,
+    "transient_contention_rate": 12.28070175,
+    "successful_requests": 1763,
+    "blocked_requests": 325,
+    "path_blocked": 0,
+    "spectral_blocked": 325,
+    "blocking_probability": 
+    ,
+    "absolute_confidence_interval": 0.01554992,
+    "relative_confidence_interval_pct": 9.9902,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 9223372036854775807,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 325
+    },
+    "most_used_links": "RDMil->RDMpa_15 (810), RDMut->RDMco_7 (772), RDMwa->RDMny_3 (771), RDMtx->RDMil_12 (766), RDMtx->RDMga_13 (751), RDMca2->RDMtx_6 (689), RDMut->RDMmi_8 (685), RDMco->RDMtx_10 (685), RDMca1->RDMut_5 (682), RDMpa->RDMnj_18 (674)",
+    "avg_graph_gen_ms": 0.3258,
+    "avg_path_comp_ms": 0.0964,
+    "avg_rsa_ms": 4.1003
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=350
+Stopping: CI <= 10.0% of P_b OR max 9223372036854775807 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.03s ---
+    Transient: 3467 requests, 166 blocked
+    Progress: 1000 requests | P_b=0.06000000 | CI=0.01471959 | Rel.CI=24.53% | Avg.GraphGen=0.2969 ms | Avg.AdditionalPath=0.0847 ms | Avg.RSA=3.7801 ms
+    Progress: 2000 requests | P_b=0.06450000 | CI=0.01076571 | Rel.CI=16.69% | Avg.GraphGen=0.3044 ms | Avg.AdditionalPath=0.0889 ms | Avg.RSA=3.9077 ms
+    Progress: 3000 requests | P_b=0.06166667 | CI=0.00860794 | Rel.CI=13.96% | Avg.GraphGen=0.3084 ms | Avg.AdditionalPath=0.0925 ms | Avg.RSA=3.9642 ms
+    Progress: 4000 requests | P_b=0.05625000 | CI=0.00714029 | Rel.CI=12.69% | Avg.GraphGen=0.2853 ms | Avg.AdditionalPath=0.0818 ms | Avg.RSA=3.6315 ms
+    Progress: 5000 requests | P_b=0.05660000 | CI=0.00640512 | Rel.CI=11.32% | Avg.GraphGen=0.2919 ms | Avg.AdditionalPath=0.0841 ms | Avg.RSA=3.6674 ms
+    Progress: 6000 requests | P_b=0.05350000 | CI=0.00569400 | Rel.CI=10.64% | Avg.GraphGen=0.2887 ms | Avg.AdditionalPath=0.0795 ms | Avg.RSA=3.6049 ms
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 350,
+    "path_strategy": "random",
+    "spectrum_strategy": "first-fit",
+    "path_type": "additional",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "simulation_time_s": 336.02,
+    "total_requests": 6483,
+    "transient_contention_rate": 4.78800115,
+    "successful_requests": 6120,
+    "blocked_requests": 363,
+    "path_blocked": 0,
+    "spectral_blocked": 363,
+    "blocking_probability": 0.0559926,
+    "absolute_confidence_interval": 0.00559656,
+    "relative_confidence_interval_pct": 9.9952,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 9223372036854775807,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 363
+    },
+    "most_used_links": "RDMil->RDMpa_15 (1402), RDMtx->RDMil_12 (1389), RDMwa->RDMny_3 (1320), RDMut->RDMco_7 (1310), RDMtx->RDMga_13 (1227), RDMut->RDMmi_8 (1160), RDMca2->RDMtx_6 (1158), RDMca1->RDMut_5 (1144), RDMpa->RDMnj_18 (1134), RDMil->RDMmi_14 (1120)",
+    "avg_graph_gen_ms": 0.2959,
+    "avg_path_comp_ms": 0.0853,
+    "avg_rsa_ms": 3.7593
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=250
+Stopping: CI <= 10.0% of P_b OR max 9223372036854775807 requests
+============================================================

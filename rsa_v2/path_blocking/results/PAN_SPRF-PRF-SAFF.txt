@@ -1,0 +1,251 @@
+Successfully loaded 165 links for study.
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=2250
+Stopping: CI <= 10.0% of P_b OR max 9223372036854775807 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.05s ---
+    Transient: 22351 requests, 3299 blocked
+    Progress: 1000 requests | P_b=0.13700000 | CI=0.02131188 | Rel.CI=15.56% | Avg.GraphGen=1.3126 ms | Avg.DijkstraParallel=1.0192 ms | Avg.RSA=5.7092 ms
+    Progress: 2000 requests | P_b=0.13800000 | CI=0.01511591 | Rel.CI=10.95% | Avg.GraphGen=1.2895 ms | Avg.DijkstraParallel=1.0000 ms | Avg.RSA=5.5923 ms
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 2250,
+    "path_strategy": "random",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "random",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "simulation_time_s": 1138.53,
+    "total_requests": 2247,
+    "transient_contention_rate": 14.759966,
+    "successful_requests": 1918,
+    "blocked_requests": 329,
+    "path_blocked": 0,
+    "spectral_blocked": 329,
+    "blocking_probability": 0.14641745,
+    "absolute_confidence_interval": 0.01461752,
+    "relative_confidence_interval_pct": 9.9835,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 9223372036854775807,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 329
+    },
+    "most_used_links": "RDMlyon->RDMmilan_1 (750), RDMlyon->RDMmilan_3 (710), RDMlyon->RDMmilan_2 (698), RDMbrussels->RDMfrankfurt_3 (686), RDMbrussels->RDMfrankfurt_1 (668), RDMbrussels->RDMfrankfurt_2 (659), RDMamsterdam->RDMhamburg_2 (602), RDMfrankfurt->RDMmunich_3 (582), RDMamsterdam->RDMhamburg_1 (581), RDMamsterdam->RDMhamburg_3 (579)",
+    "avg_graph_gen_ms": 1.301,
+    "avg_path_comp_ms": 1.0096,
+    "avg_rsa_ms": 5.6507
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=1950
+Stopping: CI <= 10.0% of P_b OR max 9223372036854775807 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.02s ---
+    Transient: 19478 requests, 2094 blocked
+    Progress: 1000 requests | P_b=0.14200000 | CI=0.02163435 | Rel.CI=15.24% | Avg.GraphGen=0.9693 ms | Avg.DijkstraParallel=0.6956 ms | Avg.RSA=4.4400 ms
+    Progress: 2000 requests | P_b=0.13000000 | CI=0.01473915 | Rel.CI=11.34% | Avg.GraphGen=1.0066 ms | Avg.DijkstraParallel=0.7806 ms | Avg.RSA=4.5985 ms
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 1950,
+    "path_strategy": "random",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "random",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "simulation_time_s": 985.16,
+    "total_requests": 2644,
+    "transient_contention_rate": 10.75059041,
+    "successful_requests": 2308,
+    "blocked_requests": 336,
+    "path_blocked": 0,
+    "spectral_blocked": 336,
+    "blocking_probability": 0.12708018,
+    "absolute_confidence_interval": 0.01269555,
+    "relative_confidence_interval_pct": 9.9902,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 9223372036854775807,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 336
+    },
+    "most_used_links": "RDMlyon->RDMmilan_2 (712), RDMlyon->RDMmilan_1 (711), RDMlyon->RDMmilan_3 (693), RDMbrussels->RDMfrankfurt_3 (679), RDMbrussels->RDMfrankfurt_1 (669), RDMbrussels->RDMfrankfurt_2 (652), RDMamsterdam->RDMhamburg_2 (634), RDMamsterdam->RDMhamburg_3 (604), RDMamsterdam->RDMhamburg_1 (573), RDMparis->RDMbordeaux_2 (565)",
+    "avg_graph_gen_ms": 0.9879,
+    "avg_path_comp_ms": 0.7381,
+    "avg_rsa_ms": 4.5192
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=1650
+Stopping: CI <= 10.0% of P_b OR max 9223372036854775807 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.05s ---
+    Transient: 16460 requests, 1125 blocked
+    Progress: 1000 requests | P_b=0.08600000 | CI=0.01737714 | Rel.CI=20.21% | Avg.GraphGen=1.0772 ms | Avg.DijkstraParallel=0.8158 ms | Avg.RSA=4.7362 ms
+    Progress: 2000 requests | P_b=0.08550000 | CI=0.01225508 | Rel.CI=14.33% | Avg.GraphGen=1.0314 ms | Avg.DijkstraParallel=0.7400 ms | Avg.RSA=4.5935 ms
+    Progress: 3000 requests | P_b=0.07900000 | CI=0.00965248 | Rel.CI=12.22% | Avg.GraphGen=0.9505 ms | Avg.DijkstraParallel=0.7085 ms | Avg.RSA=4.4209 ms
+    Progress: 4000 requests | P_b=0.08125000 | CI=0.00846713 | Rel.CI=10.42% | Avg.GraphGen=0.9271 ms | Avg.DijkstraParallel=0.6977 ms | Avg.RSA=4.2927 ms
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 1650,
+    "path_strategy": "random",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "random",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "simulation_time_s": 947.83,
+    "total_requests": 4299,
+    "transient_contention_rate": 6.83475091,
+    "successful_requests": 3946,
+    "blocked_requests": 353,
+    "path_blocked": 0,
+    "spectral_blocked": 353,
+    "blocking_probability": 0.08211212,
+    "absolute_confidence_interval": 0.00820674,
+    "relative_confidence_interval_pct": 9.9946,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 9223372036854775807,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 353
+    },
+    "most_used_links": "RDMlyon->RDMmilan_1 (807), RDMlyon->RDMmilan_2 (794), RDMlyon->RDMmilan_3 (789), RDMbrussels->RDMfrankfurt_2 (704), RDMbrussels->RDMfrankfurt_3 (688), RDMbrussels->RDMfrankfurt_1 (679), RDMamsterdam->RDMhamburg_3 (610), RDMamsterdam->RDMhamburg_1 (603), RDMamsterdam->RDMhamburg_2 (591), RDMlyon->RDMparis_2 (570)",
+    "avg_graph_gen_ms": 0.9965,
+    "avg_path_comp_ms": 0.7405,
+    "avg_rsa_ms": 4.5108
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=1350
+Stopping: CI <= 10.0% of P_b OR max 9223372036854775807 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.00s ---
+    Transient: 13556 requests, 430 blocked
+    Progress: 1000 requests | P_b=0.05000000 | CI=0.01350837 | Rel.CI=27.02% | Avg.GraphGen=1.2609 ms | Avg.DijkstraParallel=0.9014 ms | Avg.RSA=5.4394 ms
+    Progress: 2000 requests | P_b=0.03400000 | CI=0.00794272 | Rel.CI=23.36% | Avg.GraphGen=1.2551 ms | Avg.DijkstraParallel=0.8921 ms | Avg.RSA=5.3441 ms
+    Progress: 3000 requests | P_b=0.03033333 | CI=0.00613715 | Rel.CI=20.23% | Avg.GraphGen=1.2597 ms | Avg.DijkstraParallel=0.9057 ms | Avg.RSA=5.4864 ms
+    Progress: 4000 requests | P_b=0.03250000 | CI=0.00549532 | Rel.CI=16.91% | Avg.GraphGen=1.2444 ms | Avg.DijkstraParallel=0.9398 ms | Avg.RSA=5.4194 ms
+    Progress: 5000 requests | P_b=0.03480000 | CI=0.00508007 | Rel.CI=14.60% | Avg.GraphGen=1.2597 ms | Avg.DijkstraParallel=0.9561 ms | Avg.RSA=5.5079 ms
+    Progress: 6000 requests | P_b=0.03800000 | CI=0.00483793 | Rel.CI=12.73% | Avg.GraphGen=1.2259 ms | Avg.DijkstraParallel=0.8449 ms | Avg.RSA=5.2727 ms
+    Progress: 7000 requests | P_b=0.03685714 | CI=0.00441381 | Rel.CI=11.98% | Avg.GraphGen=1.2741 ms | Avg.DijkstraParallel=0.8884 ms | Avg.RSA=5.5219 ms
+    Progress: 8000 requests | P_b=0.03900000 | CI=0.00424234 | Rel.CI=10.88% | Avg.GraphGen=1.2555 ms | Avg.DijkstraParallel=1.0478 ms | Avg.RSA=5.5055 ms
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 1350,
+    "path_strategy": "random",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "random",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "simulation_time_s": 1022.27,
+    "total_requests": 8905,
+    "transient_contention_rate": 3.17202715,
+    "successful_requests": 8536,
+    "blocked_requests": 369,
+    "path_blocked": 0,
+    "spectral_blocked": 369,
+    "blocking_probability": 0.04143739,
+    "absolute_confidence_interval": 0.00413948,
+    "relative_confidence_interval_pct": 9.9897,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 9223372036854775807,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 369
+    },
+    "most_used_links": "RDMlyon->RDMmilan_3 (1046), RDMlyon->RDMmilan_1 (1006), RDMlyon->RDMmilan_2 (995), RDMbrussels->RDMfrankfurt_3 (865), RDMbrussels->RDMfrankfurt_2 (808), RDMbrussels->RDMfrankfurt_1 (804), RDMlyon->RDMparis_3 (725), RDMlyon->RDMparis_2 (707), RDMamsterdam->RDMhamburg_3 (697), RDMamsterdam->RDMhamburg_1 (697)",
+    "avg_graph_gen_ms": 1.2544,
+    "avg_path_comp_ms": 0.922,
+    "avg_rsa_ms": 5.4372
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=1050
+Stopping: CI <= 10.0% of P_b OR max 9223372036854775807 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.07s ---
+    Transient: 10327 requests, 122 blocked
+    Progress: 1000 requests | P_b=0.00200000 | CI=0.00276909 | Rel.CI=138.45% | Avg.GraphGen=1.2855 ms | Avg.DijkstraParallel=1.0500 ms | Avg.RSA=5.5338 ms
+    Progress: 2000 requests | P_b=0.01500000 | CI=0.00532727 | Rel.CI=35.52% | Avg.GraphGen=1.2578 ms | Avg.DijkstraParallel=0.8010 ms | Avg.RSA=5.4932 ms
+    Progress: 3000 requests | P_b=0.01533333 | CI=0.00439702 | Rel.CI=28.68% | Avg.GraphGen=1.2193 ms | Avg.DijkstraParallel=0.9044 ms | Avg.RSA=5.3803 ms
+    Progress: 4000 requests | P_b=0.01675000 | CI=0.00397709 | Rel.CI=23.74% | Avg.GraphGen=1.2520 ms | Avg.DijkstraParallel=0.8906 ms | Avg.RSA=5.4916 ms
+    Progress: 5000 requests | P_b=0.01700000 | CI=0.00358321 | Rel.CI=21.08% | Avg.GraphGen=1.2450 ms | Avg.DijkstraParallel=1.0062 ms | Avg.RSA=5.3756 ms
+    Progress: 6000 requests | P_b=0.01716667 | CI=0.00328673 | Rel.CI=19.15% | Avg.GraphGen=1.2721 ms | Avg.DijkstraParallel=0.9369 ms | Avg.RSA=5.5266 ms
+    Progress: 7000 requests | P_b=0.01685714 | CI=0.00301583 | Rel.CI=17.89% | Avg.GraphGen=1.2345 ms | Avg.DijkstraParallel=0.9531 ms | Avg.RSA=5.4662 ms
+    Progress: 8000 requests | P_b=0.01537500 | CI=0.00269621 | Rel.CI=17.54% | Avg.GraphGen=1.2898 ms | Avg.DijkstraParallel=0.9588 ms | Avg.RSA=5.5135 ms
+    Progress: 9000 requests | P_b=0.01533333 | CI=0.00253862 | Rel.CI=16.56% | Avg.GraphGen=1.2536 ms | Avg.DijkstraParallel=0.8852 ms | Avg.RSA=5.4441 ms
+    Progress: 10000 requests | P_b=0.01420000 | CI=0.00231897 | Rel.CI=16.33% | Avg.GraphGen=1.2466 ms | Avg.DijkstraParallel=1.0440 ms | Avg.RSA=5.4615 ms
+    Progress: 11000 requests | P_b=0.01381818 | CI=0.00218154 | Rel.CI=15.79% | Avg.GraphGen=1.2287 ms | Avg.DijkstraParallel=0.9245 ms | Avg.RSA=5.4062 ms
+    Progress: 12000 requests | P_b=0.01366667 | CI=0.00207734 | Rel.CI=15.20% | Avg.GraphGen=1.2806 ms | Avg.DijkstraParallel=1.0834 ms | Avg.RSA=5.5210 ms
+    Progress: 13000 requests | P_b=0.01292308 | CI=0.00194152 | Rel.CI=15.02% | Avg.GraphGen=1.2408 ms | Avg.DijkstraParallel=0.9313 ms | Avg.RSA=5.3877 ms
+    Progress: 14000 requests | P_b=0.01250000 | CI=0.00184041 | Rel.CI=14.72% | Avg.GraphGen=1.2834 ms | Avg.DijkstraParallel=0.9395 ms | Avg.RSA=5.5584 ms
+    Progress: 15000 requests | P_b=0.01220000 | CI=0.00175681 | Rel.CI=14.40% | Avg.GraphGen=1.2768 ms | Avg.DijkstraParallel=1.0762 ms | Avg.RSA=5.4716 ms
+    Progress: 16000 requests | P_b=0.01168750 | CI=0.00166534 | Rel.CI=14.25% | Avg.GraphGen=0.9632 ms | Avg.DijkstraParallel=0.7421 ms | Avg.RSA=4.3985 ms
+    Progress: 17000 requests | P_b=0.01100000 | CI=0.00156793 | Rel.CI=14.25% | Avg.GraphGen=0.8231 ms | Avg.DijkstraParallel=0.6730 ms | Avg.RSA=4.0951 ms
+    Progress: 18000 requests | P_b=0.01055556 | CI=0.00149299 | Rel.CI=14.14% | Avg.GraphGen=0.8378 ms | Avg.DijkstraParallel=0.6338 ms | Avg.RSA=4.0874 ms
+    Progress: 19000 requests | P_b=0.01010526 | CI=0.00142216 | Rel.CI=14.07% | Avg.GraphGen=0.8296 ms | Avg.DijkstraParallel=0.6652 ms | Avg.RSA=4.0211 ms
+    Progress: 20000 requests | P_b=0.00960000 | CI=0.00135139 | Rel.CI=14.08% | Avg.GraphGen=0.8269 ms | Avg.DijkstraParallel=0.6035 ms | Avg.RSA=4.0142 ms
+    Progress: 21000 requests | P_b=0.00933333 | CI=0.00130055 | Rel.CI=13.93% | Avg.GraphGen=0.8443 ms | Avg.DijkstraParallel=0.5878 ms | Avg.RSA=4.0612 ms
+    Progress: 22000 requests | P_b=0.00904545 | CI=0.00125108 | Rel.CI=13.83% | Avg.GraphGen=0.8414 ms | Avg.DijkstraParallel=0.5988 ms | Avg.RSA=4.0822 ms
+    Progress: 23000 requests | P_b=0.00921739 | CI=0.00123505 | Rel.CI=13.40% | Avg.GraphGen=0.8247 ms | Avg.DijkstraParallel=0.6011 ms | Avg.RSA=4.0450 ms
+    Progress: 24000 requests | P_b=0.00912500 | CI=0.00120303 | Rel.CI=13.18% | Avg.GraphGen=0.8396 ms | Avg.DijkstraParallel=0.5665 ms | Avg.RSA=4.0064 ms
+    Progress: 25000 requests | P_b=0.00940000 | CI=0.00119619 | Rel.CI=12.73% | Avg.GraphGen=0.8453 ms | Avg.DijkstraParallel=0.6244 ms | Avg.RSA=4.0062 ms
+    Progress: 26000 requests | P_b=0.01011538 | CI=0.00121633 | Rel.CI=12.02% | Avg.GraphGen=0.8366 ms | Avg.DijkstraParallel=0.6443 ms | Avg.RSA=4.0538 ms
+    Progress: 27000 requests | P_b=0.01000000 | CI=0.00118684 | Rel.CI=11.87% | Avg.GraphGen=0.8276 ms | Avg.DijkstraParallel=0.6045 ms | Avg.RSA=4.0091 ms
+    Progress: 28000 requests | P_b=0.01003571 | CI=0.00116751 | Rel.CI=11.63% | Avg.GraphGen=0.8402 ms | Avg.DijkstraParallel=0.6169 ms | Avg.RSA=4.0584 ms
+    Progress: 29000 requests | P_b=0.01003448 | CI=0.00114714 | Rel.CI=11.43% | Avg.GraphGen=0.8124 ms | Avg.DijkstraParallel=0.6507 ms | Avg.RSA=4.0119 ms
+    Progress: 30000 requests | P_b=0.01083333 | CI=0.00117142 | Rel.CI=10.81% | Avg.GraphGen=0.8373 ms | Avg.DijkstraParallel=0.6419 ms | Avg.RSA=4.0194 ms
+    Progress: 31000 requests | P_b=0.01096774 | CI=0.00115942 | Rel.CI=10.57% | Avg.GraphGen=0.8318 ms | Avg.DijkstraParallel=0.6346 ms | Avg.RSA=4.0333 ms
+    Progress: 32000 requests | P_b=0.01075000 | CI=0.00112990 | Rel.CI=10.51% | Avg.GraphGen=0.8262 ms | Avg.DijkstraParallel=0.6423 ms | Avg.RSA=3.9817 ms
+    Progress: 33000 requests | P_b=0.01090909 | CI=0.00112076 | Rel.CI=10.27% | Avg.GraphGen=0.8375 ms | Avg.DijkstraParallel=0.7121 ms | Avg.RSA=4.1024 ms
+    Progress: 34000 requests | P_b=0.01088235 | CI=0.00110281 | Rel.CI=10.13% | Avg.GraphGen=0.8123 ms | Avg.DijkstraParallel=0.6432 ms | Avg.RSA=4.0174 ms
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 1050,
+    "path_strategy": "random",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "random",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "simulation_time_s": 1955.03,
+    "total_requests": 34956,
+    "transient_contention_rate": 1.18136923,
+    "successful_requests": 34576,
+    "blocked_requests": 380,
+    "path_blocked": 0,
+    "spectral_blocked": 380,
+    "blocking_probability": 0.01087081,
+    "absolute_confidence_interval": 0.00108706,
+    "relative_confidence_interval_pct": 9.9998,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 9223372036854775807,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 380
+    },
+    "most_used_links": "RDMlyon->RDMmilan_2 (2321), RDMlyon->RDMmilan_1 (2295), RDMlyon->RDMmilan_3 (2258), RDMbrussels->RDMfrankfurt_1 (1698), RDMlyon->RDMparis_3 (1673), RDMlyon->RDMparis_2 (1646), RDMbrussels->RDMfrankfurt_2 (1633), RDMlyon->RDMparis_1 (1616), RDMbrussels->RDMfrankfurt_3 (1611), RDMglasgow->RDMlondon_3 (1404)",
+    "avg_graph_gen_ms": 1.0237,
+    "avg_path_comp_ms": 0.7786,
+    "avg_rsa_ms": 4.6805
+}

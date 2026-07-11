@@ -1,5 +1,0 @@
-Successfully loaded 55 links for study.
-============================================================
-STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=750
-Stopping: CI <= 10.0% of P_b OR max 9223372036854775807 requests
-============================================================

@@ -9,21 +9,21 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces RSA operation using ParallelOpticalController in TeraFlowSDN\relax }}{27}{figure.caption.10}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Service Architecture of ParallelOpticalController\relax }}{35}{figure.caption.13}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Service Architecture of ParallelOpticalController\relax }}{34}{figure.caption.13}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces An example topology in TeraflowSDN\relax }}{41}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces An example topology in TeraflowSDN\relax }}{40}{figure.caption.15}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Linear Topology(no parallel links)\relax }}{43}{figure.caption.16}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Butterfly Topology(with parallel links)\relax }}{43}{figure.caption.17}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces NSFNet Topology(with parallel links)\relax }}{44}{figure.caption.18}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces PANEU Topology(with parallel links)\relax }}{44}{figure.caption.19}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Web view of device info\relax }}{45}{figure.caption.21}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Device info extraction using OCDriver\relax }}{46}{figure.caption.22}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Frequency mapping of the device endpoints\relax }}{46}{figure.caption.23}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Frequency details of an Endpoint\relax }}{47}{figure.caption.24}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces DWDM flex-grid details of Link\relax }}{47}{figure.caption.26}%
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Shortest path discovery\relax }}{48}{figure.caption.28}%
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Hop-by-hop RSA computation\relax }}{48}{figure.caption.29}%
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Additional Path Computation\relax }}{48}{figure.caption.30}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Linear Topology(no parallel links)\relax }}{42}{figure.caption.16}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Butterfly Topology(with parallel links)\relax }}{42}{figure.caption.17}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces NSFNet Topology(with parallel links)\relax }}{43}{figure.caption.18}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces PANEU Topology(with parallel links)\relax }}{43}{figure.caption.19}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Web view of device info\relax }}{44}{figure.caption.21}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Device info extraction using OCDriver\relax }}{45}{figure.caption.22}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Frequency mapping of the device endpoints\relax }}{45}{figure.caption.23}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Frequency details of an Endpoint\relax }}{46}{figure.caption.24}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces DWDM flex-grid details of Link\relax }}{46}{figure.caption.26}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Shortest path discovery\relax }}{47}{figure.caption.28}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Hop-by-hop RSA computation\relax }}{47}{figure.caption.29}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Additional Path Computation\relax }}{47}{figure.caption.30}%
 \addvspace {10\p@ }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

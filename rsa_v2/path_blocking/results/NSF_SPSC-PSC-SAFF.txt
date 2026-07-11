@@ -1,0 +1,8 @@
+Successfully loaded 165 links for study.
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=1050
+Stopping: CI <= 10.0% of P_b OR max 9223372036854775807 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.03s ---
+    Transient: 10538 requests, 0 blocked

@@ -3,7 +3,7 @@
     {
       "service_id": {
         "context_id": { "context_uuid": { "uuid": "admin" } },
-        "service_uuid": { "uuid": "optical-connection-parallel" }
+        "service_uuid": { "uuid": "pisa-roma" }
       },
       "service_type": 6,
       "service_status": { "service_status": 1 },

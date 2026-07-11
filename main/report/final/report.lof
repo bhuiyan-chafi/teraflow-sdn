@@ -1,0 +1,41 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Optical Transmission using WDM\relax }}{3}{figure.caption.7}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Elastic Optical Network~\blx@tocontentsinit {0}\cite {itu694}\relax }}{3}{figure.caption.8}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces (a) Coherent pluggables (SFP+) and (b) Structure Diagram (QSFP-DD)\relax }}{4}{figure.caption.9}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces OpenROADM Device for Metro-haul Connectivity\relax }}{5}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Optical Connectivity with Parallel Links\relax }}{6}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Network Planes\relax }}{7}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Software Defined Optical Network~\blx@tocontentsinit {0}\cite {sdonOnos}\relax }}{7}{figure.caption.13}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces An example optical connectivity intent in TeraFlowSDN\relax }}{9}{figure.caption.14}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces TFS Architecture~\blx@tocontentsinit {0}\cite {tfsArchitecture}\relax }}{14}{figure.caption.15}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Simple topology with non-uniform parallel links ($G$)\relax }}{20}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Simple topology with no parallel links ($G_s$)\relax }}{21}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Topological Graph Abstraction with NetworkX ($G_s$)\relax }}{21}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Spectrum alignment between heterogeneous FSU capacity\relax }}{23}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Spectrum Assignment Phase\relax }}{23}{figure.caption.20}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Service Architecture of POC\relax }}{27}{figure.caption.21}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces TFS deployment script\relax }}{30}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Virtual network for the emulated devices\relax }}{31}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Add exceptions to the firewall\relax }}{31}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Add exceptions to the firewall\relax }}{32}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Referenced Pan-European network topology~\blx@tocontentsinit {0}\cite {4814809}\relax }}{33}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces PANEU topology with non-uniform parallel links within TFS\relax }}{34}{figure.caption.27}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces NSFNET topology with non-uniform parallel links within TFS\relax }}{34}{figure.caption.28}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces An internal configuration of a ROADM device in TFS WebUI\relax }}{37}{figure.caption.29}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Device info extraction using OCDriver\relax }}{37}{figure.caption.30}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Frequency mapping of the device endpoints\relax }}{37}{figure.caption.31}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Frequency details of an Endpoint\relax }}{38}{figure.caption.32}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Bitmap of two devices linked by a single fiber\relax }}{38}{figure.caption.33}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Optical connectivity service in TFS\relax }}{39}{figure.caption.34}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Shortest path discovery\relax }}{39}{figure.caption.35}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Hop-by-hop RSA computation\relax }}{40}{figure.caption.36}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Additional Path Computation\relax }}{40}{figure.caption.37}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces $P_b$ vs Erlangs, holding time $1/\mu =60$s. Provisioning of the NSFNET topology spectral contention under (a) single-link and (b) 3$\times $ parallel-links.\relax }}{44}{figure.caption.39}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces $P_b$ vs Erlangs, holding time $1/\mu =60$s. Provisioning of the PANEU topology spectral contention under (a) single-link and (b) 3$\times $ parallel-links.\relax }}{44}{figure.caption.40}%
+\addvspace {10\p@ }

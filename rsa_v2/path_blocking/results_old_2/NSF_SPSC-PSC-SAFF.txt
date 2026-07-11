@@ -1,0 +1,618 @@
+Successfully loaded 66 links for study.
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=2250
+Stopping: CI <= 10.0% of P_b OR max 9223372036854775807 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.13s ---
+    Transient: 22570 requests, 5088 blocked
+    Progress: 1000 requests | P_b=0.25500000 | CI=0.02701496 | Rel.CI=10.59% | Avg.GraphGen=0.4100 ms | Avg.DijkstraParallel=59.5929 ms | Avg.RSA=3.4135 ms
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 2250,
+    "path_strategy": "highest-slot",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "highest-slot",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "simulation_time_s": 2055.34,
+    "total_requests": 1099,
+    "transient_contention_rate": 22.54319894,
+    "successful_requests": 814,
+    "blocked_requests": 285,
+    "path_blocked": 0,
+    "spectral_blocked": 285,
+    "blocking_probability": 0.25932666,
+    "absolute_confidence_interval": 0.0259116,
+    "relative_confidence_interval_pct": 9.9919,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 9223372036854775807,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 285
+    },
+    "most_used_links": "RDMwa->RDMny_3 (709), RDMil->RDMpa_2 (686), RDMil->RDMpa_1 (662), RDMut->RDMco_2 (661), RDMwa->RDMny_2 (658), RDMut->RDMmi_3 (656), RDMwa->RDMny_1 (636), RDMil->RDMpa_3 (635), RDMca2->RDMtx_1 (628), RDMtx->RDMga_2 (628)",
+    "avg_graph_gen_ms": 0.41,
+    "avg_path_comp_ms": 59.5929,
+    "avg_rsa_ms": 3.4135
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=1950
+Stopping: CI <= 10.0% of P_b OR max 9223372036854775807 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.06s ---
+    Transient: 19416 requests, 3250 blocked
+    Progress: 1000 requests | P_b=0.18200000 | CI=0.02391489 | Rel.CI=13.14% | Avg.GraphGen=0.4108 ms | Avg.DijkstraParallel=57.8024 ms | Avg.RSA=3.4253 ms
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 1950,
+    "path_strategy": "highest-slot",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "highest-slot",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "simulation_time_s": 1863.3,
+    "total_requests": 1560,
+    "transient_contention_rate": 16.73877215,
+    "successful_requests": 1251,
+    "blocked_requests": 309,
+    "path_blocked": 0,
+    "spectral_blocked": 309,
+    "blocking_probability": 0.19807692,
+    "absolute_confidence_interval": 0.01977776,
+    "relative_confidence_interval_pct": 9.9849,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 9223372036854775807,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 309
+    },
+    "most_used_links": "RDMwa->RDMny_2 (705), RDMwa->RDMny_3 (684), RDMwa->RDMny_1 (667), RDMil->RDMpa_1 (651), RDMut->RDMco_3 (650), RDMil->RDMpa_3 (648), RDMut->RDMco_1 (646), RDMca2->RDMtx_1 (646), RDMtx->RDMga_2 (645), RDMtx->RDMga_1 (643)",
+    "avg_graph_gen_ms": 0.4108,
+    "avg_path_comp_ms": 57.8024,
+    "avg_rsa_ms": 3.4253
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=1650
+Stopping: CI <= 10.0% of P_b OR max 9223372036854775807 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.01s ---
+    Transient: 16535 requests, 1707 blocked
+    Progress: 1000 requests | P_b=0.15700000 | CI=0.02254861 | Rel.CI=14.36% | Avg.GraphGen=0.4103 ms | Avg.DijkstraParallel=62.0162 ms | Avg.RSA=3.3943 ms
+    Progress: 2000 requests | P_b=0.14950000 | CI=0.01562784 | Rel.CI=10.45% | Avg.GraphGen=0.4085 ms | Avg.DijkstraParallel=60.7470 ms | Avg.RSA=3.4253 ms
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 1650,
+    "path_strategy": "highest-slot",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "highest-slot",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "simulation_time_s": 1706.19,
+    "total_requests": 2174,
+    "transient_contention_rate": 10.32355609,
+    "successful_requests": 1847,
+    "blocked_requests": 327,
+    "path_blocked": 0,
+    "spectral_blocked": 327,
+    "blocking_probability": 0.15041398,
+    "absolute_confidence_interval": 0.01502706,
+    "relative_confidence_interval_pct": 9.9905,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 9223372036854775807,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 327
+    },
+    "most_used_links": "RDMwa->RDMny_2 (708), RDMil->RDMpa_1 (700), RDMwa->RDMny_3 (675), RDMtx->RDMga_2 (667), RDMwa->RDMny_1 (665), RDMca2->RDMtx_3 (629), RDMut->RDMco_1 (627), RDMil->RDMpa_2 (624), RDMtx->RDMga_3 (624), RDMtx->RDMga_1 (619)",
+    "avg_graph_gen_ms": 0.4094,
+    "avg_path_comp_ms": 61.3816,
+    "avg_rsa_ms": 3.4098
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=1350
+Stopping: CI <= 10.0% of P_b OR max 9223372036854775807 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.03s ---
+    Transient: 13575 requests, 611 blocked
+    Progress: 1000 requests | P_b=0.06000000 | CI=0.01471959 | Rel.CI=24.53% | Avg.GraphGen=0.4154 ms | Avg.DijkstraParallel=58.0938 ms | Avg.RSA=3.3884 ms
+    Progress: 2000 requests | P_b=0.06900000 | CI=0.01110812 | Rel.CI=16.10% | Avg.GraphGen=0.4135 ms | Avg.DijkstraParallel=62.9506 ms | Avg.RSA=3.3713 ms
+    Progress: 3000 requests | P_b=0.06633333 | CI=0.00890548 | Rel.CI=13.43% | Avg.GraphGen=0.4190 ms | Avg.DijkstraParallel=58.5214 ms | Avg.RSA=3.3893 ms
+    Progress: 4000 requests | P_b=0.06325000 | CI=0.00754342 | Rel.CI=11.93% | Avg.GraphGen=0.4063 ms | Avg.DijkstraParallel=60.1914 ms | Avg.RSA=3.4173 ms
+    Progress: 5000 requests | P_b=0.06380000 | CI=0.00677432 | Rel.CI=10.62% | Avg.GraphGen=0.4128 ms | Avg.DijkstraParallel=59.0085 ms | Avg.RSA=3.3654 ms
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 1350,
+    "path_strategy": "highest-slot",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "highest-slot",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "simulation_time_s": 1780.9,
+    "total_requests": 5781,
+    "transient_contention_rate": 4.50092081,
+    "successful_requests": 5420,
+    "blocked_requests": 361,
+    "path_blocked": 0,
+    "spectral_blocked": 361,
+    "blocking_probability": 0.06244594,
+    "absolute_confidence_interval": 0.00623742,
+    "relative_confidence_interval_pct": 9.9885,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 9223372036854775807,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 361
+    },
+    "most_used_links": "RDMwa->RDMny_2 (812), RDMtx->RDMga_1 (784), RDMwa->RDMny_3 (784), RDMil->RDMpa_3 (781), RDMwa->RDMny_1 (777), RDMtx->RDMga_2 (765), RDMtx->RDMga_3 (761), RDMil->RDMpa_2 (733), RDMil->RDMpa_1 (718), RDMca2->RDMtx_1 (694)",
+    "avg_graph_gen_ms": 0.4134,
+    "avg_path_comp_ms": 59.7531,
+    "avg_rsa_ms": 3.3864
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=1050
+Stopping: CI <= 10.0% of P_b OR max 9223372036854775807 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.02s ---
+    Transient: 10732 requests, 2 blocked
+    Progress: 1000 requests | P_b=0.00800000 | CI=0.00552150 | Rel.CI=69.02% | Avg.GraphGen=0.4168 ms | Avg.DijkstraParallel=59.0220 ms | Avg.RSA=3.4162 ms
+    Progress: 2000 requests | P_b=0.00750000 | CI=0.00378126 | Rel.CI=50.42% | Avg.GraphGen=0.4112 ms | Avg.DijkstraParallel=55.9823 ms | Avg.RSA=3.3468 ms
+    Progress: 3000 requests | P_b=0.00700000 | CI=0.00298345 | Rel.CI=42.62% | Avg.GraphGen=0.4129 ms | Avg.DijkstraParallel=60.3121 ms | Avg.RSA=3.3954 ms
+    Progress: 4000 requests | P_b=0.00525000 | CI=0.00223956 | Rel.CI=42.66% | Avg.GraphGen=0.4131 ms | Avg.DijkstraParallel=59.6932 ms | Avg.RSA=3.3918 ms
+    Progress: 5000 requests | P_b=0.00440000 | CI=0.00183459 | Rel.CI=41.70% | Avg.GraphGen=0.4134 ms | Avg.DijkstraParallel=58.3342 ms | Avg.RSA=3.4130 ms
+    Progress: 6000 requests | P_b=0.00366667 | CI=0.00152939 | Rel.CI=41.71% | Avg.GraphGen=0.4200 ms | Avg.DijkstraParallel=59.8516 ms | Avg.RSA=3.4320 ms
+    Progress: 7000 requests | P_b=0.00314286 | CI=0.00131125 | Rel.CI=41.72% | Avg.GraphGen=0.4246 ms | Avg.DijkstraParallel=59.4195 ms | Avg.RSA=3.4311 ms
+    Progress: 8000 requests | P_b=0.00275000 | CI=0.00114757 | Rel.CI=41.73% | Avg.GraphGen=0.4152 ms | Avg.DijkstraParallel=58.5524 ms | Avg.RSA=3.4383 ms
+    Progress: 9000 requests | P_b=0.00255556 | CI=0.00104309 | Rel.CI=40.82% | Avg.GraphGen=0.4124 ms | Avg.DijkstraParallel=61.4170 ms | Avg.RSA=3.4127 ms
+    Progress: 10000 requests | P_b=0.00230000 | CI=0.00093890 | Rel.CI=40.82% | Avg.GraphGen=0.4117 ms | Avg.DijkstraParallel=60.2227 ms | Avg.RSA=3.4068 ms
+    Progress: 11000 requests | P_b=0.00218182 | CI=0.00087196 | Rel.CI=39.96% | Avg.GraphGen=0.4158 ms | Avg.DijkstraParallel=59.0715 ms | Avg.RSA=3.3868 ms
+    Progress: 12000 requests | P_b=0.00200000 | CI=0.00079937 | Rel.CI=39.97% | Avg.GraphGen=0.4132 ms | Avg.DijkstraParallel=59.3747 ms | Avg.RSA=3.4050 ms
+    Progress: 13000 requests | P_b=0.00184615 | CI=0.00073793 | Rel.CI=39.97% | Avg.GraphGen=0.4113 ms | Avg.DijkstraParallel=57.7444 ms | Avg.RSA=3.3931 ms
+    Progress: 14000 requests | P_b=0.00171429 | CI=0.00068527 | Rel.CI=39.97% | Avg.GraphGen=0.4128 ms | Avg.DijkstraParallel=61.7315 ms | Avg.RSA=3.4560 ms
+    Progress: 15000 requests | P_b=0.00160000 | CI=0.00063962 | Rel.CI=39.98% | Avg.GraphGen=0.4104 ms | Avg.DijkstraParallel=58.2721 ms | Avg.RSA=3.4084 ms
+    Progress: 16000 requests | P_b=0.00150000 | CI=0.00059967 | Rel.CI=39.98% | Avg.GraphGen=0.4151 ms | Avg.DijkstraParallel=62.1991 ms | Avg.RSA=3.4117 ms
+    Progress: 17000 requests | P_b=0.00141176 | CI=0.00056442 | Rel.CI=39.98% | Avg.GraphGen=0.4179 ms | Avg.DijkstraParallel=61.1667 ms | Avg.RSA=3.3977 ms
+    Progress: 18000 requests | P_b=0.00133333 | CI=0.00053309 | Rel.CI=39.98% | Avg.GraphGen=0.4438 ms | Avg.DijkstraParallel=58.8560 ms | Avg.RSA=3.4515 ms
+    Progress: 19000 requests | P_b=0.00131579 | CI=0.00051545 | Rel.CI=39.17% | Avg.GraphGen=0.4289 ms | Avg.DijkstraParallel=60.1614 ms | Avg.RSA=3.4894 ms
+    Progress: 20000 requests | P_b=0.00125000 | CI=0.00048969 | Rel.CI=39.18% | Avg.GraphGen=0.4395 ms | Avg.DijkstraParallel=56.3932 ms | Avg.RSA=3.4904 ms
+    Progress: 21000 requests | P_b=0.00119048 | CI=0.00046639 | Rel.CI=39.18% | Avg.GraphGen=0.4340 ms | Avg.DijkstraParallel=58.5667 ms | Avg.RSA=3.4848 ms
+    Progress: 22000 requests | P_b=0.00113636 | CI=0.00044520 | Rel.CI=39.18% | Avg.GraphGen=0.4265 ms | Avg.DijkstraParallel=60.9599 ms | Avg.RSA=3.4785 ms
+    Progress: 23000 requests | P_b=0.00113043 | CI=0.00043428 | Rel.CI=38.42% | Avg.GraphGen=0.4407 ms | Avg.DijkstraParallel=61.3107 ms | Avg.RSA=3.4767 ms
+    Progress: 24000 requests | P_b=0.00129167 | CI=0.00045441 | Rel.CI=35.18% | Avg.GraphGen=0.4493 ms | Avg.DijkstraParallel=60.8585 ms | Avg.RSA=3.4800 ms
+    Progress: 25000 requests | P_b=0.00136000 | CI=0.00045684 | Rel.CI=33.59% | Avg.GraphGen=0.4262 ms | Avg.DijkstraParallel=62.9200 ms | Avg.RSA=3.4886 ms
+    Progress: 26000 requests | P_b=0.00130769 | CI=0.00043928 | Rel.CI=33.59% | Avg.GraphGen=0.4347 ms | Avg.DijkstraParallel=60.2210 ms | Avg.RSA=3.4738 ms
+    Progress: 27000 requests | P_b=0.00125926 | CI=0.00042302 | Rel.CI=33.59% | Avg.GraphGen=0.4390 ms | Avg.DijkstraParallel=63.3224 ms | Avg.RSA=3.4911 ms
+    Progress: 28000 requests | P_b=0.00132143 | CI=0.00042551 | Rel.CI=32.20% | Avg.GraphGen=0.4315 ms | Avg.DijkstraParallel=58.3005 ms | Avg.RSA=3.4694 ms
+    Progress: 29000 requests | P_b=0.00134483 | CI=0.00042179 | Rel.CI=31.36% | Avg.GraphGen=0.4378 ms | Avg.DijkstraParallel=61.8857 ms | Avg.RSA=3.5187 ms
+    Progress: 30000 requests | P_b=0.00130000 | CI=0.00040774 | Rel.CI=31.36% | Avg.GraphGen=0.4353 ms | Avg.DijkstraParallel=59.4189 ms | Avg.RSA=3.4765 ms
+    Progress: 31000 requests | P_b=0.00125806 | CI=0.00039460 | Rel.CI=31.37% | Avg.GraphGen=0.4258 ms | Avg.DijkstraParallel=62.3629 ms | Avg.RSA=3.4964 ms
+    Progress: 32000 requests | P_b=0.00121875 | CI=0.00038227 | Rel.CI=31.37% | Avg.GraphGen=0.4296 ms | Avg.DijkstraParallel=57.6274 ms | Avg.RSA=3.4801 ms
+    Progress: 33000 requests | P_b=0.00118182 | CI=0.00037070 | Rel.CI=31.37% | Avg.GraphGen=0.4168 ms | Avg.DijkstraParallel=59.7307 ms | Avg.RSA=3.4510 ms
+    Progress: 34000 requests | P_b=0.00114706 | CI=0.00035980 | Rel.CI=31.37% | Avg.GraphGen=0.4391 ms | Avg.DijkstraParallel=59.5783 ms | Avg.RSA=3.4642 ms
+    Progress: 35000 requests | P_b=0.00117143 | CI=0.00035836 | Rel.CI=30.59% | Avg.GraphGen=0.4348 ms | Avg.DijkstraParallel=59.6483 ms | Avg.RSA=3.4852 ms
+    Progress: 36000 requests | P_b=0.00113889 | CI=0.00034842 | Rel.CI=30.59% | Avg.GraphGen=0.4302 ms | Avg.DijkstraParallel=61.2245 ms | Avg.RSA=3.4994 ms
+    Progress: 37000 requests | P_b=0.00110811 | CI=0.00033900 | Rel.CI=30.59% | Avg.GraphGen=0.4258 ms | Avg.DijkstraParallel=58.4933 ms | Avg.RSA=3.5053 ms
+    Progress: 38000 requests | P_b=0.00110526 | CI=0.00033409 | Rel.CI=30.23% | Avg.GraphGen=0.4268 ms | Avg.DijkstraParallel=60.2975 ms | Avg.RSA=3.4557 ms
+    Progress: 39000 requests | P_b=0.00112821 | CI=0.00033318 | Rel.CI=29.53% | Avg.GraphGen=0.4334 ms | Avg.DijkstraParallel=59.1368 ms | Avg.RSA=3.4772 ms
+    Progress: 40000 requests | P_b=0.00115000 | CI=0.00033214 | Rel.CI=28.88% | Avg.GraphGen=0.4351 ms | Avg.DijkstraParallel=60.5312 ms | Avg.RSA=3.4834 ms
+    Progress: 41000 requests | P_b=0.00117073 | CI=0.00033101 | Rel.CI=28.27% | Avg.GraphGen=0.4288 ms | Avg.DijkstraParallel=61.6255 ms | Avg.RSA=3.4820 ms
+    Progress: 42000 requests | P_b=0.00114286 | CI=0.00032313 | Rel.CI=28.27% | Avg.GraphGen=0.4359 ms | Avg.DijkstraParallel=60.8647 ms | Avg.RSA=3.4777 ms
+    Progress: 43000 requests | P_b=0.00111628 | CI=0.00031562 | Rel.CI=28.27% | Avg.GraphGen=0.4310 ms | Avg.DijkstraParallel=62.7046 ms | Avg.RSA=3.5174 ms
+    Progress: 44000 requests | P_b=0.00111364 | CI=0.00031164 | Rel.CI=27.98% | Avg.GraphGen=0.4234 ms | Avg.DijkstraParallel=56.0872 ms | Avg.RSA=3.4804 ms
+    Progress: 45000 requests | P_b=0.00115556 | CI=0.00031390 | Rel.CI=27.16% | Avg.GraphGen=0.4308 ms | Avg.DijkstraParallel=62.8687 ms | Avg.RSA=3.4448 ms
+    Progress: 46000 requests | P_b=0.00113043 | CI=0.00030708 | Rel.CI=27.16% | Avg.GraphGen=0.4311 ms | Avg.DijkstraParallel=63.0228 ms | Avg.RSA=3.4632 ms
+    Progress: 47000 requests | P_b=0.00127660 | CI=0.00032282 | Rel.CI=25.29% | Avg.GraphGen=0.4376 ms | Avg.DijkstraParallel=59.2706 ms | Avg.RSA=3.5037 ms
+    Progress: 48000 requests | P_b=0.00131250 | CI=0.00032389 | Rel.CI=24.68% | Avg.GraphGen=0.4485 ms | Avg.DijkstraParallel=60.1936 ms | Avg.RSA=3.4637 ms
+    Progress: 49000 requests | P_b=0.00128571 | CI=0.00031729 | Rel.CI=24.68% | Avg.GraphGen=0.4322 ms | Avg.DijkstraParallel=60.5423 ms | Avg.RSA=3.4921 ms
+    Progress: 50000 requests | P_b=0.00126000 | CI=0.00031094 | Rel.CI=24.68% | Avg.GraphGen=0.4279 ms | Avg.DijkstraParallel=62.0201 ms | Avg.RSA=3.5140 ms
+    Progress: 51000 requests | P_b=0.00127451 | CI=0.00030965 | Rel.CI=24.30% | Avg.GraphGen=0.4298 ms | Avg.DijkstraParallel=61.1317 ms | Avg.RSA=3.4777 ms
+    Progress: 52000 requests | P_b=0.00125000 | CI=0.00030370 | Rel.CI=24.30% | Avg.GraphGen=0.4380 ms | Avg.DijkstraParallel=60.1808 ms | Avg.RSA=3.4896 ms
+    Progress: 53000 requests | P_b=0.00128302 | CI=0.00030476 | Rel.CI=23.75% | Avg.GraphGen=0.4363 ms | Avg.DijkstraParallel=59.4903 ms | Avg.RSA=3.4591 ms
+    Progress: 54000 requests | P_b=0.00127778 | CI=0.00030131 | Rel.CI=23.58% | Avg.GraphGen=0.4301 ms | Avg.DijkstraParallel=59.1688 ms | Avg.RSA=3.5010 ms
+    Progress: 55000 requests | P_b=0.00127273 | CI=0.00029797 | Rel.CI=23.41% | Avg.GraphGen=0.4333 ms | Avg.DijkstraParallel=58.7402 ms | Avg.RSA=3.5125 ms
+    Progress: 56000 requests | P_b=0.00125000 | CI=0.00029265 | Rel.CI=23.41% | Avg.GraphGen=0.4302 ms | Avg.DijkstraParallel=60.7610 ms | Avg.RSA=3.4896 ms
+    Progress: 57000 requests | P_b=0.00122807 | CI=0.00028752 | Rel.CI=23.41% | Avg.GraphGen=0.4351 ms | Avg.DijkstraParallel=62.4506 ms | Avg.RSA=3.4605 ms
+    Progress: 58000 requests | P_b=0.00120690 | CI=0.00028256 | Rel.CI=23.41% | Avg.GraphGen=0.4334 ms | Avg.DijkstraParallel=60.9754 ms | Avg.RSA=3.5064 ms
+    Progress: 59000 requests | P_b=0.00120339 | CI=0.00027975 | Rel.CI=23.25% | Avg.GraphGen=0.4273 ms | Avg.DijkstraParallel=62.0793 ms | Avg.RSA=3.4944 ms
+    Progress: 60000 requests | P_b=0.00125000 | CI=0.00028272 | Rel.CI=22.62% | Avg.GraphGen=0.4328 ms | Avg.DijkstraParallel=63.2428 ms | Avg.RSA=3.5055 ms
+    Progress: 61000 requests | P_b=0.00122951 | CI=0.00027809 | Rel.CI=22.62% | Avg.GraphGen=0.4441 ms | Avg.DijkstraParallel=58.8135 ms | Avg.RSA=3.5121 ms
+    Progress: 62000 requests | P_b=0.00122581 | CI=0.00027543 | Rel.CI=22.47% | Avg.GraphGen=0.4248 ms | Avg.DijkstraParallel=62.0346 ms | Avg.RSA=3.4734 ms
+    Progress: 63000 requests | P_b=0.00120635 | CI=0.00027106 | Rel.CI=22.47% | Avg.GraphGen=0.4385 ms | Avg.DijkstraParallel=58.7645 ms | Avg.RSA=3.5391 ms
+    Progress: 64000 requests | P_b=0.00118750 | CI=0.00026682 | Rel.CI=22.47% | Avg.GraphGen=0.4198 ms | Avg.DijkstraParallel=61.5476 ms | Avg.RSA=3.5262 ms
+    Progress: 65000 requests | P_b=0.00116923 | CI=0.00026272 | Rel.CI=22.47% | Avg.GraphGen=0.4374 ms | Avg.DijkstraParallel=60.5461 ms | Avg.RSA=3.4468 ms
+    Progress: 66000 requests | P_b=0.00115152 | CI=0.00025874 | Rel.CI=22.47% | Avg.GraphGen=0.4303 ms | Avg.DijkstraParallel=60.1313 ms | Avg.RSA=3.4500 ms
+    Progress: 67000 requests | P_b=0.00113433 | CI=0.00025488 | Rel.CI=22.47% | Avg.GraphGen=0.4342 ms | Avg.DijkstraParallel=60.4173 ms | Avg.RSA=3.4920 ms
+    Progress: 68000 requests | P_b=0.00114706 | CI=0.00025442 | Rel.CI=22.18% | Avg.GraphGen=0.4286 ms | Avg.DijkstraParallel=60.5013 ms | Avg.RSA=3.5078 ms
+    Progress: 69000 requests | P_b=0.00113043 | CI=0.00025073 | Rel.CI=22.18% | Avg.GraphGen=0.4336 ms | Avg.DijkstraParallel=63.3251 ms | Avg.RSA=3.4722 ms
+    Progress: 70000 requests | P_b=0.00112857 | CI=0.00024873 | Rel.CI=22.04% | Avg.GraphGen=0.4350 ms | Avg.DijkstraParallel=59.5039 ms | Avg.RSA=3.4612 ms
+    Progress: 71000 requests | P_b=0.00111268 | CI=0.00024523 | Rel.CI=22.04% | Avg.GraphGen=0.4291 ms | Avg.DijkstraParallel=60.6054 ms | Avg.RSA=3.4980 ms
+    Progress: 72000 requests | P_b=0.00111111 | CI=0.00024335 | Rel.CI=21.90% | Avg.GraphGen=0.4500 ms | Avg.DijkstraParallel=64.1408 ms | Avg.RSA=3.5329 ms
+    Progress: 73000 requests | P_b=0.00109589 | CI=0.00024002 | Rel.CI=21.90% | Avg.GraphGen=0.4331 ms | Avg.DijkstraParallel=58.7938 ms | Avg.RSA=3.5013 ms
+    Progress: 74000 requests | P_b=0.00108108 | CI=0.00023677 | Rel.CI=21.90% | Avg.GraphGen=0.4388 ms | Avg.DijkstraParallel=61.4683 ms | Avg.RSA=3.4608 ms
+    Progress: 75000 requests | P_b=0.00106667 | CI=0.00023362 | Rel.CI=21.90% | Avg.GraphGen=0.4293 ms | Avg.DijkstraParallel=60.7568 ms | Avg.RSA=3.5568 ms
+    Progress: 76000 requests | P_b=0.00105263 | CI=0.00023055 | Rel.CI=21.90% | Avg.GraphGen=0.4385 ms | Avg.DijkstraParallel=59.7273 ms | Avg.RSA=3.4882 ms
+    Progress: 77000 requests | P_b=0.00111688 | CI=0.00023592 | Rel.CI=21.12% | Avg.GraphGen=0.4294 ms | Avg.DijkstraParallel=60.6404 ms | Avg.RSA=3.4517 ms
+    Progress: 78000 requests | P_b=0.00116667 | CI=0.00023957 | Rel.CI=20.53% | Avg.GraphGen=0.4230 ms | Avg.DijkstraParallel=60.0961 ms | Avg.RSA=3.4743 ms
+    Progress: 79000 requests | P_b=0.00116456 | CI=0.00023783 | Rel.CI=20.42% | Avg.GraphGen=0.4235 ms | Avg.DijkstraParallel=59.6783 ms | Avg.RSA=3.4403 ms
+    Progress: 80000 requests | P_b=0.00115000 | CI=0.00023486 | Rel.CI=20.42% | Avg.GraphGen=0.4275 ms | Avg.DijkstraParallel=61.3335 ms | Avg.RSA=3.4559 ms
+    Progress: 81000 requests | P_b=0.00114815 | CI=0.00023322 | Rel.CI=20.31% | Avg.GraphGen=0.4306 ms | Avg.DijkstraParallel=58.8797 ms | Avg.RSA=3.4686 ms
+    Progress: 82000 requests | P_b=0.00120732 | CI=0.00023768 | Rel.CI=19.69% | Avg.GraphGen=0.4355 ms | Avg.DijkstraParallel=60.1769 ms | Avg.RSA=3.5196 ms
+    Progress: 83000 requests | P_b=0.00122892 | CI=0.00023835 | Rel.CI=19.39% | Avg.GraphGen=0.4324 ms | Avg.DijkstraParallel=64.3696 ms | Avg.RSA=3.4823 ms
+    Progress: 84000 requests | P_b=0.00121429 | CI=0.00023551 | Rel.CI=19.40% | Avg.GraphGen=0.4353 ms | Avg.DijkstraParallel=57.0985 ms | Avg.RSA=3.4961 ms
+    Progress: 85000 requests | P_b=0.00122353 | CI=0.00023501 | Rel.CI=19.21% | Avg.GraphGen=0.4353 ms | Avg.DijkstraParallel=61.0412 ms | Avg.RSA=3.4864 ms
+    Progress: 86000 requests | P_b=0.00122093 | CI=0.00023339 | Rel.CI=19.12% | Avg.GraphGen=0.4295 ms | Avg.DijkstraParallel=58.3470 ms | Avg.RSA=3.4887 ms
+    Progress: 87000 requests | P_b=0.00120690 | CI=0.00023071 | Rel.CI=19.12% | Avg.GraphGen=0.4286 ms | Avg.DijkstraParallel=58.5156 ms | Avg.RSA=3.4969 ms
+    Progress: 88000 requests | P_b=0.00122727 | CI=0.00023132 | Rel.CI=18.85% | Avg.GraphGen=0.4269 ms | Avg.DijkstraParallel=60.5539 ms | Avg.RSA=3.4497 ms
+    Progress: 89000 requests | P_b=0.00123596 | CI=0.00023083 | Rel.CI=18.68% | Avg.GraphGen=0.4273 ms | Avg.DijkstraParallel=59.7935 ms | Avg.RSA=3.4773 ms
+    Progress: 90000 requests | P_b=0.00122222 | CI=0.00022827 | Rel.CI=18.68% | Avg.GraphGen=0.4258 ms | Avg.DijkstraParallel=59.3718 ms | Avg.RSA=3.4854 ms
+    Progress: 91000 requests | P_b=0.00121978 | CI=0.00022678 | Rel.CI=18.59% | Avg.GraphGen=0.4298 ms | Avg.DijkstraParallel=60.8332 ms | Avg.RSA=3.4734 ms
+    Progress: 92000 requests | P_b=0.00130435 | CI=0.00023323 | Rel.CI=17.88% | Avg.GraphGen=0.4317 ms | Avg.DijkstraParallel=61.0788 ms | Avg.RSA=3.4390 ms
+    Progress: 93000 requests | P_b=0.00129032 | CI=0.00023072 | Rel.CI=17.88% | Avg.GraphGen=0.4268 ms | Avg.DijkstraParallel=61.6780 ms | Avg.RSA=3.5223 ms
+    Progress: 94000 requests | P_b=0.00127660 | CI=0.00022827 | Rel.CI=17.88% | Avg.GraphGen=0.4280 ms | Avg.DijkstraParallel=63.3814 ms | Avg.RSA=3.4689 ms
+    Progress: 95000 requests | P_b=0.00127368 | CI=0.00022680 | Rel.CI=17.81% | Avg.GraphGen=0.4271 ms | Avg.DijkstraParallel=61.6910 ms | Avg.RSA=3.4916 ms
+    Progress: 96000 requests | P_b=0.00130208 | CI=0.00022812 | Rel.CI=17.52% | Avg.GraphGen=0.4350 ms | Avg.DijkstraParallel=61.2954 ms | Avg.RSA=3.4982 ms
+    Progress: 97000 requests | P_b=0.00129897 | CI=0.00022667 | Rel.CI=17.45% | Avg.GraphGen=0.4342 ms | Avg.DijkstraParallel=57.9452 ms | Avg.RSA=3.4508 ms
+    Progress: 98000 requests | P_b=0.00128571 | CI=0.00022436 | Rel.CI=17.45% | Avg.GraphGen=0.4300 ms | Avg.DijkstraParallel=58.1058 ms | Avg.RSA=3.4865 ms
+    Progress: 99000 requests | P_b=0.00131313 | CI=0.00022558 | Rel.CI=17.18% | Avg.GraphGen=0.4305 ms | Avg.DijkstraParallel=64.5470 ms | Avg.RSA=3.4733 ms
+    Progress: 100000 requests | P_b=0.00133000 | CI=0.00022589 | Rel.CI=16.98% | Avg.GraphGen=0.4346 ms | Avg.DijkstraParallel=61.5080 ms | Avg.RSA=3.4714 ms
+    Progress: 101000 requests | P_b=0.00144554 | CI=0.00023431 | Rel.CI=16.21% | Avg.GraphGen=0.4303 ms | Avg.DijkstraParallel=60.9739 ms | Avg.RSA=3.4607 ms
+    Progress: 102000 requests | P_b=0.00143137 | CI=0.00023202 | Rel.CI=16.21% | Avg.GraphGen=0.4326 ms | Avg.DijkstraParallel=59.2080 ms | Avg.RSA=3.4781 ms
+    Progress: 103000 requests | P_b=0.00144660 | CI=0.00023211 | Rel.CI=16.05% | Avg.GraphGen=0.4274 ms | Avg.DijkstraParallel=60.8042 ms | Avg.RSA=3.4602 ms
+    Progress: 104000 requests | P_b=0.00146154 | CI=0.00023218 | Rel.CI=15.89% | Avg.GraphGen=0.4322 ms | Avg.DijkstraParallel=57.2307 ms | Avg.RSA=3.4551 ms
+    Progress: 105000 requests | P_b=0.00146667 | CI=0.00023148 | Rel.CI=15.78% | Avg.GraphGen=0.4314 ms | Avg.DijkstraParallel=62.3908 ms | Avg.RSA=3.4931 ms
+    Progress: 106000 requests | P_b=0.00145283 | CI=0.00022930 | Rel.CI=15.78% | Avg.GraphGen=0.4399 ms | Avg.DijkstraParallel=61.6231 ms | Avg.RSA=3.5349 ms
+    Progress: 107000 requests | P_b=0.00143925 | CI=0.00022715 | Rel.CI=15.78% | Avg.GraphGen=0.4292 ms | Avg.DijkstraParallel=60.7774 ms | Avg.RSA=3.4677 ms
+    Progress: 108000 requests | P_b=0.00146296 | CI=0.00022795 | Rel.CI=15.58% | Avg.GraphGen=0.4331 ms | Avg.DijkstraParallel=61.2527 ms | Avg.RSA=3.4881 ms
+    Progress: 109000 requests | P_b=0.00150459 | CI=0.00023010 | Rel.CI=15.29% | Avg.GraphGen=0.4274 ms | Avg.DijkstraParallel=61.6229 ms | Avg.RSA=3.4797 ms
+    Progress: 110000 requests | P_b=0.00159091 | CI=0.00023552 | Rel.CI=14.80% | Avg.GraphGen=0.4207 ms | Avg.DijkstraParallel=57.5711 ms | Avg.RSA=3.4995 ms
+    Progress: 111000 requests | P_b=0.00160360 | CI=0.00023539 | Rel.CI=14.68% | Avg.GraphGen=0.4352 ms | Avg.DijkstraParallel=58.8922 ms | Avg.RSA=3.4582 ms
+    Progress: 112000 requests | P_b=0.00158929 | CI=0.00023329 | Rel.CI=14.68% | Avg.GraphGen=0.4354 ms | Avg.DijkstraParallel=60.1525 ms | Avg.RSA=3.4820 ms
+    Progress: 113000 requests | P_b=0.00157522 | CI=0.00023123 | Rel.CI=14.68% | Avg.GraphGen=0.4294 ms | Avg.DijkstraParallel=61.2206 ms | Avg.RSA=3.5333 ms
+    Progress: 114000 requests | P_b=0.00156140 | CI=0.00022920 | Rel.CI=14.68% | Avg.GraphGen=0.4268 ms | Avg.DijkstraParallel=64.2821 ms | Avg.RSA=3.4917 ms
+    Progress: 115000 requests | P_b=0.00154783 | CI=0.00022721 | Rel.CI=14.68% | Avg.GraphGen=0.4204 ms | Avg.DijkstraParallel=61.8460 ms | Avg.RSA=3.4851 ms
+    Progress: 116000 requests | P_b=0.00153448 | CI=0.00022526 | Rel.CI=14.68% | Avg.GraphGen=0.4338 ms | Avg.DijkstraParallel=59.6362 ms | Avg.RSA=3.4674 ms
+    Progress: 117000 requests | P_b=0.00152991 | CI=0.00022396 | Rel.CI=14.64% | Avg.GraphGen=0.4324 ms | Avg.DijkstraParallel=63.6675 ms | Avg.RSA=3.4901 ms
+    Progress: 118000 requests | P_b=0.00155932 | CI=0.00022514 | Rel.CI=14.44% | Avg.GraphGen=0.4287 ms | Avg.DijkstraParallel=61.4681 ms | Avg.RSA=3.4982 ms
+    Progress: 119000 requests | P_b=0.00158824 | CI=0.00022625 | Rel.CI=14.25% | Avg.GraphGen=0.4366 ms | Avg.DijkstraParallel=59.0416 ms | Avg.RSA=3.5343 ms
+    Progress: 120000 requests | P_b=0.00172500 | CI=0.00023479 | Rel.CI=13.61% | Avg.GraphGen=0.4360 ms | Avg.DijkstraParallel=59.1631 ms | Avg.RSA=3.4678 ms
+    Progress: 121000 requests | P_b=0.00171074 | CI=0.00023285 | Rel.CI=13.61% | Avg.GraphGen=0.4325 ms | Avg.DijkstraParallel=62.6550 ms | Avg.RSA=3.5140 ms
+    Progress: 122000 requests | P_b=0.00169672 | CI=0.00023095 | Rel.CI=13.61% | Avg.GraphGen=0.4204 ms | Avg.DijkstraParallel=64.1339 ms | Avg.RSA=3.4729 ms
+    Progress: 123000 requests | P_b=0.00168293 | CI=0.00022907 | Rel.CI=13.61% | Avg.GraphGen=0.4251 ms | Avg.DijkstraParallel=63.5217 ms | Avg.RSA=3.4798 ms
+    Progress: 124000 requests | P_b=0.00170161 | CI=0.00022941 | Rel.CI=13.48% | Avg.GraphGen=0.4254 ms | Avg.DijkstraParallel=62.3518 ms | Avg.RSA=3.4819 ms
+    Progress: 125000 requests | P_b=0.00170400 | CI=0.00022865 | Rel.CI=13.42% | Avg.GraphGen=0.4336 ms | Avg.DijkstraParallel=60.4260 ms | Avg.RSA=3.4862 ms
+    Progress: 126000 requests | P_b=0.00170635 | CI=0.00022789 | Rel.CI=13.36% | Avg.GraphGen=0.4357 ms | Avg.DijkstraParallel=59.3098 ms | Avg.RSA=3.4898 ms
+    Progress: 127000 requests | P_b=0.00170079 | CI=0.00022663 | Rel.CI=13.32% | Avg.GraphGen=0.4365 ms | Avg.DijkstraParallel=62.0856 ms | Avg.RSA=3.4911 ms
+    Progress: 128000 requests | P_b=0.00169531 | CI=0.00022538 | Rel.CI=13.29% | Avg.GraphGen=0.4252 ms | Avg.DijkstraParallel=61.5324 ms | Avg.RSA=3.4887 ms
+    Progress: 129000 requests | P_b=0.00168992 | CI=0.00022414 | Rel.CI=13.26% | Avg.GraphGen=0.4394 ms | Avg.DijkstraParallel=61.0554 ms | Avg.RSA=3.5074 ms
+    Progress: 130000 requests | P_b=0.00168462 | CI=0.00022293 | Rel.CI=13.23% | Avg.GraphGen=0.4390 ms | Avg.DijkstraParallel=58.8682 ms | Avg.RSA=3.4659 ms
+    Progress: 131000 requests | P_b=0.00167176 | CI=0.00022123 | Rel.CI=13.23% | Avg.GraphGen=0.4344 ms | Avg.DijkstraParallel=61.4782 ms | Avg.RSA=3.4817 ms
+    Progress: 132000 requests | P_b=0.00165909 | CI=0.00021956 | Rel.CI=13.23% | Avg.GraphGen=0.4270 ms | Avg.DijkstraParallel=59.7043 ms | Avg.RSA=3.4609 ms
+    Progress: 133000 requests | P_b=0.00164662 | CI=0.00021791 | Rel.CI=13.23% | Avg.GraphGen=0.4289 ms | Avg.DijkstraParallel=60.0448 ms | Avg.RSA=3.5096 ms
+    Progress: 134000 requests | P_b=0.00163433 | CI=0.00021628 | Rel.CI=13.23% | Avg.GraphGen=0.4303 ms | Avg.DijkstraParallel=58.2471 ms | Avg.RSA=3.4806 ms
+    Progress: 135000 requests | P_b=0.00162222 | CI=0.00021468 | Rel.CI=13.23% | Avg.GraphGen=0.4412 ms | Avg.DijkstraParallel=59.2325 ms | Avg.RSA=3.4985 ms
+    Progress: 136000 requests | P_b=0.00161765 | CI=0.00021359 | Rel.CI=13.20% | Avg.GraphGen=0.4251 ms | Avg.DijkstraParallel=61.6342 ms | Avg.RSA=3.5180 ms
+    Progress: 137000 requests | P_b=0.00161314 | CI=0.00021251 | Rel.CI=13.17% | Avg.GraphGen=0.4394 ms | Avg.DijkstraParallel=60.1181 ms | Avg.RSA=3.4883 ms
+    Progress: 138000 requests | P_b=0.00160145 | CI=0.00021097 | Rel.CI=13.17% | Avg.GraphGen=0.4258 ms | Avg.DijkstraParallel=57.3880 ms | Avg.RSA=3.4540 ms
+    Progress: 139000 requests | P_b=0.00161871 | CI=0.00021134 | Rel.CI=13.06% | Avg.GraphGen=0.4299 ms | Avg.DijkstraParallel=62.9022 ms | Avg.RSA=3.5031 ms
+    Progress: 140000 requests | P_b=0.00160714 | CI=0.00020983 | Rel.CI=13.06% | Avg.GraphGen=0.4305 ms | Avg.DijkstraParallel=65.6996 ms | Avg.RSA=3.4915 ms
+    Progress: 141000 requests | P_b=0.00159574 | CI=0.00020834 | Rel.CI=13.06% | Avg.GraphGen=0.4267 ms | Avg.DijkstraParallel=60.4819 ms | Avg.RSA=3.4528 ms
+    Progress: 142000 requests | P_b=0.00158451 | CI=0.00020688 | Rel.CI=13.06% | Avg.GraphGen=0.4217 ms | Avg.DijkstraParallel=63.7328 ms | Avg.RSA=3.4928 ms
+    Progress: 143000 requests | P_b=0.00157343 | CI=0.00020543 | Rel.CI=13.06% | Avg.GraphGen=0.4271 ms | Avg.DijkstraParallel=59.0778 ms | Avg.RSA=3.4759 ms
+    Progress: 144000 requests | P_b=0.00156250 | CI=0.00020401 | Rel.CI=13.06% | Avg.GraphGen=0.4360 ms | Avg.DijkstraParallel=62.9116 ms | Avg.RSA=3.4823 ms
+    Progress: 145000 requests | P_b=0.00155862 | CI=0.00020305 | Rel.CI=13.03% | Avg.GraphGen=0.4355 ms | Avg.DijkstraParallel=60.9500 ms | Avg.RSA=3.5061 ms
+    Progress: 146000 requests | P_b=0.00155479 | CI=0.00020211 | Rel.CI=13.00% | Avg.GraphGen=0.4195 ms | Avg.DijkstraParallel=60.6749 ms | Avg.RSA=3.4819 ms
+    Progress: 147000 requests | P_b=0.00155782 | CI=0.00020161 | Rel.CI=12.94% | Avg.GraphGen=0.4281 ms | Avg.DijkstraParallel=58.9274 ms | Avg.RSA=3.4932 ms
+    Progress: 148000 requests | P_b=0.00159459 | CI=0.00020328 | Rel.CI=12.75% | Avg.GraphGen=0.4308 ms | Avg.DijkstraParallel=64.4151 ms | Avg.RSA=3.4812 ms
+    Progress: 149000 requests | P_b=0.00158389 | CI=0.00020192 | Rel.CI=12.75% | Avg.GraphGen=0.4292 ms | Avg.DijkstraParallel=59.6009 ms | Avg.RSA=3.5158 ms
+    Progress: 150000 requests | P_b=0.00157333 | CI=0.00020058 | Rel.CI=12.75% | Avg.GraphGen=0.4342 ms | Avg.DijkstraParallel=59.5082 ms | Avg.RSA=3.4702 ms
+    Progress: 151000 requests | P_b=0.00156291 | CI=0.00019925 | Rel.CI=12.75% | Avg.GraphGen=0.4361 ms | Avg.DijkstraParallel=60.0446 ms | Avg.RSA=3.5039 ms
+    Progress: 152000 requests | P_b=0.00157237 | CI=0.00019919 | Rel.CI=12.67% | Avg.GraphGen=0.4291 ms | Avg.DijkstraParallel=60.9905 ms | Avg.RSA=3.4554 ms
+    Progress: 153000 requests | P_b=0.00159477 | CI=0.00019995 | Rel.CI=12.54% | Avg.GraphGen=0.4361 ms | Avg.DijkstraParallel=60.3381 ms | Avg.RSA=3.4784 ms
+    Progress: 154000 requests | P_b=0.00158442 | CI=0.00019865 | Rel.CI=12.54% | Avg.GraphGen=0.4355 ms | Avg.DijkstraParallel=62.1963 ms | Avg.RSA=3.5028 ms
+    Progress: 155000 requests | P_b=0.00157419 | CI=0.00019737 | Rel.CI=12.54% | Avg.GraphGen=0.4339 ms | Avg.DijkstraParallel=59.3302 ms | Avg.RSA=3.4774 ms
+    Progress: 156000 requests | P_b=0.00156410 | CI=0.00019610 | Rel.CI=12.54% | Avg.GraphGen=0.4375 ms | Avg.DijkstraParallel=57.1872 ms | Avg.RSA=3.4846 ms
+    Progress: 157000 requests | P_b=0.00156051 | CI=0.00019525 | Rel.CI=12.51% | Avg.GraphGen=0.4275 ms | Avg.DijkstraParallel=63.5227 ms | Avg.RSA=3.4942 ms
+    Progress: 158000 requests | P_b=0.00155696 | CI=0.00019441 | Rel.CI=12.49% | Avg.GraphGen=0.4264 ms | Avg.DijkstraParallel=59.6305 ms | Avg.RSA=3.4877 ms
+    Progress: 159000 requests | P_b=0.00154717 | CI=0.00019319 | Rel.CI=12.49% | Avg.GraphGen=0.4391 ms | Avg.DijkstraParallel=62.1353 ms | Avg.RSA=3.5044 ms
+    Progress: 160000 requests | P_b=0.00153750 | CI=0.00019199 | Rel.CI=12.49% | Avg.GraphGen=0.4379 ms | Avg.DijkstraParallel=60.9263 ms | Avg.RSA=3.4521 ms
+    Progress: 161000 requests | P_b=0.00152795 | CI=0.00019079 | Rel.CI=12.49% | Avg.GraphGen=0.4289 ms | Avg.DijkstraParallel=59.9669 ms | Avg.RSA=3.4852 ms
+    Progress: 162000 requests | P_b=0.00152469 | CI=0.00019000 | Rel.CI=12.46% | Avg.GraphGen=0.4361 ms | Avg.DijkstraParallel=59.2725 ms | Avg.RSA=3.5318 ms
+    Progress: 163000 requests | P_b=0.00151534 | CI=0.00018884 | Rel.CI=12.46% | Avg.GraphGen=0.4327 ms | Avg.DijkstraParallel=58.9202 ms | Avg.RSA=3.5596 ms
+    Progress: 164000 requests | P_b=0.00153049 | CI=0.00018920 | Rel.CI=12.36% | Avg.GraphGen=0.4251 ms | Avg.DijkstraParallel=59.6825 ms | Avg.RSA=3.5324 ms
+    Progress: 165000 requests | P_b=0.00153333 | CI=0.00018880 | Rel.CI=12.31% | Avg.GraphGen=0.4266 ms | Avg.DijkstraParallel=59.8020 ms | Avg.RSA=3.4954 ms
+    Progress: 166000 requests | P_b=0.00153012 | CI=0.00018803 | Rel.CI=12.29% | Avg.GraphGen=0.4291 ms | Avg.DijkstraParallel=59.9135 ms | Avg.RSA=3.5117 ms
+    Progress: 167000 requests | P_b=0.00152096 | CI=0.00018691 | Rel.CI=12.29% | Avg.GraphGen=0.4243 ms | Avg.DijkstraParallel=58.9663 ms | Avg.RSA=3.5029 ms
+    Progress: 168000 requests | P_b=0.00151786 | CI=0.00018616 | Rel.CI=12.26% | Avg.GraphGen=0.4304 ms | Avg.DijkstraParallel=59.8925 ms | Avg.RSA=3.4757 ms
+    Progress: 169000 requests | P_b=0.00150888 | CI=0.00018506 | Rel.CI=12.26% | Avg.GraphGen=0.4369 ms | Avg.DijkstraParallel=58.8842 ms | Avg.RSA=3.4842 ms
+    Progress: 170000 requests | P_b=0.00150000 | CI=0.00018397 | Rel.CI=12.26% | Avg.GraphGen=0.4268 ms | Avg.DijkstraParallel=60.9771 ms | Avg.RSA=3.4875 ms
+    Progress: 171000 requests | P_b=0.00149123 | CI=0.00018290 | Rel.CI=12.26% | Avg.GraphGen=0.4248 ms | Avg.DijkstraParallel=56.7266 ms | Avg.RSA=3.4862 ms
+    Progress: 172000 requests | P_b=0.00148256 | CI=0.00018183 | Rel.CI=12.26% | Avg.GraphGen=0.4366 ms | Avg.DijkstraParallel=58.9855 ms | Avg.RSA=3.4977 ms
+    Progress: 173000 requests | P_b=0.00147977 | CI=0.00018114 | Rel.CI=12.24% | Avg.GraphGen=0.4326 ms | Avg.DijkstraParallel=63.4925 ms | Avg.RSA=3.4683 ms
+    Progress: 174000 requests | P_b=0.00149425 | CI=0.00018150 | Rel.CI=12.15% | Avg.GraphGen=0.4272 ms | Avg.DijkstraParallel=59.9200 ms | Avg.RSA=3.4846 ms
+    Progress: 175000 requests | P_b=0.00149714 | CI=0.00018115 | Rel.CI=12.10% | Avg.GraphGen=0.4217 ms | Avg.DijkstraParallel=56.6215 ms | Avg.RSA=3.4706 ms
+    Progress: 176000 requests | P_b=0.00149432 | CI=0.00018047 | Rel.CI=12.08% | Avg.GraphGen=0.4534 ms | Avg.DijkstraParallel=58.4333 ms | Avg.RSA=3.4779 ms
+    Progress: 177000 requests | P_b=0.00148588 | CI=0.00017945 | Rel.CI=12.08% | Avg.GraphGen=0.4240 ms | Avg.DijkstraParallel=63.8048 ms | Avg.RSA=3.4791 ms
+    Progress: 178000 requests | P_b=0.00148315 | CI=0.00017878 | Rel.CI=12.05% | Avg.GraphGen=0.4299 ms | Avg.DijkstraParallel=60.2004 ms | Avg.RSA=3.4803 ms
+    Progress: 179000 requests | P_b=0.00147486 | CI=0.00017778 | Rel.CI=12.05% | Avg.GraphGen=0.4291 ms | Avg.DijkstraParallel=58.3107 ms | Avg.RSA=3.4900 ms
+    Progress: 180000 requests | P_b=0.00146667 | CI=0.00017679 | Rel.CI=12.05% | Avg.GraphGen=0.4355 ms | Avg.DijkstraParallel=61.1981 ms | Avg.RSA=3.4845 ms
+    Progress: 181000 requests | P_b=0.00145856 | CI=0.00017582 | Rel.CI=12.05% | Avg.GraphGen=0.4280 ms | Avg.DijkstraParallel=59.2259 ms | Avg.RSA=3.4596 ms
+    Progress: 182000 requests | P_b=0.00146154 | CI=0.00017551 | Rel.CI=12.01% | Avg.GraphGen=0.4318 ms | Avg.DijkstraParallel=61.9925 ms | Avg.RSA=3.4740 ms
+    Progress: 183000 requests | P_b=0.00145355 | CI=0.00017455 | Rel.CI=12.01% | Avg.GraphGen=0.4292 ms | Avg.DijkstraParallel=61.6428 ms | Avg.RSA=3.4920 ms
+    Progress: 184000 requests | P_b=0.00145109 | CI=0.00017393 | Rel.CI=11.99% | Avg.GraphGen=0.4357 ms | Avg.DijkstraParallel=59.8985 ms | Avg.RSA=3.4766 ms
+    Progress: 185000 requests | P_b=0.00146486 | CI=0.00017428 | Rel.CI=11.90% | Avg.GraphGen=0.4347 ms | Avg.DijkstraParallel=60.4890 ms | Avg.RSA=3.4947 ms
+    Progress: 186000 requests | P_b=0.00146237 | CI=0.00017366 | Rel.CI=11.88% | Avg.GraphGen=0.4322 ms | Avg.DijkstraParallel=64.4593 ms | Avg.RSA=3.4989 ms
+    Progress: 187000 requests | P_b=0.00145455 | CI=0.00017274 | Rel.CI=11.88% | Avg.GraphGen=0.4234 ms | Avg.DijkstraParallel=61.1055 ms | Avg.RSA=3.5187 ms
+    Progress: 188000 requests | P_b=0.00145745 | CI=0.00017245 | Rel.CI=11.83% | Avg.GraphGen=0.4274 ms | Avg.DijkstraParallel=60.3933 ms | Avg.RSA=3.4973 ms
+    Progress: 189000 requests | P_b=0.00147090 | CI=0.00017278 | Rel.CI=11.75% | Avg.GraphGen=0.4295 ms | Avg.DijkstraParallel=58.4554 ms | Avg.RSA=3.4995 ms
+    Progress: 190000 requests | P_b=0.00146316 | CI=0.00017187 | Rel.CI=11.75% | Avg.GraphGen=0.4276 ms | Avg.DijkstraParallel=61.5651 ms | Avg.RSA=3.4828 ms
+    Progress: 191000 requests | P_b=0.00145550 | CI=0.00017097 | Rel.CI=11.75% | Avg.GraphGen=0.4295 ms | Avg.DijkstraParallel=61.5156 ms | Avg.RSA=3.4947 ms
+    Progress: 192000 requests | P_b=0.00145312 | CI=0.00017039 | Rel.CI=11.73% | Avg.GraphGen=0.4286 ms | Avg.DijkstraParallel=60.8890 ms | Avg.RSA=3.5079 ms
+    Progress: 193000 requests | P_b=0.00145596 | CI=0.00017011 | Rel.CI=11.68% | Avg.GraphGen=0.4302 ms | Avg.DijkstraParallel=60.9528 ms | Avg.RSA=3.5030 ms
+    Progress: 194000 requests | P_b=0.00145361 | CI=0.00016954 | Rel.CI=11.66% | Avg.GraphGen=0.4397 ms | Avg.DijkstraParallel=59.3675 ms | Avg.RSA=3.4719 ms
+    Progress: 195000 requests | P_b=0.00144615 | CI=0.00016867 | Rel.CI=11.66% | Avg.GraphGen=0.4297 ms | Avg.DijkstraParallel=60.1851 ms | Avg.RSA=3.4986 ms
+    Progress: 196000 requests | P_b=0.00143878 | CI=0.00016781 | Rel.CI=11.66% | Avg.GraphGen=0.4372 ms | Avg.DijkstraParallel=61.3432 ms | Avg.RSA=3.4918 ms
+    Progress: 197000 requests | P_b=0.00143147 | CI=0.00016696 | Rel.CI=11.66% | Avg.GraphGen=0.4394 ms | Avg.DijkstraParallel=61.1220 ms | Avg.RSA=3.4842 ms
+    Progress: 198000 requests | P_b=0.00142929 | CI=0.00016641 | Rel.CI=11.64% | Avg.GraphGen=0.4186 ms | Avg.DijkstraParallel=60.1797 ms | Avg.RSA=3.4884 ms
+    Progress: 199000 requests | P_b=0.00142211 | CI=0.00016557 | Rel.CI=11.64% | Avg.GraphGen=0.4328 ms | Avg.DijkstraParallel=59.3628 ms | Avg.RSA=3.4905 ms
+    Progress: 200000 requests | P_b=0.00142000 | CI=0.00016504 | Rel.CI=11.62% | Avg.GraphGen=0.4275 ms | Avg.DijkstraParallel=62.0854 ms | Avg.RSA=3.4796 ms
+    Progress: 201000 requests | P_b=0.00141294 | CI=0.00016421 | Rel.CI=11.62% | Avg.GraphGen=0.4341 ms | Avg.DijkstraParallel=60.7575 ms | Avg.RSA=3.4847 ms
+    Progress: 202000 requests | P_b=0.00140594 | CI=0.00016340 | Rel.CI=11.62% | Avg.GraphGen=0.4257 ms | Avg.DijkstraParallel=61.5018 ms | Avg.RSA=3.4424 ms
+    Progress: 203000 requests | P_b=0.00141379 | CI=0.00016345 | Rel.CI=11.56% | Avg.GraphGen=0.4294 ms | Avg.DijkstraParallel=60.1435 ms | Avg.RSA=3.4666 ms
+    Progress: 204000 requests | P_b=0.00144608 | CI=0.00016490 | Rel.CI=11.40% | Avg.GraphGen=0.4264 ms | Avg.DijkstraParallel=61.1487 ms | Avg.RSA=3.4548 ms
+    Progress: 205000 requests | P_b=0.00144390 | CI=0.00016437 | Rel.CI=11.38% | Avg.GraphGen=0.4356 ms | Avg.DijkstraParallel=60.6812 ms | Avg.RSA=3.4977 ms
+    Progress: 206000 requests | P_b=0.00144660 | CI=0.00016413 | Rel.CI=11.35% | Avg.GraphGen=0.4270 ms | Avg.DijkstraParallel=62.1164 ms | Avg.RSA=3.4782 ms
+    Progress: 207000 requests | P_b=0.00143961 | CI=0.00016334 | Rel.CI=11.35% | Avg.GraphGen=0.4313 ms | Avg.DijkstraParallel=59.9955 ms | Avg.RSA=3.5202 ms
+    Progress: 208000 requests | P_b=0.00143269 | CI=0.00016255 | Rel.CI=11.35% | Avg.GraphGen=0.4333 ms | Avg.DijkstraParallel=61.0690 ms | Avg.RSA=3.5021 ms
+    Progress: 209000 requests | P_b=0.00143541 | CI=0.00016231 | Rel.CI=11.31% | Avg.GraphGen=0.4391 ms | Avg.DijkstraParallel=61.1749 ms | Avg.RSA=3.5248 ms
+    Progress: 210000 requests | P_b=0.00142857 | CI=0.00016154 | Rel.CI=11.31% | Avg.GraphGen=0.4359 ms | Avg.DijkstraParallel=57.2740 ms | Avg.RSA=3.4917 ms
+    Progress: 211000 requests | P_b=0.00142180 | CI=0.00016078 | Rel.CI=11.31% | Avg.GraphGen=0.4237 ms | Avg.DijkstraParallel=61.0530 ms | Avg.RSA=3.5154 ms
+    Progress: 212000 requests | P_b=0.00141509 | CI=0.00016002 | Rel.CI=11.31% | Avg.GraphGen=0.4845 ms | Avg.DijkstraParallel=63.8678 ms | Avg.RSA=3.7627 ms
+    Progress: 213000 requests | P_b=0.00140845 | CI=0.00015927 | Rel.CI=11.31% | Avg.GraphGen=0.4264 ms | Avg.DijkstraParallel=61.4004 ms | Avg.RSA=3.4816 ms
+    Progress: 214000 requests | P_b=0.00140187 | CI=0.00015853 | Rel.CI=11.31% | Avg.GraphGen=0.4315 ms | Avg.DijkstraParallel=62.7561 ms | Avg.RSA=3.4848 ms
+    Progress: 215000 requests | P_b=0.00139535 | CI=0.00015779 | Rel.CI=11.31% | Avg.GraphGen=0.4272 ms | Avg.DijkstraParallel=60.3486 ms | Avg.RSA=3.4853 ms
+    Progress: 216000 requests | P_b=0.00141204 | CI=0.00015836 | Rel.CI=11.22% | Avg.GraphGen=0.4302 ms | Avg.DijkstraParallel=58.8264 ms | Avg.RSA=3.5725 ms
+    Progress: 217000 requests | P_b=0.00143779 | CI=0.00015943 | Rel.CI=11.09% | Avg.GraphGen=0.4555 ms | Avg.DijkstraParallel=62.5909 ms | Avg.RSA=3.5608 ms
+    Progress: 218000 requests | P_b=0.00144037 | CI=0.00015920 | Rel.CI=11.05% | Avg.GraphGen=0.4313 ms | Avg.DijkstraParallel=59.0122 ms | Avg.RSA=3.5059 ms
+    Progress: 219000 requests | P_b=0.00143379 | CI=0.00015848 | Rel.CI=11.05% | Avg.GraphGen=0.4232 ms | Avg.DijkstraParallel=60.5963 ms | Avg.RSA=3.4885 ms
+    Progress: 220000 requests | P_b=0.00143182 | CI=0.00015801 | Rel.CI=11.04% | Avg.GraphGen=0.4342 ms | Avg.DijkstraParallel=61.0326 ms | Avg.RSA=3.4552 ms
+    Progress: 221000 requests | P_b=0.00152489 | CI=0.00016268 | Rel.CI=10.67% | Avg.GraphGen=0.4178 ms | Avg.DijkstraParallel=64.0514 ms | Avg.RSA=3.4993 ms
+    Progress: 222000 requests | P_b=0.00153604 | CI=0.00016291 | Rel.CI=10.61% | Avg.GraphGen=0.4229 ms | Avg.DijkstraParallel=62.4461 ms | Avg.RSA=3.4878 ms
+    Progress: 223000 requests | P_b=0.00153812 | CI=0.00016265 | Rel.CI=10.57% | Avg.GraphGen=0.4318 ms | Avg.DijkstraParallel=60.2818 ms | Avg.RSA=3.5164 ms
+    Progress: 224000 requests | P_b=0.00153125 | CI=0.00016193 | Rel.CI=10.57% | Avg.GraphGen=0.4484 ms | Avg.DijkstraParallel=55.4126 ms | Avg.RSA=3.4893 ms
+    Progress: 225000 requests | P_b=0.00152444 | CI=0.00016121 | Rel.CI=10.57% | Avg.GraphGen=0.4315 ms | Avg.DijkstraParallel=61.8692 ms | Avg.RSA=3.4878 ms
+    Progress: 226000 requests | P_b=0.00151770 | CI=0.00016050 | Rel.CI=10.57% | Avg.GraphGen=0.4263 ms | Avg.DijkstraParallel=60.5214 ms | Avg.RSA=3.5091 ms
+    Progress: 227000 requests | P_b=0.00151101 | CI=0.00015979 | Rel.CI=10.58% | Avg.GraphGen=0.4249 ms | Avg.DijkstraParallel=63.7855 ms | Avg.RSA=3.4788 ms
+    Progress: 228000 requests | P_b=0.00150439 | CI=0.00015909 | Rel.CI=10.58% | Avg.GraphGen=0.4245 ms | Avg.DijkstraParallel=61.1622 ms | Avg.RSA=3.4604 ms
+    Progress: 229000 requests | P_b=0.00149782 | CI=0.00015840 | Rel.CI=10.58% | Avg.GraphGen=0.4353 ms | Avg.DijkstraParallel=62.4052 ms | Avg.RSA=3.5075 ms
+    Progress: 230000 requests | P_b=0.00149130 | CI=0.00015771 | Rel.CI=10.58% | Avg.GraphGen=0.4323 ms | Avg.DijkstraParallel=60.2242 ms | Avg.RSA=3.4995 ms
+    Progress: 231000 requests | P_b=0.00148485 | CI=0.00015702 | Rel.CI=10.58% | Avg.GraphGen=0.4336 ms | Avg.DijkstraParallel=59.6093 ms | Avg.RSA=3.4854 ms
+    Progress: 232000 requests | P_b=0.00147845 | CI=0.00015635 | Rel.CI=10.58% | Avg.GraphGen=0.4291 ms | Avg.DijkstraParallel=59.0225 ms | Avg.RSA=3.4639 ms
+    Progress: 233000 requests | P_b=0.00148069 | CI=0.00015613 | Rel.CI=10.54% | Avg.GraphGen=0.4381 ms | Avg.DijkstraParallel=60.9993 ms | Avg.RSA=3.4935 ms
+    Progress: 234000 requests | P_b=0.00147863 | CI=0.00015569 | Rel.CI=10.53% | Avg.GraphGen=0.4422 ms | Avg.DijkstraParallel=65.0279 ms | Avg.RSA=3.5352 ms
+    Progress: 235000 requests | P_b=0.00151064 | CI=0.00015703 | Rel.CI=10.39% | Avg.GraphGen=0.4267 ms | Avg.DijkstraParallel=63.4822 ms | Avg.RSA=3.4996 ms
+    Progress: 236000 requests | P_b=0.00150424 | CI=0.00015636 | Rel.CI=10.39% | Avg.GraphGen=0.4318 ms | Avg.DijkstraParallel=58.6225 ms | Avg.RSA=3.5143 ms
+    Progress: 237000 requests | P_b=0.00151899 | CI=0.00015679 | Rel.CI=10.32% | Avg.GraphGen=0.4423 ms | Avg.DijkstraParallel=56.9032 ms | Avg.RSA=3.5368 ms
+    Progress: 238000 requests | P_b=0.00151261 | CI=0.00015614 | Rel.CI=10.32% | Avg.GraphGen=0.4438 ms | Avg.DijkstraParallel=61.3864 ms | Avg.RSA=3.4941 ms
+    Progress: 239000 requests | P_b=0.00151046 | CI=0.00015570 | Rel.CI=10.31% | Avg.GraphGen=0.4324 ms | Avg.DijkstraParallel=56.1309 ms | Avg.RSA=3.4885 ms
+    Progress: 240000 requests | P_b=0.00151250 | CI=0.00015548 | Rel.CI=10.28% | Avg.GraphGen=0.4224 ms | Avg.DijkstraParallel=62.7685 ms | Avg.RSA=3.5075 ms
+    Progress: 241000 requests | P_b=0.00151867 | CI=0.00015547 | Rel.CI=10.24% | Avg.GraphGen=0.4305 ms | Avg.DijkstraParallel=60.0304 ms | Avg.RSA=3.4796 ms
+    Progress: 242000 requests | P_b=0.00151653 | CI=0.00015504 | Rel.CI=10.22% | Avg.GraphGen=0.4342 ms | Avg.DijkstraParallel=62.3899 ms | Avg.RSA=3.5007 ms
+    Progress: 243000 requests | P_b=0.00151440 | CI=0.00015461 | Rel.CI=10.21% | Avg.GraphGen=0.4254 ms | Avg.DijkstraParallel=59.5038 ms | Avg.RSA=3.5003 ms
+    Progress: 244000 requests | P_b=0.00151639 | CI=0.00015440 | Rel.CI=10.18% | Avg.GraphGen=0.4293 ms | Avg.DijkstraParallel=63.2835 ms | Avg.RSA=3.4956 ms
+    Progress: 245000 requests | P_b=0.00151020 | CI=0.00015377 | Rel.CI=10.18% | Avg.GraphGen=0.4198 ms | Avg.DijkstraParallel=63.7427 ms | Avg.RSA=3.4936 ms
+    Progress: 246000 requests | P_b=0.00150407 | CI=0.00015314 | Rel.CI=10.18% | Avg.GraphGen=0.4312 ms | Avg.DijkstraParallel=58.3292 ms | Avg.RSA=3.5002 ms
+    Progress: 247000 requests | P_b=0.00149798 | CI=0.00015252 | Rel.CI=10.18% | Avg.GraphGen=0.4322 ms | Avg.DijkstraParallel=60.2659 ms | Avg.RSA=3.5184 ms
+    Progress: 248000 requests | P_b=0.00149194 | CI=0.00015191 | Rel.CI=10.18% | Avg.GraphGen=0.4397 ms | Avg.DijkstraParallel=61.5574 ms | Avg.RSA=3.5189 ms
+    Progress: 249000 requests | P_b=0.00148594 | CI=0.00015130 | Rel.CI=10.18% | Avg.GraphGen=0.4535 ms | Avg.DijkstraParallel=60.2705 ms | Avg.RSA=3.5126 ms
+    Progress: 250000 requests | P_b=0.00148000 | CI=0.00015069 | Rel.CI=10.18% | Avg.GraphGen=0.4337 ms | Avg.DijkstraParallel=59.3448 ms | Avg.RSA=3.5105 ms
+    Progress: 251000 requests | P_b=0.00147410 | CI=0.00015009 | Rel.CI=10.18% | Avg.GraphGen=0.4308 ms | Avg.DijkstraParallel=59.0058 ms | Avg.RSA=3.4734 ms
+    Progress: 252000 requests | P_b=0.00147619 | CI=0.00014990 | Rel.CI=10.15% | Avg.GraphGen=0.4324 ms | Avg.DijkstraParallel=57.4400 ms | Avg.RSA=3.4682 ms
+    Progress: 253000 requests | P_b=0.00147036 | CI=0.00014931 | Rel.CI=10.15% | Avg.GraphGen=0.4312 ms | Avg.DijkstraParallel=59.8537 ms | Avg.RSA=3.4962 ms
+    Progress: 254000 requests | P_b=0.00146457 | CI=0.00014872 | Rel.CI=10.15% | Avg.GraphGen=0.4288 ms | Avg.DijkstraParallel=63.0614 ms | Avg.RSA=3.5159 ms
+    Progress: 255000 requests | P_b=0.00147451 | CI=0.00014893 | Rel.CI=10.10% | Avg.GraphGen=0.4321 ms | Avg.DijkstraParallel=56.6096 ms | Avg.RSA=3.5050 ms
+    Progress: 256000 requests | P_b=0.00147266 | CI=0.00014855 | Rel.CI=10.09% | Avg.GraphGen=0.4286 ms | Avg.DijkstraParallel=60.9801 ms | Avg.RSA=3.5314 ms
+    Progress: 257000 requests | P_b=0.00146693 | CI=0.00014797 | Rel.CI=10.09% | Avg.GraphGen=0.4296 ms | Avg.DijkstraParallel=55.9224 ms | Avg.RSA=3.5140 ms
+    Progress: 258000 requests | P_b=0.00146124 | CI=0.00014740 | Rel.CI=10.09% | Avg.GraphGen=0.4370 ms | Avg.DijkstraParallel=59.2340 ms | Avg.RSA=3.5113 ms
+    Progress: 259000 requests | P_b=0.00145560 | CI=0.00014683 | Rel.CI=10.09% | Avg.GraphGen=0.4362 ms | Avg.DijkstraParallel=62.8701 ms | Avg.RSA=3.5211 ms
+    Progress: 260000 requests | P_b=0.00145000 | CI=0.00014626 | Rel.CI=10.09% | Avg.GraphGen=0.4284 ms | Avg.DijkstraParallel=57.8773 ms | Avg.RSA=3.5896 ms
+    Progress: 261000 requests | P_b=0.00144444 | CI=0.00014570 | Rel.CI=10.09% | Avg.GraphGen=0.4399 ms | Avg.DijkstraParallel=61.1618 ms | Avg.RSA=3.4956 ms
+    Progress: 262000 requests | P_b=0.00143893 | CI=0.00014515 | Rel.CI=10.09% | Avg.GraphGen=0.4322 ms | Avg.DijkstraParallel=62.1362 ms | Avg.RSA=3.4915 ms
+    Progress: 263000 requests | P_b=0.00144867 | CI=0.00014536 | Rel.CI=10.03% | Avg.GraphGen=0.4322 ms | Avg.DijkstraParallel=60.9990 ms | Avg.RSA=3.4899 ms
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 1050,
+    "path_strategy": "highest-slot",
+    "spectrum_strategy": "first-fit",
+    "path_type": "dijkstra",
+    "parallelpath_strategy": "highest-slot",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "simulation_time_s": 26595.19,
+    "total_requests": 263979,
+    "transient_contention_rate": 0.01863586,
+    "successful_requests": 263595,
+    "blocked_requests": 384,
+    "path_blocked": 0,
+    "spectral_blocked": 384,
+    "blocking_probability": 0.00145466,
+    "absolute_confidence_interval": 0.00014539,
+    "relative_confidence_interval_pct": 9.9948,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 9223372036854775807,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 384
+    },
+    "most_used_links": "RDMwa->RDMny_1 (12476), RDMwa->RDMny_2 (12458), RDMwa->RDMny_3 (12304), RDMtx->RDMga_1 (12072), RDMtx->RDMga_3 (11882), RDMtx->RDMga_2 (11855), RDMil->RDMpa_2 (11461), RDMil->RDMpa_3 (11459), RDMil->RDMpa_1 (11402), RDMca2->RDMtx_3 (10771)",
+    "avg_graph_gen_ms": 0.4308,
+    "avg_path_comp_ms": 60.517,
+    "avg_rsa_ms": 3.4857
+}
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=750
+Stopping: CI <= 10.0% of P_b OR max 9223372036854775807 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.03s ---
+    Transient: 7462 requests, 0 blocked
+    Progress: 1000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4328 ms | Avg.DijkstraParallel=61.7041 ms | Avg.RSA=3.5242 ms
+    Progress: 2000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4397 ms | Avg.DijkstraParallel=60.3706 ms | Avg.RSA=3.5313 ms
+    Progress: 3000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4236 ms | Avg.DijkstraParallel=59.7075 ms | Avg.RSA=3.5122 ms
+    Progress: 4000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4242 ms | Avg.DijkstraParallel=61.4210 ms | Avg.RSA=3.4930 ms
+    Progress: 5000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4402 ms | Avg.DijkstraParallel=57.3219 ms | Avg.RSA=3.5762 ms
+    Progress: 6000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4334 ms | Avg.DijkstraParallel=59.9724 ms | Avg.RSA=3.5620 ms
+    Progress: 7000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4278 ms | Avg.DijkstraParallel=57.4261 ms | Avg.RSA=3.5025 ms
+    Progress: 8000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4280 ms | Avg.DijkstraParallel=59.9808 ms | Avg.RSA=3.5781 ms
+    Progress: 9000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4331 ms | Avg.DijkstraParallel=58.3071 ms | Avg.RSA=3.5278 ms
+    Progress: 10000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4350 ms | Avg.DijkstraParallel=61.1034 ms | Avg.RSA=3.5152 ms
+    Progress: 11000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4164 ms | Avg.DijkstraParallel=59.1293 ms | Avg.RSA=3.5250 ms
+    Progress: 12000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4208 ms | Avg.DijkstraParallel=62.0948 ms | Avg.RSA=3.5367 ms
+    Progress: 13000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4235 ms | Avg.DijkstraParallel=59.8024 ms | Avg.RSA=3.5237 ms
+    Progress: 14000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4276 ms | Avg.DijkstraParallel=57.0848 ms | Avg.RSA=3.5496 ms
+    Progress: 15000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4295 ms | Avg.DijkstraParallel=62.1526 ms | Avg.RSA=3.5029 ms
+    Progress: 16000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4326 ms | Avg.DijkstraParallel=57.6650 ms | Avg.RSA=3.5153 ms
+    Progress: 17000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4242 ms | Avg.DijkstraParallel=62.5312 ms | Avg.RSA=3.5428 ms
+    Progress: 18000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4366 ms | Avg.DijkstraParallel=59.7482 ms | Avg.RSA=3.5232 ms
+    Progress: 19000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4264 ms | Avg.DijkstraParallel=61.7362 ms | Avg.RSA=3.5179 ms
+    Progress: 20000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4398 ms | Avg.DijkstraParallel=61.3043 ms | Avg.RSA=3.5278 ms
+    Progress: 21000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4347 ms | Avg.DijkstraParallel=57.1321 ms | Avg.RSA=3.5501 ms
+    Progress: 22000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4338 ms | Avg.DijkstraParallel=60.5320 ms | Avg.RSA=3.5614 ms
+    Progress: 23000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4235 ms | Avg.DijkstraParallel=61.9206 ms | Avg.RSA=3.5414 ms
+    Progress: 24000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4335 ms | Avg.DijkstraParallel=59.4080 ms | Avg.RSA=3.5492 ms
+    Progress: 25000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4225 ms | Avg.DijkstraParallel=58.6630 ms | Avg.RSA=3.5379 ms
+    Progress: 26000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4414 ms | Avg.DijkstraParallel=61.0282 ms | Avg.RSA=3.4984 ms
+    Progress: 27000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4342 ms | Avg.DijkstraParallel=60.0039 ms | Avg.RSA=3.5431 ms
+    Progress: 28000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4321 ms | Avg.DijkstraParallel=63.4061 ms | Avg.RSA=3.5198 ms
+    Progress: 29000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4237 ms | Avg.DijkstraParallel=58.5516 ms | Avg.RSA=3.5031 ms
+    Progress: 30000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4208 ms | Avg.DijkstraParallel=61.3283 ms | Avg.RSA=3.5221 ms
+    Progress: 31000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4355 ms | Avg.DijkstraParallel=62.1811 ms | Avg.RSA=3.5182 ms
+    Progress: 32000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4334 ms | Avg.DijkstraParallel=59.8352 ms | Avg.RSA=3.5274 ms
+    Progress: 33000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4251 ms | Avg.DijkstraParallel=61.3301 ms | Avg.RSA=3.5049 ms
+    Progress: 34000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4357 ms | Avg.DijkstraParallel=55.9418 ms | Avg.RSA=3.5326 ms
+    Progress: 35000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4249 ms | Avg.DijkstraParallel=63.1430 ms | Avg.RSA=3.5246 ms
+    Progress: 36000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4210 ms | Avg.DijkstraParallel=59.9456 ms | Avg.RSA=3.5399 ms
+    Progress: 37000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4274 ms | Avg.DijkstraParallel=59.0985 ms | Avg.RSA=3.5408 ms
+    Progress: 38000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4302 ms | Avg.DijkstraParallel=59.9548 ms | Avg.RSA=3.5241 ms
+    Progress: 39000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4269 ms | Avg.DijkstraParallel=63.0114 ms | Avg.RSA=3.5343 ms
+    Progress: 40000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4366 ms | Avg.DijkstraParallel=64.0011 ms | Avg.RSA=3.5496 ms
+    Progress: 41000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4274 ms | Avg.DijkstraParallel=60.7359 ms | Avg.RSA=3.5166 ms
+    Progress: 42000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4302 ms | Avg.DijkstraParallel=59.5876 ms | Avg.RSA=3.5167 ms
+    Progress: 43000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4347 ms | Avg.DijkstraParallel=63.8614 ms | Avg.RSA=3.5344 ms
+    Progress: 44000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4378 ms | Avg.DijkstraParallel=60.0241 ms | Avg.RSA=3.5271 ms
+    Progress: 45000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4366 ms | Avg.DijkstraParallel=60.5070 ms | Avg.RSA=3.5286 ms
+    Progress: 46000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4391 ms | Avg.DijkstraParallel=59.0010 ms | Avg.RSA=3.5171 ms
+    Progress: 47000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4244 ms | Avg.DijkstraParallel=60.4082 ms | Avg.RSA=3.5269 ms
+    Progress: 48000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4286 ms | Avg.DijkstraParallel=63.0138 ms | Avg.RSA=3.5412 ms
+    Progress: 49000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4339 ms | Avg.DijkstraParallel=58.6193 ms | Avg.RSA=3.5171 ms
+    Progress: 50000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4350 ms | Avg.DijkstraParallel=59.0104 ms | Avg.RSA=3.5121 ms
+    Progress: 51000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4326 ms | Avg.DijkstraParallel=59.5912 ms | Avg.RSA=3.5086 ms
+    Progress: 52000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4352 ms | Avg.DijkstraParallel=61.6875 ms | Avg.RSA=3.5245 ms
+    Progress: 53000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4246 ms | Avg.DijkstraParallel=63.6518 ms | Avg.RSA=3.5090 ms
+    Progress: 54000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4312 ms | Avg.DijkstraParallel=57.3776 ms | Avg.RSA=3.5346 ms
+    Progress: 55000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4312 ms | Avg.DijkstraParallel=59.2011 ms | Avg.RSA=3.5340 ms
+    Progress: 56000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4265 ms | Avg.DijkstraParallel=61.1998 ms | Avg.RSA=3.5680 ms
+    Progress: 57000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4425 ms | Avg.DijkstraParallel=59.4100 ms | Avg.RSA=3.4945 ms
+    Progress: 58000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4346 ms | Avg.DijkstraParallel=62.1567 ms | Avg.RSA=3.6019 ms
+    Progress: 59000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4565 ms | Avg.DijkstraParallel=62.5919 ms | Avg.RSA=3.6019 ms
+    Progress: 60000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4355 ms | Avg.DijkstraParallel=61.3712 ms | Avg.RSA=3.5733 ms
+    Progress: 61000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4294 ms | Avg.DijkstraParallel=59.4662 ms | Avg.RSA=3.5248 ms
+    Progress: 62000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4213 ms | Avg.DijkstraParallel=58.9221 ms | Avg.RSA=3.5345 ms
+    Progress: 63000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4270 ms | Avg.DijkstraParallel=61.6858 ms | Avg.RSA=3.5238 ms
+    Progress: 64000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4143 ms | Avg.DijkstraParallel=60.0132 ms | Avg.RSA=3.5305 ms
+    Progress: 65000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4286 ms | Avg.DijkstraParallel=61.0571 ms | Avg.RSA=3.5493 ms
+    Progress: 66000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4344 ms | Avg.DijkstraParallel=60.1149 ms | Avg.RSA=3.4862 ms
+    Progress: 67000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4357 ms | Avg.DijkstraParallel=58.3224 ms | Avg.RSA=3.5487 ms
+    Progress: 68000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4338 ms | Avg.DijkstraParallel=58.6047 ms | Avg.RSA=3.5479 ms
+    Progress: 69000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4334 ms | Avg.DijkstraParallel=56.8158 ms | Avg.RSA=3.5646 ms
+    Progress: 70000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4341 ms | Avg.DijkstraParallel=57.8864 ms | Avg.RSA=3.5317 ms
+    Progress: 71000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4350 ms | Avg.DijkstraParallel=61.3490 ms | Avg.RSA=3.5160 ms
+    Progress: 72000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4415 ms | Avg.DijkstraParallel=59.4846 ms | Avg.RSA=3.5223 ms
+    Progress: 73000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4279 ms | Avg.DijkstraParallel=62.0537 ms | Avg.RSA=3.5233 ms
+    Progress: 74000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4311 ms | Avg.DijkstraParallel=61.1089 ms | Avg.RSA=3.5181 ms
+    Progress: 75000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4371 ms | Avg.DijkstraParallel=60.3797 ms | Avg.RSA=3.5331 ms
+    Progress: 76000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4289 ms | Avg.DijkstraParallel=58.3264 ms | Avg.RSA=3.4816 ms
+    Progress: 77000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4226 ms | Avg.DijkstraParallel=60.0942 ms | Avg.RSA=3.5195 ms
+    Progress: 78000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4370 ms | Avg.DijkstraParallel=65.1837 ms | Avg.RSA=3.5110 ms
+    Progress: 79000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4336 ms | Avg.DijkstraParallel=62.6170 ms | Avg.RSA=3.5292 ms
+    Progress: 80000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4390 ms | Avg.DijkstraParallel=60.7530 ms | Avg.RSA=3.5317 ms
+    Progress: 81000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4246 ms | Avg.DijkstraParallel=58.1111 ms | Avg.RSA=3.4893 ms
+    Progress: 82000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4321 ms | Avg.DijkstraParallel=60.3472 ms | Avg.RSA=3.5452 ms
+    Progress: 83000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4320 ms | Avg.DijkstraParallel=58.9152 ms | Avg.RSA=3.5180 ms
+    Progress: 84000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4293 ms | Avg.DijkstraParallel=60.0987 ms | Avg.RSA=3.5432 ms
+    Progress: 85000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4364 ms | Avg.DijkstraParallel=61.8163 ms | Avg.RSA=3.5362 ms
+    Progress: 86000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4281 ms | Avg.DijkstraParallel=59.1937 ms | Avg.RSA=3.5298 ms
+    Progress: 87000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4316 ms | Avg.DijkstraParallel=58.4813 ms | Avg.RSA=3.5274 ms
+    Progress: 88000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4290 ms | Avg.DijkstraParallel=60.7127 ms | Avg.RSA=3.5560 ms
+    Progress: 89000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4260 ms | Avg.DijkstraParallel=58.1589 ms | Avg.RSA=3.5148 ms
+    Progress: 90000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4200 ms | Avg.DijkstraParallel=65.3115 ms | Avg.RSA=3.5172 ms
+    Progress: 91000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4298 ms | Avg.DijkstraParallel=62.5984 ms | Avg.RSA=3.5201 ms
+    Progress: 92000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4287 ms | Avg.DijkstraParallel=60.7681 ms | Avg.RSA=3.5120 ms
+    Progress: 93000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4313 ms | Avg.DijkstraParallel=66.1970 ms | Avg.RSA=3.5541 ms
+    Progress: 94000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4244 ms | Avg.DijkstraParallel=60.8438 ms | Avg.RSA=3.5717 ms
+    Progress: 95000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4272 ms | Avg.DijkstraParallel=60.8757 ms | Avg.RSA=3.6038 ms
+    Progress: 96000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4261 ms | Avg.DijkstraParallel=63.8654 ms | Avg.RSA=3.5668 ms
+    Progress: 97000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4247 ms | Avg.DijkstraParallel=61.7842 ms | Avg.RSA=3.5096 ms
+    Progress: 98000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4361 ms | Avg.DijkstraParallel=61.0037 ms | Avg.RSA=3.5144 ms
+    Progress: 99000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4308 ms | Avg.DijkstraParallel=61.5030 ms | Avg.RSA=3.5365 ms
+    Progress: 100000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4437 ms | Avg.DijkstraParallel=59.3688 ms | Avg.RSA=3.5311 ms
+    Progress: 101000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4460 ms | Avg.DijkstraParallel=62.3291 ms | Avg.RSA=3.5228 ms
+    Progress: 102000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4328 ms | Avg.DijkstraParallel=61.1876 ms | Avg.RSA=3.5257 ms
+    Progress: 103000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4297 ms | Avg.DijkstraParallel=57.7738 ms | Avg.RSA=3.5129 ms
+    Progress: 104000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4300 ms | Avg.DijkstraParallel=62.4566 ms | Avg.RSA=3.5431 ms
+    Progress: 105000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4363 ms | Avg.DijkstraParallel=64.1254 ms | Avg.RSA=3.5429 ms
+    Progress: 106000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4330 ms | Avg.DijkstraParallel=59.0942 ms | Avg.RSA=3.5145 ms
+    Progress: 107000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4248 ms | Avg.DijkstraParallel=56.9518 ms | Avg.RSA=3.5544 ms
+    Progress: 108000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4262 ms | Avg.DijkstraParallel=59.4083 ms | Avg.RSA=3.5715 ms
+    Progress: 109000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4299 ms | Avg.DijkstraParallel=63.0043 ms | Avg.RSA=3.5270 ms
+    Progress: 110000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4259 ms | Avg.DijkstraParallel=62.5462 ms | Avg.RSA=3.5073 ms
+    Progress: 111000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4424 ms | Avg.DijkstraParallel=62.6611 ms | Avg.RSA=3.5687 ms
+    Progress: 112000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4340 ms | Avg.DijkstraParallel=62.3499 ms | Avg.RSA=3.5402 ms
+    Progress: 113000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4293 ms | Avg.DijkstraParallel=61.5208 ms | Avg.RSA=3.5536 ms
+    Progress: 114000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4290 ms | Avg.DijkstraParallel=58.9988 ms | Avg.RSA=3.5410 ms
+    Progress: 115000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4320 ms | Avg.DijkstraParallel=61.6602 ms | Avg.RSA=3.5471 ms
+    Progress: 116000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4288 ms | Avg.DijkstraParallel=59.3212 ms | Avg.RSA=3.5202 ms
+    Progress: 117000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4297 ms | Avg.DijkstraParallel=62.9604 ms | Avg.RSA=3.5265 ms
+    Progress: 118000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4337 ms | Avg.DijkstraParallel=57.8587 ms | Avg.RSA=3.5265 ms
+    Progress: 119000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4292 ms | Avg.DijkstraParallel=60.5203 ms | Avg.RSA=3.5109 ms
+    Progress: 120000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4191 ms | Avg.DijkstraParallel=61.6158 ms | Avg.RSA=3.5017 ms
+    Progress: 121000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4279 ms | Avg.DijkstraParallel=61.2604 ms | Avg.RSA=3.5174 ms
+    Progress: 122000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4257 ms | Avg.DijkstraParallel=62.0842 ms | Avg.RSA=3.5183 ms
+    Progress: 123000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4227 ms | Avg.DijkstraParallel=61.9741 ms | Avg.RSA=3.5297 ms
+    Progress: 124000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4360 ms | Avg.DijkstraParallel=58.3325 ms | Avg.RSA=3.5443 ms
+    Progress: 125000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4232 ms | Avg.DijkstraParallel=61.0868 ms | Avg.RSA=3.5243 ms
+    Progress: 126000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4269 ms | Avg.DijkstraParallel=56.9899 ms | Avg.RSA=3.5813 ms
+    Progress: 127000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4249 ms | Avg.DijkstraParallel=59.2244 ms | Avg.RSA=3.5464 ms
+    Progress: 128000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4328 ms | Avg.DijkstraParallel=61.7101 ms | Avg.RSA=3.5069 ms
+    Progress: 129000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4224 ms | Avg.DijkstraParallel=59.7568 ms | Avg.RSA=3.5200 ms
+    Progress: 130000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4362 ms | Avg.DijkstraParallel=59.9489 ms | Avg.RSA=3.5397 ms
+    Progress: 131000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4457 ms | Avg.DijkstraParallel=59.5421 ms | Avg.RSA=3.6149 ms
+    Progress: 132000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4244 ms | Avg.DijkstraParallel=59.4956 ms | Avg.RSA=3.5083 ms
+    Progress: 133000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4291 ms | Avg.DijkstraParallel=62.0270 ms | Avg.RSA=3.5358 ms
+    Progress: 134000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4340 ms | Avg.DijkstraParallel=59.3336 ms | Avg.RSA=3.4846 ms
+    Progress: 135000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4634 ms | Avg.DijkstraParallel=66.5443 ms | Avg.RSA=3.8180 ms
+    Progress: 136000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4883 ms | Avg.DijkstraParallel=67.5876 ms | Avg.RSA=3.8985 ms
+    Progress: 137000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4450 ms | Avg.DijkstraParallel=60.9569 ms | Avg.RSA=3.6776 ms
+    Progress: 138000 requests | P_b=0.00000000 | CI=0.00000000 | Rel.CI=inf% | Avg.GraphGen=0.4105 ms | Avg.DijkstraParallel=60.4457 ms | Avg.RSA=3.4546 ms

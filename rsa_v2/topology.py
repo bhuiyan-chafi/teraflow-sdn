@@ -303,6 +303,9 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
             G_simple, source=src_dev, target=dst_dev))
 
         if dijkstra_node_paths:
+            # for path in dijkstra_node_paths:
+            #     # Log node sequence
+            #     TopologyHelper.log_path_links([path], "Debug Dijkstra", "node-path")
             dijkstra_hops = len(dijkstra_node_paths[0]) - 1
 
             if path_type in ['dijkstra', 'both']:
@@ -322,8 +325,8 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                 # logger.info(
                 #    f"[Timing] Dijkstra path selection: {dijkstra_path_ms:.4f} ms")
                 result['dijkstra_path_ms'] = dijkstra_path_ms
-                # TopologyHelper.log_path_links(
-                #    [chosen_node_path], "Phase 1", "dijkstra shortest")
+                TopologyHelper.log_path_links(
+                   [chosen_node_path], "Phase 1", "dijkstra shortest")
 
                 # Expand the chosen node path based on parallelpath_strategy
                 if parallelpath_strategy != 'none':
@@ -386,7 +389,9 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
             t_additional_start = time.time()
             simple_node_paths = list(nx.all_simple_paths(
                 G_simple, source=src_dev, target=dst_dev, cutoff=dynamic_cutoff))
-
+            for path in simple_node_paths:
+                # Log node sequence
+                TopologyHelper.log_path_links([path], "Debug Dijkstra+1", "node-path")
             if simple_node_paths:
                 # Apply strategy to pick ONE alternative node path
                 if strategy == 'last-fit':
@@ -431,7 +436,7 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
                         chosen_alt_path, G)
                     if single_path:
                         all_paths_collection = [single_path]
-                        # TopologyHelper.log_path_links(all_paths_collection, "Phase 2", "single link")
+                        TopologyHelper.log_path_links(all_paths_collection, "Phase 2", "single link")
         except nx.NetworkXNoPath:
             logger.info(
                 f"[Phase 2] No simple paths from {src_dev} to {dst_dev}")
@@ -456,10 +461,10 @@ def find_paths(src_dev, dst_dev, bitrate=None, strategy='first-fit', path_type='
         return result
 
     result['paths'] = paths
-    # logger.info(f"[Phase 3] Returning {len(paths)} path(s) "
-    #             f"(dijkstra={len(dijkstra_collection)}, "
-    #             f"alt={len(all_paths_collection)}) "
-    #             f"for {src_dev} -> {dst_dev}")
+    logger.info(f"[Phase 3] Returning {len(paths)} path(s) "
+                f"(dijkstra={len(dijkstra_collection)}, "
+                f"alt={len(all_paths_collection)}) "
+                f"for {src_dev} -> {dst_dev}")
 
     return result
 

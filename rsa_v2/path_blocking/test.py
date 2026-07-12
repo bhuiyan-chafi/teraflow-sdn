@@ -6,11 +6,11 @@ import json
 import argparse
 import sys
 
-# API_URL = "http://127.0.0.1:5001/api/lightpath/request"
-# TEARDOWN_URL = "http://127.0.0.1:5001/api/lightpath/teardown"
+API_URL = "http://127.0.0.1:5001/api/lightpath/request"
+TEARDOWN_URL = "http://127.0.0.1:5001/api/lightpath/teardown"
 # For PanEU
-API_URL = "http://127.0.0.1:5002/api/lightpath/request"
-TEARDOWN_URL = "http://127.0.0.1:5002/api/lightpath/teardown"
+# API_URL = "http://127.0.0.1:5002/api/lightpath/request"
+# TEARDOWN_URL = "http://127.0.0.1:5002/api/lightpath/teardown"
 
 
 def test_request(src, dst, bitrate, path_strategy='first-fit', spectrum_strategy='first-fit', path_type='dijkstra', parallelpath_strategy='none'):

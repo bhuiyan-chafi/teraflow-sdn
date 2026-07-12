@@ -27,11 +27,11 @@ import warnings
 warnings.filterwarnings(
     "ignore", message=".*urllib3 v2 only supports OpenSSL.*")
 
-#API_URL = "http://127.0.0.1:5001/api/lightpath/request"
-#TEARDOWN_URL = "http://127.0.0.1:5001/api/lightpath/teardown"
+API_URL = "http://127.0.0.1:5001/api/lightpath/request"
+TEARDOWN_URL = "http://127.0.0.1:5001/api/lightpath/teardown"
 # For PanEU
-API_URL = "http://127.0.0.1:5002/api/lightpath/request"
-TEARDOWN_URL = "http://127.0.0.1:5002/api/lightpath/teardown"
+# API_URL = "http://127.0.0.1:5002/api/lightpath/request"
+# TEARDOWN_URL = "http://127.0.0.1:5002/api/lightpath/teardown"
 
 
 class Event:

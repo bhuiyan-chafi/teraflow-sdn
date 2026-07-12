@@ -1,0 +1,41 @@
+============================================================
+STARTING CI-BASED SIM: BITRATE=Dynamic | ERLANG=750
+Stopping: CI <= 10.0% of P_b OR max 9223372036854775807 requests
+============================================================
+
+--- TRANSIENT PHASE ENDED at 600.15s ---
+    Transient: 7344 requests, 2267 blocked
+    Progress: 1000 requests | P_b=0.30200000 | CI=0.02845688 | Rel.CI=9.42% | Avg.GraphGen=0.3259 ms | Avg.AdditionalPath=0.4464 ms | Avg.RSA=4.6087 ms
+
+============================================================
+SIMULATION COMPLETED - CI_THRESHOLD_MET
+============================================================
+{
+    "bitrate": "Dynamic",
+    "load": 750,
+    "path_strategy": "random",
+    "spectrum_strategy": "first-fit",
+    "path_type": "additional",
+    "parallelpath_strategy": "none",
+    "stop_reason": "CI_THRESHOLD_MET",
+    "simulation_time_s": 232.05,
+    "total_requests": 1000,
+    "transient_contention_rate": 30.86873638,
+    "successful_requests": 698,
+    "blocked_requests": 302,
+    "path_blocked": 0,
+    "spectral_blocked": 302,
+    "blocking_probability": 0.302,
+    "absolute_confidence_interval": 0.02845688,
+    "relative_confidence_interval_pct": 9.4228,
+    "ci_threshold_pct": 10.0,
+    "confidence_level_pct": 95,
+    "max_requests_limit": 9223372036854775807,
+    "blocking_reasons": {
+        "No contiguous spectrum available on any candidate path": 302
+    },
+    "most_used_links": "",
+    "avg_graph_gen_ms": 0.3259,
+    "avg_path_comp_ms": 0.4464,
+    "avg_rsa_ms": 4.6087
+}
